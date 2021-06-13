@@ -19,6 +19,7 @@ import {
   RegisterDto
 } from './dto/register.input';
 import { UserService } from '@user/user.service';
+import { NoAuth } from '@auth/decorators/auth';
 
 @Controller('/api/auth')
 export class AuthController {
@@ -26,12 +27,14 @@ export class AuthController {
     private readonly usersService: UserService
   ) {}
 
+  @NoAuth()
   @UseGuards(LocalAuthGuard)
   @Post('/login')
   async login(@Req() req: Request): Promise<Express.User | undefined> {
     return req.user;
   }
 
+  @NoAuth()
   @Post('/register')
   async register(@Body() registerDto: RegisterDto): Promise<IUser> {
     const user: User | null = await this.usersService.findOne(registerDto.email);
