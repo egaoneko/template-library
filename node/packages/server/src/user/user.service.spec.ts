@@ -1,7 +1,7 @@
 import { Test, TestingModule } from '@nestjs/testing';
 import { UserService } from './user.service';
 import { User } from './entities/user.entity';
-import { createSequelize } from '@common/utils/test';
+import { createSequelize } from '@root/test/sequelize';
 import { getModelToken } from '@nestjs/sequelize';
 import { CreateUserDto } from '@user/dto/create-user.input';
 

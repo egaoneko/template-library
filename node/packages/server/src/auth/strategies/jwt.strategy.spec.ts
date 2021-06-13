@@ -1,6 +1,6 @@
 import { Test, TestingModule } from '@nestjs/testing';
 import { JwtStrategy } from './jwt.strategy';
-import { createSequelize } from '@common/utils/test';
+import { createSequelize } from '@root/test/sequelize';
 import { User } from '@user/entities/user.entity';
 import { encryptedPassword, generateSalt } from '@auth/utils/crypto';
 import { UserService } from '@user/user.service';

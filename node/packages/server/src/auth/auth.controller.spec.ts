@@ -1,7 +1,7 @@
 import { Test, TestingModule } from '@nestjs/testing';
 import { AuthController } from './auth.controller';
 import { Request } from 'express';
-import { createSequelize } from '@common/utils/test';
+import { createSequelize } from '@root/test/sequelize';
 import { User } from '@user/entities/user.entity';
 import { UserService } from '@user/user.service';
 import { RegisterDto } from '@auth/dto/register.input';

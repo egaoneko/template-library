@@ -1,5 +1,5 @@
 import { User } from './user.entity';
-import { createSequelize } from '@common/utils/test';
+import { createSequelize } from '@root/test/sequelize';
 
 describe('UserController', () => {
   let user: User;

@@ -4,7 +4,7 @@ import { AuthService } from './auth.service';
 import { User } from '@user/entities/user.entity';
 import { UserService } from '@user/user.service';
 import { encryptedPassword, generateSalt } from './utils/crypto';
-import { createSequelize } from '@common/utils/test';
+import { createSequelize } from '@root/test/sequelize';
 import { IUser } from '@user/interfaces/user.interface';
 import { IJwtPayload } from '@auth/interfaces/jwt.interface';
 
