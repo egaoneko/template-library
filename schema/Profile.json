@@ -1,0 +1,28 @@
+{
+  "$schema": "http://json-schema.org/draft/2021-06/schema",
+  "title": "Profile",
+  "type": "object",
+  "extends": [{
+    "$ref": "./Entity.json"
+  }],
+  "properties": {
+    "username": {
+      "type": "string",
+      "description": "Username"
+    },
+    "bio": {
+      "type": "string",
+      "description": "Bio"
+    },
+    "image": {
+      "type": "string",
+      "description": "Image"
+    },
+    "following": {
+      "type": "boolean",
+      "description": "Following"
+    }
+  },
+  "required": ["username", "following"],
+  "additionalProperties": false
+}

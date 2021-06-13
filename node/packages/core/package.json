@@ -1,0 +1,35 @@
+{
+  "name": "@my-app/core",
+  "version": "0.0.1",
+  "description": "core",
+  "license": "MIT",
+  "main": "lib/index",
+  "types": "lib/index",
+  "files": [
+    "lib"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "prebuild": "rimraf ./lib",
+    "build": "npm run schema && npm run compile",
+    "compile": "tsc --project tsconfig.json",
+    "start": "npm run build && node lib/index.js",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:cov": "jest --coverage",
+    "test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand",
+    "lint": "eslint \"{src,test}/**/*.{js,jsx,ts,tsx}\" --fix",
+    "format": "prettier --write \"src/**/*.ts\" \"__tests__/**/*.ts\"",
+    "preschema": "rimraf ./lib/schema",
+    "schema": "node scripts/schema.js"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@apidevtools/json-schema-ref-parser": "9.0.9",
+    "fs-extra": "10.0.0",
+    "json-schema-to-typescript": "10.1.4",
+    "recursive-readdir": "2.2.2"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "extends": "../../tsconfig.json",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "outDir": "./lib",
+    "alwaysStrict": false,
+    "noImplicitUseStrict": true,
+    "jsx": "preserve"
+  },
+  "include": [
+    "src/**/*"
+  ]
+}

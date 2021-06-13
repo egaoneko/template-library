@@ -1,0 +1,19 @@
+{
+  "packages": [
+    "packages/*"
+  ],
+  "npmClient": "yarn",
+  "useWorkspaces": true,
+  "version": "independent",
+  "command": {
+    "publish": {
+      "ignoreChanges": [
+        "**/__tests__/**",
+        "**/__mocks__/**",
+        "**/lib/**",
+        "**/*.md"
+      ],
+      "message": "chore: Release"
+    }
+  }
+}

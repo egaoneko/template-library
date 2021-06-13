@@ -1,0 +1,17 @@
+{
+  "$schema": "http://json-schema.org/draft/2021-06/schema",
+  "title": "Error",
+  "type": "object",
+  "properties": {
+    "statusCode": {
+      "type": "number",
+      "description": "Status Code"
+    },
+    "message": {
+      "type": "string",
+      "description": "message"
+    }
+  },
+  "required": ["statusCode", "message"],
+  "additionalProperties": false
+}

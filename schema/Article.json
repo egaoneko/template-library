@@ -1,0 +1,68 @@
+{
+  "$schema": "http://json-schema.org/draft/2021-06/schema",
+  "title": "Article",
+  "type": "object",
+  "extends": [{
+    "$ref": "./Entity.json"
+  }],
+  "properties": {
+    "slug": {
+      "type": "string",
+      "description": "Slug"
+    },
+    "title": {
+      "type": "string",
+      "description": "Title"
+    },
+    "description": {
+      "type": "string",
+      "description": "Description"
+    },
+    "body": {
+      "type": "string",
+      "description": "Body"
+    },
+    "tagList": {
+      "type": "array",
+      "description": "Tag List",
+      "minItems": 0,
+      "items": {
+        "type": "string",
+        "description": "Tag"
+      }
+    },
+    "createdAt":{
+      "type": "string",
+      "description": "Created At"
+    },
+    "updatedAt": {
+      "type": "string",
+      "description": "Updated At"
+    },
+    "favorited": {
+      "type": "boolean",
+      "description": "Favorited"
+    },
+    "favoritesCount": {
+      "type": "number",
+      "description": "Favorites Count",
+      "minimum": 0
+    },
+    "author": {
+      "$ref": "./Profile.json"
+    }
+  },
+  "required": [
+    "slug",
+    "title",
+    "description",
+    "body",
+    "tagList",
+    "createdAt",
+    "updatedAt",
+    "favorited",
+    "favoritesCount",
+    "author"
+  ],
+  "additionalProperties": false
+}

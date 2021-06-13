@@ -1,0 +1,32 @@
+{
+  "$schema": "http://json-schema.org/draft/2021-06/schema",
+  "title": "User",
+  "type": "object",
+  "extends": [{
+    "$ref": "./Entity.json"
+  }],
+  "properties": {
+    "email": {
+      "type": "string",
+      "description": "Email"
+    },
+    "token": {
+      "type": "string",
+      "description": "Token"
+    },
+    "username": {
+      "type": "string",
+      "description": "Username"
+    },
+    "bio": {
+      "type": "string",
+      "description": "Bio"
+    },
+    "image": {
+      "type": "string",
+      "description": "Image"
+    }
+  },
+  "required": ["email", "username"],
+  "additionalProperties": false
+}

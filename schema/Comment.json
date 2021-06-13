@@ -1,0 +1,37 @@
+{
+  "$schema": "http://json-schema.org/draft/2021-06/schema",
+  "title": "Comment",
+  "type": "object",
+  "extends": [{
+    "$ref": "./Entity.json"
+  }],
+  "properties": {
+    "id": {
+      "type": "number",
+      "description": "Id"
+    },
+    "body": {
+      "type": "string",
+      "description": "Body"
+    },
+    "createdAt":{
+      "type": "string",
+      "description": "Created At"
+    },
+    "updatedAt": {
+      "type": "string",
+      "description": "Updated At"
+    },
+    "author": {
+      "$ref": "./Profile.json"
+    }
+  },
+  "required": [
+    "id",
+    "body",
+    "createdAt",
+    "updatedAt",
+    "author"
+  ],
+  "additionalProperties": false
+}
