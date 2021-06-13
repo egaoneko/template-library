@@ -25,4 +25,13 @@ const postgresOptions: SequelizeModuleOptions = {
     format(log);
   },
 };
+
+if (process.env.NODE_ENV === 'test') {
+  if (postgresOptions.dialect !== 'sqlite') {
+    postgresOptions.dialect = 'sqlite';
+    delete postgresOptions.timezone;
+  }
+  postgresOptions.storage = ':memory:';
+}
+
 export default postgresOptions;
