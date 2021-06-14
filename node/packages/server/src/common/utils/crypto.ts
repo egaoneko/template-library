@@ -1,5 +1,8 @@
 import crypto from 'crypto';
-import { DIGEST, ITERATIONS, KEY_SIZE } from '../constants/auth';
+
+export const KEY_SIZE = 64;
+export const ITERATIONS = 10000;
+export const DIGEST = 'sha512';
 
 export function generateSalt(): Promise<string> {
   return new Promise((resolve, reject) => {

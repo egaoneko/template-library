@@ -6,10 +6,6 @@
     "$ref": "./Entity.json"
   }],
   "properties": {
-    "id": {
-      "type": "number",
-      "description": "Id"
-    },
     "body": {
       "type": "string",
       "description": "Body"

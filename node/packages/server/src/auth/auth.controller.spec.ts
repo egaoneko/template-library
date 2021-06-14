@@ -6,16 +6,20 @@ import { User } from '@user/entities/user.entity';
 import { UserService } from '@user/user.service';
 import { RegisterDto } from '@auth/dto/register.input';
 import { CreateUserDto } from '@user/dto/create-user.input';
+import { isSamePassword } from '../common/utils/crypto';
+import { createMock } from '@golevelup/ts-jest';
 
 describe('AuthController', () => {
   let controller: AuthController;
+  let mockUserService: MockService;
 
   beforeEach(async () => {
+    mockUserService = new MockService();
     const module: TestingModule = await Test.createTestingModule({
       providers: [
         {
           provide: UserService,
-          useClass: MockService,
+          useValue: mockUserService,
         },
       ],
       controllers: [AuthController],
@@ -28,32 +32,28 @@ describe('AuthController', () => {
     expect(controller).toBeDefined();
   });
 
-  it('should return user', async () => {
-    const expected = {email: 'test@test.com'} as any;
-    const mockRequest = {
-      user: expected
-    } as Request;
-    const actual = await controller.login(mockRequest);
-    expect(actual).toBe(expected);
-  });
-
   it('register with user', async () => {
     const expected = new RegisterDto();
     expected.email = 'test2@test.com';
     expected.username = 'test';
     expected.password = '1234';
 
+    const createSpy = jest.spyOn(mockUserService, 'create');
     const actual = await controller.register(expected);
     expect(actual.email).toBe(expected.email);
+    expect(createSpy).toHaveBeenCalledTimes(1);
+
+    const { salt, password } = createSpy.mock.calls[0][0] as CreateUserDto;
+    const isEqual = await isSamePassword(salt, expected.password, password);
+    expect(isEqual).toBeTruthy();
   });
 
-  it('register with already exist user', async () => {
-    const expected = new RegisterDto();
-    expected.email = 'test@test.com';
-    expected.username = 'test';
-    expected.password = '1234';
-
-    await expect(controller.register(expected)).rejects.toThrowError('Already exist user');
+  it('should return user', async () => {
+    const expected = { email: 'test@test.com' };
+    const mockRequest = createMock<Request>();
+    mockRequest.user = expected;
+    const actual = await controller.login(mockRequest);
+    expect(actual).toBe(expected);
   });
 });
 
@@ -71,7 +71,7 @@ class MockService {
     });
   }
 
-  async findOne(email: string): Promise<User | null> {
+  async findOneByEmail(email: string): Promise<User | null> {
     if (email !== 'test@test.com') {
       return null;
     }

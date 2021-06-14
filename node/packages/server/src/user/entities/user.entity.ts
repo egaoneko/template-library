@@ -1,9 +1,14 @@
-import { Table, Column, Model, PrimaryKey, DataType, AllowNull } from 'sequelize-typescript';
-import { IUser } from '@user/interfaces/user.interface';
+import { Table, Column, Model, PrimaryKey, DataType, AllowNull, Unique, AutoIncrement } from 'sequelize-typescript';
+import { UserDto } from '@user/dto/user.response';
 
 @Table
 export class User extends Model {
   @PrimaryKey
+  @AutoIncrement
+  @Column(DataType.BIGINT)
+  id!: number;
+
+  @Unique
   @Column(DataType.STRING)
   email!: string;
 
@@ -24,12 +29,13 @@ export class User extends Model {
   @Column(DataType.STRING)
   image!: string;
 
-  toSchema(): IUser {
-    return {
-      email: this.email,
-      username: this.username,
-      bio: this.bio,
-      image: this.image,
-    };
+  toDto(): UserDto {
+    const dto = new UserDto();
+    dto.id = this.id;
+    dto.email = this.email;
+    dto.username = this.username;
+    dto.bio = this.bio;
+    dto.image = this.image;
+    return dto;
   }
 }

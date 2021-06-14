@@ -20,12 +20,12 @@ describe('UserController', () => {
     expect(user).toBeDefined();
   });
 
-  it('should return schema', () => {
-    expect(user.toSchema()).toEqual({
-      email: 'test@test.com',
-      username: 'test',
-      bio: 'bio',
-      image: 'image',
-    });
+  it('should return dto', () => {
+    const actual = user.toDto();
+    expect(actual.id).toBe(user.id);
+    expect(actual.email).toBe(user.email);
+    expect(actual.username).toBe(user.username);
+    expect(actual.bio).toBe(user.bio);
+    expect(actual.image).toBe(user.image);
   });
 });

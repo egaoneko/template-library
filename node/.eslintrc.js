@@ -7,7 +7,7 @@ module.exports = {
   },
   parser: '@typescript-eslint/parser',
   parserOptions: {
-    project: './tsconfig.json',
+    project: './tsconfig.eslint.json',
     ecmaVersion: 8
   },
   ignorePatterns: ['node_modules/*', '.next/*'],

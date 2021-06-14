@@ -17,7 +17,7 @@ describe('AuthController (e2e)', () => {
   });
 
   it('/api/auth/login (Post)', async () => {
-    const user = await createTempUser()
+    const user = await createTempUser(app);
     return request(app.getHttpServer())
       .post('/api/auth/login')
       .send({
@@ -42,6 +42,15 @@ describe('AuthController (e2e)', () => {
       .expect(201)
       .expect(({ body }) => {
         expect(body.email).toBe('test1@test.com');
+      });
+  });
+
+  it('/api/users (Get) without authorized', async () => {
+    return request(app.getHttpServer())
+      .get('/api/users')
+      .expect(401)
+      .expect(({ body }) => {
+        expect(body.message).toBe('Unauthorized');
       });
   });
 });

@@ -1,5 +1,6 @@
 import { ModelOptions, Op } from 'sequelize';
 import { Sequelize, SequelizeOptions } from 'sequelize-typescript';
+import { format } from 'sql-formatter';
 
 export function createSequelize(partialOptions: Partial<SequelizeOptions>): Sequelize;
 export function createSequelize(useModelsInPath?: boolean, define?: ModelOptions): Sequelize;
@@ -23,7 +24,9 @@ export function createSequelize(
     password: '',
     define,
     storage: ':memory:',
-    logging: false,
+    logging: log => {
+      format(log);
+    },
     modelPaths: useModelsInPath ? [__dirname + '/../models'] : [],
     ...partialOptions,
   });

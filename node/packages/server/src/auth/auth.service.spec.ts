@@ -3,7 +3,7 @@ import { JwtService } from '@nestjs/jwt';
 import { AuthService } from './auth.service';
 import { User } from '@user/entities/user.entity';
 import { UserService } from '@user/user.service';
-import { encryptedPassword, generateSalt } from './utils/crypto';
+import { encryptedPassword, generateSalt } from '../common/utils/crypto';
 import { createSequelize } from '@root/test/sequelize';
 import { IUser } from '@user/interfaces/user.interface';
 import { IJwtPayload } from '@auth/interfaces/jwt.interface';
@@ -69,7 +69,7 @@ class MockUserService {
     createSequelize({ models: [User] });
   }
 
-  async findOne(email: string): Promise<User | null> {
+  async findOneByEmail(email: string): Promise<User | null> {
     if (email !== 'test@test.com') {
       return null;
     }

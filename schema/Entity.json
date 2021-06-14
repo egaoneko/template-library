@@ -3,7 +3,11 @@
   "title": "Entity",
   "type": "object",
   "properties": {
+    "id": {
+      "type": "number",
+      "description": "Id"
+    }
   },
-  "required": [],
+  "required": ["id"],
   "additionalProperties": false
 }

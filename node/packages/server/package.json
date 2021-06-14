@@ -18,7 +18,7 @@
     "test:cov": "jest --coverage",
     "test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand",
     "test:e2e": "jest --config ./jest-e2e.config.js",
-    "lint": "eslint \"{src,test}/**/*.{js,jsx,ts,tsx}\" --fix",
+    "lint": "eslint \"{src,__tests__}/**/*.{js,jsx,ts,tsx}\" --fix",
     "format": "prettier --write \"src/**/*.ts\" \"__tests__/**/*.ts\""
   },
   "dependencies": {
@@ -30,6 +30,7 @@
     "@nestjs/passport": "7.1.5",
     "@nestjs/platform-express": "7.6.17",
     "@nestjs/sequelize": "0.2.0",
+    "@nestjs/swagger": "4.8.0",
     "class-validator": "0.13.1",
     "crypto": "1.0.1",
     "helmet": "4.6.0",
@@ -44,6 +45,7 @@
     "sequelize-typescript": "2.1.0",
     "sql-formatter": "4.0.2",
     "sqlite3": "5.0.2",
+    "swagger-ui-express": "4.1.6",
     "winston": "3.3.3"
   },
   "devDependencies": {

@@ -1,5 +1,4 @@
-import { encryptedPassword, generateSalt, isSamePassword } from './crypto';
-import { KEY_SIZE } from '../constants/auth';
+import { encryptedPassword, generateSalt, isSamePassword, KEY_SIZE } from './crypto';
 
 describe('crypto', () => {
   it('salt should be valid key size', async () => {

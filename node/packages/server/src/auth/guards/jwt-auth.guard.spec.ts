@@ -2,9 +2,7 @@ import { JwtAuthGuard } from './jwt-auth.guard';
 import { Reflector } from '@nestjs/core';
 import { createMock } from '@golevelup/ts-jest';
 import { ExecutionContext } from '@nestjs/common';
-import {
-  Test,
-} from '@nestjs/testing';
+import { Test } from '@nestjs/testing';
 import { PassportModule } from '@nestjs/passport';
 import { JwtModule } from '@nestjs/jwt';
 import { JWT_CONSTANTS } from '../constants/auth';
@@ -32,7 +30,7 @@ describe('JwtAuthGuard', () => {
           provide: UserService,
           useClass: MockService,
         },
-        JwtStrategy
+        JwtStrategy,
       ],
     }).compile();
   });
@@ -47,6 +45,8 @@ describe('JwtAuthGuard', () => {
   });
 
   it('should return true with decorator', async () => {
+    /* eslint-disable @typescript-eslint/no-explicit-any */
+    /* eslint-disable @typescript-eslint/ban-types */
     const mockExecutionContext = createMock<ExecutionContext>();
     const MockUseGuards = (mockExecutionContext: ExecutionContext) => (target: object, key?: any, descriptor?: any) => {
       mockExecutionContext.getHandler = () => descriptor.value;
@@ -63,5 +63,4 @@ describe('JwtAuthGuard', () => {
   });
 });
 
-class MockService {
-}
+class MockService {}
