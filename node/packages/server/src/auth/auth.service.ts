@@ -20,15 +20,7 @@ export class AuthService {
       throw new UnauthorizedException('Invalid password');
     }
 
-    const payload = {
-      email: user.email,
-      username: user.username,
-    } as IJwtPayload;
-
-    const schema = user.toSchema();
-    schema.token = this.jwtService.sign(payload);
-
-    return schema;
+    return this.login(user.toSchema());
   }
 
   async login(user: IUser): Promise<IUser> {
