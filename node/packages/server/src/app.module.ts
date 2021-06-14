@@ -24,6 +24,13 @@ import { JwtAuthGuard } from '@auth/guards/jwt-auth.guard';
 })
 export class AppModule implements NestModule {
   configure(consumer: MiddlewareConsumer): void {
-    consumer.apply(helmet(), morgan('tiny')).forRoutes('*');
+    consumer.apply(
+      helmet({
+        hsts: false,
+        contentSecurityPolicy: false,
+      }),
+      helmet.hidePoweredBy(),
+      morgan('tiny')
+    ).forRoutes('*');
   }
 }
