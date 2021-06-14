@@ -1,9 +1,12 @@
 import { SequelizeModuleOptions } from '@nestjs/sequelize/dist/interfaces/sequelize-options.interface';
-import { SQLITE_STORAGE_PATH } from '@common/constants/database';
+import {
+  DEFAULT_DATABASE_NAME,
+  SQLITE_STORAGE_PATH
+} from '@common/constants/database';
 import { format } from 'sql-formatter';
 
-const postgresOptions: SequelizeModuleOptions = {
-  name: 'common',
+const defaultOptions: SequelizeModuleOptions = {
+  name: DEFAULT_DATABASE_NAME,
   dialect: 'sqlite',
   storage: SQLITE_STORAGE_PATH,
   // dialect: 'postgres',
@@ -27,11 +30,11 @@ const postgresOptions: SequelizeModuleOptions = {
 };
 
 if (process.env.NODE_ENV === 'test') {
-  if (postgresOptions.dialect !== 'sqlite') {
-    postgresOptions.dialect = 'sqlite';
-    delete postgresOptions.timezone;
+  if (defaultOptions.dialect !== 'sqlite') {
+    defaultOptions.dialect = 'sqlite';
+    delete defaultOptions.timezone;
   }
-  postgresOptions.storage = ':memory:';
+  defaultOptions.storage = ':memory:';
 }
 
-export default postgresOptions;
+export default defaultOptions;

@@ -7,12 +7,12 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { UserModule } from '@user/user.module';
 import { AuthModule } from '@auth/auth.module';
-import postgresOptions from '@config/database/postgres';
+import defaultOptions from '@config/database/default';
 import { APP_GUARD } from '@nestjs/core';
 import { JwtAuthGuard } from '@auth/guards/jwt-auth.guard';
 
 @Module({
-  imports: [ConfigModule.forRoot(), SequelizeModule.forRoot(postgresOptions), UserModule, AuthModule],
+  imports: [ConfigModule.forRoot(), SequelizeModule.forRoot(defaultOptions), UserModule, AuthModule],
   controllers: [AppController],
   providers: [
     AppService,

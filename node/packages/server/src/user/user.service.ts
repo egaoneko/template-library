@@ -2,11 +2,12 @@ import { Injectable } from '@nestjs/common';
 import { InjectModel } from '@nestjs/sequelize';
 import { User } from './entities/user.entity';
 import { CreateUserDto } from '@user/dto/create-user.input';
+import { DEFAULT_DATABASE_NAME } from '@common/constants/database';
 
 @Injectable()
 export class UserService {
   constructor(
-    @InjectModel(User, 'common')
+    @InjectModel(User, DEFAULT_DATABASE_NAME)
     private readonly userModel: typeof User,
   ) {
   }

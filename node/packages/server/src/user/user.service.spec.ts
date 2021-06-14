@@ -4,6 +4,7 @@ import { User } from './entities/user.entity';
 import { createSequelize } from '@root/test/sequelize';
 import { getModelToken } from '@nestjs/sequelize';
 import { CreateUserDto } from '@user/dto/create-user.input';
+import { DEFAULT_DATABASE_NAME } from '@common/constants/database';
 
 describe('UserService', () => {
   let service: UserService;
@@ -17,7 +18,7 @@ describe('UserService', () => {
     const module: TestingModule = await Test.createTestingModule({
       providers: [
         {
-          provide: getModelToken(User, 'common'),
+          provide: getModelToken(User, DEFAULT_DATABASE_NAME),
           useValue: User,
         },
         UserService,
