@@ -6,11 +6,8 @@ import { UserDto } from '@user/dto/user.response';
 import { DEFAULT_DATABASE_NAME } from '@common/constants/database';
 import { getModelToken } from '@nestjs/sequelize';
 
-export async function createTempUser(app: INestApplication): Promise<User> {
+export async function createTestUser(app: INestApplication, email: string = 'test@test.com'): Promise<User> {
   const model = app.get<typeof User>(getModelToken(User, DEFAULT_DATABASE_NAME));
-  const email = 'test@test.com';
-  await model.destroy({ where: { email } });
-
   const salt = await generateSalt();
   const password = await encryptedPassword(salt, '1234');
   return model.create({
@@ -21,8 +18,7 @@ export async function createTempUser(app: INestApplication): Promise<User> {
   });
 }
 
-export async function getTempUserDto(app: INestApplication): Promise<UserDto> {
-  const user = await createTempUser(app);
+export async function getTestUserDto(app: INestApplication, user: User): Promise<UserDto> {
   const dto = user.toDto();
   const res = await request(app.getHttpServer()).post('/api/auth/login').send({
     email: user.email,

@@ -2,10 +2,15 @@ import request from 'supertest';
 import { Test } from '@nestjs/testing';
 import { AppModule } from '@root/app.module';
 import { INestApplication } from '@nestjs/common';
-import { getTempUserDto } from '../utils/user';
+import { createTestUser, getTestUserDto } from '../utils/user';
+import { cleanDb } from '../utils/db';
 
 describe('UserController (e2e)', () => {
   let app: INestApplication;
+
+  beforeEach(async () => {
+    await cleanDb(app);
+  });
 
   beforeAll(async () => {
     const moduleFixture = await Test.createTestingModule({
@@ -17,7 +22,8 @@ describe('UserController (e2e)', () => {
   });
 
   it('/api/users (Get)', async () => {
-    const dto = await getTempUserDto(app);
+    const user = await createTestUser(app);
+    const dto = await getTestUserDto(app, user);
     return request(app.getHttpServer())
       .get('/api/users')
       .set('Authorization', `Bearer ${dto.token}`)
@@ -28,7 +34,8 @@ describe('UserController (e2e)', () => {
   });
 
   it('/api/users (Post)', async () => {
-    const dto = await getTempUserDto(app);
+    const user = await createTestUser(app);
+    const dto = await getTestUserDto(app, user);
     return request(app.getHttpServer())
       .put('/api/users')
       .set('Authorization', `Bearer ${dto.token}`)

@@ -6,8 +6,8 @@ import { Request } from 'express';
 import { UpdateUserDto, UpdateUserRequestDto } from '@user/dto/update-user.input';
 import { encryptedPassword, generateSalt } from '@common/utils/crypto';
 
-@Controller('/api/users')
 @ApiTags('user')
+@Controller('/api/users')
 export class UserController {
   constructor(private readonly usersService: UserService) {}
 

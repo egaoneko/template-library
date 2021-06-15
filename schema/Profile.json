@@ -2,9 +2,6 @@
   "$schema": "http://json-schema.org/draft/2021-06/schema",
   "title": "Profile",
   "type": "object",
-  "extends": [{
-    "$ref": "./Entity.json"
-  }],
   "properties": {
     "username": {
       "type": "string",

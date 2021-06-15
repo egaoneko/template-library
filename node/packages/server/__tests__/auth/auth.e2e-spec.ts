@@ -2,10 +2,15 @@ import request from 'supertest';
 import { Test } from '@nestjs/testing';
 import { AppModule } from '@root/app.module';
 import { INestApplication } from '@nestjs/common';
-import { createTempUser } from '../utils/user';
+import { createTestUser } from '../utils/user';
+import { cleanDb } from '../utils/db';
 
 describe('AuthController (e2e)', () => {
   let app: INestApplication;
+
+  beforeEach(async () => {
+    await cleanDb(app);
+  });
 
   beforeAll(async () => {
     const moduleFixture = await Test.createTestingModule({
@@ -17,7 +22,7 @@ describe('AuthController (e2e)', () => {
   });
 
   it('/api/auth/login (Post)', async () => {
-    const user = await createTempUser(app);
+    const user = await createTestUser(app);
     return request(app.getHttpServer())
       .post('/api/auth/login')
       .send({

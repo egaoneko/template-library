@@ -3,8 +3,8 @@ import { AppService } from './app.service';
 import { NoAuth } from '@auth/decorators/auth';
 import { ApiOperation, ApiTags } from '@nestjs/swagger';
 
-@Controller()
 @ApiTags('common')
+@Controller()
 export class AppController {
   constructor(private readonly appService: AppService) {}
 

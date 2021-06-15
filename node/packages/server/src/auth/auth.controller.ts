@@ -10,8 +10,8 @@ import { ApiBody, ApiOperation, ApiResponse, ApiTags } from '@nestjs/swagger';
 import { UserDto } from '@user/dto/user.response';
 import { LoginDto } from '@auth/dto/login.input';
 
-@Controller('/api/auth')
 @ApiTags('auth')
+@Controller('/api/auth')
 export class AuthController {
   constructor(private readonly usersService: UserService) {}
 
