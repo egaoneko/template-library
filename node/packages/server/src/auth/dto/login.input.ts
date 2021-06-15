@@ -8,6 +8,7 @@ export class LoginDto {
   @ApiProperty({
     example: 'jake@jake.jake',
     description: 'email',
+    type: 'string',
   })
   email!: string;
 
@@ -16,6 +17,7 @@ export class LoginDto {
   @ApiProperty({
     example: 'jakejake',
     description: 'password',
+    type: 'string',
   })
   password!: string;
 }

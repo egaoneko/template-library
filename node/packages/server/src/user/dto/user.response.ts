@@ -8,6 +8,7 @@ export class UserDto implements IUser {
   @ApiProperty({
     example: 1,
     description: 'id',
+    type: 'number',
   })
   id!: number;
 
@@ -17,6 +18,7 @@ export class UserDto implements IUser {
   @ApiProperty({
     example: 'jake@jake.jake',
     description: 'email',
+    type: 'string',
   })
   email!: string;
 
@@ -25,6 +27,7 @@ export class UserDto implements IUser {
   @ApiProperty({
     example: 'Jacob',
     description: 'username',
+    type: 'string',
   })
   username!: string;
 
@@ -33,6 +36,7 @@ export class UserDto implements IUser {
     example:
       'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Impha2VAamFrZS5qYWtlIiwidXNlcm5hbWUiOiJKYWNvYiIsImlhdCI6MTYyMzYzMTI5MSwiZXhwIjoxNjIzNjMxMzUxfQ.RMev83pXKAlQVbjsGyhVsZHEoohEoClmfGiFstWJ1uo',
     description: 'jwt token',
+    type: 'string',
   })
   token!: string;
 
@@ -40,6 +44,7 @@ export class UserDto implements IUser {
   @ApiPropertyOptional({
     example: 'I like to skateboard',
     description: 'bio',
+    type: 'string',
   })
   bio!: string;
 
@@ -47,6 +52,7 @@ export class UserDto implements IUser {
   @ApiPropertyOptional({
     example: 'https://i.stack.imgur.com/xHWG8.jpg',
     description: 'image',
+    type: 'string',
   })
   image!: string;
 }

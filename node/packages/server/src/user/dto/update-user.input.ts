@@ -7,6 +7,7 @@ export class UpdateUserRequestDto {
   @ApiProperty({
     example: 1,
     description: 'id',
+    type: 'number',
   })
   id!: number;
 
@@ -16,6 +17,7 @@ export class UpdateUserRequestDto {
   @ApiPropertyOptional({
     example: 'jake@jake.jake',
     description: 'email',
+    type: 'string',
   })
   email!: string;
 
@@ -24,6 +26,7 @@ export class UpdateUserRequestDto {
   @ApiPropertyOptional({
     example: 'Jacob',
     description: 'username',
+    type: 'string',
   })
   username!: string;
 
@@ -32,6 +35,7 @@ export class UpdateUserRequestDto {
   @ApiPropertyOptional({
     example: 'jakejake',
     description: 'password',
+    type: 'string',
   })
   password!: string;
 
@@ -40,6 +44,7 @@ export class UpdateUserRequestDto {
   @ApiPropertyOptional({
     example: 'I like to skateboard',
     description: 'bio',
+    type: 'string',
   })
   bio!: string;
 
@@ -48,6 +53,7 @@ export class UpdateUserRequestDto {
   @ApiPropertyOptional({
     example: 'https://i.stack.imgur.com/xHWG8.jpg',
     description: 'image',
+    type: 'string',
   })
   image!: string;
 }

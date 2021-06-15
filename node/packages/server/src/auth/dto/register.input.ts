@@ -8,6 +8,7 @@ export class RegisterDto {
   @ApiProperty({
     example: 'jake@jake.jake',
     description: 'email',
+    type: 'string',
   })
   email!: string;
 
@@ -16,6 +17,7 @@ export class RegisterDto {
   @ApiProperty({
     example: 'Jacob',
     description: 'username',
+    type: 'string',
   })
   username!: string;
 
@@ -24,6 +26,7 @@ export class RegisterDto {
   @ApiProperty({
     example: 'jakejake',
     description: 'password',
+    type: 'string',
   })
   password!: string;
 }
