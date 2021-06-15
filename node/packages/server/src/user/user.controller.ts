@@ -13,7 +13,7 @@ export class UserController {
 
   @Get()
   @ApiOperation({ summary: 'get current user' })
-  @ApiHeader({ name: 'Authorization', description: 'jwt token' })
+  @ApiHeader({ name: 'Authorization', description: 'jwt token', required: true })
   @ApiResponse({ status: 200, description: 'User', type: UserDto })
   @ApiResponse({ status: 400, description: 'Unauthorized' })
   async getCurrentUser(@Req() req: Request): Promise<Express.User | undefined> {
@@ -22,7 +22,7 @@ export class UserController {
 
   @Put()
   @ApiOperation({ summary: 'update user' })
-  @ApiHeader({ name: 'Authorization', description: 'jwt token' })
+  @ApiHeader({ name: 'Authorization', description: 'jwt token', required: true })
   @ApiBody({ description: 'update user body', type: UpdateUserRequestDto })
   @ApiResponse({ status: 200, description: 'User', type: UserDto })
   @ApiResponse({ status: 400, description: 'Unauthorized' })
@@ -30,13 +30,16 @@ export class UserController {
     const dto = new UpdateUserDto();
     dto.id = updateUserRequestDto.id;
     dto.email = updateUserRequestDto.email;
+    dto.username = updateUserRequestDto.username;
     dto.bio = updateUserRequestDto.bio;
     dto.image = updateUserRequestDto.image;
 
-    const salt = await generateSalt();
-    const password = await encryptedPassword(salt, updateUserRequestDto.password);
-    dto.salt = salt;
-    dto.password = password;
+    if (updateUserRequestDto.password) {
+      const salt = await generateSalt();
+      const password = await encryptedPassword(salt, updateUserRequestDto.password);
+      dto.salt = salt;
+      dto.password = password;
+    }
 
     const model = await this.usersService.update(dto);
     return model.toDto();

@@ -12,7 +12,7 @@ export class ProfileController {
 
   @Get('/:userId')
   @ApiOperation({ summary: 'get user profile' })
-  @ApiHeader({ name: 'Authorization', description: 'jwt token' })
+  @ApiHeader({ name: 'Authorization', description: 'jwt token', required: true })
   @ApiResponse({ status: 200, description: 'Profile', type: ProfileDto })
   @ApiResponse({ status: 400, description: 'Unauthorized' })
   async getProfile(@Param('userId') userId: number, @Req() req: Request): Promise<ProfileDto> {

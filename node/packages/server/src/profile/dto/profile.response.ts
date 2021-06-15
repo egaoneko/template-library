@@ -31,7 +31,7 @@ export class ProfileDto implements IProfile {
 
   @IsBoolean()
   @ApiProperty({
-    example: 'https://i.stack.imgur.com/xHWG8.jpg',
+    example: false,
     description: 'following',
     type: 'boolean',
   })

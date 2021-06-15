@@ -38,6 +38,7 @@ export class UserService {
             salt: createUserDto.salt,
           },
           {
+            transaction,
             ...options,
           },
         );

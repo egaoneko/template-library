@@ -58,6 +58,9 @@ describe('UserController', () => {
     const updateSpy = jest.spyOn(mockService, 'update');
     const actual = await controller.updateUser(dto);
     expect(actual.email).toBe(dto.email);
+    expect(actual.username).toBe(dto.username);
+    expect(actual.bio).toBe(dto.bio);
+    expect(actual.image).toBe(dto.image);
     expect(updateSpy).toHaveBeenCalledTimes(1);
 
     const { salt, password } = updateSpy.mock.calls[0][0] as UpdateUserDto;
@@ -78,6 +81,8 @@ class MockService {
       username: updateUserDto.username,
       password: updateUserDto.password,
       salt: updateUserDto.salt,
+      bio: updateUserDto.bio,
+      image: updateUserDto.image,
     });
   }
 }

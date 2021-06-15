@@ -11,7 +11,7 @@ const defaultOptions: SequelizeModuleOptions = {
   // database: 'postgres',
   // username: 'root',
   // password: 'root',
-  // port: 3306,
+  // port: 5432,
   autoLoadModels: true,
   synchronize: true,
   define: {
@@ -22,7 +22,10 @@ const defaultOptions: SequelizeModuleOptions = {
   },
   // timezone: 'UTC',
   logging: log => {
-    format(log);
+    if (process.env.NODE_ENV === 'test') {
+      return;
+    }
+    console.log(format(log));
   },
 };
 
