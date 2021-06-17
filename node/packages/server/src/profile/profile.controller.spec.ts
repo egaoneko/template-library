@@ -1,8 +1,5 @@
 import { Test, TestingModule } from '@nestjs/testing';
 import { ProfileController } from './profile.controller';
-import { createSequelize } from '../test/sequelize';
-import { User } from '../user/entities/user.entity';
-import { ProfileDto } from './dto/profile.response';
 import { ProfileService } from './profile.service';
 import { createMock } from '@golevelup/ts-jest';
 import { Request } from 'express';
@@ -10,13 +7,15 @@ import { UserDto } from '../user/dto/user.response';
 
 describe('ProfileController', () => {
   let controller: ProfileController;
+  let mockProfileService: ProfileService;
 
   beforeEach(async () => {
+    mockProfileService = createMock<ProfileService>();
     const module: TestingModule = await Test.createTestingModule({
       providers: [
         {
           provide: ProfileService,
-          useClass: MockProfileService,
+          useValue: mockProfileService,
         },
       ],
       controllers: [ProfileController],
@@ -37,42 +36,31 @@ describe('ProfileController', () => {
 
     const actual = await controller.getProfile(1, mockRequest);
     expect(actual).toBeDefined();
-    expect(actual.username).toBe('test');
-    expect(actual.following).toBe(true);
+    expect(mockProfileService.get).toBeCalledTimes(1);
+    expect(mockProfileService.get).toBeCalledWith(2, 1);
   });
 
-  it('should throw error with invalid id', async () => {
+  it('should be follow', async () => {
     const mockRequest = createMock<Request>();
-    mockRequest.user = new UserDto();
+    const user = new UserDto();
+    user.id = 2;
+    mockRequest.user = user;
 
-    await expect(controller.getProfile(2, mockRequest)).rejects.toThrowError('Not found profile');
+    const actual = await controller.follow(1, mockRequest);
+    expect(actual).toBeDefined();
+    expect(mockProfileService.followUser).toBeCalledTimes(1);
+    expect(mockProfileService.followUser).toBeCalledWith(2, 1);
+  });
+
+  it('should be unfollow', async () => {
+    const mockRequest = createMock<Request>();
+    const user = new UserDto();
+    user.id = 2;
+    mockRequest.user = user;
+
+    const actual = await controller.unfollow(1, mockRequest);
+    expect(actual).toBeDefined();
+    expect(mockProfileService.unfollowUser).toBeCalledTimes(1);
+    expect(mockProfileService.unfollowUser).toBeCalledWith(2, 1);
   });
 });
-
-class MockProfileService {
-  constructor() {
-    createSequelize({ models: [User] });
-  }
-
-  async get(id: number): Promise<ProfileDto | null> {
-    if (id !== 1) {
-      return null;
-    }
-
-    return ProfileDto.of(
-      new User({
-        id: 1,
-        email: 'test@test.com',
-        username: 'test',
-        password: 'token',
-        salt: 'salt',
-        bio: 'bio',
-        image: 'image',
-      }),
-    );
-  }
-
-  async isFollow(userId: number, followingUserId: number): Promise<boolean> {
-    return userId === 2 && followingUserId === 1;
-  }
-}

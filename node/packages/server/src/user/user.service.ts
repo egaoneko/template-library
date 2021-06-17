@@ -1,4 +1,4 @@
-import { BadRequestException, HttpException, HttpStatus, Injectable, NotFoundException } from '@nestjs/common';
+import { BadRequestException, HttpException, HttpStatus, Injectable } from '@nestjs/common';
 import { InjectConnection, InjectModel } from '@nestjs/sequelize';
 import { User } from './entities/user.entity';
 import { CreateUserDto } from '@user/dto/create-user.input';
@@ -75,7 +75,7 @@ export class UserService {
         const user = await this.findOne(updateUserDto.id, { transaction });
 
         if (!user) {
-          throw new NotFoundException('Not found user');
+          throw new BadRequestException('Not found user');
         }
 
         const [rows] = await this.userModel.update(updateUserDto, {
@@ -92,7 +92,7 @@ export class UserService {
 
         const updatedUser = await this.findOne(updateUserDto.id, { transaction });
         if (!updatedUser) {
-          throw new NotFoundException('Not found updated user');
+          throw new BadRequestException('Not found updated user');
         }
 
         return updatedUser;

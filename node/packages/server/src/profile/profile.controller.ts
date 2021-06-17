@@ -1,5 +1,5 @@
-import { Controller, Get, NotFoundException, Param, Req } from '@nestjs/common';
-import { ApiHeader, ApiOperation, ApiResponse, ApiTags } from '@nestjs/swagger';
+import { Controller, Delete, Get, Param, Post, Req } from '@nestjs/common';
+import { ApiHeader, ApiOperation, ApiParam, ApiResponse, ApiTags } from '@nestjs/swagger';
 import { ProfileDto } from '@root/profile/dto/profile.response';
 import { Request } from 'express';
 import { ProfileService } from '@root/profile/profile.service';
@@ -13,18 +13,30 @@ export class ProfileController {
   @Get('/:userId')
   @ApiOperation({ summary: 'get user profile' })
   @ApiHeader({ name: 'Authorization', description: 'jwt token', required: true })
+  @ApiParam({ name: 'userId', description: 'user id of profile', type: 'number' })
   @ApiResponse({ status: 200, description: 'Profile', type: ProfileDto })
   @ApiResponse({ status: 400, description: 'Unauthorized' })
   async getProfile(@Param('userId') userId: number, @Req() req: Request): Promise<ProfileDto> {
-    const profile = await this.profileService.get(userId);
+    return this.profileService.get((req.user as UserDto).id, userId);
+  }
 
-    if (!profile) {
-      throw new NotFoundException('Not found profile');
-    }
+  @Post('/:userId/follow')
+  @ApiOperation({ summary: 'follow user' })
+  @ApiHeader({ name: 'Authorization', description: 'jwt token', required: true })
+  @ApiParam({ name: 'userId', description: 'user id to follow', type: 'number' })
+  @ApiResponse({ status: 200, description: 'Profile', type: ProfileDto })
+  @ApiResponse({ status: 400, description: 'Unauthorized' })
+  async follow(@Param('userId') userId: number, @Req() req: Request): Promise<ProfileDto> {
+    return this.profileService.followUser((req.user as UserDto).id, userId);
+  }
 
-    const user = req.user as UserDto;
-    profile.following = await this.profileService.isFollow(user.id, userId);
-
-    return profile;
+  @Delete('/:userId/follow')
+  @ApiOperation({ summary: 'unfollow user' })
+  @ApiHeader({ name: 'Authorization', description: 'jwt token', required: true })
+  @ApiParam({ name: 'userId', description: 'user id to unfollow', type: 'number' })
+  @ApiResponse({ status: 200, description: 'Profile', type: ProfileDto })
+  @ApiResponse({ status: 400, description: 'Unauthorized' })
+  async unfollow(@Param('userId') userId: number, @Req() req: Request): Promise<ProfileDto> {
+    return this.profileService.unfollowUser((req.user as UserDto).id, userId);
   }
 }

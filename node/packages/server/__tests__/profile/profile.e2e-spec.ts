@@ -31,10 +31,6 @@ describe('ProfileController (e2e)', () => {
     return request(app.getHttpServer())
       .get(`/api/profiles/${user2.id}`)
       .set('Authorization', `Bearer ${dto.token}`)
-      .send({
-        email: 'test@test.com',
-        password: '1234',
-      })
       .expect(200)
       .expect(({ body }) => {
         expect(body.username).toBe(user2.username);
@@ -50,14 +46,109 @@ describe('ProfileController (e2e)', () => {
     return request(app.getHttpServer())
       .get(`/api/profiles/${user2.id}`)
       .set('Authorization', `Bearer ${dto.token}`)
-      .send({
-        email: 'test@test.com',
-        password: '1234',
-      })
       .expect(200)
       .expect(({ body }) => {
         expect(body.username).toBe(user2.username);
         expect(body.following).toBeFalsy();
+      });
+  });
+
+  it('/api/profiles/:userId (Get) empty user', async () => {
+    const user1 = await createTestUser(app, 'test1@test.com');
+    const dto = await getTestUserDto(app, user1);
+
+    return request(app.getHttpServer())
+      .get(`/api/profiles/2`)
+      .set('Authorization', `Bearer ${dto.token}`)
+      .expect(400)
+      .expect(({ body }) => {
+        expect(body.message).toBe('Not found user');
+      });
+  });
+
+  it('/api/profiles/:userId/follow (Post) follow user', async () => {
+    const user1 = await createTestUser(app, 'test1@test.com');
+    const user2 = await createTestUser(app, 'test2@test.com');
+    const dto = await getTestUserDto(app, user1);
+
+    return request(app.getHttpServer())
+      .post(`/api/profiles/${user2.id}/follow`)
+      .set('Authorization', `Bearer ${dto.token}`)
+      .expect(201)
+      .expect(({ body }) => {
+        expect(body.username).toBe(user2.username);
+        expect(body.following).toBeTruthy();
+      });
+  });
+
+  it('/api/profiles/:userId/follow (Post) empty user', async () => {
+    const user1 = await createTestUser(app, 'test1@test.com');
+    const dto = await getTestUserDto(app, user1);
+
+    return request(app.getHttpServer())
+      .post(`/api/profiles/2/follow`)
+      .set('Authorization', `Bearer ${dto.token}`)
+      .expect(400)
+      .expect(({ body }) => {
+        expect(body.message).toBe('Invalid user params');
+      });
+  });
+
+  it('/api/profiles/:userId/follow (Post) already followed', async () => {
+    const user1 = await createTestUser(app, 'test1@test.com');
+    const user2 = await createTestUser(app, 'test2@test.com');
+    const dto = await getTestUserDto(app, user1);
+    await testFollowing(app, user1, user2);
+
+    return request(app.getHttpServer())
+      .post(`/api/profiles/${user2.id}/follow`)
+      .set('Authorization', `Bearer ${dto.token}`)
+      .expect(400)
+      .expect(({ body }) => {
+        expect(body.message).toBe('Already followed user');
+      });
+  });
+
+  it('/api/profiles/:userId/follow (Delete) unfollow user', async () => {
+    const user1 = await createTestUser(app, 'test1@test.com');
+    const user2 = await createTestUser(app, 'test2@test.com');
+    const dto = await getTestUserDto(app, user1);
+    await testFollowing(app, user1, user2);
+
+    return request(app.getHttpServer())
+      .delete(`/api/profiles/${user2.id}/follow`)
+      .set('Authorization', `Bearer ${dto.token}`)
+      .expect(200)
+      .expect(({ body }) => {
+        expect(body.username).toBe(user2.username);
+        expect(body.following).toBeFalsy();
+      });
+  });
+
+  it('/api/profiles/:userId/follow (Delete) empty user', async () => {
+    const user1 = await createTestUser(app, 'test1@test.com');
+    const dto = await getTestUserDto(app, user1);
+
+    return request(app.getHttpServer())
+      .delete(`/api/profiles/2/follow`)
+      .set('Authorization', `Bearer ${dto.token}`)
+      .expect(400)
+      .expect(({ body }) => {
+        expect(body.message).toBe('Invalid user params');
+      });
+  });
+
+  it('/api/profiles/:userId/follow (Delete) already unfollowed', async () => {
+    const user1 = await createTestUser(app, 'test1@test.com');
+    const user2 = await createTestUser(app, 'test2@test.com');
+    const dto = await getTestUserDto(app, user1);
+
+    return request(app.getHttpServer())
+      .delete(`/api/profiles/${user2.id}/follow`)
+      .set('Authorization', `Bearer ${dto.token}`)
+      .expect(400)
+      .expect(({ body }) => {
+        expect(body.message).toBe('Already unfollowed user');
       });
   });
 });
