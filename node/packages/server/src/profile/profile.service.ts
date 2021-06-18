@@ -16,20 +16,28 @@ export class ProfileService {
     private readonly sequelize: Sequelize,
   ) {}
 
-  async get(userId: number, targetUserId: number, options?: { transaction: Transaction }): Promise<ProfileDto> {
-    const user = await this.userService.findOne(targetUserId, options);
+  async get(userId: number, followingUserId: number, options?: { transaction: Transaction }): Promise<ProfileDto> {
+    if (userId === followingUserId) {
+      throw new BadRequestException('Invalid params(same user)');
+    }
+
+    const user = await this.userService.findOne(followingUserId, options);
 
     if (!user) {
       throw new BadRequestException('Not found user');
     }
 
     const profile = ProfileDto.of(user);
-    profile.following = await this.isFollow(userId, targetUserId, options);
+    profile.following = await this.isFollow(userId, followingUserId, options);
 
     return profile;
   }
 
   async isFollow(userId: number, followingUserId: number, options?: { transaction: Transaction }): Promise<boolean> {
+    if (userId === followingUserId) {
+      throw new BadRequestException('Invalid params(same user)');
+    }
+
     const follow = await this.followModel.findOne({
       where: {
         userId,
@@ -45,6 +53,10 @@ export class ProfileService {
     followingUserId: number,
     options?: { transaction: Transaction },
   ): Promise<ProfileDto> {
+    if (userId === followingUserId) {
+      throw new BadRequestException('Invalid params(same user)');
+    }
+
     return await this.sequelize.transaction<ProfileDto>(async transaction => {
       try {
         if (!(await this.isValidUsers(userId, followingUserId, { transaction, ...options }))) {
@@ -92,6 +104,10 @@ export class ProfileService {
     unfollowingUserId: number,
     options?: { transaction: Transaction },
   ): Promise<ProfileDto> {
+    if (userId === unfollowingUserId) {
+      throw new BadRequestException('Invalid params(same user)');
+    }
+
     return await this.sequelize.transaction<ProfileDto>(async transaction => {
       try {
         if (!(await this.isValidUsers(userId, unfollowingUserId, { transaction, ...options }))) {

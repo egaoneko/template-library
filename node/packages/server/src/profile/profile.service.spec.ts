@@ -70,6 +70,10 @@ describe('ProfileService', () => {
     await expect(service.get(1, 2)).rejects.toThrowError('Not found user');
   });
 
+  it('should not be get with same user', async () => {
+    await expect(service.get(1, 1)).rejects.toThrowError('Invalid params(same user)');
+  });
+
   it('isFollow should return true', async () => {
     const user1 = await User.create({
       email: 'test1@test.com',
@@ -95,6 +99,10 @@ describe('ProfileService', () => {
   it('isFollow should return false', async () => {
     const actual = await service.isFollow(1, 2);
     expect(actual).toBeFalsy();
+  });
+
+  it('should not be isFollow with same user', async () => {
+    await expect(service.isFollow(1, 1)).rejects.toThrowError('Invalid params(same user)');
   });
 
   it('should be following', async () => {
@@ -148,6 +156,10 @@ describe('ProfileService', () => {
     await expect(service.followUser(user1.id, user2.id)).rejects.toThrowError('Already followed user');
   });
 
+  it('should not be followUser with same user', async () => {
+    await expect(service.followUser(1, 1)).rejects.toThrowError('Invalid params(same user)');
+  });
+
   it('should be unfollowing', async () => {
     const user1 = await User.create({
       email: 'test1@test.com',
@@ -197,6 +209,10 @@ describe('ProfileService', () => {
     });
 
     await expect(service.unfollowUser(user1.id, user2.id)).rejects.toThrowError('Already unfollowed user');
+  });
+
+  it('should not be unfollowUser with same user', async () => {
+    await expect(service.unfollowUser(1, 1)).rejects.toThrowError('Invalid params(same user)');
   });
 });
 
