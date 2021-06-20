@@ -2,7 +2,7 @@ import { BadRequestException, HttpException, HttpStatus, Injectable } from '@nes
 import { InjectConnection, InjectModel } from '@nestjs/sequelize';
 import { User } from './entities/user.entity';
 import { CreateUserDto } from '@user/dto/create-user.input';
-import { DEFAULT_DATABASE_NAME } from '@common/constants/database';
+import { DEFAULT_DATABASE_NAME } from '@config/constants/database';
 import { validate } from 'class-validator';
 import { UpdateUserDto } from '@user/dto/update-user.input';
 import { Sequelize, Transaction } from 'sequelize';

@@ -1,5 +1,5 @@
 import { INestApplication } from '@nestjs/common';
-import { DEFAULT_DATABASE_NAME } from '@common/constants/database';
+import { DEFAULT_DATABASE_NAME } from '@config/constants/database';
 import { Follow } from '@root/profile/entities/follow.entity';
 import { getConnectionToken } from '@nestjs/sequelize/dist/common/sequelize.utils';
 

@@ -5,9 +5,9 @@ import { createMock } from '@golevelup/ts-jest';
 import { Request } from 'express';
 import { UserDto } from './dto/user.response';
 import { UpdateUserDto, UpdateUserRequestDto } from './dto/update-user.input';
-import { isSamePassword } from '../common/utils/crypto';
 import { User } from './entities/user.entity';
 import { createSequelize } from '../test/sequelize';
+import { Crypto } from '../shared/crypto/crypto';
 
 describe('UserController', () => {
   let controller: UserController;
@@ -64,7 +64,7 @@ describe('UserController', () => {
     expect(updateSpy).toHaveBeenCalledTimes(1);
 
     const { salt, password } = updateSpy.mock.calls[0][0] as UpdateUserDto;
-    const isEqual = await isSamePassword(salt, dto.password, password);
+    const isEqual = await Crypto.isSamePassword(salt, dto.password, password);
     expect(isEqual).toBeTruthy();
   });
 });

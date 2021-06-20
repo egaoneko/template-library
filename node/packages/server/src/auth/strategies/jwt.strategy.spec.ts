@@ -2,9 +2,9 @@ import { Test, TestingModule } from '@nestjs/testing';
 import { JwtStrategy } from './jwt.strategy';
 import { createSequelize } from '@root/test/sequelize';
 import { User } from '@user/entities/user.entity';
-import { encryptedPassword, generateSalt } from '../../common/utils/crypto';
 import { UserService } from '@user/user.service';
 import { IJwtPayload } from '@auth/interfaces/jwt.interface';
+import { Crypto } from '@shared/crypto/crypto';
 
 describe('JwtStrategy', () => {
   let strategy: JwtStrategy;
@@ -46,8 +46,8 @@ class MockService {
     if (email !== 'test@test.com') {
       return null;
     }
-    const salt = await generateSalt();
-    const password = await encryptedPassword(salt, '1234');
+    const salt = await Crypto.generateSalt();
+    const password = await Crypto.encryptedPassword(salt, '1234');
     return new User({
       username: 'test',
       password,

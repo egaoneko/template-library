@@ -1,9 +1,9 @@
 import { Injectable, UnauthorizedException } from '@nestjs/common';
 import { JwtService } from '@nestjs/jwt';
 import { UserService } from '@user/user.service';
-import { isSamePassword } from '@common/utils/crypto';
 import { IJwtPayload } from '@auth/interfaces/jwt.interface';
 import { UserDto } from '@user/dto/user.response';
+import { Crypto } from '@shared/crypto/crypto';
 
 @Injectable()
 export class AuthService {
@@ -16,7 +16,7 @@ export class AuthService {
       throw new UnauthorizedException('Not found user');
     }
 
-    if (!(await isSamePassword(user.salt, password, user.password))) {
+    if (!(await Crypto.isSamePassword(user.salt, password, user.password))) {
       throw new UnauthorizedException('Invalid password');
     }
 

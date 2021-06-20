@@ -6,8 +6,8 @@ import { User } from '@user/entities/user.entity';
 import { UserService } from '@user/user.service';
 import { RegisterDto } from '@auth/dto/register.input';
 import { CreateUserDto } from '@user/dto/create-user.input';
-import { isSamePassword } from '../common/utils/crypto';
 import { createMock } from '@golevelup/ts-jest';
+import { Crypto } from '@shared/crypto/crypto';
 
 describe('AuthController', () => {
   let controller: AuthController;
@@ -44,7 +44,7 @@ describe('AuthController', () => {
     expect(createSpy).toHaveBeenCalledTimes(1);
 
     const { salt, password } = createSpy.mock.calls[0][0] as CreateUserDto;
-    const isEqual = await isSamePassword(salt, expected.password, password);
+    const isEqual = await Crypto.isSamePassword(salt, expected.password, password);
     expect(isEqual).toBeTruthy();
   });
 

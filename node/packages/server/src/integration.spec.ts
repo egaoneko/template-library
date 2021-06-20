@@ -3,7 +3,7 @@ import { filesOfProject } from 'tsarch';
 import fs from 'fs';
 import path from 'path';
 
-const base = ['common', 'config'];
+const base = ['shared', 'config', 'test', 'user'];
 
 describe('architecture', () => {
   jest.setTimeout(60000);

@@ -17,7 +17,7 @@
     "incremental": true,
     "paths": {
       "@root/*": ["./src/*"],
-      "@common/*": ["./src/common/*"],
+      "@shared/*": ["./src/shared/*"],
       "@config/*": ["./src/config/*"],
       "@auth/*": ["./src/auth/*"],
       "@user/*": ["./src/user/*"]

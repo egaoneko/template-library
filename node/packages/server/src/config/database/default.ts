@@ -1,5 +1,5 @@
 import { SequelizeModuleOptions } from '@nestjs/sequelize/dist/interfaces/sequelize-options.interface';
-import { DEFAULT_DATABASE_NAME, SQLITE_STORAGE_PATH } from '@common/constants/database';
+import { DEFAULT_DATABASE_NAME, SQLITE_STORAGE_PATH } from '@config/constants/database';
 import { format } from 'sql-formatter';
 
 const defaultOptions: SequelizeModuleOptions = {

@@ -4,7 +4,7 @@ import { User } from './entities/user.entity';
 import { createSequelize } from '@root/test/sequelize';
 import { getModelToken } from '@nestjs/sequelize';
 import { CreateUserDto } from '@user/dto/create-user.input';
-import { DEFAULT_DATABASE_NAME } from '@common/constants/database';
+import { DEFAULT_DATABASE_NAME } from '@config/constants/database';
 import { UpdateUserDto } from './dto/update-user.input';
 import { getConnectionToken } from '@nestjs/sequelize/dist/common/sequelize.utils';
 

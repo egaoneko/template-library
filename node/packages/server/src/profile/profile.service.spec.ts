@@ -3,7 +3,7 @@ import { ProfileService } from './profile.service';
 import { createSequelize } from '../test/sequelize';
 import { User } from '../user/entities/user.entity';
 import { getModelToken } from '@nestjs/sequelize';
-import { DEFAULT_DATABASE_NAME } from '../common/constants/database';
+import { DEFAULT_DATABASE_NAME } from '../config/constants/database';
 import { Follow } from './entities/follow.entity';
 import { UserService } from '../user/user.service';
 import { getConnectionToken } from '@nestjs/sequelize/dist/common/sequelize.utils';

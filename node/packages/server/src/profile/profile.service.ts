@@ -2,7 +2,7 @@ import { BadRequestException, HttpException, HttpStatus, Injectable } from '@nes
 import { ProfileDto } from '@root/profile/dto/profile.response';
 import { UserService } from '@user/user.service';
 import { InjectConnection, InjectModel } from '@nestjs/sequelize';
-import { DEFAULT_DATABASE_NAME } from '@common/constants/database';
+import { DEFAULT_DATABASE_NAME } from '@config/constants/database';
 import { Follow } from '@root/profile/entities/follow.entity';
 import { Sequelize, Transaction } from 'sequelize';
 

@@ -11,9 +11,17 @@ import defaultOptions from '@config/database/default';
 import { APP_GUARD } from '@nestjs/core';
 import { JwtAuthGuard } from '@auth/guards/jwt-auth.guard';
 import { ProfileModule } from './profile/profile.module';
+import { SharedModule } from '@shared/shared.module';
 
 @Module({
-  imports: [ConfigModule.forRoot(), SequelizeModule.forRoot(defaultOptions), UserModule, AuthModule, ProfileModule],
+  imports: [
+    ConfigModule.forRoot(),
+    SequelizeModule.forRoot(defaultOptions),
+    UserModule,
+    AuthModule,
+    ProfileModule,
+    SharedModule,
+  ],
   controllers: [AppController],
   providers: [
     AppService,

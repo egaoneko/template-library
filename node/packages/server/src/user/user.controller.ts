@@ -4,7 +4,7 @@ import { UserDto } from '@user/dto/user.response';
 import { ApiBody, ApiHeader, ApiOperation, ApiResponse, ApiTags } from '@nestjs/swagger';
 import { Request } from 'express';
 import { UpdateUserDto, UpdateUserRequestDto } from '@user/dto/update-user.input';
-import { encryptedPassword, generateSalt } from '@common/utils/crypto';
+import { Crypto } from '@shared/crypto/crypto';
 
 @ApiTags('user')
 @Controller('/api/users')
@@ -15,7 +15,7 @@ export class UserController {
   @ApiOperation({ summary: 'get current user' })
   @ApiHeader({ name: 'Authorization', description: 'jwt token', required: true })
   @ApiResponse({ status: 200, description: 'User', type: UserDto })
-  @ApiResponse({ status: 400, description: 'Unauthorized' })
+  @ApiResponse({ status: 401, description: 'Unauthorized' })
   async getCurrentUser(@Req() req: Request): Promise<Express.User | undefined> {
     return req.user;
   }
@@ -25,7 +25,7 @@ export class UserController {
   @ApiHeader({ name: 'Authorization', description: 'jwt token', required: true })
   @ApiBody({ description: 'update user body', type: UpdateUserRequestDto })
   @ApiResponse({ status: 200, description: 'User', type: UserDto })
-  @ApiResponse({ status: 400, description: 'Unauthorized' })
+  @ApiResponse({ status: 401, description: 'Unauthorized' })
   async updateUser(@Body() updateUserRequestDto: UpdateUserRequestDto): Promise<UserDto> {
     const dto = new UpdateUserDto();
     dto.id = updateUserRequestDto.id;
@@ -35,8 +35,8 @@ export class UserController {
     dto.image = updateUserRequestDto.image;
 
     if (updateUserRequestDto.password) {
-      const salt = await generateSalt();
-      const password = await encryptedPassword(salt, updateUserRequestDto.password);
+      const salt = await Crypto.generateSalt();
+      const password = await Crypto.encryptedPassword(salt, updateUserRequestDto.password);
       dto.salt = salt;
       dto.password = password;
     }
