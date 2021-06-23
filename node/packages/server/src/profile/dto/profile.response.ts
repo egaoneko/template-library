@@ -37,11 +37,4 @@ export class ProfileDto implements IProfile {
   })
   following!: boolean;
 
-  static of(user: User): ProfileDto {
-    const dto = new ProfileDto();
-    dto.username = user.username;
-    dto.bio = user.bio;
-    dto.image = user.image;
-    return dto;
-  }
 }

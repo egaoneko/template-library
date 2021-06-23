@@ -41,7 +41,7 @@ export class UserController {
       dto.password = password;
     }
 
-    const model = await this.usersService.update(dto);
-    return model.toDto();
+    const user = await this.usersService.update(dto);
+    return this.usersService.ofUserDto(user);
   }
 }

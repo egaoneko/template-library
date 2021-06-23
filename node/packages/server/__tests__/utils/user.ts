@@ -5,6 +5,7 @@ import { UserDto } from '@user/dto/user.response';
 import { DEFAULT_DATABASE_NAME } from '@config/constants/database';
 import { getModelToken } from '@nestjs/sequelize';
 import { Crypto } from '@shared/crypto/crypto';
+import { UserService } from '@user/user.service';
 
 export async function createTestUser(app: INestApplication, email: string = 'test@test.com'): Promise<User> {
   const model = app.get<typeof User>(getModelToken(User, DEFAULT_DATABASE_NAME));
@@ -19,7 +20,8 @@ export async function createTestUser(app: INestApplication, email: string = 'tes
 }
 
 export async function getTestUserDto(app: INestApplication, user: User): Promise<UserDto> {
-  const dto = user.toDto();
+  const userService = app.get<UserService>(UserService);
+  const dto = await userService.ofUserDto(user);
   const res = await request(app.getHttpServer()).post('/api/auth/login').send({
     email: user.email,
     password: '1234',

@@ -23,6 +23,6 @@ export class JwtStrategy extends PassportStrategy(Strategy) {
       throw new UnauthorizedException('Not found user');
     }
 
-    return user.toDto();
+    return this.userService.ofUserDto(user);
   }
 }

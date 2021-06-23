@@ -6,10 +6,14 @@ import { DEFAULT_DATABASE_NAME } from '@config/constants/database';
 import { validate } from 'class-validator';
 import { UpdateUserDto } from '@user/dto/update-user.input';
 import { Sequelize, Transaction } from 'sequelize';
+import { UserDto } from '@user/dto/user.response';
+import { FileService } from '@shared/file/file.service';
 
 @Injectable()
 export class UserService {
   constructor(
+    private readonly fileService: FileService,
+
     @InjectModel(User, DEFAULT_DATABASE_NAME)
     private readonly userModel: typeof User,
     @InjectConnection(DEFAULT_DATABASE_NAME)
@@ -101,5 +105,19 @@ export class UserService {
         throw e;
       }
     });
+  }
+
+  async ofUserDto(entity: User): Promise<UserDto> {
+    const dto = new UserDto();
+    dto.id = entity.id;
+    dto.email = entity.email;
+    dto.username = entity.username;
+    dto.bio = entity.bio;
+
+    if (entity.image) {
+      dto.image = this.fileService.getFilePath(entity.image);
+    }
+
+    return dto;
   }
 }

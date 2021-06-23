@@ -1,20 +1,20 @@
 import { Test, TestingModule } from '@nestjs/testing';
 import { JwtStrategy } from './jwt.strategy';
-import { createSequelize } from '@root/test/sequelize';
-import { User } from '@user/entities/user.entity';
 import { UserService } from '@user/user.service';
 import { IJwtPayload } from '@auth/interfaces/jwt.interface';
-import { Crypto } from '@shared/crypto/crypto';
+import { createMock } from '@golevelup/ts-jest';
 
 describe('JwtStrategy', () => {
   let strategy: JwtStrategy;
+  let mockUserService: UserService;
 
   beforeEach(async () => {
+    mockUserService = createMock<UserService>();
     const module: TestingModule = await Test.createTestingModule({
       providers: [
         {
           provide: UserService,
-          useClass: MockService,
+          useValue: mockUserService,
         },
         JwtStrategy,
       ],
@@ -33,26 +33,9 @@ describe('JwtStrategy', () => {
       username: 'test',
     } as IJwtPayload;
     const actual = await strategy.validate(payload);
-    expect(actual.email).toBe(payload.email);
+    expect(actual).toBeDefined();
+    expect(mockUserService.findOneByEmail).toBeCalledTimes(1);
+    expect(mockUserService.findOneByEmail).toBeCalledWith(payload.email);
+    expect(mockUserService.ofUserDto).toBeCalledTimes(1);
   });
 });
-
-class MockService {
-  constructor() {
-    createSequelize({ models: [User] });
-  }
-
-  async findOneByEmail(email: string): Promise<User | null> {
-    if (email !== 'test@test.com') {
-      return null;
-    }
-    const salt = await Crypto.generateSalt();
-    const password = await Crypto.encryptedPassword(salt, '1234');
-    return new User({
-      username: 'test',
-      password,
-      salt,
-      email,
-    });
-  }
-}

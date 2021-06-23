@@ -15,7 +15,7 @@ import { DEFAULT_DATABASE_NAME } from '@config/constants/database';
     SequelizeModule.forFeature([File], DEFAULT_DATABASE_NAME),
   ],
   providers: [FileService, Crypto],
-  exports: [Crypto],
+  exports: [FileService, Crypto],
   controllers: [FileController],
 })
 export class SharedModule {}

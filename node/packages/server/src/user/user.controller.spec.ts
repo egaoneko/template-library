@@ -8,18 +8,19 @@ import { UpdateUserDto, UpdateUserRequestDto } from './dto/update-user.input';
 import { User } from './entities/user.entity';
 import { createSequelize } from '../test/sequelize';
 import { Crypto } from '../shared/crypto/crypto';
+import Mock = jest.Mock;
 
 describe('UserController', () => {
   let controller: UserController;
-  let mockService: MockService;
+  let mockUserService: UserService;
 
   beforeEach(async () => {
-    mockService = new MockService();
+    mockUserService = createMock<UserService>();
     const module: TestingModule = await Test.createTestingModule({
       providers: [
         {
           provide: UserService,
-          useValue: mockService,
+          useValue: mockUserService,
         },
       ],
       controllers: [UserController],
@@ -53,17 +54,14 @@ describe('UserController', () => {
     dto.username = 'test1';
     dto.password = 'token1';
     dto.bio = 'bio1';
-    dto.image = 'image1';
+    dto.image = 1;
 
-    const updateSpy = jest.spyOn(mockService, 'update');
     const actual = await controller.updateUser(dto);
-    expect(actual.email).toBe(dto.email);
-    expect(actual.username).toBe(dto.username);
-    expect(actual.bio).toBe(dto.bio);
-    expect(actual.image).toBe(dto.image);
-    expect(updateSpy).toHaveBeenCalledTimes(1);
+    expect(actual).toBeDefined();
+    expect(mockUserService.update).toBeCalledTimes(1);
+    expect(mockUserService.ofUserDto).toBeCalledTimes(1);
 
-    const { salt, password } = updateSpy.mock.calls[0][0] as UpdateUserDto;
+    const { salt, password } = (mockUserService.update as Mock).mock.calls[0][0] as UpdateUserDto;
     const isEqual = await Crypto.isSamePassword(salt, dto.password, password);
     expect(isEqual).toBeTruthy();
   });

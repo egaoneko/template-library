@@ -1,4 +1,8 @@
-import { MiddlewareConsumer, Module, NestModule } from '@nestjs/common';
+import {
+  MiddlewareConsumer,
+  Module,
+  NestModule
+} from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config';
 import { SequelizeModule } from '@nestjs/sequelize';
 import helmet from 'helmet';
@@ -12,10 +16,15 @@ import { APP_GUARD } from '@nestjs/core';
 import { JwtAuthGuard } from '@auth/guards/jwt-auth.guard';
 import { ProfileModule } from './profile/profile.module';
 import { SharedModule } from '@shared/shared.module';
+import configuration from '@config/configuration';
 
 @Module({
   imports: [
-    ConfigModule.forRoot(),
+    ConfigModule.forRoot({
+      ignoreEnvFile: true,
+      isGlobal: true,
+      load: [configuration],
+    }),
     SequelizeModule.forRoot(defaultOptions),
     UserModule,
     AuthModule,

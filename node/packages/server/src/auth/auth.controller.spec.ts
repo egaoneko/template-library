@@ -1,20 +1,19 @@
 import { Test, TestingModule } from '@nestjs/testing';
 import { AuthController } from './auth.controller';
 import { Request } from 'express';
-import { createSequelize } from '@root/test/sequelize';
-import { User } from '@user/entities/user.entity';
 import { UserService } from '@user/user.service';
 import { RegisterDto } from '@auth/dto/register.input';
 import { CreateUserDto } from '@user/dto/create-user.input';
 import { createMock } from '@golevelup/ts-jest';
 import { Crypto } from '@shared/crypto/crypto';
+import Mock = jest.Mock;
 
 describe('AuthController', () => {
   let controller: AuthController;
-  let mockUserService: MockService;
+  let mockUserService: UserService;
 
   beforeEach(async () => {
-    mockUserService = new MockService();
+    mockUserService = createMock<UserService>();
     const module: TestingModule = await Test.createTestingModule({
       providers: [
         {
@@ -38,12 +37,11 @@ describe('AuthController', () => {
     expected.username = 'test';
     expected.password = '1234';
 
-    const createSpy = jest.spyOn(mockUserService, 'create');
     const actual = await controller.register(expected);
-    expect(actual.email).toBe(expected.email);
-    expect(createSpy).toHaveBeenCalledTimes(1);
+    expect(actual).toBeDefined();
+    expect(mockUserService.create).toBeCalledTimes(1);
 
-    const { salt, password } = createSpy.mock.calls[0][0] as CreateUserDto;
+    const { salt, password } = (mockUserService.create as Mock).mock.calls[0][0] as CreateUserDto;
     const isEqual = await Crypto.isSamePassword(salt, expected.password, password);
     expect(isEqual).toBeTruthy();
   });
@@ -56,30 +54,3 @@ describe('AuthController', () => {
     expect(actual).toBe(expected);
   });
 });
-
-class MockService {
-  constructor() {
-    createSequelize({ models: [User] });
-  }
-
-  async create(createUserDto: CreateUserDto): Promise<User> {
-    return new User({
-      email: createUserDto.email,
-      username: createUserDto.username,
-      password: createUserDto.password,
-      salt: createUserDto.salt,
-    });
-  }
-
-  async findOneByEmail(email: string): Promise<User | null> {
-    if (email !== 'test@test.com') {
-      return null;
-    }
-    return new User({
-      username: 'test',
-      password: 'password',
-      salt: 'salt',
-      email,
-    });
-  }
-}

@@ -4,6 +4,7 @@ import { createMock } from '@golevelup/ts-jest';
 import { getModelToken } from '@nestjs/sequelize';
 import { DEFAULT_DATABASE_NAME } from '../../config/constants/database';
 import { File } from './entities/file.entity';
+import { ConfigService } from '@nestjs/config';
 
 describe('FileService', () => {
   let service: FileService;
@@ -16,6 +17,20 @@ describe('FileService', () => {
         {
           provide: getModelToken(File, DEFAULT_DATABASE_NAME),
           useValue: mockFileModel,
+        },
+        {
+          provide: ConfigService,
+          useValue: {
+            get: jest.fn((key: string) => {
+              if (key === 'http.port') {
+                return 8080;
+              } else if (key == 'http.host') {
+                return 'http://localhost';
+              } else {
+                return null;
+              }
+            })
+          },
         },
         FileService,
       ],
@@ -69,5 +84,10 @@ describe('FileService', () => {
       },
       {},
     );
+  });
+
+  it('should be return file path', async () => {
+    const actual = await service.getFilePath(1);
+    expect(actual).toBe('http://localhost:8080/api/file/1');
   });
 });

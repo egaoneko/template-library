@@ -3,9 +3,9 @@ import Graceful from 'node-graceful';
 import { AppModule } from './app.module';
 import { AllExceptionsFilter } from './all-exceptions.filter';
 import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
+import { ConfigService } from '@nestjs/config';
 
 Graceful.captureExceptions = true;
-const port = 8080;
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule, {
@@ -26,6 +26,8 @@ async function bootstrap() {
   });
   SwaggerModule.setup('docs', app, document);
 
+  const configService: ConfigService = app.get(ConfigService);
+  const port = configService.get<number>('http.port') ?? 8080;
   const server = await app.listen(port, () => console.log(`Service listening on port ${port}!`));
 
   Graceful.on('exit', async () => {

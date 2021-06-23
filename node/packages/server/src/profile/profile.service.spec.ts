@@ -7,6 +7,7 @@ import { DEFAULT_DATABASE_NAME } from '../config/constants/database';
 import { Follow } from './entities/follow.entity';
 import { UserService } from '../user/user.service';
 import { getConnectionToken } from '@nestjs/sequelize/dist/common/sequelize.utils';
+import { FileService } from '../shared/file/file.service';
 
 describe('ProfileService', () => {
   let service: ProfileService;
@@ -22,6 +23,12 @@ describe('ProfileService', () => {
         {
           provide: UserService,
           useClass: MockService,
+        },
+        {
+          provide: FileService,
+          useValue: {
+            getFilePath: jest.fn((fileId: string) => `http://localhost:8080/api/file/${fileId}`)
+          },
         },
         {
           provide: getModelToken(Follow, DEFAULT_DATABASE_NAME),
@@ -213,6 +220,21 @@ describe('ProfileService', () => {
 
   it('should not be unfollowUser with same user', async () => {
     await expect(service.unfollowUser(1, 1)).rejects.toThrowError('Invalid params(same user)');
+  });
+
+  it('should return userDto', async () => {
+    const user = await User.create({
+      email: 'test@test.com',
+      username: 'test',
+      password: '1234',
+      salt: 'salt',
+      bio: 'bio',
+      image: 1,
+    });
+    const actual = await service.ofProfileDto(user);
+    expect(actual.username).toBe(user.username);
+    expect(actual.bio).toBe(user.bio);
+    expect(actual.image).toBe(`http://localhost:8080/api/file/${user.image}`);
   });
 });
 

@@ -5,9 +5,10 @@ import { UserModule } from '@user/user.module';
 import { SequelizeModule } from '@nestjs/sequelize';
 import { DEFAULT_DATABASE_NAME } from '@config/constants/database';
 import { Follow } from '@root/profile/entities/follow.entity';
+import { SharedModule } from '@shared/shared.module';
 
 @Module({
-  imports: [UserModule, SequelizeModule.forFeature([Follow], DEFAULT_DATABASE_NAME)],
+  imports: [SharedModule, UserModule, SequelizeModule.forFeature([Follow], DEFAULT_DATABASE_NAME)],
   providers: [ProfileService],
   controllers: [ProfileController],
 })

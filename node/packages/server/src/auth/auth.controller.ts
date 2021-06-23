@@ -5,7 +5,13 @@ import { CreateUserDto } from '@user/dto/create-user.input';
 import { RegisterDto } from './dto/register.input';
 import { UserService } from '@user/user.service';
 import { NoAuth } from '@auth/decorators/auth';
-import { ApiBody, ApiOperation, ApiResponse, ApiTags } from '@nestjs/swagger';
+import {
+  ApiBody,
+  ApiHeader,
+  ApiOperation,
+  ApiResponse,
+  ApiTags
+} from '@nestjs/swagger';
 import { UserDto } from '@user/dto/user.response';
 import { LoginDto } from '@auth/dto/login.input';
 import { Crypto } from '@shared/crypto/crypto';
@@ -31,8 +37,8 @@ export class AuthController {
     dto.salt = salt;
     dto.password = password;
 
-    const model = await this.usersService.create(dto);
-    return model.toDto();
+    const user = await this.usersService.create(dto);
+    return this.usersService.ofUserDto(user);
   }
 
   @NoAuth()

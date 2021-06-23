@@ -20,7 +20,7 @@ export class AuthService {
       throw new UnauthorizedException('Invalid password');
     }
 
-    return this.login(user.toDto());
+    return this.login(await this.userService.ofUserDto(user));
   }
 
   async login(user: UserDto): Promise<UserDto> {

@@ -51,11 +51,11 @@ export class UpdateUserRequestDto {
   @IsString()
   @IsOptional()
   @ApiPropertyOptional({
-    example: 'https://i.stack.imgur.com/xHWG8.jpg',
+    example: 1,
     description: 'image',
-    type: 'string',
+    type: 'number',
   })
-  image!: string;
+  image!: number;
 }
 
 export class UpdateUserDto {
@@ -84,7 +84,7 @@ export class UpdateUserDto {
   @IsOptional()
   bio!: string;
 
-  @IsString()
+  @IsNumber()
   @IsOptional()
-  image!: string;
+  image!: number;
 }

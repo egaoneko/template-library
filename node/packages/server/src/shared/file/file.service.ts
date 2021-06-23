@@ -4,6 +4,7 @@ import { DEFAULT_DATABASE_NAME } from '@config/constants/database';
 import { File } from './entities/file.entity';
 import { Transaction } from 'sequelize';
 import path from 'path';
+import { ConfigService } from '@nestjs/config';
 
 @Injectable()
 export class FileService {
@@ -12,6 +13,7 @@ export class FileService {
   constructor(
     @InjectModel(File, DEFAULT_DATABASE_NAME)
     private readonly fileModel: typeof File,
+    private readonly configService: ConfigService,
   ) {}
 
   async get(id: number, options?: { transaction: Transaction }): Promise<File> {
@@ -42,5 +44,11 @@ export class FileService {
         ...options,
       },
     );
+  }
+
+  getFilePath(fileId: number): string {
+    const host = this.configService.get<string>('http.host') ?? '';
+    const port = this.configService.get<number>('http.port') ?? '';
+    return `${host}:${port}/api/file/${fileId}`;
   }
 }

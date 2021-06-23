@@ -1,4 +1,7 @@
-import { Test, TestingModule } from '@nestjs/testing';
+import {
+  Test,
+  TestingModule
+} from '@nestjs/testing';
 import { UserService } from './user.service';
 import { User } from './entities/user.entity';
 import { createSequelize } from '@root/test/sequelize';
@@ -7,6 +10,7 @@ import { CreateUserDto } from '@user/dto/create-user.input';
 import { DEFAULT_DATABASE_NAME } from '@config/constants/database';
 import { UpdateUserDto } from './dto/update-user.input';
 import { getConnectionToken } from '@nestjs/sequelize/dist/common/sequelize.utils';
+import { FileService } from '../shared/file/file.service';
 
 describe('UserService', () => {
   let service: UserService;
@@ -19,6 +23,12 @@ describe('UserService', () => {
     await sequelize.authenticate();
     const module: TestingModule = await Test.createTestingModule({
       providers: [
+        {
+          provide: FileService,
+          useValue: {
+            getFilePath: jest.fn((fileId: string) => `http://localhost:8080/api/file/${fileId}`)
+          },
+        },
         {
           provide: getModelToken(User, DEFAULT_DATABASE_NAME),
           useValue: User,
@@ -145,7 +155,7 @@ describe('UserService', () => {
     dto.password = 'token1';
     dto.salt = 'salt1';
     dto.bio = 'bio1';
-    dto.image = 'image1';
+    dto.image = 1;
 
     const actual = await service.update(dto);
 
@@ -173,5 +183,22 @@ describe('UserService', () => {
     dto.salt = 'salt1';
 
     await expect(service.update(dto)).rejects.toThrowError('Not found user');
+  });
+
+  it('should return userDto', async () => {
+    const user = await User.create({
+      email: 'test@test.com',
+      username: 'test',
+      password: '1234',
+      salt: 'salt',
+      bio: 'bio',
+      image: 1,
+    });
+    const actual = await service.ofUserDto(user);
+    expect(actual.id).toBe(user.id);
+    expect(actual.email).toBe(user.email);
+    expect(actual.username).toBe(user.username);
+    expect(actual.bio).toBe(user.bio);
+    expect(actual.image).toBe(`http://localhost:8080/api/file/${user.image}`);
   });
 });

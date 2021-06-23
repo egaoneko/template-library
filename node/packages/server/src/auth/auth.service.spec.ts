@@ -1,26 +1,28 @@
 import { Test, TestingModule } from '@nestjs/testing';
 import { JwtService } from '@nestjs/jwt';
 import { AuthService } from './auth.service';
-import { User } from '@user/entities/user.entity';
 import { UserService } from '@user/user.service';
-import { createSequelize } from '@root/test/sequelize';
 import { IUser } from '@user/interfaces/user.interface';
-import { IJwtPayload } from '@auth/interfaces/jwt.interface';
-import { Crypto } from '@shared/crypto/crypto';
+import { createMock } from '@golevelup/ts-jest';
+import { Crypto } from '../shared/crypto/crypto';
 
 describe('AuthService', () => {
   let service: AuthService;
+  let mockUserService: UserService;
+  let mockJwtService: JwtService;
 
   beforeEach(async () => {
+    mockUserService = createMock<UserService>();
+    mockJwtService = createMock<JwtService>();
     const module: TestingModule = await Test.createTestingModule({
       providers: [
         {
           provide: UserService,
-          useClass: MockUserService,
+          useValue: mockUserService,
         },
         {
           provide: JwtService,
-          useClass: MockJwtService,
+          useValue: mockJwtService,
         },
         AuthService,
       ],
@@ -34,24 +36,43 @@ describe('AuthService', () => {
   });
 
   it('validate with valid user', async () => {
-    const email = 'test@test.com';
-    const password = '1234';
-    const actual = await service.validateUser(email, password);
-    expect(actual.email).toBe(email);
+    /* eslint-disable @typescript-eslint/no-explicit-any */
+    mockUserService.findOneByEmail = jest.fn(async () => {
+      const salt = await Crypto.generateSalt();
+      const password = await Crypto.encryptedPassword(salt, '1234');
+
+      return {
+        salt,
+        password,
+      };
+    }) as any;
+
+    const actual = await service.validateUser('test@test.com', '1234');
+    expect(actual).toBeDefined();
+    expect(mockUserService.findOneByEmail).toBeCalledTimes(1);
+    expect(mockUserService.ofUserDto).toBeCalledTimes(1);
+    expect(mockJwtService.sign).toBeCalledTimes(1);
   });
 
   it('validate with invalid email', async () => {
-    const email = 'test1@test.com';
-    const password = '1234';
-
-    await expect(service.validateUser(email, password)).rejects.toThrowError('Not found user');
+    /* eslint-disable @typescript-eslint/no-explicit-any */
+    mockUserService.findOneByEmail = jest.fn(async () => null) as any;
+    await expect(service.validateUser('test@test.com', '1234')).rejects.toThrowError('Not found user');
   });
 
   it('validate with invalid password', async () => {
-    const email = 'test@test.com';
-    const password = '12345';
+    /* eslint-disable @typescript-eslint/no-explicit-any */
+    mockUserService.findOneByEmail = jest.fn(async () => {
+      const salt = await Crypto.generateSalt();
+      const password = await Crypto.encryptedPassword(salt, '4321');
 
-    await expect(service.validateUser(email, password)).rejects.toThrowError('Invalid password');
+      return {
+        salt,
+        password,
+      };
+    }) as any;
+
+    await expect(service.validateUser('test@test.com', '1234')).rejects.toThrowError('Invalid password');
   });
 
   it('login with valid user', async () => {
@@ -60,34 +81,7 @@ describe('AuthService', () => {
       username: 'test',
     } as IUser;
     const actual = await service.login(user);
-    expect(actual.token).toBe('token');
+    expect(actual).toBeDefined();
+    expect(mockJwtService.sign).toBeCalledTimes(1);
   });
 });
-
-class MockUserService {
-  constructor() {
-    createSequelize({ models: [User] });
-  }
-
-  async findOneByEmail(email: string): Promise<User | null> {
-    if (email !== 'test@test.com') {
-      return null;
-    }
-    const salt = await Crypto.generateSalt();
-    const password = await Crypto.encryptedPassword(salt, '1234');
-    return new User({
-      username: 'test',
-      password,
-      salt,
-      email,
-    });
-  }
-}
-
-class MockJwtService {
-  sign(payload: IJwtPayload): string {
-    expect(payload.email).toBe('test@test.com');
-    expect(payload.username).toBe('test');
-    return 'token';
-  }
-}

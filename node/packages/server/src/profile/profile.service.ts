@@ -5,11 +5,15 @@ import { InjectConnection, InjectModel } from '@nestjs/sequelize';
 import { DEFAULT_DATABASE_NAME } from '@config/constants/database';
 import { Follow } from '@root/profile/entities/follow.entity';
 import { Sequelize, Transaction } from 'sequelize';
+import { User } from '@user/entities/user.entity';
+import { FileService } from '@shared/file/file.service';
 
 @Injectable()
 export class ProfileService {
   constructor(
     private readonly userService: UserService,
+    private readonly fileService: FileService,
+
     @InjectModel(Follow, DEFAULT_DATABASE_NAME)
     private readonly followModel: typeof Follow,
     @InjectConnection(DEFAULT_DATABASE_NAME)
@@ -27,7 +31,7 @@ export class ProfileService {
       throw new BadRequestException('Not found user');
     }
 
-    const profile = ProfileDto.of(user);
+    const profile = await this.ofProfileDto(user);
     profile.following = await this.isFollow(userId, followingUserId, options);
 
     return profile;
@@ -146,6 +150,18 @@ export class ProfileService {
         throw e;
       }
     });
+  }
+
+  async ofProfileDto(entity: User): Promise<ProfileDto> {
+    const dto = new ProfileDto();
+    dto.username = entity.username;
+    dto.bio = entity.bio;
+
+    if (entity.image) {
+      dto.image = this.fileService.getFilePath(entity.image);
+    }
+
+    return dto;
   }
 
   private async isValidUsers(
