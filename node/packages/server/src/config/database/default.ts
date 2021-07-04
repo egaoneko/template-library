@@ -1,19 +1,20 @@
 import { SequelizeModuleOptions } from '@nestjs/sequelize/dist/interfaces/sequelize-options.interface';
-import { DEFAULT_DATABASE_NAME, SQLITE_STORAGE_PATH } from '@config/constants/database';
+import { DEFAULT_DATABASE_NAME } from '@config/constants/database';
 import { format } from 'sql-formatter';
 
 const defaultOptions: SequelizeModuleOptions = {
   name: DEFAULT_DATABASE_NAME,
-  dialect: 'sqlite',
-  storage: SQLITE_STORAGE_PATH,
-  // dialect: 'postgres',
-  // host: '0.0.0.0',
-  // database: 'postgres',
-  // username: 'root',
-  // password: 'root',
-  // port: 5432,
+  dialect: 'postgres',
+  host: '0.0.0.0',
+  database: 'postgres',
+  username: 'root',
+  password: 'root',
+  port: 5432,
   autoLoadModels: true,
   synchronize: true,
+  sync: {
+    force: true,
+  },
   define: {
     underscored: true,
     timestamps: true,

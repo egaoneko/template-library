@@ -1,8 +1,4 @@
-import {
-  MiddlewareConsumer,
-  Module,
-  NestModule
-} from '@nestjs/common';
+import { MiddlewareConsumer, Module, NestModule } from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config';
 import { SequelizeModule } from '@nestjs/sequelize';
 import helmet from 'helmet';
@@ -16,6 +12,7 @@ import { APP_GUARD } from '@nestjs/core';
 import { JwtAuthGuard } from '@auth/guards/jwt-auth.guard';
 import { ProfileModule } from './profile/profile.module';
 import { SharedModule } from '@shared/shared.module';
+import { ArticleModule } from './article/article.module';
 import configuration from '@config/configuration';
 
 @Module({
@@ -26,10 +23,11 @@ import configuration from '@config/configuration';
       load: [configuration],
     }),
     SequelizeModule.forRoot(defaultOptions),
+    SharedModule,
     UserModule,
     AuthModule,
     ProfileModule,
-    SharedModule,
+    ArticleModule,
   ],
   controllers: [AppController],
   providers: [

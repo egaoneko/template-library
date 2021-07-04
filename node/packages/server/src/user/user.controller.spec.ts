@@ -2,12 +2,9 @@ import { Test, TestingModule } from '@nestjs/testing';
 import { UserController } from './user.controller';
 import { UserService } from './user.service';
 import { createMock } from '@golevelup/ts-jest';
-import { Request } from 'express';
 import { UserDto } from './dto/user.response';
 import { UpdateUserDto, UpdateUserRequestDto } from './dto/update-user.input';
-import { User } from './entities/user.entity';
-import { createSequelize } from '../test/sequelize';
-import { Crypto } from '../shared/crypto/crypto';
+import { Crypto } from '@shared/crypto/crypto';
 import Mock = jest.Mock;
 
 describe('UserController', () => {
@@ -34,17 +31,9 @@ describe('UserController', () => {
   });
 
   it('should return user', async () => {
-    const mockRequest = createMock<Request>();
-    mockRequest.user = new UserDto();
-    const actual = await controller.getCurrentUser(mockRequest);
-    expect(actual).toBe(mockRequest.user);
-  });
-
-  it('should return undefined', async () => {
-    const mockRequest = createMock<Request>();
-    mockRequest.user = undefined;
-    const actual = await controller.getCurrentUser(mockRequest);
-    expect(actual).toBeUndefined();
+    const mockUserDto = createMock<UserDto>();
+    const actual = await controller.getCurrentUser(mockUserDto);
+    expect(actual).toBe(mockUserDto);
   });
 
   it('update user', async () => {
@@ -59,28 +48,9 @@ describe('UserController', () => {
     const actual = await controller.updateUser(dto);
     expect(actual).toBeDefined();
     expect(mockUserService.update).toBeCalledTimes(1);
-    expect(mockUserService.ofUserDto).toBeCalledTimes(1);
 
     const { salt, password } = (mockUserService.update as Mock).mock.calls[0][0] as UpdateUserDto;
     const isEqual = await Crypto.isSamePassword(salt, dto.password, password);
     expect(isEqual).toBeTruthy();
   });
 });
-
-class MockService {
-  constructor() {
-    createSequelize({ models: [User] });
-  }
-
-  async update(updateUserDto: UpdateUserDto): Promise<User> {
-    return new User({
-      id: updateUserDto.id,
-      email: updateUserDto.email,
-      username: updateUserDto.username,
-      password: updateUserDto.password,
-      salt: updateUserDto.salt,
-      bio: updateUserDto.bio,
-      image: updateUserDto.image,
-    });
-  }
-}

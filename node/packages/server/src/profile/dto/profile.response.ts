@@ -1,7 +1,6 @@
 import { IProfile } from '@root/profile/interfaces/profile.interface';
 import { IsBoolean, IsNotEmpty, IsString } from 'class-validator';
 import { ApiProperty, ApiPropertyOptional } from '@nestjs/swagger';
-import { User } from '@user/entities/user.entity';
 
 export class ProfileDto implements IProfile {
   @IsNotEmpty()
@@ -36,5 +35,4 @@ export class ProfileDto implements IProfile {
     type: 'boolean',
   })
   following!: boolean;
-
 }

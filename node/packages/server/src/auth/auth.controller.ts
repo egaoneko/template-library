@@ -1,20 +1,14 @@
-import { Body, Controller, Post, Req, UseGuards } from '@nestjs/common';
+import { Body, Controller, Post, UseGuards, UsePipes, ValidationPipe } from '@nestjs/common';
 import { LocalAuthGuard } from '@auth/guards/local-auth.guard';
-import { Request } from 'express';
 import { CreateUserDto } from '@user/dto/create-user.input';
 import { RegisterDto } from './dto/register.input';
 import { UserService } from '@user/user.service';
 import { NoAuth } from '@auth/decorators/auth';
-import {
-  ApiBody,
-  ApiHeader,
-  ApiOperation,
-  ApiResponse,
-  ApiTags
-} from '@nestjs/swagger';
+import { ApiBody, ApiOperation, ApiResponse, ApiTags } from '@nestjs/swagger';
 import { UserDto } from '@user/dto/user.response';
 import { LoginDto } from '@auth/dto/login.input';
 import { Crypto } from '@shared/crypto/crypto';
+import { CurrentUser } from '@user/decorators/current-user.decorator';
 
 @ApiTags('auth')
 @Controller('/api/auth')
@@ -23,6 +17,7 @@ export class AuthController {
 
   @NoAuth()
   @Post('/register')
+  @UsePipes(new ValidationPipe({ transform: true }))
   @ApiOperation({ summary: 'register user' })
   @ApiBody({ description: 'register body', type: RegisterDto })
   @ApiResponse({ status: 201, description: 'User', type: UserDto })
@@ -37,8 +32,7 @@ export class AuthController {
     dto.salt = salt;
     dto.password = password;
 
-    const user = await this.usersService.create(dto);
-    return this.usersService.ofUserDto(user);
+    return this.usersService.create(dto);
   }
 
   @NoAuth()
@@ -48,7 +42,7 @@ export class AuthController {
   @ApiBody({ description: 'login body', type: LoginDto })
   @ApiResponse({ status: 201, description: 'User', type: UserDto })
   @ApiResponse({ status: 400, description: 'Unauthorized' })
-  async login(@Req() req: Request): Promise<Express.User | undefined> {
-    return req.user;
+  async login(@CurrentUser() currentUser: UserDto): Promise<UserDto> {
+    return currentUser;
   }
 }

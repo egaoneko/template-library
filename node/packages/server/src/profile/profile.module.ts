@@ -11,5 +11,6 @@ import { SharedModule } from '@shared/shared.module';
   imports: [SharedModule, UserModule, SequelizeModule.forFeature([Follow], DEFAULT_DATABASE_NAME)],
   providers: [ProfileService],
   controllers: [ProfileController],
+  exports: [ProfileService],
 })
 export class ProfileModule {}

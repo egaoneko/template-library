@@ -5,7 +5,6 @@ import {
   NotFoundException,
   Param,
   Post,
-  Req,
   Res,
   UploadedFile,
   UseInterceptors,
@@ -13,10 +12,10 @@ import {
 import { FileInterceptor } from '@nestjs/platform-express';
 import { FileService } from '@shared/file/file.service';
 import { ApiHeader, ApiOperation, ApiResponse, ApiTags } from '@nestjs/swagger';
-import { UserDto } from '@user/dto/user.response';
-import { Request, Response } from 'express';
+import { Response } from 'express';
 import { FileDto } from '@shared/file/dto/file.response';
 import fs from 'fs';
+import { CurrentUser } from '@user/decorators/current-user.decorator';
 
 @ApiTags('shared')
 @Controller('/api/file')
@@ -52,11 +51,14 @@ export class FileController {
   @ApiResponse({ status: 201, description: 'File', type: FileDto })
   @ApiResponse({ status: 401, description: 'Unauthorized' })
   @ApiResponse({ status: 400, description: 'Not found file' })
-  async uploadFile(@UploadedFile() file: Express.Multer.File, @Req() req: Request): Promise<FileDto> {
+  async uploadFile(
+    @UploadedFile() file: Express.Multer.File,
+    @CurrentUser('id') currentUserId: number,
+  ): Promise<FileDto> {
     if (!file) {
       throw new BadRequestException('Not found file');
     }
-    const uploadedFile = await this.fileService.upload((req.user as UserDto).id, file);
+    const uploadedFile = await this.fileService.upload(currentUserId, file);
     return {
       id: uploadedFile.id,
     };

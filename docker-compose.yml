@@ -14,13 +14,3 @@ services:
       - "5432:5432"
     volumes:
       - ./db/data:/data
-  dbadmin:
-    container_name: pgadmin
-    image: dpage/pgadmin4
-    ports:
-      - 9000:80
-    environment:
-      - PGADMIN_DEFAULT_EMAIL=admin@example.com
-      - PGADMIN_DEFAULT_PASSWORD=admin
-    volumes:
-      - ./db/admin:/var/lib/pgadmin

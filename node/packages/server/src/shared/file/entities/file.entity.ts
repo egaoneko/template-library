@@ -23,6 +23,6 @@ export class File extends Model {
   @Column(DataType.STRING)
   path!: string;
 
-  @Column(DataType.NUMBER)
+  @Column(DataType.INTEGER)
   size!: number;
 }

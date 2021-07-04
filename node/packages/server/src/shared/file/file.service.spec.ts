@@ -29,7 +29,7 @@ describe('FileService', () => {
               } else {
                 return null;
               }
-            })
+            }),
           },
         },
         FileService,
@@ -55,9 +55,7 @@ describe('FileService', () => {
 
   it('should write get', async () => {
     /* eslint-disable @typescript-eslint/no-explicit-any */
-    mockFileModel.findOne = jest.fn(() => {
-      return null;
-    }) as any;
+    mockFileModel.findOne = jest.fn().mockReturnValue(null) as any;
     await expect(service.get(1)).rejects.toThrowError('Not found file');
   });
 

@@ -37,32 +37,34 @@ describe('AuthService', () => {
 
   it('validate with valid user', async () => {
     /* eslint-disable @typescript-eslint/no-explicit-any */
-    mockUserService.findOneByEmail = jest.fn(async () => {
+    const toUserDto = jest.fn().mockReturnValue({}) as any;
+    mockUserService.findAuthUser = jest.fn(async () => {
       const salt = await Crypto.generateSalt();
       const password = await Crypto.encryptedPassword(salt, '1234');
 
       return {
         salt,
         password,
+        toUserDto,
       };
     }) as any;
 
     const actual = await service.validateUser('test@test.com', '1234');
     expect(actual).toBeDefined();
-    expect(mockUserService.findOneByEmail).toBeCalledTimes(1);
-    expect(mockUserService.ofUserDto).toBeCalledTimes(1);
+    expect(mockUserService.findAuthUser).toBeCalledTimes(1);
     expect(mockJwtService.sign).toBeCalledTimes(1);
+    expect(toUserDto).toBeCalledTimes(1);
   });
 
   it('validate with invalid email', async () => {
     /* eslint-disable @typescript-eslint/no-explicit-any */
-    mockUserService.findOneByEmail = jest.fn(async () => null) as any;
+    mockUserService.findAuthUser = jest.fn().mockReturnValue(null) as any;
     await expect(service.validateUser('test@test.com', '1234')).rejects.toThrowError('Not found user');
   });
 
   it('validate with invalid password', async () => {
     /* eslint-disable @typescript-eslint/no-explicit-any */
-    mockUserService.findOneByEmail = jest.fn(async () => {
+    mockUserService.findAuthUser = jest.fn(async () => {
       const salt = await Crypto.generateSalt();
       const password = await Crypto.encryptedPassword(salt, '4321');
 

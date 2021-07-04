@@ -10,7 +10,7 @@ export class AuthService {
   constructor(private readonly userService: UserService, private readonly jwtService: JwtService) {}
 
   async validateUser(email: string, password: string): Promise<UserDto> {
-    const user = await this.userService.findOneByEmail(email);
+    const user = await this.userService.findAuthUser(email);
 
     if (!user) {
       throw new UnauthorizedException('Not found user');
@@ -20,7 +20,7 @@ export class AuthService {
       throw new UnauthorizedException('Invalid password');
     }
 
-    return this.login(await this.userService.ofUserDto(user));
+    return this.login(user.toUserDto());
   }
 
   async login(user: UserDto): Promise<UserDto> {

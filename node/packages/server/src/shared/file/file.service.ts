@@ -2,9 +2,9 @@ import { Injectable, NotFoundException } from '@nestjs/common';
 import { InjectModel } from '@nestjs/sequelize';
 import { DEFAULT_DATABASE_NAME } from '@config/constants/database';
 import { File } from './entities/file.entity';
-import { Transaction } from 'sequelize';
 import path from 'path';
 import { ConfigService } from '@nestjs/config';
+import { SequelizeOptionDto } from '@shared/decorators/transaction/transactional.decorator';
 
 @Injectable()
 export class FileService {
@@ -16,12 +16,12 @@ export class FileService {
     private readonly configService: ConfigService,
   ) {}
 
-  async get(id: number, options?: { transaction: Transaction }): Promise<File> {
+  async get(id: number, options?: SequelizeOptionDto): Promise<File> {
     const file = await this.fileModel.findOne({
       where: {
         id,
       },
-      ...options,
+      transaction: options?.transaction,
     });
 
     if (!file) {
@@ -31,17 +31,17 @@ export class FileService {
     return file;
   }
 
-  async upload(userId: number, file: Express.Multer.File, options?: { transaction: Transaction }): Promise<File> {
+  async upload(currentUserId: number, file: Express.Multer.File, options?: SequelizeOptionDto): Promise<File> {
     return await this.fileModel.create(
       {
         name: file.originalname,
         mimetype: file.mimetype,
         path: file.path,
         size: file.size,
-        userId,
+        userId: currentUserId,
       },
       {
-        ...options,
+        transaction: options?.transaction,
       },
     );
   }

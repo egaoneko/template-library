@@ -3,7 +3,7 @@ import { Test } from '@nestjs/testing';
 import { AppModule } from '@root/app.module';
 import { INestApplication } from '@nestjs/common';
 import { createTestUser, getTestUserDto } from '../utils/user';
-import { testFollowing } from '../utils/profile';
+import { createTestFollowing } from '../utils/profile';
 import { cleanDb } from '../utils/db';
 
 describe('ProfileController (e2e)', () => {
@@ -26,7 +26,7 @@ describe('ProfileController (e2e)', () => {
     const user1 = await createTestUser(app, 'test1@test.com');
     const user2 = await createTestUser(app, 'test2@test.com');
     const dto = await getTestUserDto(app, user1);
-    await testFollowing(app, user1, user2);
+    await createTestFollowing(app, user1, user2);
 
     return request(app.getHttpServer())
       .get(`/api/profiles/${user2.id}`)
@@ -98,7 +98,7 @@ describe('ProfileController (e2e)', () => {
     const user1 = await createTestUser(app, 'test1@test.com');
     const user2 = await createTestUser(app, 'test2@test.com');
     const dto = await getTestUserDto(app, user1);
-    await testFollowing(app, user1, user2);
+    await createTestFollowing(app, user1, user2);
 
     return request(app.getHttpServer())
       .post(`/api/profiles/${user2.id}/follow`)
@@ -113,7 +113,7 @@ describe('ProfileController (e2e)', () => {
     const user1 = await createTestUser(app, 'test1@test.com');
     const user2 = await createTestUser(app, 'test2@test.com');
     const dto = await getTestUserDto(app, user1);
-    await testFollowing(app, user1, user2);
+    await createTestFollowing(app, user1, user2);
 
     return request(app.getHttpServer())
       .delete(`/api/profiles/${user2.id}/follow`)

@@ -36,6 +36,5 @@ describe('JwtStrategy', () => {
     expect(actual).toBeDefined();
     expect(mockUserService.findOneByEmail).toBeCalledTimes(1);
     expect(mockUserService.findOneByEmail).toBeCalledWith(payload.email);
-    expect(mockUserService.ofUserDto).toBeCalledTimes(1);
   });
 });

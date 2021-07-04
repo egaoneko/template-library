@@ -16,8 +16,5 @@ switch (process.env.PHASE) {
     YAML_CONFIG_FILENAME = 'prod.yaml';
 }
 
-export default () => (
-  yaml.load(
-    readFileSync(path.join(__dirname, `../../env/${YAML_CONFIG_FILENAME}`), 'utf8'),
-  ) as Record<string, unknown>
-);
+export default (): Record<string, unknown> =>
+  yaml.load(readFileSync(path.join(__dirname, `../../env/${YAML_CONFIG_FILENAME}`), 'utf8')) as Record<string, unknown>;

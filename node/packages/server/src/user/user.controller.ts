@@ -1,10 +1,10 @@
-import { Body, Controller, Get, Put, Req } from '@nestjs/common';
+import { Body, Controller, Get, Put, UsePipes, ValidationPipe } from '@nestjs/common';
 import { UserService } from './user.service';
 import { UserDto } from '@user/dto/user.response';
 import { ApiBody, ApiHeader, ApiOperation, ApiResponse, ApiTags } from '@nestjs/swagger';
-import { Request } from 'express';
 import { UpdateUserDto, UpdateUserRequestDto } from '@user/dto/update-user.input';
 import { Crypto } from '@shared/crypto/crypto';
+import { CurrentUser } from '@user/decorators/current-user.decorator';
 
 @ApiTags('user')
 @Controller('/api/users')
@@ -16,11 +16,12 @@ export class UserController {
   @ApiHeader({ name: 'Authorization', description: 'jwt token', required: true })
   @ApiResponse({ status: 200, description: 'User', type: UserDto })
   @ApiResponse({ status: 401, description: 'Unauthorized' })
-  async getCurrentUser(@Req() req: Request): Promise<Express.User | undefined> {
-    return req.user;
+  async getCurrentUser(@CurrentUser() currentUser: UserDto): Promise<UserDto> {
+    return currentUser;
   }
 
   @Put()
+  @UsePipes(new ValidationPipe({ transform: true }))
   @ApiOperation({ summary: 'update user' })
   @ApiHeader({ name: 'Authorization', description: 'jwt token', required: true })
   @ApiBody({ description: 'update user body', type: UpdateUserRequestDto })
@@ -41,7 +42,6 @@ export class UserController {
       dto.password = password;
     }
 
-    const user = await this.usersService.update(dto);
-    return this.usersService.ofUserDto(user);
+    return this.usersService.update(dto);
   }
 }

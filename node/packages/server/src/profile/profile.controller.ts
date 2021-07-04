@@ -1,9 +1,8 @@
-import { Controller, Delete, Get, Param, Post, Req } from '@nestjs/common';
+import { Controller, Delete, Get, Param, Post } from '@nestjs/common';
 import { ApiHeader, ApiOperation, ApiParam, ApiResponse, ApiTags } from '@nestjs/swagger';
 import { ProfileDto } from '@root/profile/dto/profile.response';
-import { Request } from 'express';
 import { ProfileService } from '@root/profile/profile.service';
-import { UserDto } from '@user/dto/user.response';
+import { CurrentUser } from '@user/decorators/current-user.decorator';
 
 @ApiTags('profile')
 @Controller('/api/profiles')
@@ -16,8 +15,8 @@ export class ProfileController {
   @ApiParam({ name: 'userId', description: 'user id of profile', type: 'number' })
   @ApiResponse({ status: 200, description: 'Profile', type: ProfileDto })
   @ApiResponse({ status: 401, description: 'Unauthorized' })
-  async getProfile(@Param('userId') userId: number, @Req() req: Request): Promise<ProfileDto> {
-    return this.profileService.get((req.user as UserDto).id, userId);
+  async getProfile(@Param('userId') userId: number, @CurrentUser('id') currentUserId: number): Promise<ProfileDto> {
+    return this.profileService.get(currentUserId, userId);
   }
 
   @Post('/:userId/follow')
@@ -26,8 +25,8 @@ export class ProfileController {
   @ApiParam({ name: 'userId', description: 'user id to follow', type: 'number' })
   @ApiResponse({ status: 201, description: 'Profile', type: ProfileDto })
   @ApiResponse({ status: 401, description: 'Unauthorized' })
-  async follow(@Param('userId') userId: number, @Req() req: Request): Promise<ProfileDto> {
-    return this.profileService.followUser((req.user as UserDto).id, userId);
+  async follow(@Param('userId') userId: number, @CurrentUser('id') currentUserId: number): Promise<ProfileDto> {
+    return this.profileService.followUser(currentUserId, userId);
   }
 
   @Delete('/:userId/follow')
@@ -36,7 +35,7 @@ export class ProfileController {
   @ApiParam({ name: 'userId', description: 'user id to unfollow', type: 'number' })
   @ApiResponse({ status: 200, description: 'Profile', type: ProfileDto })
   @ApiResponse({ status: 401, description: 'Unauthorized' })
-  async unfollow(@Param('userId') userId: number, @Req() req: Request): Promise<ProfileDto> {
-    return this.profileService.unfollowUser((req.user as UserDto).id, userId);
+  async unfollow(@Param('userId') userId: number, @CurrentUser('id') currentUserId: number): Promise<ProfileDto> {
+    return this.profileService.unfollowUser(currentUserId, userId);
   }
 }

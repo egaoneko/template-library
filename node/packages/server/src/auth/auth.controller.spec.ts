@@ -1,12 +1,12 @@
 import { Test, TestingModule } from '@nestjs/testing';
 import { AuthController } from './auth.controller';
-import { Request } from 'express';
 import { UserService } from '@user/user.service';
 import { RegisterDto } from '@auth/dto/register.input';
 import { CreateUserDto } from '@user/dto/create-user.input';
 import { createMock } from '@golevelup/ts-jest';
 import { Crypto } from '@shared/crypto/crypto';
 import Mock = jest.Mock;
+import { UserDto } from '../user/dto/user.response';
 
 describe('AuthController', () => {
   let controller: AuthController;
@@ -47,10 +47,8 @@ describe('AuthController', () => {
   });
 
   it('should return user', async () => {
-    const expected = { email: 'test@test.com' };
-    const mockRequest = createMock<Request>();
-    mockRequest.user = expected;
-    const actual = await controller.login(mockRequest);
-    expect(actual).toBe(expected);
+    const mockUserDto = createMock<UserDto>();
+    const actual = await controller.login(mockUserDto);
+    expect(actual).toBe(mockUserDto);
   });
 });

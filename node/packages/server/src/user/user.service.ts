@@ -1,110 +1,124 @@
-import { BadRequestException, HttpException, HttpStatus, Injectable } from '@nestjs/common';
+import { BadRequestException, Injectable, InternalServerErrorException } from '@nestjs/common';
 import { InjectConnection, InjectModel } from '@nestjs/sequelize';
 import { User } from './entities/user.entity';
 import { CreateUserDto } from '@user/dto/create-user.input';
 import { DEFAULT_DATABASE_NAME } from '@config/constants/database';
 import { validate } from 'class-validator';
 import { UpdateUserDto } from '@user/dto/update-user.input';
-import { Sequelize, Transaction } from 'sequelize';
+import { Sequelize } from 'sequelize';
 import { UserDto } from '@user/dto/user.response';
 import { FileService } from '@shared/file/file.service';
+import { AuthUserDto } from '@user/dto/auth-user.response';
+import { SequelizeOptionDto, Transactional } from '@shared/decorators/transaction/transactional.decorator';
 
 @Injectable()
 export class UserService {
   constructor(
     private readonly fileService: FileService,
-
     @InjectModel(User, DEFAULT_DATABASE_NAME)
     private readonly userModel: typeof User,
     @InjectConnection(DEFAULT_DATABASE_NAME)
     private readonly sequelize: Sequelize,
   ) {}
 
-  async create(createUserDto: CreateUserDto, options?: { transaction: Transaction }): Promise<User> {
+  @Transactional()
+  async create(createUserDto: CreateUserDto, options?: SequelizeOptionDto): Promise<UserDto> {
     const errors = await validate(createUserDto);
 
     if (errors.length > 0) {
       throw new BadRequestException('Invalid user params');
     }
 
-    return await this.sequelize.transaction<User>(async transaction => {
-      try {
-        const user: User | null = await this.findOneByEmail(createUserDto.email, { transaction });
-        if (user) {
-          throw new BadRequestException('Already exist user');
-        }
+    const user = await this.findOneByEmail(createUserDto.email, options);
+    if (user) {
+      throw new BadRequestException('Already exist user');
+    }
 
-        return this.userModel.create(
-          {
-            email: createUserDto.email,
-            username: createUserDto.username,
-            password: createUserDto.password,
-            salt: createUserDto.salt,
-          },
-          {
-            transaction,
-            ...options,
-          },
-        );
-      } catch (e) {
-        await transaction.rollback();
-        throw e;
-      }
-    });
+    const model = await this.userModel.create(
+      {
+        email: createUserDto.email,
+        username: createUserDto.username,
+        password: createUserDto.password,
+        salt: createUserDto.salt,
+      },
+      {
+        transaction: options?.transaction,
+      },
+    );
+
+    return this.ofUserDto(model);
   }
 
-  async findOne(id: number, options?: { transaction: Transaction }): Promise<User | null> {
-    return this.userModel.findOne({
+  async findOne(id: number, options?: SequelizeOptionDto): Promise<UserDto | null> {
+    const model = await this.userModel.findOne({
       where: { id },
-      ...options,
+      transaction: options?.transaction,
     });
+
+    if (!model) {
+      return null;
+    }
+
+    return this.ofUserDto(model);
   }
 
-  async findOneByEmail(email: string, options?: { transaction: Transaction }): Promise<User | null> {
-    return this.userModel.findOne({
+  async findOneByEmail(email: string, options?: SequelizeOptionDto): Promise<UserDto | null> {
+    const model = await this.userModel.findOne({
       where: { email },
-      ...options,
+      transaction: options?.transaction,
     });
+
+    if (!model) {
+      return null;
+    }
+
+    return this.ofUserDto(model);
   }
 
-  async update(updateUserDto: UpdateUserDto, options?: { transaction: Transaction }): Promise<User> {
+  async findAuthUser(email: string, options?: SequelizeOptionDto): Promise<AuthUserDto | null> {
+    const model = await this.userModel.findOne({
+      where: { email },
+      transaction: options?.transaction,
+    });
+
+    if (!model) {
+      return null;
+    }
+
+    return this.ofAuthUserDto(model);
+  }
+
+  @Transactional()
+  async update(updateUserDto: UpdateUserDto, options?: SequelizeOptionDto): Promise<UserDto> {
     const errors = await validate(updateUserDto);
 
     if (errors.length > 0) {
       throw new BadRequestException('Invalid user params');
     }
 
-    return await this.sequelize.transaction<User>(async transaction => {
-      try {
-        const user = await this.findOne(updateUserDto.id, { transaction });
+    const user = await this.findOne(updateUserDto.id, options);
 
-        if (!user) {
-          throw new BadRequestException('Not found user');
-        }
+    if (!user) {
+      throw new BadRequestException('Not found user');
+    }
 
-        const [rows] = await this.userModel.update(updateUserDto, {
-          where: {
-            id: updateUserDto.id,
-          },
-          transaction,
-          ...options,
-        });
-
-        if (rows !== 1) {
-          throw new HttpException('Do not update user', HttpStatus.INTERNAL_SERVER_ERROR);
-        }
-
-        const updatedUser = await this.findOne(updateUserDto.id, { transaction });
-        if (!updatedUser) {
-          throw new BadRequestException('Not found updated user');
-        }
-
-        return updatedUser;
-      } catch (e) {
-        await transaction.rollback();
-        throw e;
-      }
+    const [rows] = await this.userModel.update(updateUserDto, {
+      where: {
+        id: updateUserDto.id,
+      },
+      transaction: options?.transaction,
     });
+
+    if (rows !== 1) {
+      throw new InternalServerErrorException('Do not update user');
+    }
+
+    const updatedUser = await this.findOne(updateUserDto.id, options);
+    if (!updatedUser) {
+      throw new BadRequestException('Not found updated user');
+    }
+
+    return updatedUser;
   }
 
   async ofUserDto(entity: User): Promise<UserDto> {
@@ -115,9 +129,29 @@ export class UserService {
     dto.bio = entity.bio;
 
     if (entity.image) {
-      dto.image = this.fileService.getFilePath(entity.image);
+      dto.image = this.getImagePath(entity.image);
     }
 
     return dto;
+  }
+
+  async ofAuthUserDto(entity: User): Promise<AuthUserDto> {
+    const dto = new AuthUserDto();
+    dto.id = entity.id;
+    dto.email = entity.email;
+    dto.username = entity.username;
+    dto.bio = entity.bio;
+    dto.password = entity.password;
+    dto.salt = entity.salt;
+
+    if (entity.image) {
+      dto.image = this.getImagePath(entity.image);
+    }
+
+    return dto;
+  }
+
+  private getImagePath(imageId: number): string {
+    return this.fileService.getFilePath(imageId);
   }
 }
