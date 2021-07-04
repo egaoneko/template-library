@@ -1,4 +1,7 @@
-import { Test, TestingModule } from '@nestjs/testing';
+import {
+  Test,
+  TestingModule
+} from '@nestjs/testing';
 import { ArticleService } from './article.service';
 import { getModelToken } from '@nestjs/sequelize';
 import { DEFAULT_DATABASE_NAME } from '../config/constants/database';
@@ -10,6 +13,7 @@ import { ArticleFavorite } from './entities/article-favorite.entity';
 import { ProfileService } from '../profile/profile.service';
 import { GetArticlesDto } from './dto/get-articles.input';
 import { Tag } from './entities/tag.entity';
+import { GetFeedArticlesDto } from './dto/get-feed-articles.input';
 
 describe('ArticleService', () => {
   let service: ArticleService;
@@ -104,5 +108,97 @@ describe('ArticleService', () => {
     (dto as any).page = undefined;
 
     await expect(service.findAll(dto, 1)).rejects.toThrowError('Invalid article list params');
+  });
+
+  it('should be return article feed list', async () => {
+    /* eslint-disable @typescript-eslint/no-explicit-any */
+    mockProfileService.findAllFollowingUserId = jest.fn().mockReturnValue([1, 2]) as any;
+    mockArticle.findAndCountAll = jest.fn().mockReturnValue({ count: 2, rows: [{}, {}] }) as any;
+    service.ofArticleDto = jest.fn().mockReturnValue({}) as any;
+
+    const dto = new GetFeedArticlesDto();
+    dto.page = 2;
+    dto.limit = 20;
+
+    const actual = await service.findFeedAll(dto, 1);
+    expect(actual).toBeDefined();
+    expect(mockSequelize.transaction).toBeCalledTimes(1);
+    expect(mockProfileService.findAllFollowingUserId).toBeCalledTimes(1);
+    expect(mockProfileService.findAllFollowingUserId).toBeCalledWith(1, { transaction: {} });
+    expect(mockArticle.findAndCountAll).toBeCalledTimes(1);
+    expect(mockArticle.findAndCountAll).toBeCalledWith({
+      where: {
+        authorId: [1, 2],
+      },
+      order: [['updatedAt', 'DESC']],
+      offset: (dto.page - 1) * dto.limit,
+      limit: dto.limit,
+      include: [
+        {
+          model: ArticleFavorite,
+        },
+        {
+          model: Tag,
+        },
+      ],
+      distinct: true,
+      transaction: {},
+    });
+    expect(service.ofArticleDto).toBeCalledTimes(2);
+  });
+
+  it('should not be return article feed list with invalid feed list params', async () => {
+    /* eslint-disable @typescript-eslint/no-explicit-any */
+    const dto = new GetFeedArticlesDto();
+    (dto as any).page = undefined;
+
+    await expect(service.findFeedAll(dto, 1)).rejects.toThrowError('Invalid article feed list params');
+  });
+
+  it('should be return article', async () => {
+    /* eslint-disable @typescript-eslint/no-explicit-any */
+    service.ofArticleDto = jest.fn().mockReturnValue({}) as any;
+
+    const actual = await service.findOneBySlug('slug', 1);
+    expect(actual).toBeDefined();
+    expect(mockSequelize.transaction).toBeCalledTimes(1);
+    expect(mockArticle.findOne).toBeCalledTimes(1);
+    expect(mockArticle.findOne).toBeCalledWith({
+      where: {
+        slug: 'slug',
+      },
+      include: [
+        {
+          model: ArticleFavorite,
+        },
+        {
+          model: Tag,
+        },
+      ],
+      transaction: {},
+    });
+    expect(service.ofArticleDto).toBeCalledTimes(1);
+  });
+
+  it('should not be throw not found article by slug', async () => {
+    /* eslint-disable @typescript-eslint/no-explicit-any */
+    mockArticle.findOne = jest.fn().mockReturnValue(null) as any;
+
+    await expect(service.findOneBySlug('slug', 1)).rejects.toThrowError('Not found article by slug');
+    expect(mockArticle.findOne).toBeCalledTimes(1);
+    expect(mockArticle.findOne).toBeCalledWith({
+      where: {
+        slug: 'slug',
+      },
+      include: [
+        {
+          model: ArticleFavorite,
+        },
+        {
+          model: Tag,
+        },
+      ],
+      transaction: {},
+    });
   });
 });

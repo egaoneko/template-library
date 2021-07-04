@@ -45,7 +45,26 @@ describe('ProfileService', () => {
     expect(service).toBeDefined();
   });
 
-  it('get should return user', async () => {
+  it('get should return following user id', async () => {
+    /* eslint-disable @typescript-eslint/no-explicit-any */
+    mockFollow.findAll = jest.fn().mockReturnValue([{followingUserId: 1}, {followingUserId: 2}]) as any;
+
+    const actual = await service.findAllFollowingUserId(1);
+    expect(actual).toBeDefined();
+    expect(actual.length).toBe(2);
+    expect(actual[0]).toBe(1);
+    expect(actual[1]).toBe(2);
+    expect(mockSequelize.transaction).toBeCalledTimes(1);
+    expect(mockFollow.findAll).toBeCalledTimes(1);
+    expect(mockFollow.findAll).toBeCalledWith({
+      where: {
+        userId: 1
+      },
+      transaction: {}
+    });
+  });
+
+  it('get should return profile', async () => {
     /* eslint-disable @typescript-eslint/no-explicit-any */
     const user = {
       email: 'test1@test.com',
@@ -57,7 +76,7 @@ describe('ProfileService', () => {
     service.ofProfileDto = jest.fn().mockReturnValue({}) as any;
     service.isFollow = jest.fn().mockReturnValue(true) as any;
 
-    const actual = await service.get(1, 2);
+    const actual = await service.findOne(1, 2);
     expect(actual).toBeDefined();
     expect(actual.following).toBe(true);
     expect(mockSequelize.transaction).toBeCalledTimes(1);
@@ -73,14 +92,14 @@ describe('ProfileService', () => {
     /* eslint-disable @typescript-eslint/no-explicit-any */
     mockUserService.findOne = jest.fn().mockReturnValue(null) as any;
 
-    await expect(service.get(1, 2)).rejects.toThrowError('Not found user');
+    await expect(service.findOne(1, 2)).rejects.toThrowError('Not found user');
     expect(mockSequelize.transaction).toBeCalledTimes(1);
     expect(mockUserService.findOne).toBeCalledTimes(1);
     expect(mockUserService.findOne).toBeCalledWith(2, { transaction: {} });
   });
 
-  it('should not be get with same user', async () => {
-    await expect(service.get(1, 1)).rejects.toThrowError('Invalid params(same user)');
+  it('get should not return profile with same user', async () => {
+    await expect(service.findOne(1, 1)).rejects.toThrowError('Invalid params(same user)');
   });
 
   it('isFollow should return true', async () => {
@@ -153,7 +172,7 @@ describe('ProfileService', () => {
     /* eslint-disable @typescript-eslint/no-explicit-any */
     (service as any).isValidUsers = jest.fn().mockReturnValue(true) as any;
     service.isFollow = jest.fn().mockReturnValue(false) as any;
-    service.get = jest.fn().mockReturnValue({}) as any;
+    service.findOne = jest.fn().mockReturnValue({}) as any;
 
     const actual = await service.followUser(1, 2);
     expect(actual).toBeDefined();
@@ -171,8 +190,8 @@ describe('ProfileService', () => {
       },
       { transaction: null },
     );
-    expect(service.get).toBeCalledTimes(1);
-    expect(service.get).toBeCalledWith(1, 2, { transaction: {} });
+    expect(service.findOne).toBeCalledTimes(1);
+    expect(service.findOne).toBeCalledWith(1, 2, { transaction: {} });
   });
 
   it('should not be following with invalid user', async () => {
@@ -205,7 +224,7 @@ describe('ProfileService', () => {
     /* eslint-disable @typescript-eslint/no-explicit-any */
     (service as any).isValidUsers = jest.fn().mockReturnValue(true) as any;
     service.isFollow = jest.fn().mockReturnValue(true) as any;
-    service.get = jest.fn().mockReturnValue({}) as any;
+    service.findOne = jest.fn().mockReturnValue({}) as any;
 
     const actual = await service.unfollowUser(1, 2);
     expect(actual).toBeDefined();
@@ -223,8 +242,8 @@ describe('ProfileService', () => {
       },
       transaction: null,
     });
-    expect(service.get).toBeCalledTimes(1);
-    expect(service.get).toBeCalledWith(1, 2, { transaction: {} });
+    expect(service.findOne).toBeCalledTimes(1);
+    expect(service.findOne).toBeCalledWith(1, 2, { transaction: {} });
   });
 
   it('should not be unfollowing with invalid user', async () => {

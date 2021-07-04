@@ -90,4 +90,47 @@ describe('ArticleController (e2e)', () => {
         expect(body.list.length).toBe(1);
       });
   });
+
+  it('/api/articles/feed (Get)', async () => {
+    const user = await createTestUser(app, 'test1@test.com');
+    const dto = await getTestUserDto(app, user);
+    await createTestArticle(app, user);
+
+    return request(app.getHttpServer())
+      .get(`/api/articles/feed`)
+      .set('Authorization', `Bearer ${dto.token}`)
+      .expect(200)
+      .expect(({ body }) => {
+        expect(body.count).toBe(1);
+        expect(body.list.length).toBe(1);
+      });
+  });
+
+  it('/api/article/:slug (Get)', async () => {
+    const user = await createTestUser(app, 'test1@test.com');
+    const dto = await getTestUserDto(app, user);
+    const articles = await createTestArticle(app, user);
+
+    return request(app.getHttpServer())
+      .get(`/api/articles/${articles[0].slug}`)
+      .set('Authorization', `Bearer ${dto.token}`)
+      .expect(200)
+      .expect(({ body }) => {
+        expect(body.id).toBe(articles[0].id);
+      });
+  });
+
+  it('/api/article/:slug (Get) with invalid slug', async () => {
+    const user = await createTestUser(app, 'test1@test.com');
+    const dto = await getTestUserDto(app, user);
+    const articles = await createTestArticle(app, user);
+
+    return request(app.getHttpServer())
+      .get(`/api/articles/invalid`)
+      .set('Authorization', `Bearer ${dto.token}`)
+      .expect(400)
+      .expect(({ body }) => {
+        expect(body.message).toBe('Not found article by slug');
+      });
+  });
 });

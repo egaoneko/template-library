@@ -20,7 +20,19 @@ export class ProfileService {
   ) {}
 
   @Transactional()
-  async get(currentUserId: number, followingUserId: number, options?: SequelizeOptionDto): Promise<ProfileDto> {
+  async findAllFollowingUserId(currentUserId: number, options?: SequelizeOptionDto): Promise<number[]> {
+    const followings = await this.followModel.findAll({
+      where: {
+        userId: currentUserId,
+      },
+      transaction: options?.transaction,
+    });
+
+    return followings.map(following => following.followingUserId);
+  }
+
+  @Transactional()
+  async findOne(currentUserId: number, followingUserId: number, options?: SequelizeOptionDto): Promise<ProfileDto> {
     if (currentUserId === followingUserId) {
       throw new BadRequestException('Invalid params(same user)');
     }
@@ -82,7 +94,7 @@ export class ProfileService {
       throw new InternalServerErrorException('Do not follow');
     }
 
-    const profile = await this.get(currentUserId, followingUserId, options);
+    const profile = await this.findOne(currentUserId, followingUserId, options);
 
     if (!profile) {
       throw new BadRequestException('Not found profile');
@@ -125,7 +137,7 @@ export class ProfileService {
       throw new InternalServerErrorException('Do not unfollow');
     }
 
-    const profile = await this.get(currentUserId, unfollowingUserId, options);
+    const profile = await this.findOne(currentUserId, unfollowingUserId, options);
 
     if (!profile) {
       throw new BadRequestException('Not found profile');
