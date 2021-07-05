@@ -7,5 +7,7 @@ overwrittenConfig.moduleNameMapper = {
   '^@config/(.*)$': '<rootDir>/../src/config/$1',
   '^@auth/(.*)$': '<rootDir>/../src/auth/$1',
   '^@user/(.*)$': '<rootDir>/../src/user/$1',
+  '^@profile/(.*)$': '<rootDir>/../src/profile/$1',
+  '^@article/(.*)$': '<rootDir>/../src/article/$1',
 };
 module.exports = overwrittenConfig;

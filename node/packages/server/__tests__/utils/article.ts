@@ -3,11 +3,11 @@ import { User } from '@user/entities/user.entity';
 import { getModelToken } from '@nestjs/sequelize';
 import { DEFAULT_DATABASE_NAME } from '@config/constants/database';
 import { createTestUser } from './user';
-import { Article } from '@root/article/entities/article.entity';
-import { ArticleFavorite } from '@root/article/entities/article-favorite.entity';
+import { Article } from '@article/entities/article.entity';
+import { ArticleFavorite } from '@article/entities/article-favorite.entity';
 import { createTestFollowing } from './profile';
-import { Tag } from '@root/article/entities/tag.entity';
-import { ArticleTag } from '@root/article/entities/article-tag.entity';
+import { Tag } from '@article/entities/tag.entity';
+import { ArticleTag } from '@article/entities/article-tag.entity';
 
 export async function createTestArticle(app: INestApplication, user: User): Promise<Article[]> {
   const user2 = await createTestUser(app, 'test2@test.com');

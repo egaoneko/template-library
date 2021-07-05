@@ -11,9 +11,9 @@ import {
   BelongsToMany,
 } from 'sequelize-typescript';
 import { User } from '@user/entities/user.entity';
-import { ArticleFavorite } from '@root/article/entities/article-favorite.entity';
-import { ArticleTag } from '@root/article/entities/article-tag.entity';
-import { Tag } from '@root/article/entities/tag.entity';
+import { ArticleFavorite } from '@article/entities/article-favorite.entity';
+import { ArticleTag } from '@article/entities/article-tag.entity';
+import { Tag } from '@article/entities/tag.entity';
 
 @Table
 export class Article extends Model {

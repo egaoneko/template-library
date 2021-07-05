@@ -10,34 +10,20 @@ module.exports = {
     project: './tsconfig.eslint.json',
     ecmaVersion: 8
   },
-  ignorePatterns: ['node_modules/*', '.next/*'],
+  ignorePatterns: ['.eslintrc.js'],
   plugins: [
     '@typescript-eslint',
   ],
   extends: [
-    'eslint:recommended',
-    'plugin:@typescript-eslint/recommended', // TypeScript rules
-    'prettier', // Prettier plugin
-    'plugin:prettier/recommended', // Prettier recommended rules
+    'plugin:@typescript-eslint/recommended',
+    'plugin:prettier/recommended',
   ],
   rules: {
     '@typescript-eslint/no-unused-vars': ['error'],
-    '@typescript-eslint/no-inferrable-types': 'off',
-    '@typescript-eslint/no-empty-interface': 'off',
+    '@typescript-eslint/interface-name-prefix': 'off',
+    '@typescript-eslint/explicit-function-return-type': 'off',
+    '@typescript-eslint/explicit-module-boundary-types': 'off',
     '@typescript-eslint/no-empty-function': 'off',
     'prettier/prettier': 'error',
-  },
-  settings: {
-    propWrapperFunctions: [
-      // The names of any function used to wrap propTypes, e.g. `forbidExtraProps`. If this isn't set, any propTypes wrapped in a function will be skipped.
-      'forbidExtraProps',
-      {property: 'freeze', object: 'Object'},
-      {property: 'myFavoriteWrapper'},
-    ],
-    linkComponents: [
-      // Components used as alternatives to <a> for linking, eg. <Link to={ url } />
-      'Hyperlink',
-      {name: 'Link', linkAttribute: 'to'},
-    ],
   },
 };

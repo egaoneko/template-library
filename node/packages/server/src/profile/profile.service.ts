@@ -1,9 +1,9 @@
 import { BadRequestException, Injectable, InternalServerErrorException } from '@nestjs/common';
-import { ProfileDto } from '@root/profile/dto/profile.response';
+import { ProfileDto } from '@profile/dto/profile.response';
 import { UserService } from '@user/user.service';
 import { InjectConnection, InjectModel } from '@nestjs/sequelize';
 import { DEFAULT_DATABASE_NAME } from '@config/constants/database';
-import { Follow } from '@root/profile/entities/follow.entity';
+import { Follow } from '@profile/entities/follow.entity';
 import { Sequelize } from 'sequelize';
 import { UserDto } from '@user/dto/user.response';
 import { SequelizeOptionDto, Transactional } from '@shared/decorators/transaction/transactional.decorator';
@@ -33,10 +33,6 @@ export class ProfileService {
 
   @Transactional()
   async findOne(currentUserId: number, followingUserId: number, options?: SequelizeOptionDto): Promise<ProfileDto> {
-    if (currentUserId === followingUserId) {
-      throw new BadRequestException('Invalid params(same user)');
-    }
-
     const user = await this.userService.findOne(followingUserId, options);
 
     if (!user) {
@@ -44,7 +40,11 @@ export class ProfileService {
     }
 
     const profile = await this.ofProfileDto(user);
-    profile.following = await this.isFollow(currentUserId, followingUserId, options);
+    if (currentUserId === followingUserId) {
+      profile.following = false;
+    } else {
+      profile.following = await this.isFollow(currentUserId, followingUserId, options);
+    }
 
     return profile;
   }

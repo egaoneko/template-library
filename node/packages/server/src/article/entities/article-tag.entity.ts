@@ -1,6 +1,6 @@
 import { Table, Column, Model, PrimaryKey, DataType, AutoIncrement, ForeignKey } from 'sequelize-typescript';
-import { Article } from '@root/article/entities/article.entity';
-import { Tag } from '@root/article/entities/tag.entity';
+import { Article } from '@article/entities/article.entity';
+import { Tag } from '@article/entities/tag.entity';
 
 @Table
 export class ArticleTag extends Model {

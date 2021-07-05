@@ -20,7 +20,9 @@
       "@shared/*": ["./src/shared/*"],
       "@config/*": ["./src/config/*"],
       "@auth/*": ["./src/auth/*"],
-      "@user/*": ["./src/user/*"]
+      "@user/*": ["./src/user/*"],
+      "@profile/*": ["./src/profile/*"],
+      "@article/*": ["./src/article/*"]
     }
   },
   "exclude": [

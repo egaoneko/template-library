@@ -4,7 +4,7 @@ import { ProfileController } from './profile.controller';
 import { UserModule } from '@user/user.module';
 import { SequelizeModule } from '@nestjs/sequelize';
 import { DEFAULT_DATABASE_NAME } from '@config/constants/database';
-import { Follow } from '@root/profile/entities/follow.entity';
+import { Follow } from '@profile/entities/follow.entity';
 import { SharedModule } from '@shared/shared.module';
 
 @Module({

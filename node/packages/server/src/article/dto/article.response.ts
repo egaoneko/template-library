@@ -1,7 +1,7 @@
 import { IsArray, IsBoolean, IsNotEmpty, IsNumber, IsString, ValidateNested } from 'class-validator';
 import { ApiProperty } from '@nestjs/swagger';
-import { ProfileDto } from '@root/profile/dto/profile.response';
-import { IArticle } from '@root/article/interfaces/article.interface';
+import { ProfileDto } from '@profile/dto/profile.response';
+import { IArticle } from '@article/interfaces/article.interface';
 
 export class ArticleDto implements IArticle {
   @IsNotEmpty()
@@ -83,7 +83,7 @@ export class ArticleDto implements IArticle {
     description: 'favorited',
     type: 'boolean',
   })
-  favorited: boolean = false;
+  favorited = false;
 
   @IsNotEmpty()
   @IsNumber()
@@ -92,7 +92,7 @@ export class ArticleDto implements IArticle {
     description: 'favorites count',
     type: 'number',
   })
-  favoritesCount: number = 0;
+  favoritesCount = 0;
 
   @ValidateNested()
   @ApiProperty({

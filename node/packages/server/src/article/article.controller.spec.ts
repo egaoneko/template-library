@@ -4,6 +4,8 @@ import { ArticleService } from './article.service';
 import { createMock } from '@golevelup/ts-jest';
 import { GetArticlesDto } from './dto/get-articles.input';
 import { GetFeedArticlesDto } from './dto/get-feed-articles.input';
+import { CreateArticleDto } from './dto/create-article.input';
+import { UpdateArticleDto } from './dto/update-article.input';
 
 describe('ArticleController', () => {
   let controller: ArticleController;
@@ -49,5 +51,28 @@ describe('ArticleController', () => {
 
     expect(actual).toBeDefined();
     expect(mockArticleService.findOneBySlug).toBeCalledTimes(1);
+  });
+
+  it('should be create article', async () => {
+    const dto = new CreateArticleDto();
+    const actual = await controller.createArticle(dto, 1);
+
+    expect(actual).toBeDefined();
+    expect(mockArticleService.create).toBeCalledTimes(1);
+  });
+
+  it('should be update article', async () => {
+    const dto = new UpdateArticleDto();
+    const actual = await controller.updateArticle('slug', dto, 1);
+
+    expect(actual).toBeDefined();
+    expect(mockArticleService.update).toBeCalledTimes(1);
+  });
+
+  it('should be delete article', async () => {
+    const actual = await controller.deleteArticle('slug');
+
+    expect(actual).toBeDefined();
+    expect(mockArticleService.delete).toBeCalledTimes(1);
   });
 });

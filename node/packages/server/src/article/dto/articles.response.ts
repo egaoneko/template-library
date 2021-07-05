@@ -1,6 +1,6 @@
 import { IsNotEmpty, IsNumber, ValidateNested } from 'class-validator';
 import { ApiProperty } from '@nestjs/swagger';
-import { ArticleDto } from '@root/article/dto/article.response';
+import { ArticleDto } from '@article/dto/article.response';
 
 export class ArticlesDto {
   @IsNotEmpty()
@@ -10,7 +10,7 @@ export class ArticlesDto {
     description: 'list count',
     type: 'number',
   })
-  count: number = 0;
+  count = 0;
 
   @ValidateNested({ each: true })
   @ApiProperty({

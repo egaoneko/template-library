@@ -12,7 +12,7 @@ export class GetFeedArticlesDto {
     type: 'number',
     default: 20,
   })
-  limit: number = 20;
+  limit = 20;
 
   @Type(() => Number)
   @IsNotEmpty()
@@ -23,5 +23,5 @@ export class GetFeedArticlesDto {
     type: 'number',
     default: 1,
   })
-  page: number = 1;
+  page = 1;
 }

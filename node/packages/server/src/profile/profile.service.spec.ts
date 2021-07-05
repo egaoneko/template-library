@@ -47,7 +47,7 @@ describe('ProfileService', () => {
 
   it('get should return following user id', async () => {
     /* eslint-disable @typescript-eslint/no-explicit-any */
-    mockFollow.findAll = jest.fn().mockReturnValue([{followingUserId: 1}, {followingUserId: 2}]) as any;
+    mockFollow.findAll = jest.fn().mockReturnValue([{ followingUserId: 1 }, { followingUserId: 2 }]) as any;
 
     const actual = await service.findAllFollowingUserId(1);
     expect(actual).toBeDefined();
@@ -58,9 +58,9 @@ describe('ProfileService', () => {
     expect(mockFollow.findAll).toBeCalledTimes(1);
     expect(mockFollow.findAll).toBeCalledWith({
       where: {
-        userId: 1
+        userId: 1,
       },
-      transaction: {}
+      transaction: {},
     });
   });
 
@@ -98,8 +98,27 @@ describe('ProfileService', () => {
     expect(mockUserService.findOne).toBeCalledWith(2, { transaction: {} });
   });
 
-  it('get should not return profile with same user', async () => {
-    await expect(service.findOne(1, 1)).rejects.toThrowError('Invalid params(same user)');
+  it('get should return profile with same user', async () => {
+    /* eslint-disable @typescript-eslint/no-explicit-any */
+    const user = {
+      email: 'test1@test.com',
+      username: 'test1',
+      password: 'token',
+      salt: 'salt',
+    };
+    mockUserService.findOne = jest.fn().mockReturnValue(user) as any;
+    service.ofProfileDto = jest.fn().mockReturnValue({}) as any;
+    service.isFollow = jest.fn() as any;
+
+    const actual = await service.findOne(1, 1);
+    expect(actual).toBeDefined();
+    expect(actual.following).toBe(false);
+    expect(mockSequelize.transaction).toBeCalledTimes(1);
+    expect(mockUserService.findOne).toBeCalledTimes(1);
+    expect(mockUserService.findOne).toBeCalledWith(1, { transaction: {} });
+    expect(service.ofProfileDto).toBeCalledTimes(1);
+    expect(service.ofProfileDto).toBeCalledWith(user);
+    expect(service.isFollow).toBeCalledTimes(0);
   });
 
   it('isFollow should return true', async () => {

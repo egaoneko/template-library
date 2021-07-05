@@ -1,7 +1,7 @@
 import { Controller, Delete, Get, Param, Post } from '@nestjs/common';
 import { ApiHeader, ApiOperation, ApiParam, ApiResponse, ApiTags } from '@nestjs/swagger';
-import { ProfileDto } from '@root/profile/dto/profile.response';
-import { ProfileService } from '@root/profile/profile.service';
+import { ProfileDto } from '@profile/dto/profile.response';
+import { ProfileService } from '@profile/profile.service';
 import { CurrentUser } from '@user/decorators/current-user.decorator';
 
 @ApiTags('profile')
