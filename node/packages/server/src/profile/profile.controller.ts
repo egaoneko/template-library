@@ -16,7 +16,7 @@ export class ProfileController {
   @ApiResponse({ status: 200, description: 'Profile', type: ProfileDto })
   @ApiResponse({ status: 401, description: 'Unauthorized' })
   async getProfile(@Param('userId') userId: number, @CurrentUser('id') currentUserId: number): Promise<ProfileDto> {
-    return this.profileService.findOne(currentUserId, userId);
+    return this.profileService.getProfile(currentUserId, userId);
   }
 
   @Post('/:userId/follow')

@@ -15,6 +15,9 @@ import { ArticleTag } from './entities/article-tag.entity';
 import { CreateArticleDto } from './dto/create-article.input';
 import { paramCase } from 'change-case';
 import { UpdateArticleDto } from './dto/update-article.input';
+import { Comment } from './entities/comment.entity';
+import { CreateCommentDto } from './dto/create-comment.input';
+import { GetCommentsDto } from './dto/get-comments.input';
 
 describe('ArticleService', () => {
   let service: ArticleService;
@@ -23,6 +26,7 @@ describe('ArticleService', () => {
   let mockArticleFavorite: typeof ArticleFavorite;
   let mockTag: typeof Tag;
   let mockArticleTag: typeof ArticleTag;
+  let mockComment: typeof Comment;
   let mockSequelize: Sequelize;
 
   beforeEach(async () => {
@@ -31,6 +35,7 @@ describe('ArticleService', () => {
     mockArticleFavorite = createMock<typeof ArticleFavorite>();
     mockTag = createMock<typeof Tag>();
     mockArticleTag = createMock<typeof ArticleTag>();
+    mockComment = createMock<typeof Comment>();
     mockSequelize = createMock<Sequelize>();
 
     const module: TestingModule = await Test.createTestingModule({
@@ -54,6 +59,10 @@ describe('ArticleService', () => {
         {
           provide: getModelToken(ArticleTag, DEFAULT_DATABASE_NAME),
           useValue: mockArticleTag,
+        },
+        {
+          provide: getModelToken(Comment, DEFAULT_DATABASE_NAME),
+          useValue: mockComment,
         },
         {
           provide: getConnectionToken(DEFAULT_DATABASE_NAME),
@@ -82,7 +91,7 @@ describe('ArticleService', () => {
     dto.page = 2;
     dto.limit = 20;
 
-    const actual = await service.findAll(dto, 1);
+    const actual = await service.getArticles(dto, 1);
     expect(actual).toBeDefined();
     expect(mockSequelize.transaction).toBeCalledTimes(1);
     expect(mockArticle.findAndCountAll).toBeCalledTimes(1);
@@ -120,12 +129,12 @@ describe('ArticleService', () => {
     const dto = new GetArticlesDto();
     (dto as any).page = undefined;
 
-    await expect(service.findAll(dto, 1)).rejects.toThrowError('Invalid article list params');
+    await expect(service.getArticles(dto, 1)).rejects.toThrowError('Invalid article list params');
   });
 
   it('should be return article feed list', async () => {
     /* eslint-disable @typescript-eslint/no-explicit-any */
-    mockProfileService.findAllFollowingUserId = jest.fn().mockReturnValue([1, 2]) as any;
+    mockProfileService.getFollowingsByUserId = jest.fn().mockReturnValue([1, 2]) as any;
     mockArticle.findAndCountAll = jest.fn().mockReturnValue({ count: 2, rows: [{}, {}] }) as any;
     service.ofArticleDto = jest.fn().mockReturnValue({}) as any;
 
@@ -133,11 +142,11 @@ describe('ArticleService', () => {
     dto.page = 2;
     dto.limit = 20;
 
-    const actual = await service.findFeedAll(dto, 1);
+    const actual = await service.getFeedArticles(dto, 1);
     expect(actual).toBeDefined();
     expect(mockSequelize.transaction).toBeCalledTimes(1);
-    expect(mockProfileService.findAllFollowingUserId).toBeCalledTimes(1);
-    expect(mockProfileService.findAllFollowingUserId).toBeCalledWith(1, { transaction: {} });
+    expect(mockProfileService.getFollowingsByUserId).toBeCalledTimes(1);
+    expect(mockProfileService.getFollowingsByUserId).toBeCalledWith(1, { transaction: {} });
     expect(mockArticle.findAndCountAll).toBeCalledTimes(1);
     expect(mockArticle.findAndCountAll).toBeCalledWith({
       where: {
@@ -165,14 +174,14 @@ describe('ArticleService', () => {
     const dto = new GetFeedArticlesDto();
     (dto as any).page = undefined;
 
-    await expect(service.findFeedAll(dto, 1)).rejects.toThrowError('Invalid article feed list params');
+    await expect(service.getFeedArticles(dto, 1)).rejects.toThrowError('Invalid article feed list params');
   });
 
   it('should be return article', async () => {
     /* eslint-disable @typescript-eslint/no-explicit-any */
     service.ofArticleDto = jest.fn().mockReturnValue({}) as any;
 
-    const actual = await service.findOneBySlug('slug', 1);
+    const actual = await service.getArticleBySlug('slug', 1);
     expect(actual).toBeDefined();
     expect(mockSequelize.transaction).toBeCalledTimes(1);
     expect(mockArticle.findOne).toBeCalledTimes(1);
@@ -197,7 +206,7 @@ describe('ArticleService', () => {
     /* eslint-disable @typescript-eslint/no-explicit-any */
     mockArticle.findOne = jest.fn().mockReturnValue(null) as any;
 
-    await expect(service.findOneBySlug('slug', 1)).rejects.toThrowError('Not found article by slug');
+    await expect(service.getArticleBySlug('slug', 1)).rejects.toThrowError('Not found article by slug');
     expect(mockArticle.findOne).toBeCalledTimes(1);
     expect(mockArticle.findOne).toBeCalledWith({
       where: {
@@ -225,7 +234,7 @@ describe('ArticleService', () => {
       .mockReturnValueOnce([{ id: 2 }])
       .mockReturnValue([{ id: 3 }]) as any;
     mockArticleTag.create = jest.fn().mockReturnValue({}) as any;
-    service.findOneBySlug = jest.fn().mockReturnValue({}) as any;
+    service.getArticleBySlug = jest.fn().mockReturnValue({}) as any;
 
     const dto = new CreateArticleDto();
     dto.title = 'How to train your dragon';
@@ -234,7 +243,7 @@ describe('ArticleService', () => {
     dto.tagList = ['reactjs', 'angularjs', 'dragons'];
 
     const slug = paramCase(dto.title);
-    const actual = await service.create(dto, 1);
+    const actual = await service.createArticle(dto, 1);
     expect(actual).toBeDefined();
     expect(mockSequelize.transaction).toBeCalledTimes(1);
     expect(mockArticle.count).toBeCalledTimes(1);
@@ -272,12 +281,12 @@ describe('ArticleService', () => {
       });
     });
 
-    expect(service.findOneBySlug).toBeCalledTimes(1);
+    expect(service.getArticleBySlug).toBeCalledTimes(1);
   });
 
   it('should not be create article with invalid create params', async () => {
     const dto = new CreateArticleDto();
-    await expect(service.create(dto, 1)).rejects.toThrowError('Invalid article create params');
+    await expect(service.createArticle(dto, 1)).rejects.toThrowError('Invalid article create params');
   });
 
   it('should not be create article with already exist', async () => {
@@ -291,7 +300,7 @@ describe('ArticleService', () => {
     dto.tagList = ['reactjs', 'angularjs', 'dragons'];
 
     const slug = paramCase(dto.title);
-    await expect(service.create(dto, 1)).rejects.toThrowError('Slug is already exist');
+    await expect(service.createArticle(dto, 1)).rejects.toThrowError('Slug is already exist');
     expect(mockSequelize.transaction).toBeCalledTimes(1);
     expect(mockArticle.count).toBeCalledTimes(1);
     expect(mockArticle.count).toBeCalledWith({
@@ -307,13 +316,13 @@ describe('ArticleService', () => {
     mockArticle.findOne = jest.fn().mockReturnValue({ id: 1 }) as any;
     mockArticle.count = jest.fn().mockReturnValue(0) as any;
     mockArticle.update = jest.fn().mockReturnValue({}) as any;
-    service.findOneBySlug = jest.fn().mockReturnValue({}) as any;
+    service.getArticleBySlug = jest.fn().mockReturnValue({}) as any;
 
     const dto = new UpdateArticleDto();
     dto.title = 'Did you train your dragon?';
 
     const newSlug = paramCase(dto.title);
-    const actual = await service.update('slug', dto, 1);
+    const actual = await service.updateArticle('slug', dto, 1);
     expect(actual).toBeDefined();
     expect(mockSequelize.transaction).toBeCalledTimes(1);
     expect(mockArticle.findOne).toBeCalledTimes(1);
@@ -345,7 +354,7 @@ describe('ArticleService', () => {
         transaction: {},
       },
     );
-    expect(service.findOneBySlug).toBeCalledTimes(1);
+    expect(service.getArticleBySlug).toBeCalledTimes(1);
   });
 
   it('should not be update article with not found', async () => {
@@ -356,7 +365,7 @@ describe('ArticleService', () => {
     const dto = new UpdateArticleDto();
     dto.title = 'How to train your dragon';
 
-    await expect(service.update('slug', dto, 1)).rejects.toThrowError('Not found article by slug');
+    await expect(service.updateArticle('slug', dto, 1)).rejects.toThrowError('Not found article by slug');
     expect(mockSequelize.transaction).toBeCalledTimes(1);
     expect(mockArticle.findOne).toBeCalledTimes(1);
     expect(mockArticle.findOne).toBeCalledWith({
@@ -375,7 +384,7 @@ describe('ArticleService', () => {
     dto.title = 'How to train your dragon';
 
     const slug = paramCase(dto.title);
-    await expect(service.update('slug', dto, 1)).rejects.toThrowError('Slug is already exist');
+    await expect(service.updateArticle('slug', dto, 1)).rejects.toThrowError('Slug is already exist');
     expect(mockSequelize.transaction).toBeCalledTimes(1);
     expect(mockArticle.count).toBeCalledTimes(1);
     expect(mockArticle.count).toBeCalledWith({
@@ -391,7 +400,7 @@ describe('ArticleService', () => {
     mockArticle.count = jest.fn().mockReturnValue(1) as any;
     mockArticle.destroy = jest.fn().mockReturnValue(1) as any;
 
-    const actual = await service.delete('slug');
+    const actual = await service.deleteArticle('slug');
     expect(actual).toBeUndefined();
     expect(mockSequelize.transaction).toBeCalledTimes(1);
     expect(mockArticle.count).toBeCalledTimes(1);
@@ -414,7 +423,7 @@ describe('ArticleService', () => {
     /* eslint-disable @typescript-eslint/no-explicit-any */
     mockArticle.count = jest.fn().mockReturnValue(0) as any;
 
-    await expect(service.delete('slug')).rejects.toThrowError('Not found article by slug');
+    await expect(service.deleteArticle('slug')).rejects.toThrowError('Not found article by slug');
     expect(mockSequelize.transaction).toBeCalledTimes(1);
     expect(mockArticle.count).toBeCalledTimes(1);
     expect(mockArticle.count).toBeCalledWith({
@@ -430,7 +439,7 @@ describe('ArticleService', () => {
     mockArticle.count = jest.fn().mockReturnValue(1) as any;
     mockArticle.destroy = jest.fn().mockReturnValue(2) as any;
 
-    await expect(service.delete('slug')).rejects.toThrowError('Do not delete article');
+    await expect(service.deleteArticle('slug')).rejects.toThrowError('Do not delete article');
     expect(mockSequelize.transaction).toBeCalledTimes(1);
     expect(mockArticle.count).toBeCalledTimes(1);
     expect(mockArticle.count).toBeCalledWith({
@@ -446,5 +455,475 @@ describe('ArticleService', () => {
       },
       transaction: {},
     });
+  });
+
+  it('should be return comment list', async () => {
+    /* eslint-disable @typescript-eslint/no-explicit-any */
+    mockArticle.findOne = jest.fn().mockReturnValue({ id: 1 }) as any;
+    mockComment.findAndCountAll = jest.fn().mockReturnValue({ count: 2, rows: [{}, {}] }) as any;
+    service.ofCommentDto = jest.fn().mockReturnValue({}) as any;
+
+    const dto = new GetCommentsDto();
+    dto.page = 2;
+    dto.limit = 20;
+
+    const actual = await service.getComments('slug', dto, 1);
+    expect(actual).toBeDefined();
+    expect(mockSequelize.transaction).toBeCalledTimes(1);
+    expect(mockComment.findAndCountAll).toBeCalledTimes(1);
+    expect(mockComment.findAndCountAll).toBeCalledWith({
+      where: {
+        articleId: 1,
+      },
+      order: [['updatedAt', 'DESC']],
+      offset: (dto.page - 1) * dto.limit,
+      limit: dto.limit,
+      distinct: true,
+      transaction: {},
+    });
+    expect(service.ofCommentDto).toBeCalledTimes(2);
+  });
+
+  it('should not be return comment list with invalid list params', async () => {
+    /* eslint-disable @typescript-eslint/no-explicit-any */
+    const dto = new GetCommentsDto();
+    (dto as any).page = undefined;
+
+    await expect(service.getComments('slug', dto, 1)).rejects.toThrowError('Invalid comment list params');
+  });
+
+  it('should not be create comment with not found', async () => {
+    /* eslint-disable @typescript-eslint/no-explicit-any */
+    mockArticle.findOne = jest.fn().mockReturnValue(null) as any;
+
+    const dto = new GetCommentsDto();
+    dto.page = 2;
+    dto.limit = 20;
+
+    await expect(service.getComments('slug', dto, 1)).rejects.toThrowError('Not found article by slug');
+    expect(mockSequelize.transaction).toBeCalledTimes(1);
+    expect(mockArticle.findOne).toBeCalledTimes(1);
+    expect(mockArticle.findOne).toBeCalledWith({
+      where: {
+        slug: 'slug',
+      },
+      transaction: {},
+    });
+  });
+
+  it('should be create comment', async () => {
+    /* eslint-disable @typescript-eslint/no-explicit-any */
+    mockArticle.findOne = jest.fn().mockReturnValue({ id: 1 }) as any;
+    mockComment.create = jest.fn().mockReturnValue({ id: 1 }) as any;
+    service.ofCommentDto = jest.fn().mockReturnValue({}) as any;
+
+    const dto = new CreateCommentDto();
+    dto.body = 'You have to believe';
+
+    const actual = await service.createComment('slug', dto, 1);
+    expect(actual).toBeDefined();
+    expect(mockSequelize.transaction).toBeCalledTimes(1);
+    expect(mockArticle.findOne).toBeCalledTimes(1);
+    expect(mockArticle.findOne).toBeCalledWith({
+      where: {
+        slug: 'slug',
+      },
+      transaction: {},
+    });
+    expect(mockComment.create).toBeCalledTimes(1);
+    expect(mockComment.create).toBeCalledWith(
+      {
+        body: dto.body,
+        authorId: 1,
+        articleId: 1,
+      },
+      {
+        transaction: {},
+      },
+    );
+    expect(service.ofCommentDto).toBeCalledTimes(1);
+  });
+
+  it('should not be create comment with invalid create params', async () => {
+    const dto = new CreateCommentDto();
+    await expect(service.createComment('slug', dto, 1)).rejects.toThrowError('Invalid comment create params');
+  });
+
+  it('should not be create comment with not found', async () => {
+    /* eslint-disable @typescript-eslint/no-explicit-any */
+    mockArticle.findOne = jest.fn().mockReturnValue(null) as any;
+
+    const dto = new CreateCommentDto();
+    dto.body = 'You have to believe';
+
+    await expect(service.createComment('slug', dto, 1)).rejects.toThrowError('Not found article by slug');
+    expect(mockSequelize.transaction).toBeCalledTimes(1);
+    expect(mockArticle.findOne).toBeCalledTimes(1);
+    expect(mockArticle.findOne).toBeCalledWith({
+      where: {
+        slug: 'slug',
+      },
+      transaction: {},
+    });
+  });
+
+  it('should be delete comment', async () => {
+    /* eslint-disable @typescript-eslint/no-explicit-any */
+    mockArticle.count = jest.fn().mockReturnValue(1) as any;
+    mockComment.count = jest.fn().mockReturnValue(1) as any;
+    mockComment.destroy = jest.fn().mockReturnValue(1) as any;
+
+    const actual = await service.deleteComment('slug', 1);
+    expect(actual).toBeUndefined();
+    expect(mockSequelize.transaction).toBeCalledTimes(1);
+    expect(mockArticle.count).toBeCalledTimes(1);
+    expect(mockArticle.count).toBeCalledWith({
+      where: {
+        slug: 'slug',
+      },
+      transaction: {},
+    });
+    expect(mockComment.count).toBeCalledTimes(1);
+    expect(mockComment.count).toBeCalledWith({
+      where: {
+        id: 1,
+      },
+      transaction: {},
+    });
+    expect(mockComment.destroy).toBeCalledTimes(1);
+    expect(mockComment.destroy).toBeCalledWith({
+      where: {
+        id: 1,
+      },
+      transaction: {},
+    });
+  });
+
+  it('should not be delete comment with not found article', async () => {
+    /* eslint-disable @typescript-eslint/no-explicit-any */
+    mockArticle.count = jest.fn().mockReturnValue(0) as any;
+
+    await expect(service.deleteComment('slug', 1)).rejects.toThrowError('Not found article by slug');
+    expect(mockSequelize.transaction).toBeCalledTimes(1);
+    expect(mockArticle.count).toBeCalledTimes(1);
+    expect(mockArticle.count).toBeCalledWith({
+      where: {
+        slug: 'slug',
+      },
+      transaction: {},
+    });
+  });
+
+  it('should not be delete comment with not found comment', async () => {
+    /* eslint-disable @typescript-eslint/no-explicit-any */
+    mockArticle.count = jest.fn().mockReturnValue(1) as any;
+    mockComment.count = jest.fn().mockReturnValue(0) as any;
+
+    await expect(service.deleteComment('slug', 1)).rejects.toThrowError('Not found comment by id');
+    expect(mockSequelize.transaction).toBeCalledTimes(1);
+    expect(mockArticle.count).toBeCalledTimes(1);
+    expect(mockArticle.count).toBeCalledWith({
+      where: {
+        slug: 'slug',
+      },
+      transaction: {},
+    });
+    expect(mockComment.count).toBeCalledTimes(1);
+    expect(mockComment.count).toBeCalledWith({
+      where: {
+        id: 1,
+      },
+      transaction: {},
+    });
+  });
+
+  it('should not be delete comment without intention', async () => {
+    /* eslint-disable @typescript-eslint/no-explicit-any */
+    mockArticle.count = jest.fn().mockReturnValue(1) as any;
+    mockComment.count = jest.fn().mockReturnValue(1) as any;
+    mockComment.destroy = jest.fn().mockReturnValue(2) as any;
+
+    await expect(service.deleteComment('slug', 1)).rejects.toThrowError('Do not delete comment');
+    expect(mockSequelize.transaction).toBeCalledTimes(1);
+    expect(mockArticle.count).toBeCalledTimes(1);
+    expect(mockArticle.count).toBeCalledWith({
+      where: {
+        slug: 'slug',
+      },
+      transaction: {},
+    });
+    expect(mockComment.count).toBeCalledTimes(1);
+    expect(mockComment.count).toBeCalledWith({
+      where: {
+        id: 1,
+      },
+      transaction: {},
+    });
+    expect(mockComment.destroy).toBeCalledTimes(1);
+    expect(mockComment.destroy).toBeCalledWith({
+      where: {
+        id: 1,
+      },
+      transaction: {},
+    });
+  });
+
+  it('should be favorite article', async () => {
+    /* eslint-disable @typescript-eslint/no-explicit-any */
+    mockArticle.findOne = jest.fn().mockReturnValue({ id: 1 }) as any;
+    mockArticleFavorite.count = jest.fn().mockReturnValue(0) as any;
+    mockArticleFavorite.create = jest.fn().mockReturnValue({ id: 1 }) as any;
+    service.getArticleBySlug = jest.fn().mockReturnValue({}) as any;
+
+    const actual = await service.favoriteArticle('slug', 1);
+    expect(actual).toBeDefined();
+    expect(mockSequelize.transaction).toBeCalledTimes(1);
+    expect(mockArticle.findOne).toBeCalledTimes(1);
+    expect(mockArticle.findOne).toBeCalledWith({
+      where: {
+        slug: 'slug',
+      },
+      transaction: {},
+    });
+    expect(mockArticleFavorite.count).toBeCalledTimes(1);
+    expect(mockArticleFavorite.count).toBeCalledWith({
+      where: {
+        userId: 1,
+        articleId: 1,
+      },
+      transaction: {},
+    });
+    expect(mockArticleFavorite.create).toBeCalledTimes(1);
+    expect(mockArticleFavorite.create).toBeCalledWith(
+      {
+        userId: 1,
+        articleId: 1,
+      },
+      {
+        transaction: {},
+      },
+    );
+    expect(service.getArticleBySlug).toBeCalledTimes(1);
+  });
+
+  it('should not be favorite article with not found', async () => {
+    /* eslint-disable @typescript-eslint/no-explicit-any */
+    mockArticle.findOne = jest.fn().mockReturnValue(null) as any;
+
+    await expect(service.favoriteArticle('slug', 1)).rejects.toThrowError('Not found article by slug');
+    expect(mockSequelize.transaction).toBeCalledTimes(1);
+    expect(mockArticle.findOne).toBeCalledTimes(1);
+    expect(mockArticle.findOne).toBeCalledWith({
+      where: {
+        slug: 'slug',
+      },
+      transaction: {},
+    });
+  });
+
+  it('should not be favorite article with already favorite', async () => {
+    /* eslint-disable @typescript-eslint/no-explicit-any */
+    mockArticle.findOne = jest.fn().mockReturnValue({ id: 1 }) as any;
+    mockArticleFavorite.count = jest.fn().mockReturnValue(1) as any;
+
+    await expect(service.favoriteArticle('slug', 1)).rejects.toThrowError('Article is already favorite');
+    expect(mockSequelize.transaction).toBeCalledTimes(1);
+    expect(mockArticle.findOne).toBeCalledTimes(1);
+    expect(mockArticle.findOne).toBeCalledWith({
+      where: {
+        slug: 'slug',
+      },
+      transaction: {},
+    });
+    expect(mockArticleFavorite.count).toBeCalledTimes(1);
+    expect(mockArticleFavorite.count).toBeCalledWith({
+      where: {
+        userId: 1,
+        articleId: 1,
+      },
+      transaction: {},
+    });
+  });
+
+  it('should be unfavorite article', async () => {
+    /* eslint-disable @typescript-eslint/no-explicit-any */
+    mockArticle.findOne = jest.fn().mockReturnValue({ id: 1 }) as any;
+    mockArticleFavorite.count = jest.fn().mockReturnValue(1) as any;
+    mockArticleFavorite.destroy = jest.fn().mockReturnValue(1) as any;
+    service.getArticleBySlug = jest.fn().mockReturnValue({}) as any;
+
+    const actual = await service.unfavoriteArticle('slug', 1);
+    expect(actual).toBeDefined();
+    expect(mockSequelize.transaction).toBeCalledTimes(1);
+    expect(mockArticle.findOne).toBeCalledTimes(1);
+    expect(mockArticle.findOne).toBeCalledWith({
+      where: {
+        slug: 'slug',
+      },
+      transaction: {},
+    });
+    expect(mockArticleFavorite.count).toBeCalledTimes(1);
+    expect(mockArticleFavorite.count).toBeCalledWith({
+      where: {
+        userId: 1,
+        articleId: 1,
+      },
+      transaction: {},
+    });
+    expect(mockArticleFavorite.destroy).toBeCalledTimes(1);
+    expect(mockArticleFavorite.destroy).toBeCalledWith({
+      where: {
+        userId: 1,
+        articleId: 1,
+      },
+      transaction: {},
+    });
+    expect(service.getArticleBySlug).toBeCalledTimes(1);
+  });
+
+  it('should not be unfavorite article with not found', async () => {
+    /* eslint-disable @typescript-eslint/no-explicit-any */
+    mockArticle.findOne = jest.fn().mockReturnValue({ id: 1 }) as any;
+    mockArticleFavorite.count = jest.fn().mockReturnValue(0) as any;
+
+    await expect(service.unfavoriteArticle('slug', 1)).rejects.toThrowError('Article is already un favorite');
+    expect(mockSequelize.transaction).toBeCalledTimes(1);
+    expect(mockArticle.findOne).toBeCalledTimes(1);
+    expect(mockArticle.findOne).toBeCalledWith({
+      where: {
+        slug: 'slug',
+      },
+      transaction: {},
+    });
+    expect(mockArticleFavorite.count).toBeCalledTimes(1);
+    expect(mockArticleFavorite.count).toBeCalledWith({
+      where: {
+        userId: 1,
+        articleId: 1,
+      },
+      transaction: {},
+    });
+  });
+
+  it('should not be unfavorite article with already unfavorite', async () => {
+    /* eslint-disable @typescript-eslint/no-explicit-any */
+    mockArticle.findOne = jest.fn().mockReturnValue(null) as any;
+
+    await expect(service.unfavoriteArticle('slug', 1)).rejects.toThrowError('Not found article by slug');
+    expect(mockSequelize.transaction).toBeCalledTimes(1);
+    expect(mockArticle.findOne).toBeCalledTimes(1);
+    expect(mockArticle.findOne).toBeCalledWith({
+      where: {
+        slug: 'slug',
+      },
+      transaction: {},
+    });
+  });
+
+  it('should not be unfavorite article without intention', async () => {
+    /* eslint-disable @typescript-eslint/no-explicit-any */
+    mockArticle.findOne = jest.fn().mockReturnValue({ id: 1 }) as any;
+    mockArticleFavorite.destroy = jest.fn().mockReturnValue(0) as any;
+
+    await expect(service.unfavoriteArticle('slug', 1)).rejects.toThrowError('Do not unfavorite');
+    expect(mockSequelize.transaction).toBeCalledTimes(1);
+    expect(mockArticle.findOne).toBeCalledTimes(1);
+    expect(mockArticle.findOne).toBeCalledWith({
+      where: {
+        slug: 'slug',
+      },
+      transaction: {},
+    });
+    expect(mockArticleFavorite.destroy).toBeCalledTimes(1);
+    expect(mockArticleFavorite.destroy).toBeCalledWith({
+      where: {
+        userId: 1,
+        articleId: 1,
+      },
+      transaction: {},
+    });
+  });
+
+  it('should be tag list', async () => {
+    /* eslint-disable @typescript-eslint/no-explicit-any */
+    mockTag.findAll = jest.fn().mockReturnValue([{}, {}]) as any;
+
+    const actual = await service.getTags();
+    expect(actual).toBeDefined();
+    expect(actual.length).toBe(2);
+    expect(mockTag.findAll).toBeCalledTimes(1);
+    expect(mockTag.findAll).toBeCalledWith({ transaction: undefined });
+  });
+
+  it('should return article dto', async () => {
+    /* eslint-disable @typescript-eslint/no-explicit-any */
+    mockProfileService.getProfile = jest.fn().mockReturnValue({}) as any;
+
+    const mockModel = createMock<Article>({
+      id: 1,
+      slug: 'how-to-train-your-dragon',
+      title: 'How to train your dragon',
+      description: 'Ever wonder how?',
+      body: 'It takes a Jacobian',
+      authorId: 1,
+      tags: [
+        {
+          id: 1,
+          title: 'dragons',
+        },
+        {
+          id: 2,
+          title: 'training',
+        },
+      ],
+      createdAt: '2016-02-18T03:22:56.637Z' as any,
+      updatedAt: '2016-02-18T03:22:56.637Z' as any,
+      articleFavorites: [
+        {
+          id: 1,
+          userId: 1,
+          articleId: 1,
+        },
+        {
+          id: 1,
+          userId: 2,
+          articleId: 1,
+        },
+      ],
+    });
+    const actual = await service.ofArticleDto(mockModel, 1);
+    expect(actual.id).toBe(mockModel.id);
+    expect(actual.slug).toBe(mockModel.slug);
+    expect(actual.title).toBe(mockModel.title);
+    expect(actual.description).toBe(mockModel.description);
+    expect(actual.body).toBe(mockModel.body);
+    expect(actual.tagList.length).toBe(mockModel.tags.length);
+    expect(actual.createdAt).toBe(mockModel.createdAt);
+    expect(actual.updatedAt).toBe(mockModel.updatedAt);
+    expect(actual.favorited).toBe(true);
+    expect(actual.favoritesCount).toBe(mockModel.articleFavorites.length);
+    expect(actual.author).toBeDefined();
+    expect(mockProfileService.getProfile).toBeCalledTimes(1);
+    expect(mockProfileService.getProfile).toBeCalledWith(1, mockModel.authorId, undefined);
+  });
+
+  it('should return comment dto', async () => {
+    /* eslint-disable @typescript-eslint/no-explicit-any */
+    mockProfileService.getProfile = jest.fn().mockReturnValue({}) as any;
+
+    const mockModel = createMock<Comment>({
+      body: 'It takes a Jacobian',
+      authorId: 1,
+      createdAt: '2016-02-18T03:22:56.637Z' as any,
+      updatedAt: '2016-02-18T03:22:56.637Z' as any,
+    });
+    const actual = await service.ofCommentDto(mockModel, 1);
+    expect(actual.id).toBe(mockModel.id);
+    expect(actual.body).toBe(mockModel.body);
+    expect(actual.createdAt).toBe(mockModel.createdAt);
+    expect(actual.updatedAt).toBe(mockModel.updatedAt);
+    expect(actual.author).toBeDefined();
+    expect(mockProfileService.getProfile).toBeCalledTimes(1);
+    expect(mockProfileService.getProfile).toBeCalledWith(1, mockModel.authorId, undefined);
   });
 });

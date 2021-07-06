@@ -1,4 +1,14 @@
-import { Table, Column, Model, PrimaryKey, DataType, AutoIncrement, HasOne, BelongsTo } from 'sequelize-typescript';
+import {
+  Table,
+  Column,
+  Model,
+  PrimaryKey,
+  DataType,
+  AutoIncrement,
+  HasOne,
+  BelongsTo,
+  AllowNull,
+} from 'sequelize-typescript';
 import { User } from '@user/entities/user.entity';
 import { Article } from './article.entity';
 
@@ -9,12 +19,18 @@ export class ArticleFavorite extends Model {
   @Column(DataType.BIGINT)
   id!: number;
 
+  @AllowNull(false)
   @Column(DataType.BIGINT)
   userId!: number;
 
-  @HasOne(() => User, 'userId')
+  @HasOne(() => User, {
+    foreignKey: 'userId',
+    onDelete: 'CASCADE',
+    hooks: true,
+  })
   user!: User;
 
+  @AllowNull(false)
   @Column(DataType.BIGINT)
   articleId!: number;
 

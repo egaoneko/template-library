@@ -20,7 +20,7 @@ export class ProfileService {
   ) {}
 
   @Transactional()
-  async findAllFollowingUserId(currentUserId: number, options?: SequelizeOptionDto): Promise<number[]> {
+  async getFollowingsByUserId(currentUserId: number, options?: SequelizeOptionDto): Promise<number[]> {
     const followings = await this.followModel.findAll({
       where: {
         userId: currentUserId,
@@ -32,7 +32,7 @@ export class ProfileService {
   }
 
   @Transactional()
-  async findOne(currentUserId: number, followingUserId: number, options?: SequelizeOptionDto): Promise<ProfileDto> {
+  async getProfile(currentUserId: number, followingUserId: number, options?: SequelizeOptionDto): Promise<ProfileDto> {
     const user = await this.userService.findOne(followingUserId, options);
 
     if (!user) {
@@ -94,7 +94,7 @@ export class ProfileService {
       throw new InternalServerErrorException('Do not follow');
     }
 
-    const profile = await this.findOne(currentUserId, followingUserId, options);
+    const profile = await this.getProfile(currentUserId, followingUserId, options);
 
     if (!profile) {
       throw new BadRequestException('Not found profile');
@@ -137,7 +137,7 @@ export class ProfileService {
       throw new InternalServerErrorException('Do not unfollow');
     }
 
-    const profile = await this.findOne(currentUserId, unfollowingUserId, options);
+    const profile = await this.getProfile(currentUserId, unfollowingUserId, options);
 
     if (!profile) {
       throw new BadRequestException('Not found profile');

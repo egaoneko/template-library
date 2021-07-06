@@ -7,24 +7,28 @@ export class User extends Model {
   @Column(DataType.BIGINT)
   id!: number;
 
+  @AllowNull(false)
   @Unique
   @Column(DataType.STRING)
   email!: string;
 
+  @AllowNull(false)
   @Column(DataType.STRING)
   password!: string;
 
+  @AllowNull(false)
   @Column(DataType.STRING)
   salt!: string;
 
+  @AllowNull(false)
   @Column(DataType.STRING)
   username!: string;
 
-  @AllowNull
+  @AllowNull(true)
   @Column(DataType.STRING)
   bio!: string;
 
-  @AllowNull
+  @AllowNull(true)
   @Column(DataType.STRING)
   image!: number;
 }

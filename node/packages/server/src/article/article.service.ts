@@ -6,6 +6,7 @@ import { Sequelize } from 'sequelize';
 import { paramCase } from 'change-case';
 import { Article } from '@article/entities/article.entity';
 import { ArticleFavorite } from '@article/entities/article-favorite.entity';
+import { Comment } from '@article/entities/comment.entity';
 import { ArticlesDto } from '@article/dto/articles.response';
 import { validate } from 'class-validator';
 import { ArticleDto } from '@article/dto/article.response';
@@ -16,6 +17,10 @@ import { GetFeedArticlesDto } from '@article/dto/get-feed-articles.input';
 import { CreateArticleDto } from '@article/dto/create-article.input';
 import { ArticleTag } from '@article/entities/article-tag.entity';
 import { UpdateArticleDto } from '@article/dto/update-article.input';
+import { GetCommentsDto } from '@article/dto/get-comments.input';
+import { CommentDto } from '@article/dto/comment.response';
+import { CommentsDto } from '@article/dto/comments.response';
+import { CreateCommentDto } from '@article/dto/create-comment.input';
 
 @Injectable()
 export class ArticleService {
@@ -29,12 +34,14 @@ export class ArticleService {
     private readonly tagModel: typeof Tag,
     @InjectModel(ArticleTag, DEFAULT_DATABASE_NAME)
     private readonly articleTagModel: typeof ArticleTag,
+    @InjectModel(Comment, DEFAULT_DATABASE_NAME)
+    private readonly commentModel: typeof Comment,
     @InjectConnection(DEFAULT_DATABASE_NAME)
     private readonly sequelize: Sequelize,
   ) {}
 
   @Transactional()
-  async findAll(
+  async getArticles(
     getArticlesDto: GetArticlesDto,
     currentUserId: number,
     options?: SequelizeOptionDto,
@@ -91,7 +98,7 @@ export class ArticleService {
   }
 
   @Transactional()
-  async findFeedAll(
+  async getFeedArticles(
     getFeedArticlesDto: GetFeedArticlesDto,
     currentUserId: number,
     options?: SequelizeOptionDto,
@@ -102,7 +109,7 @@ export class ArticleService {
       throw new BadRequestException('Invalid article feed list params');
     }
 
-    const authorIds = await this.profileService.findAllFollowingUserId(currentUserId, options);
+    const authorIds = await this.profileService.getFollowingsByUserId(currentUserId, options);
     const { count, rows } = await this.articleModel.findAndCountAll({
       where: {
         authorId: authorIds,
@@ -135,7 +142,7 @@ export class ArticleService {
   }
 
   @Transactional()
-  async findOneBySlug(slug: string, currentUserId: number, options?: SequelizeOptionDto): Promise<ArticleDto> {
+  async getArticleBySlug(slug: string, currentUserId: number, options?: SequelizeOptionDto): Promise<ArticleDto> {
     const article = await this.articleModel.findOne({
       where: {
         slug,
@@ -159,7 +166,7 @@ export class ArticleService {
   }
 
   @Transactional()
-  async create(
+  async createArticle(
     createArticleDto: CreateArticleDto,
     currentUserId: number,
     options?: SequelizeOptionDto,
@@ -214,11 +221,11 @@ export class ArticleService {
       );
     }
 
-    return this.findOneBySlug(slug, currentUserId, options);
+    return this.getArticleBySlug(slug, currentUserId, options);
   }
 
   @Transactional()
-  async update(
+  async updateArticle(
     slug: string,
     updateArticleDto: UpdateArticleDto,
     currentUserId: number,
@@ -269,11 +276,11 @@ export class ArticleService {
       },
     );
 
-    return this.findOneBySlug(newSlug, currentUserId, options);
+    return this.getArticleBySlug(newSlug, currentUserId, options);
   }
 
   @Transactional()
-  async delete(slug: string, options?: SequelizeOptionDto): Promise<void> {
+  async deleteArticle(slug: string, options?: SequelizeOptionDto): Promise<void> {
     const count = await this.articleModel.count({
       where: {
         slug,
@@ -297,6 +304,214 @@ export class ArticleService {
     }
   }
 
+  @Transactional()
+  async getComments(
+    slug: string,
+    getCommentsDto: GetCommentsDto,
+    currentUserId: number,
+    options?: SequelizeOptionDto,
+  ): Promise<CommentsDto> {
+    const errors = await validate(getCommentsDto);
+
+    if (errors.length > 0) {
+      throw new BadRequestException('Invalid comment list params');
+    }
+
+    const article = await this.articleModel.findOne({
+      where: {
+        slug,
+      },
+      transaction: options?.transaction,
+    });
+
+    if (!article) {
+      throw new BadRequestException('Not found article by slug');
+    }
+
+    const { count, rows } = await this.commentModel.findAndCountAll({
+      where: {
+        articleId: article.id,
+      },
+      order: [['updatedAt', 'DESC']],
+      offset: (getCommentsDto.page - 1) * getCommentsDto.limit,
+      limit: getCommentsDto.limit,
+      distinct: true,
+      transaction: options?.transaction,
+    });
+
+    const listDto = new CommentsDto();
+    listDto.count = count;
+    listDto.list = [];
+
+    for (const row of rows) {
+      const dto = await this.ofCommentDto(row, currentUserId, options);
+      listDto.list.push(dto);
+    }
+
+    return listDto;
+  }
+
+  @Transactional()
+  async createComment(
+    slug: string,
+    createCommentDto: CreateCommentDto,
+    currentUserId: number,
+    options?: SequelizeOptionDto,
+  ): Promise<CommentDto> {
+    const errors = await validate(createCommentDto);
+
+    if (errors.length > 0) {
+      throw new BadRequestException('Invalid comment create params');
+    }
+
+    const article = await this.articleModel.findOne({
+      where: {
+        slug,
+      },
+      transaction: options?.transaction,
+    });
+
+    if (!article) {
+      throw new BadRequestException('Not found article by slug');
+    }
+
+    const comment = await this.commentModel.create(
+      {
+        body: createCommentDto.body,
+        authorId: currentUserId,
+        articleId: article.id,
+      },
+      {
+        transaction: options?.transaction,
+      },
+    );
+
+    return this.ofCommentDto(comment, currentUserId, options);
+  }
+
+  @Transactional()
+  async deleteComment(slug: string, id: number, options?: SequelizeOptionDto): Promise<void> {
+    let count: number;
+
+    count = await this.articleModel.count({
+      where: {
+        slug,
+      },
+      transaction: options?.transaction,
+    });
+
+    if (count === 0) {
+      throw new BadRequestException('Not found article by slug');
+    }
+
+    count = await this.commentModel.count({
+      where: {
+        id,
+      },
+      transaction: options?.transaction,
+    });
+
+    if (count === 0) {
+      throw new BadRequestException('Not found comment by id');
+    }
+
+    const rows = await this.commentModel.destroy({
+      where: {
+        id,
+      },
+      transaction: options?.transaction,
+    });
+
+    if (rows !== 1) {
+      throw new InternalServerErrorException('Do not delete comment');
+    }
+  }
+
+  @Transactional()
+  async favoriteArticle(slug: string, currentUserId: number, options?: SequelizeOptionDto): Promise<ArticleDto> {
+    const article = await this.articleModel.findOne({
+      where: {
+        slug,
+      },
+      transaction: options?.transaction,
+    });
+
+    if (!article) {
+      throw new BadRequestException('Not found article by slug');
+    }
+
+    const count = await this.articleFavoriteModel.count({
+      where: {
+        userId: currentUserId,
+        articleId: article.id,
+      },
+      transaction: options?.transaction,
+    });
+
+    if (count > 0) {
+      throw new BadRequestException('Article is already favorite');
+    }
+
+    await this.articleFavoriteModel.create(
+      {
+        userId: currentUserId,
+        articleId: article.id,
+      },
+      {
+        transaction: options?.transaction,
+      },
+    );
+
+    return this.getArticleBySlug(slug, currentUserId, options);
+  }
+
+  @Transactional()
+  async unfavoriteArticle(slug: string, currentUserId: number, options?: SequelizeOptionDto): Promise<ArticleDto> {
+    const article = await this.articleModel.findOne({
+      where: {
+        slug,
+      },
+      transaction: options?.transaction,
+    });
+
+    if (!article) {
+      throw new BadRequestException('Not found article by slug');
+    }
+
+    const count = await this.articleFavoriteModel.count({
+      where: {
+        userId: currentUserId,
+        articleId: article.id,
+      },
+      transaction: options?.transaction,
+    });
+
+    if (count === 0) {
+      throw new BadRequestException('Article is already un favorite');
+    }
+
+    const rows = await this.articleFavoriteModel.destroy({
+      where: {
+        userId: currentUserId,
+        articleId: article.id,
+      },
+      transaction: options?.transaction,
+    });
+
+    if (rows !== 1) {
+      throw new InternalServerErrorException('Do not unfavorite');
+    }
+
+    return this.getArticleBySlug(slug, currentUserId, options);
+  }
+
+  async getTags(options?: SequelizeOptionDto): Promise<string[]> {
+    const tags = await this.tagModel.findAll({
+      transaction: options?.transaction,
+    });
+    return tags.map(tag => tag.title);
+  }
+
   async ofArticleDto(articleEntity: Article, currentUserId: number, options?: SequelizeOptionDto): Promise<ArticleDto> {
     const dto = new ArticleDto();
     dto.id = articleEntity.id;
@@ -310,7 +525,17 @@ export class ArticleService {
 
     dto.favorited = articleEntity.articleFavorites.some(favorite => favorite.userId === currentUserId);
     dto.favoritesCount = articleEntity.articleFavorites.length;
-    dto.author = await this.profileService.findOne(currentUserId, articleEntity.authorId, options);
+    dto.author = await this.profileService.getProfile(currentUserId, articleEntity.authorId, options);
+    return dto;
+  }
+
+  async ofCommentDto(commentEntity: Comment, currentUserId: number, options?: SequelizeOptionDto): Promise<CommentDto> {
+    const dto = new ArticleDto();
+    dto.id = commentEntity.id;
+    dto.body = commentEntity.body;
+    dto.createdAt = commentEntity.createdAt;
+    dto.updatedAt = commentEntity.updatedAt;
+    dto.author = await this.profileService.getProfile(currentUserId, commentEntity.authorId, options);
     return dto;
   }
 }

@@ -9,12 +9,13 @@ import { ArticleFavorite } from '@article/entities/article-favorite.entity';
 import { ProfileModule } from '@profile/profile.module';
 import { Tag } from '@article/entities/tag.entity';
 import { ArticleTag } from '@article/entities/article-tag.entity';
+import { Comment } from '@article/entities/comment.entity';
 
 @Module({
   imports: [
     SharedModule,
     ProfileModule,
-    SequelizeModule.forFeature([Article, ArticleFavorite, Tag, ArticleTag], DEFAULT_DATABASE_NAME),
+    SequelizeModule.forFeature([Article, ArticleFavorite, Tag, ArticleTag, Comment], DEFAULT_DATABASE_NAME),
   ],
   controllers: [ArticleController],
   providers: [ArticleService],

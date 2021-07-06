@@ -14,6 +14,7 @@ import { User } from '@user/entities/user.entity';
 import { ArticleFavorite } from '@article/entities/article-favorite.entity';
 import { ArticleTag } from '@article/entities/article-tag.entity';
 import { Tag } from '@article/entities/tag.entity';
+import { Comment } from '@article/entities/comment.entity';
 
 @Table
 export class Article extends Model {
@@ -38,7 +39,11 @@ export class Article extends Model {
   @Column(DataType.BIGINT)
   authorId!: number;
 
-  @BelongsTo(() => User, 'authorId')
+  @BelongsTo(() => User, {
+    foreignKey: 'authorId',
+    onDelete: 'CASCADE',
+    hooks: true,
+  })
   author!: User;
 
   @HasMany(() => ArticleFavorite, {
@@ -49,4 +54,10 @@ export class Article extends Model {
 
   @BelongsToMany(() => Tag, () => ArticleTag)
   tags!: Tag[];
+
+  @HasMany(() => Comment, {
+    foreignKey: 'articleId',
+    constraints: false,
+  })
+  comments!: Comment[];
 }

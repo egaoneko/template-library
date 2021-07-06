@@ -258,6 +258,7 @@ describe('UserService', () => {
 
   it('should return user dto', async () => {
     const mockModel = createMock<User>({
+      id: 1,
       email: 'test@test.com',
       username: 'test',
       password: '1234',
@@ -275,6 +276,7 @@ describe('UserService', () => {
 
   it('should return auth user dto', async () => {
     const mockModel = createMock<User>({
+      id: 1,
       email: 'test@test.com',
       username: 'test',
       password: '1234',

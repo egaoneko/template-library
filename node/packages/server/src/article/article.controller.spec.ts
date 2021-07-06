@@ -6,6 +6,8 @@ import { GetArticlesDto } from './dto/get-articles.input';
 import { GetFeedArticlesDto } from './dto/get-feed-articles.input';
 import { CreateArticleDto } from './dto/create-article.input';
 import { UpdateArticleDto } from './dto/update-article.input';
+import { GetCommentsDto } from './dto/get-comments.input';
+import { CreateCommentDto } from './dto/create-comment.input';
 
 describe('ArticleController', () => {
   let controller: ArticleController;
@@ -35,7 +37,7 @@ describe('ArticleController', () => {
     const actual = await controller.getArticles(dto, 1);
 
     expect(actual).toBeDefined();
-    expect(mockArticleService.findAll).toBeCalledTimes(1);
+    expect(mockArticleService.getArticles).toBeCalledTimes(1);
   });
 
   it('should be return article feed list', async () => {
@@ -43,14 +45,14 @@ describe('ArticleController', () => {
     const actual = await controller.getFeedArticles(dto, 1);
 
     expect(actual).toBeDefined();
-    expect(mockArticleService.findFeedAll).toBeCalledTimes(1);
+    expect(mockArticleService.getFeedArticles).toBeCalledTimes(1);
   });
 
   it('should be return article', async () => {
     const actual = await controller.getArticle('slug', 1);
 
     expect(actual).toBeDefined();
-    expect(mockArticleService.findOneBySlug).toBeCalledTimes(1);
+    expect(mockArticleService.getArticleBySlug).toBeCalledTimes(1);
   });
 
   it('should be create article', async () => {
@@ -58,7 +60,7 @@ describe('ArticleController', () => {
     const actual = await controller.createArticle(dto, 1);
 
     expect(actual).toBeDefined();
-    expect(mockArticleService.create).toBeCalledTimes(1);
+    expect(mockArticleService.createArticle).toBeCalledTimes(1);
   });
 
   it('should be update article', async () => {
@@ -66,13 +68,56 @@ describe('ArticleController', () => {
     const actual = await controller.updateArticle('slug', dto, 1);
 
     expect(actual).toBeDefined();
-    expect(mockArticleService.update).toBeCalledTimes(1);
+    expect(mockArticleService.updateArticle).toBeCalledTimes(1);
   });
 
   it('should be delete article', async () => {
     const actual = await controller.deleteArticle('slug');
 
     expect(actual).toBeDefined();
-    expect(mockArticleService.delete).toBeCalledTimes(1);
+    expect(mockArticleService.deleteArticle).toBeCalledTimes(1);
+  });
+
+  it('should be return comment list', async () => {
+    const dto = new GetCommentsDto();
+    const actual = await controller.getComments('slug', dto, 1);
+
+    expect(actual).toBeDefined();
+    expect(mockArticleService.getComments).toBeCalledTimes(1);
+  });
+
+  it('should be create comment', async () => {
+    const dto = new CreateCommentDto();
+    const actual = await controller.createComment('slug', dto, 1);
+
+    expect(actual).toBeDefined();
+    expect(mockArticleService.createComment).toBeCalledTimes(1);
+  });
+
+  it('should be delete comment', async () => {
+    const actual = await controller.deleteComment('slug', 1);
+
+    expect(actual).toBeDefined();
+    expect(mockArticleService.deleteComment).toBeCalledTimes(1);
+  });
+
+  it('should be favorite article', async () => {
+    const actual = await controller.favoriteArticle('slug', 1);
+    expect(actual).toBeDefined();
+    expect(mockArticleService.favoriteArticle).toBeCalledTimes(1);
+  });
+
+  it('should be unfavorite article', async () => {
+    const actual = await controller.unfavoriteArticle('slug', 1);
+
+    expect(actual).toBeDefined();
+    expect(mockArticleService.unfavoriteArticle).toBeCalledTimes(1);
+  });
+
+  it('should be tag list', async () => {
+    const actual = await controller.getTags();
+
+    expect(actual).toBeDefined();
+    expect(mockArticleService.getTags).toBeCalledTimes(1);
   });
 });

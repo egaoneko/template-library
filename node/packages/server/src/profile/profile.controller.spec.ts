@@ -29,8 +29,8 @@ describe('ProfileController', () => {
   it('should return profile', async () => {
     const actual = await controller.getProfile(1, 2);
     expect(actual).toBeDefined();
-    expect(mockProfileService.findOne).toBeCalledTimes(1);
-    expect(mockProfileService.findOne).toBeCalledWith(2, 1);
+    expect(mockProfileService.getProfile).toBeCalledTimes(1);
+    expect(mockProfileService.getProfile).toBeCalledWith(2, 1);
   });
 
   it('should be follow', async () => {

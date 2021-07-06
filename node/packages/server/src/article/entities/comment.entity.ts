@@ -1,32 +1,37 @@
 import { Table, Column, Model, PrimaryKey, DataType, AutoIncrement, BelongsTo, AllowNull } from 'sequelize-typescript';
 import { User } from '@user/entities/user.entity';
+import { Article } from '@article/entities/article.entity';
 
 @Table
-export class Follow extends Model {
+export class Comment extends Model {
   @PrimaryKey
   @AutoIncrement
   @Column(DataType.BIGINT)
   id!: number;
 
   @AllowNull(false)
-  @Column(DataType.BIGINT)
-  userId!: number;
-
-  @BelongsTo(() => User, {
-    foreignKey: 'userId',
-    onDelete: 'CASCADE',
-    hooks: true,
-  })
-  user!: User;
+  @Column(DataType.TEXT)
+  body!: string;
 
   @AllowNull(false)
   @Column(DataType.BIGINT)
-  followingUserId!: number;
+  authorId!: number;
 
   @BelongsTo(() => User, {
-    foreignKey: 'userId',
+    foreignKey: 'authorId',
     onDelete: 'CASCADE',
     hooks: true,
   })
-  followingUser!: User;
+  author!: User;
+
+  @AllowNull(false)
+  @Column(DataType.BIGINT)
+  articleId!: number;
+
+  @BelongsTo(() => Article, {
+    foreignKey: 'articleId',
+    onDelete: 'CASCADE',
+    hooks: true,
+  })
+  article!: Article;
 }

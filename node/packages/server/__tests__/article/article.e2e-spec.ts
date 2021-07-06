@@ -4,7 +4,7 @@ import { AppModule } from '@root/app.module';
 import { INestApplication } from '@nestjs/common';
 import { createTestUser, getTestUserDto } from '../utils/user';
 import { cleanDb } from '../utils/db';
-import { createTestArticle } from '../utils/article';
+import { createTestArticle, createTestComment } from '../utils/article';
 
 describe('ArticleController (e2e)', () => {
   let app: INestApplication;
@@ -269,6 +269,184 @@ describe('ArticleController (e2e)', () => {
       .expect(400)
       .expect(({ body }) => {
         expect(body.message).toBe('Not found article by slug');
+      });
+  });
+
+  it('/api/articles/:slug/comments (Get)', async () => {
+    const user = await createTestUser(app, 'test1@test.com');
+    const dto = await getTestUserDto(app, user);
+    const articles = await createTestArticle(app, user);
+
+    return request(app.getHttpServer())
+      .get(`/api/articles/${articles[0].slug}/comments`)
+      .set('Authorization', `Bearer ${dto.token}`)
+      .expect(200)
+      .expect(({ body }) => {
+        expect(body.count).toBe(2);
+        expect(body.list.length).toBe(2);
+      });
+  });
+
+  it('/api/article/:slug/comments (Post)', async () => {
+    const user = await createTestUser(app, 'test1@test.com');
+    const dto = await getTestUserDto(app, user);
+    const articles = await createTestArticle(app, user);
+
+    return request(app.getHttpServer())
+      .post(`/api/articles/${articles[1].slug}/comments`)
+      .set('Authorization', `Bearer ${dto.token}`)
+      .send({
+        body: 'His name was my name too.',
+      })
+      .expect(201)
+      .expect(({ body }) => {
+        expect(body.body).toBe('His name was my name too.');
+      });
+  });
+
+  it('/api/article/:slug/comments (Post) with invalid params', async () => {
+    const user = await createTestUser(app, 'test1@test.com');
+    const dto = await getTestUserDto(app, user);
+    const articles = await createTestArticle(app, user);
+
+    return request(app.getHttpServer())
+      .post(`/api/articles/${articles[1].slug}/comments`)
+      .set('Authorization', `Bearer ${dto.token}`)
+      .expect(400)
+      .expect(({ body }) => {
+        expect(body.message).toEqual(['body must be a string', 'body should not be empty']);
+      });
+  });
+
+  it('/api/article/:slug/comments (Post) with invalid slug', async () => {
+    const user = await createTestUser(app, 'test1@test.com');
+    const dto = await getTestUserDto(app, user);
+    await createTestArticle(app, user);
+
+    return request(app.getHttpServer())
+      .post(`/api/articles/invalid/comments`)
+      .set('Authorization', `Bearer ${dto.token}`)
+      .send({
+        body: 'His name was my name too.',
+      })
+      .expect(400)
+      .expect(({ body }) => {
+        expect(body.message).toBe('Not found article by slug');
+      });
+  });
+
+  it('/api/article/:slug/comments/:id (Delete)', async () => {
+    const user = await createTestUser(app, 'test1@test.com');
+    const dto = await getTestUserDto(app, user);
+    const articles = await createTestArticle(app, user);
+    const comment = await createTestComment(app, user, articles[0]);
+
+    return request(app.getHttpServer())
+      .delete(`/api/articles/${articles[0].slug}/comments/${comment.id}`)
+      .set('Authorization', `Bearer ${dto.token}`)
+      .expect(200);
+  });
+
+  it('/api/article/:slug/comments/:id (Delete) with invalid slug', async () => {
+    const user = await createTestUser(app, 'test1@test.com');
+    const dto = await getTestUserDto(app, user);
+    const articles = await createTestArticle(app, user);
+    const comment = await createTestComment(app, user, articles[0]);
+
+    return request(app.getHttpServer())
+      .delete(`/api/articles/invalid/comments/${comment.id}`)
+      .set('Authorization', `Bearer ${dto.token}`)
+      .expect(400)
+      .expect(({ body }) => {
+        expect(body.message).toBe('Not found article by slug');
+      });
+  });
+
+  it('/api/article/:slug/comments/:id (Delete) with invalid params', async () => {
+    const user = await createTestUser(app, 'test1@test.com');
+    const dto = await getTestUserDto(app, user);
+    const articles = await createTestArticle(app, user);
+
+    return request(app.getHttpServer())
+      .delete(`/api/articles/${articles[0].slug}/comments/invalid`)
+      .set('Authorization', `Bearer ${dto.token}`)
+      .expect(400)
+      .expect(({ body }) => {
+        expect(body.message).toBe('Not found comment by id');
+      });
+  });
+
+  it('/api/article/:slug/favorite (Post)', async () => {
+    const user = await createTestUser(app, 'test1@test.com');
+    const dto = await getTestUserDto(app, user);
+    const articles = await createTestArticle(app, user);
+
+    return request(app.getHttpServer())
+      .post(`/api/articles/${articles[1].slug}/favorite`)
+      .set('Authorization', `Bearer ${dto.token}`)
+      .expect(201)
+      .expect(({ body }) => {
+        expect(body.favoritesCount).toBe(1);
+        expect(body.favorited).toBe(true);
+      });
+  });
+
+  it('/api/article/:slug/favorite (Post) with invalid slug', async () => {
+    const user = await createTestUser(app, 'test1@test.com');
+    const dto = await getTestUserDto(app, user);
+    await createTestArticle(app, user);
+
+    return request(app.getHttpServer())
+      .post(`/api/articles/invalid/favorite`)
+      .set('Authorization', `Bearer ${dto.token}`)
+      .expect(400)
+      .expect(({ body }) => {
+        expect(body.message).toBe('Not found article by slug');
+      });
+  });
+
+  it('/api/article/:slug/favorite (Delete)', async () => {
+    const user = await createTestUser(app, 'test1@test.com');
+    const dto = await getTestUserDto(app, user);
+    const articles = await createTestArticle(app, user);
+
+    return request(app.getHttpServer())
+      .delete(`/api/articles/${articles[0].slug}/favorite`)
+      .set('Authorization', `Bearer ${dto.token}`)
+      .expect(200)
+      .expect(({ body }) => {
+        expect(body.favoritesCount).toBe(0);
+        expect(body.favorited).toBe(false);
+      });
+  });
+
+  it('/api/article/:slug/favorite (Delete) with invalid slug', async () => {
+    const user = await createTestUser(app, 'test1@test.com');
+    const dto = await getTestUserDto(app, user);
+    const articles = await createTestArticle(app, user);
+    await createTestComment(app, user, articles[0]);
+
+    return request(app.getHttpServer())
+      .delete(`/api/articles/invalid/favorite`)
+      .set('Authorization', `Bearer ${dto.token}`)
+      .expect(400)
+      .expect(({ body }) => {
+        expect(body.message).toBe('Not found article by slug');
+      });
+  });
+
+  it('/api/articles/tags (Get)', async () => {
+    const user = await createTestUser(app, 'test1@test.com');
+    const dto = await getTestUserDto(app, user);
+    await createTestArticle(app, user);
+
+    return request(app.getHttpServer())
+      .get(`/api/articles/tags`)
+      .set('Authorization', `Bearer ${dto.token}`)
+      .expect(200)
+      .expect(({ body }) => {
+        expect(body.length).toBe(3);
+        expect(body).toEqual(['dragons', 'training', 'other']);
       });
   });
 });
