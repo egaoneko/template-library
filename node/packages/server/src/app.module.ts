@@ -14,6 +14,8 @@ import { ProfileModule } from './profile/profile.module';
 import { SharedModule } from '@shared/shared.module';
 import { ArticleModule } from './article/article.module';
 import configuration from '@config/configuration';
+import { TerminusModule } from '@nestjs/terminus';
+import { HealthController } from './health/health.controller';
 
 @Module({
   imports: [
@@ -22,6 +24,7 @@ import configuration from '@config/configuration';
       isGlobal: true,
       load: [configuration],
     }),
+    TerminusModule,
     SequelizeModule.forRoot(defaultOptions),
     SharedModule,
     UserModule,
@@ -29,7 +32,7 @@ import configuration from '@config/configuration';
     ProfileModule,
     ArticleModule,
   ],
-  controllers: [AppController],
+  controllers: [AppController, HealthController],
   providers: [
     AppService,
     {

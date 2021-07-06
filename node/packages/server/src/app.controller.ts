@@ -10,7 +10,7 @@ export class AppController {
 
   @NoAuth()
   @Get('ping')
-  @ApiOperation({ summary: 'health check' })
+  @ApiOperation({ summary: 'ping' })
   ping(): string {
     return this.appService.ping();
   }
