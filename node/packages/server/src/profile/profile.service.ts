@@ -1,39 +1,31 @@
 import { BadRequestException, Injectable, InternalServerErrorException } from '@nestjs/common';
-import { ProfileDto } from '@profile/dto/profile.response';
+import { ProfileDto } from '@profile/dto/response/profile.dto';
 import { UserService } from '@user/user.service';
-import { InjectConnection, InjectModel } from '@nestjs/sequelize';
+import { InjectConnection } from '@nestjs/sequelize';
 import { DEFAULT_DATABASE_NAME } from '@config/constants/database';
-import { Follow } from '@profile/entities/follow.entity';
 import { Sequelize } from 'sequelize';
-import { UserDto } from '@user/dto/user.response';
+import { UserDto } from '@user/dto/response/user.dto';
 import { SequelizeOptionDto, Transactional } from '@shared/decorators/transaction/transactional.decorator';
+import { FollowRepository } from '@profile/repositories/follow.repository';
 
 @Injectable()
 export class ProfileService {
   constructor(
     private readonly userService: UserService,
-
-    @InjectModel(Follow, DEFAULT_DATABASE_NAME)
-    private readonly followModel: typeof Follow,
+    private readonly followRepository: FollowRepository,
     @InjectConnection(DEFAULT_DATABASE_NAME)
     private readonly sequelize: Sequelize,
   ) {}
 
   @Transactional()
   async getFollowingsByUserId(currentUserId: number, options?: SequelizeOptionDto): Promise<number[]> {
-    const followings = await this.followModel.findAll({
-      where: {
-        userId: currentUserId,
-      },
-      transaction: options?.transaction,
-    });
-
+    const followings = await this.followRepository.findAllByUserId(currentUserId, options);
     return followings.map(following => following.followingUserId);
   }
 
   @Transactional()
   async getProfile(currentUserId: number, followingUserId: number, options?: SequelizeOptionDto): Promise<ProfileDto> {
-    const user = await this.userService.findOne(followingUserId, options);
+    const user = await this.userService.getUserById(followingUserId, options);
 
     if (!user) {
       throw new BadRequestException('Not found user');
@@ -54,13 +46,7 @@ export class ProfileService {
       throw new BadRequestException('Invalid params(same user)');
     }
 
-    const follow = await this.followModel.findOne({
-      where: {
-        userId: currentUserId,
-        followingUserId,
-      },
-      transaction: options?.transaction,
-    });
+    const follow = await this.followRepository.findOneByIds(currentUserId, followingUserId, options);
     return !!follow;
   }
 
@@ -80,15 +66,7 @@ export class ProfileService {
       throw new BadRequestException('Already followed user');
     }
 
-    const follow = await this.followModel.create(
-      {
-        userId: currentUserId,
-        followingUserId,
-      },
-      {
-        transaction: options?.transaction,
-      },
-    );
+    const follow = await this.followRepository.create(currentUserId, followingUserId, options);
 
     if (!follow) {
       throw new InternalServerErrorException('Do not follow');
@@ -124,14 +102,7 @@ export class ProfileService {
       throw new BadRequestException('Already unfollowed user');
     }
 
-    const follow = await this.followModel.destroy({
-      where: {
-        followingUserId: unfollowingUserId,
-        userId: currentUserId,
-      },
-      transaction: options?.transaction,
-      ...options,
-    });
+    const follow = await this.followRepository.destroy(currentUserId, unfollowingUserId, options);
 
     if (!follow) {
       throw new InternalServerErrorException('Do not unfollow');
@@ -162,8 +133,8 @@ export class ProfileService {
     options?: SequelizeOptionDto,
   ): Promise<boolean> {
     return (
-      !!(await this.userService.findOne(currentUserId, options)) &&
-      !!(await this.userService.findOne(followingUserId, options))
+      !!(await this.userService.getUserById(currentUserId, options)) &&
+      !!(await this.userService.getUserById(followingUserId, options))
     );
   }
 }

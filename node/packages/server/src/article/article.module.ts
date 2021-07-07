@@ -10,6 +10,11 @@ import { ProfileModule } from '@profile/profile.module';
 import { Tag } from '@article/entities/tag.entity';
 import { ArticleTag } from '@article/entities/article-tag.entity';
 import { Comment } from '@article/entities/comment.entity';
+import { ArticleRepository } from '@article/repositories/article.repository';
+import { ArticleFavoriteRepository } from '@article/repositories/article-favorite.repository';
+import { TagRepository } from '@article/repositories/tag.repository';
+import { ArticleTagRepository } from '@article/repositories/article-tag.repository';
+import { CommentRepository } from '@article/repositories/comment.repository';
 
 @Module({
   imports: [
@@ -18,6 +23,13 @@ import { Comment } from '@article/entities/comment.entity';
     SequelizeModule.forFeature([Article, ArticleFavorite, Tag, ArticleTag, Comment], DEFAULT_DATABASE_NAME),
   ],
   controllers: [ArticleController],
-  providers: [ArticleService],
+  providers: [
+    ArticleRepository,
+    ArticleFavoriteRepository,
+    TagRepository,
+    ArticleTagRepository,
+    CommentRepository,
+    ArticleService,
+  ],
 })
 export class ArticleModule {}

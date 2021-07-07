@@ -1,17 +1,17 @@
 import { Body, Controller, Delete, Get, Param, Post, Put, Query, UsePipes, ValidationPipe } from '@nestjs/common';
 import { ArticleService } from '@article/article.service';
 import { ApiHeader, ApiOperation, ApiResponse, ApiTags } from '@nestjs/swagger';
-import { ArticlesDto } from '@article/dto/articles.response';
-import { GetArticlesDto } from '@article/dto/get-articles.input';
+import { ArticlesDto } from '@article/dto/response/articles.dto';
+import { GetArticlesDto } from '@article/dto/request/get-articles.dto';
 import { CurrentUser } from '@user/decorators/current-user.decorator';
-import { GetFeedArticlesDto } from '@article/dto/get-feed-articles.input';
-import { ArticleDto } from '@article/dto/article.response';
-import { CreateArticleDto } from '@article/dto/create-article.input';
-import { UpdateArticleDto } from '@article/dto/update-article.input';
-import { CreateCommentDto } from '@article/dto/create-comment.input';
-import { CommentsDto } from '@article/dto/comments.response';
-import { GetCommentsDto } from '@article/dto/get-comments.input';
-import { CommentDto } from '@article/dto/comment.response';
+import { GetFeedArticlesDto } from '@article/dto/request/get-feed-articles.dto';
+import { ArticleDto } from '@article/dto/response/article.dto';
+import { CreateArticleDto } from '@article/dto/request/create-article.dto';
+import { UpdateArticleDto } from '@article/dto/request/update-article.dto';
+import { CreateCommentDto } from '@article/dto/request/create-comment.dto';
+import { CommentsDto } from '@article/dto/response/comments.dto';
+import { GetCommentsDto } from '@article/dto/request/get-comments.dto';
+import { CommentDto } from '@article/dto/response/comment.dto';
 
 @ApiTags('article')
 @Controller('/api/articles')

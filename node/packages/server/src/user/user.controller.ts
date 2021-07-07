@@ -1,8 +1,8 @@
 import { Body, Controller, Get, Put, UsePipes, ValidationPipe } from '@nestjs/common';
 import { UserService } from './user.service';
-import { UserDto } from '@user/dto/user.response';
+import { UserDto } from '@user/dto/response/user.dto';
 import { ApiBody, ApiHeader, ApiOperation, ApiResponse, ApiTags } from '@nestjs/swagger';
-import { UpdateUserDto, UpdateUserRequestDto } from '@user/dto/update-user.input';
+import { UpdateUserDto, UpdateUserRequestDto } from '@user/dto/request/update-user.dto';
 import { Crypto } from '@shared/crypto/crypto';
 import { CurrentUser } from '@user/decorators/current-user.decorator';
 

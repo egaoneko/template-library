@@ -1,22 +1,22 @@
 import { BadRequestException, Injectable, InternalServerErrorException } from '@nestjs/common';
-import { InjectConnection, InjectModel } from '@nestjs/sequelize';
-import { User } from './entities/user.entity';
-import { CreateUserDto } from '@user/dto/create-user.input';
+import { InjectConnection } from '@nestjs/sequelize';
+import { CreateUserDto } from '@user/dto/request/create-user.dto';
 import { DEFAULT_DATABASE_NAME } from '@config/constants/database';
 import { validate } from 'class-validator';
-import { UpdateUserDto } from '@user/dto/update-user.input';
+import { UpdateUserDto } from '@user/dto/request/update-user.dto';
 import { Sequelize } from 'sequelize';
-import { UserDto } from '@user/dto/user.response';
+import { UserDto } from '@user/dto/response/user.dto';
 import { FileService } from '@shared/file/file.service';
-import { AuthUserDto } from '@user/dto/auth-user.response';
+import { AuthUserDto } from '@user/dto/response/auth-user.dto';
 import { SequelizeOptionDto, Transactional } from '@shared/decorators/transaction/transactional.decorator';
+import { UserRepository } from '@user/repositories/user.repository';
+import { User } from '@user/entities/user.entity';
 
 @Injectable()
 export class UserService {
   constructor(
     private readonly fileService: FileService,
-    @InjectModel(User, DEFAULT_DATABASE_NAME)
-    private readonly userModel: typeof User,
+    private readonly userRepository: UserRepository,
     @InjectConnection(DEFAULT_DATABASE_NAME)
     private readonly sequelize: Sequelize,
   ) {}
@@ -29,31 +29,17 @@ export class UserService {
       throw new BadRequestException('Invalid user params');
     }
 
-    const user = await this.findOneByEmail(createUserDto.email, options);
+    const user = await this.getUserByEmail(createUserDto.email, options);
     if (user) {
       throw new BadRequestException('Already exist user');
     }
 
-    const model = await this.userModel.create(
-      {
-        email: createUserDto.email,
-        username: createUserDto.username,
-        password: createUserDto.password,
-        salt: createUserDto.salt,
-      },
-      {
-        transaction: options?.transaction,
-      },
-    );
-
+    const model = await this.userRepository.create(createUserDto, options);
     return this.ofUserDto(model);
   }
 
-  async findOne(id: number, options?: SequelizeOptionDto): Promise<UserDto | null> {
-    const model = await this.userModel.findOne({
-      where: { id },
-      transaction: options?.transaction,
-    });
+  async getUserById(id: number, options?: SequelizeOptionDto): Promise<UserDto | null> {
+    const model = await this.userRepository.findOneById(id, options);
 
     if (!model) {
       return null;
@@ -62,11 +48,8 @@ export class UserService {
     return this.ofUserDto(model);
   }
 
-  async findOneByEmail(email: string, options?: SequelizeOptionDto): Promise<UserDto | null> {
-    const model = await this.userModel.findOne({
-      where: { email },
-      transaction: options?.transaction,
-    });
+  async getUserByEmail(email: string, options?: SequelizeOptionDto): Promise<UserDto | null> {
+    const model = await this.userRepository.findOneByEmail(email, options);
 
     if (!model) {
       return null;
@@ -75,11 +58,8 @@ export class UserService {
     return this.ofUserDto(model);
   }
 
-  async findAuthUser(email: string, options?: SequelizeOptionDto): Promise<AuthUserDto | null> {
-    const model = await this.userModel.findOne({
-      where: { email },
-      transaction: options?.transaction,
-    });
+  async getAuthUser(email: string, options?: SequelizeOptionDto): Promise<AuthUserDto | null> {
+    const model = await this.userRepository.findOneByEmail(email, options);
 
     if (!model) {
       return null;
@@ -96,24 +76,19 @@ export class UserService {
       throw new BadRequestException('Invalid user params');
     }
 
-    const user = await this.findOne(updateUserDto.id, options);
+    const user = await this.getUserById(updateUserDto.id, options);
 
     if (!user) {
       throw new BadRequestException('Not found user');
     }
 
-    const [rows] = await this.userModel.update(updateUserDto, {
-      where: {
-        id: updateUserDto.id,
-      },
-      transaction: options?.transaction,
-    });
+    const [rows] = await this.userRepository.update(updateUserDto, options);
 
     if (rows !== 1) {
       throw new InternalServerErrorException('Do not update user');
     }
 
-    const updatedUser = await this.findOne(updateUserDto.id, options);
+    const updatedUser = await this.getUserById(updateUserDto.id, options);
     if (!updatedUser) {
       throw new BadRequestException('Not found updated user');
     }

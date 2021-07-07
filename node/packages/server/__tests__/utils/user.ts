@@ -1,7 +1,7 @@
 import { User } from '@user/entities/user.entity';
 import request from 'supertest';
 import { INestApplication } from '@nestjs/common';
-import { UserDto } from '@user/dto/user.response';
+import { UserDto } from '@user/dto/response/user.dto';
 import { DEFAULT_DATABASE_NAME } from '@config/constants/database';
 import { getModelToken } from '@nestjs/sequelize';
 import { Crypto } from '@shared/crypto/crypto';

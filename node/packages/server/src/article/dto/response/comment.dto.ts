@@ -1,6 +1,6 @@
 import { IsNotEmpty, IsNumber, IsString, ValidateNested } from 'class-validator';
 import { ApiProperty } from '@nestjs/swagger';
-import { ProfileDto } from '@profile/dto/profile.response';
+import { ProfileDto } from '@profile/dto/response/profile.dto';
 import { IComment } from '@article/interfaces/comment.interface';
 
 export class CommentDto implements IComment {

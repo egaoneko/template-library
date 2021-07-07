@@ -1,6 +1,6 @@
 import { IsNotEmpty, IsNumber, ValidateNested } from 'class-validator';
 import { ApiProperty } from '@nestjs/swagger';
-import { ArticleDto } from '@article/dto/article.response';
+import { ArticleDto } from '@article/dto/response/article.dto';
 
 export class ArticlesDto {
   @IsNotEmpty()

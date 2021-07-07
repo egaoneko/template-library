@@ -1,28 +1,18 @@
 import { Injectable, NotFoundException } from '@nestjs/common';
-import { InjectModel } from '@nestjs/sequelize';
-import { DEFAULT_DATABASE_NAME } from '@config/constants/database';
 import { File } from './entities/file.entity';
 import path from 'path';
 import { ConfigService } from '@nestjs/config';
 import { SequelizeOptionDto } from '@shared/decorators/transaction/transactional.decorator';
+import { FileRepository } from '@shared/file/repositories/file.repository';
 
 @Injectable()
 export class FileService {
   public static readonly UPLOAD_FOLDER_PATH = path.join(__dirname, '../../../upload');
 
-  constructor(
-    @InjectModel(File, DEFAULT_DATABASE_NAME)
-    private readonly fileModel: typeof File,
-    private readonly configService: ConfigService,
-  ) {}
+  constructor(private readonly fileRepository: FileRepository, private readonly configService: ConfigService) {}
 
   async get(id: number, options?: SequelizeOptionDto): Promise<File> {
-    const file = await this.fileModel.findOne({
-      where: {
-        id,
-      },
-      transaction: options?.transaction,
-    });
+    const file = await this.fileRepository.findOneById(id, options);
 
     if (!file) {
       throw new NotFoundException('Not found file');
@@ -32,18 +22,7 @@ export class FileService {
   }
 
   async upload(currentUserId: number, file: Express.Multer.File, options?: SequelizeOptionDto): Promise<File> {
-    return await this.fileModel.create(
-      {
-        name: file.originalname,
-        mimetype: file.mimetype,
-        path: file.path,
-        size: file.size,
-        userId: currentUserId,
-      },
-      {
-        transaction: options?.transaction,
-      },
-    );
+    return await this.fileRepository.create(currentUserId, file, options);
   }
 
   getFilePath(fileId: number): string {

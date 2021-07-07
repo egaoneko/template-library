@@ -1,48 +1,40 @@
-import {
-  Controller,
-  Get
-} from '@nestjs/common';
+import { Controller, Get } from '@nestjs/common';
 import {
   HealthCheck,
   HealthCheckService,
   HttpHealthIndicator,
   MemoryHealthIndicator,
-  SequelizeHealthIndicator
+  SequelizeHealthIndicator,
 } from '@nestjs/terminus';
 import { ConfigService } from '@nestjs/config';
 import { NoAuth } from '@auth/decorators/auth';
-import {
-  ApiOperation,
-  ApiTags
-} from '@nestjs/swagger';
+import { ApiOperation, ApiTags } from '@nestjs/swagger';
 import { InjectConnection } from '@nestjs/sequelize';
 import { DEFAULT_DATABASE_NAME } from '@config/constants/database';
 import { Sequelize } from 'sequelize';
-import path from 'path';
+import { HealthCheckResult } from '@nestjs/terminus/dist/health-check/health-check-result.interface';
 
 @ApiTags('app')
 @Controller('health')
 export class HealthController {
   constructor(
     private readonly health: HealthCheckService,
+    private readonly config: ConfigService,
     private readonly http: HttpHealthIndicator,
     private readonly memory: MemoryHealthIndicator,
-    private readonly config: ConfigService,
     private readonly db: SequelizeHealthIndicator,
     @InjectConnection(DEFAULT_DATABASE_NAME)
     private readonly sequelize: Sequelize,
-  ) {
-  }
+  ) {}
 
   @NoAuth()
   @ApiOperation({ summary: 'health check' })
   @Get()
   @HealthCheck()
-  check() {
+  async check(): Promise<HealthCheckResult> {
     const host = this.config.get<string>('http.host') ?? '';
     const port = this.config.get<number>('http.port') ?? '';
 
-    console.log(path.join(__dirname));
     return this.health.check([
       () => this.http.pingCheck('docs', `${host}:${port}/docs`),
       () => this.db.pingCheck('database', { connection: this.sequelize }),

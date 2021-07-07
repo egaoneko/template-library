@@ -2,7 +2,7 @@ import { Injectable, UnauthorizedException } from '@nestjs/common';
 import { JwtService } from '@nestjs/jwt';
 import { UserService } from '@user/user.service';
 import { IJwtPayload } from '@auth/interfaces/jwt.interface';
-import { UserDto } from '@user/dto/user.response';
+import { UserDto } from '@user/dto/response/user.dto';
 import { Crypto } from '@shared/crypto/crypto';
 
 @Injectable()
@@ -10,7 +10,7 @@ export class AuthService {
   constructor(private readonly userService: UserService, private readonly jwtService: JwtService) {}
 
   async validateUser(email: string, password: string): Promise<UserDto> {
-    const user = await this.userService.findAuthUser(email);
+    const user = await this.userService.getAuthUser(email);
 
     if (!user) {
       throw new UnauthorizedException('Not found user');

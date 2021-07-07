@@ -34,7 +34,7 @@ describe('JwtStrategy', () => {
     } as IJwtPayload;
     const actual = await strategy.validate(payload);
     expect(actual).toBeDefined();
-    expect(mockUserService.findOneByEmail).toBeCalledTimes(1);
-    expect(mockUserService.findOneByEmail).toBeCalledWith(payload.email);
+    expect(mockUserService.getUserByEmail).toBeCalledTimes(1);
+    expect(mockUserService.getUserByEmail).toBeCalledWith(payload.email);
   });
 });

@@ -1,12 +1,12 @@
 import { Test, TestingModule } from '@nestjs/testing';
 import { AuthController } from './auth.controller';
-import { UserService } from '@user/user.service';
-import { RegisterDto } from '@auth/dto/register.input';
-import { CreateUserDto } from '@user/dto/create-user.input';
+import { UserService } from '../user/user.service';
+import { RegisterDto } from './dto/request/register.dto';
+import { CreateUserDto } from '../user/dto/request/create-user.dto';
 import { createMock } from '@golevelup/ts-jest';
-import { Crypto } from '@shared/crypto/crypto';
+import { Crypto } from '../shared/crypto/crypto';
 import Mock = jest.Mock;
-import { UserDto } from '../user/dto/user.response';
+import { UserDto } from '../user/dto/response/user.dto';
 
 describe('AuthController', () => {
   let controller: AuthController;

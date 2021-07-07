@@ -6,6 +6,7 @@ import { Crypto } from './crypto/crypto';
 import { FileController } from './file/file.controller';
 import { File } from './file/entities/file.entity';
 import { DEFAULT_DATABASE_NAME } from '@config/constants/database';
+import { FileRepository } from '@shared/file/repositories/file.repository';
 
 @Module({
   imports: [
@@ -14,7 +15,7 @@ import { DEFAULT_DATABASE_NAME } from '@config/constants/database';
     }),
     SequelizeModule.forFeature([File], DEFAULT_DATABASE_NAME),
   ],
-  providers: [FileService, Crypto],
+  providers: [FileRepository, FileService, Crypto],
   exports: [FileService, Crypto],
   controllers: [FileController],
 })

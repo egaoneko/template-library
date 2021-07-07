@@ -5,10 +5,11 @@ import { User } from './entities/user.entity';
 import { UserController } from './user.controller';
 import { DEFAULT_DATABASE_NAME } from '@config/constants/database';
 import { SharedModule } from '@shared/shared.module';
+import { UserRepository } from '@user/repositories/user.repository';
 
 @Module({
   imports: [SharedModule, SequelizeModule.forFeature([User], DEFAULT_DATABASE_NAME)],
-  providers: [UserService],
+  providers: [UserRepository, UserService],
   controllers: [UserController],
   exports: [UserService],
 })

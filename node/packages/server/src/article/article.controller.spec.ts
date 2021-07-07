@@ -2,12 +2,12 @@ import { Test, TestingModule } from '@nestjs/testing';
 import { ArticleController } from './article.controller';
 import { ArticleService } from './article.service';
 import { createMock } from '@golevelup/ts-jest';
-import { GetArticlesDto } from './dto/get-articles.input';
-import { GetFeedArticlesDto } from './dto/get-feed-articles.input';
-import { CreateArticleDto } from './dto/create-article.input';
-import { UpdateArticleDto } from './dto/update-article.input';
-import { GetCommentsDto } from './dto/get-comments.input';
-import { CreateCommentDto } from './dto/create-comment.input';
+import { GetArticlesDto } from './dto/request/get-articles.dto';
+import { GetFeedArticlesDto } from './dto/request/get-feed-articles.dto';
+import { CreateArticleDto } from './dto/request/create-article.dto';
+import { UpdateArticleDto } from './dto/request/update-article.dto';
+import { GetCommentsDto } from './dto/request/get-comments.dto';
+import { CreateCommentDto } from './dto/request/create-comment.dto';
 
 describe('ArticleController', () => {
   let controller: ArticleController;

@@ -1,12 +1,12 @@
 import { Body, Controller, Post, UseGuards, UsePipes, ValidationPipe } from '@nestjs/common';
 import { LocalAuthGuard } from '@auth/guards/local-auth.guard';
-import { CreateUserDto } from '@user/dto/create-user.input';
-import { RegisterDto } from './dto/register.input';
+import { CreateUserDto } from '@user/dto/request/create-user.dto';
+import { RegisterDto } from './dto/request/register.dto';
 import { UserService } from '@user/user.service';
 import { NoAuth } from '@auth/decorators/auth';
 import { ApiBody, ApiOperation, ApiResponse, ApiTags } from '@nestjs/swagger';
-import { UserDto } from '@user/dto/user.response';
-import { LoginDto } from '@auth/dto/login.input';
+import { UserDto } from '@user/dto/response/user.dto';
+import { LoginDto } from '@auth/dto/request/login.dto';
 import { Crypto } from '@shared/crypto/crypto';
 import { CurrentUser } from '@user/decorators/current-user.decorator';
 

@@ -49,10 +49,10 @@ describe('architecture', () => {
       }
 
       const rule = filesOfProject(path.join(__dirname, `../tsconfig.json`))
-        .matchingPattern(`^src/${file}/.*`)
+        .matchingPattern(`^src/auth/.*`)
         .shouldNot()
         .dependOnFiles()
-        .matchingPattern(`^src/auth/.*`);
+        .matchingPattern(`^src/${file}/.*`);
 
       await expect(rule).toPassAsync();
     });

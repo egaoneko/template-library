@@ -1,6 +1,6 @@
 import { createMock } from '@golevelup/ts-jest';
 import { CurrentUser } from './current-user.decorator';
-import { UserDto } from '../dto/user.response';
+import { UserDto } from '../dto/response/user.dto';
 import { ROUTE_ARGS_METADATA } from '@nestjs/common/constants';
 import { ExecutionContext } from '@nestjs/common';
 

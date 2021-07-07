@@ -13,7 +13,7 @@ import { FileInterceptor } from '@nestjs/platform-express';
 import { FileService } from '@shared/file/file.service';
 import { ApiHeader, ApiOperation, ApiResponse, ApiTags } from '@nestjs/swagger';
 import { Response } from 'express';
-import { FileDto } from '@shared/file/dto/file.response';
+import { FileDto } from '@shared/file/dto/response/file.dto';
 import fs from 'fs';
 import { CurrentUser } from '@user/decorators/current-user.decorator';
 

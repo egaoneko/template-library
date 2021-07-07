@@ -1,4 +1,4 @@
-import { AuthUserDto } from './auth-user.response';
+import { AuthUserDto } from './auth-user.dto';
 
 describe('AuthUserDto', () => {
   let dto: AuthUserDto;

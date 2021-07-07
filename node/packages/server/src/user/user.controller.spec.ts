@@ -2,9 +2,9 @@ import { Test, TestingModule } from '@nestjs/testing';
 import { UserController } from './user.controller';
 import { UserService } from './user.service';
 import { createMock } from '@golevelup/ts-jest';
-import { UserDto } from './dto/user.response';
-import { UpdateUserDto, UpdateUserRequestDto } from './dto/update-user.input';
-import { Crypto } from '@shared/crypto/crypto';
+import { UserDto } from './dto/response/user.dto';
+import { UpdateUserDto, UpdateUserRequestDto } from './dto/request/update-user.dto';
+import { Crypto } from '../shared/crypto/crypto';
 import Mock = jest.Mock;
 
 describe('UserController', () => {
