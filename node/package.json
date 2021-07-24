@@ -14,6 +14,7 @@
     "start:client": "lerna run start --stream --scope @my-app/client",
     "start:server:start": "lerna run start --stream --scope @my-app/server",
     "start:server:dev": "lerna run start:dev --stream --scope @my-app/server",
+    "start:app": "lerna run start --stream --scope @my-app/app",
     "start:ios": "lerna run ios --stream --scope @my-app/app",
     "start:android": "lerna run android --stream --scope @my-app/app",
     "test": "lerna run test --stream",
