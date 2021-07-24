@@ -4,19 +4,24 @@
   "workspaces": {
     "packages": [
       "packages/**"
+    ],
+    "nohoist": [
+      "**/@my-app/app",
+      "**/@my-app/app/**"
     ]
   },
   "scripts": {
-    "postinstall": "npm run bootstrap",
-    "bootstrap": "lerna bootstrap",
     "start:client": "lerna run start --stream --scope @my-app/client",
     "start:server:start": "lerna run start --stream --scope @my-app/server",
     "start:server:dev": "lerna run start:dev --stream --scope @my-app/server",
+    "start:ios": "lerna run ios --stream --scope @my-app/app",
+    "start:android": "lerna run android --stream --scope @my-app/app",
     "test": "lerna run test --stream",
     "test:e2e": "lerna run test:e2e --stream",
     "test:core": "lerna run test --stream --scope @my-app/core",
     "test:client": "lerna run test --stream --scope @my-app/client",
     "test:server": "lerna run test --stream --scope @my-app/server",
+    "test:app": "lerna run test --stream --scope @my-app/app",
     "schema": "lerna run schema --scope @my-app/core",
     "build": "lerna run build",
     "build:core": "lerna run build --scope @my-app/core",
@@ -51,5 +56,9 @@
     "rimraf": "3.0.2",
     "ts-jest": "27.0.4",
     "typescript": "4.3.5"
+  },
+  "resolutions": {
+    "@types/react": "^17",
+    "@jest/create-cache-key-function": "^27.0.1"
   }
 }

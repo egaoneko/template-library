@@ -1,0 +1,29 @@
+{
+  "name": "@my-app/app",
+  "version": "0.0.1",
+  "description": "app",
+  "license": "MIT",
+  "scripts": {
+    "android": "react-native run-android",
+    "pod": "cd ios && pod install",
+    "ios": "yarn run pod && react-native run-ios",
+    "start": "react-native start",
+    "test": "jest",
+    "lint": "eslint . --ext .js,.jsx,.ts,.tsx"
+  },
+  "dependencies": {
+    "react": "17.0.2",
+    "react-native": "0.64.2"
+  },
+  "devDependencies": {
+    "@babel/core": "7.12.9",
+    "@babel/runtime": "7.12.5",
+    "@react-native-community/eslint-config": "3.0.0",
+    "@types/react-native": "0.64.5",
+    "@types/react-test-renderer": "17.0.1",
+    "babel-jest": "27.0.6",
+    "eslint": "7.14.0",
+    "metro-react-native-babel-preset": "0.66.2",
+    "react-test-renderer": "17.0.2"
+  }
+}
