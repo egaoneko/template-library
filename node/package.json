@@ -11,23 +11,24 @@
     ]
   },
   "scripts": {
-    "start:client": "lerna run start --stream --scope @my-app/client",
-    "start:server:start": "lerna run start --stream --scope @my-app/server",
-    "start:server:dev": "lerna run start:dev --stream --scope @my-app/server",
-    "start:app": "lerna run start --stream --scope @my-app/app",
-    "start:ios": "lerna run ios --stream --scope @my-app/app",
-    "start:android": "lerna run android --stream --scope @my-app/app",
+    "web:dev": "lerna run dev --stream --scope @my-app/web",
+    "web:start": "lerna run start --stream --scope @my-app/web",
+    "server:dev": "lerna run start:dev --stream --scope @my-app/server",
+    "server:start": "lerna run start --stream --scope @my-app/server",
+    "app:start": "lerna run start --stream --scope @my-app/app",
+    "app:ios:start": "lerna run ios --stream --scope @my-app/app",
+    "app:android:start": "lerna run android --stream --scope @my-app/app",
     "test": "lerna run test --stream",
     "test:e2e": "lerna run test:e2e --stream",
     "test:core": "lerna run test --stream --scope @my-app/core",
-    "test:client": "lerna run test --stream --scope @my-app/client",
+    "test:web": "lerna run test --stream --scope @my-app/web",
     "test:server": "lerna run test --stream --scope @my-app/server",
     "test:app": "lerna run test --stream --scope @my-app/app",
     "schema": "lerna run schema --scope @my-app/core",
     "build": "lerna run build",
     "build:core": "lerna run build --scope @my-app/core",
-    "build:lib": "lerna run build --ignore @my-app/client @my-app/server",
-    "build:client": "lerna run build --scope @my-app/client",
+    "build:lib": "lerna run build --ignore @my-app/web @my-app/server",
+    "build:web": "lerna run build --scope @my-app/web",
     "build:server": "lerna run build --scope @my-app/server",
     "lint": "lerna run lint",
     "format": "lerna run format",
@@ -59,7 +60,6 @@
     "typescript": "4.3.5"
   },
   "resolutions": {
-    "@types/react": "^17",
-    "@jest/create-cache-key-function": "^27.0.1"
+    "@jest/create-cache-key-function": "27.x"
   }
 }
