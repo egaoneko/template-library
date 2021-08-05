@@ -1,6 +1,6 @@
 import { Body, Controller, Delete, Get, Param, Post, Put, Query, UsePipes, ValidationPipe } from '@nestjs/common';
 import { ArticleService } from '@article/article.service';
-import { ApiHeader, ApiOperation, ApiResponse, ApiTags } from '@nestjs/swagger';
+import { ApiBearerAuth, ApiOperation, ApiResponse, ApiTags } from '@nestjs/swagger';
 import { ArticlesDto } from '@article/dto/response/articles.dto';
 import { GetArticlesDto } from '@article/dto/request/get-articles.dto';
 import { CurrentUser } from '@user/decorators/current-user.decorator';
@@ -20,7 +20,7 @@ export class ArticleController {
 
   @Get('/tags')
   @ApiOperation({ summary: 'get tag list' })
-  @ApiHeader({ name: 'Authorization', description: 'jwt token', required: true })
+  @ApiBearerAuth()
   @ApiResponse({ status: 200, description: 'Tag List', type: 'string', isArray: true })
   @ApiResponse({ status: 401, description: 'Unauthorized' })
   async getTags(): Promise<string[]> {
@@ -29,7 +29,7 @@ export class ArticleController {
 
   @Get()
   @ApiOperation({ summary: 'get article list' })
-  @ApiHeader({ name: 'Authorization', description: 'jwt token', required: true })
+  @ApiBearerAuth()
   @ApiResponse({ status: 200, description: 'Article List', type: ArticlesDto })
   @ApiResponse({ status: 401, description: 'Unauthorized' })
   @UsePipes(new ValidationPipe({ transform: true }))
@@ -42,7 +42,7 @@ export class ArticleController {
 
   @Get('/feed')
   @ApiOperation({ summary: 'get feed article list' })
-  @ApiHeader({ name: 'Authorization', description: 'jwt token', required: true })
+  @ApiBearerAuth()
   @ApiResponse({ status: 200, description: 'Article List', type: ArticlesDto })
   @ApiResponse({ status: 401, description: 'Unauthorized' })
   @UsePipes(new ValidationPipe({ transform: true }))
@@ -55,7 +55,7 @@ export class ArticleController {
 
   @Get('/:slug')
   @ApiOperation({ summary: 'get article' })
-  @ApiHeader({ name: 'Authorization', description: 'jwt token', required: true })
+  @ApiBearerAuth()
   @ApiResponse({ status: 200, description: 'Article', type: ArticleDto })
   @ApiResponse({ status: 401, description: 'Unauthorized' })
   async getArticle(@Param('slug') slug: string, @CurrentUser('id') currentUserId: number): Promise<ArticleDto> {
@@ -64,7 +64,7 @@ export class ArticleController {
 
   @Post()
   @ApiOperation({ summary: 'create article' })
-  @ApiHeader({ name: 'Authorization', description: 'jwt token', required: true })
+  @ApiBearerAuth()
   @ApiResponse({ status: 201, description: 'Article', type: ArticleDto })
   @ApiResponse({ status: 401, description: 'Unauthorized' })
   @UsePipes(new ValidationPipe({ transform: true }))
@@ -77,7 +77,7 @@ export class ArticleController {
 
   @Put('/:slug')
   @ApiOperation({ summary: 'update article' })
-  @ApiHeader({ name: 'Authorization', description: 'jwt token', required: true })
+  @ApiBearerAuth()
   @ApiResponse({ status: 201, description: 'Article', type: ArticleDto })
   @ApiResponse({ status: 401, description: 'Unauthorized' })
   @UsePipes(new ValidationPipe({ transform: true }))
@@ -91,7 +91,7 @@ export class ArticleController {
 
   @Delete('/:slug')
   @ApiOperation({ summary: 'delete article' })
-  @ApiHeader({ name: 'Authorization', description: 'jwt token', required: true })
+  @ApiBearerAuth()
   @ApiResponse({ status: 200 })
   @ApiResponse({ status: 401, description: 'Unauthorized' })
   async deleteArticle(@Param('slug') slug: string): Promise<void> {
@@ -100,7 +100,7 @@ export class ArticleController {
 
   @Get('/:slug/comments')
   @ApiOperation({ summary: 'get comment' })
-  @ApiHeader({ name: 'Authorization', description: 'jwt token', required: true })
+  @ApiBearerAuth()
   @ApiResponse({ status: 200, description: 'Comment List', type: CommentsDto })
   @ApiResponse({ status: 401, description: 'Unauthorized' })
   @UsePipes(new ValidationPipe({ transform: true }))
@@ -114,7 +114,7 @@ export class ArticleController {
 
   @Post('/:slug/comments')
   @ApiOperation({ summary: 'create comment' })
-  @ApiHeader({ name: 'Authorization', description: 'jwt token', required: true })
+  @ApiBearerAuth()
   @ApiResponse({ status: 201, description: 'Comment', type: CommentDto })
   @ApiResponse({ status: 401, description: 'Unauthorized' })
   @UsePipes(new ValidationPipe({ transform: true }))
@@ -128,7 +128,7 @@ export class ArticleController {
 
   @Delete('/:slug/comments/:id')
   @ApiOperation({ summary: 'delete comment' })
-  @ApiHeader({ name: 'Authorization', description: 'jwt token', required: true })
+  @ApiBearerAuth()
   @ApiResponse({ status: 200 })
   @ApiResponse({ status: 401, description: 'Unauthorized' })
   async deleteComment(@Param('slug') slug: string, @Param('id') id: number): Promise<void> {
@@ -137,7 +137,7 @@ export class ArticleController {
 
   @Post('/:slug/favorite')
   @ApiOperation({ summary: 'favorite article' })
-  @ApiHeader({ name: 'Authorization', description: 'jwt token', required: true })
+  @ApiBearerAuth()
   @ApiResponse({ status: 201, description: 'Article', type: ArticleDto })
   @ApiResponse({ status: 401, description: 'Unauthorized' })
   @UsePipes(new ValidationPipe({ transform: true }))
@@ -147,7 +147,7 @@ export class ArticleController {
 
   @Delete('/:slug/favorite')
   @ApiOperation({ summary: 'unfavorite article' })
-  @ApiHeader({ name: 'Authorization', description: 'jwt token', required: true })
+  @ApiBearerAuth()
   @ApiResponse({ status: 200, description: 'Article', type: ArticleDto })
   @ApiResponse({ status: 401, description: 'Unauthorized' })
   async unfavoriteArticle(@Param('slug') slug: string, @CurrentUser('id') currentUserId: number): Promise<ArticleDto> {

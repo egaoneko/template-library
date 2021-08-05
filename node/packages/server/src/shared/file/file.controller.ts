@@ -11,7 +11,7 @@ import {
 } from '@nestjs/common';
 import { FileInterceptor } from '@nestjs/platform-express';
 import { FileService } from '@shared/file/file.service';
-import { ApiHeader, ApiOperation, ApiResponse, ApiTags } from '@nestjs/swagger';
+import { ApiBearerAuth, ApiBody, ApiConsumes, ApiOperation, ApiResponse, ApiTags } from '@nestjs/swagger';
 import { Response } from 'express';
 import { FileDto } from '@shared/file/dto/response/file.dto';
 import fs from 'fs';
@@ -24,7 +24,7 @@ export class FileController {
 
   @Get(':fileId')
   @ApiOperation({ summary: 'get file' })
-  @ApiHeader({ name: 'Authorization', description: 'jwt token', required: true })
+  @ApiBearerAuth()
   @ApiResponse({ status: 201, description: 'File', type: Buffer })
   @ApiResponse({ status: 401, description: 'Unauthorized' })
   @ApiResponse({ status: 404, description: 'Not found file' })
@@ -46,8 +46,20 @@ export class FileController {
 
   @Post('upload')
   @UseInterceptors(FileInterceptor('file'))
+  @ApiConsumes('multipart/form-data')
+  @ApiBody({
+    schema: {
+      type: 'object',
+      properties: {
+        file: {
+          type: 'string',
+          format: 'binary',
+        },
+      },
+    },
+  })
   @ApiOperation({ summary: 'upload file' })
-  @ApiHeader({ name: 'Authorization', description: 'jwt token', required: true })
+  @ApiBearerAuth()
   @ApiResponse({ status: 201, description: 'File', type: FileDto })
   @ApiResponse({ status: 401, description: 'Unauthorized' })
   @ApiResponse({ status: 400, description: 'Not found file' })

@@ -19,6 +19,7 @@ async function bootstrap() {
     .setTitle('Real World API')
     .setDescription('Real World API documents')
     .setVersion('0.0.1')
+    .addBearerAuth()
     .build();
 
   const document = SwaggerModule.createDocument(app, config, {

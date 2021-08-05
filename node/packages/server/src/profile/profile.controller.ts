@@ -1,5 +1,5 @@
 import { Controller, Delete, Get, Param, Post } from '@nestjs/common';
-import { ApiHeader, ApiOperation, ApiParam, ApiResponse, ApiTags } from '@nestjs/swagger';
+import { ApiBearerAuth, ApiOperation, ApiParam, ApiResponse, ApiTags } from '@nestjs/swagger';
 import { ProfileDto } from '@profile/dto/response/profile.dto';
 import { ProfileService } from '@profile/profile.service';
 import { CurrentUser } from '@user/decorators/current-user.decorator';
@@ -11,7 +11,7 @@ export class ProfileController {
 
   @Get('/:userId')
   @ApiOperation({ summary: 'get user profile' })
-  @ApiHeader({ name: 'Authorization', description: 'jwt token', required: true })
+  @ApiBearerAuth()
   @ApiParam({ name: 'userId', description: 'user id of profile', type: 'number' })
   @ApiResponse({ status: 200, description: 'Profile', type: ProfileDto })
   @ApiResponse({ status: 401, description: 'Unauthorized' })
@@ -21,7 +21,7 @@ export class ProfileController {
 
   @Post('/:userId/follow')
   @ApiOperation({ summary: 'follow user' })
-  @ApiHeader({ name: 'Authorization', description: 'jwt token', required: true })
+  @ApiBearerAuth()
   @ApiParam({ name: 'userId', description: 'user id to follow', type: 'number' })
   @ApiResponse({ status: 201, description: 'Profile', type: ProfileDto })
   @ApiResponse({ status: 401, description: 'Unauthorized' })
@@ -31,7 +31,7 @@ export class ProfileController {
 
   @Delete('/:userId/follow')
   @ApiOperation({ summary: 'unfollow user' })
-  @ApiHeader({ name: 'Authorization', description: 'jwt token', required: true })
+  @ApiBearerAuth()
   @ApiParam({ name: 'userId', description: 'user id to unfollow', type: 'number' })
   @ApiResponse({ status: 200, description: 'Profile', type: ProfileDto })
   @ApiResponse({ status: 401, description: 'Unauthorized' })
