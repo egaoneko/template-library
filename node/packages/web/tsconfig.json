@@ -9,6 +9,8 @@
     "forceConsistentCasingInFileNames": true,
     "noEmit": true,
     "esModuleInterop": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
     "module": "esnext",
     "moduleResolution": "node",
     "resolveJsonModule": true,
@@ -17,6 +19,21 @@
     "paths": {
       "@components/*": [
         "src/components/*"
+      ],
+      "@constants/*": [
+        "src/constants/*"
+      ],
+      "@interfaces/*": [
+        "src/interfaces/*"
+      ],
+      "@decorators/*": [
+        "src/decorators/*"
+      ],
+      "@models/*": [
+        "src/models/*"
+      ],
+      "@stores/*": [
+        "src/stores/*"
       ],
       "@assets/*": [
         "public/assets/*"
