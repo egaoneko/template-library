@@ -1,8 +1,9 @@
-import HomePageContainer from '@components/pages/HomePageContainer';
+import SignUpPageContainer from '@components/pages/SignUpPageContainer';
 import BaseLayoutTemplate from '@components/templates/layout/BaseLayoutTemplate';
+import React from 'react';
 
 const Index = () => {
-  return <HomePageContainer />;
+  return <SignUpPageContainer />;
 };
 
 Index.layout = BaseLayoutTemplate;

@@ -29,11 +29,14 @@
       "@decorators/*": [
         "src/decorators/*"
       ],
-      "@models/*": [
-        "src/models/*"
-      ],
       "@stores/*": [
         "src/stores/*"
+      ],
+      "@utils/*": [
+        "src/utils/*"
+      ],
+      "@api/*": [
+        "src/api/*"
       ],
       "@assets/*": [
         "public/assets/*"

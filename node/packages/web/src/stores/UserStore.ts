@@ -1,14 +1,15 @@
 import { makeAutoObservable } from 'mobx';
 import { IS_SSR } from '@constants/common';
 import { useMemo } from 'react';
-import User from '@models/User';
-import { IUser } from '@interfaces/user';
+import { IUser, LoginRequest, RegisterRequest } from '@interfaces/user';
 import { avoid } from '@decorators/ssr';
+import AuthAPI from '@api/auth';
+import { notifyError, notifySuccess } from '@utils/notifiy';
+import { removeToken, setToken } from '@utils/cookie';
 
 export class UserStore {
   public lastUpdate: number = 0;
-
-  public user: User | null = null;
+  public user: IUser | null = null;
 
   constructor(user: IUser | null) {
     makeAutoObservable(this);
@@ -17,28 +18,59 @@ export class UserStore {
   }
 
   public async hydrate(user: IUser | null): Promise<void> {
-    await this.setUser(user ? await User.fromJson(user) : null);
+    await this.setUser(user);
   }
 
   @avoid
   public async init(): Promise<void> {}
 
-  public async createUser(user: User): Promise<boolean> {
+  public async register(request: RegisterRequest): Promise<boolean> {
+    try {
+      const user = await AuthAPI.register(request);
+      notifySuccess('Successfully registered!');
+      return !!user;
+    } catch ({ response }) {
+      let message = response.data?.message;
+
+      if (Array.isArray(message)) {
+        message = message.join('\n');
+      }
+
+      notifyError(message);
+    }
+
     return false;
   }
 
-  public async updateUser(user: User | null): Promise<void> {}
+  public async login(request: LoginRequest): Promise<IUser | null> {
+    try {
+      const user = await AuthAPI.login(request);
+      this.setUser(user);
+
+      if (this.user) {
+        notifySuccess('Successfully login!');
+      } else {
+        notifyError('Fail to login');
+      }
+    } catch ({ response }) {
+      notifyError(response.data?.message);
+    }
+
+    return this.user;
+  }
 
   private async clear(): Promise<void> {
     await this.setUser(null);
   }
 
-  private async setUser(user: User | null): Promise<void> {
+  private async setUser(user: IUser | null): Promise<void> {
     this.user = user;
 
-    if (!user) {
+    if (!this.user || !this.user?.token) {
       return;
     }
+
+    setToken(this.user.token);
   }
 }
 

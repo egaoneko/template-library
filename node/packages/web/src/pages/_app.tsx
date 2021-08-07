@@ -5,8 +5,12 @@ import Head from 'next/head';
 import { useUserStore } from '@stores/UserStore';
 import { Stores } from '@stores/stores';
 import { Provider } from 'mobx-react';
-import { IUser } from '@interfaces/user';
+import Notification from '@components/atoms/common/Notification';
 import App from 'next/app';
+import cookies from 'next-cookies';
+import { ACCESS_TOKEN_NAME, REFRESH_TOKEN_NAME } from '@constants/common';
+import { setToken } from '@utils/cookie';
+import UserAPI from '@api/user';
 
 interface PropsType {}
 
@@ -78,6 +82,7 @@ function MyApp({ Component, pageProps }: AppProps<PropsType>) {
       </Head>
       <Provider {...stores}>
         <Layout>
+          <Notification />
           <Component {...pageProps} />
         </Layout>
       </Provider>
@@ -87,7 +92,22 @@ function MyApp({ Component, pageProps }: AppProps<PropsType>) {
 
 MyApp.getInitialProps = async (appContext: AppContext) => {
   const appProps = await App.getInitialProps(appContext);
-  const user: IUser | null = (appContext.ctx.req as any)?.state?.user || null;
+
+  const { ctx } = appContext;
+  const allCookies = cookies(ctx);
+  const accessTokenByCookie = allCookies[ACCESS_TOKEN_NAME];
+
+  if (accessTokenByCookie !== undefined) {
+    const refreshTokenByCookie = allCookies[REFRESH_TOKEN_NAME] || '';
+    setToken(accessTokenByCookie, refreshTokenByCookie);
+  }
+
+  let user = null;
+
+  try {
+    user = await UserAPI.get();
+  } catch (e) {}
+
   return {
     ...appProps,
     pageProps: {

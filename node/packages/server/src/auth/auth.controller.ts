@@ -11,7 +11,7 @@ import { Crypto } from '@shared/crypto/crypto';
 import { CurrentUser } from '@user/decorators/current-user.decorator';
 
 @ApiTags('auth')
-@Controller('/api/auth')
+@Controller('/api/auth/')
 export class AuthController {
   constructor(private readonly usersService: UserService) {}
 
