@@ -3,18 +3,29 @@ import { JwtStrategy } from './jwt.strategy';
 import { UserService } from '@user/user.service';
 import { IJwtPayload } from '@auth/interfaces/jwt.interface';
 import { createMock } from '@golevelup/ts-jest';
+import { ConfigService } from '@nestjs/config';
 
 describe('JwtStrategy', () => {
   let strategy: JwtStrategy;
   let mockUserService: UserService;
+  let mockConfigService: ConfigService;
 
   beforeEach(async () => {
     mockUserService = createMock<UserService>();
+    mockConfigService = createMock<ConfigService>();
+
+    /* eslint-disable @typescript-eslint/no-explicit-any */
+    mockConfigService.get = jest.fn().mockReturnValue('ACCESS_TOKEN_SECRET_TEST') as any;
+
     const module: TestingModule = await Test.createTestingModule({
       providers: [
         {
           provide: UserService,
           useValue: mockUserService,
+        },
+        {
+          provide: ConfigService,
+          useValue: mockConfigService,
         },
         JwtStrategy,
       ],

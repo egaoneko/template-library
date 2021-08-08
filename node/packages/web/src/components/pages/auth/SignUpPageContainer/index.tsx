@@ -5,8 +5,9 @@ import SignUpContentTemplate from './templates/SignUpContentTemplate';
 import { RegisterRequest } from '@interfaces/user';
 import { useRouter } from 'next/router';
 import { useStores } from '@stores/stores';
+import { BasePropsType } from '@interfaces/common';
 
-interface PropsType {
+interface PropsType extends BasePropsType {
   children?: ReactNode;
 }
 
@@ -22,14 +23,14 @@ const SignUpPageContainer: FC<PropsType> = props => {
         setLoading(false);
         return;
       }
-      router.push('/sign-in');
+      router.push('/auth/sign-in');
     });
   }
 
   return (
     <>
       <Head title={'REGISTER'} />
-      <HeaderTemplates headingTitle={'conduit'} />
+      <HeaderTemplates pathname={props.pathname} headingTitle={'conduit'} />
       <SignUpContentTemplate loading={loading} onFinish={onFinish} />
     </>
   );

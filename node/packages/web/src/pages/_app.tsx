@@ -1,6 +1,6 @@
 import '../styles/globals.css';
-import type { AppContext, AppProps } from 'next/app';
-import React, { FC, ReactNode, useEffect, useState } from 'react';
+import type { AppContext, AppInitialProps, AppProps } from 'next/app';
+import React, { FC, ReactNode, useState } from 'react';
 import Head from 'next/head';
 import { useUserStore } from '@stores/UserStore';
 import { Stores } from '@stores/stores';
@@ -9,19 +9,20 @@ import Notification from '@components/atoms/common/Notification';
 import App from 'next/app';
 import cookies from 'next-cookies';
 import { ACCESS_TOKEN_NAME, REFRESH_TOKEN_NAME } from '@constants/common';
-import { setToken } from '@utils/cookie';
+import { refreshToken, setToken } from '@utils/cookie';
 import UserAPI from '@api/user';
+import { BasePropsType } from '@interfaces/common';
+import { IUser } from '@interfaces/user';
 
-interface PropsType {}
+interface PropsType extends BasePropsType {
+  user: IUser | null;
+}
 
-function MyApp({ Component, pageProps }: AppProps<PropsType>) {
+function MyApp({ Component, pageProps }: AppProps<PropsType>): ReactNode {
+  const { user, ...props } = pageProps;
   const [stores, setStores] = useState<Stores>({
-    userStore: useUserStore(pageProps.user),
+    userStore: useUserStore(user),
   });
-
-  useEffect(() => {
-    void stores.userStore.init();
-  }, []);
 
   const Layout = (Component as any).layout || Empty;
 
@@ -83,23 +84,25 @@ function MyApp({ Component, pageProps }: AppProps<PropsType>) {
       <Provider {...stores}>
         <Layout>
           <Notification />
-          <Component {...pageProps} />
+          <Component {...props} />
         </Layout>
       </Provider>
     </>
   );
 }
 
-MyApp.getInitialProps = async (appContext: AppContext) => {
+MyApp.getInitialProps = async (appContext: AppContext): Promise<AppInitialProps> => {
   const appProps = await App.getInitialProps(appContext);
 
   const { ctx } = appContext;
   const allCookies = cookies(ctx);
   const accessTokenByCookie = allCookies[ACCESS_TOKEN_NAME];
+  const refreshTokenByCookie = allCookies[REFRESH_TOKEN_NAME];
 
   if (accessTokenByCookie !== undefined) {
-    const refreshTokenByCookie = allCookies[REFRESH_TOKEN_NAME] || '';
-    setToken(accessTokenByCookie, refreshTokenByCookie);
+    setToken(accessTokenByCookie);
+  } else if (accessTokenByCookie === undefined && refreshTokenByCookie !== undefined) {
+    refreshToken(refreshTokenByCookie);
   }
 
   let user = null;
@@ -112,6 +115,7 @@ MyApp.getInitialProps = async (appContext: AppContext) => {
     ...appProps,
     pageProps: {
       user,
+      pathname: ctx.pathname,
     },
   };
 };

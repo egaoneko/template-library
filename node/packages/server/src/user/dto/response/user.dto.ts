@@ -1,4 +1,4 @@
-import { IsEmail, IsNotEmpty, IsNumber, IsString } from 'class-validator';
+import { IsEmail, IsNotEmpty, IsNumber, IsOptional, IsString } from 'class-validator';
 import { ApiProperty, ApiPropertyOptional } from '@nestjs/swagger';
 import { IUser } from '@user/interfaces/user.interface';
 
@@ -31,6 +31,7 @@ export class UserDto implements IUser {
   })
   username!: string;
 
+  @IsOptional()
   @IsString()
   @ApiPropertyOptional({
     example:
@@ -40,6 +41,17 @@ export class UserDto implements IUser {
   })
   token!: string;
 
+  @IsOptional()
+  @IsString()
+  @ApiPropertyOptional({
+    example:
+      'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Impha2VAamFrZS5qYWtlIiwidXNlcm5hbWUiOiJKYWNvYiIsImlhdCI6MTYyMzYzMTI5MSwiZXhwIjoxNjIzNjMxMzUxfQ.RMev83pXKAlQVbjsGyhVsZHEoohEoClmfGiFstWJ1uo',
+    description: 'refresh token',
+    type: 'string',
+  })
+  refreshToken!: string;
+
+  @IsOptional()
   @IsString()
   @ApiPropertyOptional({
     example: 'I like to skateboard',
@@ -48,6 +60,7 @@ export class UserDto implements IUser {
   })
   bio!: string;
 
+  @IsOptional()
   @IsString()
   @ApiPropertyOptional({
     example: 'https://i.stack.imgur.com/xHWG8.jpg',

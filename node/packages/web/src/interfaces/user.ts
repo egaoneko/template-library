@@ -12,3 +12,12 @@ export interface LoginRequest {
   email: string;
   password: string;
 }
+
+export interface UpdateRequest {
+  id: number;
+  email?: string;
+  user?: string;
+  password?: string;
+  bio?: string;
+  image?: number;
+}

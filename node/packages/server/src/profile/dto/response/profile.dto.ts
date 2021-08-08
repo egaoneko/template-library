@@ -1,5 +1,5 @@
 import { IProfile } from '@profile/interfaces/profile.interface';
-import { IsBoolean, IsNotEmpty, IsString } from 'class-validator';
+import { IsBoolean, IsNotEmpty, IsOptional, IsString } from 'class-validator';
 import { ApiProperty, ApiPropertyOptional } from '@nestjs/swagger';
 
 export class ProfileDto implements IProfile {
@@ -12,6 +12,7 @@ export class ProfileDto implements IProfile {
   })
   username!: string;
 
+  @IsOptional()
   @IsString()
   @ApiPropertyOptional({
     example: 'I like to skateboard',
@@ -20,6 +21,7 @@ export class ProfileDto implements IProfile {
   })
   bio!: string;
 
+  @IsOptional()
   @IsString()
   @ApiPropertyOptional({
     example: 'https://i.stack.imgur.com/xHWG8.jpg',

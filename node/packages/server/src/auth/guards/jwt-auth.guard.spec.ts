@@ -4,31 +4,33 @@ import { createMock } from '@golevelup/ts-jest';
 import { ExecutionContext } from '@nestjs/common';
 import { Test } from '@nestjs/testing';
 import { PassportModule } from '@nestjs/passport';
-import { JwtModule } from '@nestjs/jwt';
-import { JWT_CONSTANTS } from '../constants/auth';
 import { JwtStrategy } from '../strategies/jwt.strategy';
 import { UserService } from '../../user/user.service';
 import { NoAuth } from '../decorators/auth';
+import { ConfigModule, ConfigService } from '@nestjs/config';
 
 describe('JwtAuthGuard', () => {
   let guard: JwtAuthGuard;
+  let mockConfigService: ConfigService;
 
   beforeEach(async () => {
     const refactor = new Reflector();
     guard = new JwtAuthGuard(refactor);
+    mockConfigService = createMock<ConfigService>();
+
+    /* eslint-disable @typescript-eslint/no-explicit-any */
+    mockConfigService.get = jest.fn().mockReturnValueOnce('ACCESS_TOKEN_SECRET_TEST').mockReturnValue(900) as any;
 
     await Test.createTestingModule({
-      imports: [
-        PassportModule,
-        JwtModule.register({
-          secret: JWT_CONSTANTS.secret,
-          signOptions: { expiresIn: '60s' },
-        }),
-      ],
+      imports: [PassportModule, ConfigModule],
       providers: [
         {
           provide: UserService,
           useClass: MockService,
+        },
+        {
+          provide: ConfigService,
+          useValue: mockConfigService,
         },
         JwtStrategy,
       ],

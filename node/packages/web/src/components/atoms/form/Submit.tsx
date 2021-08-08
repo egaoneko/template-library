@@ -13,7 +13,7 @@ const Submit: FC<PropsType> = props => {
       disabled={props.disabled}
       type="submit"
       className={[
-        'bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline disabled:opacity-50 disabled:cursor-not-allowed',
+        'px-6 py-3 bg-primary hover:bg-secondary text-white font-bold rounded focus:outline-none focus:shadow-outline disabled:opacity-50 disabled:cursor-not-allowed',
         props.className,
       ].join(' ')}
     >

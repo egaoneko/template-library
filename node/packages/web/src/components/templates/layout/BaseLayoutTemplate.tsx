@@ -1,5 +1,4 @@
 import React, { FC, ReactNode } from 'react';
-import Head from '../../atoms/layout/Head';
 
 interface PropsType {
   children?: ReactNode;

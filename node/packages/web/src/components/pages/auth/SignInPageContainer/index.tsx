@@ -5,8 +5,10 @@ import SignInContentTemplate from './templates/SignInContentTemplate';
 import { LoginRequest } from '@interfaces/user';
 import { useRouter } from 'next/router';
 import { useStores } from '@stores/stores';
+import { BasePropsType } from '@interfaces/common';
 
-interface PropsType {
+interface PropsType extends BasePropsType {
+  successUrl?: string;
   children?: ReactNode;
 }
 
@@ -22,14 +24,19 @@ const SignInPageContainer: FC<PropsType> = props => {
         setLoading(false);
         return;
       }
-      router.push('/');
+
+      if (props.successUrl) {
+        router.push(props.successUrl);
+      } else {
+        router.push('/');
+      }
     });
   }
 
   return (
     <>
       <Head title={'LOGIN'} />
-      <HeaderTemplates headingTitle={'conduit'} />
+      <HeaderTemplates pathname={props.pathname} headingTitle={'conduit'} />
       <SignInContentTemplate loading={loading} onFinish={onFinish} />
     </>
   );

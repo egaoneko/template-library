@@ -1,3 +1,10 @@
 http:
   host: 'http://localhost'
   port: 8080
+jwt:
+  access-token:
+    secret: ACCESS_TOKEN_SECRET_TEST
+    expiration-time: 900 # 60*15
+  refresh-token:
+    secret: REFRESH_TOKEN_SECRET_TEST
+    expiration-time: 604800 # 60*60*24*7

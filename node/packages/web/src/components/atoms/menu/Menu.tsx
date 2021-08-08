@@ -6,12 +6,17 @@ interface PropsType {
   href: string | UrlObject;
   as?: string | UrlObject;
   icon?: ReactNode;
+  active?: boolean;
   children?: ReactNode;
 }
 
 const Menu: FC<PropsType> = props => {
   return (
-    <div className={'py-2 ml-4 cursor-pointer first:ml-0 hover:text-gray-800'}>
+    <div
+      className={['py-2 ml-4 cursor-pointer first:ml-0 hover:text-gray-800', props.active ? 'text-primary' : ''].join(
+        ' ',
+      )}
+    >
       <Link href={props.href} as={props.as}>
         <div className={'flex items-center'}>
           <span className="mr-1">{props.icon}</span>

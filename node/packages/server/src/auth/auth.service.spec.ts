@@ -5,15 +5,23 @@ import { UserService } from '../user/user.service';
 import { IUser } from '../user/interfaces/user.interface';
 import { createMock } from '@golevelup/ts-jest';
 import { Crypto } from '../shared/crypto/crypto';
+import { ConfigService } from '@nestjs/config';
+import { use } from 'passport';
 
 describe('AuthService', () => {
   let service: AuthService;
   let mockUserService: UserService;
   let mockJwtService: JwtService;
+  let mockConfigService: ConfigService;
 
   beforeEach(async () => {
     mockUserService = createMock<UserService>();
     mockJwtService = createMock<JwtService>();
+    mockConfigService = createMock<ConfigService>();
+
+    /* eslint-disable @typescript-eslint/no-explicit-any */
+    mockConfigService.get = jest.fn().mockReturnValue(900) as any;
+
     const module: TestingModule = await Test.createTestingModule({
       providers: [
         {
@@ -23,6 +31,10 @@ describe('AuthService', () => {
         {
           provide: JwtService,
           useValue: mockJwtService,
+        },
+        {
+          provide: ConfigService,
+          useValue: mockConfigService,
         },
         AuthService,
       ],
@@ -85,5 +97,6 @@ describe('AuthService', () => {
     const actual = await service.login(user);
     expect(actual).toBeDefined();
     expect(mockJwtService.sign).toBeCalledTimes(1);
+    expect(mockJwtService.sign).toBeCalledWith({ email: user.email, username: user.username }, { expiresIn: '900s' });
   });
 });

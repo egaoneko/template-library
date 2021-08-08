@@ -1,4 +1,4 @@
-import { IsEmail, IsNotEmpty, IsNumber, IsString } from 'class-validator';
+import { IsEmail, IsNotEmpty, IsNumber, IsOptional, IsString } from 'class-validator';
 import { UserDto } from '@user/dto/response/user.dto';
 
 export class AuthUserDto {
@@ -23,9 +23,11 @@ export class AuthUserDto {
   @IsString()
   salt!: string;
 
+  @IsOptional()
   @IsString()
   bio!: string;
 
+  @IsOptional()
   @IsString()
   image!: string;
 

@@ -2,12 +2,13 @@ import React, { FC } from 'react';
 import { RegisterOptions } from 'react-hook-form';
 import { useFormContext } from './FormContext';
 
-interface PropsType extends React.DetailedHTMLProps<React.InputHTMLAttributes<HTMLInputElement>, HTMLInputElement> {
+interface PropsType
+  extends React.DetailedHTMLProps<React.TextareaHTMLAttributes<HTMLTextAreaElement>, HTMLTextAreaElement> {
   name: string;
   options?: RegisterOptions;
 }
 
-const Input: FC<PropsType> = props => {
+const Textarea: FC<PropsType> = props => {
   const { register, formState } = useFormContext();
   const { name, options, ...formProps } = props;
   const errors = formState?.errors[props.name];
@@ -15,10 +16,10 @@ const Input: FC<PropsType> = props => {
   return (
     <div>
       {register && (
-        <input
+        <textarea
           className={[
             !props.hidden &&
-              'block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 disabled:opacity-50 disabled:cursor-not-allowed',
+              'mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50',
           ].join(' ')}
           {...formProps}
           {...register(props.name, props.options)}
@@ -34,4 +35,4 @@ const Input: FC<PropsType> = props => {
   );
 };
 
-export default Input;
+export default Textarea;

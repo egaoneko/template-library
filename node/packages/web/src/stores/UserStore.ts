@@ -1,11 +1,11 @@
+import UserAPI from '@api/user';
 import { makeAutoObservable } from 'mobx';
 import { IS_SSR } from '@constants/common';
 import { useMemo } from 'react';
-import { IUser, LoginRequest, RegisterRequest } from '@interfaces/user';
-import { avoid } from '@decorators/ssr';
+import { IUser, LoginRequest, RegisterRequest, UpdateRequest } from '@interfaces/user';
 import AuthAPI from '@api/auth';
 import { notifyError, notifySuccess } from '@utils/notifiy';
-import { removeToken, setToken } from '@utils/cookie';
+import { setToken } from '@utils/cookie';
 
 export class UserStore {
   public lastUpdate: number = 0;
@@ -20,9 +20,6 @@ export class UserStore {
   public async hydrate(user: IUser | null): Promise<void> {
     await this.setUser(user);
   }
-
-  @avoid
-  public async init(): Promise<void> {}
 
   public async register(request: RegisterRequest): Promise<boolean> {
     try {
@@ -51,6 +48,26 @@ export class UserStore {
         notifySuccess('Successfully login!');
       } else {
         notifyError('Fail to login');
+      }
+    } catch ({ response }) {
+      notifyError(response.data?.message);
+    }
+
+    return this.user;
+  }
+
+  public async update(request: UpdateRequest): Promise<IUser | null> {
+    try {
+      const user = await UserAPI.put(request);
+      this.setUser({
+        ...this.user,
+        ...user,
+      });
+
+      if (this.user) {
+        notifySuccess('Successfully updated!');
+      } else {
+        notifyError('Fail to update');
       }
     } catch ({ response }) {
       notifyError(response.data?.message);

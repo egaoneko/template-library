@@ -8,6 +8,7 @@ import { useStores } from '@stores/stores';
 import { AiOutlineEdit, AiOutlineSetting } from 'react-icons/ai';
 
 interface PropsType {
+  pathname?: string | null;
   headingTitle: string;
   bannerTitle?: string;
   bannerDescription?: string;
@@ -28,8 +29,8 @@ const HeaderTemplates: FC<PropsType> = props => {
           <Menu href="/">Home</Menu>
           {!userStore.user && (
             <>
-              <Menu href="/sign-in">Sign in</Menu>
-              <Menu href="/sign-up">Sign up</Menu>
+              <Menu href="/auth/sign-in">Sign in</Menu>
+              <Menu href="/auth/sign-up">Sign up</Menu>
             </>
           )}
           {userStore.user && (
@@ -37,7 +38,7 @@ const HeaderTemplates: FC<PropsType> = props => {
               <Menu href="/" icon={<AiOutlineEdit />}>
                 New Post
               </Menu>
-              <Menu href="/" icon={<AiOutlineSetting />}>
+              <Menu href="/user/settings" icon={<AiOutlineSetting />} active={props.pathname === '/user/settings'}>
                 Settings
               </Menu>
               <Menu href="/">{userStore.user.username}</Menu>
@@ -46,7 +47,7 @@ const HeaderTemplates: FC<PropsType> = props => {
         </Menus>
       </Heading>
       {props.bannerTitle && (
-        <Banner className={props.bannerColor ?? 'bg-green-600'}>
+        <Banner className={props.bannerColor ?? 'bg-primary'}>
           <BannerTitle>{props.bannerTitle}</BannerTitle>
           <BannerDescription>{props.bannerDescription}</BannerDescription>
         </Banner>
@@ -66,7 +67,7 @@ const Heading = styled.div`
 `;
 
 const HeadingTitle = styled.div`
-  ${tw`font-bold text-2xl text-green-600 font-sans flex items-center`}
+  ${tw`font-bold text-2xl text-primary font-sans flex items-center`}
 `;
 
 const Banner = styled.div`

@@ -31,4 +31,8 @@ export class User extends Model {
   @AllowNull(true)
   @Column(DataType.STRING)
   image!: number;
+
+  @AllowNull(true)
+  @Column(DataType.STRING)
+  refreshToken!: string;
 }

@@ -60,6 +60,6 @@
     "typescript": "4.3.5"
   },
   "resolutions": {
-    "@jest/create-cache-key-function": "27.x"
+    "@jest/create-cache-key-function": "27.0.2"
   }
 }
