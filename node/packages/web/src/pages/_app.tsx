@@ -5,11 +5,11 @@ import Head from 'next/head';
 import { useUserStore } from '@stores/UserStore';
 import { Stores } from '@stores/stores';
 import { Provider } from 'mobx-react';
-import Notification from '@components/atoms/common/Notification';
+import Notification from '@components/atoms/notification/Notification';
 import App from 'next/app';
 import cookies from 'next-cookies';
 import { ACCESS_TOKEN_NAME, REFRESH_TOKEN_NAME } from '@constants/common';
-import { refreshToken, setToken } from '@utils/cookie';
+import { refreshToken, removeToken, setToken } from '@utils/cookie';
 import UserAPI from '@api/user';
 import { BasePropsType } from '@interfaces/common';
 import { IUser } from '@interfaces/user';
@@ -103,12 +103,19 @@ MyApp.getInitialProps = async (appContext: AppContext): Promise<AppInitialProps>
     setToken(accessTokenByCookie);
   } else if (accessTokenByCookie === undefined && refreshTokenByCookie !== undefined) {
     refreshToken(refreshTokenByCookie);
+  } else {
+    removeToken();
   }
 
   let user = null;
 
   try {
     user = await UserAPI.get();
+
+    if (user) {
+      user.token = accessTokenByCookie;
+      user.refreshToken = refreshTokenByCookie;
+    }
   } catch (e) {}
 
   return {

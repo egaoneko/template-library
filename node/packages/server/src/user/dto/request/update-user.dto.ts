@@ -1,7 +1,9 @@
 import { IsEmail, IsNotEmpty, IsNumber, IsOptional, IsString } from 'class-validator';
 import { ApiProperty, ApiPropertyOptional } from '@nestjs/swagger';
+import { Type } from 'class-transformer';
 
 export class UpdateUserRequestDto {
+  @Type(() => Number)
   @IsNotEmpty()
   @IsNumber()
   @ApiProperty({
@@ -48,7 +50,8 @@ export class UpdateUserRequestDto {
   })
   bio!: string;
 
-  @IsString()
+  @Type(() => Number)
+  @IsNumber()
   @IsOptional()
   @ApiPropertyOptional({
     example: 1,

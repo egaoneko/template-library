@@ -148,8 +148,8 @@ describe('ProfileService', () => {
     const actual = await (service as any).isValidUsers(1, 2);
     expect(actual).toBeTruthy();
     expect(mockUserService.getUserById).toBeCalledTimes(2);
-    expect((mockUserService.getUserById as any).mock.calls[0][0]).toEqual(1);
-    expect((mockUserService.getUserById as any).mock.calls[1][0]).toEqual(2);
+    expect((mockUserService.getUserById as jest.Mock).mock.calls[0][0]).toEqual(1);
+    expect((mockUserService.getUserById as jest.Mock).mock.calls[1][0]).toEqual(2);
   });
 
   it('should be false when invalid user', async () => {
@@ -159,7 +159,7 @@ describe('ProfileService', () => {
     const actual = await (service as any).isValidUsers(1, 2);
     expect(actual).toBeFalsy();
     expect(mockUserService.getUserById).toBeCalledTimes(1);
-    expect((mockUserService.getUserById as any).mock.calls[0][0]).toEqual(1);
+    expect((mockUserService.getUserById as jest.Mock).mock.calls[0][0]).toEqual(1);
   });
 
   it('should be false when invalid follow user', async () => {
@@ -169,8 +169,8 @@ describe('ProfileService', () => {
     const actual = await (service as any).isValidUsers(1, 2);
     expect(actual).toBeFalsy();
     expect(mockUserService.getUserById).toBeCalledTimes(2);
-    expect((mockUserService.getUserById as any).mock.calls[0][0]).toEqual(1);
-    expect((mockUserService.getUserById as any).mock.calls[1][0]).toEqual(2);
+    expect((mockUserService.getUserById as jest.Mock).mock.calls[0][0]).toEqual(1);
+    expect((mockUserService.getUserById as jest.Mock).mock.calls[1][0]).toEqual(2);
   });
 
   it('should be following', async () => {

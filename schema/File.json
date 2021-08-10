@@ -1,0 +1,12 @@
+{
+  "$schema": "http://json-schema.org/draft/2021-06/schema",
+  "title": "File",
+  "type": "object",
+  "extends": [{
+    "$ref": "./Entity.json"
+  }],
+  "properties": {
+  },
+  "required": [],
+  "additionalProperties": false
+}

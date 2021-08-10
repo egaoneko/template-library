@@ -5,7 +5,7 @@ import { useMemo } from 'react';
 import { IUser, LoginRequest, RegisterRequest, UpdateRequest } from '@interfaces/user';
 import AuthAPI from '@api/auth';
 import { notifyError, notifySuccess } from '@utils/notifiy';
-import { setToken } from '@utils/cookie';
+import { removeToken, setToken } from '@utils/cookie';
 
 export class UserStore {
   public lastUpdate: number = 0;
@@ -49,8 +49,8 @@ export class UserStore {
       } else {
         notifyError('Fail to login');
       }
-    } catch ({ response }) {
-      notifyError(response.data?.message);
+    } catch (e) {
+      notifyError(e.response?.data?.message ?? e.message);
     }
 
     return this.user;
@@ -69,11 +69,25 @@ export class UserStore {
       } else {
         notifyError('Fail to update');
       }
-    } catch ({ response }) {
-      notifyError(response.data?.message);
+    } catch (e) {
+      notifyError(
+        Array.isArray(e.response?.data?.message)
+          ? e.response?.data?.message.join('\n')
+          : e.response?.data?.message ?? e.message,
+      );
     }
 
     return this.user;
+  }
+
+  public async logout(): Promise<void> {
+    try {
+      await AuthAPI.logout();
+      removeToken();
+      await this.clear();
+    } catch (e) {
+      notifyError(e.message);
+    }
   }
 
   private async clear(): Promise<void> {
@@ -82,6 +96,7 @@ export class UserStore {
 
   private async setUser(user: IUser | null): Promise<void> {
     this.user = user;
+    console.log(user);
 
     if (!this.user || !this.user?.token) {
       return;

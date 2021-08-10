@@ -1,7 +1,8 @@
 import { IsNotEmpty, IsNumber } from 'class-validator';
 import { ApiProperty } from '@nestjs/swagger';
+import { IFile } from '../../interfaces/file.interface';
 
-export class FileDto {
+export class FileDto implements IFile {
   @IsNotEmpty()
   @IsNumber()
   @ApiProperty({

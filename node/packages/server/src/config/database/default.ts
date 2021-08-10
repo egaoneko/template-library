@@ -13,7 +13,7 @@ const defaultOptions: SequelizeModuleOptions = {
   autoLoadModels: true,
   synchronize: true,
   sync: {
-    force: true,
+    // force: true,
   },
   define: {
     underscored: true,

@@ -2,7 +2,7 @@ import request from 'supertest';
 import { Test } from '@nestjs/testing';
 import { AppModule } from '@root/app.module';
 import { INestApplication } from '@nestjs/common';
-import { createTestUser } from '../utils/user';
+import { createTestUser, getTestUserDto } from '../utils/user';
 import { cleanDb } from '../utils/db';
 
 describe('AuthController (e2e)', () => {
@@ -33,6 +33,19 @@ describe('AuthController (e2e)', () => {
       .expect(({ body }) => {
         expect(body.email).toBe(user.email);
         expect(body.token).toBeDefined();
+      });
+  });
+
+  it('/api/auth/logout (Get)', async () => {
+    const user = await createTestUser(app, 'test1@test.com');
+    const dto = await getTestUserDto(app, user);
+
+    return request(app.getHttpServer())
+      .get('/api/auth/logout')
+      .set('Authorization', `Bearer ${dto.token}`)
+      .expect(200)
+      .expect(({ body }) => {
+        expect(body).toEqual({});
       });
   });
 

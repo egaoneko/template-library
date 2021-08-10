@@ -1,4 +1,4 @@
-import { MiddlewareConsumer, Module, NestModule } from '@nestjs/common';
+import { CacheModule, MiddlewareConsumer, Module, NestModule } from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config';
 import { SequelizeModule } from '@nestjs/sequelize';
 import helmet from 'helmet';
@@ -26,6 +26,10 @@ import { HealthController } from './health/health.controller';
     }),
     TerminusModule,
     SequelizeModule.forRoot(defaultOptions),
+    CacheModule.register({
+      ttl: 5, // seconds
+      max: 10, // maximum number of items in cache
+    }),
     SharedModule,
     UserModule,
     AuthModule,

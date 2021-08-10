@@ -84,10 +84,10 @@ describe('HealthController', () => {
     const actual = await controller.check();
     expect(actual).toBeDefined();
     expect(mockConfigService.get).toBeCalledTimes(2);
-    expect((mockConfigService as any).get.mock.calls[0][0]).toBe('http.host');
-    expect((mockConfigService as any).get.mock.calls[1][0]).toBe('http.port');
+    expect((mockConfigService.get as jest.Mock).mock.calls[0][0]).toBe('http.host');
+    expect((mockConfigService.get as jest.Mock).mock.calls[1][0]).toBe('http.port');
     expect(mockHealthCheckService.check).toBeCalledTimes(1);
-    expect((mockHealthCheckService as any).check.mock.calls[0][0].length).toBe(3);
+    expect((mockHealthCheckService.check as jest.Mock).mock.calls[0][0].length).toBe(3);
     expect(mockHttpHealthIndicator.pingCheck).toBeCalledTimes(1);
     expect(mockHttpHealthIndicator.pingCheck).toBeCalledWith('docs', `localhost:3000/docs`);
     expect(mockSequelizeHealthIndicator.pingCheck).toBeCalledTimes(1);

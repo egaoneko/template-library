@@ -5,7 +5,6 @@ import { createMock } from '@golevelup/ts-jest';
 import { UserDto } from './dto/response/user.dto';
 import { UpdateUserDto, UpdateUserRequestDto } from './dto/request/update-user.dto';
 import { Crypto } from '../shared/crypto/crypto';
-import Mock = jest.Mock;
 
 describe('UserController', () => {
   let controller: UserController;
@@ -49,7 +48,7 @@ describe('UserController', () => {
     expect(actual).toBeDefined();
     expect(mockUserService.update).toBeCalledTimes(1);
 
-    const { salt, password } = (mockUserService.update as Mock).mock.calls[0][0] as UpdateUserDto;
+    const { salt, password } = (mockUserService.update as jest.Mock).mock.calls[0][0] as UpdateUserDto;
     const isEqual = await Crypto.isSamePassword(salt, dto.password, password);
     expect(isEqual).toBeTruthy();
   });

@@ -1,4 +1,4 @@
-import { Body, Controller, Post, UseGuards, UsePipes, ValidationPipe } from '@nestjs/common';
+import { Body, Controller, Get, Post, Res, UseGuards, UsePipes, ValidationPipe } from '@nestjs/common';
 import { LocalAuthGuard } from '@auth/guards/local-auth.guard';
 import { CreateUserDto } from '@user/dto/request/create-user.dto';
 import { RegisterDto } from './dto/request/register.dto';
@@ -9,11 +9,14 @@ import { UserDto } from '@user/dto/response/user.dto';
 import { LoginDto } from '@auth/dto/request/login.dto';
 import { Crypto } from '@shared/crypto/crypto';
 import { CurrentUser } from '@user/decorators/current-user.decorator';
+import { Response } from 'express';
+import { ACCESS_TOKEN_NAME } from './constants/auth.constant';
+import { ConfigService } from '@nestjs/config';
 
 @ApiTags('auth')
 @Controller('/api/auth/')
 export class AuthController {
-  constructor(private readonly usersService: UserService) {}
+  constructor(private readonly usersService: UserService, private readonly configService: ConfigService) {}
 
   @NoAuth()
   @Post('/register')
@@ -42,7 +45,20 @@ export class AuthController {
   @ApiBody({ description: 'login body', type: LoginDto })
   @ApiResponse({ status: 201, description: 'User', type: UserDto })
   @ApiResponse({ status: 400, description: 'Unauthorized' })
-  async login(@CurrentUser() currentUser: UserDto): Promise<UserDto> {
+  async login(@CurrentUser() currentUser: UserDto, @Res({ passthrough: true }) response: Response): Promise<UserDto> {
+    response.cookie(ACCESS_TOKEN_NAME, currentUser.token, {
+      expires: new Date(Date.now() + this.configService.get('jwt.access-token.expiration-time')),
+      httpOnly: true,
+    });
     return currentUser;
+  }
+
+  @NoAuth()
+  @Get('/logout')
+  @ApiOperation({ summary: 'logout' })
+  @ApiResponse({ status: 200 })
+  @ApiResponse({ status: 400, description: 'Unauthorized' })
+  async logout(@Res({ passthrough: true }) response: Response): Promise<void> {
+    response.clearCookie(ACCESS_TOKEN_NAME);
   }
 }

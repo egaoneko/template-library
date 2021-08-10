@@ -188,8 +188,8 @@ describe('UserService', () => {
     expect(actual).toBeDefined();
     expect(mockSequelize.transaction).toBeCalledTimes(1);
     expect(service.getUserById).toBeCalledTimes(2);
-    expect((service.getUserById as any).mock.calls[0]).toEqual([1, { transaction: {} }]);
-    expect((service.getUserById as any).mock.calls[1]).toEqual([1, { transaction: {} }]);
+    expect((service.getUserById as jest.Mock).mock.calls[0]).toEqual([1, { transaction: {} }]);
+    expect((service.getUserById as jest.Mock).mock.calls[1]).toEqual([1, { transaction: {} }]);
     expect(mockUserRepository.update).toBeCalledTimes(1);
     expect(mockUserRepository.update).toBeCalledWith(dto, { transaction: {} });
   });
@@ -212,7 +212,7 @@ describe('UserService', () => {
     await expect(service.update(dto)).rejects.toThrowError('Not found user');
     expect(mockSequelize.transaction).toBeCalledTimes(1);
     expect(service.getUserById).toBeCalledTimes(1);
-    expect((service.getUserById as any).mock.calls[0]).toEqual([1, { transaction: {} }]);
+    expect((service.getUserById as jest.Mock).mock.calls[0]).toEqual([1, { transaction: {} }]);
   });
 
   it('should not be update with empty row', async () => {
@@ -230,7 +230,7 @@ describe('UserService', () => {
     await expect(service.update(dto)).rejects.toThrowError('Do not update user');
     expect(mockSequelize.transaction).toBeCalledTimes(1);
     expect(service.getUserById).toBeCalledTimes(1);
-    expect((service.getUserById as any).mock.calls[0]).toEqual([1, { transaction: {} }]);
+    expect((service.getUserById as jest.Mock).mock.calls[0]).toEqual([1, { transaction: {} }]);
     expect(mockUserRepository.update).toBeCalledTimes(1);
     expect(mockUserRepository.update).toBeCalledWith(dto, { transaction: {} });
   });
@@ -250,8 +250,8 @@ describe('UserService', () => {
     await expect(service.update(dto)).rejects.toThrowError('Not found updated user');
     expect(mockSequelize.transaction).toBeCalledTimes(1);
     expect(service.getUserById).toBeCalledTimes(2);
-    expect((service.getUserById as any).mock.calls[0]).toEqual([1, { transaction: {} }]);
-    expect((service.getUserById as any).mock.calls[1]).toEqual([1, { transaction: {} }]);
+    expect((service.getUserById as jest.Mock).mock.calls[0]).toEqual([1, { transaction: {} }]);
+    expect((service.getUserById as jest.Mock).mock.calls[1]).toEqual([1, { transaction: {} }]);
     expect(mockUserRepository.update).toBeCalledTimes(1);
     expect(mockUserRepository.update).toBeCalledWith(dto, { transaction: {} });
   });
