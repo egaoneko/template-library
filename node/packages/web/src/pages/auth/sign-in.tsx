@@ -1,5 +1,4 @@
 import SignInPageContainer from '@components/pages/auth/SignInPageContainer';
-import BaseLayoutTemplate from '@components/templates/layout/BaseLayoutTemplate';
 import { GetServerSidePropsResult, NextPageContext } from 'next';
 import React, { ReactNode } from 'react';
 
@@ -10,8 +9,6 @@ interface PropsType {
 function Index(props: PropsType): ReactNode {
   return <SignInPageContainer {...props} />;
 }
-
-Index.layout = BaseLayoutTemplate;
 
 export default Index;
 

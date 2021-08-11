@@ -1,6 +1,6 @@
 import Menu from '@components/atoms/menu/Menu';
 import Menus from '@components/atoms/menu/Menus';
-import React, { FC, ReactNode } from 'react';
+import React, { FC } from 'react';
 import styled from 'styled-components';
 import tw from 'twin.macro';
 import Link from 'next/link';
@@ -9,21 +9,16 @@ import { AiOutlineEdit, AiOutlineSetting } from 'react-icons/ai';
 
 interface PropsType {
   pathname?: string | null;
-  headingTitle: string;
-  bannerTitle?: string;
-  bannerDescription?: string;
-  bannerColor?: string;
-  children?: ReactNode;
 }
 
-const HeaderTemplates: FC<PropsType> = props => {
+const HeaderTemplate: FC<PropsType> = props => {
   const { userStore } = useStores();
 
   return (
     <Container>
       <Heading>
         <HeadingTitle>
-          <Link href="/">{props.headingTitle}</Link>
+          <Link href="/">conduit</Link>
         </HeadingTitle>
         <Menus>
           <Menu href="/">Home</Menu>
@@ -35,7 +30,7 @@ const HeaderTemplates: FC<PropsType> = props => {
           )}
           {userStore.user && (
             <>
-              <Menu href="/" icon={<AiOutlineEdit />}>
+              <Menu href="/editor/new" icon={<AiOutlineEdit />}>
                 New Post
               </Menu>
               <Menu href="/user/settings" icon={<AiOutlineSetting />} active={props.pathname === '/user/settings'}>
@@ -46,40 +41,20 @@ const HeaderTemplates: FC<PropsType> = props => {
           )}
         </Menus>
       </Heading>
-      {props.bannerTitle && (
-        <Banner className={props.bannerColor ?? 'bg-primary'}>
-          <BannerTitle>{props.bannerTitle}</BannerTitle>
-          <BannerDescription>{props.bannerDescription}</BannerDescription>
-        </Banner>
-      )}
     </Container>
   );
 };
 
-export default HeaderTemplates;
+export default HeaderTemplate;
 
 const Container = styled.div`
-  ${tw`max-w-full select-none mb-8`}
+  ${tw`container select-none mx-auto`}
 `;
 
 const Heading = styled.div`
-  ${tw`max-w-full px-32 py-2 flex justify-between`}
+  ${tw`py-2 flex justify-between`}
 `;
 
 const HeadingTitle = styled.div`
   ${tw`font-bold text-2xl text-primary font-sans flex items-center`}
-`;
-
-const Banner = styled.div`
-  ${tw`max-w-full p-8 mb-8`}
-  box-shadow: inset 0 8px 8px -8px rgb(0 0 0 / 30%), inset 0 -8px 8px -8px rgb(0 0 0 / 30%);
-`;
-
-const BannerTitle = styled.h1`
-  ${tw`font-bold text-6xl text-white text-center font-sans pb-2`}
-  text-shadow: 0 1px 3px rgb(0 0 0 / 30%);
-`;
-
-const BannerDescription = styled.p`
-  ${tw`text-2xl text-white text-center font-sans mb-0`}
 `;

@@ -58,7 +58,7 @@ export class UserStore {
 
   public async update(request: UpdateRequest): Promise<IUser | null> {
     try {
-      const user = await UserAPI.put(request);
+      const user = await UserAPI.update(request);
       this.setUser({
         ...this.user,
         ...user,
@@ -96,7 +96,6 @@ export class UserStore {
 
   private async setUser(user: IUser | null): Promise<void> {
     this.user = user;
-    console.log(user);
 
     if (!this.user || !this.user?.token) {
       return;

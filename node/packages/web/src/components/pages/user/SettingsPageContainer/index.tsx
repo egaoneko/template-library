@@ -1,4 +1,3 @@
-import HeaderTemplates from '@components/templates/layout/HeaderTemplates';
 import Head from '@components/atoms/layout/Head';
 import React, { FC, ReactNode, useState } from 'react';
 import SettingsContentTemplate from './templates/SettingContentTemplate';
@@ -7,6 +6,7 @@ import { useRouter } from 'next/router';
 import { useStores } from '@stores/stores';
 import { BasePropsType } from '@interfaces/common';
 import { IFile } from '@interfaces/file';
+import BaseLayoutTemplate from '@components/templates/layout/BaseLayoutTemplate';
 
 interface PropsType extends BasePropsType {
   children?: ReactNode;
@@ -48,9 +48,8 @@ const SettingsPageContainer: FC<PropsType> = props => {
   }
 
   return (
-    <>
+    <BaseLayoutTemplate pathname={props.pathname}>
       <Head title={'SETTINGS'} />
-      <HeaderTemplates pathname={props.pathname} headingTitle={'conduit'} />
       <SettingsContentTemplate
         loading={loading}
         user={userStore.user}
@@ -58,7 +57,7 @@ const SettingsPageContainer: FC<PropsType> = props => {
         onClickLogout={onClickLogout}
         onFinishUpload={onFinishUpload}
       />
-    </>
+    </BaseLayoutTemplate>
   );
 };
 

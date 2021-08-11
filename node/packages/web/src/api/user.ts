@@ -7,7 +7,7 @@ export default class UserAPI {
   static async get(): Promise<IUser> {
     return axios.get(`${UserAPI.BASE_URL}`).then(({ data }) => data);
   }
-  static async put(request: UpdateRequest): Promise<IUser> {
+  static async update(request: UpdateRequest): Promise<IUser> {
     return axios.put(`${UserAPI.BASE_URL}`, request).then(({ data }) => data);
   }
 }
