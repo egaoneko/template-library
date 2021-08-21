@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
+
 import { NOOP } from '@utils/common';
 import React, { FC, ReactNode } from 'react';
 import { useForm } from 'react-hook-form';

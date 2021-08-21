@@ -10,24 +10,24 @@ interface PropsType extends React.DetailedHTMLProps<React.InputHTMLAttributes<HT
 const Input: FC<PropsType> = props => {
   const { register, formState } = useFormContext();
   const { name, className, options, ...formProps } = props;
-  const errors = formState?.errors[props.name];
+  const errors = formState?.errors[name];
 
   return (
     <div>
       {register && (
         <input
           className={[
-            !props.hidden &&
+            !formProps.hidden &&
               'block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 disabled:opacity-50 disabled:cursor-not-allowed',
             className,
           ].join(' ')}
           {...formProps}
-          {...register(props.name, props.options)}
+          {...register(name, options)}
         />
       )}
       {errors?.type === 'required' && (
         <p className="mt-2 ml-4 text-red-500 text-xs italic">
-          <span className="font-bold">{props.name}</span>
+          <span className="font-bold">{name}</span>
           <span> is required</span>
         </p>
       )}

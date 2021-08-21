@@ -22,14 +22,14 @@ describe('ProfileController (e2e)', () => {
     await app.init();
   });
 
-  it('/api/profiles/:userId (Get) following', async () => {
-    const user1 = await createTestUser(app, 'test1@test.com');
-    const user2 = await createTestUser(app, 'test2@test.com');
+  it('/api/profiles/:username (Get) following', async () => {
+    const user1 = await createTestUser(app, 'test1');
+    const user2 = await createTestUser(app, 'test2');
     const dto = await getTestUserDto(app, user1);
     await createTestFollowing(app, user1, user2);
 
     return request(app.getHttpServer())
-      .get(`/api/profiles/${user2.id}`)
+      .get(`/api/profiles/${user2.username}`)
       .set('Authorization', `Bearer ${dto.token}`)
       .expect(200)
       .expect(({ body }) => {
@@ -38,13 +38,13 @@ describe('ProfileController (e2e)', () => {
       });
   });
 
-  it('/api/profiles/:userId (Get) not following', async () => {
-    const user1 = await createTestUser(app, 'test1@test.com');
-    const user2 = await createTestUser(app, 'test2@test.com');
+  it('/api/profiles/:username (Get) not following', async () => {
+    const user1 = await createTestUser(app, 'test1');
+    const user2 = await createTestUser(app, 'test2');
     const dto = await getTestUserDto(app, user1);
 
     return request(app.getHttpServer())
-      .get(`/api/profiles/${user2.id}`)
+      .get(`/api/profiles/${user2.username}`)
       .set('Authorization', `Bearer ${dto.token}`)
       .expect(200)
       .expect(({ body }) => {
@@ -53,12 +53,12 @@ describe('ProfileController (e2e)', () => {
       });
   });
 
-  it('/api/profiles/:userId (Get) empty user', async () => {
-    const user1 = await createTestUser(app, 'test1@test.com');
+  it('/api/profiles/:username (Get) empty user', async () => {
+    const user1 = await createTestUser(app, 'test1');
     const dto = await getTestUserDto(app, user1);
 
     return request(app.getHttpServer())
-      .get(`/api/profiles/2`)
+      .get(`/api/profiles/unknown`)
       .set('Authorization', `Bearer ${dto.token}`)
       .expect(400)
       .expect(({ body }) => {
@@ -66,13 +66,13 @@ describe('ProfileController (e2e)', () => {
       });
   });
 
-  it('/api/profiles/:userId/follow (Post) follow user', async () => {
-    const user1 = await createTestUser(app, 'test1@test.com');
-    const user2 = await createTestUser(app, 'test2@test.com');
+  it('/api/profiles/:username/follow (Post) follow user', async () => {
+    const user1 = await createTestUser(app, 'test1');
+    const user2 = await createTestUser(app, 'test2');
     const dto = await getTestUserDto(app, user1);
 
     return request(app.getHttpServer())
-      .post(`/api/profiles/${user2.id}/follow`)
+      .post(`/api/profiles/${user2.username}/follow`)
       .set('Authorization', `Bearer ${dto.token}`)
       .expect(201)
       .expect(({ body }) => {
@@ -81,12 +81,12 @@ describe('ProfileController (e2e)', () => {
       });
   });
 
-  it('/api/profiles/:userId/follow (Post) empty user', async () => {
-    const user1 = await createTestUser(app, 'test1@test.com');
+  it('/api/profiles/:username/follow (Post) empty user', async () => {
+    const user1 = await createTestUser(app, 'test1');
     const dto = await getTestUserDto(app, user1);
 
     return request(app.getHttpServer())
-      .post(`/api/profiles/2/follow`)
+      .post(`/api/profiles/unknown/follow`)
       .set('Authorization', `Bearer ${dto.token}`)
       .expect(400)
       .expect(({ body }) => {
@@ -94,14 +94,14 @@ describe('ProfileController (e2e)', () => {
       });
   });
 
-  it('/api/profiles/:userId/follow (Post) already followed', async () => {
-    const user1 = await createTestUser(app, 'test1@test.com');
-    const user2 = await createTestUser(app, 'test2@test.com');
+  it('/api/profiles/:username/follow (Post) already followed', async () => {
+    const user1 = await createTestUser(app, 'test1');
+    const user2 = await createTestUser(app, 'test2');
     const dto = await getTestUserDto(app, user1);
     await createTestFollowing(app, user1, user2);
 
     return request(app.getHttpServer())
-      .post(`/api/profiles/${user2.id}/follow`)
+      .post(`/api/profiles/${user2.username}/follow`)
       .set('Authorization', `Bearer ${dto.token}`)
       .expect(400)
       .expect(({ body }) => {
@@ -109,14 +109,14 @@ describe('ProfileController (e2e)', () => {
       });
   });
 
-  it('/api/profiles/:userId/follow (Delete) unfollow user', async () => {
-    const user1 = await createTestUser(app, 'test1@test.com');
-    const user2 = await createTestUser(app, 'test2@test.com');
+  it('/api/profiles/:username/follow (Delete) unfollow user', async () => {
+    const user1 = await createTestUser(app, 'test1');
+    const user2 = await createTestUser(app, 'test2');
     const dto = await getTestUserDto(app, user1);
     await createTestFollowing(app, user1, user2);
 
     return request(app.getHttpServer())
-      .delete(`/api/profiles/${user2.id}/follow`)
+      .delete(`/api/profiles/${user2.username}/follow`)
       .set('Authorization', `Bearer ${dto.token}`)
       .expect(200)
       .expect(({ body }) => {
@@ -125,12 +125,12 @@ describe('ProfileController (e2e)', () => {
       });
   });
 
-  it('/api/profiles/:userId/follow (Delete) empty user', async () => {
-    const user1 = await createTestUser(app, 'test1@test.com');
+  it('/api/profiles/:username/follow (Delete) empty user', async () => {
+    const user1 = await createTestUser(app, 'test1');
     const dto = await getTestUserDto(app, user1);
 
     return request(app.getHttpServer())
-      .delete(`/api/profiles/2/follow`)
+      .delete(`/api/profiles/unknown/follow`)
       .set('Authorization', `Bearer ${dto.token}`)
       .expect(400)
       .expect(({ body }) => {
@@ -138,13 +138,13 @@ describe('ProfileController (e2e)', () => {
       });
   });
 
-  it('/api/profiles/:userId/follow (Delete) already unfollowed', async () => {
-    const user1 = await createTestUser(app, 'test1@test.com');
-    const user2 = await createTestUser(app, 'test2@test.com');
+  it('/api/profiles/:username/follow (Delete) already unfollowed', async () => {
+    const user1 = await createTestUser(app, 'test1');
+    const user2 = await createTestUser(app, 'test2');
     const dto = await getTestUserDto(app, user1);
 
     return request(app.getHttpServer())
-      .delete(`/api/profiles/${user2.id}/follow`)
+      .delete(`/api/profiles/${user2.username}/follow`)
       .set('Authorization', `Bearer ${dto.token}`)
       .expect(400)
       .expect(({ body }) => {

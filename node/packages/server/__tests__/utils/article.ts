@@ -11,8 +11,8 @@ import { ArticleTag } from '@article/entities/article-tag.entity';
 import { Comment } from '@article/entities/comment.entity';
 
 export async function createTestArticle(app: INestApplication, user: User): Promise<Article[]> {
-  const user2 = await createTestUser(app, 'test2@test.com');
-  const user3 = await createTestUser(app, 'test3@test.com');
+  const user2 = await createTestUser(app, 'test2');
+  const user3 = await createTestUser(app, 'test3');
   await createTestFollowing(app, user, user2);
 
   const tagModel = app.get<typeof Tag>(getModelToken(Tag, DEFAULT_DATABASE_NAME));

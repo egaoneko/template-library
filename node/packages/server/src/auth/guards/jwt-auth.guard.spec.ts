@@ -6,8 +6,8 @@ import { Test } from '@nestjs/testing';
 import { PassportModule } from '@nestjs/passport';
 import { JwtStrategy } from '../strategies/jwt.strategy';
 import { UserService } from '../../user/user.service';
-import { NoAuth } from '../decorators/auth';
 import { ConfigModule, ConfigService } from '@nestjs/config';
+import { NoAuth } from '../../shared/decorators/auth/no-auth';
 
 describe('JwtAuthGuard', () => {
   let guard: JwtAuthGuard;

@@ -12,12 +12,14 @@ import { CreateCommentDto } from '@article/dto/request/create-comment.dto';
 import { CommentsDto } from '@article/dto/response/comments.dto';
 import { GetCommentsDto } from '@article/dto/request/get-comments.dto';
 import { CommentDto } from '@article/dto/response/comment.dto';
+import { NoAuth } from '@root/shared/decorators/auth/no-auth';
 
 @ApiTags('article')
 @Controller('/api/articles')
 export class ArticleController {
   constructor(private readonly articleService: ArticleService) {}
 
+  @NoAuth()
   @Get('/tags')
   @ApiOperation({ summary: 'get tag list' })
   @ApiBearerAuth()
@@ -27,15 +29,15 @@ export class ArticleController {
     return this.articleService.getTags();
   }
 
+  @NoAuth()
   @Get()
   @ApiOperation({ summary: 'get article list' })
-  @ApiBearerAuth()
   @ApiResponse({ status: 200, description: 'Article List', type: ArticlesDto })
   @ApiResponse({ status: 401, description: 'Unauthorized' })
   @UsePipes(new ValidationPipe({ transform: true }))
   async getArticles(
     @Query() getArticlesDto: GetArticlesDto,
-    @CurrentUser('id') currentUserId: number,
+    @CurrentUser('id') currentUserId: number | null = null,
   ): Promise<ArticlesDto> {
     return this.articleService.getArticles(getArticlesDto, currentUserId);
   }
@@ -53,12 +55,15 @@ export class ArticleController {
     return this.articleService.getFeedArticles(getFeedArticlesDto, currentUserId);
   }
 
+  @NoAuth()
   @Get('/:slug')
   @ApiOperation({ summary: 'get article' })
-  @ApiBearerAuth()
   @ApiResponse({ status: 200, description: 'Article', type: ArticleDto })
   @ApiResponse({ status: 401, description: 'Unauthorized' })
-  async getArticle(@Param('slug') slug: string, @CurrentUser('id') currentUserId: number): Promise<ArticleDto> {
+  async getArticle(
+    @Param('slug') slug: string,
+    @CurrentUser('id') currentUserId: number | null = null,
+  ): Promise<ArticleDto> {
     return this.articleService.getArticleBySlug(slug, currentUserId);
   }
 

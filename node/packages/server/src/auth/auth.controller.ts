@@ -3,7 +3,7 @@ import { LocalAuthGuard } from '@auth/guards/local-auth.guard';
 import { CreateUserDto } from '@user/dto/request/create-user.dto';
 import { RegisterDto } from './dto/request/register.dto';
 import { UserService } from '@user/user.service';
-import { NoAuth } from '@auth/decorators/auth';
+import { NoAuth } from '@root/shared/decorators/auth/no-auth';
 import { ApiBody, ApiOperation, ApiResponse, ApiTags } from '@nestjs/swagger';
 import { UserDto } from '@user/dto/response/user.dto';
 import { LoginDto } from '@auth/dto/request/login.dto';

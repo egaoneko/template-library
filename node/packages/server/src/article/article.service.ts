@@ -40,7 +40,7 @@ export class ArticleService {
   @Transactional()
   async getArticles(
     getArticlesDto: GetArticlesDto,
-    currentUserId: number,
+    currentUserId: number | null,
     options?: SequelizeOptionDto,
   ): Promise<ArticlesDto> {
     const errors = await validate(getArticlesDto);
@@ -94,7 +94,11 @@ export class ArticleService {
     return listDto;
   }
 
-  async getArticleBySlug(slug: string, currentUserId: number, options?: SequelizeOptionDto): Promise<ArticleDto> {
+  async getArticleBySlug(
+    slug: string,
+    currentUserId: number | null,
+    options?: SequelizeOptionDto,
+  ): Promise<ArticleDto> {
     const article = await this.articleRepository.findOneBySlugWithInclude(slug, options);
 
     if (!article) {
@@ -307,7 +311,11 @@ export class ArticleService {
     return tags.map(tag => tag.title);
   }
 
-  async ofArticleDto(articleEntity: Article, currentUserId: number, options?: SequelizeOptionDto): Promise<ArticleDto> {
+  async ofArticleDto(
+    articleEntity: Article,
+    currentUserId: number | null,
+    options?: SequelizeOptionDto,
+  ): Promise<ArticleDto> {
     const dto = new ArticleDto();
     dto.id = articleEntity.id;
     dto.slug = articleEntity.slug;
@@ -320,7 +328,7 @@ export class ArticleService {
 
     dto.favorited = articleEntity.articleFavorites.some(favorite => favorite.userId === currentUserId);
     dto.favoritesCount = articleEntity.articleFavorites.length;
-    dto.author = await this.profileService.getProfile(currentUserId, articleEntity.authorId, options);
+    dto.author = await this.profileService.getProfileById(currentUserId, articleEntity.authorId, options);
     return dto;
   }
 
@@ -330,7 +338,7 @@ export class ArticleService {
     dto.body = commentEntity.body;
     dto.createdAt = commentEntity.createdAt;
     dto.updatedAt = commentEntity.updatedAt;
-    dto.author = await this.profileService.getProfile(currentUserId, commentEntity.authorId, options);
+    dto.author = await this.profileService.getProfileById(currentUserId, commentEntity.authorId, options);
     return dto;
   }
 }

@@ -7,13 +7,13 @@ import { getModelToken } from '@nestjs/sequelize';
 import { Crypto } from '@shared/crypto/crypto';
 import { UserService } from '@user/user.service';
 
-export async function createTestUser(app: INestApplication, email = 'test@test.com'): Promise<User> {
+export async function createTestUser(app: INestApplication, username = 'test'): Promise<User> {
   const model = app.get<typeof User>(getModelToken(User, DEFAULT_DATABASE_NAME));
   const salt = await Crypto.generateSalt();
   const password = await Crypto.encryptedPassword(salt, '1234');
   return model.create({
-    username: 'test',
-    email,
+    email: `${username}@test.com`,
+    username,
     password,
     salt,
   });

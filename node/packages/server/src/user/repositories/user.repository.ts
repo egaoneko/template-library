@@ -41,6 +41,13 @@ export class UserRepository {
     });
   }
 
+  async findOneByUsername(username: string, options?: SequelizeOptionDto): Promise<User | null> {
+    return this.userModel.findOne({
+      where: { username },
+      transaction: options?.transaction,
+    });
+  }
+
   async update(updateUserDto: UpdateUserDto, options?: SequelizeOptionDto): Promise<[number, User[]]> {
     return this.userModel.update(updateUserDto, {
       where: {

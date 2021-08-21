@@ -13,6 +13,7 @@ import { refreshToken, removeToken, setToken } from '@utils/cookie';
 import UserAPI from '@api/user';
 import { BasePropsType } from '@interfaces/common';
 import { IUser } from '@interfaces/user';
+import { QueryClient, QueryClientProvider } from 'react-query';
 
 interface PropsType extends BasePropsType {
   user: IUser | null;
@@ -20,10 +21,12 @@ interface PropsType extends BasePropsType {
 
 function MyApp({ Component, pageProps }: AppProps<PropsType>): ReactNode {
   const { user, ...props } = pageProps;
-  const [stores, setStores] = useState<Stores>({
+  const queryClient = new QueryClient();
+  const [stores] = useState<Stores>({
     userStore: useUserStore(user),
   });
 
+  /* eslint-disable @typescript-eslint/no-explicit-any */
   const Layout = (Component as any).layout || Empty;
 
   return (
@@ -82,10 +85,12 @@ function MyApp({ Component, pageProps }: AppProps<PropsType>): ReactNode {
         <link rel="manifest" href="/manifest.json" />
       </Head>
       <Provider {...stores}>
-        <Layout>
-          <Notification />
-          <Component {...props} />
-        </Layout>
+        <QueryClientProvider client={queryClient}>
+          <Layout>
+            <Notification />
+            <Component {...props} />
+          </Layout>
+        </QueryClientProvider>
       </Provider>
     </>
   );

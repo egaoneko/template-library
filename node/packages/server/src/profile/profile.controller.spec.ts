@@ -27,23 +27,23 @@ describe('ProfileController', () => {
   });
 
   it('should return profile', async () => {
-    const actual = await controller.getProfile(1, 2);
+    const actual = await controller.getProfile('test1', 1);
     expect(actual).toBeDefined();
-    expect(mockProfileService.getProfile).toBeCalledTimes(1);
-    expect(mockProfileService.getProfile).toBeCalledWith(2, 1);
+    expect(mockProfileService.getProfileByName).toBeCalledTimes(1);
+    expect(mockProfileService.getProfileByName).toBeCalledWith(1, 'test1');
   });
 
   it('should be follow', async () => {
-    const actual = await controller.follow(1, 2);
+    const actual = await controller.follow('test1', 2);
     expect(actual).toBeDefined();
     expect(mockProfileService.followUser).toBeCalledTimes(1);
-    expect(mockProfileService.followUser).toBeCalledWith(2, 1);
+    expect(mockProfileService.followUser).toBeCalledWith(2, 'test1');
   });
 
   it('should be unfollow', async () => {
-    const actual = await controller.unfollow(1, 2);
+    const actual = await controller.unfollow('test1', 2);
     expect(actual).toBeDefined();
     expect(mockProfileService.unfollowUser).toBeCalledTimes(1);
-    expect(mockProfileService.unfollowUser).toBeCalledWith(2, 1);
+    expect(mockProfileService.unfollowUser).toBeCalledWith(2, 'test1');
   });
 });

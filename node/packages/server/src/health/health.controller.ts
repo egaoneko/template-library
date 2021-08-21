@@ -7,7 +7,7 @@ import {
   SequelizeHealthIndicator,
 } from '@nestjs/terminus';
 import { ConfigService } from '@nestjs/config';
-import { NoAuth } from '@auth/decorators/auth';
+import { NoAuth } from '@root/shared/decorators/auth/no-auth';
 import { ApiOperation, ApiTags } from '@nestjs/swagger';
 import { InjectConnection } from '@nestjs/sequelize';
 import { DEFAULT_DATABASE_NAME } from '@config/constants/database';

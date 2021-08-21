@@ -22,7 +22,7 @@ const Button: FC<PropsType> = props => {
         props.className,
       ].join(' ')}
     >
-      {props.children}
+      {children}
     </button>
   );
 };
@@ -37,11 +37,7 @@ interface ButtonStyle {
   textColor: string;
 }
 
-function getButtonStyle(
-  styleType: ButtonStyleType = 'default',
-  danger: boolean = false,
-  fill: boolean = false,
-): ButtonStyle {
+function getButtonStyle(styleType: ButtonStyleType = 'default', fill = false): ButtonStyle {
   let backgroundColor: string;
   let borderColor: string;
   let textColor: string;

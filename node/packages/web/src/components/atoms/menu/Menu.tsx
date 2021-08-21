@@ -13,11 +13,12 @@ interface PropsType {
 const Menu: FC<PropsType> = props => {
   return (
     <div
-      className={['py-2 ml-4 cursor-pointer first:ml-0 hover:text-gray-800', props.active ? 'text-primary' : ''].join(
-        ' ',
-      )}
+      className={[
+        'py-2 ml-4 cursor-pointer first:ml-0 hover:text-gray-800 flex',
+        props.active ? 'text-primary' : '',
+      ].join(' ')}
     >
-      <Link href={props.href} as={props.as}>
+      <Link href={props.href} as={props.as} passHref>
         <div className={'flex items-center'}>
           <span className="mr-1">{props.icon}</span>
           <span>{props.children}</span>

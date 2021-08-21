@@ -29,9 +29,16 @@ export class UserService {
       throw new BadRequestException('Invalid user params');
     }
 
-    const user = await this.getUserByEmail(createUserDto.email, options);
+    let user = await this.getUserByEmail(createUserDto.email, options);
+
     if (user) {
-      throw new BadRequestException('Already exist user');
+      throw new BadRequestException('Already exist email');
+    }
+
+    user = await this.getUserByUsername(createUserDto.username, options);
+
+    if (user) {
+      throw new BadRequestException('Already exist username');
     }
 
     const model = await this.userRepository.create(createUserDto, options);
@@ -50,6 +57,16 @@ export class UserService {
 
   async getUserByEmail(email: string, options?: SequelizeOptionDto): Promise<UserDto | null> {
     const model = await this.userRepository.findOneByEmail(email, options);
+
+    if (!model) {
+      return null;
+    }
+
+    return this.ofUserDto(model);
+  }
+
+  async getUserByUsername(username: string, options?: SequelizeOptionDto): Promise<UserDto | null> {
+    const model = await this.userRepository.findOneByUsername(username, options);
 
     if (!model) {
       return null;

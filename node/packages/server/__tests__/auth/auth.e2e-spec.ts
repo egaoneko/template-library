@@ -37,7 +37,7 @@ describe('AuthController (e2e)', () => {
   });
 
   it('/api/auth/logout (Get)', async () => {
-    const user = await createTestUser(app, 'test1@test.com');
+    const user = await createTestUser(app, 'test1');
     const dto = await getTestUserDto(app, user);
 
     return request(app.getHttpServer())

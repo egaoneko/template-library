@@ -1,10 +1,10 @@
 import React, { FC, ReactNode } from 'react';
-import Form from '@components/atoms/form/Form';
-import Input from '@components/atoms/form/Input';
-import Submit from '@components/atoms/form/Submit';
+import Form from '@components/molecules/form/Form';
+import Input from '@components/molecules/form/Input';
+import Submit from '@components/molecules/form/Submit';
 import { IUser, UpdateRequest } from '@interfaces/user';
 import PageTitle from '@components/atoms/page/PageTitle';
-import Textarea from '@components/atoms/form/Textarea';
+import Textarea from '@components/molecules/form/Textarea';
 import Avatar from '@components/atoms/avatar/Avatar';
 import Button from '@components/atoms/common/Button';
 import SingleUpload from '@components/molecules/upload/SingleUpload';

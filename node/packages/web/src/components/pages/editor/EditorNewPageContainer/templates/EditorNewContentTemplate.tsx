@@ -1,8 +1,8 @@
 import React, { FC, ReactNode } from 'react';
-import Form from '@components/atoms/form/Form';
-import Input from '@components/atoms/form/Input';
-import Submit from '@components/atoms/form/Submit';
-import Textarea from '@components/atoms/form/Textarea';
+import Form from '@components/molecules/form/Form';
+import Input from '@components/molecules/form/Input';
+import Submit from '@components/molecules/form/Submit';
+import Textarea from '@components/molecules/form/Textarea';
 import { CreateArticleRequest } from '@interfaces/article';
 import EditorTagsInput from './EditorTagsInput';
 

@@ -6,6 +6,7 @@ import tw from 'twin.macro';
 import Link from 'next/link';
 import { useStores } from '@stores/stores';
 import { AiOutlineEdit, AiOutlineSetting } from 'react-icons/ai';
+import Avatar from '@components/atoms/avatar/Avatar';
 
 interface PropsType {
   pathname?: string | null;
@@ -36,7 +37,12 @@ const HeaderTemplate: FC<PropsType> = props => {
               <Menu href="/user/settings" icon={<AiOutlineSetting />} active={props.pathname === '/user/settings'}>
                 Settings
               </Menu>
-              <Menu href="/">{userStore.user.username}</Menu>
+              <Menu href="/">
+                <div className="flex items-center gap-1">
+                  <Avatar size="small" url={userStore.user.image} />
+                  {userStore.user.username}
+                </div>
+              </Menu>
             </>
           )}
         </Menus>

@@ -14,7 +14,7 @@ interface PropsType {
 
 const BaseLayoutTemplate: FC<PropsType> = props => {
   return (
-    <div className="w-full select-none">
+    <Container>
       <HeaderTemplate pathname={props.pathname} />
       {props.bannerTitle && (
         <Banner className={props.bannerColor ?? 'bg-primary'}>
@@ -23,11 +23,15 @@ const BaseLayoutTemplate: FC<PropsType> = props => {
         </Banner>
       )}
       <ContentTemplate>{props.children}</ContentTemplate>
-    </div>
+    </Container>
   );
 };
 
 export default BaseLayoutTemplate;
+
+const Container = styled.div`
+  ${tw`w-full select-none`}
+`;
 
 const Banner = styled.div`
   ${tw`max-w-full select-none p-8`}

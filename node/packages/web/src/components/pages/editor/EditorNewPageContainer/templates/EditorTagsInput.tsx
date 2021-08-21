@@ -1,4 +1,4 @@
-import Input from '@components/atoms/form/Input';
+import Input from '@components/molecules/form/Input';
 import React, { FC, ReactNode } from 'react';
 import { useState } from 'react';
 import { AiOutlineClose } from 'react-icons/ai';

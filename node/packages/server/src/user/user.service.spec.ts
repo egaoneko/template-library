@@ -49,6 +49,7 @@ describe('UserService', () => {
   it('should be create user', async () => {
     /* eslint-disable @typescript-eslint/no-explicit-any */
     service.getUserByEmail = jest.fn().mockReturnValue(null) as any;
+    service.getUserByUsername = jest.fn().mockReturnValue(null) as any;
     service.ofUserDto = jest.fn().mockReturnValue({}) as any;
 
     const dto = new CreateUserDto();
@@ -62,6 +63,8 @@ describe('UserService', () => {
     expect(mockSequelize.transaction).toBeCalledTimes(1);
     expect(service.getUserByEmail).toBeCalledTimes(1);
     expect(service.getUserByEmail).toBeCalledWith(dto.email, { transaction: {} });
+    expect(service.getUserByUsername).toBeCalledTimes(1);
+    expect(service.getUserByUsername).toBeCalledWith(dto.username, { transaction: {} });
     expect(service.ofUserDto).toBeCalledTimes(1);
     expect(mockUserRepository.create).toBeCalledTimes(1);
     expect(mockUserRepository.create).toBeCalledWith(dto, { transaction: {} });
@@ -71,7 +74,7 @@ describe('UserService', () => {
     await expect(service.create(new CreateUserDto())).rejects.toThrowError('Invalid user params');
   });
 
-  it('should not be create with already exist user', async () => {
+  it('should not be create with already exist email', async () => {
     /* eslint-disable @typescript-eslint/no-explicit-any */
     service.getUserByEmail = jest.fn().mockReturnValue({}) as any;
 
@@ -81,10 +84,29 @@ describe('UserService', () => {
     dto.password = 'token';
     dto.salt = 'salt';
 
-    await expect(service.create(dto)).rejects.toThrowError('Already exist user');
+    await expect(service.create(dto)).rejects.toThrowError('Already exist email');
     expect(mockSequelize.transaction).toBeCalledTimes(1);
     expect(service.getUserByEmail).toBeCalledTimes(1);
     expect(service.getUserByEmail).toBeCalledWith(dto.email, { transaction: {} });
+  });
+
+  it('should not be create with already exist username', async () => {
+    /* eslint-disable @typescript-eslint/no-explicit-any */
+    service.getUserByEmail = jest.fn().mockReturnValue(null) as any;
+    service.getUserByUsername = jest.fn().mockReturnValue({}) as any;
+
+    const dto = new CreateUserDto();
+    dto.email = 'test@test.com';
+    dto.username = 'test';
+    dto.password = 'token';
+    dto.salt = 'salt';
+
+    await expect(service.create(dto)).rejects.toThrowError('Already exist username');
+    expect(mockSequelize.transaction).toBeCalledTimes(1);
+    expect(service.getUserByEmail).toBeCalledTimes(1);
+    expect(service.getUserByEmail).toBeCalledWith(dto.email, { transaction: {} });
+    expect(service.getUserByUsername).toBeCalledTimes(1);
+    expect(service.getUserByUsername).toBeCalledWith(dto.username, { transaction: {} });
   });
 
   it('should be return user by id', async () => {
@@ -137,6 +159,32 @@ describe('UserService', () => {
     expect(actual).toBeNull();
     expect(mockUserRepository.findOneByEmail).toBeCalledTimes(1);
     expect(mockUserRepository.findOneByEmail).toBeCalledWith('test@test.com', undefined);
+  });
+
+  it('should be return user by username', async () => {
+    /* eslint-disable @typescript-eslint/no-explicit-any */
+    service.ofUserDto = jest.fn().mockReturnValue({}) as any;
+
+    const actual = await service.getUserByUsername('test');
+
+    if (!actual) {
+      throw 'Not found user';
+    }
+
+    expect(actual).toBeDefined();
+    expect(mockUserRepository.findOneByUsername).toBeCalledTimes(1);
+    expect(mockUserRepository.findOneByUsername).toBeCalledWith('test', undefined);
+    expect(service.ofUserDto).toBeCalledTimes(1);
+  });
+
+  it('should be return null by invalid username', async () => {
+    /* eslint-disable @typescript-eslint/no-explicit-any */
+    mockUserRepository.findOneByUsername = jest.fn().mockReturnValue(null) as any;
+
+    const actual = await service.getUserByUsername('test');
+    expect(actual).toBeNull();
+    expect(mockUserRepository.findOneByUsername).toBeCalledTimes(1);
+    expect(mockUserRepository.findOneByUsername).toBeCalledWith('test', undefined);
   });
 
   it('should be return auth user', async () => {

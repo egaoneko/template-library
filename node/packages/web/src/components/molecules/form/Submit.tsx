@@ -1,5 +1,5 @@
 import React, { FC, ReactNode } from 'react';
-import Button from '../common/Button';
+import Button from '../../atoms/common/Button';
 
 interface PropsType {
   disabled?: boolean;

@@ -36,5 +36,5 @@ export class ProfileDto implements IProfile {
     description: 'following',
     type: 'boolean',
   })
-  following!: boolean;
+  following = false;
 }

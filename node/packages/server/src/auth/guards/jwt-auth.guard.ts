@@ -1,8 +1,10 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
+
 import { AuthGuard } from '@nestjs/passport';
-import { ExecutionContext, Injectable } from '@nestjs/common';
+import { ExecutionContext, Injectable, UnauthorizedException } from '@nestjs/common';
 import { Observable } from 'rxjs';
 import { Reflector } from '@nestjs/core';
-import { NO_AUTH_META_DATA_KEY } from '@root/auth/constants/auth.constant';
+import { NO_AUTH_META_DATA_KEY } from '@shared/decorators/auth/no-auth';
 
 @Injectable()
 export class JwtAuthGuard extends AuthGuard('jwt') {
@@ -11,11 +13,24 @@ export class JwtAuthGuard extends AuthGuard('jwt') {
   }
 
   canActivate(context: ExecutionContext): boolean | Promise<boolean> | Observable<boolean> {
-    const noAuth = this.reflector.get<boolean>(NO_AUTH_META_DATA_KEY, context.getHandler());
-    if (noAuth) {
-      return true;
+    return super.canActivate(context);
+  }
+
+  handleRequest(err: any, user: any, info: any, context: ExecutionContext): any {
+    if (err) {
+      throw err;
     }
 
-    return super.canActivate(context);
+    if (!user) {
+      const noAuth = this.reflector.get<boolean>(NO_AUTH_META_DATA_KEY, context.getHandler());
+
+      if (noAuth) {
+        return null;
+      }
+
+      throw new UnauthorizedException();
+    }
+
+    return user;
   }
 }

@@ -33,6 +33,7 @@ export class User extends Model {
   image!: number;
 
   @AllowNull(true)
+  @Unique
   @Column(DataType.STRING)
   refreshToken!: string;
 }

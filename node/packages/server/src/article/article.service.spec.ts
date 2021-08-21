@@ -559,7 +559,7 @@ describe('ArticleService', () => {
 
   it('should return article dto', async () => {
     /* eslint-disable @typescript-eslint/no-explicit-any */
-    mockProfileService.getProfile = jest.fn().mockReturnValue({}) as any;
+    mockProfileService.getProfileById = jest.fn().mockReturnValue({}) as any;
 
     const mockModel = createMock<Article>({
       id: 1,
@@ -605,13 +605,13 @@ describe('ArticleService', () => {
     expect(actual.favorited).toBe(true);
     expect(actual.favoritesCount).toBe(mockModel.articleFavorites.length);
     expect(actual.author).toBeDefined();
-    expect(mockProfileService.getProfile).toBeCalledTimes(1);
-    expect(mockProfileService.getProfile).toBeCalledWith(1, mockModel.authorId, undefined);
+    expect(mockProfileService.getProfileById).toBeCalledTimes(1);
+    expect(mockProfileService.getProfileById).toBeCalledWith(1, mockModel.authorId, undefined);
   });
 
   it('should return comment dto', async () => {
     /* eslint-disable @typescript-eslint/no-explicit-any */
-    mockProfileService.getProfile = jest.fn().mockReturnValue({}) as any;
+    mockProfileService.getProfileById = jest.fn().mockReturnValue({}) as any;
 
     const mockModel = createMock<Comment>({
       body: 'It takes a Jacobian',
@@ -625,7 +625,7 @@ describe('ArticleService', () => {
     expect(actual.createdAt).toBe(mockModel.createdAt);
     expect(actual.updatedAt).toBe(mockModel.updatedAt);
     expect(actual.author).toBeDefined();
-    expect(mockProfileService.getProfile).toBeCalledTimes(1);
-    expect(mockProfileService.getProfile).toBeCalledWith(1, mockModel.authorId, undefined);
+    expect(mockProfileService.getProfileById).toBeCalledTimes(1);
+    expect(mockProfileService.getProfileById).toBeCalledWith(1, mockModel.authorId, undefined);
   });
 });

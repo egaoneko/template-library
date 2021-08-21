@@ -23,7 +23,7 @@ describe('ArticleController (e2e)', () => {
   });
 
   it('/api/articles (Get)', async () => {
-    const user = await createTestUser(app, 'test1@test.com');
+    const user = await createTestUser(app, 'test1');
     const dto = await getTestUserDto(app, user);
     const articles = await createTestArticle(app, user);
 
@@ -38,7 +38,7 @@ describe('ArticleController (e2e)', () => {
   });
 
   it('/api/articles (Get) with author', async () => {
-    const user = await createTestUser(app, 'test1@test.com');
+    const user = await createTestUser(app, 'test1');
     const dto = await getTestUserDto(app, user);
     const articles = await createTestArticle(app, user);
 
@@ -56,7 +56,7 @@ describe('ArticleController (e2e)', () => {
   });
 
   it('/api/articles (Get) with tag', async () => {
-    const user = await createTestUser(app, 'test1@test.com');
+    const user = await createTestUser(app, 'test1');
     const dto = await getTestUserDto(app, user);
     await createTestArticle(app, user);
 
@@ -74,7 +74,7 @@ describe('ArticleController (e2e)', () => {
   });
 
   it('/api/articles (Get) with favorited', async () => {
-    const user = await createTestUser(app, 'test1@test.com');
+    const user = await createTestUser(app, 'test1');
     const dto = await getTestUserDto(app, user);
     await createTestArticle(app, user);
 
@@ -92,7 +92,7 @@ describe('ArticleController (e2e)', () => {
   });
 
   it('/api/articles/feed (Get)', async () => {
-    const user = await createTestUser(app, 'test1@test.com');
+    const user = await createTestUser(app, 'test1');
     const dto = await getTestUserDto(app, user);
     await createTestArticle(app, user);
 
@@ -107,7 +107,7 @@ describe('ArticleController (e2e)', () => {
   });
 
   it('/api/article/:slug (Get)', async () => {
-    const user = await createTestUser(app, 'test1@test.com');
+    const user = await createTestUser(app, 'test1');
     const dto = await getTestUserDto(app, user);
     const articles = await createTestArticle(app, user);
 
@@ -121,7 +121,7 @@ describe('ArticleController (e2e)', () => {
   });
 
   it('/api/article/:slug (Get) with invalid slug', async () => {
-    const user = await createTestUser(app, 'test1@test.com');
+    const user = await createTestUser(app, 'test1');
     const dto = await getTestUserDto(app, user);
     await createTestArticle(app, user);
 
@@ -135,7 +135,7 @@ describe('ArticleController (e2e)', () => {
   });
 
   it('/api/article (Post)', async () => {
-    const user = await createTestUser(app, 'test1@test.com');
+    const user = await createTestUser(app, 'test1');
     const dto = await getTestUserDto(app, user);
     await createTestArticle(app, user);
 
@@ -155,7 +155,7 @@ describe('ArticleController (e2e)', () => {
   });
 
   it('/api/article (Post) with invalid params', async () => {
-    const user = await createTestUser(app, 'test1@test.com');
+    const user = await createTestUser(app, 'test1');
     const dto = await getTestUserDto(app, user);
     await createTestArticle(app, user);
 
@@ -177,7 +177,7 @@ describe('ArticleController (e2e)', () => {
   });
 
   it('/api/article (Post) with already exist', async () => {
-    const user = await createTestUser(app, 'test1@test.com');
+    const user = await createTestUser(app, 'test1');
     const dto = await getTestUserDto(app, user);
     await createTestArticle(app, user);
 
@@ -197,7 +197,7 @@ describe('ArticleController (e2e)', () => {
   });
 
   it('/api/article/:slug (Put)', async () => {
-    const user = await createTestUser(app, 'test1@test.com');
+    const user = await createTestUser(app, 'test1');
     const dto = await getTestUserDto(app, user);
     const articles = await createTestArticle(app, user);
 
@@ -214,7 +214,7 @@ describe('ArticleController (e2e)', () => {
   });
 
   it('/api/article/:slug (Put) with invalid params', async () => {
-    const user = await createTestUser(app, 'test1@test.com');
+    const user = await createTestUser(app, 'test1');
     const dto = await getTestUserDto(app, user);
     await createTestArticle(app, user);
 
@@ -231,7 +231,7 @@ describe('ArticleController (e2e)', () => {
   });
 
   it('/api/article/:slug (Put) with already exist', async () => {
-    const user = await createTestUser(app, 'test1@test.com');
+    const user = await createTestUser(app, 'test1');
     const dto = await getTestUserDto(app, user);
     const articles = await createTestArticle(app, user);
 
@@ -248,7 +248,7 @@ describe('ArticleController (e2e)', () => {
   });
 
   it('/api/article/:slug (Delete)', async () => {
-    const user = await createTestUser(app, 'test1@test.com');
+    const user = await createTestUser(app, 'test1');
     const dto = await getTestUserDto(app, user);
     const articles = await createTestArticle(app, user);
 
@@ -259,7 +259,7 @@ describe('ArticleController (e2e)', () => {
   });
 
   it('/api/article/:slug (Delete) with invalid params', async () => {
-    const user = await createTestUser(app, 'test1@test.com');
+    const user = await createTestUser(app, 'test1');
     const dto = await getTestUserDto(app, user);
     await createTestArticle(app, user);
 
@@ -273,7 +273,7 @@ describe('ArticleController (e2e)', () => {
   });
 
   it('/api/articles/:slug/comments (Get)', async () => {
-    const user = await createTestUser(app, 'test1@test.com');
+    const user = await createTestUser(app, 'test1');
     const dto = await getTestUserDto(app, user);
     const articles = await createTestArticle(app, user);
 
@@ -288,7 +288,7 @@ describe('ArticleController (e2e)', () => {
   });
 
   it('/api/article/:slug/comments (Post)', async () => {
-    const user = await createTestUser(app, 'test1@test.com');
+    const user = await createTestUser(app, 'test1');
     const dto = await getTestUserDto(app, user);
     const articles = await createTestArticle(app, user);
 
@@ -305,7 +305,7 @@ describe('ArticleController (e2e)', () => {
   });
 
   it('/api/article/:slug/comments (Post) with invalid params', async () => {
-    const user = await createTestUser(app, 'test1@test.com');
+    const user = await createTestUser(app, 'test1');
     const dto = await getTestUserDto(app, user);
     const articles = await createTestArticle(app, user);
 
@@ -319,7 +319,7 @@ describe('ArticleController (e2e)', () => {
   });
 
   it('/api/article/:slug/comments (Post) with invalid slug', async () => {
-    const user = await createTestUser(app, 'test1@test.com');
+    const user = await createTestUser(app, 'test1');
     const dto = await getTestUserDto(app, user);
     await createTestArticle(app, user);
 
@@ -336,7 +336,7 @@ describe('ArticleController (e2e)', () => {
   });
 
   it('/api/article/:slug/comments/:id (Delete)', async () => {
-    const user = await createTestUser(app, 'test1@test.com');
+    const user = await createTestUser(app, 'test1');
     const dto = await getTestUserDto(app, user);
     const articles = await createTestArticle(app, user);
     const comment = await createTestComment(app, user, articles[0]);
@@ -348,7 +348,7 @@ describe('ArticleController (e2e)', () => {
   });
 
   it('/api/article/:slug/comments/:id (Delete) with invalid slug', async () => {
-    const user = await createTestUser(app, 'test1@test.com');
+    const user = await createTestUser(app, 'test1');
     const dto = await getTestUserDto(app, user);
     const articles = await createTestArticle(app, user);
     const comment = await createTestComment(app, user, articles[0]);
@@ -363,7 +363,7 @@ describe('ArticleController (e2e)', () => {
   });
 
   it('/api/article/:slug/comments/:id (Delete) with invalid params', async () => {
-    const user = await createTestUser(app, 'test1@test.com');
+    const user = await createTestUser(app, 'test1');
     const dto = await getTestUserDto(app, user);
     const articles = await createTestArticle(app, user);
 
@@ -377,7 +377,7 @@ describe('ArticleController (e2e)', () => {
   });
 
   it('/api/article/:slug/favorite (Post)', async () => {
-    const user = await createTestUser(app, 'test1@test.com');
+    const user = await createTestUser(app, 'test1');
     const dto = await getTestUserDto(app, user);
     const articles = await createTestArticle(app, user);
 
@@ -392,7 +392,7 @@ describe('ArticleController (e2e)', () => {
   });
 
   it('/api/article/:slug/favorite (Post) with invalid slug', async () => {
-    const user = await createTestUser(app, 'test1@test.com');
+    const user = await createTestUser(app, 'test1');
     const dto = await getTestUserDto(app, user);
     await createTestArticle(app, user);
 
@@ -406,7 +406,7 @@ describe('ArticleController (e2e)', () => {
   });
 
   it('/api/article/:slug/favorite (Delete)', async () => {
-    const user = await createTestUser(app, 'test1@test.com');
+    const user = await createTestUser(app, 'test1');
     const dto = await getTestUserDto(app, user);
     const articles = await createTestArticle(app, user);
 
@@ -421,7 +421,7 @@ describe('ArticleController (e2e)', () => {
   });
 
   it('/api/article/:slug/favorite (Delete) with invalid slug', async () => {
-    const user = await createTestUser(app, 'test1@test.com');
+    const user = await createTestUser(app, 'test1');
     const dto = await getTestUserDto(app, user);
     const articles = await createTestArticle(app, user);
     await createTestComment(app, user, articles[0]);
@@ -436,7 +436,7 @@ describe('ArticleController (e2e)', () => {
   });
 
   it('/api/articles/tags (Get)', async () => {
-    const user = await createTestUser(app, 'test1@test.com');
+    const user = await createTestUser(app, 'test1');
     const dto = await getTestUserDto(app, user);
     await createTestArticle(app, user);
 

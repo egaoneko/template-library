@@ -15,23 +15,24 @@ interface PropsType {
 }
 
 const SingleUpload: FC<PropsType> = props => {
+  const { name, onFinish } = props;
   const fileInputRef = useRef<HTMLInputElement>(null);
 
   const onChange = useCallback(
     async (e: ChangeEvent<HTMLInputElement>): Promise<void> => {
       e.preventDefault;
       const formData = new FormData();
-      formData.append('file', (e.target.files as FileList)[0]);
+      formData.append(name, (e.target.files as FileList)[0]);
 
       try {
         const file = await FileAPI.upload(formData);
-        props.onFinish?.(file);
+        onFinish?.(file);
       } catch (e) {
         notifyError(e.response?.data?.message ?? e.message);
       }
       e.target.value = '';
     },
-    [props.name, props.onFinish],
+    [name, onFinish],
   );
 
   return (

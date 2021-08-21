@@ -23,27 +23,56 @@ export class ProfileService {
     return followings.map(following => following.followingUserId);
   }
 
-  @Transactional()
-  async getProfile(currentUserId: number, followingUserId: number, options?: SequelizeOptionDto): Promise<ProfileDto> {
+  @Transactional(undefined, 2)
+  async getProfileById(
+    currentUserId: number | null,
+    followingUserId: number,
+    options?: SequelizeOptionDto,
+  ): Promise<ProfileDto> {
     const user = await this.userService.getUserById(followingUserId, options);
+    return this.getProfile(currentUserId, user, options);
+  }
 
+  @Transactional(undefined, 2)
+  async getProfileByName(
+    currentUserId: number | null,
+    username: string,
+    options?: SequelizeOptionDto,
+  ): Promise<ProfileDto> {
+    const user = await this.userService.getUserByUsername(username, options);
+    return this.getProfile(currentUserId, user, options);
+  }
+
+  @Transactional(undefined, 2)
+  async getProfile(
+    currentUserId: number | null,
+    user: UserDto | null,
+    options?: SequelizeOptionDto,
+  ): Promise<ProfileDto> {
     if (!user) {
       throw new BadRequestException('Not found user');
     }
 
     const profile = await this.ofProfileDto(user);
-    if (currentUserId === followingUserId) {
-      profile.following = false;
-    } else {
-      profile.following = await this.isFollow(currentUserId, followingUserId, options);
+
+    if (!currentUserId) {
+      return profile;
+    }
+
+    if (currentUserId !== user.id) {
+      profile.following = await this.isFollow(currentUserId, user.id, options);
     }
 
     return profile;
   }
 
+  @Transactional(undefined, 2)
   async isFollow(currentUserId: number, followingUserId: number, options?: SequelizeOptionDto): Promise<boolean> {
-    if (currentUserId === followingUserId) {
-      throw new BadRequestException('Invalid params(same user)');
+    const currentUser = await this.userService.getUserById(currentUserId, options);
+    const followingUser = await this.userService.getUserById(followingUserId, options);
+
+    if (!(await this.isValidUsers(currentUser, followingUser))) {
+      throw new BadRequestException('Invalid user params');
     }
 
     const follow = await this.followRepository.findOneByIds(currentUserId, followingUserId, options);
@@ -51,15 +80,15 @@ export class ProfileService {
   }
 
   @Transactional()
-  async followUser(currentUserId: number, followingUserId: number, options?: SequelizeOptionDto): Promise<ProfileDto> {
-    if (currentUserId === followingUserId) {
-      throw new BadRequestException('Invalid params(same user)');
-    }
+  async followUser(currentUserId: number, username: string, options?: SequelizeOptionDto): Promise<ProfileDto> {
+    const currentUser = await this.userService.getUserById(currentUserId, options);
+    const followingUser = await this.userService.getUserByUsername(username, options);
 
-    if (!(await this.isValidUsers(currentUserId, followingUserId, options))) {
+    if (!(await this.isValidUsers(currentUser, followingUser))) {
       throw new BadRequestException('Invalid user params');
     }
 
+    const followingUserId = (followingUser as UserDto).id;
     const isFollow = await this.isFollow(currentUserId, followingUserId, options);
 
     if (isFollow) {
@@ -72,7 +101,7 @@ export class ProfileService {
       throw new InternalServerErrorException('Do not follow');
     }
 
-    const profile = await this.getProfile(currentUserId, followingUserId, options);
+    const profile = await this.getProfileById(currentUserId, followingUserId, options);
 
     if (!profile) {
       throw new BadRequestException('Not found profile');
@@ -83,19 +112,15 @@ export class ProfileService {
   }
 
   @Transactional()
-  async unfollowUser(
-    currentUserId: number,
-    unfollowingUserId: number,
-    options?: SequelizeOptionDto,
-  ): Promise<ProfileDto> {
-    if (currentUserId === unfollowingUserId) {
-      throw new BadRequestException('Invalid params(same user)');
-    }
+  async unfollowUser(currentUserId: number, username: string, options?: SequelizeOptionDto): Promise<ProfileDto> {
+    const currentUser = await this.userService.getUserById(currentUserId, options);
+    const followingUser = await this.userService.getUserByUsername(username, options);
 
-    if (!(await this.isValidUsers(currentUserId, unfollowingUserId, options))) {
+    if (!(await this.isValidUsers(currentUser, followingUser))) {
       throw new BadRequestException('Invalid user params');
     }
 
+    const unfollowingUserId = (followingUser as UserDto).id;
     const isFollow = await this.isFollow(currentUserId, unfollowingUserId, options);
 
     if (!isFollow) {
@@ -108,7 +133,7 @@ export class ProfileService {
       throw new InternalServerErrorException('Do not unfollow');
     }
 
-    const profile = await this.getProfile(currentUserId, unfollowingUserId, options);
+    const profile = await this.getProfileById(currentUserId, unfollowingUserId, options);
 
     if (!profile) {
       throw new BadRequestException('Not found profile');
@@ -126,15 +151,15 @@ export class ProfileService {
     return dto;
   }
 
-  @Transactional()
-  private async isValidUsers(
-    currentUserId: number,
-    followingUserId: number,
-    options?: SequelizeOptionDto,
-  ): Promise<boolean> {
-    return (
-      !!(await this.userService.getUserById(currentUserId, options)) &&
-      !!(await this.userService.getUserById(followingUserId, options))
-    );
+  async isValidUsers(currentUser: UserDto | null, followingUser: UserDto | null): Promise<boolean> {
+    if (!currentUser || !followingUser) {
+      return false;
+    }
+
+    if (currentUser.id === followingUser.id) {
+      return false;
+    }
+
+    return true;
   }
 }

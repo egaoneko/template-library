@@ -9,33 +9,33 @@ import { CurrentUser } from '@user/decorators/current-user.decorator';
 export class ProfileController {
   constructor(private readonly profileService: ProfileService) {}
 
-  @Get('/:userId')
+  @Get('/:username')
   @ApiOperation({ summary: 'get user profile' })
   @ApiBearerAuth()
-  @ApiParam({ name: 'userId', description: 'user id of profile', type: 'number' })
+  @ApiParam({ name: 'username', description: 'username of profile', type: 'number' })
   @ApiResponse({ status: 200, description: 'Profile', type: ProfileDto })
   @ApiResponse({ status: 401, description: 'Unauthorized' })
-  async getProfile(@Param('userId') userId: number, @CurrentUser('id') currentUserId: number): Promise<ProfileDto> {
-    return this.profileService.getProfile(currentUserId, userId);
+  async getProfile(@Param('username') username: string, @CurrentUser('id') currentUserId: number): Promise<ProfileDto> {
+    return this.profileService.getProfileByName(currentUserId, username);
   }
 
-  @Post('/:userId/follow')
+  @Post('/:username/follow')
   @ApiOperation({ summary: 'follow user' })
   @ApiBearerAuth()
-  @ApiParam({ name: 'userId', description: 'user id to follow', type: 'number' })
+  @ApiParam({ name: 'username', description: 'username to follow', type: 'number' })
   @ApiResponse({ status: 201, description: 'Profile', type: ProfileDto })
   @ApiResponse({ status: 401, description: 'Unauthorized' })
-  async follow(@Param('userId') userId: number, @CurrentUser('id') currentUserId: number): Promise<ProfileDto> {
-    return this.profileService.followUser(currentUserId, userId);
+  async follow(@Param('username') username: string, @CurrentUser('id') currentUserId: number): Promise<ProfileDto> {
+    return this.profileService.followUser(currentUserId, username);
   }
 
-  @Delete('/:userId/follow')
+  @Delete('/:username/follow')
   @ApiOperation({ summary: 'unfollow user' })
   @ApiBearerAuth()
-  @ApiParam({ name: 'userId', description: 'user id to unfollow', type: 'number' })
+  @ApiParam({ name: 'username', description: 'username to unfollow', type: 'number' })
   @ApiResponse({ status: 200, description: 'Profile', type: ProfileDto })
   @ApiResponse({ status: 401, description: 'Unauthorized' })
-  async unfollow(@Param('userId') userId: number, @CurrentUser('id') currentUserId: number): Promise<ProfileDto> {
-    return this.profileService.unfollowUser(currentUserId, userId);
+  async unfollow(@Param('username') username: string, @CurrentUser('id') currentUserId: number): Promise<ProfileDto> {
+    return this.profileService.unfollowUser(currentUserId, username);
   }
 }

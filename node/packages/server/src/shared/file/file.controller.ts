@@ -16,7 +16,7 @@ import { Response } from 'express';
 import { FileDto } from '@shared/file/dto/response/file.dto';
 import fs from 'fs';
 import { CurrentUser } from '@user/decorators/current-user.decorator';
-import { NoAuth } from '@root/auth/decorators/auth';
+import { NoAuth } from '@root/shared/decorators/auth/no-auth';
 
 @ApiTags('shared')
 @Controller('/api/file')

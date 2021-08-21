@@ -6,7 +6,6 @@ import { IUser } from '../user/interfaces/user.interface';
 import { createMock } from '@golevelup/ts-jest';
 import { Crypto } from '../shared/crypto/crypto';
 import { ConfigService } from '@nestjs/config';
-import { use } from 'passport';
 
 describe('AuthService', () => {
   let service: AuthService;

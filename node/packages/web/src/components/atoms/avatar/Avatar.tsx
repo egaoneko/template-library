@@ -1,3 +1,5 @@
+/* eslint-disable  @next/next/no-img-element */
+
 import React, { FC } from 'react';
 
 interface PropsType {
@@ -6,17 +8,18 @@ interface PropsType {
 }
 
 const Avatar: FC<PropsType> = props => {
-  let size: number = 12;
+  let size: number;
 
   switch (props.size) {
     case 'middle':
-      size = 24;
+      size = 8;
       break;
     case 'large':
       size = 48;
       break;
     case 'small':
-      size = 12;
+    default:
+      size = 6;
       break;
   }
 

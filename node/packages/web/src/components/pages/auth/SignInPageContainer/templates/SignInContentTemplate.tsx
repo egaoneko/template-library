@@ -1,7 +1,7 @@
 import React, { FC, ReactNode } from 'react';
-import Form from '@components/atoms/form/Form';
-import Input from '@components/atoms/form/Input';
-import Submit from '@components/atoms/form/Submit';
+import Form from '@components/molecules/form/Form';
+import Input from '@components/molecules/form/Input';
+import Submit from '@components/molecules/form/Submit';
 import Link from 'next/link';
 import { LoginRequest } from '@interfaces/user';
 import PageTitle from '@components/atoms/page/PageTitle';

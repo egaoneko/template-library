@@ -4,7 +4,7 @@ import ReactNotification from 'react-notifications-component';
 
 interface PropsType {}
 
-const Notification: FC<PropsType> = props => {
+const Notification: FC<PropsType> = () => {
   return <ReactNotification />;
 };
 

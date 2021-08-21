@@ -1,6 +1,5 @@
-import { NoAuth } from './auth';
+import { NoAuth, NO_AUTH_META_DATA_KEY } from './no-auth';
 import { Reflector } from '@nestjs/core';
-import { NO_AUTH_META_DATA_KEY } from '../constants/auth.constant';
 
 /* eslint-disable @typescript-eslint/no-explicit-any */
 /* eslint-disable @typescript-eslint/ban-types */

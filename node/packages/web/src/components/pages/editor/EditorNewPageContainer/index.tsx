@@ -1,11 +1,8 @@
 import Head from '@components/atoms/layout/Head';
 import React, { FC, ReactNode, useState } from 'react';
 import EditorNewContentTemplate from './templates/EditorNewContentTemplate';
-import { UpdateRequest } from '@interfaces/user';
 import { useRouter } from 'next/router';
-import { useStores } from '@stores/stores';
 import { BasePropsType } from '@interfaces/common';
-import { IFile } from '@interfaces/file';
 import BaseLayoutTemplate from '@components/templates/layout/BaseLayoutTemplate';
 import { CreateArticleRequest } from '@interfaces/article';
 import ArticleAPI from '@api/article';
