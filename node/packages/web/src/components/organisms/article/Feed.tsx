@@ -1,5 +1,3 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
-
 import Avatar from '@components/atoms/avatar/Avatar';
 import { IArticle } from '@interfaces/article';
 import Link from 'next/link';
@@ -8,7 +6,6 @@ import styled from 'styled-components';
 import tw from 'twin.macro';
 import format from 'date-fns/format';
 import { AiFillHeart } from 'react-icons/ai';
-import dynamic from 'next/dynamic';
 import { useRouter } from 'next/router';
 
 interface PropsType {
@@ -41,7 +38,7 @@ const Feed: FC<PropsType> = props => {
       <Content onClick={() => router.push(`/article/${props.article.slug}`)}>
         <Title>{props.article.title}</Title>
         <Body>
-          <ReactMarkdown>{props.article.body.slice(0, 100)}</ReactMarkdown>
+          <p>{props.article.description}</p>
         </Body>
         <Footer>
           <ReadMore>Read more...</ReadMore>
@@ -122,5 +119,3 @@ const Tag = styled.div`
   padding: 4px 10px;
   margin-right: 3px;
 `;
-
-const ReactMarkdown = dynamic(() => import('react-markdown') as any, { ssr: false });

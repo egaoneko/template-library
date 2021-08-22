@@ -11,15 +11,15 @@ const Avatar: FC<PropsType> = props => {
   let size: number;
 
   switch (props.size) {
-    case 'middle':
-      size = 8;
+    case 'small':
+      size = 5;
       break;
     case 'large':
       size = 48;
       break;
-    case 'small':
+    case 'middle':
     default:
-      size = 6;
+      size = 8;
       break;
   }
 

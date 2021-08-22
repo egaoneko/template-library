@@ -3,23 +3,41 @@ import React, { FC, ReactNode } from 'react';
 interface PropsType extends React.DetailedHTMLProps<React.ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement> {
   styleType?: ButtonStyleType;
   fill?: boolean;
+  size?: 'small' | 'middle' | 'large';
+  className?: string;
   children?: ReactNode;
 }
 
 const Button: FC<PropsType> = props => {
-  const { styleType, fill, children, ...buttonProps } = props;
+  const { styleType, fill, size, children, className, ...buttonProps } = props;
   const { backgroundColor, borderColor, textColor } = getButtonStyle(styleType, fill);
+
+  let sizeStyle: string;
+
+  switch (size) {
+    case 'large':
+      sizeStyle = 'px-6 py-3 text-2xl';
+      break;
+    case 'small':
+      sizeStyle = 'px-2 py-1 text-sm';
+      break;
+    case 'middle':
+    default:
+      sizeStyle = 'px-6 py-3';
+      break;
+  }
 
   return (
     <button
       type="button"
       {...buttonProps}
       className={[
-        `px-6 py-3 hover:text-opacity-80 hover:bg-opacity-80 hover:border-opacity-80 font-bold border rounded focus:outline-none focus:shadow-outline disabled:opacity-50 disabled:cursor-not-allowed`,
+        className,
+        sizeStyle,
+        `hover:text-opacity-80 hover:bg-opacity-80 hover:border-opacity-80 font-bold border rounded focus:outline-none focus:shadow-outline disabled:opacity-50 disabled:cursor-not-allowed`,
         buttonProps.style?.backgroundColor ? null : backgroundColor,
         buttonProps.style?.borderColor ? null : borderColor,
         buttonProps.style?.color ? null : textColor,
-        props.className,
       ].join(' ')}
     >
       {children}

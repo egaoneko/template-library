@@ -103,6 +103,7 @@ export class ArticleController {
     return this.articleService.deleteArticle(slug);
   }
 
+  @NoAuth()
   @Get('/:slug/comments')
   @ApiOperation({ summary: 'get comment' })
   @ApiBearerAuth()

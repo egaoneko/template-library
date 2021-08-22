@@ -11,6 +11,7 @@ import { useQuery } from 'react-query';
 import ArticleAPI from '@api/article';
 import { notifyError } from '@utils/notifiy';
 import { useRouter } from 'next/router';
+import HomeBannerTemplate from './templates/HomeBannerTemplate';
 
 const PAGE_LIMIT = 5;
 interface PropsType extends BasePropsType {
@@ -39,20 +40,21 @@ const HomePageContainer: FC<PropsType> = props => {
       return;
     }
 
-    if (toggle) {
-      await ArticleAPI.favorite(slug);
-    } else {
-      await ArticleAPI.unfavorite(slug);
+    try {
+      if (toggle) {
+        await ArticleAPI.favorite(slug);
+      } else {
+        await ArticleAPI.unfavorite(slug);
+      }
+
+      articlesResult.refetch();
+    } catch (e) {
+      notifyError(e.response?.data?.message ?? e.message);
     }
-    articlesResult.refetch();
   }
 
   return (
-    <BaseLayoutTemplate
-      pathname={props.pathname}
-      bannerTitle={'conduit'}
-      bannerDescription={'A place to share your knowledge.'}
-    >
+    <BaseLayoutTemplate pathname={props.pathname} banner={<HomeBannerTemplate />}>
       <Head title={'HOME'} />
       <HomeContentTemplate
         user={userStore.user}

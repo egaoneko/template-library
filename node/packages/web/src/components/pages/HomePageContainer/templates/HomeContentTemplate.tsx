@@ -21,7 +21,6 @@ interface PropsType {
   tagsResult: UseQueryResult<string[]>;
   selectedTag: string | null;
   onSelectTag: (tag: string | null) => unknown;
-  children?: ReactNode;
 }
 
 const HomeContentTemplate: FC<PropsType> = props => {

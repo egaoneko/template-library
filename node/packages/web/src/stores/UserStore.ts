@@ -26,14 +26,8 @@ export class UserStore {
       const user = await AuthAPI.register(request);
       notifySuccess('Successfully registered!');
       return !!user;
-    } catch ({ response }) {
-      let message = response.data?.message;
-
-      if (Array.isArray(message)) {
-        message = message.join('\n');
-      }
-
-      notifyError(message);
+    } catch (e) {
+      notifyError(e.response?.data?.message ?? e.message);
     }
 
     return false;
@@ -70,11 +64,7 @@ export class UserStore {
         notifyError('Fail to update');
       }
     } catch (e) {
-      notifyError(
-        Array.isArray(e.response?.data?.message)
-          ? e.response?.data?.message.join('\n')
-          : e.response?.data?.message ?? e.message,
-      );
+      notifyError(e.response?.data?.message ?? e.message);
     }
 
     return this.user;

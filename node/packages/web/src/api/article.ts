@@ -1,8 +1,8 @@
-import { IArticle } from './../../../server/src/article/interfaces/article.interface';
 import axios from 'axios';
 import { API_SERVER_URL } from '@constants/common';
-import { CreateArticleRequest, GetArticleFeedListRequest, GetArticleListRequest } from '@interfaces/article';
+import { IArticle, CreateArticleRequest, GetArticleFeedListRequest, GetArticleListRequest } from '@interfaces/article';
 import { ListResult } from '@interfaces/common';
+import { CreateCommentRequest, GetCommentListRequest, IComment } from '@interfaces/comment';
 
 export default class ArticleAPI {
   private static BASE_URL = `${API_SERVER_URL}/api/articles`;
@@ -18,6 +18,9 @@ export default class ArticleAPI {
   static async get(slug: string): Promise<IArticle> {
     return axios.get(`${ArticleAPI.BASE_URL}/${slug}`).then(({ data }) => data);
   }
+  static async delete(slug: string): Promise<IArticle> {
+    return axios.delete(`${ArticleAPI.BASE_URL}/${slug}`).then(({ data }) => data);
+  }
   static async favorite(slug: string): Promise<IArticle> {
     return axios.post(`${ArticleAPI.BASE_URL}/${slug}/favorite`).then(({ data }) => data);
   }
@@ -26,5 +29,14 @@ export default class ArticleAPI {
   }
   static async getTags(): Promise<string[]> {
     return axios.get(`${ArticleAPI.BASE_URL}/tags`).then(({ data }) => data);
+  }
+  static async createComment(slug: string, request: CreateCommentRequest): Promise<IComment> {
+    return axios.post(`${ArticleAPI.BASE_URL}/${slug}/comments`, request).then(({ data }) => data);
+  }
+  static async getCommentList(slug: string, request: GetCommentListRequest = {}): Promise<ListResult<IComment>> {
+    return axios.get(`${ArticleAPI.BASE_URL}/${slug}/comments`, { params: request }).then(({ data }) => data);
+  }
+  static async deleteComment(slug: string, id: number): Promise<IComment> {
+    return axios.delete(`${ArticleAPI.BASE_URL}/${slug}/comments/${id}`).then(({ data }) => data);
   }
 }

@@ -10,21 +10,24 @@ const DEFAULT_NOTIFICATION_OPTIONS = {
   },
 };
 
-export function notifyError(message: string, options?: ReactNotificationOptions): string {
-  return store.addNotification({
-    title: 'Error',
-    type: 'danger',
-    message,
-    ...DEFAULT_NOTIFICATION_OPTIONS,
-    ...options,
-  } as ReactNotificationOptions);
+export function notifyError(message: string | [], options?: ReactNotificationOptions): string {
+  return notify('Error', 'danger', message, options);
 }
 
-export function notifySuccess(message: string, options?: ReactNotificationOptions): string {
+export function notifySuccess(message: string | [], options?: ReactNotificationOptions): string {
+  return notify('Success', 'success', message, options);
+}
+
+export function notify(
+  title: string,
+  type: 'success' | 'danger' | 'info' | 'default' | 'warning' | undefined,
+  message: string | [],
+  options?: ReactNotificationOptions,
+): string {
   return store.addNotification({
-    title: 'Success',
-    type: 'success',
-    message,
+    title,
+    type,
+    message: Array.isArray(message) ? message.join(', ') : message,
     ...DEFAULT_NOTIFICATION_OPTIONS,
     ...options,
   } as ReactNotificationOptions);
