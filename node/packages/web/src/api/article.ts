@@ -1,6 +1,12 @@
 import axios from 'axios';
 import { API_SERVER_URL } from '@constants/common';
-import { IArticle, CreateArticleRequest, GetArticleFeedListRequest, GetArticleListRequest } from '@interfaces/article';
+import {
+  IArticle,
+  CreateArticleRequest,
+  GetArticleFeedListRequest,
+  GetArticleListRequest,
+  UpdateArticleRequest,
+} from '@interfaces/article';
 import { ListResult } from '@interfaces/common';
 import { CreateCommentRequest, GetCommentListRequest, IComment } from '@interfaces/comment';
 
@@ -8,6 +14,9 @@ export default class ArticleAPI {
   private static BASE_URL = `${API_SERVER_URL}/api/articles`;
   static async create(request: CreateArticleRequest): Promise<IArticle> {
     return axios.post(`${ArticleAPI.BASE_URL}`, request).then(({ data }) => data);
+  }
+  static async update(slug: string, request: UpdateArticleRequest): Promise<IArticle> {
+    return axios.put(`${ArticleAPI.BASE_URL}/${slug}`, request).then(({ data }) => data);
   }
   static async getList(request: GetArticleListRequest = {}): Promise<ListResult<IArticle>> {
     return axios.get(`${ArticleAPI.BASE_URL}`, { params: request }).then(({ data }) => data);

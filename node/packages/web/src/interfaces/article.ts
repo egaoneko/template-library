@@ -9,6 +9,12 @@ export interface CreateArticleRequest {
   tagList?: string[];
 }
 
+export interface UpdateArticleRequest {
+  title?: string;
+  description?: string;
+  body?: string;
+}
+
 export interface GetArticleFeedListRequest {
   limit?: number;
   page?: number;

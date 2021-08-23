@@ -1,0 +1,52 @@
+import React, { FC, ReactNode } from 'react';
+import Form from '@components/molecules/form/Form';
+import Input from '@components/molecules/form/Input';
+import Submit from '@components/molecules/form/Submit';
+import Textarea from '@components/molecules/form/Textarea';
+import { IArticle, UpdateArticleRequest } from '@interfaces/article';
+
+interface PropsType {
+  loading?: boolean;
+  article: IArticle;
+  onFinish: (request: UpdateArticleRequest) => Promise<void>;
+  children?: ReactNode;
+}
+
+const EditorUpdateContentTemplate: FC<PropsType> = props => {
+  return (
+    <div className="w-full max-w-3xl mx-auto">
+      <Form onFinish={props.onFinish}>
+        <Input
+          className="text-xl font-bold px-6 py-3"
+          disabled={props.loading}
+          type="text"
+          name="title"
+          placeholder="Article Title"
+          defaultValue={props.article.title}
+          options={{ required: true }}
+        />
+        <Input
+          disabled={props.loading}
+          type="text"
+          name="description"
+          placeholder="What's this article about?"
+          defaultValue={props.article.description}
+          options={{ required: true }}
+        />
+        <Textarea
+          disabled={props.loading}
+          name="body"
+          placeholder="Write your article (in markdown)"
+          rows={8}
+          defaultValue={props.article.body}
+          options={{ required: true }}
+        />
+        <Submit disabled={props.loading} loading={props.loading} className="ml-auto">
+          Publish Article
+        </Submit>
+      </Form>
+    </div>
+  );
+};
+
+export default EditorUpdateContentTemplate;
