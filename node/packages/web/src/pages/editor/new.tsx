@@ -1,7 +1,6 @@
 import EditorNewPageContainer from '@components/pages/editor/EditorNewPageContainer';
-import { ACCESS_TOKEN_NAME } from '@constants/common';
+import { withAuth } from '@utils/auth';
 import { GetServerSidePropsResult, NextPageContext } from 'next';
-import cookies from 'next-cookies';
 import React, { ReactNode } from 'react';
 
 interface PropsType {}
@@ -12,20 +11,15 @@ function Index(props: PropsType): ReactNode {
 
 export default Index;
 
-export async function getServerSideProps(ctx: NextPageContext): Promise<GetServerSidePropsResult<PropsType>> {
-  const allCookies = cookies(ctx);
-  const accessTokenByCookie = allCookies[ACCESS_TOKEN_NAME];
+export const getServerSideProps = withAuth<PropsType>(
+  async (ctx: NextPageContext): Promise<GetServerSidePropsResult<PropsType>> => {
+    const query = ctx.query;
 
-  if (!accessTokenByCookie) {
     return {
-      redirect: {
-        permanent: true,
-        destination: '/auth/sign-in?successUrl=/editor/new',
+      props: {
+        slug: (query.slug as string) ?? null,
       },
     };
-  }
-
-  return {
-    props: {},
-  };
-}
+  },
+  { successUrl: '/editor/new' },
+);

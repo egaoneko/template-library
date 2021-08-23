@@ -7,10 +7,6 @@ import { Stores } from '@stores/stores';
 import { Provider } from 'mobx-react';
 import Notification from '@components/atoms/notification/Notification';
 import App from 'next/app';
-import cookies from 'next-cookies';
-import { ACCESS_TOKEN_NAME, REFRESH_TOKEN_NAME } from '@constants/common';
-import { refreshToken, removeToken, setToken } from '@utils/cookie';
-import UserAPI from '@api/user';
 import { BasePropsType } from '@interfaces/common';
 import { IUser } from '@interfaces/user';
 import { QueryClient, QueryClientProvider } from 'react-query';
@@ -98,35 +94,11 @@ function MyApp({ Component, pageProps }: AppProps<PropsType>): ReactNode {
 
 MyApp.getInitialProps = async (appContext: AppContext): Promise<AppInitialProps> => {
   const appProps = await App.getInitialProps(appContext);
-
   const { ctx } = appContext;
-  const allCookies = cookies(ctx);
-  const accessTokenByCookie = allCookies[ACCESS_TOKEN_NAME];
-  const refreshTokenByCookie = allCookies[REFRESH_TOKEN_NAME];
-
-  if (accessTokenByCookie !== undefined) {
-    setToken(accessTokenByCookie);
-  } else if (accessTokenByCookie === undefined && refreshTokenByCookie !== undefined) {
-    refreshToken(refreshTokenByCookie);
-  } else {
-    removeToken();
-  }
-
-  let user = null;
-
-  try {
-    user = await UserAPI.get();
-
-    if (user) {
-      user.token = accessTokenByCookie;
-      user.refreshToken = refreshTokenByCookie;
-    }
-  } catch (e) {}
 
   return {
     ...appProps,
     pageProps: {
-      user,
       pathname: ctx.pathname,
     },
   };

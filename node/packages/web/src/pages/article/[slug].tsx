@@ -1,4 +1,5 @@
 import ArticlePageContainer from '@components/pages/article/ArticlePageContainer';
+import { withAuth } from '@utils/auth';
 import { GetServerSidePropsResult, NextPageContext } from 'next';
 import React, { ReactNode } from 'react';
 
@@ -12,12 +13,15 @@ function Index(props: PropsType): ReactNode {
 
 export default Index;
 
-export async function getServerSideProps(ctx: NextPageContext): Promise<GetServerSidePropsResult<PropsType>> {
-  const query = ctx.query;
+export const getServerSideProps = withAuth<PropsType>(
+  async (ctx: NextPageContext): Promise<GetServerSidePropsResult<PropsType>> => {
+    const query = ctx.query;
 
-  return {
-    props: {
-      slug: (query.slug as string) ?? null,
-    },
-  };
-}
+    return {
+      props: {
+        slug: (query.slug as string) ?? null,
+      },
+    };
+  },
+  { optional: true },
+);

@@ -2,6 +2,10 @@ import { ACCESS_TOKEN_NAME, REFRESH_TOKEN_NAME } from '@constants/common';
 import axios from 'axios';
 import Cookies, { CookieAttributes } from 'js-cookie';
 
+export function getToken(): [string | undefined, string | undefined] {
+  return [Cookies.get(ACCESS_TOKEN_NAME), Cookies.get(REFRESH_TOKEN_NAME)];
+}
+
 export function setToken(accessToken: string, refreshToken?: string): void {
   axios.defaults.headers.Authorization = 'Bearer ' + accessToken;
 

@@ -1,4 +1,6 @@
 import SignInPageContainer from '@components/pages/auth/SignInPageContainer';
+import { IUser } from '@interfaces/user';
+import { withAuth } from '@utils/auth';
 import { GetServerSidePropsResult, NextPageContext } from 'next';
 import React, { ReactNode } from 'react';
 
@@ -12,12 +14,15 @@ function Index(props: PropsType): ReactNode {
 
 export default Index;
 
-export async function getServerSideProps(ctx: NextPageContext): Promise<GetServerSidePropsResult<PropsType>> {
-  const query = ctx.query;
+export const getServerSideProps = withAuth<PropsType>(
+  async (ctx: NextPageContext): Promise<GetServerSidePropsResult<PropsType>> => {
+    const query = ctx.query;
 
-  return {
-    props: {
-      successUrl: (query.successUrl as string) ?? null,
-    },
-  };
-}
+    return {
+      props: {
+        successUrl: (query.successUrl as string) ?? null,
+      },
+    };
+  },
+  { optional: true, bypass: true },
+);
