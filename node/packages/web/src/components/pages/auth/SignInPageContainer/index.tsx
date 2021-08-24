@@ -1,5 +1,5 @@
 import Head from '@components/atoms/layout/Head';
-import React, { FC, ReactNode, useState } from 'react';
+import React, { FC, useState } from 'react';
 import SignInContentTemplate from './templates/SignInContentTemplate';
 import { LoginRequest } from '@interfaces/user';
 import { useRouter } from 'next/router';
@@ -9,7 +9,6 @@ import BaseLayoutTemplate from '@components/templates/layout/BaseLayoutTemplate'
 
 interface PropsType extends BasePropsType {
   successUrl?: string;
-  children?: ReactNode;
 }
 
 const SignInPageContainer: FC<PropsType> = props => {

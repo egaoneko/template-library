@@ -23,8 +23,8 @@ export class ArticleRepository {
   ): Promise<{ count: number; rows: Article[] }> {
     return this.articleModel.findAndCountAll({
       where: {
-        ...(getArticlesDto.author && {
-          authorId: getArticlesDto.author,
+        ...(getArticlesDto.authorId !== undefined && {
+          authorId: getArticlesDto.authorId,
         }),
       },
       order: [['updatedAt', 'DESC']],
@@ -34,11 +34,11 @@ export class ArticleRepository {
         {
           model: ArticleFavorite,
           where: {
-            ...(getArticlesDto.favorited && {
-              userId: getArticlesDto.favorited,
+            ...(getArticlesDto.favoritedId !== undefined && {
+              userId: getArticlesDto.favoritedId,
             }),
           },
-          required: !!getArticlesDto.favorited,
+          required: !!getArticlesDto.favoritedId,
         },
         {
           model: Tag,

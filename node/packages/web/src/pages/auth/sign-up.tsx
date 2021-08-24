@@ -1,6 +1,5 @@
 import SignUpPageContainer from '@components/pages/auth/SignUpPageContainer';
 import { withAuth } from '@utils/auth';
-import { GetServerSidePropsResult, NextPageContext } from 'next';
 import React, { ReactNode } from 'react';
 
 interface PropsType {}

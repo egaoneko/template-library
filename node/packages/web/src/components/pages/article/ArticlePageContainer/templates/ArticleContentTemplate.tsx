@@ -33,7 +33,7 @@ const ArticleContentTemplate: FC<PropsType> = props => {
     <Container>
       <Content>
         <Body>
-          <ReactMarkdown children={article.body} />
+          <ReactMarkdown>{article.body}</ReactMarkdown>
         </Body>
         {article.tagList.length > 0 && (
           <Tags>

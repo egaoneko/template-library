@@ -15,7 +15,7 @@ const Avatar: FC<PropsType> = props => {
       size = 5;
       break;
     case 'large':
-      size = 48;
+      size = 32;
       break;
     case 'middle':
     default:

@@ -1,4 +1,4 @@
 export enum FeedTab {
-  GLOBAL_FEED = 'global_feed',
-  USER_FEED = 'user_feed',
+  GLOBAL_FEED = 'GLOBAL_FEED',
+  USER_FEED = 'USER_FEED',
 }

@@ -1,3 +1,4 @@
+import { UserService } from '@user/user.service';
 import { BadRequestException, Injectable, InternalServerErrorException } from '@nestjs/common';
 import { GetArticlesDto } from '@article/dto/request/get-articles.dto';
 import { InjectConnection } from '@nestjs/sequelize';
@@ -27,6 +28,7 @@ import { CommentRepository } from '@article/repositories/comment.repository';
 @Injectable()
 export class ArticleService {
   constructor(
+    private readonly userService: UserService,
     private readonly profileService: ProfileService,
     private readonly articleRepository: ArticleRepository,
     private readonly articleFavoriteRepository: ArticleFavoriteRepository,
@@ -47,6 +49,14 @@ export class ArticleService {
 
     if (errors.length > 0) {
       throw new BadRequestException('Invalid article list params');
+    }
+
+    if (getArticlesDto.author) {
+      getArticlesDto.authorId = (await this.userService.getUserByUsername(getArticlesDto.author, options))?.id;
+    }
+
+    if (getArticlesDto.favorited) {
+      getArticlesDto.favoritedId = (await this.userService.getUserByUsername(getArticlesDto.favorited, options))?.id;
     }
 
     const { count, rows } = await this.articleRepository.findAndCountAll(getArticlesDto, options);

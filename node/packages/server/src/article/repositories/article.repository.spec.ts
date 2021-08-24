@@ -38,9 +38,9 @@ describe('ArticleRepository', () => {
 
   it('should be return article list', async () => {
     const dto = new GetArticlesDto();
-    dto.author = 3;
+    dto.authorId = 3;
     dto.tag = 'test';
-    dto.favorited = 1;
+    dto.favoritedId = 1;
     dto.page = 2;
     dto.limit = 20;
 
@@ -49,7 +49,7 @@ describe('ArticleRepository', () => {
     expect(mockArticle.findAndCountAll).toBeCalledTimes(1);
     expect(mockArticle.findAndCountAll).toBeCalledWith({
       where: {
-        authorId: dto.author,
+        authorId: dto.authorId,
       },
       order: [['updatedAt', 'DESC']],
       offset: (dto.page - 1) * dto.limit,
@@ -58,7 +58,7 @@ describe('ArticleRepository', () => {
         {
           model: ArticleFavorite,
           where: {
-            userId: dto.favorited,
+            userId: dto.favoritedId,
           },
           required: true,
         },

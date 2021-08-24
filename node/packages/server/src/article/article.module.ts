@@ -1,3 +1,4 @@
+import { UserModule } from './../user/user.module';
 import { Module } from '@nestjs/common';
 import { ArticleController } from './article.controller';
 import { ArticleService } from './article.service';
@@ -19,6 +20,7 @@ import { CommentRepository } from '@article/repositories/comment.repository';
 @Module({
   imports: [
     SharedModule,
+    UserModule,
     ProfileModule,
     SequelizeModule.forFeature([Article, ArticleFavorite, Tag, ArticleTag, Comment], DEFAULT_DATABASE_NAME),
   ],

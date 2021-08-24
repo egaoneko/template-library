@@ -46,7 +46,7 @@ describe('ArticleController (e2e)', () => {
       .get(`/api/articles`)
       .set('Authorization', `Bearer ${dto.token}`)
       .query({
-        author: articles[0].authorId,
+        author: articles[0].author.username,
       })
       .expect(200)
       .expect(({ body }) => {
@@ -82,7 +82,7 @@ describe('ArticleController (e2e)', () => {
       .get(`/api/articles`)
       .set('Authorization', `Bearer ${dto.token}`)
       .query({
-        favorited: user.id,
+        favorited: user.username,
       })
       .expect(200)
       .expect(({ body }) => {

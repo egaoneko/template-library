@@ -21,7 +21,7 @@ const TabProvider: FC<PropsType> = props => {
   let defaultActiveKey: Key | null = props.defaultActiveKey ?? null;
   const children = toArray<TapPanePropsType>(props.children);
 
-  if (!defaultActiveKey && children.length > 0) {
+  if (defaultActiveKey === undefined && children.length > 0) {
     defaultActiveKey = children[0].key;
   }
 
@@ -61,7 +61,7 @@ function getTabNavList(children: ReactElement<TapPanePropsType>[]): ReactNode[] 
 }
 
 function getTabPane(children: ReactElement<TapPanePropsType>[], activeKey: Key | null): ReactNode {
-  const child = children.find(child => child.key === activeKey);
+  const child = children.find(child => child.key === activeKey?.toString());
 
   if (!child) {
     return <></>;

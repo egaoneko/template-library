@@ -1,11 +1,10 @@
 import Input from '@components/molecules/form/Input';
-import React, { FC, ReactNode } from 'react';
+import React, { FC } from 'react';
 import { useState } from 'react';
 import { AiOutlineClose } from 'react-icons/ai';
 
 interface PropsType {
   loading?: boolean;
-  children?: ReactNode;
 }
 
 const EditorTagsInput: FC<PropsType> = props => {

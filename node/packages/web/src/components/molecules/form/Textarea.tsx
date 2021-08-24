@@ -1,4 +1,4 @@
-import React, { forwardRef } from 'react';
+import React, { FC } from 'react';
 import { RegisterOptions } from 'react-hook-form';
 import { useFormContext } from './FormContext';
 
@@ -9,7 +9,7 @@ interface PropsType
   options?: RegisterOptions;
 }
 
-const Textarea = forwardRef<HTMLTextAreaElement, PropsType>((props, ref) => {
+const Textarea: FC<PropsType> = props => {
   const { register, formState } = useFormContext();
   const { name, options, className, ...formProps } = props;
   const errors = formState?.errors[name];
@@ -25,7 +25,6 @@ const Textarea = forwardRef<HTMLTextAreaElement, PropsType>((props, ref) => {
           ].join(' ')}
           {...formProps}
           {...register(name, options)}
-          ref={ref}
         />
       )}
       {errors?.type === 'required' && (
@@ -36,6 +35,6 @@ const Textarea = forwardRef<HTMLTextAreaElement, PropsType>((props, ref) => {
       )}
     </div>
   );
-});
+};
 
 export default Textarea;

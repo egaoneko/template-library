@@ -1,5 +1,5 @@
 import Head from '@components/atoms/layout/Head';
-import React, { FC, ReactNode, useState } from 'react';
+import React, { FC, useState } from 'react';
 import EditorUpdateContentTemplate from './templates/EditorUpdateContentTemplate';
 import { useRouter } from 'next/router';
 import { BasePropsType } from '@interfaces/common';
@@ -10,7 +10,6 @@ import { notifyError, notifySuccess } from '@utils/notifiy';
 
 interface PropsType extends BasePropsType {
   article: IArticle;
-  children?: ReactNode;
 }
 
 const EditorEditPageContainer: FC<PropsType> = props => {
@@ -37,7 +36,7 @@ const EditorEditPageContainer: FC<PropsType> = props => {
 
   return (
     <BaseLayoutTemplate pathname={props.pathname}>
-      <Head title={'SETTINGS'} />
+      <Head title={'EDIT ARTICLE'} />
       <EditorUpdateContentTemplate loading={loading} article={article} onFinish={onFinish} />
     </BaseLayoutTemplate>
   );

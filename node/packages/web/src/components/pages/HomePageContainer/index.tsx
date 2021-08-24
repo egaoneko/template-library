@@ -1,5 +1,5 @@
 import Head from '@components/atoms/layout/Head';
-import React, { FC, ReactNode } from 'react';
+import React, { FC } from 'react';
 import HomeContentTemplate from './templates/HomeContentTemplate';
 import { BasePropsType, ListResult } from '@interfaces/common';
 import BaseLayoutTemplate from '@components/templates/layout/BaseLayoutTemplate';
@@ -14,9 +14,7 @@ import { useRouter } from 'next/router';
 import HomeBannerTemplate from './templates/HomeBannerTemplate';
 
 const PAGE_LIMIT = 5;
-interface PropsType extends BasePropsType {
-  children?: ReactNode;
-}
+interface PropsType extends BasePropsType {}
 
 const HomePageContainer: FC<PropsType> = props => {
   const { userStore } = useStores();

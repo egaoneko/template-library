@@ -1,14 +1,14 @@
-import SignInPageContainer from '@components/pages/auth/SignInPageContainer';
+import ProfilePageContainer from '@components/pages/profile/ProfilePageContainer';
 import { withAuth } from '@utils/auth';
 import { GetServerSidePropsResult, NextPageContext } from 'next';
 import React, { ReactNode } from 'react';
 
 interface PropsType {
-  successUrl?: string;
+  username: string;
 }
 
 function Index(props: PropsType): ReactNode {
-  return <SignInPageContainer {...props} />;
+  return <ProfilePageContainer {...props} />;
 }
 
 export default Index;
@@ -19,9 +19,9 @@ export const getServerSideProps = withAuth<PropsType>(
 
     return {
       props: {
-        successUrl: (query.successUrl as string) ?? null,
+        username: (query.username as string) ?? null,
       },
     };
   },
-  { optional: true, bypass: true },
+  { optional: true, successUrl: '/' },
 );

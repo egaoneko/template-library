@@ -20,9 +20,11 @@ import { TagRepository } from './repositories/tag.repository';
 import { ArticleTagRepository } from './repositories/article-tag.repository';
 import { CommentRepository } from './repositories/comment.repository';
 import { SequelizeOptionDto } from '../shared/decorators/transaction/transactional.decorator';
+import { UserService } from '../user/user.service';
 
 describe('ArticleService', () => {
   let service: ArticleService;
+  let mockUserService: UserService;
   let mockProfileService: ProfileService;
   let mockArticleRepository: ArticleRepository;
   let mockArticleFavoriteRepository: ArticleFavoriteRepository;
@@ -32,6 +34,7 @@ describe('ArticleService', () => {
   let mockSequelize: Sequelize;
 
   beforeEach(async () => {
+    mockUserService = createMock<UserService>();
     mockProfileService = createMock<ProfileService>();
     mockArticleRepository = createMock<ArticleRepository>();
     mockArticleFavoriteRepository = createMock<ArticleFavoriteRepository>();
@@ -42,6 +45,10 @@ describe('ArticleService', () => {
 
     const module: TestingModule = await Test.createTestingModule({
       providers: [
+        {
+          provide: UserService,
+          useValue: mockUserService,
+        },
         {
           provide: ProfileService,
           useValue: mockProfileService,
@@ -87,9 +94,6 @@ describe('ArticleService', () => {
     service.ofArticleDto = jest.fn().mockReturnValue({}) as any;
 
     const dto = new GetArticlesDto();
-    dto.author = 3;
-    dto.tag = 'test';
-    dto.favorited = 1;
     dto.page = 2;
     dto.limit = 20;
 
@@ -98,6 +102,31 @@ describe('ArticleService', () => {
     expect(mockSequelize.transaction).toBeCalledTimes(1);
     expect(mockArticleRepository.findAndCountAll).toBeCalledTimes(1);
     expect(mockArticleRepository.findAndCountAll).toBeCalledWith(dto, { transaction: {} });
+    expect(mockUserService.getUserById).toBeCalledTimes(0);
+    expect(service.ofArticleDto).toBeCalledTimes(2);
+  });
+
+  it('should be return article list with options', async () => {
+    /* eslint-disable @typescript-eslint/no-explicit-any */
+    mockUserService.getUserByUsername = jest.fn().mockReturnValueOnce({ id: 3 }).mockReturnValue({ id: 2 }) as any;
+    mockArticleRepository.findAndCountAll = jest.fn().mockReturnValue({ count: 2, rows: [{}, {}] }) as any;
+    service.ofArticleDto = jest.fn().mockReturnValue({}) as any;
+
+    const dto = new GetArticlesDto();
+    dto.author = 'author';
+    dto.tag = 'test';
+    dto.favorited = 'favorited';
+    dto.page = 2;
+    dto.limit = 20;
+
+    const actual = await service.getArticles(dto, 1);
+    expect(actual).toBeDefined();
+    expect(mockSequelize.transaction).toBeCalledTimes(1);
+    expect(mockArticleRepository.findAndCountAll).toBeCalledTimes(1);
+    expect(mockArticleRepository.findAndCountAll).toBeCalledWith(dto, { transaction: {} });
+    expect(mockUserService.getUserByUsername).toBeCalledTimes(2);
+    expect((mockUserService.getUserByUsername as jest.Mock).mock.calls[0][0]).toEqual(dto.author);
+    expect((mockUserService.getUserByUsername as jest.Mock).mock.calls[1][0]).toEqual(dto.favorited);
     expect(service.ofArticleDto).toBeCalledTimes(2);
   });
 

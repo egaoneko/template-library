@@ -1,4 +1,4 @@
-import React, { FC, ReactNode } from 'react';
+import React, { FC } from 'react';
 import { UseQueryResult } from 'react-query';
 import styled from 'styled-components';
 import tw from 'twin.macro';
@@ -7,10 +7,9 @@ interface PropsType {
   tagsResult: UseQueryResult<string[]>;
   selectedTag: string | null;
   onSelectTag: (tag: string | null) => unknown;
-  children?: ReactNode;
 }
 
-const TagsContentTemplate: FC<PropsType> = props => {
+const HomeTagsContentTemplate: FC<PropsType> = props => {
   const { tagsResult } = props;
   return (
     <Container>
@@ -39,7 +38,7 @@ const TagsContentTemplate: FC<PropsType> = props => {
   );
 };
 
-export default TagsContentTemplate;
+export default HomeTagsContentTemplate;
 
 const Container = styled.div`
   ${tw`w-64`}

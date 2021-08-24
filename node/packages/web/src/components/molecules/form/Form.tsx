@@ -5,6 +5,7 @@ import FormProvider from './FormProvider';
 
 interface PropsType {
   gap?: number;
+  resetAfterFinish?: boolean;
   onFinish?: (data: any) => unknown;
   children?: ReactNode;
 }

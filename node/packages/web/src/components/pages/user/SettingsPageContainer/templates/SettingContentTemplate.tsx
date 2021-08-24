@@ -1,4 +1,4 @@
-import React, { FC, ReactNode } from 'react';
+import React, { FC } from 'react';
 import Form from '@components/molecules/form/Form';
 import Input from '@components/molecules/form/Input';
 import Submit from '@components/molecules/form/Submit';
@@ -16,7 +16,6 @@ interface PropsType {
   onFinish: (request: UpdateRequest) => Promise<void>;
   onFinishUpload: (file: IFile) => Promise<void>;
   onClickLogout: () => Promise<void>;
-  children?: ReactNode;
 }
 
 const SettingsContentTemplate: FC<PropsType> = props => {

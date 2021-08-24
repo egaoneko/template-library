@@ -1,4 +1,4 @@
-import React, { forwardRef } from 'react';
+import React, { FC } from 'react';
 import { RegisterOptions } from 'react-hook-form';
 import { useFormContext } from './FormContext';
 
@@ -8,7 +8,7 @@ interface PropsType extends React.DetailedHTMLProps<React.InputHTMLAttributes<HT
   options?: RegisterOptions;
 }
 
-const Input = forwardRef<HTMLInputElement, PropsType>((props, ref) => {
+const Input: FC<PropsType> = props => {
   const { register, formState } = useFormContext();
   const { name, className, options, ...formProps } = props;
   const errors = formState?.errors[name];
@@ -24,7 +24,6 @@ const Input = forwardRef<HTMLInputElement, PropsType>((props, ref) => {
           ].join(' ')}
           {...formProps}
           {...register(name, options)}
-          ref={ref}
         />
       )}
       {errors?.type === 'required' && (
@@ -35,6 +34,6 @@ const Input = forwardRef<HTMLInputElement, PropsType>((props, ref) => {
       )}
     </div>
   );
-});
+};
 
 export default Input;

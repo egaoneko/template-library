@@ -1,33 +1,26 @@
 import { IArticle } from '@interfaces/article';
 import { ListResult } from '@interfaces/common';
-import { IUser } from '@interfaces/user';
 import React, { FC } from 'react';
 import { UseQueryResult } from 'react-query';
 import styled from 'styled-components';
 import tw from 'twin.macro';
-import { FeedTab } from '../enum';
-import HomeFeedContentTemplate from './HomeFeedContentTemplate';
-import HomeTagsContentTemplate from './HomeTagsContentTemplate';
+import { PostTab } from '../enum';
+import FeedContentTemplate from './ProfileFeedContentTemplate';
 
 interface PropsType {
-  user: IUser | null;
-  activeTab: FeedTab | null;
-  onChangeTab: (key: FeedTab | null) => unknown;
+  activeTab: PostTab | null;
+  onChangeTab: (key: PostTab | null) => unknown;
   articlesResult: UseQueryResult<ListResult<IArticle>>;
   page: number;
   limit: number;
   onChangePage: (page: number) => unknown;
   toggleFavorite: (slag: string, toggle: boolean) => Promise<unknown>;
-  tagsResult: UseQueryResult<string[]>;
-  selectedTag: string | null;
-  onSelectTag: (tag: string | null) => unknown;
 }
 
-const HomeContentTemplate: FC<PropsType> = props => {
+const ProfileContentTemplate: FC<PropsType> = props => {
   return (
     <Container>
-      <HomeFeedContentTemplate
-        user={props.user}
+      <FeedContentTemplate
         activeTab={props.activeTab}
         onChangeTab={props.onChangeTab}
         articlesResult={props.articlesResult}
@@ -36,16 +29,11 @@ const HomeContentTemplate: FC<PropsType> = props => {
         onChangePage={props.onChangePage}
         toggleFavorite={props.toggleFavorite}
       />
-      <HomeTagsContentTemplate
-        tagsResult={props.tagsResult}
-        selectedTag={props.selectedTag}
-        onSelectTag={props.onSelectTag}
-      />
     </Container>
   );
 };
 
-export default HomeContentTemplate;
+export default ProfileContentTemplate;
 
 const Container = styled.div`
   ${tw`container mx-auto flex flex-col sm:flex-row flex-grow gap-6`}

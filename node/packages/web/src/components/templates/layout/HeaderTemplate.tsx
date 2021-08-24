@@ -37,7 +37,7 @@ const HeaderTemplate: FC<PropsType> = props => {
               <Menu href="/user/settings" icon={<AiOutlineSetting />} active={props.pathname === '/user/settings'}>
                 Settings
               </Menu>
-              <Menu href="/">
+              <Menu href={`/profile/${userStore.user.username}`}>
                 <div className="flex items-center gap-1">
                   <Avatar size="small" url={userStore.user.image} />
                   {userStore.user.username}

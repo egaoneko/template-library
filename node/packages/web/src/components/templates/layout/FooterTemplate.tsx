@@ -1,21 +1,18 @@
 import React, { FC } from 'react';
 import styled from 'styled-components';
 import tw from 'twin.macro';
-import { useStores } from '@stores/stores';
 import Link from 'next/link';
 
 interface PropsType {}
 
 const FooterTemplate: FC<PropsType> = () => {
-  const { userStore } = useStores();
-
   return (
     <Container>
-      <Link href="/">
+      <Link href="/" passHref>
         <SiteLink className="text-base mr-1 font-bold">conduit</SiteLink>
       </Link>
       © 2020. An interactive learning project from
-      <Link href="https://thinkster.io/">
+      <Link href="https://thinkster.io/" passHref>
         <SiteLink className="ml-1">Thinkster</SiteLink>
       </Link>
       . Code licensed under MIT.

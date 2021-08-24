@@ -22,8 +22,8 @@ export interface GetArticleFeedListRequest {
 
 export interface GetArticleListRequest {
   tag?: string;
-  author?: number;
-  favorited?: number;
+  author?: string;
+  favorited?: string;
   limit?: number;
   page?: number;
 }

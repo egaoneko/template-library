@@ -12,25 +12,25 @@ export class GetArticlesDto {
   })
   tag!: string;
 
-  @Type(() => Number)
   @IsOptional()
-  @IsNumber()
+  @IsString()
   @ApiPropertyOptional({
     example: 1,
-    description: 'author of article',
-    type: 'number',
+    description: 'author name of article',
+    type: 'string',
   })
-  author!: number;
+  author!: string;
+  authorId?: number;
 
-  @Type(() => Number)
   @IsOptional()
-  @IsNumber()
+  @IsString()
   @ApiPropertyOptional({
     example: 2,
-    description: 'user of favorited',
-    type: 'number',
+    description: 'user name of favorited',
+    type: 'string',
   })
-  favorited!: number;
+  favorited!: string;
+  favoritedId?: number;
 
   @Type(() => Number)
   @IsNotEmpty()

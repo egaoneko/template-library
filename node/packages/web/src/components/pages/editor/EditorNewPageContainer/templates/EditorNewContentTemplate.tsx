@@ -1,4 +1,4 @@
-import React, { FC, ReactNode } from 'react';
+import React, { FC } from 'react';
 import Form from '@components/molecules/form/Form';
 import Input from '@components/molecules/form/Input';
 import Submit from '@components/molecules/form/Submit';
@@ -9,7 +9,6 @@ import EditorTagsInput from './EditorTagsInput';
 interface PropsType {
   loading?: boolean;
   onFinish: (request: CreateArticleRequest) => Promise<void>;
-  children?: ReactNode;
 }
 
 const EditorNewContentTemplate: FC<PropsType> = props => {

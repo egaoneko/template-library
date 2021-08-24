@@ -13,7 +13,6 @@ import { UseQueryResult } from 'react-query';
 import styled from 'styled-components';
 import tw from 'twin.macro';
 import { AiFillDelete } from 'react-icons/ai';
-import { useRef } from 'react';
 
 interface PropsType {
   loading?: boolean;
@@ -25,7 +24,6 @@ interface PropsType {
 }
 
 const ArticleCommentTemplate: FC<PropsType> = props => {
-  const textRef = useRef<HTMLTextAreaElement>(null);
   const article = props.articleResult.data;
   const comments = props.commentsResult.data;
   const user = props.user;
@@ -39,17 +37,13 @@ const ArticleCommentTemplate: FC<PropsType> = props => {
       {user && (
         <FormContainer>
           <Form
+            resetAfterFinish
             gap={0}
             onFinish={async (request: CreateCommentRequest) => {
               await props.onCreate(article.slug, request);
-              if (!textRef.current) {
-                return;
-              }
-              textRef.current.value = '';
             }}
           >
             <Textarea
-              ref={textRef}
               disabled={props.loading}
               name="body"
               placeholder="Write a comment..."

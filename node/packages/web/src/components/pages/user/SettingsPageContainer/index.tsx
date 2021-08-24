@@ -1,5 +1,5 @@
 import Head from '@components/atoms/layout/Head';
-import React, { FC, ReactNode, useState } from 'react';
+import React, { FC, useState } from 'react';
 import SettingsContentTemplate from './templates/SettingContentTemplate';
 import { UpdateRequest } from '@interfaces/user';
 import { useRouter } from 'next/router';
@@ -8,9 +8,7 @@ import { BasePropsType } from '@interfaces/common';
 import { IFile } from '@interfaces/file';
 import BaseLayoutTemplate from '@components/templates/layout/BaseLayoutTemplate';
 
-interface PropsType extends BasePropsType {
-  children?: ReactNode;
-}
+interface PropsType extends BasePropsType {}
 
 const SettingsPageContainer: FC<PropsType> = props => {
   const { userStore } = useStores();

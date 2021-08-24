@@ -34,6 +34,7 @@ export async function createTestArticle(app: INestApplication, user: User): Prom
     body: 'It takes a Jacobian',
     authorId: user2.id,
   });
+  article1.author = user2;
   const article2 = await articleModel.create({
     slug: 'how-to-train-your-dragon-2',
     title: 'How to train your dragon 2',
@@ -41,6 +42,7 @@ export async function createTestArticle(app: INestApplication, user: User): Prom
     body: 'It a dragon',
     authorId: user3.id,
   });
+  article2.author = user3;
 
   const articleFavoriteModel = app.get<typeof ArticleFavorite>(getModelToken(ArticleFavorite, DEFAULT_DATABASE_NAME));
   await articleFavoriteModel.create({

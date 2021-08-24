@@ -3,17 +3,15 @@ import Tabs from '@components/molecules/tab/Tabs';
 import FeedList from '@components/organisms/article/FeedList';
 import { IArticle } from '@interfaces/article';
 import { ListResult } from '@interfaces/common';
-import { IUser } from '@interfaces/user';
 import React, { FC, ReactNode } from 'react';
 import { UseQueryResult } from 'react-query';
 import styled from 'styled-components';
 import tw from 'twin.macro';
-import { FeedTab } from '../enum';
+import { PostTab } from '../enum';
 
 interface PropsType {
-  user: IUser | null;
-  activeTab: FeedTab | null;
-  onChangeTab: (key: FeedTab | null) => unknown;
+  activeTab: PostTab | null;
+  onChangeTab: (key: PostTab | null) => unknown;
   articlesResult: UseQueryResult<ListResult<IArticle>>;
   page: number;
   limit: number;
@@ -22,22 +20,20 @@ interface PropsType {
   children?: ReactNode;
 }
 
-const FeedContentTemplate: FC<PropsType> = props => {
+const ProfileFeedContentTemplate: FC<PropsType> = props => {
   return (
     <Container>
-      <Tabs activeKey={props.activeTab} onChange={key => props.onChangeTab(key as FeedTab)}>
-        {props.user && (
-          <TabPane tab="Your Feed" key={FeedTab.USER_FEED}>
-            <FeedList
-              articlesResult={props.articlesResult}
-              page={props.page}
-              limit={props.limit}
-              onChangePage={props.onChangePage}
-              toggleFavorite={props.toggleFavorite}
-            />
-          </TabPane>
-        )}
-        <TabPane tab="Global Feed" key={FeedTab.GLOBAL_FEED}>
+      <Tabs activeKey={props.activeTab} onChange={key => props.onChangeTab(key as PostTab)}>
+        <TabPane tab="My Posts" key={PostTab.MY_POSTS}>
+          <FeedList
+            articlesResult={props.articlesResult}
+            page={props.page}
+            limit={props.limit}
+            onChangePage={props.onChangePage}
+            toggleFavorite={props.toggleFavorite}
+          />
+        </TabPane>
+        <TabPane tab="Favorited Posts" key={PostTab.FAVORITED_POSTS}>
           <FeedList
             articlesResult={props.articlesResult}
             page={props.page}
@@ -51,7 +47,7 @@ const FeedContentTemplate: FC<PropsType> = props => {
   );
 };
 
-export default FeedContentTemplate;
+export default ProfileFeedContentTemplate;
 
 const Container = styled.div`
   ${tw`w-full`}

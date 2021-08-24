@@ -1,5 +1,5 @@
 import Head from '@components/atoms/layout/Head';
-import React, { FC, ReactNode, useState } from 'react';
+import React, { FC, useState } from 'react';
 import SignUpContentTemplate from './templates/SignUpContentTemplate';
 import { RegisterRequest } from '@interfaces/user';
 import { useRouter } from 'next/router';
@@ -7,9 +7,7 @@ import { useStores } from '@stores/stores';
 import { BasePropsType } from '@interfaces/common';
 import BaseLayoutTemplate from '@components/templates/layout/BaseLayoutTemplate';
 
-interface PropsType extends BasePropsType {
-  children?: ReactNode;
-}
+interface PropsType extends BasePropsType {}
 
 const SignUpPageContainer: FC<PropsType> = props => {
   const { userStore } = useStores();
