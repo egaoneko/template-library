@@ -27,7 +27,7 @@ const Input: FC<PropsType> = props => {
         />
       )}
       {errors?.type === 'required' && (
-        <p className="mt-2 ml-4 text-red-500 text-xs italic">
+        <p className="mt-2 ml-4 text-red-500 text-xs italic" data-cy="form-input-errors">
           <span className="font-bold">{name}</span>
           <span> is required</span>
         </p>

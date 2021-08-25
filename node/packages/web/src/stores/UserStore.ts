@@ -91,7 +91,7 @@ export class UserStore {
       return;
     }
 
-    setToken(this.user.token);
+    setToken(this.user.token, this.user.refreshToken);
   }
 }
 

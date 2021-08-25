@@ -18,26 +18,37 @@ const HeaderTemplate: FC<PropsType> = props => {
   return (
     <Container>
       <Heading>
-        <HeadingTitle>
+        <HeadingTitle data-cy="header-logo-link">
           <Link href="/">conduit</Link>
         </HeadingTitle>
         <Menus>
-          <Menu href="/">Home</Menu>
+          <Menu href="/" data-cy="header-home-link">
+            Home
+          </Menu>
           {!userStore.user && (
             <>
-              <Menu href="/auth/sign-in">Sign in</Menu>
-              <Menu href="/auth/sign-up">Sign up</Menu>
+              <Menu href="/auth/sign-in" data-cy="header-sign-in-link">
+                Sign in
+              </Menu>
+              <Menu href="/auth/sign-up" data-cy="header-sign-up-link">
+                Sign up
+              </Menu>
             </>
           )}
           {userStore.user && (
             <>
-              <Menu href="/editor/new" icon={<AiOutlineEdit />}>
+              <Menu href="/editor/new" icon={<AiOutlineEdit />} data-cy="header-new-post-link">
                 New Post
               </Menu>
-              <Menu href="/user/settings" icon={<AiOutlineSetting />} active={props.pathname === '/user/settings'}>
+              <Menu
+                href="/user/settings"
+                icon={<AiOutlineSetting />}
+                active={props.pathname === '/user/settings'}
+                data-cy="header-settings-link"
+              >
                 Settings
               </Menu>
-              <Menu href={`/profile/${userStore.user.username}`}>
+              <Menu href={`/profile/${userStore.user.username}`} data-cy="header-profile-link">
                 <div className="flex items-center gap-1">
                   <Avatar size="small" url={userStore.user.image} />
                   {userStore.user.username}

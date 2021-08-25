@@ -35,7 +35,7 @@ const SignUpContentTemplate: FC<PropsType> = props => {
           placeholder="Password"
           options={{ required: true }}
         />
-        <Submit disabled={props.loading} loading={props.loading} className="ml-auto">
+        <Submit disabled={props.loading} className="ml-auto">
           Sing up
         </Submit>
       </Form>

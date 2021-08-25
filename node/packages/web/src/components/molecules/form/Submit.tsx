@@ -3,23 +3,16 @@ import Button from '../../atoms/common/Button';
 
 interface PropsType {
   disabled?: boolean;
-  loading?: boolean;
   size?: 'small' | 'middle' | 'large';
   className?: string;
   children?: ReactNode;
 }
 
 const Submit: FC<PropsType> = props => {
+  const { size, className, disabled, children, ...formProps } = props;
   return (
-    <Button
-      styleType="primary"
-      fill
-      size={props.size}
-      disabled={props.disabled}
-      type="submit"
-      className={props.className}
-    >
-      {props.children}
+    <Button styleType="primary" fill size={size} disabled={disabled} type="submit" className={className} {...formProps}>
+      {children}
     </Button>
   );
 };

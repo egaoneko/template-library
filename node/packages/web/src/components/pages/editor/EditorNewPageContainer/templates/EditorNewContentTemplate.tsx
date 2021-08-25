@@ -38,7 +38,7 @@ const EditorNewContentTemplate: FC<PropsType> = props => {
           options={{ required: true }}
         />
         <EditorTagsInput />
-        <Submit disabled={props.loading} loading={props.loading} className="ml-auto">
+        <Submit disabled={props.loading} className="ml-auto">
           Publish Article
         </Submit>
       </Form>

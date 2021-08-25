@@ -11,17 +11,18 @@ interface PropsType {
 }
 
 const Menu: FC<PropsType> = props => {
+  const { active, href, as, icon, children, ...containerProps } = props;
   return (
     <div
-      className={[
-        'py-2 ml-4 cursor-pointer first:ml-0 hover:text-gray-800 flex',
-        props.active ? 'text-primary' : '',
-      ].join(' ')}
+      className={['py-2 ml-4 cursor-pointer first:ml-0 hover:text-gray-800 flex', active ? 'text-primary' : ''].join(
+        ' ',
+      )}
+      {...containerProps}
     >
-      <Link href={props.href} as={props.as} passHref>
+      <Link href={href} as={as} passHref>
         <div className={'flex items-center'}>
-          <span className="mr-1">{props.icon}</span>
-          <span>{props.children}</span>
+          <span className="mr-1">{icon}</span>
+          <span>{children}</span>
         </div>
       </Link>
     </div>

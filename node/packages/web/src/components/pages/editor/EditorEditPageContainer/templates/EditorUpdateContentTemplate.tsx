@@ -40,7 +40,7 @@ const EditorUpdateContentTemplate: FC<PropsType> = props => {
           defaultValue={props.article.body}
           options={{ required: true }}
         />
-        <Submit disabled={props.loading} loading={props.loading} className="ml-auto">
+        <Submit disabled={props.loading} className="ml-auto">
           Publish Article
         </Submit>
       </Form>

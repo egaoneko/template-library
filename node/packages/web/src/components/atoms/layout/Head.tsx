@@ -9,7 +9,7 @@ interface PropsType {
 const Head: FC<PropsType> = props => {
   return (
     <NextHead>
-      <title>{props.title}</title>
+      <title data-cy="head-title">{props.title}</title>
       {props.children}
     </NextHead>
   );

@@ -9,11 +9,15 @@ const FooterTemplate: FC<PropsType> = () => {
   return (
     <Container>
       <Link href="/" passHref>
-        <SiteLink className="text-base mr-1 font-bold">conduit</SiteLink>
+        <SiteLink className="text-base mr-1 font-bold" data-cy="footer-logo-link">
+          conduit
+        </SiteLink>
       </Link>
       © 2020. An interactive learning project from
       <Link href="https://thinkster.io/" passHref>
-        <SiteLink className="ml-1">Thinkster</SiteLink>
+        <SiteLink className="ml-1" data-cy="footer-site-link">
+          Thinkster
+        </SiteLink>
       </Link>
       . Code licensed under MIT.
     </Container>

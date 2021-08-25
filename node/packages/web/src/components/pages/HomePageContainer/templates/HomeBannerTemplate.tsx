@@ -7,8 +7,8 @@ interface PropsType {}
 const HomeBannerTemplate: FC<PropsType> = () => {
   return (
     <Container>
-      <Title>conduit</Title>
-      <Description>A place to share your knowledge.</Description>
+      <Title data-cy="banner-title">conduit</Title>
+      <Description data-cy="banner-description">A place to share your knowledge.</Description>
     </Container>
   );
 };

@@ -16,6 +16,7 @@
     "dev": "next dev",
     "start": "next start",
     "test": "jest --passWithNoTests",
+    "test:e2e": "cypress open",
     "lint": "next lint",
     "format": "prettier --write \"src/**/*.ts\" \"__tests__/**/*.ts\""
   },
@@ -54,7 +55,9 @@
     "@types/styled-components": "5.1.12",
     "autoprefixer": "10.3.1",
     "babel-plugin-macros": "3.1.0",
+    "babel-plugin-react-remove-properties": "0.3.0",
     "babel-plugin-styled-components": "1.13.2",
+    "cypress": "8.3.0",
     "eslint-config-next": "11.0.1",
     "postcss": "8.3.6",
     "tailwindcss": "2.2.7",

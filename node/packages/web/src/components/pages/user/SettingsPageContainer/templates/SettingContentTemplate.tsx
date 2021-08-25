@@ -61,7 +61,7 @@ const SettingsContentTemplate: FC<PropsType> = props => {
           defaultValue={props.user?.email}
         />
         <Input disabled={props.loading} type="password" name="password" placeholder="New Password" />
-        <Submit disabled={props.loading} loading={props.loading} className="ml-auto">
+        <Submit disabled={props.loading} className="ml-auto">
           Update Settings
         </Submit>
         <hr className="border-t border-gray-200"></hr>

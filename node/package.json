@@ -24,6 +24,8 @@
     "test:web": "lerna run test --stream --scope @my-app/web",
     "test:server": "lerna run test --stream --scope @my-app/server",
     "test:app": "lerna run test --stream --scope @my-app/app",
+    "test:e2e:web": "lerna run test:e2e --stream --scope @my-app/web",
+    "test:e2e:server": "lerna run test:e2e --stream --scope @my-app/server",
     "schema": "lerna run schema --scope @my-app/core",
     "build": "lerna run build",
     "build:core": "lerna run build --scope @my-app/core",

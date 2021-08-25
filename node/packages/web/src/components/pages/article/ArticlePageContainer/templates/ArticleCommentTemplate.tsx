@@ -58,7 +58,7 @@ const ArticleCommentTemplate: FC<PropsType> = props => {
                   <Link href={`/profile/${user.username}`}>{user.username}</Link>
                 </AuthorName>
               </AuthorContainer>
-              <Submit disabled={props.loading} loading={props.loading} size="small" className="ml-auto">
+              <Submit disabled={props.loading} size="small" className="ml-auto">
                 Post Comment
               </Submit>
             </FormInfo>
