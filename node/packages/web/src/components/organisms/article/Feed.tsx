@@ -16,7 +16,7 @@ interface PropsType {
 const Feed: FC<PropsType> = props => {
   const router = useRouter();
   return (
-    <Container>
+    <Container data-cy="feed-container">
       <AuthorContainer>
         <Avatar size="middle" url={props.article.author.image} />
         <AuthorInfo>

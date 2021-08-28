@@ -18,7 +18,7 @@ interface PropsType {
 const FeedList: FC<PropsType> = props => {
   const { articlesResult } = props;
   return (
-    <Container>
+    <Container data-cy="feed-list">
       {articlesResult.isLoading && <span>Loading articles.</span>}
       {articlesResult.isError && <span>Cannot load recent articles.</span>}
       {articlesResult.data &&

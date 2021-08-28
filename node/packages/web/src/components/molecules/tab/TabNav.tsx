@@ -12,7 +12,11 @@ interface PropsType {
 const TabNav: FC<PropsType> = props => {
   const { activeKey, onChange } = useTabContext();
   return (
-    <Container active={props.activeKey === activeKey?.toString()} onClick={() => onChange(props.activeKey)}>
+    <Container
+      active={props.activeKey === activeKey?.toString()}
+      onClick={() => onChange(props.activeKey)}
+      data-cy={`tab-nav-${props.activeKey?.toString().toLowerCase()}`}
+    >
       {props.children}
     </Container>
   );

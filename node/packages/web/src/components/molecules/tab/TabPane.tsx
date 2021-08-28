@@ -5,12 +5,12 @@ import tw from 'twin.macro';
 
 export interface TapPanePropsType {
   tab: ReactNode;
-  key: Key;
+  activeKey?: Key | null;
   children?: ReactNode;
 }
 
 const TabPane: FC<TapPanePropsType> = props => {
-  return <Container>{props.children}</Container>;
+  return <Container data-cy={`tab-pane-${props.activeKey?.toString().toLowerCase()}`}>{props.children}</Container>;
 };
 
 export default TabPane;

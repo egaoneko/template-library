@@ -13,18 +13,21 @@ const HomeTagsContentTemplate: FC<PropsType> = props => {
   const { tagsResult } = props;
   return (
     <Container>
-      <Content>
+      <Content data-cy="content-tags-container">
         {tagsResult.isLoading && <span>Loading tags.</span>}
         {tagsResult.isError && <span>Cannot load popular tags.</span>}
         {tagsResult.data && tagsResult.data?.length > 0 && (
           <>
-            <div className="font-bold">Popular Tags</div>
+            <div className="font-bold" data-cy="content-tags-header">
+              Popular Tags
+            </div>
             <Tags>
               {tagsResult.data?.map(tag => (
                 <Tag
                   key={tag}
                   selected={props.selectedTag === tag}
                   onClick={() => props.onSelectTag(props.selectedTag !== tag ? tag : null)}
+                  data-cy="content-tag"
                 >
                   {tag}
                 </Tag>

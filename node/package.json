@@ -36,7 +36,8 @@
     "lint": "lerna run lint",
     "format": "lerna run format",
     "publish": "lerna publish --yes",
-    "publish:canary": "lerna publish --canary --yes"
+    "publish:canary": "lerna publish --canary --yes",
+    "docker": "docker-compose -f ../docker-compose.yml up"
   },
   "dependencies": {
     "axios": "0.21.1",

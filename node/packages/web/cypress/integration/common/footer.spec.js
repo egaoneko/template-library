@@ -1,4 +1,8 @@
 describe('Footer', () => {
+  beforeEach(() => {
+    cy.prepareHome(200);
+  });
+
   it('should navigate to the main page by logo', () => {
     cy.visit('http://localhost:3000/');
     cy.get('[data-cy=footer-logo-link]').contains('conduit').click();

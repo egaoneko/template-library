@@ -1,5 +1,5 @@
 import toArray from '@utils/children/to-array';
-import React, { FC, ReactNode, useState } from 'react';
+import React, { cloneElement, FC, ReactNode, useState } from 'react';
 import { useEffect } from 'react';
 import { ReactElement } from 'react';
 import { Key } from 'react';
@@ -67,5 +67,5 @@ function getTabPane(children: ReactElement<TapPanePropsType>[], activeKey: Key |
     return <></>;
   }
 
-  return child.props.children;
+  return cloneElement(child, { ...child.props, activeKey });
 }

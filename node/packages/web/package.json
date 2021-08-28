@@ -16,9 +16,11 @@
     "dev": "next dev",
     "start": "next start",
     "test": "jest --passWithNoTests",
-    "test:e2e": "cypress open",
+    "test:e2e": "start-server-and-test start:mock-server http-get://localhost:9999 cy:open",
     "lint": "next lint",
-    "format": "prettier --write \"src/**/*.ts\" \"__tests__/**/*.ts\""
+    "format": "prettier --write \"src/**/*.ts\" \"__tests__/**/*.ts\"",
+    "cy:open": "cypress open",
+    "start:mock-server": "node scripts/mock-server.js"
   },
   "dependencies": {
     "@my-app/core": "0.0.1",
@@ -59,7 +61,9 @@
     "babel-plugin-styled-components": "1.13.2",
     "cypress": "8.3.0",
     "eslint-config-next": "11.0.1",
+    "mockttp": "2.2.2",
     "postcss": "8.3.6",
+    "start-server-and-test": "1.13.1",
     "tailwindcss": "2.2.7",
     "twin.macro": "2.6.2"
   },
