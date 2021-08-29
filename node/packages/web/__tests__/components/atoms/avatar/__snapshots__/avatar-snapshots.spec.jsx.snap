@@ -1,0 +1,113 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Avatar Snapshots renders avatar with default options 1`] = `
+<div
+  className="Avatar__Wrapper-sc-m9feoe-0 icAXkY"
+>
+  <div
+    className="Avatar__Container-sc-m9feoe-1 JCubi w-8 h-8"
+  >
+    <img
+      alt="avatar"
+      className="Avatar__Img-sc-m9feoe-2 iQvAVN rounded-full"
+      src="https://static.productionready.io/images/smiley-cyrus.jpg"
+    />
+  </div>
+</div>
+`;
+
+exports[`Avatar Snapshots renders avatar with large size 1`] = `
+<div
+  className="Avatar__Wrapper-sc-m9feoe-0 icAXkY"
+>
+  <div
+    className="Avatar__Container-sc-m9feoe-1 JCubi w-32 h-32"
+  >
+    <img
+      alt="avatar"
+      className="Avatar__Img-sc-m9feoe-2 iQvAVN rounded-full"
+      src="https://static.productionready.io/images/smiley-cyrus.jpg"
+    />
+  </div>
+</div>
+`;
+
+exports[`Avatar Snapshots renders avatar with large size 2`] = `
+<div
+  className="Avatar__Wrapper-sc-m9feoe-0 icAXkY"
+>
+  <div
+    className="Avatar__Container-sc-m9feoe-1 JCubi w-32 h-32"
+  >
+    <img
+      alt="avatar"
+      className="Avatar__Img-sc-m9feoe-2 iQvAVN rounded-full"
+      src="https://static.productionready.io/images/smiley-cyrus.jpg"
+    />
+  </div>
+</div>
+`;
+
+exports[`Avatar Snapshots renders avatar with middle size 1`] = `
+<div
+  className="Avatar__Wrapper-sc-m9feoe-0 icAXkY"
+>
+  <div
+    className="Avatar__Container-sc-m9feoe-1 JCubi w-8 h-8"
+  >
+    <img
+      alt="avatar"
+      className="Avatar__Img-sc-m9feoe-2 iQvAVN rounded-full"
+      src="https://static.productionready.io/images/smiley-cyrus.jpg"
+    />
+  </div>
+</div>
+`;
+
+exports[`Avatar Snapshots renders avatar with small size 1`] = `
+<div
+  className="Avatar__Wrapper-sc-m9feoe-0 icAXkY"
+>
+  <div
+    className="Avatar__Container-sc-m9feoe-1 JCubi w-5 h-5"
+  >
+    <img
+      alt="avatar"
+      className="Avatar__Img-sc-m9feoe-2 iQvAVN rounded-full"
+      src="https://static.productionready.io/images/smiley-cyrus.jpg"
+    />
+  </div>
+</div>
+`;
+
+exports[`Avatar Snapshots renders avatar with url 1`] = `
+<div
+  className="Avatar__Wrapper-sc-m9feoe-0 icAXkY"
+>
+  <div
+    className="Avatar__Container-sc-m9feoe-1 JCubi w-8 h-8"
+  >
+    <img
+      alt="avatar"
+      className="Avatar__Img-sc-m9feoe-2 iQvAVN rounded-full"
+      src="http://example.com/sample.png"
+    />
+  </div>
+</div>
+`;
+
+exports[`Avatar Snapshots renders avatar with url and size 1`] = `
+<div
+  className="Avatar__Wrapper-sc-m9feoe-0 icAXkY"
+>
+  <div
+    className="Avatar__Container-sc-m9feoe-1 JCubi w-5 h-5"
+  >
+    <img
+      alt="avatar"
+      className="Avatar__Img-sc-m9feoe-2 iQvAVN rounded-full"
+      src="http://example.com/sample.png"
+    />
+  </div>
+</div>
+`;

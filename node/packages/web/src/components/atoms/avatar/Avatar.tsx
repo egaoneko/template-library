@@ -1,6 +1,10 @@
 /* eslint-disable  @next/next/no-img-element */
 
 import React, { FC } from 'react';
+import styled from 'styled-components';
+import tw from 'twin.macro';
+
+const DEFAULT_IMAGE = 'https://static.productionready.io/images/smiley-cyrus.jpg';
 
 interface PropsType {
   url?: string;
@@ -8,7 +12,7 @@ interface PropsType {
 }
 
 const Avatar: FC<PropsType> = props => {
-  const { url, size, ...containerProps } = props;
+  const { url, size, ...wrapperProps } = props;
   let width: number;
 
   switch (props.size) {
@@ -25,14 +29,24 @@ const Avatar: FC<PropsType> = props => {
   }
 
   return (
-    <div className="flex flex-row justify-center" {...containerProps}>
-      <div className={`relative flex justify-center items-center rounded-full w-${width} h-${width}`}>
-        <img className="rounded-full" src={props.url ?? DEFAULT_IMAGE} alt="avatar" />
-      </div>
-    </div>
+    <Wrapper {...wrapperProps}>
+      <Container className={`w-${width} h-${width}`}>
+        <Img className="rounded-full" src={props.url ?? DEFAULT_IMAGE} alt="avatar" />
+      </Container>
+    </Wrapper>
   );
 };
 
 export default Avatar;
 
-const DEFAULT_IMAGE = 'https://static.productionready.io/images/smiley-cyrus.jpg';
+const Wrapper = styled.div`
+  ${tw`flex flex-row justify-center`}
+`;
+
+const Container = styled.div`
+  ${tw`relative flex justify-center items-center rounded-full`}
+`;
+
+const Img = styled.img`
+  ${tw`rounded-full`}
+`;
