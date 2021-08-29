@@ -27,24 +27,26 @@ const ArticleBannerTemplate: FC<PropsType> = props => {
     <Container>
       {article && (
         <>
-          <Title>{article.title}</Title>
+          <Title data-cy="article-title">{article.title}</Title>
           <AuthorContainer>
-            <Avatar size="middle" url={article.author.image} />
+            <Avatar size="middle" url={article.author.image} data-cy="article-banner-author-image" />
             <AuthorInfo>
-              <AuthorName>
+              <AuthorName data-cy="article-banner-author-username">
                 <Link href={`/profile/${article.author.username}`}>{article.author.username}</Link>
               </AuthorName>
-              <AuthorDate>{format(new Date(article.updatedAt), 'EEE MMM d yyyy')}</AuthorDate>
+              <AuthorDate data-cy="article-banner-author-date">
+                {format(new Date(article.updatedAt), 'EEE MMM d yyyy')}
+              </AuthorDate>
             </AuthorInfo>
             {self ? (
               <>
-                <Edit onClick={() => router.push(`/editor/${article.slug}`)}>
+                <Edit onClick={() => router.push(`/editor/${article.slug}`)} data-cy="article-banner-edit-article">
                   <div className="w-4 h-4">
                     <AiFillEdit />
                   </div>
                   <div>Edit article</div>
                 </Edit>
-                <Delete onClick={() => props.onDelete(article.slug)}>
+                <Delete onClick={() => props.onDelete(article.slug)} data-cy="article-banner-delete-article">
                   <div className="w-4 h-4">
                     <AiFillDelete />
                   </div>
@@ -56,6 +58,7 @@ const ArticleBannerTemplate: FC<PropsType> = props => {
                 <Follow
                   following={article.author.following}
                   onClick={() => props.toggleFollow(article.author.username, !article.author.following)}
+                  data-cy="article-banner-follow"
                 >
                   <div className="w-4 h-4">{article.author.following ? <AiOutlineMinus /> : <AiOutlinePlus />}</div>
                   <div>{article.author.following ? 'Unfollow' : 'Follow'}</div>
@@ -63,6 +66,7 @@ const ArticleBannerTemplate: FC<PropsType> = props => {
                 <Favorite
                   favorited={article.favorited}
                   onClick={() => props.toggleFavorite(article.slug, !article.favorited)}
+                  data-cy="article-banner-favorite"
                 >
                   <div className="w-4 h-4">
                     <AiFillHeart />

@@ -127,7 +127,7 @@ const ArticlePageContainer: FC<PropsType> = props => {
         />
       }
     >
-      <Head title={'HOME'} />
+      <Head title={'ARTICLE'} />
       <ArticleContentTemplate
         user={userStore.user}
         articleResult={articleResult}

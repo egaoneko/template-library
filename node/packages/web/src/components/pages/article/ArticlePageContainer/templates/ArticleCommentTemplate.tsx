@@ -35,7 +35,7 @@ const ArticleCommentTemplate: FC<PropsType> = props => {
   return (
     <Container>
       {user && (
-        <FormContainer>
+        <FormContainer data-cy="comment-form-container">
           <Form
             resetAfterFinish
             gap={0}
@@ -50,15 +50,16 @@ const ArticleCommentTemplate: FC<PropsType> = props => {
               rows={3}
               className="rounded-b-none"
               options={{ required: true }}
+              data-cy="comment-form-input-text"
             />
             <FormInfo>
               <AuthorContainer>
-                <Avatar size="small" url={user.image} />
-                <AuthorName>
+                <Avatar size="small" url={user.image} data-cy="comment-form-user-image" />
+                <AuthorName data-cy="comment-form-user-username">
                   <Link href={`/profile/${user.username}`}>{user.username}</Link>
                 </AuthorName>
               </AuthorContainer>
-              <Submit disabled={props.loading} size="small" className="ml-auto">
+              <Submit disabled={props.loading} size="small" className="ml-auto" data-cy="comment-form-user-submit">
                 Post Comment
               </Submit>
             </FormInfo>
@@ -67,18 +68,23 @@ const ArticleCommentTemplate: FC<PropsType> = props => {
       )}
 
       {comments.list.map(comment => (
-        <CommentContainer key={comment.id}>
-          <CommentBody>{comment.body}</CommentBody>
+        <CommentContainer data-cy="comment-container" key={comment.id}>
+          <CommentBody data-cy="comment-body">{comment.body}</CommentBody>
           <CommentInfo>
             <AuthorContainer>
-              <Avatar size="small" url={comment.author.image} />
-              <AuthorName>
+              <Avatar size="small" url={comment.author.image} data-cy="comment-author-image" />
+              <AuthorName data-cy="comment-author-username">
                 <Link href={`/profile/${comment.author.username}`}>{comment.author.username}</Link>
               </AuthorName>
-              <AuthorDate>{format(new Date(comment.updatedAt), 'EEE MMM d yyyy')}</AuthorDate>
+              <AuthorDate data-cy="comment-author-date">
+                {format(new Date(comment.updatedAt), 'EEE MMM d yyyy')}
+              </AuthorDate>
             </AuthorContainer>
             {user?.username === comment.author.username && (
-              <CommentDeleteButton onClick={() => props.onDelete(article.slug, comment.id)}>
+              <CommentDeleteButton
+                onClick={() => props.onDelete(article.slug, comment.id)}
+                data-cy="comment-delete-button"
+              >
                 <AiFillDelete />
               </CommentDeleteButton>
             )}

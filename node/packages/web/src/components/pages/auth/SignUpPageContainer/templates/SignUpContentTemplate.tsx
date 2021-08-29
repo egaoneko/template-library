@@ -15,8 +15,8 @@ interface PropsType {
 const SignUpContentTemplate: FC<PropsType> = props => {
   return (
     <div className="w-full max-w-md mx-auto">
-      <PageTitle>Sign Up</PageTitle>
-      <div className="text-primary hover:text-secondary text-center mb-4">
+      <PageTitle data-cy="content-page-title">Sign Up</PageTitle>
+      <div className="text-primary hover:text-secondary text-center mb-4" data-cy="content-sign-in-link">
         <Link href="/auth/sign-in">Have an account?</Link>
       </div>
       <Form onFinish={props.onFinish}>
@@ -26,16 +26,25 @@ const SignUpContentTemplate: FC<PropsType> = props => {
           name="username"
           placeholder="Username"
           options={{ required: true }}
+          data-cy="content-form-input-username"
         />
-        <Input disabled={props.loading} type="email" name="email" placeholder="Email" options={{ required: true }} />
+        <Input
+          disabled={props.loading}
+          type="email"
+          name="email"
+          placeholder="Email"
+          options={{ required: true }}
+          data-cy="content-form-input-email"
+        />
         <Input
           disabled={props.loading}
           type="password"
           name="password"
           placeholder="Password"
           options={{ required: true }}
+          data-cy="content-form-input-password"
         />
-        <Submit disabled={props.loading} className="ml-auto">
+        <Submit disabled={props.loading} className="ml-auto" data-cy="content-form-button-submit">
           Sing up
         </Submit>
       </Form>

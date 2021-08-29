@@ -23,6 +23,7 @@ const EditorUpdateContentTemplate: FC<PropsType> = props => {
           placeholder="Article Title"
           defaultValue={props.article.title}
           options={{ required: true }}
+          data-cy="content-form-input-title"
         />
         <Input
           disabled={props.loading}
@@ -31,6 +32,7 @@ const EditorUpdateContentTemplate: FC<PropsType> = props => {
           placeholder="What's this article about?"
           defaultValue={props.article.description}
           options={{ required: true }}
+          data-cy="content-form-input-description"
         />
         <Textarea
           disabled={props.loading}
@@ -39,8 +41,9 @@ const EditorUpdateContentTemplate: FC<PropsType> = props => {
           rows={8}
           defaultValue={props.article.body}
           options={{ required: true }}
+          data-cy="content-form-input-body"
         />
-        <Submit disabled={props.loading} className="ml-auto">
+        <Submit disabled={props.loading} className="ml-auto" data-cy="content-form-button-submit">
           Publish Article
         </Submit>
       </Form>

@@ -1,6 +1,6 @@
 describe('Footer', () => {
   beforeEach(() => {
-    cy.prepareHome(200);
+    cy.prepareHome();
   });
 
   it('should navigate to the main page by logo', () => {

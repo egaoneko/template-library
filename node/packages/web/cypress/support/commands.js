@@ -23,6 +23,7 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+import 'cypress-file-upload';
 import { getRemote } from 'mockttp';
 
 const mockServer = getRemote();
@@ -35,30 +36,19 @@ Cypress.Commands.add('mockServerStop', () => {
   return mockServerEnd();
 });
 
-Cypress.Commands.add('mockServerBuilder', (method, url) => {
-  return mockServerBuilder(method, url);
+Cypress.Commands.add('mockServerBuilder', (method, url, response, statusCode) => {
+  return mockServerBuilder(method, url, response, statusCode);
 });
 
-Cypress.Commands.add('login', (email, password) => {
-  cy.fixture('user/user.json').then(user => {
-    let response;
-    if (email !== user.email) {
-      response = {
-        statusCode: 401,
-        body: {
-          statusCode: 401,
-          message: 'Unauthorized',
-        },
-      };
-    } else {
-      response = {
-        statusCode: 200,
-        body: user,
-      };
-      cy.setCookie('RW_AT', user.token);
-      if (user.refreshToken) {
-        cy.setCookie('RW_RT', user.refreshToken);
-      }
+Cypress.Commands.add('login', (fixture = 'user/user.json') => {
+  cy.fixture(fixture).then(user => {
+    const response = {
+      statusCode: 200,
+      body: user,
+    };
+    cy.setCookie('RW_AT', user.token);
+    if (user.refreshToken) {
+      cy.setCookie('RW_RT', user.refreshToken);
     }
     cy.intercept('POST', '/api/auth/login', req => {
       const date = new Date();
@@ -77,16 +67,48 @@ Cypress.Commands.add('login', (email, password) => {
     }).as('getCurrentUser');
 
     // https://stackoverflow.com/questions/47631821/mocking-server-for-ssr-react-app-e2e-tests-with-cypress-io
-    mockServerBuilder('get', '/api/users').thenReply(response.statusCode, JSON.stringify(response.body));
+    mockServerBuilder('get', '/api/users', response.body, response.statusCode);
   });
 });
 
 Cypress.Commands.add('prepareHome', (delay = 0) => {
-  cy.intercept('GET', 'http://localhost:8080/api/articles?page=*&limit=*', {
+  cy.intercept('GET', 'http://localhost:8080/api/articles?page=1&limit=5', {
     delay,
-    fixture: 'article/articles.json',
+    fixture: 'article/articles-page-1.json',
   }).as('getArticles');
   cy.intercept('GET', 'http://localhost:8080/api/articles/tags', { delay, fixture: 'article/tags.json' }).as('getTags');
+});
+
+Cypress.Commands.add('prepareArticle', (delay = 0, fixture = 'article/article.json') => {
+  cy.fixture(fixture).then(article => {
+    cy.intercept('GET', `http://localhost:8080/api/articles/${article.slug}`, {
+      delay,
+      fixture,
+    }).as('getArticle');
+    cy.intercept('GET', `http://localhost:8080/api/articles/${article.slug}/comments?limit=999`, {
+      delay,
+      fixture: 'article/comments.json',
+    }).as('geComments');
+  });
+});
+
+Cypress.Commands.add('prepareProfile', (delay = 0, fixture = 'profile/user.json') => {
+  cy.fixture(fixture).then(profile => {
+    cy.intercept('GET', `http://localhost:8080/api/profiles/${profile.username}`, {
+      delay,
+      fixture,
+    }).as('getProfile');
+    cy.intercept('GET', `http://localhost:8080/api/articles?page=1&limit=5&author=${profile.username}`, {
+      delay,
+      fixture: 'article/articles-page-1.json',
+    }).as('getArticles');
+  });
+});
+
+Cypress.Commands.add('prepareEdit', (delay = 0, fixture = 'article/article.json') => {
+  cy.fixture(fixture).then(article => {
+    mockServerBuilder('get', `/api/articles/${article.slug}`, article);
+  });
 });
 
 async function mockServerStart(port = 8080) {
@@ -106,6 +128,6 @@ function mockServerEnd() {
   return mockServer.stop();
 }
 
-function mockServerBuilder(method, url) {
-  return mockServer[method](url);
+function mockServerBuilder(method, url, response, statusCode = 200) {
+  return mockServer[method](url).thenReply(statusCode, JSON.stringify(response));
 }

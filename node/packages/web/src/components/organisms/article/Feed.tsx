@@ -20,7 +20,7 @@ const Feed: FC<PropsType> = props => {
       <AuthorContainer>
         <Avatar size="middle" url={props.article.author.image} />
         <AuthorInfo>
-          <AuthorName>
+          <AuthorName data-cy="feed-profile">
             <Link href={`/profile/${props.article.author.username}`}>{props.article.author.username}</Link>
           </AuthorName>
           <AuthorDate>{format(new Date(props.article.updatedAt), 'EEE MMM d yyyy')}</AuthorDate>
@@ -28,6 +28,7 @@ const Feed: FC<PropsType> = props => {
         <Favorite
           favorited={props.article.favorited}
           onClick={() => props.toggleFavorite(props.article.slug, !props.article.favorited)}
+          data-cy="feed-favorite"
         >
           <div className="w-4 h-4">
             <AiFillHeart />
@@ -35,7 +36,7 @@ const Feed: FC<PropsType> = props => {
           <div>{props.article.favoritesCount}</div>
         </Favorite>
       </AuthorContainer>
-      <Content onClick={() => router.push(`/article/${props.article.slug}`)}>
+      <Content data-cy="feed-content" onClick={() => router.push(`/article/${props.article.slug}`)}>
         <Title>{props.article.title}</Title>
         <Body>
           <p>{props.article.description}</p>

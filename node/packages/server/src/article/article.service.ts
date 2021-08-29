@@ -332,7 +332,7 @@ export class ArticleService {
     dto.title = articleEntity.title;
     dto.description = articleEntity.description;
     dto.body = articleEntity.body;
-    dto.tagList = articleEntity.tags.map(tag => tag.title);
+    dto.tagList = articleEntity.tags.sort((a, b) => a.id - b.id).map(tag => tag.title);
     dto.createdAt = articleEntity.createdAt;
     dto.updatedAt = articleEntity.updatedAt;
 

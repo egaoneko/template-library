@@ -21,10 +21,16 @@ interface PropsType {
 const SettingsContentTemplate: FC<PropsType> = props => {
   return (
     <div className="w-full max-w-md mx-auto">
-      <PageTitle>Your Settings</PageTitle>
+      <PageTitle data-cy="content-page-title">Your Settings</PageTitle>
       <Form onFinish={props.onFinish}>
-        <Avatar size="large" url={props.user?.image} />
-        <SingleUpload className="mx-auto" name="file" accept="image/png,image/jpeg" onFinish={props.onFinishUpload}>
+        <Avatar size="large" url={props.user?.image} data-cy="user-image" />
+        <SingleUpload
+          className="mx-auto"
+          name="file"
+          accept="image/png,image/jpeg"
+          onFinish={props.onFinishUpload}
+          data-cy="content-form-upload"
+        >
           Upload new profile
         </SingleUpload>
         <Input
@@ -38,6 +44,7 @@ const SettingsContentTemplate: FC<PropsType> = props => {
             required: true,
             valueAsNumber: true,
           }}
+          data-cy="content-form-input-id"
         />
         <Input
           disabled={props.loading}
@@ -45,6 +52,7 @@ const SettingsContentTemplate: FC<PropsType> = props => {
           name="username"
           placeholder="Username"
           defaultValue={props.user?.username}
+          data-cy="content-form-input-username"
         />
         <Textarea
           disabled={props.loading}
@@ -52,6 +60,7 @@ const SettingsContentTemplate: FC<PropsType> = props => {
           placeholder="Short bio about you"
           rows={8}
           defaultValue={props.user?.bio}
+          data-cy="content-form-input-bio"
         />
         <Input
           disabled={props.loading}
@@ -59,13 +68,20 @@ const SettingsContentTemplate: FC<PropsType> = props => {
           name="email"
           placeholder="Email"
           defaultValue={props.user?.email}
+          data-cy="content-form-input-email"
         />
-        <Input disabled={props.loading} type="password" name="password" placeholder="New Password" />
-        <Submit disabled={props.loading} className="ml-auto">
+        <Input
+          disabled={props.loading}
+          type="password"
+          name="password"
+          placeholder="New Password"
+          data-cy="content-form-input-password"
+        />
+        <Submit disabled={props.loading} className="ml-auto" data-cy="content-form-button-submit">
           Update Settings
         </Submit>
         <hr className="border-t border-gray-200"></hr>
-        <Button styleType="danger" className="mr-auto" onClick={props.onClickLogout}>
+        <Button styleType="danger" className="mr-auto" onClick={props.onClickLogout} data-cy="content-button-logout">
           Or click here to logout
         </Button>
       </Form>

@@ -15,12 +15,12 @@ interface PropsType {
 }
 
 const SingleUpload: FC<PropsType> = props => {
-  const { name, onFinish } = props;
+  const { name, onFinish, accept, children, ...containerProps } = props;
   const fileInputRef = useRef<HTMLInputElement>(null);
 
   const onChange = useCallback(
     async (e: ChangeEvent<HTMLInputElement>): Promise<void> => {
-      e.preventDefault;
+      e.preventDefault();
       const formData = new FormData();
       formData.append(name, (e.target.files as FileList)[0]);
 
@@ -36,9 +36,9 @@ const SingleUpload: FC<PropsType> = props => {
   );
 
   return (
-    <div className={props.className} style={props.style}>
-      <Button onClick={() => fileInputRef.current?.click()}>{props.children ?? 'Upload'}</Button>
-      <input hidden type="file" accept={props.accept} multiple={false} ref={fileInputRef} onChange={onChange} />
+    <div {...containerProps}>
+      <Button onClick={() => fileInputRef.current?.click()}>{children ?? 'Upload'}</Button>
+      <input hidden type="file" accept={accept} multiple={false} ref={fileInputRef} onChange={onChange} />
     </div>
   );
 };

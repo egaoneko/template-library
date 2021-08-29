@@ -4,7 +4,7 @@ describe('Sign in', () => {
     cy.fixture('auth/sign-in-form.json').then(f => {
       form = f;
     });
-    cy.prepareHome(200);
+    cy.prepareHome();
   });
 
   it('should be show content', () => {
@@ -29,7 +29,11 @@ describe('Sign in', () => {
     cy.get('[data-cy=content-form-input-email]').type(form.email);
     cy.get('[data-cy=content-form-input-password]').type(form.password);
     cy.get('[data-cy=content-form-button-submit]').click();
-    cy.wait('@login');
+    cy.wait('@login').then(({ request }) => {
+      const { body } = request;
+      expect(body.email).to.equal(form.email);
+      expect(body.password).to.equal(form.password);
+    });
     cy.location('pathname').should('eq', '/');
   });
 
@@ -38,11 +42,15 @@ describe('Sign in', () => {
     cy.visit('http://localhost:3000/auth/sign-in');
     cy.get('[data-cy=content-form-input-email]').type(form.email);
     cy.get('[data-cy=content-form-input-password]').type(form.password).type('{enter}');
-    cy.wait('@login');
+    cy.wait('@login').then(({ request }) => {
+      const { body } = request;
+      expect(body.email).to.equal(form.email);
+      expect(body.password).to.equal(form.password);
+    });
     cy.location('pathname').should('eq', '/');
   });
 
-  it('should sign up by enter without input', () => {
+  it('should sign up without input', () => {
     cy.visit('http://localhost:3000/auth/sign-in');
     cy.get('[data-cy=content-form-button-submit]').click();
     cy.get('[data-cy=form-input-errors]').should('have.length', 2);

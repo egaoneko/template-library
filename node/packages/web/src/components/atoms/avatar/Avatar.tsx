@@ -8,24 +8,25 @@ interface PropsType {
 }
 
 const Avatar: FC<PropsType> = props => {
-  let size: number;
+  const { url, size, ...containerProps } = props;
+  let width: number;
 
   switch (props.size) {
     case 'small':
-      size = 5;
+      width = 5;
       break;
     case 'large':
-      size = 32;
+      width = 32;
       break;
     case 'middle':
     default:
-      size = 8;
+      width = 8;
       break;
   }
 
   return (
-    <div className="flex flex-row justify-center">
-      <div className={`relative flex justify-center items-center rounded-full w-${size} h-${size}`}>
+    <div className="flex flex-row justify-center" {...containerProps}>
+      <div className={`relative flex justify-center items-center rounded-full w-${width} h-${width}`}>
         <img className="rounded-full" src={props.url ?? DEFAULT_IMAGE} alt="avatar" />
       </div>
     </div>

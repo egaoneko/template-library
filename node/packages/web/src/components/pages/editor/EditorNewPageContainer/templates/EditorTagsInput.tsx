@@ -39,6 +39,7 @@ const EditorTagsInput: FC<PropsType> = props => {
           setValue('');
         }}
         className="block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 disabled:opacity-50 disabled:cursor-not-allowed"
+        data-cy="content-form-input-tags"
       />
       <div className="w-full mt-2">
         {tagList.map(tag => (

@@ -3,6 +3,7 @@
     "baseUrl": ".",
     "target": "es5",
     "lib": ["dom", "dom.iterable", "esnext"],
+    "types": ["cypress", "cypress-file-upload"],
     "allowJs": true,
     "skipLibCheck": true,
     "strict": true,

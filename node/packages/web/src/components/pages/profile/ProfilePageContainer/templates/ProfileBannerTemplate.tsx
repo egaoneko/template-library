@@ -19,18 +19,19 @@ const ProfileBannerTemplate: FC<PropsType> = props => {
     <Container>
       {profile && (
         <>
-          <Avatar size="large" url={profile?.image} />
-          <Title>{profile.username}</Title>
+          <Avatar size="large" url={profile?.image} data-cy="profile-image" />
+          <Title data-cy="profile-username">{profile.username}</Title>
           {props.user && props.user.username !== profile.username && (
             <Follow
               following={profile.following}
               onClick={() => props.toggleFollow(profile.username, !profile.following)}
+              data-cy="profile-follow"
             >
               <div className="w-4 h-4">{profile.following ? <AiOutlineMinus /> : <AiOutlinePlus />}</div>
               <div>{profile.following ? 'Unfollow' : 'Follow'}</div>
             </Follow>
           )}
-          <Description>{profile.bio} </Description>
+          <Description data-cy="profile-bio">{profile.bio} </Description>
         </>
       )}
     </Container>

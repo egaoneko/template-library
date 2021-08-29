@@ -1,14 +1,10 @@
 describe('Header', () => {
-  let form = null;
   let user = null;
   beforeEach(() => {
-    cy.fixture('auth/sign-in-form.json').then(f => {
-      form = f;
-    });
     cy.fixture('user/user.json').then(u => {
       user = u;
     });
-    cy.prepareHome(200);
+    cy.prepareHome();
     cy.mockServerStart(8080);
   });
   afterEach(() => cy.mockServerStop());
@@ -38,28 +34,28 @@ describe('Header', () => {
   });
 
   it('should navigate to the sign in page by home after login', () => {
-    cy.login(form.email, form.password);
+    cy.login();
     cy.visit('http://localhost:3000/');
     cy.get('[data-cy=header-home-link]').contains('Home').click();
     cy.location('pathname').should('eq', '/');
   });
 
   it('should navigate to the new post page after login', () => {
-    cy.login(form.email, form.password);
+    cy.login();
     cy.visit('http://localhost:3000/');
     cy.get('[data-cy=header-new-post-link]').contains('New Post').click();
     cy.location('pathname').should('eq', '/editor/new');
   });
 
   it('should navigate to the settings page after login', () => {
-    cy.login(form.email, form.password);
+    cy.login();
     cy.visit('http://localhost:3000/');
     cy.get('[data-cy=header-settings-link]').contains('Settings').click();
     cy.location('pathname').should('eq', '/user/settings');
   });
 
   it('should navigate to the profile page after login', () => {
-    cy.login(form.email, form.password);
+    cy.login();
     cy.visit('http://localhost:3000/');
     cy.get('[data-cy=header-profile-link]').contains(user.username).click();
     cy.location('pathname').should('eq', `/profile/${user.username}`);

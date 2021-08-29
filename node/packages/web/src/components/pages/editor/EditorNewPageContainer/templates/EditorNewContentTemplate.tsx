@@ -22,6 +22,7 @@ const EditorNewContentTemplate: FC<PropsType> = props => {
           name="title"
           placeholder="Article Title"
           options={{ required: true }}
+          data-cy="content-form-input-title"
         />
         <Input
           disabled={props.loading}
@@ -29,6 +30,7 @@ const EditorNewContentTemplate: FC<PropsType> = props => {
           name="description"
           placeholder="What's this article about?"
           options={{ required: true }}
+          data-cy="content-form-input-description"
         />
         <Textarea
           disabled={props.loading}
@@ -36,9 +38,10 @@ const EditorNewContentTemplate: FC<PropsType> = props => {
           placeholder="Write your article (in markdown)"
           rows={8}
           options={{ required: true }}
+          data-cy="content-form-input-body"
         />
         <EditorTagsInput />
-        <Submit disabled={props.loading} className="ml-auto">
+        <Submit disabled={props.loading} className="ml-auto" data-cy="content-form-button-submit">
           Publish Article
         </Submit>
       </Form>
