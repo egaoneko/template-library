@@ -23,12 +23,23 @@ jest.mock('react-query', () => ({
 describe('Home Snapshots', () => {
   let userStore;
 
-  beforeEach(async () => {
+  beforeEach(() => {
     userStore = new UserStore();
-    await userStore.hydrate(require('../../../../__mocks__/user/user.json'));
   });
 
-  it('renders home', () => {
+  it('renders home before login', () => {
+    const tree = renderer
+      .create(
+        <Provider userStore={userStore}>
+          <HomePageContainer />
+        </Provider>,
+      )
+      .toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+
+  it('renders home after login', async () => {
+    await userStore.hydrate(require('../../../../__mocks__/user/user.json'));
     const tree = renderer
       .create(
         <Provider userStore={userStore}>

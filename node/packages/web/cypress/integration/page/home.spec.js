@@ -54,7 +54,6 @@ describe('Home', () => {
     cy.prepareHome();
     cy.visit('http://localhost:3000/');
     cy.wait(['@getArticles', '@getTags']);
-    cy.wait();
     cy.get('[data-cy=content-tag]').eq(0).click();
     cy.intercept('GET', 'http://localhost:8080/api/articles?page=1&limit=5&tag=dragons', {
       fixture: 'article/articles-tag.json',

@@ -16,10 +16,13 @@
     "dev": "next dev",
     "start": "next start",
     "test": "jest",
-    "test:e2e": "start-server-and-test start:mock-server http-get://localhost:9999 cy:open",
+    "test:update": "npm run test -- -u",
+    "test:e2e": "start-server-and-test start:mock-server http-get://localhost:9999 cy:run",
+    "test:e2e:browser": "start-server-and-test start:mock-server http-get://localhost:9999 cy:open",
     "lint": "next lint",
     "format": "prettier --write \"src/**/*.ts\" \"__tests__/**/*.ts\"",
     "cy:open": "cypress open",
+    "cy:run": "cypress run",
     "start:mock-server": "node scripts/mock-server.js"
   },
   "dependencies": {

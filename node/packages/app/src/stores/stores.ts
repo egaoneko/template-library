@@ -1,5 +1,5 @@
-import { useContext } from 'react';
-import { MobXProviderContext } from 'mobx-react';
+import {useContext} from 'react';
+import {MobXProviderContext} from 'mobx-react';
 import UserStore from './UserStore';
 
 export interface StoresTypes {
@@ -14,4 +14,4 @@ function useStores() {
   return useContext(MobXProviderContext);
 }
 
-export { stores, useStores };
+export {stores, useStores};

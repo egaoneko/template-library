@@ -1,0 +1,188 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Sign up Snapshots renders sign up 1`] = `
+<div
+  className="BaseLayoutTemplate__Container-sc-1jz5xvr-0 gAVYwR"
+>
+  <div
+    className="HeaderTemplate__Container-sc-kdla34-0 inxbiA"
+  >
+    <div
+      className="HeaderTemplate__Heading-sc-kdla34-1 laFayD"
+    >
+      <div
+        className="HeaderTemplate__HeadingTitle-sc-kdla34-2 bAZjNO"
+        data-cy="header-logo-link"
+      >
+        <a
+          href="/"
+          onClick={[Function]}
+          onMouseEnter={[Function]}
+        >
+          conduit
+        </a>
+      </div>
+      <div
+        className="text-base leading-6 text-gray-400 font-sans flex items-center"
+      >
+        <div
+          className="py-2 ml-4 cursor-pointer first:ml-0 hover:text-gray-800 flex "
+          data-cy="header-home-link"
+        >
+          <div
+            className="flex items-center"
+            href="/"
+            onClick={[Function]}
+            onMouseEnter={[Function]}
+          >
+            <span
+              className="mr-1"
+            />
+            <span>
+              Home
+            </span>
+          </div>
+        </div>
+        <div
+          className="py-2 ml-4 cursor-pointer first:ml-0 hover:text-gray-800 flex "
+          data-cy="header-sign-in-link"
+        >
+          <div
+            className="flex items-center"
+            href="/auth/sign-in"
+            onClick={[Function]}
+            onMouseEnter={[Function]}
+          >
+            <span
+              className="mr-1"
+            />
+            <span>
+              Sign in
+            </span>
+          </div>
+        </div>
+        <div
+          className="py-2 ml-4 cursor-pointer first:ml-0 hover:text-gray-800 flex "
+          data-cy="header-sign-up-link"
+        >
+          <div
+            className="flex items-center"
+            href="/auth/sign-up"
+            onClick={[Function]}
+            onMouseEnter={[Function]}
+          >
+            <span
+              className="mr-1"
+            />
+            <span>
+              Sign up
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    className="container mx-auto mt-8"
+  >
+    <div
+      className="w-full max-w-md mx-auto"
+    >
+      <h1
+        className="text-4xl text-center mb-4"
+        data-cy="content-page-title"
+      >
+        Sign Up
+      </h1>
+      <div
+        className="text-primary hover:text-secondary text-center mb-4"
+        data-cy="content-sign-in-link"
+      >
+        <a
+          href="/auth/sign-in"
+          onClick={[Function]}
+          onMouseEnter={[Function]}
+        >
+          Have an account?
+        </a>
+      </div>
+      <form
+        onSubmit={[Function]}
+      >
+        <div
+          className="flex flex-col gap-4"
+        >
+          <div>
+            <input
+              className=" block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 disabled:opacity-50 disabled:cursor-not-allowed"
+              data-cy="content-form-input-username"
+              disabled={false}
+              name="username"
+              onBlur={[Function]}
+              onChange={[Function]}
+              placeholder="Username"
+              type="text"
+            />
+          </div>
+          <div>
+            <input
+              className=" block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 disabled:opacity-50 disabled:cursor-not-allowed"
+              data-cy="content-form-input-email"
+              disabled={false}
+              name="email"
+              onBlur={[Function]}
+              onChange={[Function]}
+              placeholder="Email"
+              type="email"
+            />
+          </div>
+          <div>
+            <input
+              className=" block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 disabled:opacity-50 disabled:cursor-not-allowed"
+              data-cy="content-form-input-password"
+              disabled={false}
+              name="password"
+              onBlur={[Function]}
+              onChange={[Function]}
+              placeholder="Password"
+              type="password"
+            />
+          </div>
+          <button
+            className="ml-auto px-6 py-3 hover:text-opacity-80 hover:bg-opacity-80 hover:border-opacity-80 font-bold border rounded focus:outline-none focus:shadow-outline disabled:opacity-50 disabled:cursor-not-allowed bg-primary border-primary text-white"
+            data-cy="content-form-button-submit"
+            disabled={false}
+            type="submit"
+          >
+            Sing up
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+  <div
+    className="FooterTemplate__Container-sc-96wla6-0 dxhwgY"
+  >
+    <span
+      className="FooterTemplate__SiteLink-sc-96wla6-1 iJSbEN text-base mr-1 font-bold"
+      data-cy="footer-logo-link"
+      href="/"
+      onClick={[Function]}
+      onMouseEnter={[Function]}
+    >
+      conduit
+    </span>
+    © 2020. An interactive learning project from
+    <span
+      className="FooterTemplate__SiteLink-sc-96wla6-1 iJSbEN ml-1"
+      data-cy="footer-site-link"
+      href="https://thinkster.io/"
+      onClick={[Function]}
+      onMouseEnter={[Function]}
+    >
+      Thinkster
+    </span>
+    . Code licensed under MIT.
+  </div>
+</div>
+`;

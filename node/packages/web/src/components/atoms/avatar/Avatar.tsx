@@ -15,7 +15,7 @@ const Avatar: FC<PropsType> = props => {
   const { url, size, ...wrapperProps } = props;
   let width: number;
 
-  switch (props.size) {
+  switch (size) {
     case 'small':
       width = 5;
       break;
@@ -31,7 +31,7 @@ const Avatar: FC<PropsType> = props => {
   return (
     <Wrapper {...wrapperProps}>
       <Container className={`w-${width} h-${width}`}>
-        <Img className="rounded-full" src={props.url ?? DEFAULT_IMAGE} alt="avatar" />
+        <Img className="rounded-full" src={url ?? DEFAULT_IMAGE} alt="avatar" />
       </Container>
     </Wrapper>
   );
