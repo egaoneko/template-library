@@ -1,4 +1,11 @@
-export enum NavigationType {
-  SPLASH = 'SPLASH',
-  HOME = 'HOME',
-}
+export const NAVIGATION_TYPE = {
+  SPLASH: 'SPLASH',
+  MAIN: 'MAIN',
+  HOME: 'HOME',
+  FEED: 'FEED',
+  POST_ARTICLE: 'POST_ARTICLE',
+  SETTINGS: 'SETTINGS',
+} as const;
+
+export type NAVIGATION_TYPE =
+  typeof NAVIGATION_TYPE[keyof typeof NAVIGATION_TYPE];

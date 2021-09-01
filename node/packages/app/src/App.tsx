@@ -10,18 +10,17 @@
 
 import {Provider} from 'mobx-react';
 import React from 'react';
-import {StatusBar, useColorScheme} from 'react-native';
-import Navigator from './navigators/Navigator';
+import {StatusBar} from 'react-native';
+import useDarkMode from './hooks/useDarkMode';
+import CommonNavigator from './navigators/CommonNavigator';
 import {stores} from './stores/stores';
 
 const App = () => {
-  const isDarkMode = useColorScheme() === 'dark';
-
   return (
     <>
-      <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
+      <StatusBar barStyle={useDarkMode() ? 'light-content' : 'dark-content'} />
       <Provider {...stores}>
-        <Navigator />
+        <CommonNavigator />
       </Provider>
     </>
   );

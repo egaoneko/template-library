@@ -18,7 +18,7 @@
     "start:app": "lerna run start --stream --scope @my-app/app",
     "start:app:ios": "lerna run ios --stream --scope @my-app/app",
     "start:app:android": "lerna run android --stream --scope @my-app/app",
-    "app:clean": "lerna run clean --stream --scope @my-app/app",
+    "clean:app": "lerna run clean --stream --scope @my-app/app",
     "test": "lerna run test --stream",
     "test:core": "lerna run test --stream --scope @my-app/core",
     "test:web": "lerna run test --stream --scope @my-app/web",

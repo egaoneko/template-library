@@ -1,16 +1,34 @@
 import {ComponentType} from 'react';
-import {NavigationType} from '../enums/navigation';
-import HomePageContainer from '../components/pages/HomePageContainer.tsx';
-import SplashPageContainer from '../components/pages/SplashPageContainer';
+import {NAVIGATION_TYPE} from '../enums/navigation';
+import HomePageContainer from '../components/pages/main/HomePageContainer.tsx';
+import SplashPageContainer from '../components/pages/common/SplashPageContainer';
+import FeedPageContainer from '../components/pages/main/article/FeedPageContainer.tsx';
+import PostArticlePageContainer from '../components/pages/main/editor/PostArticlePageContainer.tsx';
+import SettingsPageContainer from '../components/pages/main/user/SettingsPageContainer.tsx';
+import MainPageContainer from '../components/pages/common/MainPageContainer';
 
-interface RoutesTypes {
-  name: string;
-  component: ComponentType;
+interface RoutesInfo {
+  name: NAVIGATION_TYPE;
+  component: ComponentType<any>;
+  options?: {headerShown?: boolean};
 }
 
-const commonRoutes: RoutesTypes[] = [
-  {name: NavigationType.SPLASH, component: SplashPageContainer},
-  {name: NavigationType.HOME, component: HomePageContainer},
+const commonRoutes: RoutesInfo[] = [
+  {
+    name: NAVIGATION_TYPE.SPLASH,
+    component: SplashPageContainer,
+  },
+  {
+    name: NAVIGATION_TYPE.MAIN,
+    component: MainPageContainer,
+  },
 ];
 
-export {commonRoutes};
+const mainRoutes: RoutesInfo[] = [
+  {name: NAVIGATION_TYPE.HOME, component: HomePageContainer},
+  {name: NAVIGATION_TYPE.FEED, component: FeedPageContainer},
+  {name: NAVIGATION_TYPE.POST_ARTICLE, component: PostArticlePageContainer},
+  {name: NAVIGATION_TYPE.SETTINGS, component: SettingsPageContainer},
+];
+
+export {commonRoutes, mainRoutes};
