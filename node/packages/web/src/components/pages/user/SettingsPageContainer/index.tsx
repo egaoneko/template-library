@@ -1,11 +1,11 @@
 import Head from '@components/atoms/layout/Head';
 import React, { FC, useState } from 'react';
 import SettingsContentTemplate from './templates/SettingContentTemplate';
-import { UpdateRequest } from '@interfaces/user';
+import { UpdateRequest } from '@my-app/core/lib/interfaces/user';
 import { useRouter } from 'next/router';
 import { useStores } from '@stores/stores';
-import { BasePropsType } from '@interfaces/common';
-import { IFile } from '@interfaces/file';
+import { BasePropsType } from '@my-app/core/lib/interfaces/common';
+import { IFile } from '@my-app/core/lib/interfaces/file';
 import BaseLayoutTemplate from '@components/templates/layout/BaseLayoutTemplate';
 
 interface PropsType extends BasePropsType {}

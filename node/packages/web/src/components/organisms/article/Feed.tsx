@@ -1,5 +1,5 @@
 import Avatar from '@components/atoms/avatar/Avatar';
-import { IArticle } from '@interfaces/article';
+import { IArticle } from '@my-app/core/lib/interfaces/article';
 import Link from 'next/link';
 import React, { FC } from 'react';
 import styled from 'styled-components';

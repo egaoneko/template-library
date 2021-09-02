@@ -32,7 +32,7 @@
     "schema": "lerna run schema --scope @my-app/core",
     "build": "lerna run build",
     "build:core": "lerna run build --scope @my-app/core",
-    "build:lib": "lerna run build --ignore @my-app/web @my-app/server",
+    "build:lib": "lerna run build --ignore @my-app/web @my-app/server @my-app/app",
     "build:web": "lerna run build --scope @my-app/web",
     "build:server": "lerna run build --scope @my-app/server",
     "lint": "lerna run lint",
@@ -43,12 +43,14 @@
   },
   "dependencies": {
     "axios": "0.21.1",
+    "faker": "5.5.3",
     "lodash": "4.17.21",
     "rxjs": "7.2.0",
     "uuid": "8.3.2"
   },
   "devDependencies": {
     "@types/axios": "0.14.0",
+    "@types/faker": "5.5.8",
     "@types/jest": "26.0.24",
     "@types/node": "16.4.1",
     "@types/uuid": "8.3.1",

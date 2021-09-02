@@ -6,9 +6,9 @@ import {
   GetArticleFeedListRequest,
   GetArticleListRequest,
   UpdateArticleRequest,
-} from '@interfaces/article';
-import { ListResult } from '@interfaces/common';
-import { CreateCommentRequest, GetCommentListRequest, IComment } from '@interfaces/comment';
+} from '@my-app/core/lib/interfaces/article';
+import { ListResult } from '@my-app/core/lib/interfaces/common';
+import { CreateCommentRequest, GetCommentListRequest, IComment } from '@my-app/core/lib/interfaces/comment';
 
 export default class ArticleAPI {
   private static BASE_URL = `${API_SERVER_URL}/api/articles`;

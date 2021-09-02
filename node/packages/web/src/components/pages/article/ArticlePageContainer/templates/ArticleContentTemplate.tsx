@@ -1,8 +1,8 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import Avatar from '@components/atoms/avatar/Avatar';
 import format from 'date-fns/format';
-import { IArticle } from '@interfaces/article';
-import { IUser } from '@interfaces/user';
+import { IArticle } from '@my-app/core/lib/interfaces/article';
+import { IUser } from '@my-app/core/lib/interfaces/user';
 import { AiFillEdit, AiFillDelete, AiOutlinePlus, AiOutlineMinus, AiFillHeart } from 'react-icons/ai';
 import Link from 'next/link';
 import { useRouter } from 'next/router';

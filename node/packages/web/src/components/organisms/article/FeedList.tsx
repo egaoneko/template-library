@@ -1,6 +1,6 @@
 import Pagination from '@components/molecules/pagination/Pagination';
-import { IArticle } from '@interfaces/article';
-import { ListResult } from '@interfaces/common';
+import { IArticle } from '@my-app/core/lib/interfaces/article';
+import { ListResult } from '@my-app/core/lib/interfaces/common';
 import React, { FC } from 'react';
 import { UseQueryResult } from 'react-query';
 import styled from 'styled-components';

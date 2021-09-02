@@ -1,9 +1,9 @@
 import Head from '@components/atoms/layout/Head';
 import React, { FC, useState } from 'react';
-import { BasePropsType, ListResult } from '@interfaces/common';
+import { BasePropsType, ListResult } from '@my-app/core/lib/interfaces/common';
 import BaseLayoutTemplate from '@components/templates/layout/BaseLayoutTemplate';
 import { useStores } from '@stores/stores';
-import { IArticle } from '@interfaces/article';
+import { IArticle } from '@my-app/core/lib/interfaces/article';
 import { useQuery } from 'react-query';
 import ArticleAPI from '@api/article';
 import ArticleBannerTemplate from './templates/ArticleBannerTemplate';
@@ -12,7 +12,7 @@ import { useRouter } from 'next/router';
 import { notifyError, notifySuccess } from '@utils/notifiy';
 import ProfileAPI from '@api/profile';
 import ArticleCommentTemplate from './templates/ArticleCommentTemplate';
-import { CreateCommentRequest, IComment } from '@interfaces/comment';
+import { CreateCommentRequest, IComment } from '@my-app/core/lib/interfaces/comment';
 
 interface PropsType extends BasePropsType {
   slug: string;

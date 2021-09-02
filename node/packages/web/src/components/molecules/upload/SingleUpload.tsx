@@ -1,6 +1,6 @@
 import FileAPI from '@api/file';
 import Button from '@components/atoms/common/Button';
-import { IFile } from '@interfaces/file';
+import { IFile } from '@my-app/core/lib/interfaces/file';
 import { notifyError } from '@utils/notifiy';
 import React, { ChangeEvent, FC, ReactNode, useCallback, useRef } from 'react';
 import { CSSProperties } from 'styled-components';

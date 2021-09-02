@@ -7,8 +7,8 @@ import { Stores } from '@stores/stores';
 import { Provider } from 'mobx-react';
 import Notification from '@components/atoms/notification/Notification';
 import App from 'next/app';
-import { BasePropsType } from '@interfaces/common';
-import { IUser } from '@interfaces/user';
+import { BasePropsType } from '@my-app/core/lib/interfaces/common';
+import { IUser } from '@my-app/core/lib/interfaces/user';
 import { QueryClient, QueryClientProvider } from 'react-query';
 
 interface PropsType extends BasePropsType {

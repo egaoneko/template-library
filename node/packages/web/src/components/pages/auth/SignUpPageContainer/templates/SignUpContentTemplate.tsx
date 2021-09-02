@@ -3,7 +3,7 @@ import Form from '@components/molecules/form/Form';
 import Input from '@components/molecules/form/Input';
 import Submit from '@components/molecules/form/Submit';
 import Link from 'next/link';
-import { RegisterRequest } from '@interfaces/user';
+import { RegisterRequest } from '@my-app/core/lib/interfaces/user';
 import PageTitle from '@components/atoms/page/PageTitle';
 
 interface PropsType {

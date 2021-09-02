@@ -2,9 +2,9 @@ import Head from '@components/atoms/layout/Head';
 import React, { FC, useState } from 'react';
 import EditorUpdateContentTemplate from './templates/EditorUpdateContentTemplate';
 import { useRouter } from 'next/router';
-import { BasePropsType } from '@interfaces/common';
+import { BasePropsType } from '@my-app/core/lib/interfaces/common';
 import BaseLayoutTemplate from '@components/templates/layout/BaseLayoutTemplate';
-import { IArticle, UpdateArticleRequest } from '@interfaces/article';
+import { IArticle, UpdateArticleRequest } from '@my-app/core/lib/interfaces/article';
 import ArticleAPI from '@api/article';
 import { notifyError, notifySuccess } from '@utils/notifiy';
 

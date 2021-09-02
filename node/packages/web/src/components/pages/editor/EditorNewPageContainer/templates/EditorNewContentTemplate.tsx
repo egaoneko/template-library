@@ -3,7 +3,7 @@ import Form from '@components/molecules/form/Form';
 import Input from '@components/molecules/form/Input';
 import Submit from '@components/molecules/form/Submit';
 import Textarea from '@components/molecules/form/Textarea';
-import { CreateArticleRequest } from '@interfaces/article';
+import { CreateArticleRequest } from '@my-app/core/lib/interfaces/article';
 import EditorTagsInput from './EditorTagsInput';
 
 interface PropsType {

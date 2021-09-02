@@ -2,7 +2,7 @@ import UserAPI from '@api/user';
 import { makeAutoObservable } from 'mobx';
 import { IS_SSR } from '@constants/common';
 import { useMemo } from 'react';
-import { IUser, LoginRequest, RegisterRequest, UpdateRequest } from '@interfaces/user';
+import { IUser, LoginRequest, RegisterRequest, UpdateRequest } from '@my-app/core/lib/interfaces/user';
 import AuthAPI from '@api/auth';
 import { notifyError, notifySuccess } from '@utils/notifiy';
 import { removeToken, setToken } from '@utils/cookie';

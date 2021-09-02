@@ -2,13 +2,13 @@ import React, { FC } from 'react';
 import Form from '@components/molecules/form/Form';
 import Input from '@components/molecules/form/Input';
 import Submit from '@components/molecules/form/Submit';
-import { IUser, UpdateRequest } from '@interfaces/user';
+import { IUser, UpdateRequest } from '@my-app/core/lib/interfaces/user';
 import PageTitle from '@components/atoms/page/PageTitle';
 import Textarea from '@components/molecules/form/Textarea';
 import Avatar from '@components/atoms/avatar/Avatar';
 import Button from '@components/atoms/common/Button';
 import SingleUpload from '@components/molecules/upload/SingleUpload';
-import { IFile } from '@interfaces/file';
+import { IFile } from '@my-app/core/lib/interfaces/file';
 
 interface PropsType {
   loading?: boolean;

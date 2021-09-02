@@ -1,19 +1,19 @@
 import Head from '@components/atoms/layout/Head';
 import React, { FC } from 'react';
 import ProfileContentTemplate from './templates/ProfileContentTemplate';
-import { BasePropsType, ListResult } from '@interfaces/common';
+import { BasePropsType, ListResult } from '@my-app/core/lib/interfaces/common';
 import BaseLayoutTemplate from '@components/templates/layout/BaseLayoutTemplate';
 import { useStores } from '@stores/stores';
 import { useState } from 'react';
 import { PostTab } from './enum';
-import { IArticle } from '@interfaces/article';
+import { IArticle } from '@my-app/core/lib/interfaces/article';
 import { useQuery } from 'react-query';
 import ArticleAPI from '@api/article';
 import { notifyError } from '@utils/notifiy';
 import { useRouter } from 'next/router';
 import ProfileBannerTemplate from './templates/ProfileBannerTemplate';
 import ProfileAPI from '@api/profile';
-import { IProfile } from '@interfaces/profile';
+import { IProfile } from '@my-app/core/lib/interfaces/profile';
 
 const PAGE_LIMIT = 5;
 interface PropsType extends BasePropsType {

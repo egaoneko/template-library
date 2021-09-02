@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { IUser, LoginRequest, RegisterRequest } from '@interfaces/user';
+import { IUser, LoginRequest, RegisterRequest } from '@my-app/core/lib/interfaces/user';
 export default class AuthAPI {
   private static BASE_URL = `/api/auth`;
   static async register(request: RegisterRequest): Promise<IUser> {

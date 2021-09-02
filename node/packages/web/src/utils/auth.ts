@@ -5,7 +5,7 @@ import cookies from 'next-cookies';
 import { ACCESS_TOKEN_NAME, REFRESH_TOKEN_NAME } from '@constants/common';
 import { refreshToken, removeToken, setToken } from './cookie';
 import UserAPI from '@api/user';
-import { IUser } from '@interfaces/user';
+import { IUser } from '@my-app/core/lib/interfaces/user';
 
 export interface AuthPropsType {
   user?: IUser;

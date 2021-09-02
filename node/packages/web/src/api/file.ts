@@ -1,6 +1,6 @@
 import axios from 'axios';
 import { API_SERVER_URL } from '@constants/common';
-import { IFile } from '@interfaces/file';
+import { IFile } from '@my-app/core/lib/interfaces/file';
 
 export default class FileAPI {
   private static BASE_URL = `${API_SERVER_URL}/api/file`;

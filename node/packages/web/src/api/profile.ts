@@ -1,6 +1,6 @@
 import axios from 'axios';
 import { API_SERVER_URL } from '@constants/common';
-import { IProfile } from '@interfaces/profile';
+import { IProfile } from '@my-app/core/lib/interfaces/profile';
 
 export default class ProfileAPI {
   private static BASE_URL = `${API_SERVER_URL}/api/profiles`;

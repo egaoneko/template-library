@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { IUser, UpdateRequest } from '@interfaces/user';
+import { IUser, UpdateRequest } from '@my-app/core/lib/interfaces/user';
 import { API_SERVER_URL } from '@constants/common';
 
 export default class UserAPI {

@@ -11,6 +11,10 @@ async function generate(targetPath) {
   const schemaMap = new Map();
 
   for (const filePath of filePaths) {
+    if (!/.json/.test(filePath)) {
+      continue;
+    }
+
     const absoluteDirPath = path.dirname(filePath);
     const relativeDirPath = absoluteDirPath.replace(schemaPath, '');
     const dirsName = relativeDirPath.replace(schemaPath, '').split(path.sep);
@@ -103,4 +107,4 @@ function getRelative(origin, target, title) {
   return (path.relative(origin, target) || '.') + '/' + title;
 }
 
-generate(path.join(__dirname, '../lib/schema'));
+generate(path.join(__dirname, '../src/schema'));

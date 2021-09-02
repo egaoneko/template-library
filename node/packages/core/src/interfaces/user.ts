@@ -1,4 +1,4 @@
-import { User } from '@my-app/core/lib/schema/types/User';
+import { User } from '../schema/types/User';
 
 export type IUser = User;
 

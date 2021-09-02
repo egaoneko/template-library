@@ -1,12 +1,12 @@
 import Head from '@components/atoms/layout/Head';
 import React, { FC } from 'react';
 import HomeContentTemplate from './templates/HomeContentTemplate';
-import { BasePropsType, ListResult } from '@interfaces/common';
+import { BasePropsType, ListResult } from '@my-app/core/lib/interfaces/common';
 import BaseLayoutTemplate from '@components/templates/layout/BaseLayoutTemplate';
 import { useStores } from '@stores/stores';
 import { useState } from 'react';
 import { FeedTab } from './enum';
-import { IArticle } from '@interfaces/article';
+import { IArticle } from '@my-app/core/lib/interfaces/article';
 import { useQuery } from 'react-query';
 import ArticleAPI from '@api/article';
 import { notifyError } from '@utils/notifiy';

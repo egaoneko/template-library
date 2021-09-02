@@ -1,6 +1,6 @@
 import Avatar from '@components/atoms/avatar/Avatar';
-import { IProfile } from '@interfaces/profile';
-import { IUser } from '@interfaces/user';
+import { IProfile } from '@my-app/core/lib/interfaces/profile';
+import { IUser } from '@my-app/core/lib/interfaces/user';
 import React, { FC } from 'react';
 import { AiOutlineMinus, AiOutlinePlus } from 'react-icons/ai';
 import { UseQueryResult } from 'react-query';

@@ -12,8 +12,9 @@
     "access": "public"
   },
   "scripts": {
-    "prebuild": "rimraf ./lib",
+    "prebuild": "rimraf ./src/schema",
     "build": "npm run schema && npm run compile",
+    "postbuild": "cp -r ./src/schema/json ./lib/schema/json",
     "compile": "tsc --project tsconfig.json",
     "start": "npm run build && node lib/index.js",
     "test": "jest",
@@ -25,7 +26,8 @@
     "preschema": "rimraf ./lib/schema",
     "schema": "node scripts/schema.js"
   },
-  "dependencies": {},
+  "dependencies": {
+  },
   "devDependencies": {
     "@apidevtools/json-schema-ref-parser": "9.0.9",
     "fs-extra": "10.0.0",

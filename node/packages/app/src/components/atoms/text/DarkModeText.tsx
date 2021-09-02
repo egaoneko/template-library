@@ -5,9 +5,11 @@ import styled from 'styled-components/native';
 import useDarkMode from '../../../hooks/useDarkMode';
 import {COLOR_SET} from '../../../enums/color';
 
-interface PropsType extends StyledProps<TextStyle> {}
+export interface TextPropsType extends StyledProps<TextStyle> {
+  active?: boolean;
+}
 
-const DarkModeText: FC<PropsType> = ({children, ...props}) => {
+const DarkModeText: FC<TextPropsType> = ({children, ...props}) => {
   return (
     <StyledText darkMode={useDarkMode()} {...props}>
       {children}
@@ -16,7 +18,11 @@ const DarkModeText: FC<PropsType> = ({children, ...props}) => {
 };
 
 export default DarkModeText;
-const StyledText = styled.Text<{darkMode: boolean}>`
-  color: ${({darkMode}) =>
-    darkMode ? COLOR_SET.DARK_MODE_TEXT : COLOR_SET.LIGHT_MODE_TEXT};
+const StyledText = styled.Text<{active?: boolean; darkMode: boolean}>`
+  color: ${({active, darkMode}) =>
+    active
+      ? COLOR_SET.PRIMARY
+      : darkMode
+      ? COLOR_SET.DARK_MODE_TEXT
+      : COLOR_SET.LIGHT_MODE_TEXT};
 `;

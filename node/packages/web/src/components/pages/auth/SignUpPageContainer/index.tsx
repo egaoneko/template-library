@@ -1,10 +1,10 @@
 import Head from '@components/atoms/layout/Head';
 import React, { FC, useState } from 'react';
 import SignUpContentTemplate from './templates/SignUpContentTemplate';
-import { RegisterRequest } from '@interfaces/user';
+import { RegisterRequest } from '@my-app/core/lib/interfaces/user';
 import { useRouter } from 'next/router';
 import { useStores } from '@stores/stores';
-import { BasePropsType } from '@interfaces/common';
+import { BasePropsType } from '@my-app/core/lib/interfaces/common';
 import BaseLayoutTemplate from '@components/templates/layout/BaseLayoutTemplate';
 
 interface PropsType extends BasePropsType {}
