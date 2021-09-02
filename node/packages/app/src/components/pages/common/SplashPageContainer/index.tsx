@@ -5,6 +5,7 @@ import styled from 'styled-components/native';
 import {NativeStackScreenProps} from '@react-navigation/native-stack';
 import {NAVIGATION_TYPE} from '../../../../enums/navigation';
 import {RootStackParamList} from '../../../../interfaces/common';
+import {FONT_SET} from '../../../../enums/font';
 
 type PropsType = NativeStackScreenProps<RootStackParamList, 'SPLASH'>;
 
@@ -36,6 +37,7 @@ const LoadingIndicator = styled.ActivityIndicator`
 `;
 
 const Title = styled.Text`
+  font-family: ${FONT_SET.BASE_FONT};
   font-size: 40px;
   font-weight: 700;
   color: rgb(179, 83, 172);

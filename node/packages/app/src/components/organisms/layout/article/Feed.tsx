@@ -10,6 +10,7 @@ import DarkModeIcon from '../../../atoms/button/DarkModeIcon';
 import Avatar from '../../../atoms/avatar/Avatar';
 import useDarkMode from '../../../../hooks/useDarkMode';
 import IconButton from '../../../atoms/button/IconButton';
+import {FONT_SET} from '../../../../enums/font';
 
 interface PropsType {
   article: IArticle;
@@ -71,6 +72,7 @@ const AuthorContainer = styled(TouchableView)`
 `;
 
 const AuthorDescription = styled.Text<{darkMode: boolean}>`
+  font-family: ${FONT_SET.BASE_FONT};
   margin: 0 3px;
   font-size: 13px;
   font-weight: 400;
@@ -90,11 +92,13 @@ const FavoriteWrapper = styled.View`
 
 const FavoriteContainer = styled(TouchableView)`
   flex-direction: row;
+  align-items: center;
   justify-content: flex-end;
 `;
 
 const FavoriteCount = styled(DarkModeText)`
   margin-left: 4px;
-  font-size: 13px;
+  font-size: 14px;
   font-weight: 500;
+  margin-bottom: 1px;
 `;
