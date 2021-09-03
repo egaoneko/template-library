@@ -1,8 +1,8 @@
 import React, {FC, ReactNode} from 'react';
 import styled from 'styled-components/native';
 import {Colors} from 'react-native-paper';
-import DarkModeView from '../../atoms/view/DarkModeView';
-import DarkModeText from '../../atoms/text/DarkModeText';
+import BaseView from '../../atoms/view/BaseView';
+import {Heading2} from '../../atoms/common/typography';
 import useDarkMode from '../../../hooks/useDarkMode';
 
 interface PropsType {
@@ -13,7 +13,7 @@ interface PropsType {
 const TopBar: FC<PropsType> = props => {
   return (
     <Container darkMode={useDarkMode()}>
-      {props.title && <Title>{props.title}</Title>}
+      {props.title && <Heading2>{props.title}</Heading2>}
       {props.topBarButton && (
         <ButtonContainer>{props.topBarButton}</ButtonContainer>
       )}
@@ -23,7 +23,7 @@ const TopBar: FC<PropsType> = props => {
 
 export default TopBar;
 
-const Container = styled(DarkModeView)<{darkMode: boolean}>`
+const Container = styled(BaseView)<{darkMode: boolean}>`
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
@@ -31,11 +31,6 @@ const Container = styled(DarkModeView)<{darkMode: boolean}>`
   border-bottom-width: 1px;
   border-bottom-color: ${({darkMode}) =>
     darkMode ? Colors.grey800 : Colors.grey100};
-`;
-
-const Title = styled(DarkModeText)`
-  font-size: 20px;
-  font-weight: 700;
 `;
 
 const ButtonContainer = styled.View`

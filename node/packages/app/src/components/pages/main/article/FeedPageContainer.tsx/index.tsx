@@ -1,12 +1,17 @@
 import React, {FC} from 'react';
 import styled from 'styled-components/native';
 import {Text} from 'react-native';
-import {NativeStackScreenProps} from '@react-navigation/native-stack';
 import BaseLayoutTemplate from '../../../../templates/layout/BaseLayoutTemplate';
 import IconButton from '../../../../atoms/button/IconButton';
-import {RootStackParamList} from '../../../../../interfaces/common';
+import {CommonParamList, MainParamList} from '../../../../../interfaces/common';
+import {BottomTabScreenProps} from '@react-navigation/bottom-tabs';
+import {CompositeScreenProps} from '@react-navigation/native';
+import {NativeStackScreenProps} from '@react-navigation/native-stack';
 
-type PropsType = NativeStackScreenProps<RootStackParamList, 'FEED'>;
+type PropsType = CompositeScreenProps<
+  NativeStackScreenProps<CommonParamList, 'MAIN'>,
+  BottomTabScreenProps<MainParamList, 'FEED'>
+>;
 
 const FeedPageContainer: FC<PropsType> = () => {
   return (

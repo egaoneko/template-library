@@ -1,11 +1,16 @@
 import React, {FC} from 'react';
 import styled from 'styled-components/native';
 import {Text} from 'react-native';
-import {NativeStackScreenProps} from '@react-navigation/native-stack';
 import BaseLayoutTemplate from '../../../../templates/layout/BaseLayoutTemplate';
-import {RootStackParamList} from '../../../../../interfaces/common';
+import {CommonParamList, MainParamList} from '../../../../../interfaces/common';
+import { CompositeScreenProps } from '@react-navigation/native';
+import { NativeStackScreenProps } from '@react-navigation/native-stack';
+import { BottomTabScreenProps } from '@react-navigation/bottom-tabs';
 
-type PropsType = NativeStackScreenProps<RootStackParamList, 'SETTINGS'>;
+type PropsType = CompositeScreenProps<
+  NativeStackScreenProps<CommonParamList, 'MAIN'>,
+  BottomTabScreenProps<MainParamList, 'SETTINGS'>
+>;
 
 const SettingsPageContainer: FC<PropsType> = () => {
   return (

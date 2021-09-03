@@ -1,13 +1,18 @@
 import React, {FC} from 'react';
 import styled from 'styled-components/native';
-import {NativeStackScreenProps} from '@react-navigation/native-stack';
 import BaseLayoutTemplate from '../../../templates/layout/BaseLayoutTemplate';
 import IconButton from '../../../atoms/button/IconButton';
-import {RootStackParamList} from '../../../../interfaces/common';
+import {CommonParamList, MainParamList} from '../../../../interfaces/common';
 import {createMockArticles} from '../../../../data/mock-article';
-import FeedList from '../../../organisms/layout/article/FeedList';
+import FeedList from '../../../organisms/article/FeedList';
+import {BottomTabScreenProps} from '@react-navigation/bottom-tabs';
+import {CompositeScreenProps} from '@react-navigation/native';
+import {NativeStackScreenProps} from '@react-navigation/native-stack';
 
-type PropsType = NativeStackScreenProps<RootStackParamList, 'HOME'>;
+type PropsType = CompositeScreenProps<
+  NativeStackScreenProps<CommonParamList, 'MAIN'>,
+  BottomTabScreenProps<MainParamList, 'HOME'>
+>;
 
 const HomePageContainer: FC<PropsType> = () => {
   const articles = createMockArticles(5);

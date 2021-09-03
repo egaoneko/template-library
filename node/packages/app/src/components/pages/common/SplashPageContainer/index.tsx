@@ -1,13 +1,11 @@
-import React, {FC} from 'react';
-import {useEffect} from 'react';
+import React, {FC, useEffect} from 'react';
 import {Colors} from 'react-native-paper';
 import styled from 'styled-components/native';
 import {NativeStackScreenProps} from '@react-navigation/native-stack';
 import {NAVIGATION_TYPE} from '../../../../enums/navigation';
-import {RootStackParamList} from '../../../../interfaces/common';
-import {FONT_SET} from '../../../../enums/font';
+import {CommonParamList} from '../../../../interfaces/common';
 
-type PropsType = NativeStackScreenProps<RootStackParamList, 'SPLASH'>;
+type PropsType = NativeStackScreenProps<CommonParamList, 'SPLASH'>;
 
 const SplashPageContainer: FC<PropsType> = ({navigation}) => {
   useEffect(() => {
@@ -37,7 +35,7 @@ const LoadingIndicator = styled.ActivityIndicator`
 `;
 
 const Title = styled.Text`
-  font-family: ${FONT_SET.BASE_FONT};
+  font-family: ${({theme}) => theme.font};
   font-size: 40px;
   font-weight: 700;
   color: rgb(179, 83, 172);

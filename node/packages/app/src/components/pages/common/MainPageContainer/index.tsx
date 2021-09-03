@@ -1,10 +1,10 @@
 import React, {FC} from 'react';
 import styled from 'styled-components/native';
 import {NativeStackScreenProps} from '@react-navigation/native-stack';
-import {RootStackParamList} from '../../../../interfaces/common';
+import {CommonParamList} from '../../../../interfaces/common';
 import MainNavigator from '../../../../navigators/MainNavigator';
 
-type PropsType = NativeStackScreenProps<RootStackParamList, 'MAIN'>;
+type PropsType = NativeStackScreenProps<CommonParamList, 'MAIN'>;
 
 const MainPageContainer: FC<PropsType> = () => {
   return (

@@ -1,9 +1,7 @@
 import React, {FC, ReactNode} from 'react';
 import styled from 'styled-components/native';
 import TopBar from '../../organisms/layout/TopBar';
-import DarkModeSafeAreaView from '../../atoms/view/DarkModeSafeAreaView';
-import useDarkMode from '../../../hooks/useDarkMode';
-import {Colors} from 'react-native-paper';
+import BaseSafeAreaView from '../../atoms/view/BaseSafeAreaView';
 
 interface PropsType {
   title?: string;
@@ -18,19 +16,18 @@ const BaseLayoutTemplate: FC<PropsType> = props => {
       {(title || topBarButton) && (
         <TopBar title={title} topBarButton={topBarButton} />
       )}
-      <ContentContainer darkMode={useDarkMode()}>{children}</ContentContainer>
+      <ContentContainer>{children}</ContentContainer>
     </Container>
   );
 };
 
 export default BaseLayoutTemplate;
 
-const Container = styled(DarkModeSafeAreaView)`
+const Container = styled(BaseSafeAreaView)`
   flex: 1;
 `;
 
-const ContentContainer = styled.View<{darkMode: boolean}>`
+const ContentContainer = styled.View`
   flex: 1;
-  background-color: ${({darkMode}) =>
-    darkMode ? Colors.grey800 : Colors.grey100};
+  background-color: ${({theme}) => theme.foreground};
 `;
