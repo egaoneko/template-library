@@ -1,13 +1,15 @@
-import {NAVIGATION_TYPE} from '../enums/navigation';
+import { COMMON_NAVIGATION_TYPE } from '../enums/common-navigation';
+import { MAIN_NAVIGATION_TYPE } from '../enums/main-navigation';
 
 export type CommonParamList = {
-  [NAVIGATION_TYPE.SPLASH]: undefined;
-  [NAVIGATION_TYPE.MAIN]: undefined;
+  [COMMON_NAVIGATION_TYPE.SPLASH]: undefined;
+  [COMMON_NAVIGATION_TYPE.MAIN]: undefined;
+  [COMMON_NAVIGATION_TYPE.LOGIN]: undefined;
 };
 
 export type MainParamList = {
-  [NAVIGATION_TYPE.HOME]: undefined;
-  [NAVIGATION_TYPE.FEED]: undefined;
-  [NAVIGATION_TYPE.POST_ARTICLE]: undefined;
-  [NAVIGATION_TYPE.SETTINGS]: undefined;
+  [MAIN_NAVIGATION_TYPE.HOME]: undefined;
+  [MAIN_NAVIGATION_TYPE.FEED]: undefined;
+  [MAIN_NAVIGATION_TYPE.POST_ARTICLE]: undefined;
+  [MAIN_NAVIGATION_TYPE.SETTINGS]: undefined;
 };

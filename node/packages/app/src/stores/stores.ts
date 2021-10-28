@@ -2,16 +2,10 @@ import {useContext} from 'react';
 import {MobXProviderContext} from 'mobx-react';
 import UserStore from './UserStore';
 
-export interface StoresTypes {
+export interface Stores {
   userStore: UserStore;
 }
 
-const stores: StoresTypes = {
-  userStore: new UserStore(),
-};
-
-function useStores() {
-  return useContext(MobXProviderContext);
+export function useStores(): Stores {
+  return useContext(MobXProviderContext) as Stores;
 }
-
-export {stores, useStores};

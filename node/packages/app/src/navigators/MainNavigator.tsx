@@ -1,10 +1,12 @@
 import React from 'react';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import Icon from 'react-native-vector-icons/AntDesign';
-import {NAVIGATION_TYPE} from '../enums/navigation';
 import {mainRoutes} from './routes';
 import {COLOR_SET} from '../enums/color';
 import useDarkMode from '../hooks/useDarkMode';
+import {NavigationState} from '@react-navigation/core';
+import { COMMON_NAVIGATION_TYPE } from '../enums/common-navigation';
+import { MAIN_NAVIGATION_TYPE } from '../enums/main-navigation';
 
 const Tab = createBottomTabNavigator();
 
@@ -17,23 +19,23 @@ const MainNavigator = () => {
 
   return (
     <Tab.Navigator
-      initialRouteName={NAVIGATION_TYPE.SPLASH}
+      initialRouteName={COMMON_NAVIGATION_TYPE.SPLASH}
       screenOptions={({route}) => ({
         tabBarShowLabel: false,
         tabBarIcon: ({color, size}) => {
           let name: string;
 
           switch (route.name) {
-            case NAVIGATION_TYPE.HOME:
+            case MAIN_NAVIGATION_TYPE.HOME:
               name = 'home';
               break;
-            case NAVIGATION_TYPE.FEED:
+            case MAIN_NAVIGATION_TYPE.FEED:
               name = 'select1';
               break;
-            case NAVIGATION_TYPE.POST_ARTICLE:
+            case MAIN_NAVIGATION_TYPE.POST_ARTICLE:
               name = 'form';
               break;
-            case NAVIGATION_TYPE.SETTINGS:
+            case MAIN_NAVIGATION_TYPE.SETTINGS:
               name = 'user';
               break;
             default:
@@ -51,6 +53,14 @@ const MainNavigator = () => {
           backgroundColor: isDarkMode
             ? COLOR_SET.DARK_MODE_BACKGROUND
             : COLOR_SET.LIGHT_MODE_BACKGROUND,
+        },
+      })}
+      screenListeners={({navigation}) => ({
+        state: ({data}) => {
+          // Do something with the state
+          const state = (data as {state: NavigationState}).state;
+          const {index, routes} = state;
+          console.log('state changed', routes[index]);
         },
       })}>
       {mainRoutes.map(route => {

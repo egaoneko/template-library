@@ -2,15 +2,15 @@ import React, {FC, useEffect} from 'react';
 import {Colors} from 'react-native-paper';
 import styled from 'styled-components/native';
 import {NativeStackScreenProps} from '@react-navigation/native-stack';
-import {NAVIGATION_TYPE} from '../../../../enums/navigation';
 import {CommonParamList} from '../../../../interfaces/common';
+import { COMMON_NAVIGATION_TYPE } from '../../../../enums/common-navigation';
 
 type PropsType = NativeStackScreenProps<CommonParamList, 'SPLASH'>;
 
 const SplashPageContainer: FC<PropsType> = ({navigation}) => {
   useEffect(() => {
     setTimeout(() => {
-      navigation.replace(NAVIGATION_TYPE.MAIN);
+      navigation.replace(COMMON_NAVIGATION_TYPE.LOGIN);
     }, 1000);
   }, []);
 

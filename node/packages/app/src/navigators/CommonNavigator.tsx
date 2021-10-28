@@ -1,8 +1,8 @@
 import React from 'react';
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
-import {NAVIGATION_TYPE} from '../enums/navigation';
 import {commonRoutes} from './routes';
+import { COMMON_NAVIGATION_TYPE } from '../enums/common-navigation';
 
 const Stack = createNativeStackNavigator();
 
@@ -12,7 +12,7 @@ const DEFAULT_OPTIONS = {
 
 const CommonNavigator = () => (
   <NavigationContainer>
-    <Stack.Navigator initialRouteName={NAVIGATION_TYPE.SPLASH}>
+    <Stack.Navigator initialRouteName={COMMON_NAVIGATION_TYPE.SPLASH}>
       {commonRoutes.map(route => {
         const {name, options, ...other} = route;
         return (

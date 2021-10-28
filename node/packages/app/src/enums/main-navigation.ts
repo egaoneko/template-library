@@ -1,0 +1,12 @@
+export const MAIN_NAVIGATION_TYPE = {
+  SPLASH: 'SPLASH',
+  MAIN: 'MAIN',
+  LOGIN: 'LOGIN',
+  HOME: 'HOME',
+  FEED: 'FEED',
+  POST_ARTICLE: 'POST_ARTICLE',
+  SETTINGS: 'SETTINGS',
+} as const;
+
+export type MAIN_NAVIGATION_TYPE =
+  typeof MAIN_NAVIGATION_TYPE[keyof typeof MAIN_NAVIGATION_TYPE];

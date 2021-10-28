@@ -9,16 +9,21 @@
  */
 
 import {Provider} from 'mobx-react';
-import React from 'react';
+import React, {useState} from 'react';
 import {StatusBar} from 'react-native';
 import {ThemeProvider} from 'styled-components';
 import {theme} from './constants/theme';
 import {THEME} from './enums/theme';
 import useDarkMode from './hooks/useDarkMode';
 import CommonNavigator from './navigators/CommonNavigator';
-import {stores} from './stores/stores';
+import {Stores} from './stores/stores';
+import {useUserStore} from './stores/UserStore';
 
 const App = () => {
+  const [stores] = useState<Stores>({
+    userStore: useUserStore(null),
+  });
+
   return (
     <ThemeProvider
       theme={useDarkMode() ? theme[THEME.DARK] : theme[THEME.LIGHT]}>

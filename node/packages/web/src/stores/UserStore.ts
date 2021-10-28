@@ -8,7 +8,6 @@ import { notifyError, notifySuccess } from '@utils/notifiy';
 import { removeToken, setToken } from '@utils/cookie';
 
 export class UserStore {
-  public lastUpdate: number = 0;
   public user: IUser | null = null;
 
   constructor(user: IUser | null) {
@@ -36,7 +35,7 @@ export class UserStore {
   public async login(request: LoginRequest): Promise<IUser | null> {
     try {
       const user = await AuthAPI.login(request);
-      this.setUser(user);
+      await this.setUser(user);
 
       if (this.user) {
         notifySuccess('Successfully login!');
@@ -53,7 +52,7 @@ export class UserStore {
   public async update(request: UpdateRequest): Promise<IUser | null> {
     try {
       const user = await UserAPI.update(request);
-      this.setUser({
+      await this.setUser({
         ...this.user,
         ...user,
       });

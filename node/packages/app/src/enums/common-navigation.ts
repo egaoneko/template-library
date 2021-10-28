@@ -1,0 +1,8 @@
+export const COMMON_NAVIGATION_TYPE = {
+  SPLASH: 'SPLASH',
+  MAIN: 'MAIN',
+  LOGIN: 'LOGIN',
+} as const;
+
+export type COMMON_NAVIGATION_TYPE =
+  typeof COMMON_NAVIGATION_TYPE[keyof typeof COMMON_NAVIGATION_TYPE];
