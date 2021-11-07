@@ -2,16 +2,16 @@
 
 exports[`User Settings Snapshots renders user settings 1`] = `
 <div
-  className="BaseLayoutTemplate__Container-sc-1jz5xvr-0 gAVYwR"
+  className="BaseLayoutTemplate__Container-sc-1jz5xvr-0 kHMSW"
 >
   <div
-    className="HeaderTemplate__Container-sc-kdla34-0 inxbiA"
+    className="HeaderTemplate__Container-sc-kdla34-0 gxnUkb"
   >
     <div
-      className="HeaderTemplate__Heading-sc-kdla34-1 laFayD"
+      className="HeaderTemplate__Heading-sc-kdla34-1 lcHwtI"
     >
       <div
-        className="HeaderTemplate__HeadingTitle-sc-kdla34-2 bAZjNO"
+        className="HeaderTemplate__HeadingTitle-sc-kdla34-2 ibfQih"
         data-cy="header-logo-link"
       >
         <a
@@ -135,16 +135,96 @@ exports[`User Settings Snapshots renders user settings 1`] = `
                 className="flex items-center gap-1"
               >
                 <div
-                  className="Avatar__Wrapper-sc-m9feoe-0 icAXkY"
+                  className="Avatar__Wrapper-sc-m9feoe-0 ieHczv"
                 >
                   <div
-                    className="Avatar__Container-sc-m9feoe-1 JCubi w-5 h-5"
+                    className="Avatar__Container-sc-m9feoe-1 fQHyzl w-5 h-5"
                   >
-                    <img
-                      alt="avatar"
-                      className="Avatar__Img-sc-m9feoe-2 iQvAVN rounded-full"
-                      src="https://i.stack.imgur.com/xHWG8.jpg"
-                    />
+                    <span
+                      style={
+                        Object {
+                          "background": "none",
+                          "border": 0,
+                          "bottom": 0,
+                          "boxSizing": "border-box",
+                          "display": "block",
+                          "height": "initial",
+                          "left": 0,
+                          "margin": 0,
+                          "opacity": 1,
+                          "overflow": "hidden",
+                          "padding": 0,
+                          "position": "absolute",
+                          "right": 0,
+                          "top": 0,
+                          "width": "initial",
+                        }
+                      }
+                    >
+                      <img
+                        alt="avatar"
+                        className="Avatar__Img-sc-m9feoe-2 kuaPdK rounded-full"
+                        data-nimg="fill"
+                        decoding="async"
+                        src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                        style={
+                          Object {
+                            "border": "none",
+                            "bottom": 0,
+                            "boxSizing": "border-box",
+                            "display": "block",
+                            "height": 0,
+                            "left": 0,
+                            "margin": "auto",
+                            "maxHeight": "100%",
+                            "maxWidth": "100%",
+                            "minHeight": "100%",
+                            "minWidth": "100%",
+                            "objectFit": undefined,
+                            "objectPosition": undefined,
+                            "padding": 0,
+                            "position": "absolute",
+                            "right": 0,
+                            "top": 0,
+                            "width": 0,
+                          }
+                        }
+                      />
+                      <noscript>
+                        <img
+                          alt="avatar"
+                          className="Avatar__Img-sc-m9feoe-2 kuaPdK rounded-full"
+                          data-nimg="fill"
+                          decoding="async"
+                          loading="lazy"
+                          sizes="100vw"
+                          src="/_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=3840&q=75"
+                          srcSet="/_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=640&q=75 640w, /_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=750&q=75 750w, /_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=828&q=75 828w, /_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=1080&q=75 1080w, /_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=1200&q=75 1200w, /_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=1920&q=75 1920w, /_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=2048&q=75 2048w, /_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=3840&q=75 3840w"
+                          style={
+                            Object {
+                              "border": "none",
+                              "bottom": 0,
+                              "boxSizing": "border-box",
+                              "display": "block",
+                              "height": 0,
+                              "left": 0,
+                              "margin": "auto",
+                              "maxHeight": "100%",
+                              "maxWidth": "100%",
+                              "minHeight": "100%",
+                              "minWidth": "100%",
+                              "objectFit": undefined,
+                              "objectPosition": undefined,
+                              "padding": 0,
+                              "position": "absolute",
+                              "right": 0,
+                              "top": 0,
+                              "width": 0,
+                            }
+                          }
+                        />
+                      </noscript>
+                    </span>
                   </div>
                 </div>
                 Jacob
@@ -174,17 +254,97 @@ exports[`User Settings Snapshots renders user settings 1`] = `
           className="flex flex-col gap-4"
         >
           <div
-            className="Avatar__Wrapper-sc-m9feoe-0 icAXkY"
+            className="Avatar__Wrapper-sc-m9feoe-0 ieHczv"
             data-cy="user-image"
           >
             <div
-              className="Avatar__Container-sc-m9feoe-1 JCubi w-32 h-32"
+              className="Avatar__Container-sc-m9feoe-1 fQHyzl w-32 h-32"
             >
-              <img
-                alt="avatar"
-                className="Avatar__Img-sc-m9feoe-2 iQvAVN rounded-full"
-                src="https://i.stack.imgur.com/xHWG8.jpg"
-              />
+              <span
+                style={
+                  Object {
+                    "background": "none",
+                    "border": 0,
+                    "bottom": 0,
+                    "boxSizing": "border-box",
+                    "display": "block",
+                    "height": "initial",
+                    "left": 0,
+                    "margin": 0,
+                    "opacity": 1,
+                    "overflow": "hidden",
+                    "padding": 0,
+                    "position": "absolute",
+                    "right": 0,
+                    "top": 0,
+                    "width": "initial",
+                  }
+                }
+              >
+                <img
+                  alt="avatar"
+                  className="Avatar__Img-sc-m9feoe-2 kuaPdK rounded-full"
+                  data-nimg="fill"
+                  decoding="async"
+                  src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                  style={
+                    Object {
+                      "border": "none",
+                      "bottom": 0,
+                      "boxSizing": "border-box",
+                      "display": "block",
+                      "height": 0,
+                      "left": 0,
+                      "margin": "auto",
+                      "maxHeight": "100%",
+                      "maxWidth": "100%",
+                      "minHeight": "100%",
+                      "minWidth": "100%",
+                      "objectFit": undefined,
+                      "objectPosition": undefined,
+                      "padding": 0,
+                      "position": "absolute",
+                      "right": 0,
+                      "top": 0,
+                      "width": 0,
+                    }
+                  }
+                />
+                <noscript>
+                  <img
+                    alt="avatar"
+                    className="Avatar__Img-sc-m9feoe-2 kuaPdK rounded-full"
+                    data-nimg="fill"
+                    decoding="async"
+                    loading="lazy"
+                    sizes="100vw"
+                    src="/_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=3840&q=75"
+                    srcSet="/_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=640&q=75 640w, /_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=750&q=75 750w, /_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=828&q=75 828w, /_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=1080&q=75 1080w, /_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=1200&q=75 1200w, /_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=1920&q=75 1920w, /_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=2048&q=75 2048w, /_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=3840&q=75 3840w"
+                    style={
+                      Object {
+                        "border": "none",
+                        "bottom": 0,
+                        "boxSizing": "border-box",
+                        "display": "block",
+                        "height": 0,
+                        "left": 0,
+                        "margin": "auto",
+                        "maxHeight": "100%",
+                        "maxWidth": "100%",
+                        "minHeight": "100%",
+                        "minWidth": "100%",
+                        "objectFit": undefined,
+                        "objectPosition": undefined,
+                        "padding": 0,
+                        "position": "absolute",
+                        "right": 0,
+                        "top": 0,
+                        "width": 0,
+                      }
+                    }
+                  />
+                </noscript>
+              </span>
             </div>
           </div>
           <div
@@ -295,10 +455,10 @@ exports[`User Settings Snapshots renders user settings 1`] = `
     </div>
   </div>
   <div
-    className="FooterTemplate__Container-sc-96wla6-0 dxhwgY"
+    className="FooterTemplate__Container-sc-96wla6-0 cOGJUH"
   >
     <span
-      className="FooterTemplate__SiteLink-sc-96wla6-1 iJSbEN text-base mr-1 font-bold"
+      className="FooterTemplate__SiteLink-sc-96wla6-1 ENejy text-base mr-1 font-bold"
       data-cy="footer-logo-link"
       href="/"
       onClick={[Function]}
@@ -308,7 +468,7 @@ exports[`User Settings Snapshots renders user settings 1`] = `
     </span>
     © 2020. An interactive learning project from
     <span
-      className="FooterTemplate__SiteLink-sc-96wla6-1 iJSbEN ml-1"
+      className="FooterTemplate__SiteLink-sc-96wla6-1 ENejy ml-1"
       data-cy="footer-site-link"
       href="https://thinkster.io/"
       onClick={[Function]}

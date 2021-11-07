@@ -106,7 +106,6 @@ const Pagination: FC<PropsType> = props => {
               props.onChange?.(selected + 1);
             }}
             initialPage={current - 1}
-            forcePage={current - 1}
             breakClassName={'pagination-page-item'}
             breakLinkClassName={'pagination-ellipsis'}
             containerClassName={'pagination'}

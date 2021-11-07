@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 import Avatar from '@components/atoms/avatar/Avatar';
 import format from 'date-fns/format';
 import { IArticle } from '@my-app/core/lib/interfaces/article';
@@ -6,11 +5,12 @@ import { IUser } from '@my-app/core/lib/interfaces/user';
 import { AiFillEdit, AiFillDelete, AiOutlinePlus, AiOutlineMinus, AiFillHeart } from 'react-icons/ai';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
-import dynamic from 'next/dynamic';
 import React, { FC } from 'react';
 import { UseQueryResult } from 'react-query';
 import styled from 'styled-components';
 import tw from 'twin.macro';
+import marked from 'marked';
+import DOMPurify from 'isomorphic-dompurify';
 
 interface PropsType {
   user: IUser | null;
@@ -32,9 +32,7 @@ const ArticleContentTemplate: FC<PropsType> = props => {
   return (
     <Container>
       <Content>
-        <Body data-cy="article-content-body">
-          <ReactMarkdown>{article.body}</ReactMarkdown>
-        </Body>
+        <Body data-cy="article-content-body" dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(marked.parse(article.body)) }}/>
         {article.tagList.length > 0 && (
           <Tags>
             {article.tagList.map(tag => (
@@ -60,7 +58,7 @@ const ArticleContentTemplate: FC<PropsType> = props => {
           </AuthorInfo>
           {self ? (
             <>
-              <Edit onClick={() => router.push(`/editor/${article.slug}`)} data-cy="article-content-edit-article">
+              <Edit onClick={() => router.push(`/editor/edit/${article.slug}`)} data-cy="article-content-edit-article">
                 <div className="w-4 h-4">
                   <AiFillEdit />
                 </div>
@@ -170,4 +168,3 @@ const Favorite = styled.div<{ favorited: boolean }>`
       : tw`text-primary hover:text-white hover:bg-primary`}
 `;
 
-const ReactMarkdown = dynamic(() => import('react-markdown') as any, { ssr: false });

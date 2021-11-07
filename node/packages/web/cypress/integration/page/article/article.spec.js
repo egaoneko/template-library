@@ -16,7 +16,7 @@ describe('Article', () => {
     cy.visit(`http://localhost:3000/article/${article.slug}`);
     cy.wait(['@getArticle', '@geComments']);
     cy.get('[data-cy=head-title]').contains('ARTICLE');
-    cy.get('[data-cy=article-banner-author-image] > div > img').should('have.attr', 'src', article.author.image);
+    cy.get('[data-cy=article-banner-author-image] > div > span > img').should('have.attr', 'srcset').and('contain', encodeURIComponent(article.author.image));
     cy.get('[data-cy=article-banner-author-username] > a').should(
       'have.attr',
       'href',
@@ -26,7 +26,7 @@ describe('Article', () => {
     cy.get('[data-cy=article-banner-author-date]').contains(format(new Date(article.updatedAt), 'EEE MMM d yyyy'));
     cy.get('[data-cy=article-content-body]').contains('It takes a Jacobian');
     cy.get('[data-cy=article-content-tags]').should('have.length', 2);
-    cy.get('[data-cy=article-content-author-image] > div > img').should('have.attr', 'src', article.author.image);
+    cy.get('[data-cy=article-content-author-image] > div > span > img').should('have.attr', 'srcset').and('contain', encodeURIComponent(article.author.image));
     cy.get('[data-cy=article-content-author-username] > a').should(
       'have.attr',
       'href',
@@ -175,7 +175,7 @@ describe('Article', () => {
     cy.wait('@getArticle');
     cy.get('[data-cy=article-banner-edit-article]').click();
     cy.prepareEdit();
-    cy.location('pathname').should('eq', `/editor/${article.slug}`);
+    cy.location('pathname').should('eq', `/editor/edit/${article.slug}`);
     cy.mockServerStop();
   });
 
@@ -187,7 +187,7 @@ describe('Article', () => {
     cy.wait('@getArticle');
     cy.get('[data-cy=article-content-edit-article]').click();
     cy.prepareEdit();
-    cy.location('pathname').should('eq', `/editor/${article.slug}`);
+    cy.location('pathname').should('eq', `/editor/edit/${article.slug}`);
     cy.mockServerStop();
   });
 });

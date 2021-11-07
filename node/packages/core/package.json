@@ -26,12 +26,11 @@
     "preschema": "rimraf ./lib/schema",
     "schema": "node scripts/schema.js"
   },
-  "dependencies": {
-  },
+  "dependencies": {},
   "devDependencies": {
     "@apidevtools/json-schema-ref-parser": "9.0.9",
     "fs-extra": "10.0.0",
-    "json-schema-to-typescript": "10.1.4",
+    "json-schema-to-typescript": "10.1.5",
     "recursive-readdir": "2.2.2"
   }
 }

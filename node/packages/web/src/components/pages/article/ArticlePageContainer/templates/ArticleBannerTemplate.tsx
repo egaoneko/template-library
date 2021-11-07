@@ -40,7 +40,7 @@ const ArticleBannerTemplate: FC<PropsType> = props => {
             </AuthorInfo>
             {self ? (
               <>
-                <Edit onClick={() => router.push(`/editor/${article.slug}`)} data-cy="article-banner-edit-article">
+                <Edit onClick={() => router.push(`/editor/edit/${article.slug}`)} data-cy="article-banner-edit-article">
                   <div className="w-4 h-4">
                     <AiFillEdit />
                   </div>

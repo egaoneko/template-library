@@ -4,8 +4,6 @@ import { UserStore } from '../../../../../src/stores/UserStore';
 import { Provider } from 'mobx-react';
 import ArticlePageContainer from '../../../../../src/components/pages/article/ArticlePageContainer';
 
-import { useQuery } from 'react-query';
-
 jest.mock('react-query', () => ({
   useQuery: jest.fn(args => {
     const response = {

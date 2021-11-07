@@ -4,8 +4,9 @@ const overwrittenConfig = cloneDeep(jestConfig);
 const { pathsToModuleNameMapper } = require('ts-jest/utils');
 const { compilerOptions } = require('./tsconfig');
 
-overwrittenConfig.rootDir = 'src';
+overwrittenConfig.rootDir = '';
 overwrittenConfig.moduleNameMapper = {
   ...pathsToModuleNameMapper(compilerOptions.paths, { prefix: '<rootDir>/' }),
 };
+
 module.exports = overwrittenConfig;

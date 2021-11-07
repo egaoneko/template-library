@@ -2,16 +2,16 @@
 
 exports[`Sign in Snapshots renders sign in 1`] = `
 <div
-  className="BaseLayoutTemplate__Container-sc-1jz5xvr-0 gAVYwR"
+  className="BaseLayoutTemplate__Container-sc-1jz5xvr-0 kHMSW"
 >
   <div
-    className="HeaderTemplate__Container-sc-kdla34-0 inxbiA"
+    className="HeaderTemplate__Container-sc-kdla34-0 gxnUkb"
   >
     <div
-      className="HeaderTemplate__Heading-sc-kdla34-1 laFayD"
+      className="HeaderTemplate__Heading-sc-kdla34-1 lcHwtI"
     >
       <div
-        className="HeaderTemplate__HeadingTitle-sc-kdla34-2 bAZjNO"
+        className="HeaderTemplate__HeadingTitle-sc-kdla34-2 ibfQih"
         data-cy="header-logo-link"
       >
         <a
@@ -149,10 +149,10 @@ exports[`Sign in Snapshots renders sign in 1`] = `
     </div>
   </div>
   <div
-    className="FooterTemplate__Container-sc-96wla6-0 dxhwgY"
+    className="FooterTemplate__Container-sc-96wla6-0 cOGJUH"
   >
     <span
-      className="FooterTemplate__SiteLink-sc-96wla6-1 iJSbEN text-base mr-1 font-bold"
+      className="FooterTemplate__SiteLink-sc-96wla6-1 ENejy text-base mr-1 font-bold"
       data-cy="footer-logo-link"
       href="/"
       onClick={[Function]}
@@ -162,7 +162,7 @@ exports[`Sign in Snapshots renders sign in 1`] = `
     </span>
     © 2020. An interactive learning project from
     <span
-      className="FooterTemplate__SiteLink-sc-96wla6-1 iJSbEN ml-1"
+      className="FooterTemplate__SiteLink-sc-96wla6-1 ENejy ml-1"
       data-cy="footer-site-link"
       href="https://thinkster.io/"
       onClick={[Function]}

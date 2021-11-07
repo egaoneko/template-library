@@ -2,112 +2,672 @@
 
 exports[`Avatar Snapshots renders avatar with default options 1`] = `
 <div
-  className="Avatar__Wrapper-sc-m9feoe-0 icAXkY"
+  className="Avatar__Wrapper-sc-m9feoe-0 ieHczv"
 >
   <div
-    className="Avatar__Container-sc-m9feoe-1 JCubi w-8 h-8"
+    className="Avatar__Container-sc-m9feoe-1 fQHyzl w-8 h-8"
   >
-    <img
-      alt="avatar"
-      className="Avatar__Img-sc-m9feoe-2 iQvAVN rounded-full"
-      src="https://static.productionready.io/images/smiley-cyrus.jpg"
-    />
+    <span
+      style={
+        Object {
+          "background": "none",
+          "border": 0,
+          "bottom": 0,
+          "boxSizing": "border-box",
+          "display": "block",
+          "height": "initial",
+          "left": 0,
+          "margin": 0,
+          "opacity": 1,
+          "overflow": "hidden",
+          "padding": 0,
+          "position": "absolute",
+          "right": 0,
+          "top": 0,
+          "width": "initial",
+        }
+      }
+    >
+      <img
+        alt="avatar"
+        className="Avatar__Img-sc-m9feoe-2 kuaPdK rounded-full"
+        data-nimg="fill"
+        decoding="async"
+        src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+        style={
+          Object {
+            "border": "none",
+            "bottom": 0,
+            "boxSizing": "border-box",
+            "display": "block",
+            "height": 0,
+            "left": 0,
+            "margin": "auto",
+            "maxHeight": "100%",
+            "maxWidth": "100%",
+            "minHeight": "100%",
+            "minWidth": "100%",
+            "objectFit": undefined,
+            "objectPosition": undefined,
+            "padding": 0,
+            "position": "absolute",
+            "right": 0,
+            "top": 0,
+            "width": 0,
+          }
+        }
+      />
+      <noscript>
+        <img
+          alt="avatar"
+          className="Avatar__Img-sc-m9feoe-2 kuaPdK rounded-full"
+          data-nimg="fill"
+          decoding="async"
+          loading="lazy"
+          sizes="100vw"
+          src="/_next/image?url=https%3A%2F%2Fstatic.productionready.io%2Fimages%2Fsmiley-cyrus.jpg&w=3840&q=75"
+          srcSet="/_next/image?url=https%3A%2F%2Fstatic.productionready.io%2Fimages%2Fsmiley-cyrus.jpg&w=640&q=75 640w, /_next/image?url=https%3A%2F%2Fstatic.productionready.io%2Fimages%2Fsmiley-cyrus.jpg&w=750&q=75 750w, /_next/image?url=https%3A%2F%2Fstatic.productionready.io%2Fimages%2Fsmiley-cyrus.jpg&w=828&q=75 828w, /_next/image?url=https%3A%2F%2Fstatic.productionready.io%2Fimages%2Fsmiley-cyrus.jpg&w=1080&q=75 1080w, /_next/image?url=https%3A%2F%2Fstatic.productionready.io%2Fimages%2Fsmiley-cyrus.jpg&w=1200&q=75 1200w, /_next/image?url=https%3A%2F%2Fstatic.productionready.io%2Fimages%2Fsmiley-cyrus.jpg&w=1920&q=75 1920w, /_next/image?url=https%3A%2F%2Fstatic.productionready.io%2Fimages%2Fsmiley-cyrus.jpg&w=2048&q=75 2048w, /_next/image?url=https%3A%2F%2Fstatic.productionready.io%2Fimages%2Fsmiley-cyrus.jpg&w=3840&q=75 3840w"
+          style={
+            Object {
+              "border": "none",
+              "bottom": 0,
+              "boxSizing": "border-box",
+              "display": "block",
+              "height": 0,
+              "left": 0,
+              "margin": "auto",
+              "maxHeight": "100%",
+              "maxWidth": "100%",
+              "minHeight": "100%",
+              "minWidth": "100%",
+              "objectFit": undefined,
+              "objectPosition": undefined,
+              "padding": 0,
+              "position": "absolute",
+              "right": 0,
+              "top": 0,
+              "width": 0,
+            }
+          }
+        />
+      </noscript>
+    </span>
   </div>
 </div>
 `;
 
 exports[`Avatar Snapshots renders avatar with large size 1`] = `
 <div
-  className="Avatar__Wrapper-sc-m9feoe-0 icAXkY"
+  className="Avatar__Wrapper-sc-m9feoe-0 ieHczv"
 >
   <div
-    className="Avatar__Container-sc-m9feoe-1 JCubi w-32 h-32"
+    className="Avatar__Container-sc-m9feoe-1 fQHyzl w-32 h-32"
   >
-    <img
-      alt="avatar"
-      className="Avatar__Img-sc-m9feoe-2 iQvAVN rounded-full"
-      src="https://static.productionready.io/images/smiley-cyrus.jpg"
-    />
+    <span
+      style={
+        Object {
+          "background": "none",
+          "border": 0,
+          "bottom": 0,
+          "boxSizing": "border-box",
+          "display": "block",
+          "height": "initial",
+          "left": 0,
+          "margin": 0,
+          "opacity": 1,
+          "overflow": "hidden",
+          "padding": 0,
+          "position": "absolute",
+          "right": 0,
+          "top": 0,
+          "width": "initial",
+        }
+      }
+    >
+      <img
+        alt="avatar"
+        className="Avatar__Img-sc-m9feoe-2 kuaPdK rounded-full"
+        data-nimg="fill"
+        decoding="async"
+        src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+        style={
+          Object {
+            "border": "none",
+            "bottom": 0,
+            "boxSizing": "border-box",
+            "display": "block",
+            "height": 0,
+            "left": 0,
+            "margin": "auto",
+            "maxHeight": "100%",
+            "maxWidth": "100%",
+            "minHeight": "100%",
+            "minWidth": "100%",
+            "objectFit": undefined,
+            "objectPosition": undefined,
+            "padding": 0,
+            "position": "absolute",
+            "right": 0,
+            "top": 0,
+            "width": 0,
+          }
+        }
+      />
+      <noscript>
+        <img
+          alt="avatar"
+          className="Avatar__Img-sc-m9feoe-2 kuaPdK rounded-full"
+          data-nimg="fill"
+          decoding="async"
+          loading="lazy"
+          sizes="100vw"
+          src="/_next/image?url=https%3A%2F%2Fstatic.productionready.io%2Fimages%2Fsmiley-cyrus.jpg&w=3840&q=75"
+          srcSet="/_next/image?url=https%3A%2F%2Fstatic.productionready.io%2Fimages%2Fsmiley-cyrus.jpg&w=640&q=75 640w, /_next/image?url=https%3A%2F%2Fstatic.productionready.io%2Fimages%2Fsmiley-cyrus.jpg&w=750&q=75 750w, /_next/image?url=https%3A%2F%2Fstatic.productionready.io%2Fimages%2Fsmiley-cyrus.jpg&w=828&q=75 828w, /_next/image?url=https%3A%2F%2Fstatic.productionready.io%2Fimages%2Fsmiley-cyrus.jpg&w=1080&q=75 1080w, /_next/image?url=https%3A%2F%2Fstatic.productionready.io%2Fimages%2Fsmiley-cyrus.jpg&w=1200&q=75 1200w, /_next/image?url=https%3A%2F%2Fstatic.productionready.io%2Fimages%2Fsmiley-cyrus.jpg&w=1920&q=75 1920w, /_next/image?url=https%3A%2F%2Fstatic.productionready.io%2Fimages%2Fsmiley-cyrus.jpg&w=2048&q=75 2048w, /_next/image?url=https%3A%2F%2Fstatic.productionready.io%2Fimages%2Fsmiley-cyrus.jpg&w=3840&q=75 3840w"
+          style={
+            Object {
+              "border": "none",
+              "bottom": 0,
+              "boxSizing": "border-box",
+              "display": "block",
+              "height": 0,
+              "left": 0,
+              "margin": "auto",
+              "maxHeight": "100%",
+              "maxWidth": "100%",
+              "minHeight": "100%",
+              "minWidth": "100%",
+              "objectFit": undefined,
+              "objectPosition": undefined,
+              "padding": 0,
+              "position": "absolute",
+              "right": 0,
+              "top": 0,
+              "width": 0,
+            }
+          }
+        />
+      </noscript>
+    </span>
   </div>
 </div>
 `;
 
 exports[`Avatar Snapshots renders avatar with large size 2`] = `
 <div
-  className="Avatar__Wrapper-sc-m9feoe-0 icAXkY"
+  className="Avatar__Wrapper-sc-m9feoe-0 ieHczv"
 >
   <div
-    className="Avatar__Container-sc-m9feoe-1 JCubi w-32 h-32"
+    className="Avatar__Container-sc-m9feoe-1 fQHyzl w-32 h-32"
   >
-    <img
-      alt="avatar"
-      className="Avatar__Img-sc-m9feoe-2 iQvAVN rounded-full"
-      src="https://static.productionready.io/images/smiley-cyrus.jpg"
-    />
+    <span
+      style={
+        Object {
+          "background": "none",
+          "border": 0,
+          "bottom": 0,
+          "boxSizing": "border-box",
+          "display": "block",
+          "height": "initial",
+          "left": 0,
+          "margin": 0,
+          "opacity": 1,
+          "overflow": "hidden",
+          "padding": 0,
+          "position": "absolute",
+          "right": 0,
+          "top": 0,
+          "width": "initial",
+        }
+      }
+    >
+      <img
+        alt="avatar"
+        className="Avatar__Img-sc-m9feoe-2 kuaPdK rounded-full"
+        data-nimg="fill"
+        decoding="async"
+        src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+        style={
+          Object {
+            "border": "none",
+            "bottom": 0,
+            "boxSizing": "border-box",
+            "display": "block",
+            "height": 0,
+            "left": 0,
+            "margin": "auto",
+            "maxHeight": "100%",
+            "maxWidth": "100%",
+            "minHeight": "100%",
+            "minWidth": "100%",
+            "objectFit": undefined,
+            "objectPosition": undefined,
+            "padding": 0,
+            "position": "absolute",
+            "right": 0,
+            "top": 0,
+            "width": 0,
+          }
+        }
+      />
+      <noscript>
+        <img
+          alt="avatar"
+          className="Avatar__Img-sc-m9feoe-2 kuaPdK rounded-full"
+          data-nimg="fill"
+          decoding="async"
+          loading="lazy"
+          sizes="100vw"
+          src="/_next/image?url=https%3A%2F%2Fstatic.productionready.io%2Fimages%2Fsmiley-cyrus.jpg&w=3840&q=75"
+          srcSet="/_next/image?url=https%3A%2F%2Fstatic.productionready.io%2Fimages%2Fsmiley-cyrus.jpg&w=640&q=75 640w, /_next/image?url=https%3A%2F%2Fstatic.productionready.io%2Fimages%2Fsmiley-cyrus.jpg&w=750&q=75 750w, /_next/image?url=https%3A%2F%2Fstatic.productionready.io%2Fimages%2Fsmiley-cyrus.jpg&w=828&q=75 828w, /_next/image?url=https%3A%2F%2Fstatic.productionready.io%2Fimages%2Fsmiley-cyrus.jpg&w=1080&q=75 1080w, /_next/image?url=https%3A%2F%2Fstatic.productionready.io%2Fimages%2Fsmiley-cyrus.jpg&w=1200&q=75 1200w, /_next/image?url=https%3A%2F%2Fstatic.productionready.io%2Fimages%2Fsmiley-cyrus.jpg&w=1920&q=75 1920w, /_next/image?url=https%3A%2F%2Fstatic.productionready.io%2Fimages%2Fsmiley-cyrus.jpg&w=2048&q=75 2048w, /_next/image?url=https%3A%2F%2Fstatic.productionready.io%2Fimages%2Fsmiley-cyrus.jpg&w=3840&q=75 3840w"
+          style={
+            Object {
+              "border": "none",
+              "bottom": 0,
+              "boxSizing": "border-box",
+              "display": "block",
+              "height": 0,
+              "left": 0,
+              "margin": "auto",
+              "maxHeight": "100%",
+              "maxWidth": "100%",
+              "minHeight": "100%",
+              "minWidth": "100%",
+              "objectFit": undefined,
+              "objectPosition": undefined,
+              "padding": 0,
+              "position": "absolute",
+              "right": 0,
+              "top": 0,
+              "width": 0,
+            }
+          }
+        />
+      </noscript>
+    </span>
   </div>
 </div>
 `;
 
 exports[`Avatar Snapshots renders avatar with middle size 1`] = `
 <div
-  className="Avatar__Wrapper-sc-m9feoe-0 icAXkY"
+  className="Avatar__Wrapper-sc-m9feoe-0 ieHczv"
 >
   <div
-    className="Avatar__Container-sc-m9feoe-1 JCubi w-8 h-8"
+    className="Avatar__Container-sc-m9feoe-1 fQHyzl w-8 h-8"
   >
-    <img
-      alt="avatar"
-      className="Avatar__Img-sc-m9feoe-2 iQvAVN rounded-full"
-      src="https://static.productionready.io/images/smiley-cyrus.jpg"
-    />
+    <span
+      style={
+        Object {
+          "background": "none",
+          "border": 0,
+          "bottom": 0,
+          "boxSizing": "border-box",
+          "display": "block",
+          "height": "initial",
+          "left": 0,
+          "margin": 0,
+          "opacity": 1,
+          "overflow": "hidden",
+          "padding": 0,
+          "position": "absolute",
+          "right": 0,
+          "top": 0,
+          "width": "initial",
+        }
+      }
+    >
+      <img
+        alt="avatar"
+        className="Avatar__Img-sc-m9feoe-2 kuaPdK rounded-full"
+        data-nimg="fill"
+        decoding="async"
+        src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+        style={
+          Object {
+            "border": "none",
+            "bottom": 0,
+            "boxSizing": "border-box",
+            "display": "block",
+            "height": 0,
+            "left": 0,
+            "margin": "auto",
+            "maxHeight": "100%",
+            "maxWidth": "100%",
+            "minHeight": "100%",
+            "minWidth": "100%",
+            "objectFit": undefined,
+            "objectPosition": undefined,
+            "padding": 0,
+            "position": "absolute",
+            "right": 0,
+            "top": 0,
+            "width": 0,
+          }
+        }
+      />
+      <noscript>
+        <img
+          alt="avatar"
+          className="Avatar__Img-sc-m9feoe-2 kuaPdK rounded-full"
+          data-nimg="fill"
+          decoding="async"
+          loading="lazy"
+          sizes="100vw"
+          src="/_next/image?url=https%3A%2F%2Fstatic.productionready.io%2Fimages%2Fsmiley-cyrus.jpg&w=3840&q=75"
+          srcSet="/_next/image?url=https%3A%2F%2Fstatic.productionready.io%2Fimages%2Fsmiley-cyrus.jpg&w=640&q=75 640w, /_next/image?url=https%3A%2F%2Fstatic.productionready.io%2Fimages%2Fsmiley-cyrus.jpg&w=750&q=75 750w, /_next/image?url=https%3A%2F%2Fstatic.productionready.io%2Fimages%2Fsmiley-cyrus.jpg&w=828&q=75 828w, /_next/image?url=https%3A%2F%2Fstatic.productionready.io%2Fimages%2Fsmiley-cyrus.jpg&w=1080&q=75 1080w, /_next/image?url=https%3A%2F%2Fstatic.productionready.io%2Fimages%2Fsmiley-cyrus.jpg&w=1200&q=75 1200w, /_next/image?url=https%3A%2F%2Fstatic.productionready.io%2Fimages%2Fsmiley-cyrus.jpg&w=1920&q=75 1920w, /_next/image?url=https%3A%2F%2Fstatic.productionready.io%2Fimages%2Fsmiley-cyrus.jpg&w=2048&q=75 2048w, /_next/image?url=https%3A%2F%2Fstatic.productionready.io%2Fimages%2Fsmiley-cyrus.jpg&w=3840&q=75 3840w"
+          style={
+            Object {
+              "border": "none",
+              "bottom": 0,
+              "boxSizing": "border-box",
+              "display": "block",
+              "height": 0,
+              "left": 0,
+              "margin": "auto",
+              "maxHeight": "100%",
+              "maxWidth": "100%",
+              "minHeight": "100%",
+              "minWidth": "100%",
+              "objectFit": undefined,
+              "objectPosition": undefined,
+              "padding": 0,
+              "position": "absolute",
+              "right": 0,
+              "top": 0,
+              "width": 0,
+            }
+          }
+        />
+      </noscript>
+    </span>
   </div>
 </div>
 `;
 
 exports[`Avatar Snapshots renders avatar with small size 1`] = `
 <div
-  className="Avatar__Wrapper-sc-m9feoe-0 icAXkY"
+  className="Avatar__Wrapper-sc-m9feoe-0 ieHczv"
 >
   <div
-    className="Avatar__Container-sc-m9feoe-1 JCubi w-5 h-5"
+    className="Avatar__Container-sc-m9feoe-1 fQHyzl w-5 h-5"
   >
-    <img
-      alt="avatar"
-      className="Avatar__Img-sc-m9feoe-2 iQvAVN rounded-full"
-      src="https://static.productionready.io/images/smiley-cyrus.jpg"
-    />
+    <span
+      style={
+        Object {
+          "background": "none",
+          "border": 0,
+          "bottom": 0,
+          "boxSizing": "border-box",
+          "display": "block",
+          "height": "initial",
+          "left": 0,
+          "margin": 0,
+          "opacity": 1,
+          "overflow": "hidden",
+          "padding": 0,
+          "position": "absolute",
+          "right": 0,
+          "top": 0,
+          "width": "initial",
+        }
+      }
+    >
+      <img
+        alt="avatar"
+        className="Avatar__Img-sc-m9feoe-2 kuaPdK rounded-full"
+        data-nimg="fill"
+        decoding="async"
+        src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+        style={
+          Object {
+            "border": "none",
+            "bottom": 0,
+            "boxSizing": "border-box",
+            "display": "block",
+            "height": 0,
+            "left": 0,
+            "margin": "auto",
+            "maxHeight": "100%",
+            "maxWidth": "100%",
+            "minHeight": "100%",
+            "minWidth": "100%",
+            "objectFit": undefined,
+            "objectPosition": undefined,
+            "padding": 0,
+            "position": "absolute",
+            "right": 0,
+            "top": 0,
+            "width": 0,
+          }
+        }
+      />
+      <noscript>
+        <img
+          alt="avatar"
+          className="Avatar__Img-sc-m9feoe-2 kuaPdK rounded-full"
+          data-nimg="fill"
+          decoding="async"
+          loading="lazy"
+          sizes="100vw"
+          src="/_next/image?url=https%3A%2F%2Fstatic.productionready.io%2Fimages%2Fsmiley-cyrus.jpg&w=3840&q=75"
+          srcSet="/_next/image?url=https%3A%2F%2Fstatic.productionready.io%2Fimages%2Fsmiley-cyrus.jpg&w=640&q=75 640w, /_next/image?url=https%3A%2F%2Fstatic.productionready.io%2Fimages%2Fsmiley-cyrus.jpg&w=750&q=75 750w, /_next/image?url=https%3A%2F%2Fstatic.productionready.io%2Fimages%2Fsmiley-cyrus.jpg&w=828&q=75 828w, /_next/image?url=https%3A%2F%2Fstatic.productionready.io%2Fimages%2Fsmiley-cyrus.jpg&w=1080&q=75 1080w, /_next/image?url=https%3A%2F%2Fstatic.productionready.io%2Fimages%2Fsmiley-cyrus.jpg&w=1200&q=75 1200w, /_next/image?url=https%3A%2F%2Fstatic.productionready.io%2Fimages%2Fsmiley-cyrus.jpg&w=1920&q=75 1920w, /_next/image?url=https%3A%2F%2Fstatic.productionready.io%2Fimages%2Fsmiley-cyrus.jpg&w=2048&q=75 2048w, /_next/image?url=https%3A%2F%2Fstatic.productionready.io%2Fimages%2Fsmiley-cyrus.jpg&w=3840&q=75 3840w"
+          style={
+            Object {
+              "border": "none",
+              "bottom": 0,
+              "boxSizing": "border-box",
+              "display": "block",
+              "height": 0,
+              "left": 0,
+              "margin": "auto",
+              "maxHeight": "100%",
+              "maxWidth": "100%",
+              "minHeight": "100%",
+              "minWidth": "100%",
+              "objectFit": undefined,
+              "objectPosition": undefined,
+              "padding": 0,
+              "position": "absolute",
+              "right": 0,
+              "top": 0,
+              "width": 0,
+            }
+          }
+        />
+      </noscript>
+    </span>
   </div>
 </div>
 `;
 
 exports[`Avatar Snapshots renders avatar with url 1`] = `
 <div
-  className="Avatar__Wrapper-sc-m9feoe-0 icAXkY"
+  className="Avatar__Wrapper-sc-m9feoe-0 ieHczv"
 >
   <div
-    className="Avatar__Container-sc-m9feoe-1 JCubi w-8 h-8"
+    className="Avatar__Container-sc-m9feoe-1 fQHyzl w-8 h-8"
   >
-    <img
-      alt="avatar"
-      className="Avatar__Img-sc-m9feoe-2 iQvAVN rounded-full"
-      src="http://example.com/sample.png"
-    />
+    <span
+      style={
+        Object {
+          "background": "none",
+          "border": 0,
+          "bottom": 0,
+          "boxSizing": "border-box",
+          "display": "block",
+          "height": "initial",
+          "left": 0,
+          "margin": 0,
+          "opacity": 1,
+          "overflow": "hidden",
+          "padding": 0,
+          "position": "absolute",
+          "right": 0,
+          "top": 0,
+          "width": "initial",
+        }
+      }
+    >
+      <img
+        alt="avatar"
+        className="Avatar__Img-sc-m9feoe-2 kuaPdK rounded-full"
+        data-nimg="fill"
+        decoding="async"
+        src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+        style={
+          Object {
+            "border": "none",
+            "bottom": 0,
+            "boxSizing": "border-box",
+            "display": "block",
+            "height": 0,
+            "left": 0,
+            "margin": "auto",
+            "maxHeight": "100%",
+            "maxWidth": "100%",
+            "minHeight": "100%",
+            "minWidth": "100%",
+            "objectFit": undefined,
+            "objectPosition": undefined,
+            "padding": 0,
+            "position": "absolute",
+            "right": 0,
+            "top": 0,
+            "width": 0,
+          }
+        }
+      />
+      <noscript>
+        <img
+          alt="avatar"
+          className="Avatar__Img-sc-m9feoe-2 kuaPdK rounded-full"
+          data-nimg="fill"
+          decoding="async"
+          loading="lazy"
+          sizes="100vw"
+          src="/_next/image?url=http%3A%2F%2Fexample.com%2Fsample.png&w=3840&q=75"
+          srcSet="/_next/image?url=http%3A%2F%2Fexample.com%2Fsample.png&w=640&q=75 640w, /_next/image?url=http%3A%2F%2Fexample.com%2Fsample.png&w=750&q=75 750w, /_next/image?url=http%3A%2F%2Fexample.com%2Fsample.png&w=828&q=75 828w, /_next/image?url=http%3A%2F%2Fexample.com%2Fsample.png&w=1080&q=75 1080w, /_next/image?url=http%3A%2F%2Fexample.com%2Fsample.png&w=1200&q=75 1200w, /_next/image?url=http%3A%2F%2Fexample.com%2Fsample.png&w=1920&q=75 1920w, /_next/image?url=http%3A%2F%2Fexample.com%2Fsample.png&w=2048&q=75 2048w, /_next/image?url=http%3A%2F%2Fexample.com%2Fsample.png&w=3840&q=75 3840w"
+          style={
+            Object {
+              "border": "none",
+              "bottom": 0,
+              "boxSizing": "border-box",
+              "display": "block",
+              "height": 0,
+              "left": 0,
+              "margin": "auto",
+              "maxHeight": "100%",
+              "maxWidth": "100%",
+              "minHeight": "100%",
+              "minWidth": "100%",
+              "objectFit": undefined,
+              "objectPosition": undefined,
+              "padding": 0,
+              "position": "absolute",
+              "right": 0,
+              "top": 0,
+              "width": 0,
+            }
+          }
+        />
+      </noscript>
+    </span>
   </div>
 </div>
 `;
 
 exports[`Avatar Snapshots renders avatar with url and size 1`] = `
 <div
-  className="Avatar__Wrapper-sc-m9feoe-0 icAXkY"
+  className="Avatar__Wrapper-sc-m9feoe-0 ieHczv"
 >
   <div
-    className="Avatar__Container-sc-m9feoe-1 JCubi w-5 h-5"
+    className="Avatar__Container-sc-m9feoe-1 fQHyzl w-5 h-5"
   >
-    <img
-      alt="avatar"
-      className="Avatar__Img-sc-m9feoe-2 iQvAVN rounded-full"
-      src="http://example.com/sample.png"
-    />
+    <span
+      style={
+        Object {
+          "background": "none",
+          "border": 0,
+          "bottom": 0,
+          "boxSizing": "border-box",
+          "display": "block",
+          "height": "initial",
+          "left": 0,
+          "margin": 0,
+          "opacity": 1,
+          "overflow": "hidden",
+          "padding": 0,
+          "position": "absolute",
+          "right": 0,
+          "top": 0,
+          "width": "initial",
+        }
+      }
+    >
+      <img
+        alt="avatar"
+        className="Avatar__Img-sc-m9feoe-2 kuaPdK rounded-full"
+        data-nimg="fill"
+        decoding="async"
+        src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+        style={
+          Object {
+            "border": "none",
+            "bottom": 0,
+            "boxSizing": "border-box",
+            "display": "block",
+            "height": 0,
+            "left": 0,
+            "margin": "auto",
+            "maxHeight": "100%",
+            "maxWidth": "100%",
+            "minHeight": "100%",
+            "minWidth": "100%",
+            "objectFit": undefined,
+            "objectPosition": undefined,
+            "padding": 0,
+            "position": "absolute",
+            "right": 0,
+            "top": 0,
+            "width": 0,
+          }
+        }
+      />
+      <noscript>
+        <img
+          alt="avatar"
+          className="Avatar__Img-sc-m9feoe-2 kuaPdK rounded-full"
+          data-nimg="fill"
+          decoding="async"
+          loading="lazy"
+          sizes="100vw"
+          src="/_next/image?url=http%3A%2F%2Fexample.com%2Fsample.png&w=3840&q=75"
+          srcSet="/_next/image?url=http%3A%2F%2Fexample.com%2Fsample.png&w=640&q=75 640w, /_next/image?url=http%3A%2F%2Fexample.com%2Fsample.png&w=750&q=75 750w, /_next/image?url=http%3A%2F%2Fexample.com%2Fsample.png&w=828&q=75 828w, /_next/image?url=http%3A%2F%2Fexample.com%2Fsample.png&w=1080&q=75 1080w, /_next/image?url=http%3A%2F%2Fexample.com%2Fsample.png&w=1200&q=75 1200w, /_next/image?url=http%3A%2F%2Fexample.com%2Fsample.png&w=1920&q=75 1920w, /_next/image?url=http%3A%2F%2Fexample.com%2Fsample.png&w=2048&q=75 2048w, /_next/image?url=http%3A%2F%2Fexample.com%2Fsample.png&w=3840&q=75 3840w"
+          style={
+            Object {
+              "border": "none",
+              "bottom": 0,
+              "boxSizing": "border-box",
+              "display": "block",
+              "height": 0,
+              "left": 0,
+              "margin": "auto",
+              "maxHeight": "100%",
+              "maxWidth": "100%",
+              "minHeight": "100%",
+              "minWidth": "100%",
+              "objectFit": undefined,
+              "objectPosition": undefined,
+              "padding": 0,
+              "position": "absolute",
+              "right": 0,
+              "top": 0,
+              "width": 0,
+            }
+          }
+        />
+      </noscript>
+    </span>
   </div>
 </div>
 `;

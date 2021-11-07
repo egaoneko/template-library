@@ -42,30 +42,30 @@
     "docker": "docker-compose -f ../docker-compose.yml up"
   },
   "dependencies": {
-    "axios": "0.21.1",
+    "axios": "0.24.0",
     "faker": "5.5.3",
     "lodash": "4.17.21",
-    "rxjs": "7.2.0",
+    "rxjs": "7.4.0",
     "uuid": "8.3.2"
   },
   "devDependencies": {
     "@types/axios": "0.14.0",
-    "@types/faker": "5.5.8",
-    "@types/jest": "26.0.24",
-    "@types/node": "16.4.1",
+    "@types/faker": "5.5.9",
+    "@types/jest": "27.0.2",
+    "@types/node": "16.11.6",
     "@types/uuid": "8.3.1",
-    "@typescript-eslint/eslint-plugin": "4.28.4",
-    "@typescript-eslint/parser": "4.28.4",
-    "eslint": "7.31.0",
+    "@typescript-eslint/eslint-plugin": "5.2.0",
+    "@typescript-eslint/parser": "5.2.0",
+    "eslint": "8.1.0",
     "eslint-config-prettier": "8.3.0",
-    "eslint-plugin-prettier": "3.4.0",
-    "jest": "27.0.6",
-    "jest-config": "27.0.6",
+    "eslint-plugin-prettier": "4.0.0",
+    "jest": "27.3.1",
+    "jest-config": "27.3.1",
     "lerna": "~4.0.0",
-    "prettier": "2.3.2",
+    "prettier": "2.4.1",
     "rimraf": "3.0.2",
-    "ts-jest": "27.0.4",
-    "typescript": "4.3.5"
+    "ts-jest": "27.0.7",
+    "typescript": "4.4.4"
   },
   "resolutions": {
     "@jest/create-cache-key-function": "27.0.2"

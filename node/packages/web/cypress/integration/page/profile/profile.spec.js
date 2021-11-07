@@ -11,7 +11,7 @@ describe('Profile', () => {
     cy.visit(`http://localhost:3000/profile/${profile.username}`);
     cy.wait('@getProfile');
     cy.get('[data-cy=head-title]').contains('PROFILE');
-    cy.get('[data-cy=profile-image] > div > img').should('have.attr', 'src', profile.image);
+    cy.get('[data-cy=profile-image] > div > span > img').should('have.attr', 'srcset').and('contain', encodeURIComponent(profile.image));
     cy.get('[data-cy=profile-username]').contains(profile.username);
     cy.get('[data-cy=profile-bio]').contains(profile.bio);
   });

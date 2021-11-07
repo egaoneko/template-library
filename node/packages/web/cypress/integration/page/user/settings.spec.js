@@ -11,7 +11,7 @@ describe('Settings', () => {
     cy.login();
     cy.visit('http://localhost:3000/user/settings');
     cy.get('[data-cy=head-title]').contains('SETTINGS');
-    cy.get('[data-cy=user-image] > div > img').should('have.attr', 'src', user.image);
+    cy.get('[data-cy=user-image] > div > span > img').should('have.attr', 'srcset').and('contain', encodeURIComponent(user.image));
     cy.get('[data-cy=content-form-input-id]').should('have.attr', 'placeholder', 'Id');
     cy.get('[data-cy=content-form-input-username]').should('have.attr', 'placeholder', `Username`);
     cy.get('[data-cy=content-form-input-bio]').should('have.attr', 'placeholder', `Short bio about you`);
@@ -39,8 +39,8 @@ describe('Settings', () => {
     cy.get('[data-cy=content-form-input-email]').clear().type(user.email);
     cy.get('[data-cy=content-form-input-password]').clear().type(inputPassword);
     cy.get('[data-cy=content-form-button-submit]').click();
-    cy.wait('@updateSettings').then(({ request }) => {
-      const { body } = request;
+    cy.wait('@updateSettings').then(({request}) => {
+      const {body} = request;
       expect(body.id).to.equal(user.id);
       expect(body.username).to.equal(user.username);
       expect(body.bio).to.equal(user.bio);
@@ -62,14 +62,14 @@ describe('Settings', () => {
       fixture: 'user/user.json',
     }).as('updateSettings');
 
-    cy.wait('@uploadFile').then(({ request }) => {
-      const { body } = request;
+    cy.wait('@uploadFile').then(({request}) => {
+      const {body} = request;
       expect(body).to.exist;
     });
 
     cy.fixture('file/upload.json').then(file => {
-      cy.wait('@updateSettings').then(({ request }) => {
-        const { body } = request;
+      cy.wait('@updateSettings').then(({request}) => {
+        const {body} = request;
         expect(body.id).to.equal(user.id);
         expect(body.image).to.equal(file.id);
       });
@@ -81,7 +81,7 @@ describe('Settings', () => {
     cy.mockServerStart(8080);
     cy.login();
     cy.visit('http://localhost:3000/user/settings');
-    cy.intercept('GET', '/api/auth/logout', req => req.continue(res => res.send({ statusCode: 200 }))).as('logout');
+    cy.intercept('GET', '/api/auth/logout', req => req.continue(res => res.send({statusCode: 200}))).as('logout');
     cy.get('[data-cy=content-button-logout]').click();
     cy.prepareHome();
     cy.wait('@logout');

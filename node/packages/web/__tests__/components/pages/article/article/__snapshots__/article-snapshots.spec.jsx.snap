@@ -2,16 +2,16 @@
 
 exports[`Article Snapshots renders article after login 1`] = `
 <div
-  className="BaseLayoutTemplate__Container-sc-1jz5xvr-0 gAVYwR"
+  className="BaseLayoutTemplate__Container-sc-1jz5xvr-0 kHMSW"
 >
   <div
-    className="HeaderTemplate__Container-sc-kdla34-0 inxbiA"
+    className="HeaderTemplate__Container-sc-kdla34-0 gxnUkb"
   >
     <div
-      className="HeaderTemplate__Heading-sc-kdla34-1 laFayD"
+      className="HeaderTemplate__Heading-sc-kdla34-1 lcHwtI"
     >
       <div
-        className="HeaderTemplate__HeadingTitle-sc-kdla34-2 bAZjNO"
+        className="HeaderTemplate__HeadingTitle-sc-kdla34-2 ibfQih"
         data-cy="header-logo-link"
       >
         <a
@@ -135,16 +135,96 @@ exports[`Article Snapshots renders article after login 1`] = `
                 className="flex items-center gap-1"
               >
                 <div
-                  className="Avatar__Wrapper-sc-m9feoe-0 icAXkY"
+                  className="Avatar__Wrapper-sc-m9feoe-0 ieHczv"
                 >
                   <div
-                    className="Avatar__Container-sc-m9feoe-1 JCubi w-5 h-5"
+                    className="Avatar__Container-sc-m9feoe-1 fQHyzl w-5 h-5"
                   >
-                    <img
-                      alt="avatar"
-                      className="Avatar__Img-sc-m9feoe-2 iQvAVN rounded-full"
-                      src="https://i.stack.imgur.com/xHWG8.jpg"
-                    />
+                    <span
+                      style={
+                        Object {
+                          "background": "none",
+                          "border": 0,
+                          "bottom": 0,
+                          "boxSizing": "border-box",
+                          "display": "block",
+                          "height": "initial",
+                          "left": 0,
+                          "margin": 0,
+                          "opacity": 1,
+                          "overflow": "hidden",
+                          "padding": 0,
+                          "position": "absolute",
+                          "right": 0,
+                          "top": 0,
+                          "width": "initial",
+                        }
+                      }
+                    >
+                      <img
+                        alt="avatar"
+                        className="Avatar__Img-sc-m9feoe-2 kuaPdK rounded-full"
+                        data-nimg="fill"
+                        decoding="async"
+                        src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                        style={
+                          Object {
+                            "border": "none",
+                            "bottom": 0,
+                            "boxSizing": "border-box",
+                            "display": "block",
+                            "height": 0,
+                            "left": 0,
+                            "margin": "auto",
+                            "maxHeight": "100%",
+                            "maxWidth": "100%",
+                            "minHeight": "100%",
+                            "minWidth": "100%",
+                            "objectFit": undefined,
+                            "objectPosition": undefined,
+                            "padding": 0,
+                            "position": "absolute",
+                            "right": 0,
+                            "top": 0,
+                            "width": 0,
+                          }
+                        }
+                      />
+                      <noscript>
+                        <img
+                          alt="avatar"
+                          className="Avatar__Img-sc-m9feoe-2 kuaPdK rounded-full"
+                          data-nimg="fill"
+                          decoding="async"
+                          loading="lazy"
+                          sizes="100vw"
+                          src="/_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=3840&q=75"
+                          srcSet="/_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=640&q=75 640w, /_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=750&q=75 750w, /_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=828&q=75 828w, /_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=1080&q=75 1080w, /_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=1200&q=75 1200w, /_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=1920&q=75 1920w, /_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=2048&q=75 2048w, /_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=3840&q=75 3840w"
+                          style={
+                            Object {
+                              "border": "none",
+                              "bottom": 0,
+                              "boxSizing": "border-box",
+                              "display": "block",
+                              "height": 0,
+                              "left": 0,
+                              "margin": "auto",
+                              "maxHeight": "100%",
+                              "maxWidth": "100%",
+                              "minHeight": "100%",
+                              "minWidth": "100%",
+                              "objectFit": undefined,
+                              "objectPosition": undefined,
+                              "padding": 0,
+                              "position": "absolute",
+                              "right": 0,
+                              "top": 0,
+                              "width": 0,
+                            }
+                          }
+                        />
+                      </noscript>
+                    </span>
                   </div>
                 </div>
                 Jacob
@@ -156,36 +236,116 @@ exports[`Article Snapshots renders article after login 1`] = `
     </div>
   </div>
   <div
-    className="ArticleBannerTemplate__Container-sc-1dyvdkl-0 fnzmsk"
+    className="ArticleBannerTemplate__Container-sc-1dyvdkl-0 mMMhf"
   >
     <h1
-      className="ArticleBannerTemplate__Title-sc-1dyvdkl-1 ipycHN"
+      className="ArticleBannerTemplate__Title-sc-1dyvdkl-1 gPlBoW"
       data-cy="article-title"
     >
       How to train your dragon
     </h1>
     <div
-      className="ArticleBannerTemplate__AuthorContainer-sc-1dyvdkl-2 FNmFH"
+      className="ArticleBannerTemplate__AuthorContainer-sc-1dyvdkl-2 grnMls"
     >
       <div
-        className="Avatar__Wrapper-sc-m9feoe-0 icAXkY"
+        className="Avatar__Wrapper-sc-m9feoe-0 ieHczv"
         data-cy="article-banner-author-image"
       >
         <div
-          className="Avatar__Container-sc-m9feoe-1 JCubi w-8 h-8"
+          className="Avatar__Container-sc-m9feoe-1 fQHyzl w-8 h-8"
         >
-          <img
-            alt="avatar"
-            className="Avatar__Img-sc-m9feoe-2 iQvAVN rounded-full"
-            src="https://i.stack.imgur.com/xHWG8.jpg"
-          />
+          <span
+            style={
+              Object {
+                "background": "none",
+                "border": 0,
+                "bottom": 0,
+                "boxSizing": "border-box",
+                "display": "block",
+                "height": "initial",
+                "left": 0,
+                "margin": 0,
+                "opacity": 1,
+                "overflow": "hidden",
+                "padding": 0,
+                "position": "absolute",
+                "right": 0,
+                "top": 0,
+                "width": "initial",
+              }
+            }
+          >
+            <img
+              alt="avatar"
+              className="Avatar__Img-sc-m9feoe-2 kuaPdK rounded-full"
+              data-nimg="fill"
+              decoding="async"
+              src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+              style={
+                Object {
+                  "border": "none",
+                  "bottom": 0,
+                  "boxSizing": "border-box",
+                  "display": "block",
+                  "height": 0,
+                  "left": 0,
+                  "margin": "auto",
+                  "maxHeight": "100%",
+                  "maxWidth": "100%",
+                  "minHeight": "100%",
+                  "minWidth": "100%",
+                  "objectFit": undefined,
+                  "objectPosition": undefined,
+                  "padding": 0,
+                  "position": "absolute",
+                  "right": 0,
+                  "top": 0,
+                  "width": 0,
+                }
+              }
+            />
+            <noscript>
+              <img
+                alt="avatar"
+                className="Avatar__Img-sc-m9feoe-2 kuaPdK rounded-full"
+                data-nimg="fill"
+                decoding="async"
+                loading="lazy"
+                sizes="100vw"
+                src="/_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=3840&q=75"
+                srcSet="/_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=640&q=75 640w, /_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=750&q=75 750w, /_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=828&q=75 828w, /_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=1080&q=75 1080w, /_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=1200&q=75 1200w, /_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=1920&q=75 1920w, /_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=2048&q=75 2048w, /_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=3840&q=75 3840w"
+                style={
+                  Object {
+                    "border": "none",
+                    "bottom": 0,
+                    "boxSizing": "border-box",
+                    "display": "block",
+                    "height": 0,
+                    "left": 0,
+                    "margin": "auto",
+                    "maxHeight": "100%",
+                    "maxWidth": "100%",
+                    "minHeight": "100%",
+                    "minWidth": "100%",
+                    "objectFit": undefined,
+                    "objectPosition": undefined,
+                    "padding": 0,
+                    "position": "absolute",
+                    "right": 0,
+                    "top": 0,
+                    "width": 0,
+                  }
+                }
+              />
+            </noscript>
+          </span>
         </div>
       </div>
       <div
-        className="ArticleBannerTemplate__AuthorInfo-sc-1dyvdkl-3 difHfg"
+        className="ArticleBannerTemplate__AuthorInfo-sc-1dyvdkl-3 vJafv"
       >
         <div
-          className="ArticleBannerTemplate__AuthorName-sc-1dyvdkl-4 dMDaKB"
+          className="ArticleBannerTemplate__AuthorName-sc-1dyvdkl-4 hRfpXK"
           data-cy="article-banner-author-username"
         >
           <a
@@ -197,14 +357,14 @@ exports[`Article Snapshots renders article after login 1`] = `
           </a>
         </div>
         <div
-          className="ArticleBannerTemplate__AuthorDate-sc-1dyvdkl-5 fszlGF"
+          className="ArticleBannerTemplate__AuthorDate-sc-1dyvdkl-5 hgaxyC"
           data-cy="article-banner-author-date"
         >
           Thu Feb 18 2016
         </div>
       </div>
       <div
-        className="ArticleBannerTemplate__Edit-sc-1dyvdkl-6 gQbkXR"
+        className="ArticleBannerTemplate__Edit-sc-1dyvdkl-6 gphpPy"
         data-cy="article-banner-edit-article"
         onClick={[Function]}
       >
@@ -235,7 +395,7 @@ exports[`Article Snapshots renders article after login 1`] = `
         </div>
       </div>
       <div
-        className="ArticleBannerTemplate__Delete-sc-1dyvdkl-7 duitaR"
+        className="ArticleBannerTemplate__Delete-sc-1dyvdkl-7 gdRmYW"
         data-cy="article-banner-delete-article"
         onClick={[Function]}
       >
@@ -271,26 +431,32 @@ exports[`Article Snapshots renders article after login 1`] = `
     className="container mx-auto mt-8"
   >
     <div
-      className="ArticleContentTemplate__Container-sc-1w2hr4z-0 cEcbsZ"
+      className="ArticleContentTemplate__Container-sc-1w2hr4z-0 dVYMDK"
     >
       <div
-        className="ArticleContentTemplate__Content-sc-1w2hr4z-1 bPHoBm"
+        className="ArticleContentTemplate__Content-sc-1w2hr4z-1 YRUEt"
       >
         <div
-          className="ArticleContentTemplate__Body-sc-1w2hr4z-2 kOfYDs"
+          className="ArticleContentTemplate__Body-sc-1w2hr4z-2 fhrHRP"
+          dangerouslySetInnerHTML={
+            Object {
+              "__html": "<p>It takes a <strong>Jacobian</strong></p>
+",
+            }
+          }
           data-cy="article-content-body"
         />
         <div
-          className="ArticleContentTemplate__Tags-sc-1w2hr4z-3 llaePP"
+          className="ArticleContentTemplate__Tags-sc-1w2hr4z-3 fldydI"
         >
           <div
-            className="ArticleContentTemplate__Tag-sc-1w2hr4z-4 kdahvG"
+            className="ArticleContentTemplate__Tag-sc-1w2hr4z-4 kXzBAF"
             data-cy="article-content-tags"
           >
             dragons
           </div>
           <div
-            className="ArticleContentTemplate__Tag-sc-1w2hr4z-4 kdahvG"
+            className="ArticleContentTemplate__Tag-sc-1w2hr4z-4 kXzBAF"
             data-cy="article-content-tags"
           >
             training
@@ -299,30 +465,110 @@ exports[`Article Snapshots renders article after login 1`] = `
         <hr />
       </div>
       <div
-        className="ArticleContentTemplate__AuthorWrapper-sc-1w2hr4z-5 iAKYzf"
+        className="ArticleContentTemplate__AuthorWrapper-sc-1w2hr4z-5 iwOlyQ"
       >
         <div
-          className="ArticleContentTemplate__AuthorContainer-sc-1w2hr4z-6 hJWSoA"
+          className="ArticleContentTemplate__AuthorContainer-sc-1w2hr4z-6 bbHJrT"
         >
           <div
-            className="Avatar__Wrapper-sc-m9feoe-0 icAXkY"
+            className="Avatar__Wrapper-sc-m9feoe-0 ieHczv"
             data-cy="article-content-author-image"
           >
             <div
-              className="Avatar__Container-sc-m9feoe-1 JCubi w-8 h-8"
+              className="Avatar__Container-sc-m9feoe-1 fQHyzl w-8 h-8"
             >
-              <img
-                alt="avatar"
-                className="Avatar__Img-sc-m9feoe-2 iQvAVN rounded-full"
-                src="https://i.stack.imgur.com/xHWG8.jpg"
-              />
+              <span
+                style={
+                  Object {
+                    "background": "none",
+                    "border": 0,
+                    "bottom": 0,
+                    "boxSizing": "border-box",
+                    "display": "block",
+                    "height": "initial",
+                    "left": 0,
+                    "margin": 0,
+                    "opacity": 1,
+                    "overflow": "hidden",
+                    "padding": 0,
+                    "position": "absolute",
+                    "right": 0,
+                    "top": 0,
+                    "width": "initial",
+                  }
+                }
+              >
+                <img
+                  alt="avatar"
+                  className="Avatar__Img-sc-m9feoe-2 kuaPdK rounded-full"
+                  data-nimg="fill"
+                  decoding="async"
+                  src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                  style={
+                    Object {
+                      "border": "none",
+                      "bottom": 0,
+                      "boxSizing": "border-box",
+                      "display": "block",
+                      "height": 0,
+                      "left": 0,
+                      "margin": "auto",
+                      "maxHeight": "100%",
+                      "maxWidth": "100%",
+                      "minHeight": "100%",
+                      "minWidth": "100%",
+                      "objectFit": undefined,
+                      "objectPosition": undefined,
+                      "padding": 0,
+                      "position": "absolute",
+                      "right": 0,
+                      "top": 0,
+                      "width": 0,
+                    }
+                  }
+                />
+                <noscript>
+                  <img
+                    alt="avatar"
+                    className="Avatar__Img-sc-m9feoe-2 kuaPdK rounded-full"
+                    data-nimg="fill"
+                    decoding="async"
+                    loading="lazy"
+                    sizes="100vw"
+                    src="/_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=3840&q=75"
+                    srcSet="/_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=640&q=75 640w, /_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=750&q=75 750w, /_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=828&q=75 828w, /_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=1080&q=75 1080w, /_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=1200&q=75 1200w, /_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=1920&q=75 1920w, /_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=2048&q=75 2048w, /_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=3840&q=75 3840w"
+                    style={
+                      Object {
+                        "border": "none",
+                        "bottom": 0,
+                        "boxSizing": "border-box",
+                        "display": "block",
+                        "height": 0,
+                        "left": 0,
+                        "margin": "auto",
+                        "maxHeight": "100%",
+                        "maxWidth": "100%",
+                        "minHeight": "100%",
+                        "minWidth": "100%",
+                        "objectFit": undefined,
+                        "objectPosition": undefined,
+                        "padding": 0,
+                        "position": "absolute",
+                        "right": 0,
+                        "top": 0,
+                        "width": 0,
+                      }
+                    }
+                  />
+                </noscript>
+              </span>
             </div>
           </div>
           <div
-            className="ArticleContentTemplate__AuthorInfo-sc-1w2hr4z-7 kQMxTM"
+            className="ArticleContentTemplate__AuthorInfo-sc-1w2hr4z-7 bLLNsb"
           >
             <div
-              className="ArticleContentTemplate__AuthorName-sc-1w2hr4z-8 gUuHzW"
+              className="ArticleContentTemplate__AuthorName-sc-1w2hr4z-8 jGILIF"
               data-cy="article-content-author-username"
             >
               <a
@@ -334,14 +580,14 @@ exports[`Article Snapshots renders article after login 1`] = `
               </a>
             </div>
             <div
-              className="ArticleContentTemplate__AuthorDate-sc-1w2hr4z-9 fISmex"
+              className="ArticleContentTemplate__AuthorDate-sc-1w2hr4z-9 jWCDpi"
               data-cy="article-content-author-date"
             >
               Thu Feb 18 2016
             </div>
           </div>
           <div
-            className="ArticleContentTemplate__Edit-sc-1w2hr4z-10 eBhtdG"
+            className="ArticleContentTemplate__Edit-sc-1w2hr4z-10 jOxZjl"
             data-cy="article-content-edit-article"
             onClick={[Function]}
           >
@@ -372,7 +618,7 @@ exports[`Article Snapshots renders article after login 1`] = `
             </div>
           </div>
           <div
-            className="ArticleContentTemplate__Delete-sc-1w2hr4z-11 cfXRHK"
+            className="ArticleContentTemplate__Delete-sc-1w2hr4z-11 gQRCxF"
             data-cy="article-content-delete-article"
             onClick={[Function]}
           >
@@ -406,10 +652,10 @@ exports[`Article Snapshots renders article after login 1`] = `
       </div>
     </div>
     <div
-      className="ArticleCommentTemplate__Container-sc-13m5pqz-0 iQkfIT"
+      className="ArticleCommentTemplate__Container-sc-13m5pqz-0 jICGMo"
     >
       <div
-        className="ArticleCommentTemplate__FormContainer-sc-13m5pqz-1 eyYHKl"
+        className="ArticleCommentTemplate__FormContainer-sc-13m5pqz-1 eZsDPK"
         data-cy="comment-form-container"
       >
         <form
@@ -431,27 +677,107 @@ exports[`Article Snapshots renders article after login 1`] = `
               />
             </div>
             <div
-              className="ArticleCommentTemplate__FormInfo-sc-13m5pqz-2 bNIRus"
+              className="ArticleCommentTemplate__FormInfo-sc-13m5pqz-2 epaAxf"
             >
               <div
-                className="ArticleCommentTemplate__AuthorContainer-sc-13m5pqz-3 gKLFEg"
+                className="ArticleCommentTemplate__AuthorContainer-sc-13m5pqz-3 fKSqan"
               >
                 <div
-                  className="Avatar__Wrapper-sc-m9feoe-0 icAXkY"
+                  className="Avatar__Wrapper-sc-m9feoe-0 ieHczv"
                   data-cy="comment-form-user-image"
                 >
                   <div
-                    className="Avatar__Container-sc-m9feoe-1 JCubi w-5 h-5"
+                    className="Avatar__Container-sc-m9feoe-1 fQHyzl w-5 h-5"
                   >
-                    <img
-                      alt="avatar"
-                      className="Avatar__Img-sc-m9feoe-2 iQvAVN rounded-full"
-                      src="https://i.stack.imgur.com/xHWG8.jpg"
-                    />
+                    <span
+                      style={
+                        Object {
+                          "background": "none",
+                          "border": 0,
+                          "bottom": 0,
+                          "boxSizing": "border-box",
+                          "display": "block",
+                          "height": "initial",
+                          "left": 0,
+                          "margin": 0,
+                          "opacity": 1,
+                          "overflow": "hidden",
+                          "padding": 0,
+                          "position": "absolute",
+                          "right": 0,
+                          "top": 0,
+                          "width": "initial",
+                        }
+                      }
+                    >
+                      <img
+                        alt="avatar"
+                        className="Avatar__Img-sc-m9feoe-2 kuaPdK rounded-full"
+                        data-nimg="fill"
+                        decoding="async"
+                        src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                        style={
+                          Object {
+                            "border": "none",
+                            "bottom": 0,
+                            "boxSizing": "border-box",
+                            "display": "block",
+                            "height": 0,
+                            "left": 0,
+                            "margin": "auto",
+                            "maxHeight": "100%",
+                            "maxWidth": "100%",
+                            "minHeight": "100%",
+                            "minWidth": "100%",
+                            "objectFit": undefined,
+                            "objectPosition": undefined,
+                            "padding": 0,
+                            "position": "absolute",
+                            "right": 0,
+                            "top": 0,
+                            "width": 0,
+                          }
+                        }
+                      />
+                      <noscript>
+                        <img
+                          alt="avatar"
+                          className="Avatar__Img-sc-m9feoe-2 kuaPdK rounded-full"
+                          data-nimg="fill"
+                          decoding="async"
+                          loading="lazy"
+                          sizes="100vw"
+                          src="/_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=3840&q=75"
+                          srcSet="/_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=640&q=75 640w, /_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=750&q=75 750w, /_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=828&q=75 828w, /_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=1080&q=75 1080w, /_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=1200&q=75 1200w, /_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=1920&q=75 1920w, /_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=2048&q=75 2048w, /_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=3840&q=75 3840w"
+                          style={
+                            Object {
+                              "border": "none",
+                              "bottom": 0,
+                              "boxSizing": "border-box",
+                              "display": "block",
+                              "height": 0,
+                              "left": 0,
+                              "margin": "auto",
+                              "maxHeight": "100%",
+                              "maxWidth": "100%",
+                              "minHeight": "100%",
+                              "minWidth": "100%",
+                              "objectFit": undefined,
+                              "objectPosition": undefined,
+                              "padding": 0,
+                              "position": "absolute",
+                              "right": 0,
+                              "top": 0,
+                              "width": 0,
+                            }
+                          }
+                        />
+                      </noscript>
+                    </span>
                   </div>
                 </div>
                 <div
-                  className="ArticleCommentTemplate__AuthorName-sc-13m5pqz-4 dpZqrw"
+                  className="ArticleCommentTemplate__AuthorName-sc-13m5pqz-4 btcmKz"
                   data-cy="comment-form-user-username"
                 >
                   <a
@@ -476,37 +802,117 @@ exports[`Article Snapshots renders article after login 1`] = `
         </form>
       </div>
       <div
-        className="ArticleCommentTemplate__CommentContainer-sc-13m5pqz-6 elNlSw"
+        className="ArticleCommentTemplate__CommentContainer-sc-13m5pqz-6 bjvmNj"
         data-cy="comment-container"
       >
         <div
-          className="ArticleCommentTemplate__CommentBody-sc-13m5pqz-7 iClYhq"
+          className="ArticleCommentTemplate__CommentBody-sc-13m5pqz-7 dxnfTl"
           data-cy="comment-body"
         >
           It takes a Jacobian
         </div>
         <div
-          className="ArticleCommentTemplate__CommentInfo-sc-13m5pqz-8 bgoWHO"
+          className="ArticleCommentTemplate__CommentInfo-sc-13m5pqz-8 cSYSkx"
         >
           <div
-            className="ArticleCommentTemplate__AuthorContainer-sc-13m5pqz-3 gKLFEg"
+            className="ArticleCommentTemplate__AuthorContainer-sc-13m5pqz-3 fKSqan"
           >
             <div
-              className="Avatar__Wrapper-sc-m9feoe-0 icAXkY"
+              className="Avatar__Wrapper-sc-m9feoe-0 ieHczv"
               data-cy="comment-author-image"
             >
               <div
-                className="Avatar__Container-sc-m9feoe-1 JCubi w-5 h-5"
+                className="Avatar__Container-sc-m9feoe-1 fQHyzl w-5 h-5"
               >
-                <img
-                  alt="avatar"
-                  className="Avatar__Img-sc-m9feoe-2 iQvAVN rounded-full"
-                  src="https://i.stack.imgur.com/xHWG8.jpg"
-                />
+                <span
+                  style={
+                    Object {
+                      "background": "none",
+                      "border": 0,
+                      "bottom": 0,
+                      "boxSizing": "border-box",
+                      "display": "block",
+                      "height": "initial",
+                      "left": 0,
+                      "margin": 0,
+                      "opacity": 1,
+                      "overflow": "hidden",
+                      "padding": 0,
+                      "position": "absolute",
+                      "right": 0,
+                      "top": 0,
+                      "width": "initial",
+                    }
+                  }
+                >
+                  <img
+                    alt="avatar"
+                    className="Avatar__Img-sc-m9feoe-2 kuaPdK rounded-full"
+                    data-nimg="fill"
+                    decoding="async"
+                    src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                    style={
+                      Object {
+                        "border": "none",
+                        "bottom": 0,
+                        "boxSizing": "border-box",
+                        "display": "block",
+                        "height": 0,
+                        "left": 0,
+                        "margin": "auto",
+                        "maxHeight": "100%",
+                        "maxWidth": "100%",
+                        "minHeight": "100%",
+                        "minWidth": "100%",
+                        "objectFit": undefined,
+                        "objectPosition": undefined,
+                        "padding": 0,
+                        "position": "absolute",
+                        "right": 0,
+                        "top": 0,
+                        "width": 0,
+                      }
+                    }
+                  />
+                  <noscript>
+                    <img
+                      alt="avatar"
+                      className="Avatar__Img-sc-m9feoe-2 kuaPdK rounded-full"
+                      data-nimg="fill"
+                      decoding="async"
+                      loading="lazy"
+                      sizes="100vw"
+                      src="/_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=3840&q=75"
+                      srcSet="/_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=640&q=75 640w, /_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=750&q=75 750w, /_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=828&q=75 828w, /_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=1080&q=75 1080w, /_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=1200&q=75 1200w, /_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=1920&q=75 1920w, /_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=2048&q=75 2048w, /_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=3840&q=75 3840w"
+                      style={
+                        Object {
+                          "border": "none",
+                          "bottom": 0,
+                          "boxSizing": "border-box",
+                          "display": "block",
+                          "height": 0,
+                          "left": 0,
+                          "margin": "auto",
+                          "maxHeight": "100%",
+                          "maxWidth": "100%",
+                          "minHeight": "100%",
+                          "minWidth": "100%",
+                          "objectFit": undefined,
+                          "objectPosition": undefined,
+                          "padding": 0,
+                          "position": "absolute",
+                          "right": 0,
+                          "top": 0,
+                          "width": 0,
+                        }
+                      }
+                    />
+                  </noscript>
+                </span>
               </div>
             </div>
             <div
-              className="ArticleCommentTemplate__AuthorName-sc-13m5pqz-4 dpZqrw"
+              className="ArticleCommentTemplate__AuthorName-sc-13m5pqz-4 btcmKz"
               data-cy="comment-author-username"
             >
               <a
@@ -518,14 +924,14 @@ exports[`Article Snapshots renders article after login 1`] = `
               </a>
             </div>
             <div
-              className="ArticleCommentTemplate__AuthorDate-sc-13m5pqz-5 gMFtoO"
+              className="ArticleCommentTemplate__AuthorDate-sc-13m5pqz-5 djbjWJ"
               data-cy="comment-author-date"
             >
               Thu Feb 18 2016
             </div>
           </div>
           <div
-            className="ArticleCommentTemplate__CommentDeleteButton-sc-13m5pqz-9 gaGNuU"
+            className="ArticleCommentTemplate__CommentDeleteButton-sc-13m5pqz-9 fEmsMv"
             data-cy="comment-delete-button"
             onClick={[Function]}
           >
@@ -551,37 +957,117 @@ exports[`Article Snapshots renders article after login 1`] = `
         </div>
       </div>
       <div
-        className="ArticleCommentTemplate__CommentContainer-sc-13m5pqz-6 elNlSw"
+        className="ArticleCommentTemplate__CommentContainer-sc-13m5pqz-6 bjvmNj"
         data-cy="comment-container"
       >
         <div
-          className="ArticleCommentTemplate__CommentBody-sc-13m5pqz-7 iClYhq"
+          className="ArticleCommentTemplate__CommentBody-sc-13m5pqz-7 dxnfTl"
           data-cy="comment-body"
         >
           It takes a Jacobian 2
         </div>
         <div
-          className="ArticleCommentTemplate__CommentInfo-sc-13m5pqz-8 bgoWHO"
+          className="ArticleCommentTemplate__CommentInfo-sc-13m5pqz-8 cSYSkx"
         >
           <div
-            className="ArticleCommentTemplate__AuthorContainer-sc-13m5pqz-3 gKLFEg"
+            className="ArticleCommentTemplate__AuthorContainer-sc-13m5pqz-3 fKSqan"
           >
             <div
-              className="Avatar__Wrapper-sc-m9feoe-0 icAXkY"
+              className="Avatar__Wrapper-sc-m9feoe-0 ieHczv"
               data-cy="comment-author-image"
             >
               <div
-                className="Avatar__Container-sc-m9feoe-1 JCubi w-5 h-5"
+                className="Avatar__Container-sc-m9feoe-1 fQHyzl w-5 h-5"
               >
-                <img
-                  alt="avatar"
-                  className="Avatar__Img-sc-m9feoe-2 iQvAVN rounded-full"
-                  src="https://i.stack.imgur.com/xHWG8.jpg"
-                />
+                <span
+                  style={
+                    Object {
+                      "background": "none",
+                      "border": 0,
+                      "bottom": 0,
+                      "boxSizing": "border-box",
+                      "display": "block",
+                      "height": "initial",
+                      "left": 0,
+                      "margin": 0,
+                      "opacity": 1,
+                      "overflow": "hidden",
+                      "padding": 0,
+                      "position": "absolute",
+                      "right": 0,
+                      "top": 0,
+                      "width": "initial",
+                    }
+                  }
+                >
+                  <img
+                    alt="avatar"
+                    className="Avatar__Img-sc-m9feoe-2 kuaPdK rounded-full"
+                    data-nimg="fill"
+                    decoding="async"
+                    src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                    style={
+                      Object {
+                        "border": "none",
+                        "bottom": 0,
+                        "boxSizing": "border-box",
+                        "display": "block",
+                        "height": 0,
+                        "left": 0,
+                        "margin": "auto",
+                        "maxHeight": "100%",
+                        "maxWidth": "100%",
+                        "minHeight": "100%",
+                        "minWidth": "100%",
+                        "objectFit": undefined,
+                        "objectPosition": undefined,
+                        "padding": 0,
+                        "position": "absolute",
+                        "right": 0,
+                        "top": 0,
+                        "width": 0,
+                      }
+                    }
+                  />
+                  <noscript>
+                    <img
+                      alt="avatar"
+                      className="Avatar__Img-sc-m9feoe-2 kuaPdK rounded-full"
+                      data-nimg="fill"
+                      decoding="async"
+                      loading="lazy"
+                      sizes="100vw"
+                      src="/_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=3840&q=75"
+                      srcSet="/_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=640&q=75 640w, /_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=750&q=75 750w, /_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=828&q=75 828w, /_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=1080&q=75 1080w, /_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=1200&q=75 1200w, /_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=1920&q=75 1920w, /_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=2048&q=75 2048w, /_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=3840&q=75 3840w"
+                      style={
+                        Object {
+                          "border": "none",
+                          "bottom": 0,
+                          "boxSizing": "border-box",
+                          "display": "block",
+                          "height": 0,
+                          "left": 0,
+                          "margin": "auto",
+                          "maxHeight": "100%",
+                          "maxWidth": "100%",
+                          "minHeight": "100%",
+                          "minWidth": "100%",
+                          "objectFit": undefined,
+                          "objectPosition": undefined,
+                          "padding": 0,
+                          "position": "absolute",
+                          "right": 0,
+                          "top": 0,
+                          "width": 0,
+                        }
+                      }
+                    />
+                  </noscript>
+                </span>
               </div>
             </div>
             <div
-              className="ArticleCommentTemplate__AuthorName-sc-13m5pqz-4 dpZqrw"
+              className="ArticleCommentTemplate__AuthorName-sc-13m5pqz-4 btcmKz"
               data-cy="comment-author-username"
             >
               <a
@@ -593,7 +1079,7 @@ exports[`Article Snapshots renders article after login 1`] = `
               </a>
             </div>
             <div
-              className="ArticleCommentTemplate__AuthorDate-sc-13m5pqz-5 gMFtoO"
+              className="ArticleCommentTemplate__AuthorDate-sc-13m5pqz-5 djbjWJ"
               data-cy="comment-author-date"
             >
               Thu Feb 18 2016
@@ -604,10 +1090,10 @@ exports[`Article Snapshots renders article after login 1`] = `
     </div>
   </div>
   <div
-    className="FooterTemplate__Container-sc-96wla6-0 dxhwgY"
+    className="FooterTemplate__Container-sc-96wla6-0 cOGJUH"
   >
     <span
-      className="FooterTemplate__SiteLink-sc-96wla6-1 iJSbEN text-base mr-1 font-bold"
+      className="FooterTemplate__SiteLink-sc-96wla6-1 ENejy text-base mr-1 font-bold"
       data-cy="footer-logo-link"
       href="/"
       onClick={[Function]}
@@ -617,7 +1103,7 @@ exports[`Article Snapshots renders article after login 1`] = `
     </span>
     © 2020. An interactive learning project from
     <span
-      className="FooterTemplate__SiteLink-sc-96wla6-1 iJSbEN ml-1"
+      className="FooterTemplate__SiteLink-sc-96wla6-1 ENejy ml-1"
       data-cy="footer-site-link"
       href="https://thinkster.io/"
       onClick={[Function]}
@@ -632,16 +1118,16 @@ exports[`Article Snapshots renders article after login 1`] = `
 
 exports[`Article Snapshots renders article after login with other article 1`] = `
 <div
-  className="BaseLayoutTemplate__Container-sc-1jz5xvr-0 gAVYwR"
+  className="BaseLayoutTemplate__Container-sc-1jz5xvr-0 kHMSW"
 >
   <div
-    className="HeaderTemplate__Container-sc-kdla34-0 inxbiA"
+    className="HeaderTemplate__Container-sc-kdla34-0 gxnUkb"
   >
     <div
-      className="HeaderTemplate__Heading-sc-kdla34-1 laFayD"
+      className="HeaderTemplate__Heading-sc-kdla34-1 lcHwtI"
     >
       <div
-        className="HeaderTemplate__HeadingTitle-sc-kdla34-2 bAZjNO"
+        className="HeaderTemplate__HeadingTitle-sc-kdla34-2 ibfQih"
         data-cy="header-logo-link"
       >
         <a
@@ -765,16 +1251,96 @@ exports[`Article Snapshots renders article after login with other article 1`] = 
                 className="flex items-center gap-1"
               >
                 <div
-                  className="Avatar__Wrapper-sc-m9feoe-0 icAXkY"
+                  className="Avatar__Wrapper-sc-m9feoe-0 ieHczv"
                 >
                   <div
-                    className="Avatar__Container-sc-m9feoe-1 JCubi w-5 h-5"
+                    className="Avatar__Container-sc-m9feoe-1 fQHyzl w-5 h-5"
                   >
-                    <img
-                      alt="avatar"
-                      className="Avatar__Img-sc-m9feoe-2 iQvAVN rounded-full"
-                      src="https://i.stack.imgur.com/xHWG8.jpg"
-                    />
+                    <span
+                      style={
+                        Object {
+                          "background": "none",
+                          "border": 0,
+                          "bottom": 0,
+                          "boxSizing": "border-box",
+                          "display": "block",
+                          "height": "initial",
+                          "left": 0,
+                          "margin": 0,
+                          "opacity": 1,
+                          "overflow": "hidden",
+                          "padding": 0,
+                          "position": "absolute",
+                          "right": 0,
+                          "top": 0,
+                          "width": "initial",
+                        }
+                      }
+                    >
+                      <img
+                        alt="avatar"
+                        className="Avatar__Img-sc-m9feoe-2 kuaPdK rounded-full"
+                        data-nimg="fill"
+                        decoding="async"
+                        src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                        style={
+                          Object {
+                            "border": "none",
+                            "bottom": 0,
+                            "boxSizing": "border-box",
+                            "display": "block",
+                            "height": 0,
+                            "left": 0,
+                            "margin": "auto",
+                            "maxHeight": "100%",
+                            "maxWidth": "100%",
+                            "minHeight": "100%",
+                            "minWidth": "100%",
+                            "objectFit": undefined,
+                            "objectPosition": undefined,
+                            "padding": 0,
+                            "position": "absolute",
+                            "right": 0,
+                            "top": 0,
+                            "width": 0,
+                          }
+                        }
+                      />
+                      <noscript>
+                        <img
+                          alt="avatar"
+                          className="Avatar__Img-sc-m9feoe-2 kuaPdK rounded-full"
+                          data-nimg="fill"
+                          decoding="async"
+                          loading="lazy"
+                          sizes="100vw"
+                          src="/_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=3840&q=75"
+                          srcSet="/_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=640&q=75 640w, /_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=750&q=75 750w, /_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=828&q=75 828w, /_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=1080&q=75 1080w, /_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=1200&q=75 1200w, /_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=1920&q=75 1920w, /_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=2048&q=75 2048w, /_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=3840&q=75 3840w"
+                          style={
+                            Object {
+                              "border": "none",
+                              "bottom": 0,
+                              "boxSizing": "border-box",
+                              "display": "block",
+                              "height": 0,
+                              "left": 0,
+                              "margin": "auto",
+                              "maxHeight": "100%",
+                              "maxWidth": "100%",
+                              "minHeight": "100%",
+                              "minWidth": "100%",
+                              "objectFit": undefined,
+                              "objectPosition": undefined,
+                              "padding": 0,
+                              "position": "absolute",
+                              "right": 0,
+                              "top": 0,
+                              "width": 0,
+                            }
+                          }
+                        />
+                      </noscript>
+                    </span>
                   </div>
                 </div>
                 Jacob
@@ -786,36 +1352,116 @@ exports[`Article Snapshots renders article after login with other article 1`] = 
     </div>
   </div>
   <div
-    className="ArticleBannerTemplate__Container-sc-1dyvdkl-0 fnzmsk"
+    className="ArticleBannerTemplate__Container-sc-1dyvdkl-0 mMMhf"
   >
     <h1
-      className="ArticleBannerTemplate__Title-sc-1dyvdkl-1 ipycHN"
+      className="ArticleBannerTemplate__Title-sc-1dyvdkl-1 gPlBoW"
       data-cy="article-title"
     >
       How to train your dragon
     </h1>
     <div
-      className="ArticleBannerTemplate__AuthorContainer-sc-1dyvdkl-2 FNmFH"
+      className="ArticleBannerTemplate__AuthorContainer-sc-1dyvdkl-2 grnMls"
     >
       <div
-        className="Avatar__Wrapper-sc-m9feoe-0 icAXkY"
+        className="Avatar__Wrapper-sc-m9feoe-0 ieHczv"
         data-cy="article-banner-author-image"
       >
         <div
-          className="Avatar__Container-sc-m9feoe-1 JCubi w-8 h-8"
+          className="Avatar__Container-sc-m9feoe-1 fQHyzl w-8 h-8"
         >
-          <img
-            alt="avatar"
-            className="Avatar__Img-sc-m9feoe-2 iQvAVN rounded-full"
-            src="https://i.stack.imgur.com/xHWG8.jpg"
-          />
+          <span
+            style={
+              Object {
+                "background": "none",
+                "border": 0,
+                "bottom": 0,
+                "boxSizing": "border-box",
+                "display": "block",
+                "height": "initial",
+                "left": 0,
+                "margin": 0,
+                "opacity": 1,
+                "overflow": "hidden",
+                "padding": 0,
+                "position": "absolute",
+                "right": 0,
+                "top": 0,
+                "width": "initial",
+              }
+            }
+          >
+            <img
+              alt="avatar"
+              className="Avatar__Img-sc-m9feoe-2 kuaPdK rounded-full"
+              data-nimg="fill"
+              decoding="async"
+              src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+              style={
+                Object {
+                  "border": "none",
+                  "bottom": 0,
+                  "boxSizing": "border-box",
+                  "display": "block",
+                  "height": 0,
+                  "left": 0,
+                  "margin": "auto",
+                  "maxHeight": "100%",
+                  "maxWidth": "100%",
+                  "minHeight": "100%",
+                  "minWidth": "100%",
+                  "objectFit": undefined,
+                  "objectPosition": undefined,
+                  "padding": 0,
+                  "position": "absolute",
+                  "right": 0,
+                  "top": 0,
+                  "width": 0,
+                }
+              }
+            />
+            <noscript>
+              <img
+                alt="avatar"
+                className="Avatar__Img-sc-m9feoe-2 kuaPdK rounded-full"
+                data-nimg="fill"
+                decoding="async"
+                loading="lazy"
+                sizes="100vw"
+                src="/_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=3840&q=75"
+                srcSet="/_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=640&q=75 640w, /_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=750&q=75 750w, /_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=828&q=75 828w, /_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=1080&q=75 1080w, /_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=1200&q=75 1200w, /_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=1920&q=75 1920w, /_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=2048&q=75 2048w, /_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=3840&q=75 3840w"
+                style={
+                  Object {
+                    "border": "none",
+                    "bottom": 0,
+                    "boxSizing": "border-box",
+                    "display": "block",
+                    "height": 0,
+                    "left": 0,
+                    "margin": "auto",
+                    "maxHeight": "100%",
+                    "maxWidth": "100%",
+                    "minHeight": "100%",
+                    "minWidth": "100%",
+                    "objectFit": undefined,
+                    "objectPosition": undefined,
+                    "padding": 0,
+                    "position": "absolute",
+                    "right": 0,
+                    "top": 0,
+                    "width": 0,
+                  }
+                }
+              />
+            </noscript>
+          </span>
         </div>
       </div>
       <div
-        className="ArticleBannerTemplate__AuthorInfo-sc-1dyvdkl-3 difHfg"
+        className="ArticleBannerTemplate__AuthorInfo-sc-1dyvdkl-3 vJafv"
       >
         <div
-          className="ArticleBannerTemplate__AuthorName-sc-1dyvdkl-4 dMDaKB"
+          className="ArticleBannerTemplate__AuthorName-sc-1dyvdkl-4 hRfpXK"
           data-cy="article-banner-author-username"
         >
           <a
@@ -827,14 +1473,14 @@ exports[`Article Snapshots renders article after login with other article 1`] = 
           </a>
         </div>
         <div
-          className="ArticleBannerTemplate__AuthorDate-sc-1dyvdkl-5 fszlGF"
+          className="ArticleBannerTemplate__AuthorDate-sc-1dyvdkl-5 hgaxyC"
           data-cy="article-banner-author-date"
         >
           Thu Feb 18 2016
         </div>
       </div>
       <div
-        className="ArticleBannerTemplate__Edit-sc-1dyvdkl-6 gQbkXR"
+        className="ArticleBannerTemplate__Edit-sc-1dyvdkl-6 gphpPy"
         data-cy="article-banner-edit-article"
         onClick={[Function]}
       >
@@ -865,7 +1511,7 @@ exports[`Article Snapshots renders article after login with other article 1`] = 
         </div>
       </div>
       <div
-        className="ArticleBannerTemplate__Delete-sc-1dyvdkl-7 duitaR"
+        className="ArticleBannerTemplate__Delete-sc-1dyvdkl-7 gdRmYW"
         data-cy="article-banner-delete-article"
         onClick={[Function]}
       >
@@ -901,26 +1547,32 @@ exports[`Article Snapshots renders article after login with other article 1`] = 
     className="container mx-auto mt-8"
   >
     <div
-      className="ArticleContentTemplate__Container-sc-1w2hr4z-0 cEcbsZ"
+      className="ArticleContentTemplate__Container-sc-1w2hr4z-0 dVYMDK"
     >
       <div
-        className="ArticleContentTemplate__Content-sc-1w2hr4z-1 bPHoBm"
+        className="ArticleContentTemplate__Content-sc-1w2hr4z-1 YRUEt"
       >
         <div
-          className="ArticleContentTemplate__Body-sc-1w2hr4z-2 kOfYDs"
+          className="ArticleContentTemplate__Body-sc-1w2hr4z-2 fhrHRP"
+          dangerouslySetInnerHTML={
+            Object {
+              "__html": "<p>It takes a <strong>Jacobian</strong></p>
+",
+            }
+          }
           data-cy="article-content-body"
         />
         <div
-          className="ArticleContentTemplate__Tags-sc-1w2hr4z-3 llaePP"
+          className="ArticleContentTemplate__Tags-sc-1w2hr4z-3 fldydI"
         >
           <div
-            className="ArticleContentTemplate__Tag-sc-1w2hr4z-4 kdahvG"
+            className="ArticleContentTemplate__Tag-sc-1w2hr4z-4 kXzBAF"
             data-cy="article-content-tags"
           >
             dragons
           </div>
           <div
-            className="ArticleContentTemplate__Tag-sc-1w2hr4z-4 kdahvG"
+            className="ArticleContentTemplate__Tag-sc-1w2hr4z-4 kXzBAF"
             data-cy="article-content-tags"
           >
             training
@@ -929,30 +1581,110 @@ exports[`Article Snapshots renders article after login with other article 1`] = 
         <hr />
       </div>
       <div
-        className="ArticleContentTemplate__AuthorWrapper-sc-1w2hr4z-5 iAKYzf"
+        className="ArticleContentTemplate__AuthorWrapper-sc-1w2hr4z-5 iwOlyQ"
       >
         <div
-          className="ArticleContentTemplate__AuthorContainer-sc-1w2hr4z-6 hJWSoA"
+          className="ArticleContentTemplate__AuthorContainer-sc-1w2hr4z-6 bbHJrT"
         >
           <div
-            className="Avatar__Wrapper-sc-m9feoe-0 icAXkY"
+            className="Avatar__Wrapper-sc-m9feoe-0 ieHczv"
             data-cy="article-content-author-image"
           >
             <div
-              className="Avatar__Container-sc-m9feoe-1 JCubi w-8 h-8"
+              className="Avatar__Container-sc-m9feoe-1 fQHyzl w-8 h-8"
             >
-              <img
-                alt="avatar"
-                className="Avatar__Img-sc-m9feoe-2 iQvAVN rounded-full"
-                src="https://i.stack.imgur.com/xHWG8.jpg"
-              />
+              <span
+                style={
+                  Object {
+                    "background": "none",
+                    "border": 0,
+                    "bottom": 0,
+                    "boxSizing": "border-box",
+                    "display": "block",
+                    "height": "initial",
+                    "left": 0,
+                    "margin": 0,
+                    "opacity": 1,
+                    "overflow": "hidden",
+                    "padding": 0,
+                    "position": "absolute",
+                    "right": 0,
+                    "top": 0,
+                    "width": "initial",
+                  }
+                }
+              >
+                <img
+                  alt="avatar"
+                  className="Avatar__Img-sc-m9feoe-2 kuaPdK rounded-full"
+                  data-nimg="fill"
+                  decoding="async"
+                  src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                  style={
+                    Object {
+                      "border": "none",
+                      "bottom": 0,
+                      "boxSizing": "border-box",
+                      "display": "block",
+                      "height": 0,
+                      "left": 0,
+                      "margin": "auto",
+                      "maxHeight": "100%",
+                      "maxWidth": "100%",
+                      "minHeight": "100%",
+                      "minWidth": "100%",
+                      "objectFit": undefined,
+                      "objectPosition": undefined,
+                      "padding": 0,
+                      "position": "absolute",
+                      "right": 0,
+                      "top": 0,
+                      "width": 0,
+                    }
+                  }
+                />
+                <noscript>
+                  <img
+                    alt="avatar"
+                    className="Avatar__Img-sc-m9feoe-2 kuaPdK rounded-full"
+                    data-nimg="fill"
+                    decoding="async"
+                    loading="lazy"
+                    sizes="100vw"
+                    src="/_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=3840&q=75"
+                    srcSet="/_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=640&q=75 640w, /_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=750&q=75 750w, /_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=828&q=75 828w, /_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=1080&q=75 1080w, /_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=1200&q=75 1200w, /_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=1920&q=75 1920w, /_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=2048&q=75 2048w, /_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=3840&q=75 3840w"
+                    style={
+                      Object {
+                        "border": "none",
+                        "bottom": 0,
+                        "boxSizing": "border-box",
+                        "display": "block",
+                        "height": 0,
+                        "left": 0,
+                        "margin": "auto",
+                        "maxHeight": "100%",
+                        "maxWidth": "100%",
+                        "minHeight": "100%",
+                        "minWidth": "100%",
+                        "objectFit": undefined,
+                        "objectPosition": undefined,
+                        "padding": 0,
+                        "position": "absolute",
+                        "right": 0,
+                        "top": 0,
+                        "width": 0,
+                      }
+                    }
+                  />
+                </noscript>
+              </span>
             </div>
           </div>
           <div
-            className="ArticleContentTemplate__AuthorInfo-sc-1w2hr4z-7 kQMxTM"
+            className="ArticleContentTemplate__AuthorInfo-sc-1w2hr4z-7 bLLNsb"
           >
             <div
-              className="ArticleContentTemplate__AuthorName-sc-1w2hr4z-8 gUuHzW"
+              className="ArticleContentTemplate__AuthorName-sc-1w2hr4z-8 jGILIF"
               data-cy="article-content-author-username"
             >
               <a
@@ -964,14 +1696,14 @@ exports[`Article Snapshots renders article after login with other article 1`] = 
               </a>
             </div>
             <div
-              className="ArticleContentTemplate__AuthorDate-sc-1w2hr4z-9 fISmex"
+              className="ArticleContentTemplate__AuthorDate-sc-1w2hr4z-9 jWCDpi"
               data-cy="article-content-author-date"
             >
               Thu Feb 18 2016
             </div>
           </div>
           <div
-            className="ArticleContentTemplate__Edit-sc-1w2hr4z-10 eBhtdG"
+            className="ArticleContentTemplate__Edit-sc-1w2hr4z-10 jOxZjl"
             data-cy="article-content-edit-article"
             onClick={[Function]}
           >
@@ -1002,7 +1734,7 @@ exports[`Article Snapshots renders article after login with other article 1`] = 
             </div>
           </div>
           <div
-            className="ArticleContentTemplate__Delete-sc-1w2hr4z-11 cfXRHK"
+            className="ArticleContentTemplate__Delete-sc-1w2hr4z-11 gQRCxF"
             data-cy="article-content-delete-article"
             onClick={[Function]}
           >
@@ -1036,10 +1768,10 @@ exports[`Article Snapshots renders article after login with other article 1`] = 
       </div>
     </div>
     <div
-      className="ArticleCommentTemplate__Container-sc-13m5pqz-0 iQkfIT"
+      className="ArticleCommentTemplate__Container-sc-13m5pqz-0 jICGMo"
     >
       <div
-        className="ArticleCommentTemplate__FormContainer-sc-13m5pqz-1 eyYHKl"
+        className="ArticleCommentTemplate__FormContainer-sc-13m5pqz-1 eZsDPK"
         data-cy="comment-form-container"
       >
         <form
@@ -1061,27 +1793,107 @@ exports[`Article Snapshots renders article after login with other article 1`] = 
               />
             </div>
             <div
-              className="ArticleCommentTemplate__FormInfo-sc-13m5pqz-2 bNIRus"
+              className="ArticleCommentTemplate__FormInfo-sc-13m5pqz-2 epaAxf"
             >
               <div
-                className="ArticleCommentTemplate__AuthorContainer-sc-13m5pqz-3 gKLFEg"
+                className="ArticleCommentTemplate__AuthorContainer-sc-13m5pqz-3 fKSqan"
               >
                 <div
-                  className="Avatar__Wrapper-sc-m9feoe-0 icAXkY"
+                  className="Avatar__Wrapper-sc-m9feoe-0 ieHczv"
                   data-cy="comment-form-user-image"
                 >
                   <div
-                    className="Avatar__Container-sc-m9feoe-1 JCubi w-5 h-5"
+                    className="Avatar__Container-sc-m9feoe-1 fQHyzl w-5 h-5"
                   >
-                    <img
-                      alt="avatar"
-                      className="Avatar__Img-sc-m9feoe-2 iQvAVN rounded-full"
-                      src="https://i.stack.imgur.com/xHWG8.jpg"
-                    />
+                    <span
+                      style={
+                        Object {
+                          "background": "none",
+                          "border": 0,
+                          "bottom": 0,
+                          "boxSizing": "border-box",
+                          "display": "block",
+                          "height": "initial",
+                          "left": 0,
+                          "margin": 0,
+                          "opacity": 1,
+                          "overflow": "hidden",
+                          "padding": 0,
+                          "position": "absolute",
+                          "right": 0,
+                          "top": 0,
+                          "width": "initial",
+                        }
+                      }
+                    >
+                      <img
+                        alt="avatar"
+                        className="Avatar__Img-sc-m9feoe-2 kuaPdK rounded-full"
+                        data-nimg="fill"
+                        decoding="async"
+                        src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                        style={
+                          Object {
+                            "border": "none",
+                            "bottom": 0,
+                            "boxSizing": "border-box",
+                            "display": "block",
+                            "height": 0,
+                            "left": 0,
+                            "margin": "auto",
+                            "maxHeight": "100%",
+                            "maxWidth": "100%",
+                            "minHeight": "100%",
+                            "minWidth": "100%",
+                            "objectFit": undefined,
+                            "objectPosition": undefined,
+                            "padding": 0,
+                            "position": "absolute",
+                            "right": 0,
+                            "top": 0,
+                            "width": 0,
+                          }
+                        }
+                      />
+                      <noscript>
+                        <img
+                          alt="avatar"
+                          className="Avatar__Img-sc-m9feoe-2 kuaPdK rounded-full"
+                          data-nimg="fill"
+                          decoding="async"
+                          loading="lazy"
+                          sizes="100vw"
+                          src="/_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=3840&q=75"
+                          srcSet="/_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=640&q=75 640w, /_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=750&q=75 750w, /_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=828&q=75 828w, /_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=1080&q=75 1080w, /_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=1200&q=75 1200w, /_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=1920&q=75 1920w, /_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=2048&q=75 2048w, /_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=3840&q=75 3840w"
+                          style={
+                            Object {
+                              "border": "none",
+                              "bottom": 0,
+                              "boxSizing": "border-box",
+                              "display": "block",
+                              "height": 0,
+                              "left": 0,
+                              "margin": "auto",
+                              "maxHeight": "100%",
+                              "maxWidth": "100%",
+                              "minHeight": "100%",
+                              "minWidth": "100%",
+                              "objectFit": undefined,
+                              "objectPosition": undefined,
+                              "padding": 0,
+                              "position": "absolute",
+                              "right": 0,
+                              "top": 0,
+                              "width": 0,
+                            }
+                          }
+                        />
+                      </noscript>
+                    </span>
                   </div>
                 </div>
                 <div
-                  className="ArticleCommentTemplate__AuthorName-sc-13m5pqz-4 dpZqrw"
+                  className="ArticleCommentTemplate__AuthorName-sc-13m5pqz-4 btcmKz"
                   data-cy="comment-form-user-username"
                 >
                   <a
@@ -1106,37 +1918,117 @@ exports[`Article Snapshots renders article after login with other article 1`] = 
         </form>
       </div>
       <div
-        className="ArticleCommentTemplate__CommentContainer-sc-13m5pqz-6 elNlSw"
+        className="ArticleCommentTemplate__CommentContainer-sc-13m5pqz-6 bjvmNj"
         data-cy="comment-container"
       >
         <div
-          className="ArticleCommentTemplate__CommentBody-sc-13m5pqz-7 iClYhq"
+          className="ArticleCommentTemplate__CommentBody-sc-13m5pqz-7 dxnfTl"
           data-cy="comment-body"
         >
           It takes a Jacobian
         </div>
         <div
-          className="ArticleCommentTemplate__CommentInfo-sc-13m5pqz-8 bgoWHO"
+          className="ArticleCommentTemplate__CommentInfo-sc-13m5pqz-8 cSYSkx"
         >
           <div
-            className="ArticleCommentTemplate__AuthorContainer-sc-13m5pqz-3 gKLFEg"
+            className="ArticleCommentTemplate__AuthorContainer-sc-13m5pqz-3 fKSqan"
           >
             <div
-              className="Avatar__Wrapper-sc-m9feoe-0 icAXkY"
+              className="Avatar__Wrapper-sc-m9feoe-0 ieHczv"
               data-cy="comment-author-image"
             >
               <div
-                className="Avatar__Container-sc-m9feoe-1 JCubi w-5 h-5"
+                className="Avatar__Container-sc-m9feoe-1 fQHyzl w-5 h-5"
               >
-                <img
-                  alt="avatar"
-                  className="Avatar__Img-sc-m9feoe-2 iQvAVN rounded-full"
-                  src="https://i.stack.imgur.com/xHWG8.jpg"
-                />
+                <span
+                  style={
+                    Object {
+                      "background": "none",
+                      "border": 0,
+                      "bottom": 0,
+                      "boxSizing": "border-box",
+                      "display": "block",
+                      "height": "initial",
+                      "left": 0,
+                      "margin": 0,
+                      "opacity": 1,
+                      "overflow": "hidden",
+                      "padding": 0,
+                      "position": "absolute",
+                      "right": 0,
+                      "top": 0,
+                      "width": "initial",
+                    }
+                  }
+                >
+                  <img
+                    alt="avatar"
+                    className="Avatar__Img-sc-m9feoe-2 kuaPdK rounded-full"
+                    data-nimg="fill"
+                    decoding="async"
+                    src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                    style={
+                      Object {
+                        "border": "none",
+                        "bottom": 0,
+                        "boxSizing": "border-box",
+                        "display": "block",
+                        "height": 0,
+                        "left": 0,
+                        "margin": "auto",
+                        "maxHeight": "100%",
+                        "maxWidth": "100%",
+                        "minHeight": "100%",
+                        "minWidth": "100%",
+                        "objectFit": undefined,
+                        "objectPosition": undefined,
+                        "padding": 0,
+                        "position": "absolute",
+                        "right": 0,
+                        "top": 0,
+                        "width": 0,
+                      }
+                    }
+                  />
+                  <noscript>
+                    <img
+                      alt="avatar"
+                      className="Avatar__Img-sc-m9feoe-2 kuaPdK rounded-full"
+                      data-nimg="fill"
+                      decoding="async"
+                      loading="lazy"
+                      sizes="100vw"
+                      src="/_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=3840&q=75"
+                      srcSet="/_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=640&q=75 640w, /_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=750&q=75 750w, /_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=828&q=75 828w, /_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=1080&q=75 1080w, /_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=1200&q=75 1200w, /_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=1920&q=75 1920w, /_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=2048&q=75 2048w, /_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=3840&q=75 3840w"
+                      style={
+                        Object {
+                          "border": "none",
+                          "bottom": 0,
+                          "boxSizing": "border-box",
+                          "display": "block",
+                          "height": 0,
+                          "left": 0,
+                          "margin": "auto",
+                          "maxHeight": "100%",
+                          "maxWidth": "100%",
+                          "minHeight": "100%",
+                          "minWidth": "100%",
+                          "objectFit": undefined,
+                          "objectPosition": undefined,
+                          "padding": 0,
+                          "position": "absolute",
+                          "right": 0,
+                          "top": 0,
+                          "width": 0,
+                        }
+                      }
+                    />
+                  </noscript>
+                </span>
               </div>
             </div>
             <div
-              className="ArticleCommentTemplate__AuthorName-sc-13m5pqz-4 dpZqrw"
+              className="ArticleCommentTemplate__AuthorName-sc-13m5pqz-4 btcmKz"
               data-cy="comment-author-username"
             >
               <a
@@ -1148,14 +2040,14 @@ exports[`Article Snapshots renders article after login with other article 1`] = 
               </a>
             </div>
             <div
-              className="ArticleCommentTemplate__AuthorDate-sc-13m5pqz-5 gMFtoO"
+              className="ArticleCommentTemplate__AuthorDate-sc-13m5pqz-5 djbjWJ"
               data-cy="comment-author-date"
             >
               Thu Feb 18 2016
             </div>
           </div>
           <div
-            className="ArticleCommentTemplate__CommentDeleteButton-sc-13m5pqz-9 gaGNuU"
+            className="ArticleCommentTemplate__CommentDeleteButton-sc-13m5pqz-9 fEmsMv"
             data-cy="comment-delete-button"
             onClick={[Function]}
           >
@@ -1181,37 +2073,117 @@ exports[`Article Snapshots renders article after login with other article 1`] = 
         </div>
       </div>
       <div
-        className="ArticleCommentTemplate__CommentContainer-sc-13m5pqz-6 elNlSw"
+        className="ArticleCommentTemplate__CommentContainer-sc-13m5pqz-6 bjvmNj"
         data-cy="comment-container"
       >
         <div
-          className="ArticleCommentTemplate__CommentBody-sc-13m5pqz-7 iClYhq"
+          className="ArticleCommentTemplate__CommentBody-sc-13m5pqz-7 dxnfTl"
           data-cy="comment-body"
         >
           It takes a Jacobian 2
         </div>
         <div
-          className="ArticleCommentTemplate__CommentInfo-sc-13m5pqz-8 bgoWHO"
+          className="ArticleCommentTemplate__CommentInfo-sc-13m5pqz-8 cSYSkx"
         >
           <div
-            className="ArticleCommentTemplate__AuthorContainer-sc-13m5pqz-3 gKLFEg"
+            className="ArticleCommentTemplate__AuthorContainer-sc-13m5pqz-3 fKSqan"
           >
             <div
-              className="Avatar__Wrapper-sc-m9feoe-0 icAXkY"
+              className="Avatar__Wrapper-sc-m9feoe-0 ieHczv"
               data-cy="comment-author-image"
             >
               <div
-                className="Avatar__Container-sc-m9feoe-1 JCubi w-5 h-5"
+                className="Avatar__Container-sc-m9feoe-1 fQHyzl w-5 h-5"
               >
-                <img
-                  alt="avatar"
-                  className="Avatar__Img-sc-m9feoe-2 iQvAVN rounded-full"
-                  src="https://i.stack.imgur.com/xHWG8.jpg"
-                />
+                <span
+                  style={
+                    Object {
+                      "background": "none",
+                      "border": 0,
+                      "bottom": 0,
+                      "boxSizing": "border-box",
+                      "display": "block",
+                      "height": "initial",
+                      "left": 0,
+                      "margin": 0,
+                      "opacity": 1,
+                      "overflow": "hidden",
+                      "padding": 0,
+                      "position": "absolute",
+                      "right": 0,
+                      "top": 0,
+                      "width": "initial",
+                    }
+                  }
+                >
+                  <img
+                    alt="avatar"
+                    className="Avatar__Img-sc-m9feoe-2 kuaPdK rounded-full"
+                    data-nimg="fill"
+                    decoding="async"
+                    src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                    style={
+                      Object {
+                        "border": "none",
+                        "bottom": 0,
+                        "boxSizing": "border-box",
+                        "display": "block",
+                        "height": 0,
+                        "left": 0,
+                        "margin": "auto",
+                        "maxHeight": "100%",
+                        "maxWidth": "100%",
+                        "minHeight": "100%",
+                        "minWidth": "100%",
+                        "objectFit": undefined,
+                        "objectPosition": undefined,
+                        "padding": 0,
+                        "position": "absolute",
+                        "right": 0,
+                        "top": 0,
+                        "width": 0,
+                      }
+                    }
+                  />
+                  <noscript>
+                    <img
+                      alt="avatar"
+                      className="Avatar__Img-sc-m9feoe-2 kuaPdK rounded-full"
+                      data-nimg="fill"
+                      decoding="async"
+                      loading="lazy"
+                      sizes="100vw"
+                      src="/_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=3840&q=75"
+                      srcSet="/_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=640&q=75 640w, /_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=750&q=75 750w, /_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=828&q=75 828w, /_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=1080&q=75 1080w, /_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=1200&q=75 1200w, /_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=1920&q=75 1920w, /_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=2048&q=75 2048w, /_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=3840&q=75 3840w"
+                      style={
+                        Object {
+                          "border": "none",
+                          "bottom": 0,
+                          "boxSizing": "border-box",
+                          "display": "block",
+                          "height": 0,
+                          "left": 0,
+                          "margin": "auto",
+                          "maxHeight": "100%",
+                          "maxWidth": "100%",
+                          "minHeight": "100%",
+                          "minWidth": "100%",
+                          "objectFit": undefined,
+                          "objectPosition": undefined,
+                          "padding": 0,
+                          "position": "absolute",
+                          "right": 0,
+                          "top": 0,
+                          "width": 0,
+                        }
+                      }
+                    />
+                  </noscript>
+                </span>
               </div>
             </div>
             <div
-              className="ArticleCommentTemplate__AuthorName-sc-13m5pqz-4 dpZqrw"
+              className="ArticleCommentTemplate__AuthorName-sc-13m5pqz-4 btcmKz"
               data-cy="comment-author-username"
             >
               <a
@@ -1223,7 +2195,7 @@ exports[`Article Snapshots renders article after login with other article 1`] = 
               </a>
             </div>
             <div
-              className="ArticleCommentTemplate__AuthorDate-sc-13m5pqz-5 gMFtoO"
+              className="ArticleCommentTemplate__AuthorDate-sc-13m5pqz-5 djbjWJ"
               data-cy="comment-author-date"
             >
               Thu Feb 18 2016
@@ -1234,10 +2206,10 @@ exports[`Article Snapshots renders article after login with other article 1`] = 
     </div>
   </div>
   <div
-    className="FooterTemplate__Container-sc-96wla6-0 dxhwgY"
+    className="FooterTemplate__Container-sc-96wla6-0 cOGJUH"
   >
     <span
-      className="FooterTemplate__SiteLink-sc-96wla6-1 iJSbEN text-base mr-1 font-bold"
+      className="FooterTemplate__SiteLink-sc-96wla6-1 ENejy text-base mr-1 font-bold"
       data-cy="footer-logo-link"
       href="/"
       onClick={[Function]}
@@ -1247,7 +2219,7 @@ exports[`Article Snapshots renders article after login with other article 1`] = 
     </span>
     © 2020. An interactive learning project from
     <span
-      className="FooterTemplate__SiteLink-sc-96wla6-1 iJSbEN ml-1"
+      className="FooterTemplate__SiteLink-sc-96wla6-1 ENejy ml-1"
       data-cy="footer-site-link"
       href="https://thinkster.io/"
       onClick={[Function]}
@@ -1262,16 +2234,16 @@ exports[`Article Snapshots renders article after login with other article 1`] = 
 
 exports[`Article Snapshots renders article after login with other user 1`] = `
 <div
-  className="BaseLayoutTemplate__Container-sc-1jz5xvr-0 gAVYwR"
+  className="BaseLayoutTemplate__Container-sc-1jz5xvr-0 kHMSW"
 >
   <div
-    className="HeaderTemplate__Container-sc-kdla34-0 inxbiA"
+    className="HeaderTemplate__Container-sc-kdla34-0 gxnUkb"
   >
     <div
-      className="HeaderTemplate__Heading-sc-kdla34-1 laFayD"
+      className="HeaderTemplate__Heading-sc-kdla34-1 lcHwtI"
     >
       <div
-        className="HeaderTemplate__HeadingTitle-sc-kdla34-2 bAZjNO"
+        className="HeaderTemplate__HeadingTitle-sc-kdla34-2 ibfQih"
         data-cy="header-logo-link"
       >
         <a
@@ -1395,16 +2367,96 @@ exports[`Article Snapshots renders article after login with other user 1`] = `
                 className="flex items-center gap-1"
               >
                 <div
-                  className="Avatar__Wrapper-sc-m9feoe-0 icAXkY"
+                  className="Avatar__Wrapper-sc-m9feoe-0 ieHczv"
                 >
                   <div
-                    className="Avatar__Container-sc-m9feoe-1 JCubi w-5 h-5"
+                    className="Avatar__Container-sc-m9feoe-1 fQHyzl w-5 h-5"
                   >
-                    <img
-                      alt="avatar"
-                      className="Avatar__Img-sc-m9feoe-2 iQvAVN rounded-full"
-                      src="https://i.stack.imgur.com/xHWG8.jpg"
-                    />
+                    <span
+                      style={
+                        Object {
+                          "background": "none",
+                          "border": 0,
+                          "bottom": 0,
+                          "boxSizing": "border-box",
+                          "display": "block",
+                          "height": "initial",
+                          "left": 0,
+                          "margin": 0,
+                          "opacity": 1,
+                          "overflow": "hidden",
+                          "padding": 0,
+                          "position": "absolute",
+                          "right": 0,
+                          "top": 0,
+                          "width": "initial",
+                        }
+                      }
+                    >
+                      <img
+                        alt="avatar"
+                        className="Avatar__Img-sc-m9feoe-2 kuaPdK rounded-full"
+                        data-nimg="fill"
+                        decoding="async"
+                        src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                        style={
+                          Object {
+                            "border": "none",
+                            "bottom": 0,
+                            "boxSizing": "border-box",
+                            "display": "block",
+                            "height": 0,
+                            "left": 0,
+                            "margin": "auto",
+                            "maxHeight": "100%",
+                            "maxWidth": "100%",
+                            "minHeight": "100%",
+                            "minWidth": "100%",
+                            "objectFit": undefined,
+                            "objectPosition": undefined,
+                            "padding": 0,
+                            "position": "absolute",
+                            "right": 0,
+                            "top": 0,
+                            "width": 0,
+                          }
+                        }
+                      />
+                      <noscript>
+                        <img
+                          alt="avatar"
+                          className="Avatar__Img-sc-m9feoe-2 kuaPdK rounded-full"
+                          data-nimg="fill"
+                          decoding="async"
+                          loading="lazy"
+                          sizes="100vw"
+                          src="/_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=3840&q=75"
+                          srcSet="/_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=640&q=75 640w, /_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=750&q=75 750w, /_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=828&q=75 828w, /_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=1080&q=75 1080w, /_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=1200&q=75 1200w, /_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=1920&q=75 1920w, /_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=2048&q=75 2048w, /_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=3840&q=75 3840w"
+                          style={
+                            Object {
+                              "border": "none",
+                              "bottom": 0,
+                              "boxSizing": "border-box",
+                              "display": "block",
+                              "height": 0,
+                              "left": 0,
+                              "margin": "auto",
+                              "maxHeight": "100%",
+                              "maxWidth": "100%",
+                              "minHeight": "100%",
+                              "minWidth": "100%",
+                              "objectFit": undefined,
+                              "objectPosition": undefined,
+                              "padding": 0,
+                              "position": "absolute",
+                              "right": 0,
+                              "top": 0,
+                              "width": 0,
+                            }
+                          }
+                        />
+                      </noscript>
+                    </span>
                   </div>
                 </div>
                 JacobOther
@@ -1416,36 +2468,116 @@ exports[`Article Snapshots renders article after login with other user 1`] = `
     </div>
   </div>
   <div
-    className="ArticleBannerTemplate__Container-sc-1dyvdkl-0 fnzmsk"
+    className="ArticleBannerTemplate__Container-sc-1dyvdkl-0 mMMhf"
   >
     <h1
-      className="ArticleBannerTemplate__Title-sc-1dyvdkl-1 ipycHN"
+      className="ArticleBannerTemplate__Title-sc-1dyvdkl-1 gPlBoW"
       data-cy="article-title"
     >
       How to train your dragon
     </h1>
     <div
-      className="ArticleBannerTemplate__AuthorContainer-sc-1dyvdkl-2 FNmFH"
+      className="ArticleBannerTemplate__AuthorContainer-sc-1dyvdkl-2 grnMls"
     >
       <div
-        className="Avatar__Wrapper-sc-m9feoe-0 icAXkY"
+        className="Avatar__Wrapper-sc-m9feoe-0 ieHczv"
         data-cy="article-banner-author-image"
       >
         <div
-          className="Avatar__Container-sc-m9feoe-1 JCubi w-8 h-8"
+          className="Avatar__Container-sc-m9feoe-1 fQHyzl w-8 h-8"
         >
-          <img
-            alt="avatar"
-            className="Avatar__Img-sc-m9feoe-2 iQvAVN rounded-full"
-            src="https://i.stack.imgur.com/xHWG8.jpg"
-          />
+          <span
+            style={
+              Object {
+                "background": "none",
+                "border": 0,
+                "bottom": 0,
+                "boxSizing": "border-box",
+                "display": "block",
+                "height": "initial",
+                "left": 0,
+                "margin": 0,
+                "opacity": 1,
+                "overflow": "hidden",
+                "padding": 0,
+                "position": "absolute",
+                "right": 0,
+                "top": 0,
+                "width": "initial",
+              }
+            }
+          >
+            <img
+              alt="avatar"
+              className="Avatar__Img-sc-m9feoe-2 kuaPdK rounded-full"
+              data-nimg="fill"
+              decoding="async"
+              src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+              style={
+                Object {
+                  "border": "none",
+                  "bottom": 0,
+                  "boxSizing": "border-box",
+                  "display": "block",
+                  "height": 0,
+                  "left": 0,
+                  "margin": "auto",
+                  "maxHeight": "100%",
+                  "maxWidth": "100%",
+                  "minHeight": "100%",
+                  "minWidth": "100%",
+                  "objectFit": undefined,
+                  "objectPosition": undefined,
+                  "padding": 0,
+                  "position": "absolute",
+                  "right": 0,
+                  "top": 0,
+                  "width": 0,
+                }
+              }
+            />
+            <noscript>
+              <img
+                alt="avatar"
+                className="Avatar__Img-sc-m9feoe-2 kuaPdK rounded-full"
+                data-nimg="fill"
+                decoding="async"
+                loading="lazy"
+                sizes="100vw"
+                src="/_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=3840&q=75"
+                srcSet="/_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=640&q=75 640w, /_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=750&q=75 750w, /_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=828&q=75 828w, /_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=1080&q=75 1080w, /_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=1200&q=75 1200w, /_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=1920&q=75 1920w, /_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=2048&q=75 2048w, /_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=3840&q=75 3840w"
+                style={
+                  Object {
+                    "border": "none",
+                    "bottom": 0,
+                    "boxSizing": "border-box",
+                    "display": "block",
+                    "height": 0,
+                    "left": 0,
+                    "margin": "auto",
+                    "maxHeight": "100%",
+                    "maxWidth": "100%",
+                    "minHeight": "100%",
+                    "minWidth": "100%",
+                    "objectFit": undefined,
+                    "objectPosition": undefined,
+                    "padding": 0,
+                    "position": "absolute",
+                    "right": 0,
+                    "top": 0,
+                    "width": 0,
+                  }
+                }
+              />
+            </noscript>
+          </span>
         </div>
       </div>
       <div
-        className="ArticleBannerTemplate__AuthorInfo-sc-1dyvdkl-3 difHfg"
+        className="ArticleBannerTemplate__AuthorInfo-sc-1dyvdkl-3 vJafv"
       >
         <div
-          className="ArticleBannerTemplate__AuthorName-sc-1dyvdkl-4 dMDaKB"
+          className="ArticleBannerTemplate__AuthorName-sc-1dyvdkl-4 hRfpXK"
           data-cy="article-banner-author-username"
         >
           <a
@@ -1457,14 +2589,14 @@ exports[`Article Snapshots renders article after login with other user 1`] = `
           </a>
         </div>
         <div
-          className="ArticleBannerTemplate__AuthorDate-sc-1dyvdkl-5 fszlGF"
+          className="ArticleBannerTemplate__AuthorDate-sc-1dyvdkl-5 hgaxyC"
           data-cy="article-banner-author-date"
         >
           Thu Feb 18 2016
         </div>
       </div>
       <div
-        className="ArticleBannerTemplate__Follow-sc-1dyvdkl-8 bgahDQ"
+        className="ArticleBannerTemplate__Follow-sc-1dyvdkl-8 gOudLj"
         data-cy="article-banner-follow"
         onClick={[Function]}
       >
@@ -1501,7 +2633,7 @@ exports[`Article Snapshots renders article after login with other user 1`] = `
         </div>
       </div>
       <div
-        className="ArticleBannerTemplate__Favorite-sc-1dyvdkl-9 bebFWa"
+        className="ArticleBannerTemplate__Favorite-sc-1dyvdkl-9 efPENh"
         data-cy="article-banner-favorite"
         onClick={[Function]}
       >
@@ -1540,26 +2672,32 @@ exports[`Article Snapshots renders article after login with other user 1`] = `
     className="container mx-auto mt-8"
   >
     <div
-      className="ArticleContentTemplate__Container-sc-1w2hr4z-0 cEcbsZ"
+      className="ArticleContentTemplate__Container-sc-1w2hr4z-0 dVYMDK"
     >
       <div
-        className="ArticleContentTemplate__Content-sc-1w2hr4z-1 bPHoBm"
+        className="ArticleContentTemplate__Content-sc-1w2hr4z-1 YRUEt"
       >
         <div
-          className="ArticleContentTemplate__Body-sc-1w2hr4z-2 kOfYDs"
+          className="ArticleContentTemplate__Body-sc-1w2hr4z-2 fhrHRP"
+          dangerouslySetInnerHTML={
+            Object {
+              "__html": "<p>It takes a <strong>Jacobian</strong></p>
+",
+            }
+          }
           data-cy="article-content-body"
         />
         <div
-          className="ArticleContentTemplate__Tags-sc-1w2hr4z-3 llaePP"
+          className="ArticleContentTemplate__Tags-sc-1w2hr4z-3 fldydI"
         >
           <div
-            className="ArticleContentTemplate__Tag-sc-1w2hr4z-4 kdahvG"
+            className="ArticleContentTemplate__Tag-sc-1w2hr4z-4 kXzBAF"
             data-cy="article-content-tags"
           >
             dragons
           </div>
           <div
-            className="ArticleContentTemplate__Tag-sc-1w2hr4z-4 kdahvG"
+            className="ArticleContentTemplate__Tag-sc-1w2hr4z-4 kXzBAF"
             data-cy="article-content-tags"
           >
             training
@@ -1568,30 +2706,110 @@ exports[`Article Snapshots renders article after login with other user 1`] = `
         <hr />
       </div>
       <div
-        className="ArticleContentTemplate__AuthorWrapper-sc-1w2hr4z-5 iAKYzf"
+        className="ArticleContentTemplate__AuthorWrapper-sc-1w2hr4z-5 iwOlyQ"
       >
         <div
-          className="ArticleContentTemplate__AuthorContainer-sc-1w2hr4z-6 hJWSoA"
+          className="ArticleContentTemplate__AuthorContainer-sc-1w2hr4z-6 bbHJrT"
         >
           <div
-            className="Avatar__Wrapper-sc-m9feoe-0 icAXkY"
+            className="Avatar__Wrapper-sc-m9feoe-0 ieHczv"
             data-cy="article-content-author-image"
           >
             <div
-              className="Avatar__Container-sc-m9feoe-1 JCubi w-8 h-8"
+              className="Avatar__Container-sc-m9feoe-1 fQHyzl w-8 h-8"
             >
-              <img
-                alt="avatar"
-                className="Avatar__Img-sc-m9feoe-2 iQvAVN rounded-full"
-                src="https://i.stack.imgur.com/xHWG8.jpg"
-              />
+              <span
+                style={
+                  Object {
+                    "background": "none",
+                    "border": 0,
+                    "bottom": 0,
+                    "boxSizing": "border-box",
+                    "display": "block",
+                    "height": "initial",
+                    "left": 0,
+                    "margin": 0,
+                    "opacity": 1,
+                    "overflow": "hidden",
+                    "padding": 0,
+                    "position": "absolute",
+                    "right": 0,
+                    "top": 0,
+                    "width": "initial",
+                  }
+                }
+              >
+                <img
+                  alt="avatar"
+                  className="Avatar__Img-sc-m9feoe-2 kuaPdK rounded-full"
+                  data-nimg="fill"
+                  decoding="async"
+                  src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                  style={
+                    Object {
+                      "border": "none",
+                      "bottom": 0,
+                      "boxSizing": "border-box",
+                      "display": "block",
+                      "height": 0,
+                      "left": 0,
+                      "margin": "auto",
+                      "maxHeight": "100%",
+                      "maxWidth": "100%",
+                      "minHeight": "100%",
+                      "minWidth": "100%",
+                      "objectFit": undefined,
+                      "objectPosition": undefined,
+                      "padding": 0,
+                      "position": "absolute",
+                      "right": 0,
+                      "top": 0,
+                      "width": 0,
+                    }
+                  }
+                />
+                <noscript>
+                  <img
+                    alt="avatar"
+                    className="Avatar__Img-sc-m9feoe-2 kuaPdK rounded-full"
+                    data-nimg="fill"
+                    decoding="async"
+                    loading="lazy"
+                    sizes="100vw"
+                    src="/_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=3840&q=75"
+                    srcSet="/_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=640&q=75 640w, /_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=750&q=75 750w, /_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=828&q=75 828w, /_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=1080&q=75 1080w, /_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=1200&q=75 1200w, /_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=1920&q=75 1920w, /_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=2048&q=75 2048w, /_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=3840&q=75 3840w"
+                    style={
+                      Object {
+                        "border": "none",
+                        "bottom": 0,
+                        "boxSizing": "border-box",
+                        "display": "block",
+                        "height": 0,
+                        "left": 0,
+                        "margin": "auto",
+                        "maxHeight": "100%",
+                        "maxWidth": "100%",
+                        "minHeight": "100%",
+                        "minWidth": "100%",
+                        "objectFit": undefined,
+                        "objectPosition": undefined,
+                        "padding": 0,
+                        "position": "absolute",
+                        "right": 0,
+                        "top": 0,
+                        "width": 0,
+                      }
+                    }
+                  />
+                </noscript>
+              </span>
             </div>
           </div>
           <div
-            className="ArticleContentTemplate__AuthorInfo-sc-1w2hr4z-7 kQMxTM"
+            className="ArticleContentTemplate__AuthorInfo-sc-1w2hr4z-7 bLLNsb"
           >
             <div
-              className="ArticleContentTemplate__AuthorName-sc-1w2hr4z-8 gUuHzW"
+              className="ArticleContentTemplate__AuthorName-sc-1w2hr4z-8 jGILIF"
               data-cy="article-content-author-username"
             >
               <a
@@ -1603,14 +2821,14 @@ exports[`Article Snapshots renders article after login with other user 1`] = `
               </a>
             </div>
             <div
-              className="ArticleContentTemplate__AuthorDate-sc-1w2hr4z-9 fISmex"
+              className="ArticleContentTemplate__AuthorDate-sc-1w2hr4z-9 jWCDpi"
               data-cy="article-content-author-date"
             >
               Thu Feb 18 2016
             </div>
           </div>
           <div
-            className="ArticleContentTemplate__Follow-sc-1w2hr4z-12 KQVeH"
+            className="ArticleContentTemplate__Follow-sc-1w2hr4z-12 kuOobo"
             data-cy="article-content-follow"
             onClick={[Function]}
           >
@@ -1647,7 +2865,7 @@ exports[`Article Snapshots renders article after login with other user 1`] = `
             </div>
           </div>
           <div
-            className="ArticleContentTemplate__Favorite-sc-1w2hr4z-13 cgSxuV"
+            className="ArticleContentTemplate__Favorite-sc-1w2hr4z-13 dBYwym"
             data-cy="article-content-favorite"
             onClick={[Function]}
           >
@@ -1684,10 +2902,10 @@ exports[`Article Snapshots renders article after login with other user 1`] = `
       </div>
     </div>
     <div
-      className="ArticleCommentTemplate__Container-sc-13m5pqz-0 iQkfIT"
+      className="ArticleCommentTemplate__Container-sc-13m5pqz-0 jICGMo"
     >
       <div
-        className="ArticleCommentTemplate__FormContainer-sc-13m5pqz-1 eyYHKl"
+        className="ArticleCommentTemplate__FormContainer-sc-13m5pqz-1 eZsDPK"
         data-cy="comment-form-container"
       >
         <form
@@ -1709,27 +2927,107 @@ exports[`Article Snapshots renders article after login with other user 1`] = `
               />
             </div>
             <div
-              className="ArticleCommentTemplate__FormInfo-sc-13m5pqz-2 bNIRus"
+              className="ArticleCommentTemplate__FormInfo-sc-13m5pqz-2 epaAxf"
             >
               <div
-                className="ArticleCommentTemplate__AuthorContainer-sc-13m5pqz-3 gKLFEg"
+                className="ArticleCommentTemplate__AuthorContainer-sc-13m5pqz-3 fKSqan"
               >
                 <div
-                  className="Avatar__Wrapper-sc-m9feoe-0 icAXkY"
+                  className="Avatar__Wrapper-sc-m9feoe-0 ieHczv"
                   data-cy="comment-form-user-image"
                 >
                   <div
-                    className="Avatar__Container-sc-m9feoe-1 JCubi w-5 h-5"
+                    className="Avatar__Container-sc-m9feoe-1 fQHyzl w-5 h-5"
                   >
-                    <img
-                      alt="avatar"
-                      className="Avatar__Img-sc-m9feoe-2 iQvAVN rounded-full"
-                      src="https://i.stack.imgur.com/xHWG8.jpg"
-                    />
+                    <span
+                      style={
+                        Object {
+                          "background": "none",
+                          "border": 0,
+                          "bottom": 0,
+                          "boxSizing": "border-box",
+                          "display": "block",
+                          "height": "initial",
+                          "left": 0,
+                          "margin": 0,
+                          "opacity": 1,
+                          "overflow": "hidden",
+                          "padding": 0,
+                          "position": "absolute",
+                          "right": 0,
+                          "top": 0,
+                          "width": "initial",
+                        }
+                      }
+                    >
+                      <img
+                        alt="avatar"
+                        className="Avatar__Img-sc-m9feoe-2 kuaPdK rounded-full"
+                        data-nimg="fill"
+                        decoding="async"
+                        src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                        style={
+                          Object {
+                            "border": "none",
+                            "bottom": 0,
+                            "boxSizing": "border-box",
+                            "display": "block",
+                            "height": 0,
+                            "left": 0,
+                            "margin": "auto",
+                            "maxHeight": "100%",
+                            "maxWidth": "100%",
+                            "minHeight": "100%",
+                            "minWidth": "100%",
+                            "objectFit": undefined,
+                            "objectPosition": undefined,
+                            "padding": 0,
+                            "position": "absolute",
+                            "right": 0,
+                            "top": 0,
+                            "width": 0,
+                          }
+                        }
+                      />
+                      <noscript>
+                        <img
+                          alt="avatar"
+                          className="Avatar__Img-sc-m9feoe-2 kuaPdK rounded-full"
+                          data-nimg="fill"
+                          decoding="async"
+                          loading="lazy"
+                          sizes="100vw"
+                          src="/_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=3840&q=75"
+                          srcSet="/_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=640&q=75 640w, /_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=750&q=75 750w, /_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=828&q=75 828w, /_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=1080&q=75 1080w, /_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=1200&q=75 1200w, /_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=1920&q=75 1920w, /_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=2048&q=75 2048w, /_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=3840&q=75 3840w"
+                          style={
+                            Object {
+                              "border": "none",
+                              "bottom": 0,
+                              "boxSizing": "border-box",
+                              "display": "block",
+                              "height": 0,
+                              "left": 0,
+                              "margin": "auto",
+                              "maxHeight": "100%",
+                              "maxWidth": "100%",
+                              "minHeight": "100%",
+                              "minWidth": "100%",
+                              "objectFit": undefined,
+                              "objectPosition": undefined,
+                              "padding": 0,
+                              "position": "absolute",
+                              "right": 0,
+                              "top": 0,
+                              "width": 0,
+                            }
+                          }
+                        />
+                      </noscript>
+                    </span>
                   </div>
                 </div>
                 <div
-                  className="ArticleCommentTemplate__AuthorName-sc-13m5pqz-4 dpZqrw"
+                  className="ArticleCommentTemplate__AuthorName-sc-13m5pqz-4 btcmKz"
                   data-cy="comment-form-user-username"
                 >
                   <a
@@ -1754,37 +3052,117 @@ exports[`Article Snapshots renders article after login with other user 1`] = `
         </form>
       </div>
       <div
-        className="ArticleCommentTemplate__CommentContainer-sc-13m5pqz-6 elNlSw"
+        className="ArticleCommentTemplate__CommentContainer-sc-13m5pqz-6 bjvmNj"
         data-cy="comment-container"
       >
         <div
-          className="ArticleCommentTemplate__CommentBody-sc-13m5pqz-7 iClYhq"
+          className="ArticleCommentTemplate__CommentBody-sc-13m5pqz-7 dxnfTl"
           data-cy="comment-body"
         >
           It takes a Jacobian
         </div>
         <div
-          className="ArticleCommentTemplate__CommentInfo-sc-13m5pqz-8 bgoWHO"
+          className="ArticleCommentTemplate__CommentInfo-sc-13m5pqz-8 cSYSkx"
         >
           <div
-            className="ArticleCommentTemplate__AuthorContainer-sc-13m5pqz-3 gKLFEg"
+            className="ArticleCommentTemplate__AuthorContainer-sc-13m5pqz-3 fKSqan"
           >
             <div
-              className="Avatar__Wrapper-sc-m9feoe-0 icAXkY"
+              className="Avatar__Wrapper-sc-m9feoe-0 ieHczv"
               data-cy="comment-author-image"
             >
               <div
-                className="Avatar__Container-sc-m9feoe-1 JCubi w-5 h-5"
+                className="Avatar__Container-sc-m9feoe-1 fQHyzl w-5 h-5"
               >
-                <img
-                  alt="avatar"
-                  className="Avatar__Img-sc-m9feoe-2 iQvAVN rounded-full"
-                  src="https://i.stack.imgur.com/xHWG8.jpg"
-                />
+                <span
+                  style={
+                    Object {
+                      "background": "none",
+                      "border": 0,
+                      "bottom": 0,
+                      "boxSizing": "border-box",
+                      "display": "block",
+                      "height": "initial",
+                      "left": 0,
+                      "margin": 0,
+                      "opacity": 1,
+                      "overflow": "hidden",
+                      "padding": 0,
+                      "position": "absolute",
+                      "right": 0,
+                      "top": 0,
+                      "width": "initial",
+                    }
+                  }
+                >
+                  <img
+                    alt="avatar"
+                    className="Avatar__Img-sc-m9feoe-2 kuaPdK rounded-full"
+                    data-nimg="fill"
+                    decoding="async"
+                    src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                    style={
+                      Object {
+                        "border": "none",
+                        "bottom": 0,
+                        "boxSizing": "border-box",
+                        "display": "block",
+                        "height": 0,
+                        "left": 0,
+                        "margin": "auto",
+                        "maxHeight": "100%",
+                        "maxWidth": "100%",
+                        "minHeight": "100%",
+                        "minWidth": "100%",
+                        "objectFit": undefined,
+                        "objectPosition": undefined,
+                        "padding": 0,
+                        "position": "absolute",
+                        "right": 0,
+                        "top": 0,
+                        "width": 0,
+                      }
+                    }
+                  />
+                  <noscript>
+                    <img
+                      alt="avatar"
+                      className="Avatar__Img-sc-m9feoe-2 kuaPdK rounded-full"
+                      data-nimg="fill"
+                      decoding="async"
+                      loading="lazy"
+                      sizes="100vw"
+                      src="/_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=3840&q=75"
+                      srcSet="/_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=640&q=75 640w, /_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=750&q=75 750w, /_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=828&q=75 828w, /_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=1080&q=75 1080w, /_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=1200&q=75 1200w, /_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=1920&q=75 1920w, /_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=2048&q=75 2048w, /_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=3840&q=75 3840w"
+                      style={
+                        Object {
+                          "border": "none",
+                          "bottom": 0,
+                          "boxSizing": "border-box",
+                          "display": "block",
+                          "height": 0,
+                          "left": 0,
+                          "margin": "auto",
+                          "maxHeight": "100%",
+                          "maxWidth": "100%",
+                          "minHeight": "100%",
+                          "minWidth": "100%",
+                          "objectFit": undefined,
+                          "objectPosition": undefined,
+                          "padding": 0,
+                          "position": "absolute",
+                          "right": 0,
+                          "top": 0,
+                          "width": 0,
+                        }
+                      }
+                    />
+                  </noscript>
+                </span>
               </div>
             </div>
             <div
-              className="ArticleCommentTemplate__AuthorName-sc-13m5pqz-4 dpZqrw"
+              className="ArticleCommentTemplate__AuthorName-sc-13m5pqz-4 btcmKz"
               data-cy="comment-author-username"
             >
               <a
@@ -1796,7 +3174,7 @@ exports[`Article Snapshots renders article after login with other user 1`] = `
               </a>
             </div>
             <div
-              className="ArticleCommentTemplate__AuthorDate-sc-13m5pqz-5 gMFtoO"
+              className="ArticleCommentTemplate__AuthorDate-sc-13m5pqz-5 djbjWJ"
               data-cy="comment-author-date"
             >
               Thu Feb 18 2016
@@ -1805,37 +3183,117 @@ exports[`Article Snapshots renders article after login with other user 1`] = `
         </div>
       </div>
       <div
-        className="ArticleCommentTemplate__CommentContainer-sc-13m5pqz-6 elNlSw"
+        className="ArticleCommentTemplate__CommentContainer-sc-13m5pqz-6 bjvmNj"
         data-cy="comment-container"
       >
         <div
-          className="ArticleCommentTemplate__CommentBody-sc-13m5pqz-7 iClYhq"
+          className="ArticleCommentTemplate__CommentBody-sc-13m5pqz-7 dxnfTl"
           data-cy="comment-body"
         >
           It takes a Jacobian 2
         </div>
         <div
-          className="ArticleCommentTemplate__CommentInfo-sc-13m5pqz-8 bgoWHO"
+          className="ArticleCommentTemplate__CommentInfo-sc-13m5pqz-8 cSYSkx"
         >
           <div
-            className="ArticleCommentTemplate__AuthorContainer-sc-13m5pqz-3 gKLFEg"
+            className="ArticleCommentTemplate__AuthorContainer-sc-13m5pqz-3 fKSqan"
           >
             <div
-              className="Avatar__Wrapper-sc-m9feoe-0 icAXkY"
+              className="Avatar__Wrapper-sc-m9feoe-0 ieHczv"
               data-cy="comment-author-image"
             >
               <div
-                className="Avatar__Container-sc-m9feoe-1 JCubi w-5 h-5"
+                className="Avatar__Container-sc-m9feoe-1 fQHyzl w-5 h-5"
               >
-                <img
-                  alt="avatar"
-                  className="Avatar__Img-sc-m9feoe-2 iQvAVN rounded-full"
-                  src="https://i.stack.imgur.com/xHWG8.jpg"
-                />
+                <span
+                  style={
+                    Object {
+                      "background": "none",
+                      "border": 0,
+                      "bottom": 0,
+                      "boxSizing": "border-box",
+                      "display": "block",
+                      "height": "initial",
+                      "left": 0,
+                      "margin": 0,
+                      "opacity": 1,
+                      "overflow": "hidden",
+                      "padding": 0,
+                      "position": "absolute",
+                      "right": 0,
+                      "top": 0,
+                      "width": "initial",
+                    }
+                  }
+                >
+                  <img
+                    alt="avatar"
+                    className="Avatar__Img-sc-m9feoe-2 kuaPdK rounded-full"
+                    data-nimg="fill"
+                    decoding="async"
+                    src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                    style={
+                      Object {
+                        "border": "none",
+                        "bottom": 0,
+                        "boxSizing": "border-box",
+                        "display": "block",
+                        "height": 0,
+                        "left": 0,
+                        "margin": "auto",
+                        "maxHeight": "100%",
+                        "maxWidth": "100%",
+                        "minHeight": "100%",
+                        "minWidth": "100%",
+                        "objectFit": undefined,
+                        "objectPosition": undefined,
+                        "padding": 0,
+                        "position": "absolute",
+                        "right": 0,
+                        "top": 0,
+                        "width": 0,
+                      }
+                    }
+                  />
+                  <noscript>
+                    <img
+                      alt="avatar"
+                      className="Avatar__Img-sc-m9feoe-2 kuaPdK rounded-full"
+                      data-nimg="fill"
+                      decoding="async"
+                      loading="lazy"
+                      sizes="100vw"
+                      src="/_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=3840&q=75"
+                      srcSet="/_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=640&q=75 640w, /_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=750&q=75 750w, /_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=828&q=75 828w, /_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=1080&q=75 1080w, /_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=1200&q=75 1200w, /_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=1920&q=75 1920w, /_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=2048&q=75 2048w, /_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=3840&q=75 3840w"
+                      style={
+                        Object {
+                          "border": "none",
+                          "bottom": 0,
+                          "boxSizing": "border-box",
+                          "display": "block",
+                          "height": 0,
+                          "left": 0,
+                          "margin": "auto",
+                          "maxHeight": "100%",
+                          "maxWidth": "100%",
+                          "minHeight": "100%",
+                          "minWidth": "100%",
+                          "objectFit": undefined,
+                          "objectPosition": undefined,
+                          "padding": 0,
+                          "position": "absolute",
+                          "right": 0,
+                          "top": 0,
+                          "width": 0,
+                        }
+                      }
+                    />
+                  </noscript>
+                </span>
               </div>
             </div>
             <div
-              className="ArticleCommentTemplate__AuthorName-sc-13m5pqz-4 dpZqrw"
+              className="ArticleCommentTemplate__AuthorName-sc-13m5pqz-4 btcmKz"
               data-cy="comment-author-username"
             >
               <a
@@ -1847,14 +3305,14 @@ exports[`Article Snapshots renders article after login with other user 1`] = `
               </a>
             </div>
             <div
-              className="ArticleCommentTemplate__AuthorDate-sc-13m5pqz-5 gMFtoO"
+              className="ArticleCommentTemplate__AuthorDate-sc-13m5pqz-5 djbjWJ"
               data-cy="comment-author-date"
             >
               Thu Feb 18 2016
             </div>
           </div>
           <div
-            className="ArticleCommentTemplate__CommentDeleteButton-sc-13m5pqz-9 gaGNuU"
+            className="ArticleCommentTemplate__CommentDeleteButton-sc-13m5pqz-9 fEmsMv"
             data-cy="comment-delete-button"
             onClick={[Function]}
           >
@@ -1882,10 +3340,10 @@ exports[`Article Snapshots renders article after login with other user 1`] = `
     </div>
   </div>
   <div
-    className="FooterTemplate__Container-sc-96wla6-0 dxhwgY"
+    className="FooterTemplate__Container-sc-96wla6-0 cOGJUH"
   >
     <span
-      className="FooterTemplate__SiteLink-sc-96wla6-1 iJSbEN text-base mr-1 font-bold"
+      className="FooterTemplate__SiteLink-sc-96wla6-1 ENejy text-base mr-1 font-bold"
       data-cy="footer-logo-link"
       href="/"
       onClick={[Function]}
@@ -1895,7 +3353,7 @@ exports[`Article Snapshots renders article after login with other user 1`] = `
     </span>
     © 2020. An interactive learning project from
     <span
-      className="FooterTemplate__SiteLink-sc-96wla6-1 iJSbEN ml-1"
+      className="FooterTemplate__SiteLink-sc-96wla6-1 ENejy ml-1"
       data-cy="footer-site-link"
       href="https://thinkster.io/"
       onClick={[Function]}
@@ -1910,16 +3368,16 @@ exports[`Article Snapshots renders article after login with other user 1`] = `
 
 exports[`Article Snapshots renders article before login 1`] = `
 <div
-  className="BaseLayoutTemplate__Container-sc-1jz5xvr-0 gAVYwR"
+  className="BaseLayoutTemplate__Container-sc-1jz5xvr-0 kHMSW"
 >
   <div
-    className="HeaderTemplate__Container-sc-kdla34-0 inxbiA"
+    className="HeaderTemplate__Container-sc-kdla34-0 gxnUkb"
   >
     <div
-      className="HeaderTemplate__Heading-sc-kdla34-1 laFayD"
+      className="HeaderTemplate__Heading-sc-kdla34-1 lcHwtI"
     >
       <div
-        className="HeaderTemplate__HeadingTitle-sc-kdla34-2 bAZjNO"
+        className="HeaderTemplate__HeadingTitle-sc-kdla34-2 ibfQih"
         data-cy="header-logo-link"
       >
         <a
@@ -1991,36 +3449,116 @@ exports[`Article Snapshots renders article before login 1`] = `
     </div>
   </div>
   <div
-    className="ArticleBannerTemplate__Container-sc-1dyvdkl-0 fnzmsk"
+    className="ArticleBannerTemplate__Container-sc-1dyvdkl-0 mMMhf"
   >
     <h1
-      className="ArticleBannerTemplate__Title-sc-1dyvdkl-1 ipycHN"
+      className="ArticleBannerTemplate__Title-sc-1dyvdkl-1 gPlBoW"
       data-cy="article-title"
     >
       How to train your dragon
     </h1>
     <div
-      className="ArticleBannerTemplate__AuthorContainer-sc-1dyvdkl-2 FNmFH"
+      className="ArticleBannerTemplate__AuthorContainer-sc-1dyvdkl-2 grnMls"
     >
       <div
-        className="Avatar__Wrapper-sc-m9feoe-0 icAXkY"
+        className="Avatar__Wrapper-sc-m9feoe-0 ieHczv"
         data-cy="article-banner-author-image"
       >
         <div
-          className="Avatar__Container-sc-m9feoe-1 JCubi w-8 h-8"
+          className="Avatar__Container-sc-m9feoe-1 fQHyzl w-8 h-8"
         >
-          <img
-            alt="avatar"
-            className="Avatar__Img-sc-m9feoe-2 iQvAVN rounded-full"
-            src="https://i.stack.imgur.com/xHWG8.jpg"
-          />
+          <span
+            style={
+              Object {
+                "background": "none",
+                "border": 0,
+                "bottom": 0,
+                "boxSizing": "border-box",
+                "display": "block",
+                "height": "initial",
+                "left": 0,
+                "margin": 0,
+                "opacity": 1,
+                "overflow": "hidden",
+                "padding": 0,
+                "position": "absolute",
+                "right": 0,
+                "top": 0,
+                "width": "initial",
+              }
+            }
+          >
+            <img
+              alt="avatar"
+              className="Avatar__Img-sc-m9feoe-2 kuaPdK rounded-full"
+              data-nimg="fill"
+              decoding="async"
+              src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+              style={
+                Object {
+                  "border": "none",
+                  "bottom": 0,
+                  "boxSizing": "border-box",
+                  "display": "block",
+                  "height": 0,
+                  "left": 0,
+                  "margin": "auto",
+                  "maxHeight": "100%",
+                  "maxWidth": "100%",
+                  "minHeight": "100%",
+                  "minWidth": "100%",
+                  "objectFit": undefined,
+                  "objectPosition": undefined,
+                  "padding": 0,
+                  "position": "absolute",
+                  "right": 0,
+                  "top": 0,
+                  "width": 0,
+                }
+              }
+            />
+            <noscript>
+              <img
+                alt="avatar"
+                className="Avatar__Img-sc-m9feoe-2 kuaPdK rounded-full"
+                data-nimg="fill"
+                decoding="async"
+                loading="lazy"
+                sizes="100vw"
+                src="/_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=3840&q=75"
+                srcSet="/_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=640&q=75 640w, /_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=750&q=75 750w, /_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=828&q=75 828w, /_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=1080&q=75 1080w, /_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=1200&q=75 1200w, /_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=1920&q=75 1920w, /_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=2048&q=75 2048w, /_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=3840&q=75 3840w"
+                style={
+                  Object {
+                    "border": "none",
+                    "bottom": 0,
+                    "boxSizing": "border-box",
+                    "display": "block",
+                    "height": 0,
+                    "left": 0,
+                    "margin": "auto",
+                    "maxHeight": "100%",
+                    "maxWidth": "100%",
+                    "minHeight": "100%",
+                    "minWidth": "100%",
+                    "objectFit": undefined,
+                    "objectPosition": undefined,
+                    "padding": 0,
+                    "position": "absolute",
+                    "right": 0,
+                    "top": 0,
+                    "width": 0,
+                  }
+                }
+              />
+            </noscript>
+          </span>
         </div>
       </div>
       <div
-        className="ArticleBannerTemplate__AuthorInfo-sc-1dyvdkl-3 difHfg"
+        className="ArticleBannerTemplate__AuthorInfo-sc-1dyvdkl-3 vJafv"
       >
         <div
-          className="ArticleBannerTemplate__AuthorName-sc-1dyvdkl-4 dMDaKB"
+          className="ArticleBannerTemplate__AuthorName-sc-1dyvdkl-4 hRfpXK"
           data-cy="article-banner-author-username"
         >
           <a
@@ -2032,14 +3570,14 @@ exports[`Article Snapshots renders article before login 1`] = `
           </a>
         </div>
         <div
-          className="ArticleBannerTemplate__AuthorDate-sc-1dyvdkl-5 fszlGF"
+          className="ArticleBannerTemplate__AuthorDate-sc-1dyvdkl-5 hgaxyC"
           data-cy="article-banner-author-date"
         >
           Thu Feb 18 2016
         </div>
       </div>
       <div
-        className="ArticleBannerTemplate__Follow-sc-1dyvdkl-8 bgahDQ"
+        className="ArticleBannerTemplate__Follow-sc-1dyvdkl-8 gOudLj"
         data-cy="article-banner-follow"
         onClick={[Function]}
       >
@@ -2076,7 +3614,7 @@ exports[`Article Snapshots renders article before login 1`] = `
         </div>
       </div>
       <div
-        className="ArticleBannerTemplate__Favorite-sc-1dyvdkl-9 bebFWa"
+        className="ArticleBannerTemplate__Favorite-sc-1dyvdkl-9 efPENh"
         data-cy="article-banner-favorite"
         onClick={[Function]}
       >
@@ -2115,26 +3653,32 @@ exports[`Article Snapshots renders article before login 1`] = `
     className="container mx-auto mt-8"
   >
     <div
-      className="ArticleContentTemplate__Container-sc-1w2hr4z-0 cEcbsZ"
+      className="ArticleContentTemplate__Container-sc-1w2hr4z-0 dVYMDK"
     >
       <div
-        className="ArticleContentTemplate__Content-sc-1w2hr4z-1 bPHoBm"
+        className="ArticleContentTemplate__Content-sc-1w2hr4z-1 YRUEt"
       >
         <div
-          className="ArticleContentTemplate__Body-sc-1w2hr4z-2 kOfYDs"
+          className="ArticleContentTemplate__Body-sc-1w2hr4z-2 fhrHRP"
+          dangerouslySetInnerHTML={
+            Object {
+              "__html": "<p>It takes a <strong>Jacobian</strong></p>
+",
+            }
+          }
           data-cy="article-content-body"
         />
         <div
-          className="ArticleContentTemplate__Tags-sc-1w2hr4z-3 llaePP"
+          className="ArticleContentTemplate__Tags-sc-1w2hr4z-3 fldydI"
         >
           <div
-            className="ArticleContentTemplate__Tag-sc-1w2hr4z-4 kdahvG"
+            className="ArticleContentTemplate__Tag-sc-1w2hr4z-4 kXzBAF"
             data-cy="article-content-tags"
           >
             dragons
           </div>
           <div
-            className="ArticleContentTemplate__Tag-sc-1w2hr4z-4 kdahvG"
+            className="ArticleContentTemplate__Tag-sc-1w2hr4z-4 kXzBAF"
             data-cy="article-content-tags"
           >
             training
@@ -2143,30 +3687,110 @@ exports[`Article Snapshots renders article before login 1`] = `
         <hr />
       </div>
       <div
-        className="ArticleContentTemplate__AuthorWrapper-sc-1w2hr4z-5 iAKYzf"
+        className="ArticleContentTemplate__AuthorWrapper-sc-1w2hr4z-5 iwOlyQ"
       >
         <div
-          className="ArticleContentTemplate__AuthorContainer-sc-1w2hr4z-6 hJWSoA"
+          className="ArticleContentTemplate__AuthorContainer-sc-1w2hr4z-6 bbHJrT"
         >
           <div
-            className="Avatar__Wrapper-sc-m9feoe-0 icAXkY"
+            className="Avatar__Wrapper-sc-m9feoe-0 ieHczv"
             data-cy="article-content-author-image"
           >
             <div
-              className="Avatar__Container-sc-m9feoe-1 JCubi w-8 h-8"
+              className="Avatar__Container-sc-m9feoe-1 fQHyzl w-8 h-8"
             >
-              <img
-                alt="avatar"
-                className="Avatar__Img-sc-m9feoe-2 iQvAVN rounded-full"
-                src="https://i.stack.imgur.com/xHWG8.jpg"
-              />
+              <span
+                style={
+                  Object {
+                    "background": "none",
+                    "border": 0,
+                    "bottom": 0,
+                    "boxSizing": "border-box",
+                    "display": "block",
+                    "height": "initial",
+                    "left": 0,
+                    "margin": 0,
+                    "opacity": 1,
+                    "overflow": "hidden",
+                    "padding": 0,
+                    "position": "absolute",
+                    "right": 0,
+                    "top": 0,
+                    "width": "initial",
+                  }
+                }
+              >
+                <img
+                  alt="avatar"
+                  className="Avatar__Img-sc-m9feoe-2 kuaPdK rounded-full"
+                  data-nimg="fill"
+                  decoding="async"
+                  src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                  style={
+                    Object {
+                      "border": "none",
+                      "bottom": 0,
+                      "boxSizing": "border-box",
+                      "display": "block",
+                      "height": 0,
+                      "left": 0,
+                      "margin": "auto",
+                      "maxHeight": "100%",
+                      "maxWidth": "100%",
+                      "minHeight": "100%",
+                      "minWidth": "100%",
+                      "objectFit": undefined,
+                      "objectPosition": undefined,
+                      "padding": 0,
+                      "position": "absolute",
+                      "right": 0,
+                      "top": 0,
+                      "width": 0,
+                    }
+                  }
+                />
+                <noscript>
+                  <img
+                    alt="avatar"
+                    className="Avatar__Img-sc-m9feoe-2 kuaPdK rounded-full"
+                    data-nimg="fill"
+                    decoding="async"
+                    loading="lazy"
+                    sizes="100vw"
+                    src="/_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=3840&q=75"
+                    srcSet="/_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=640&q=75 640w, /_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=750&q=75 750w, /_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=828&q=75 828w, /_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=1080&q=75 1080w, /_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=1200&q=75 1200w, /_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=1920&q=75 1920w, /_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=2048&q=75 2048w, /_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=3840&q=75 3840w"
+                    style={
+                      Object {
+                        "border": "none",
+                        "bottom": 0,
+                        "boxSizing": "border-box",
+                        "display": "block",
+                        "height": 0,
+                        "left": 0,
+                        "margin": "auto",
+                        "maxHeight": "100%",
+                        "maxWidth": "100%",
+                        "minHeight": "100%",
+                        "minWidth": "100%",
+                        "objectFit": undefined,
+                        "objectPosition": undefined,
+                        "padding": 0,
+                        "position": "absolute",
+                        "right": 0,
+                        "top": 0,
+                        "width": 0,
+                      }
+                    }
+                  />
+                </noscript>
+              </span>
             </div>
           </div>
           <div
-            className="ArticleContentTemplate__AuthorInfo-sc-1w2hr4z-7 kQMxTM"
+            className="ArticleContentTemplate__AuthorInfo-sc-1w2hr4z-7 bLLNsb"
           >
             <div
-              className="ArticleContentTemplate__AuthorName-sc-1w2hr4z-8 gUuHzW"
+              className="ArticleContentTemplate__AuthorName-sc-1w2hr4z-8 jGILIF"
               data-cy="article-content-author-username"
             >
               <a
@@ -2178,14 +3802,14 @@ exports[`Article Snapshots renders article before login 1`] = `
               </a>
             </div>
             <div
-              className="ArticleContentTemplate__AuthorDate-sc-1w2hr4z-9 fISmex"
+              className="ArticleContentTemplate__AuthorDate-sc-1w2hr4z-9 jWCDpi"
               data-cy="article-content-author-date"
             >
               Thu Feb 18 2016
             </div>
           </div>
           <div
-            className="ArticleContentTemplate__Follow-sc-1w2hr4z-12 KQVeH"
+            className="ArticleContentTemplate__Follow-sc-1w2hr4z-12 kuOobo"
             data-cy="article-content-follow"
             onClick={[Function]}
           >
@@ -2222,7 +3846,7 @@ exports[`Article Snapshots renders article before login 1`] = `
             </div>
           </div>
           <div
-            className="ArticleContentTemplate__Favorite-sc-1w2hr4z-13 cgSxuV"
+            className="ArticleContentTemplate__Favorite-sc-1w2hr4z-13 dBYwym"
             data-cy="article-content-favorite"
             onClick={[Function]}
           >
@@ -2259,40 +3883,120 @@ exports[`Article Snapshots renders article before login 1`] = `
       </div>
     </div>
     <div
-      className="ArticleCommentTemplate__Container-sc-13m5pqz-0 iQkfIT"
+      className="ArticleCommentTemplate__Container-sc-13m5pqz-0 jICGMo"
     >
       <div
-        className="ArticleCommentTemplate__CommentContainer-sc-13m5pqz-6 elNlSw"
+        className="ArticleCommentTemplate__CommentContainer-sc-13m5pqz-6 bjvmNj"
         data-cy="comment-container"
       >
         <div
-          className="ArticleCommentTemplate__CommentBody-sc-13m5pqz-7 iClYhq"
+          className="ArticleCommentTemplate__CommentBody-sc-13m5pqz-7 dxnfTl"
           data-cy="comment-body"
         >
           It takes a Jacobian
         </div>
         <div
-          className="ArticleCommentTemplate__CommentInfo-sc-13m5pqz-8 bgoWHO"
+          className="ArticleCommentTemplate__CommentInfo-sc-13m5pqz-8 cSYSkx"
         >
           <div
-            className="ArticleCommentTemplate__AuthorContainer-sc-13m5pqz-3 gKLFEg"
+            className="ArticleCommentTemplate__AuthorContainer-sc-13m5pqz-3 fKSqan"
           >
             <div
-              className="Avatar__Wrapper-sc-m9feoe-0 icAXkY"
+              className="Avatar__Wrapper-sc-m9feoe-0 ieHczv"
               data-cy="comment-author-image"
             >
               <div
-                className="Avatar__Container-sc-m9feoe-1 JCubi w-5 h-5"
+                className="Avatar__Container-sc-m9feoe-1 fQHyzl w-5 h-5"
               >
-                <img
-                  alt="avatar"
-                  className="Avatar__Img-sc-m9feoe-2 iQvAVN rounded-full"
-                  src="https://i.stack.imgur.com/xHWG8.jpg"
-                />
+                <span
+                  style={
+                    Object {
+                      "background": "none",
+                      "border": 0,
+                      "bottom": 0,
+                      "boxSizing": "border-box",
+                      "display": "block",
+                      "height": "initial",
+                      "left": 0,
+                      "margin": 0,
+                      "opacity": 1,
+                      "overflow": "hidden",
+                      "padding": 0,
+                      "position": "absolute",
+                      "right": 0,
+                      "top": 0,
+                      "width": "initial",
+                    }
+                  }
+                >
+                  <img
+                    alt="avatar"
+                    className="Avatar__Img-sc-m9feoe-2 kuaPdK rounded-full"
+                    data-nimg="fill"
+                    decoding="async"
+                    src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                    style={
+                      Object {
+                        "border": "none",
+                        "bottom": 0,
+                        "boxSizing": "border-box",
+                        "display": "block",
+                        "height": 0,
+                        "left": 0,
+                        "margin": "auto",
+                        "maxHeight": "100%",
+                        "maxWidth": "100%",
+                        "minHeight": "100%",
+                        "minWidth": "100%",
+                        "objectFit": undefined,
+                        "objectPosition": undefined,
+                        "padding": 0,
+                        "position": "absolute",
+                        "right": 0,
+                        "top": 0,
+                        "width": 0,
+                      }
+                    }
+                  />
+                  <noscript>
+                    <img
+                      alt="avatar"
+                      className="Avatar__Img-sc-m9feoe-2 kuaPdK rounded-full"
+                      data-nimg="fill"
+                      decoding="async"
+                      loading="lazy"
+                      sizes="100vw"
+                      src="/_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=3840&q=75"
+                      srcSet="/_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=640&q=75 640w, /_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=750&q=75 750w, /_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=828&q=75 828w, /_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=1080&q=75 1080w, /_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=1200&q=75 1200w, /_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=1920&q=75 1920w, /_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=2048&q=75 2048w, /_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=3840&q=75 3840w"
+                      style={
+                        Object {
+                          "border": "none",
+                          "bottom": 0,
+                          "boxSizing": "border-box",
+                          "display": "block",
+                          "height": 0,
+                          "left": 0,
+                          "margin": "auto",
+                          "maxHeight": "100%",
+                          "maxWidth": "100%",
+                          "minHeight": "100%",
+                          "minWidth": "100%",
+                          "objectFit": undefined,
+                          "objectPosition": undefined,
+                          "padding": 0,
+                          "position": "absolute",
+                          "right": 0,
+                          "top": 0,
+                          "width": 0,
+                        }
+                      }
+                    />
+                  </noscript>
+                </span>
               </div>
             </div>
             <div
-              className="ArticleCommentTemplate__AuthorName-sc-13m5pqz-4 dpZqrw"
+              className="ArticleCommentTemplate__AuthorName-sc-13m5pqz-4 btcmKz"
               data-cy="comment-author-username"
             >
               <a
@@ -2304,7 +4008,7 @@ exports[`Article Snapshots renders article before login 1`] = `
               </a>
             </div>
             <div
-              className="ArticleCommentTemplate__AuthorDate-sc-13m5pqz-5 gMFtoO"
+              className="ArticleCommentTemplate__AuthorDate-sc-13m5pqz-5 djbjWJ"
               data-cy="comment-author-date"
             >
               Thu Feb 18 2016
@@ -2313,37 +4017,117 @@ exports[`Article Snapshots renders article before login 1`] = `
         </div>
       </div>
       <div
-        className="ArticleCommentTemplate__CommentContainer-sc-13m5pqz-6 elNlSw"
+        className="ArticleCommentTemplate__CommentContainer-sc-13m5pqz-6 bjvmNj"
         data-cy="comment-container"
       >
         <div
-          className="ArticleCommentTemplate__CommentBody-sc-13m5pqz-7 iClYhq"
+          className="ArticleCommentTemplate__CommentBody-sc-13m5pqz-7 dxnfTl"
           data-cy="comment-body"
         >
           It takes a Jacobian 2
         </div>
         <div
-          className="ArticleCommentTemplate__CommentInfo-sc-13m5pqz-8 bgoWHO"
+          className="ArticleCommentTemplate__CommentInfo-sc-13m5pqz-8 cSYSkx"
         >
           <div
-            className="ArticleCommentTemplate__AuthorContainer-sc-13m5pqz-3 gKLFEg"
+            className="ArticleCommentTemplate__AuthorContainer-sc-13m5pqz-3 fKSqan"
           >
             <div
-              className="Avatar__Wrapper-sc-m9feoe-0 icAXkY"
+              className="Avatar__Wrapper-sc-m9feoe-0 ieHczv"
               data-cy="comment-author-image"
             >
               <div
-                className="Avatar__Container-sc-m9feoe-1 JCubi w-5 h-5"
+                className="Avatar__Container-sc-m9feoe-1 fQHyzl w-5 h-5"
               >
-                <img
-                  alt="avatar"
-                  className="Avatar__Img-sc-m9feoe-2 iQvAVN rounded-full"
-                  src="https://i.stack.imgur.com/xHWG8.jpg"
-                />
+                <span
+                  style={
+                    Object {
+                      "background": "none",
+                      "border": 0,
+                      "bottom": 0,
+                      "boxSizing": "border-box",
+                      "display": "block",
+                      "height": "initial",
+                      "left": 0,
+                      "margin": 0,
+                      "opacity": 1,
+                      "overflow": "hidden",
+                      "padding": 0,
+                      "position": "absolute",
+                      "right": 0,
+                      "top": 0,
+                      "width": "initial",
+                    }
+                  }
+                >
+                  <img
+                    alt="avatar"
+                    className="Avatar__Img-sc-m9feoe-2 kuaPdK rounded-full"
+                    data-nimg="fill"
+                    decoding="async"
+                    src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                    style={
+                      Object {
+                        "border": "none",
+                        "bottom": 0,
+                        "boxSizing": "border-box",
+                        "display": "block",
+                        "height": 0,
+                        "left": 0,
+                        "margin": "auto",
+                        "maxHeight": "100%",
+                        "maxWidth": "100%",
+                        "minHeight": "100%",
+                        "minWidth": "100%",
+                        "objectFit": undefined,
+                        "objectPosition": undefined,
+                        "padding": 0,
+                        "position": "absolute",
+                        "right": 0,
+                        "top": 0,
+                        "width": 0,
+                      }
+                    }
+                  />
+                  <noscript>
+                    <img
+                      alt="avatar"
+                      className="Avatar__Img-sc-m9feoe-2 kuaPdK rounded-full"
+                      data-nimg="fill"
+                      decoding="async"
+                      loading="lazy"
+                      sizes="100vw"
+                      src="/_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=3840&q=75"
+                      srcSet="/_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=640&q=75 640w, /_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=750&q=75 750w, /_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=828&q=75 828w, /_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=1080&q=75 1080w, /_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=1200&q=75 1200w, /_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=1920&q=75 1920w, /_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=2048&q=75 2048w, /_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=3840&q=75 3840w"
+                      style={
+                        Object {
+                          "border": "none",
+                          "bottom": 0,
+                          "boxSizing": "border-box",
+                          "display": "block",
+                          "height": 0,
+                          "left": 0,
+                          "margin": "auto",
+                          "maxHeight": "100%",
+                          "maxWidth": "100%",
+                          "minHeight": "100%",
+                          "minWidth": "100%",
+                          "objectFit": undefined,
+                          "objectPosition": undefined,
+                          "padding": 0,
+                          "position": "absolute",
+                          "right": 0,
+                          "top": 0,
+                          "width": 0,
+                        }
+                      }
+                    />
+                  </noscript>
+                </span>
               </div>
             </div>
             <div
-              className="ArticleCommentTemplate__AuthorName-sc-13m5pqz-4 dpZqrw"
+              className="ArticleCommentTemplate__AuthorName-sc-13m5pqz-4 btcmKz"
               data-cy="comment-author-username"
             >
               <a
@@ -2355,7 +4139,7 @@ exports[`Article Snapshots renders article before login 1`] = `
               </a>
             </div>
             <div
-              className="ArticleCommentTemplate__AuthorDate-sc-13m5pqz-5 gMFtoO"
+              className="ArticleCommentTemplate__AuthorDate-sc-13m5pqz-5 djbjWJ"
               data-cy="comment-author-date"
             >
               Thu Feb 18 2016
@@ -2366,10 +4150,10 @@ exports[`Article Snapshots renders article before login 1`] = `
     </div>
   </div>
   <div
-    className="FooterTemplate__Container-sc-96wla6-0 dxhwgY"
+    className="FooterTemplate__Container-sc-96wla6-0 cOGJUH"
   >
     <span
-      className="FooterTemplate__SiteLink-sc-96wla6-1 iJSbEN text-base mr-1 font-bold"
+      className="FooterTemplate__SiteLink-sc-96wla6-1 ENejy text-base mr-1 font-bold"
       data-cy="footer-logo-link"
       href="/"
       onClick={[Function]}
@@ -2379,7 +4163,7 @@ exports[`Article Snapshots renders article before login 1`] = `
     </span>
     © 2020. An interactive learning project from
     <span
-      className="FooterTemplate__SiteLink-sc-96wla6-1 iJSbEN ml-1"
+      className="FooterTemplate__SiteLink-sc-96wla6-1 ENejy ml-1"
       data-cy="footer-site-link"
       href="https://thinkster.io/"
       onClick={[Function]}

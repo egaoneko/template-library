@@ -3,6 +3,7 @@
 import React, { FC } from 'react';
 import styled from 'styled-components';
 import tw from 'twin.macro';
+import Image from 'next/image';
 
 const DEFAULT_IMAGE = 'https://static.productionready.io/images/smiley-cyrus.jpg';
 
@@ -31,7 +32,7 @@ const Avatar: FC<PropsType> = props => {
   return (
     <Wrapper {...wrapperProps}>
       <Container className={`w-${width} h-${width}`}>
-        <Img className="rounded-full" src={url ?? DEFAULT_IMAGE} alt="avatar" />
+        <Img className="rounded-full" src={url ?? DEFAULT_IMAGE} alt="avatar" layout="fill" />
       </Container>
     </Wrapper>
   );
@@ -47,6 +48,6 @@ const Container = styled.div`
   ${tw`relative flex justify-center items-center rounded-full`}
 `;
 
-const Img = styled.img`
+const Img = styled(Image)`
   ${tw`rounded-full`}
 `;

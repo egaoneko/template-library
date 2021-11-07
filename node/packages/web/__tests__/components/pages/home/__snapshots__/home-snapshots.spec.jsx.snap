@@ -2,16 +2,16 @@
 
 exports[`Home Snapshots renders home after login 1`] = `
 <div
-  className="BaseLayoutTemplate__Container-sc-1jz5xvr-0 gAVYwR"
+  className="BaseLayoutTemplate__Container-sc-1jz5xvr-0 kHMSW"
 >
   <div
-    className="HeaderTemplate__Container-sc-kdla34-0 inxbiA"
+    className="HeaderTemplate__Container-sc-kdla34-0 gxnUkb"
   >
     <div
-      className="HeaderTemplate__Heading-sc-kdla34-1 laFayD"
+      className="HeaderTemplate__Heading-sc-kdla34-1 lcHwtI"
     >
       <div
-        className="HeaderTemplate__HeadingTitle-sc-kdla34-2 bAZjNO"
+        className="HeaderTemplate__HeadingTitle-sc-kdla34-2 ibfQih"
         data-cy="header-logo-link"
       >
         <a
@@ -135,16 +135,96 @@ exports[`Home Snapshots renders home after login 1`] = `
                 className="flex items-center gap-1"
               >
                 <div
-                  className="Avatar__Wrapper-sc-m9feoe-0 icAXkY"
+                  className="Avatar__Wrapper-sc-m9feoe-0 ieHczv"
                 >
                   <div
-                    className="Avatar__Container-sc-m9feoe-1 JCubi w-5 h-5"
+                    className="Avatar__Container-sc-m9feoe-1 fQHyzl w-5 h-5"
                   >
-                    <img
-                      alt="avatar"
-                      className="Avatar__Img-sc-m9feoe-2 iQvAVN rounded-full"
-                      src="https://i.stack.imgur.com/xHWG8.jpg"
-                    />
+                    <span
+                      style={
+                        Object {
+                          "background": "none",
+                          "border": 0,
+                          "bottom": 0,
+                          "boxSizing": "border-box",
+                          "display": "block",
+                          "height": "initial",
+                          "left": 0,
+                          "margin": 0,
+                          "opacity": 1,
+                          "overflow": "hidden",
+                          "padding": 0,
+                          "position": "absolute",
+                          "right": 0,
+                          "top": 0,
+                          "width": "initial",
+                        }
+                      }
+                    >
+                      <img
+                        alt="avatar"
+                        className="Avatar__Img-sc-m9feoe-2 kuaPdK rounded-full"
+                        data-nimg="fill"
+                        decoding="async"
+                        src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                        style={
+                          Object {
+                            "border": "none",
+                            "bottom": 0,
+                            "boxSizing": "border-box",
+                            "display": "block",
+                            "height": 0,
+                            "left": 0,
+                            "margin": "auto",
+                            "maxHeight": "100%",
+                            "maxWidth": "100%",
+                            "minHeight": "100%",
+                            "minWidth": "100%",
+                            "objectFit": undefined,
+                            "objectPosition": undefined,
+                            "padding": 0,
+                            "position": "absolute",
+                            "right": 0,
+                            "top": 0,
+                            "width": 0,
+                          }
+                        }
+                      />
+                      <noscript>
+                        <img
+                          alt="avatar"
+                          className="Avatar__Img-sc-m9feoe-2 kuaPdK rounded-full"
+                          data-nimg="fill"
+                          decoding="async"
+                          loading="lazy"
+                          sizes="100vw"
+                          src="/_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=3840&q=75"
+                          srcSet="/_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=640&q=75 640w, /_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=750&q=75 750w, /_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=828&q=75 828w, /_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=1080&q=75 1080w, /_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=1200&q=75 1200w, /_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=1920&q=75 1920w, /_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=2048&q=75 2048w, /_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=3840&q=75 3840w"
+                          style={
+                            Object {
+                              "border": "none",
+                              "bottom": 0,
+                              "boxSizing": "border-box",
+                              "display": "block",
+                              "height": 0,
+                              "left": 0,
+                              "margin": "auto",
+                              "maxHeight": "100%",
+                              "maxWidth": "100%",
+                              "minHeight": "100%",
+                              "minWidth": "100%",
+                              "objectFit": undefined,
+                              "objectPosition": undefined,
+                              "padding": 0,
+                              "position": "absolute",
+                              "right": 0,
+                              "top": 0,
+                              "width": 0,
+                            }
+                          }
+                        />
+                      </noscript>
+                    </span>
                   </div>
                 </div>
                 Jacob
@@ -156,16 +236,16 @@ exports[`Home Snapshots renders home after login 1`] = `
     </div>
   </div>
   <div
-    className="HomeBannerTemplate__Container-sc-1qknydn-0 dWnFba"
+    className="HomeBannerTemplate__Container-sc-1qknydn-0 kgQQLJ"
   >
     <h1
-      className="HomeBannerTemplate__Title-sc-1qknydn-1 hwpgVu"
+      className="HomeBannerTemplate__Title-sc-1qknydn-1 YLgmt"
       data-cy="banner-title"
     >
       conduit
     </h1>
     <p
-      className="HomeBannerTemplate__Description-sc-1qknydn-2 gKEVkQ"
+      className="HomeBannerTemplate__Description-sc-1qknydn-2 jAWRsj"
       data-cy="banner-description"
     >
       A place to share your knowledge.
@@ -175,26 +255,26 @@ exports[`Home Snapshots renders home after login 1`] = `
     className="container mx-auto mt-8"
   >
     <div
-      className="HomeContentTemplate__Container-sc-1wgbk2s-0 bAYEVn"
+      className="HomeContentTemplate__Container-sc-1wgbk2s-0 glEaaA"
     >
       <div
-        className="HomeFeedContentTemplate__Container-sc-1ezgd3k-0 etQqIt"
+        className="HomeFeedContentTemplate__Container-sc-1ezgd3k-0 fDQNGi"
       >
         <div
-          className="TabProvider__Container-sc-dghi3q-0 fMSgtM"
+          className="TabProvider__Container-sc-dghi3q-0 hMjFPD"
         >
           <ul
-            className="TabNavs__Container-sc-1s6vm0l-0 hNNxuo"
+            className="TabNavs__Container-sc-1s6vm0l-0 fNatPj"
           >
             <li
-              className="TabNav__Container-sc-eq25ji-0 dgCeiL"
+              className="TabNav__Container-sc-eq25ji-0 jLZeXs"
               data-cy="tab-nav-user_feed"
               onClick={[Function]}
             >
               Your Feed
             </li>
             <li
-              className="TabNav__Container-sc-eq25ji-0 fOYchU"
+              className="TabNav__Container-sc-eq25ji-0 khtWGz"
               data-cy="tab-nav-global_feed"
               onClick={[Function]}
             >
@@ -202,38 +282,118 @@ exports[`Home Snapshots renders home after login 1`] = `
             </li>
           </ul>
           <div
-            className="TabPane__Container-sc-12cvcpc-0 HPUUN"
+            className="TabPane__Container-sc-12cvcpc-0 IWqVW"
             data-cy="tab-pane-global_feed"
           >
             <div
-              className="FeedList__Container-sc-m88k4f-0 gTPhkw"
+              className="FeedList__Container-sc-m88k4f-0 cwdJLz"
               data-cy="feed-list"
             >
               <div
-                className="Feed__Container-sc-njujrp-0 bMSZkG"
+                className="Feed__Container-sc-njujrp-0 hCoOyB"
                 data-cy="feed-container"
               >
                 <div
-                  className="Feed__AuthorContainer-sc-njujrp-1 eGhnOd"
+                  className="Feed__AuthorContainer-sc-njujrp-1 kgsVwO"
                 >
                   <div
-                    className="Avatar__Wrapper-sc-m9feoe-0 icAXkY"
+                    className="Avatar__Wrapper-sc-m9feoe-0 ieHczv"
                   >
                     <div
-                      className="Avatar__Container-sc-m9feoe-1 JCubi w-8 h-8"
+                      className="Avatar__Container-sc-m9feoe-1 fQHyzl w-8 h-8"
                     >
-                      <img
-                        alt="avatar"
-                        className="Avatar__Img-sc-m9feoe-2 iQvAVN rounded-full"
-                        src="https://i.stack.imgur.com/xHWG8.jpg"
-                      />
+                      <span
+                        style={
+                          Object {
+                            "background": "none",
+                            "border": 0,
+                            "bottom": 0,
+                            "boxSizing": "border-box",
+                            "display": "block",
+                            "height": "initial",
+                            "left": 0,
+                            "margin": 0,
+                            "opacity": 1,
+                            "overflow": "hidden",
+                            "padding": 0,
+                            "position": "absolute",
+                            "right": 0,
+                            "top": 0,
+                            "width": "initial",
+                          }
+                        }
+                      >
+                        <img
+                          alt="avatar"
+                          className="Avatar__Img-sc-m9feoe-2 kuaPdK rounded-full"
+                          data-nimg="fill"
+                          decoding="async"
+                          src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                          style={
+                            Object {
+                              "border": "none",
+                              "bottom": 0,
+                              "boxSizing": "border-box",
+                              "display": "block",
+                              "height": 0,
+                              "left": 0,
+                              "margin": "auto",
+                              "maxHeight": "100%",
+                              "maxWidth": "100%",
+                              "minHeight": "100%",
+                              "minWidth": "100%",
+                              "objectFit": undefined,
+                              "objectPosition": undefined,
+                              "padding": 0,
+                              "position": "absolute",
+                              "right": 0,
+                              "top": 0,
+                              "width": 0,
+                            }
+                          }
+                        />
+                        <noscript>
+                          <img
+                            alt="avatar"
+                            className="Avatar__Img-sc-m9feoe-2 kuaPdK rounded-full"
+                            data-nimg="fill"
+                            decoding="async"
+                            loading="lazy"
+                            sizes="100vw"
+                            src="/_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=3840&q=75"
+                            srcSet="/_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=640&q=75 640w, /_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=750&q=75 750w, /_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=828&q=75 828w, /_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=1080&q=75 1080w, /_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=1200&q=75 1200w, /_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=1920&q=75 1920w, /_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=2048&q=75 2048w, /_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=3840&q=75 3840w"
+                            style={
+                              Object {
+                                "border": "none",
+                                "bottom": 0,
+                                "boxSizing": "border-box",
+                                "display": "block",
+                                "height": 0,
+                                "left": 0,
+                                "margin": "auto",
+                                "maxHeight": "100%",
+                                "maxWidth": "100%",
+                                "minHeight": "100%",
+                                "minWidth": "100%",
+                                "objectFit": undefined,
+                                "objectPosition": undefined,
+                                "padding": 0,
+                                "position": "absolute",
+                                "right": 0,
+                                "top": 0,
+                                "width": 0,
+                              }
+                            }
+                          />
+                        </noscript>
+                      </span>
                     </div>
                   </div>
                   <div
-                    className="Feed__AuthorInfo-sc-njujrp-2 jfXWuY"
+                    className="Feed__AuthorInfo-sc-njujrp-2 bwLqOH"
                   >
                     <div
-                      className="Feed__AuthorName-sc-njujrp-3 gdUFEX"
+                      className="Feed__AuthorName-sc-njujrp-3 fbCOoc"
                       data-cy="feed-profile"
                     >
                       <a
@@ -245,13 +405,13 @@ exports[`Home Snapshots renders home after login 1`] = `
                       </a>
                     </div>
                     <div
-                      className="Feed__AuthorDate-sc-njujrp-4 fvTnzi"
+                      className="Feed__AuthorDate-sc-njujrp-4 cqYxgN"
                     >
                       Thu Feb 18 2016
                     </div>
                   </div>
                   <div
-                    className="Feed__Favorite-sc-njujrp-5 jCrpzO"
+                    className="Feed__Favorite-sc-njujrp-5 gjwhNt"
                     data-cy="feed-favorite"
                     onClick={[Function]}
                   >
@@ -283,40 +443,40 @@ exports[`Home Snapshots renders home after login 1`] = `
                   </div>
                 </div>
                 <div
-                  className="Feed__Content-sc-njujrp-6 lavqJS"
+                  className="Feed__Content-sc-njujrp-6 bMJyvN"
                   data-cy="feed-content"
                   onClick={[Function]}
                 >
                   <h1
-                    className="Feed__Title-sc-njujrp-7 gWAxxU"
+                    className="Feed__Title-sc-njujrp-7 VSHlD"
                   >
                     How to train your dragon
                   </h1>
                   <div
-                    className="Feed__Body-sc-njujrp-8 eHXBuj"
+                    className="Feed__Body-sc-njujrp-8 ksVMoY"
                   >
                     <p>
                       Ever wonder how?
                     </p>
                   </div>
                   <div
-                    className="Feed__Footer-sc-njujrp-9 guhWFl"
+                    className="Feed__Footer-sc-njujrp-9 fPWzJO"
                   >
                     <div
-                      className="Feed__ReadMore-sc-njujrp-10 cVwpIN"
+                      className="Feed__ReadMore-sc-njujrp-10 dZzWHi"
                     >
                       Read more...
                     </div>
                     <div
-                      className="Feed__Tags-sc-njujrp-11 kHqpDe"
+                      className="Feed__Tags-sc-njujrp-11 guXOMJ"
                     >
                       <div
-                        className="Feed__Tag-sc-njujrp-12 djCIeG"
+                        className="Feed__Tag-sc-njujrp-12 bgLIUB"
                       >
                         dragons
                       </div>
                       <div
-                        className="Feed__Tag-sc-njujrp-12 djCIeG"
+                        className="Feed__Tag-sc-njujrp-12 bgLIUB"
                       >
                         training
                       </div>
@@ -325,30 +485,110 @@ exports[`Home Snapshots renders home after login 1`] = `
                 </div>
               </div>
               <div
-                className="Feed__Container-sc-njujrp-0 bMSZkG"
+                className="Feed__Container-sc-njujrp-0 hCoOyB"
                 data-cy="feed-container"
               >
                 <div
-                  className="Feed__AuthorContainer-sc-njujrp-1 eGhnOd"
+                  className="Feed__AuthorContainer-sc-njujrp-1 kgsVwO"
                 >
                   <div
-                    className="Avatar__Wrapper-sc-m9feoe-0 icAXkY"
+                    className="Avatar__Wrapper-sc-m9feoe-0 ieHczv"
                   >
                     <div
-                      className="Avatar__Container-sc-m9feoe-1 JCubi w-8 h-8"
+                      className="Avatar__Container-sc-m9feoe-1 fQHyzl w-8 h-8"
                     >
-                      <img
-                        alt="avatar"
-                        className="Avatar__Img-sc-m9feoe-2 iQvAVN rounded-full"
-                        src="https://i.stack.imgur.com/xHWG8.jpg"
-                      />
+                      <span
+                        style={
+                          Object {
+                            "background": "none",
+                            "border": 0,
+                            "bottom": 0,
+                            "boxSizing": "border-box",
+                            "display": "block",
+                            "height": "initial",
+                            "left": 0,
+                            "margin": 0,
+                            "opacity": 1,
+                            "overflow": "hidden",
+                            "padding": 0,
+                            "position": "absolute",
+                            "right": 0,
+                            "top": 0,
+                            "width": "initial",
+                          }
+                        }
+                      >
+                        <img
+                          alt="avatar"
+                          className="Avatar__Img-sc-m9feoe-2 kuaPdK rounded-full"
+                          data-nimg="fill"
+                          decoding="async"
+                          src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                          style={
+                            Object {
+                              "border": "none",
+                              "bottom": 0,
+                              "boxSizing": "border-box",
+                              "display": "block",
+                              "height": 0,
+                              "left": 0,
+                              "margin": "auto",
+                              "maxHeight": "100%",
+                              "maxWidth": "100%",
+                              "minHeight": "100%",
+                              "minWidth": "100%",
+                              "objectFit": undefined,
+                              "objectPosition": undefined,
+                              "padding": 0,
+                              "position": "absolute",
+                              "right": 0,
+                              "top": 0,
+                              "width": 0,
+                            }
+                          }
+                        />
+                        <noscript>
+                          <img
+                            alt="avatar"
+                            className="Avatar__Img-sc-m9feoe-2 kuaPdK rounded-full"
+                            data-nimg="fill"
+                            decoding="async"
+                            loading="lazy"
+                            sizes="100vw"
+                            src="/_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=3840&q=75"
+                            srcSet="/_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=640&q=75 640w, /_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=750&q=75 750w, /_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=828&q=75 828w, /_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=1080&q=75 1080w, /_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=1200&q=75 1200w, /_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=1920&q=75 1920w, /_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=2048&q=75 2048w, /_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=3840&q=75 3840w"
+                            style={
+                              Object {
+                                "border": "none",
+                                "bottom": 0,
+                                "boxSizing": "border-box",
+                                "display": "block",
+                                "height": 0,
+                                "left": 0,
+                                "margin": "auto",
+                                "maxHeight": "100%",
+                                "maxWidth": "100%",
+                                "minHeight": "100%",
+                                "minWidth": "100%",
+                                "objectFit": undefined,
+                                "objectPosition": undefined,
+                                "padding": 0,
+                                "position": "absolute",
+                                "right": 0,
+                                "top": 0,
+                                "width": 0,
+                              }
+                            }
+                          />
+                        </noscript>
+                      </span>
                     </div>
                   </div>
                   <div
-                    className="Feed__AuthorInfo-sc-njujrp-2 jfXWuY"
+                    className="Feed__AuthorInfo-sc-njujrp-2 bwLqOH"
                   >
                     <div
-                      className="Feed__AuthorName-sc-njujrp-3 gdUFEX"
+                      className="Feed__AuthorName-sc-njujrp-3 fbCOoc"
                       data-cy="feed-profile"
                     >
                       <a
@@ -360,13 +600,13 @@ exports[`Home Snapshots renders home after login 1`] = `
                       </a>
                     </div>
                     <div
-                      className="Feed__AuthorDate-sc-njujrp-4 fvTnzi"
+                      className="Feed__AuthorDate-sc-njujrp-4 cqYxgN"
                     >
                       Thu Feb 18 2016
                     </div>
                   </div>
                   <div
-                    className="Feed__Favorite-sc-njujrp-5 gCgReo"
+                    className="Feed__Favorite-sc-njujrp-5 cbgHkv"
                     data-cy="feed-favorite"
                     onClick={[Function]}
                   >
@@ -398,35 +638,35 @@ exports[`Home Snapshots renders home after login 1`] = `
                   </div>
                 </div>
                 <div
-                  className="Feed__Content-sc-njujrp-6 lavqJS"
+                  className="Feed__Content-sc-njujrp-6 bMJyvN"
                   data-cy="feed-content"
                   onClick={[Function]}
                 >
                   <h1
-                    className="Feed__Title-sc-njujrp-7 gWAxxU"
+                    className="Feed__Title-sc-njujrp-7 VSHlD"
                   >
                     How to train your dragon 2
                   </h1>
                   <div
-                    className="Feed__Body-sc-njujrp-8 eHXBuj"
+                    className="Feed__Body-sc-njujrp-8 ksVMoY"
                   >
                     <p>
                       So toothless
                     </p>
                   </div>
                   <div
-                    className="Feed__Footer-sc-njujrp-9 guhWFl"
+                    className="Feed__Footer-sc-njujrp-9 fPWzJO"
                   >
                     <div
-                      className="Feed__ReadMore-sc-njujrp-10 cVwpIN"
+                      className="Feed__ReadMore-sc-njujrp-10 dZzWHi"
                     >
                       Read more...
                     </div>
                     <div
-                      className="Feed__Tags-sc-njujrp-11 kHqpDe"
+                      className="Feed__Tags-sc-njujrp-11 guXOMJ"
                     >
                       <div
-                        className="Feed__Tag-sc-njujrp-12 djCIeG"
+                        className="Feed__Tag-sc-njujrp-12 bgLIUB"
                       >
                         dragons
                       </div>
@@ -435,30 +675,110 @@ exports[`Home Snapshots renders home after login 1`] = `
                 </div>
               </div>
               <div
-                className="Feed__Container-sc-njujrp-0 bMSZkG"
+                className="Feed__Container-sc-njujrp-0 hCoOyB"
                 data-cy="feed-container"
               >
                 <div
-                  className="Feed__AuthorContainer-sc-njujrp-1 eGhnOd"
+                  className="Feed__AuthorContainer-sc-njujrp-1 kgsVwO"
                 >
                   <div
-                    className="Avatar__Wrapper-sc-m9feoe-0 icAXkY"
+                    className="Avatar__Wrapper-sc-m9feoe-0 ieHczv"
                   >
                     <div
-                      className="Avatar__Container-sc-m9feoe-1 JCubi w-8 h-8"
+                      className="Avatar__Container-sc-m9feoe-1 fQHyzl w-8 h-8"
                     >
-                      <img
-                        alt="avatar"
-                        className="Avatar__Img-sc-m9feoe-2 iQvAVN rounded-full"
-                        src="https://i.stack.imgur.com/xHWG8.jpg"
-                      />
+                      <span
+                        style={
+                          Object {
+                            "background": "none",
+                            "border": 0,
+                            "bottom": 0,
+                            "boxSizing": "border-box",
+                            "display": "block",
+                            "height": "initial",
+                            "left": 0,
+                            "margin": 0,
+                            "opacity": 1,
+                            "overflow": "hidden",
+                            "padding": 0,
+                            "position": "absolute",
+                            "right": 0,
+                            "top": 0,
+                            "width": "initial",
+                          }
+                        }
+                      >
+                        <img
+                          alt="avatar"
+                          className="Avatar__Img-sc-m9feoe-2 kuaPdK rounded-full"
+                          data-nimg="fill"
+                          decoding="async"
+                          src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                          style={
+                            Object {
+                              "border": "none",
+                              "bottom": 0,
+                              "boxSizing": "border-box",
+                              "display": "block",
+                              "height": 0,
+                              "left": 0,
+                              "margin": "auto",
+                              "maxHeight": "100%",
+                              "maxWidth": "100%",
+                              "minHeight": "100%",
+                              "minWidth": "100%",
+                              "objectFit": undefined,
+                              "objectPosition": undefined,
+                              "padding": 0,
+                              "position": "absolute",
+                              "right": 0,
+                              "top": 0,
+                              "width": 0,
+                            }
+                          }
+                        />
+                        <noscript>
+                          <img
+                            alt="avatar"
+                            className="Avatar__Img-sc-m9feoe-2 kuaPdK rounded-full"
+                            data-nimg="fill"
+                            decoding="async"
+                            loading="lazy"
+                            sizes="100vw"
+                            src="/_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=3840&q=75"
+                            srcSet="/_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=640&q=75 640w, /_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=750&q=75 750w, /_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=828&q=75 828w, /_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=1080&q=75 1080w, /_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=1200&q=75 1200w, /_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=1920&q=75 1920w, /_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=2048&q=75 2048w, /_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=3840&q=75 3840w"
+                            style={
+                              Object {
+                                "border": "none",
+                                "bottom": 0,
+                                "boxSizing": "border-box",
+                                "display": "block",
+                                "height": 0,
+                                "left": 0,
+                                "margin": "auto",
+                                "maxHeight": "100%",
+                                "maxWidth": "100%",
+                                "minHeight": "100%",
+                                "minWidth": "100%",
+                                "objectFit": undefined,
+                                "objectPosition": undefined,
+                                "padding": 0,
+                                "position": "absolute",
+                                "right": 0,
+                                "top": 0,
+                                "width": 0,
+                              }
+                            }
+                          />
+                        </noscript>
+                      </span>
                     </div>
                   </div>
                   <div
-                    className="Feed__AuthorInfo-sc-njujrp-2 jfXWuY"
+                    className="Feed__AuthorInfo-sc-njujrp-2 bwLqOH"
                   >
                     <div
-                      className="Feed__AuthorName-sc-njujrp-3 gdUFEX"
+                      className="Feed__AuthorName-sc-njujrp-3 fbCOoc"
                       data-cy="feed-profile"
                     >
                       <a
@@ -470,13 +790,13 @@ exports[`Home Snapshots renders home after login 1`] = `
                       </a>
                     </div>
                     <div
-                      className="Feed__AuthorDate-sc-njujrp-4 fvTnzi"
+                      className="Feed__AuthorDate-sc-njujrp-4 cqYxgN"
                     >
                       Thu Feb 18 2016
                     </div>
                   </div>
                   <div
-                    className="Feed__Favorite-sc-njujrp-5 jCrpzO"
+                    className="Feed__Favorite-sc-njujrp-5 gjwhNt"
                     data-cy="feed-favorite"
                     onClick={[Function]}
                   >
@@ -508,35 +828,35 @@ exports[`Home Snapshots renders home after login 1`] = `
                   </div>
                 </div>
                 <div
-                  className="Feed__Content-sc-njujrp-6 lavqJS"
+                  className="Feed__Content-sc-njujrp-6 bMJyvN"
                   data-cy="feed-content"
                   onClick={[Function]}
                 >
                   <h1
-                    className="Feed__Title-sc-njujrp-7 gWAxxU"
+                    className="Feed__Title-sc-njujrp-7 VSHlD"
                   >
                     How to train your dragon 3
                   </h1>
                   <div
-                    className="Feed__Body-sc-njujrp-8 eHXBuj"
+                    className="Feed__Body-sc-njujrp-8 ksVMoY"
                   >
                     <p>
                       So toothless
                     </p>
                   </div>
                   <div
-                    className="Feed__Footer-sc-njujrp-9 guhWFl"
+                    className="Feed__Footer-sc-njujrp-9 fPWzJO"
                   >
                     <div
-                      className="Feed__ReadMore-sc-njujrp-10 cVwpIN"
+                      className="Feed__ReadMore-sc-njujrp-10 dZzWHi"
                     >
                       Read more...
                     </div>
                     <div
-                      className="Feed__Tags-sc-njujrp-11 kHqpDe"
+                      className="Feed__Tags-sc-njujrp-11 guXOMJ"
                     >
                       <div
-                        className="Feed__Tag-sc-njujrp-12 djCIeG"
+                        className="Feed__Tag-sc-njujrp-12 bgLIUB"
                       >
                         dragons
                       </div>
@@ -545,30 +865,110 @@ exports[`Home Snapshots renders home after login 1`] = `
                 </div>
               </div>
               <div
-                className="Feed__Container-sc-njujrp-0 bMSZkG"
+                className="Feed__Container-sc-njujrp-0 hCoOyB"
                 data-cy="feed-container"
               >
                 <div
-                  className="Feed__AuthorContainer-sc-njujrp-1 eGhnOd"
+                  className="Feed__AuthorContainer-sc-njujrp-1 kgsVwO"
                 >
                   <div
-                    className="Avatar__Wrapper-sc-m9feoe-0 icAXkY"
+                    className="Avatar__Wrapper-sc-m9feoe-0 ieHczv"
                   >
                     <div
-                      className="Avatar__Container-sc-m9feoe-1 JCubi w-8 h-8"
+                      className="Avatar__Container-sc-m9feoe-1 fQHyzl w-8 h-8"
                     >
-                      <img
-                        alt="avatar"
-                        className="Avatar__Img-sc-m9feoe-2 iQvAVN rounded-full"
-                        src="https://i.stack.imgur.com/xHWG8.jpg"
-                      />
+                      <span
+                        style={
+                          Object {
+                            "background": "none",
+                            "border": 0,
+                            "bottom": 0,
+                            "boxSizing": "border-box",
+                            "display": "block",
+                            "height": "initial",
+                            "left": 0,
+                            "margin": 0,
+                            "opacity": 1,
+                            "overflow": "hidden",
+                            "padding": 0,
+                            "position": "absolute",
+                            "right": 0,
+                            "top": 0,
+                            "width": "initial",
+                          }
+                        }
+                      >
+                        <img
+                          alt="avatar"
+                          className="Avatar__Img-sc-m9feoe-2 kuaPdK rounded-full"
+                          data-nimg="fill"
+                          decoding="async"
+                          src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                          style={
+                            Object {
+                              "border": "none",
+                              "bottom": 0,
+                              "boxSizing": "border-box",
+                              "display": "block",
+                              "height": 0,
+                              "left": 0,
+                              "margin": "auto",
+                              "maxHeight": "100%",
+                              "maxWidth": "100%",
+                              "minHeight": "100%",
+                              "minWidth": "100%",
+                              "objectFit": undefined,
+                              "objectPosition": undefined,
+                              "padding": 0,
+                              "position": "absolute",
+                              "right": 0,
+                              "top": 0,
+                              "width": 0,
+                            }
+                          }
+                        />
+                        <noscript>
+                          <img
+                            alt="avatar"
+                            className="Avatar__Img-sc-m9feoe-2 kuaPdK rounded-full"
+                            data-nimg="fill"
+                            decoding="async"
+                            loading="lazy"
+                            sizes="100vw"
+                            src="/_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=3840&q=75"
+                            srcSet="/_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=640&q=75 640w, /_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=750&q=75 750w, /_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=828&q=75 828w, /_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=1080&q=75 1080w, /_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=1200&q=75 1200w, /_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=1920&q=75 1920w, /_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=2048&q=75 2048w, /_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=3840&q=75 3840w"
+                            style={
+                              Object {
+                                "border": "none",
+                                "bottom": 0,
+                                "boxSizing": "border-box",
+                                "display": "block",
+                                "height": 0,
+                                "left": 0,
+                                "margin": "auto",
+                                "maxHeight": "100%",
+                                "maxWidth": "100%",
+                                "minHeight": "100%",
+                                "minWidth": "100%",
+                                "objectFit": undefined,
+                                "objectPosition": undefined,
+                                "padding": 0,
+                                "position": "absolute",
+                                "right": 0,
+                                "top": 0,
+                                "width": 0,
+                              }
+                            }
+                          />
+                        </noscript>
+                      </span>
                     </div>
                   </div>
                   <div
-                    className="Feed__AuthorInfo-sc-njujrp-2 jfXWuY"
+                    className="Feed__AuthorInfo-sc-njujrp-2 bwLqOH"
                   >
                     <div
-                      className="Feed__AuthorName-sc-njujrp-3 gdUFEX"
+                      className="Feed__AuthorName-sc-njujrp-3 fbCOoc"
                       data-cy="feed-profile"
                     >
                       <a
@@ -580,13 +980,13 @@ exports[`Home Snapshots renders home after login 1`] = `
                       </a>
                     </div>
                     <div
-                      className="Feed__AuthorDate-sc-njujrp-4 fvTnzi"
+                      className="Feed__AuthorDate-sc-njujrp-4 cqYxgN"
                     >
                       Thu Feb 18 2016
                     </div>
                   </div>
                   <div
-                    className="Feed__Favorite-sc-njujrp-5 jCrpzO"
+                    className="Feed__Favorite-sc-njujrp-5 gjwhNt"
                     data-cy="feed-favorite"
                     onClick={[Function]}
                   >
@@ -618,35 +1018,35 @@ exports[`Home Snapshots renders home after login 1`] = `
                   </div>
                 </div>
                 <div
-                  className="Feed__Content-sc-njujrp-6 lavqJS"
+                  className="Feed__Content-sc-njujrp-6 bMJyvN"
                   data-cy="feed-content"
                   onClick={[Function]}
                 >
                   <h1
-                    className="Feed__Title-sc-njujrp-7 gWAxxU"
+                    className="Feed__Title-sc-njujrp-7 VSHlD"
                   >
                     How to train your dragon 4
                   </h1>
                   <div
-                    className="Feed__Body-sc-njujrp-8 eHXBuj"
+                    className="Feed__Body-sc-njujrp-8 ksVMoY"
                   >
                     <p>
                       So toothless
                     </p>
                   </div>
                   <div
-                    className="Feed__Footer-sc-njujrp-9 guhWFl"
+                    className="Feed__Footer-sc-njujrp-9 fPWzJO"
                   >
                     <div
-                      className="Feed__ReadMore-sc-njujrp-10 cVwpIN"
+                      className="Feed__ReadMore-sc-njujrp-10 dZzWHi"
                     >
                       Read more...
                     </div>
                     <div
-                      className="Feed__Tags-sc-njujrp-11 kHqpDe"
+                      className="Feed__Tags-sc-njujrp-11 guXOMJ"
                     >
                       <div
-                        className="Feed__Tag-sc-njujrp-12 djCIeG"
+                        className="Feed__Tag-sc-njujrp-12 bgLIUB"
                       >
                         dragons
                       </div>
@@ -655,30 +1055,110 @@ exports[`Home Snapshots renders home after login 1`] = `
                 </div>
               </div>
               <div
-                className="Feed__Container-sc-njujrp-0 bMSZkG"
+                className="Feed__Container-sc-njujrp-0 hCoOyB"
                 data-cy="feed-container"
               >
                 <div
-                  className="Feed__AuthorContainer-sc-njujrp-1 eGhnOd"
+                  className="Feed__AuthorContainer-sc-njujrp-1 kgsVwO"
                 >
                   <div
-                    className="Avatar__Wrapper-sc-m9feoe-0 icAXkY"
+                    className="Avatar__Wrapper-sc-m9feoe-0 ieHczv"
                   >
                     <div
-                      className="Avatar__Container-sc-m9feoe-1 JCubi w-8 h-8"
+                      className="Avatar__Container-sc-m9feoe-1 fQHyzl w-8 h-8"
                     >
-                      <img
-                        alt="avatar"
-                        className="Avatar__Img-sc-m9feoe-2 iQvAVN rounded-full"
-                        src="https://i.stack.imgur.com/xHWG8.jpg"
-                      />
+                      <span
+                        style={
+                          Object {
+                            "background": "none",
+                            "border": 0,
+                            "bottom": 0,
+                            "boxSizing": "border-box",
+                            "display": "block",
+                            "height": "initial",
+                            "left": 0,
+                            "margin": 0,
+                            "opacity": 1,
+                            "overflow": "hidden",
+                            "padding": 0,
+                            "position": "absolute",
+                            "right": 0,
+                            "top": 0,
+                            "width": "initial",
+                          }
+                        }
+                      >
+                        <img
+                          alt="avatar"
+                          className="Avatar__Img-sc-m9feoe-2 kuaPdK rounded-full"
+                          data-nimg="fill"
+                          decoding="async"
+                          src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                          style={
+                            Object {
+                              "border": "none",
+                              "bottom": 0,
+                              "boxSizing": "border-box",
+                              "display": "block",
+                              "height": 0,
+                              "left": 0,
+                              "margin": "auto",
+                              "maxHeight": "100%",
+                              "maxWidth": "100%",
+                              "minHeight": "100%",
+                              "minWidth": "100%",
+                              "objectFit": undefined,
+                              "objectPosition": undefined,
+                              "padding": 0,
+                              "position": "absolute",
+                              "right": 0,
+                              "top": 0,
+                              "width": 0,
+                            }
+                          }
+                        />
+                        <noscript>
+                          <img
+                            alt="avatar"
+                            className="Avatar__Img-sc-m9feoe-2 kuaPdK rounded-full"
+                            data-nimg="fill"
+                            decoding="async"
+                            loading="lazy"
+                            sizes="100vw"
+                            src="/_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=3840&q=75"
+                            srcSet="/_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=640&q=75 640w, /_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=750&q=75 750w, /_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=828&q=75 828w, /_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=1080&q=75 1080w, /_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=1200&q=75 1200w, /_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=1920&q=75 1920w, /_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=2048&q=75 2048w, /_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=3840&q=75 3840w"
+                            style={
+                              Object {
+                                "border": "none",
+                                "bottom": 0,
+                                "boxSizing": "border-box",
+                                "display": "block",
+                                "height": 0,
+                                "left": 0,
+                                "margin": "auto",
+                                "maxHeight": "100%",
+                                "maxWidth": "100%",
+                                "minHeight": "100%",
+                                "minWidth": "100%",
+                                "objectFit": undefined,
+                                "objectPosition": undefined,
+                                "padding": 0,
+                                "position": "absolute",
+                                "right": 0,
+                                "top": 0,
+                                "width": 0,
+                              }
+                            }
+                          />
+                        </noscript>
+                      </span>
                     </div>
                   </div>
                   <div
-                    className="Feed__AuthorInfo-sc-njujrp-2 jfXWuY"
+                    className="Feed__AuthorInfo-sc-njujrp-2 bwLqOH"
                   >
                     <div
-                      className="Feed__AuthorName-sc-njujrp-3 gdUFEX"
+                      className="Feed__AuthorName-sc-njujrp-3 fbCOoc"
                       data-cy="feed-profile"
                     >
                       <a
@@ -690,13 +1170,13 @@ exports[`Home Snapshots renders home after login 1`] = `
                       </a>
                     </div>
                     <div
-                      className="Feed__AuthorDate-sc-njujrp-4 fvTnzi"
+                      className="Feed__AuthorDate-sc-njujrp-4 cqYxgN"
                     >
                       Thu Feb 18 2016
                     </div>
                   </div>
                   <div
-                    className="Feed__Favorite-sc-njujrp-5 jCrpzO"
+                    className="Feed__Favorite-sc-njujrp-5 gjwhNt"
                     data-cy="feed-favorite"
                     onClick={[Function]}
                   >
@@ -728,35 +1208,35 @@ exports[`Home Snapshots renders home after login 1`] = `
                   </div>
                 </div>
                 <div
-                  className="Feed__Content-sc-njujrp-6 lavqJS"
+                  className="Feed__Content-sc-njujrp-6 bMJyvN"
                   data-cy="feed-content"
                   onClick={[Function]}
                 >
                   <h1
-                    className="Feed__Title-sc-njujrp-7 gWAxxU"
+                    className="Feed__Title-sc-njujrp-7 VSHlD"
                   >
                     How to train your dragon 5
                   </h1>
                   <div
-                    className="Feed__Body-sc-njujrp-8 eHXBuj"
+                    className="Feed__Body-sc-njujrp-8 ksVMoY"
                   >
                     <p>
                       So toothless
                     </p>
                   </div>
                   <div
-                    className="Feed__Footer-sc-njujrp-9 guhWFl"
+                    className="Feed__Footer-sc-njujrp-9 fPWzJO"
                   >
                     <div
-                      className="Feed__ReadMore-sc-njujrp-10 cVwpIN"
+                      className="Feed__ReadMore-sc-njujrp-10 dZzWHi"
                     >
                       Read more...
                     </div>
                     <div
-                      className="Feed__Tags-sc-njujrp-11 kHqpDe"
+                      className="Feed__Tags-sc-njujrp-11 guXOMJ"
                     >
                       <div
-                        className="Feed__Tag-sc-njujrp-12 djCIeG"
+                        className="Feed__Tag-sc-njujrp-12 bgLIUB"
                       >
                         dragons
                       </div>
@@ -765,7 +1245,7 @@ exports[`Home Snapshots renders home after login 1`] = `
                 </div>
               </div>
               <div
-                className="Pagination__Container-sc-z81ile-0 iuSHvy"
+                className="Pagination__Container-sc-z81ile-0 dGdshJ"
               >
                 <div
                   className="bg-white px-4 py-3 flex items-center justify-between border-t border-gray-200 sm:px-6"
@@ -774,7 +1254,7 @@ exports[`Home Snapshots renders home after login 1`] = `
                     className="flex-1 flex justify-between sm:hidden"
                   >
                     <a
-                      className="Pagination__PrevNextButton-sc-z81ile-1 hOSAln"
+                      className="Pagination__PrevNextButton-sc-z81ile-1 fBtVrM"
                       disabled={true}
                       href="#"
                       onClick={[Function]}
@@ -782,7 +1262,7 @@ exports[`Home Snapshots renders home after login 1`] = `
                       Previous
                     </a>
                     <a
-                      className="Pagination__PrevNextButton-sc-z81ile-1 lnJlne ml-3"
+                      className="Pagination__PrevNextButton-sc-z81ile-1 iTKNyl ml-3"
                       disabled={false}
                       href="#"
                       onClick={[Function]}
@@ -901,10 +1381,10 @@ exports[`Home Snapshots renders home after login 1`] = `
         </div>
       </div>
       <div
-        className="HomeTagsContentTemplate__Container-sc-y9g3tk-0 iCwBlJ"
+        className="HomeTagsContentTemplate__Container-sc-y9g3tk-0 jkQEJq"
       >
         <div
-          className="HomeTagsContentTemplate__Content-sc-y9g3tk-1 evbsOZ"
+          className="HomeTagsContentTemplate__Content-sc-y9g3tk-1 dkgAJu"
           data-cy="content-tags-container"
         >
           <div
@@ -917,7 +1397,7 @@ exports[`Home Snapshots renders home after login 1`] = `
             className="HomeTagsContentTemplate__Tags-sc-y9g3tk-2"
           >
             <div
-              className="HomeTagsContentTemplate__Tag-sc-y9g3tk-3 hvbxGV"
+              className="HomeTagsContentTemplate__Tag-sc-y9g3tk-3 iXCENq"
               data-cy="content-tag"
               onClick={[Function]}
               selected={false}
@@ -925,7 +1405,7 @@ exports[`Home Snapshots renders home after login 1`] = `
               dragons
             </div>
             <div
-              className="HomeTagsContentTemplate__Tag-sc-y9g3tk-3 hvbxGV"
+              className="HomeTagsContentTemplate__Tag-sc-y9g3tk-3 iXCENq"
               data-cy="content-tag"
               onClick={[Function]}
               selected={false}
@@ -938,10 +1418,10 @@ exports[`Home Snapshots renders home after login 1`] = `
     </div>
   </div>
   <div
-    className="FooterTemplate__Container-sc-96wla6-0 dxhwgY"
+    className="FooterTemplate__Container-sc-96wla6-0 cOGJUH"
   >
     <span
-      className="FooterTemplate__SiteLink-sc-96wla6-1 iJSbEN text-base mr-1 font-bold"
+      className="FooterTemplate__SiteLink-sc-96wla6-1 ENejy text-base mr-1 font-bold"
       data-cy="footer-logo-link"
       href="/"
       onClick={[Function]}
@@ -951,7 +1431,7 @@ exports[`Home Snapshots renders home after login 1`] = `
     </span>
     © 2020. An interactive learning project from
     <span
-      className="FooterTemplate__SiteLink-sc-96wla6-1 iJSbEN ml-1"
+      className="FooterTemplate__SiteLink-sc-96wla6-1 ENejy ml-1"
       data-cy="footer-site-link"
       href="https://thinkster.io/"
       onClick={[Function]}
@@ -966,16 +1446,16 @@ exports[`Home Snapshots renders home after login 1`] = `
 
 exports[`Home Snapshots renders home before login 1`] = `
 <div
-  className="BaseLayoutTemplate__Container-sc-1jz5xvr-0 gAVYwR"
+  className="BaseLayoutTemplate__Container-sc-1jz5xvr-0 kHMSW"
 >
   <div
-    className="HeaderTemplate__Container-sc-kdla34-0 inxbiA"
+    className="HeaderTemplate__Container-sc-kdla34-0 gxnUkb"
   >
     <div
-      className="HeaderTemplate__Heading-sc-kdla34-1 laFayD"
+      className="HeaderTemplate__Heading-sc-kdla34-1 lcHwtI"
     >
       <div
-        className="HeaderTemplate__HeadingTitle-sc-kdla34-2 bAZjNO"
+        className="HeaderTemplate__HeadingTitle-sc-kdla34-2 ibfQih"
         data-cy="header-logo-link"
       >
         <a
@@ -1047,16 +1527,16 @@ exports[`Home Snapshots renders home before login 1`] = `
     </div>
   </div>
   <div
-    className="HomeBannerTemplate__Container-sc-1qknydn-0 dWnFba"
+    className="HomeBannerTemplate__Container-sc-1qknydn-0 kgQQLJ"
   >
     <h1
-      className="HomeBannerTemplate__Title-sc-1qknydn-1 hwpgVu"
+      className="HomeBannerTemplate__Title-sc-1qknydn-1 YLgmt"
       data-cy="banner-title"
     >
       conduit
     </h1>
     <p
-      className="HomeBannerTemplate__Description-sc-1qknydn-2 gKEVkQ"
+      className="HomeBannerTemplate__Description-sc-1qknydn-2 jAWRsj"
       data-cy="banner-description"
     >
       A place to share your knowledge.
@@ -1066,19 +1546,19 @@ exports[`Home Snapshots renders home before login 1`] = `
     className="container mx-auto mt-8"
   >
     <div
-      className="HomeContentTemplate__Container-sc-1wgbk2s-0 bAYEVn"
+      className="HomeContentTemplate__Container-sc-1wgbk2s-0 glEaaA"
     >
       <div
-        className="HomeFeedContentTemplate__Container-sc-1ezgd3k-0 etQqIt"
+        className="HomeFeedContentTemplate__Container-sc-1ezgd3k-0 fDQNGi"
       >
         <div
-          className="TabProvider__Container-sc-dghi3q-0 fMSgtM"
+          className="TabProvider__Container-sc-dghi3q-0 hMjFPD"
         >
           <ul
-            className="TabNavs__Container-sc-1s6vm0l-0 hNNxuo"
+            className="TabNavs__Container-sc-1s6vm0l-0 fNatPj"
           >
             <li
-              className="TabNav__Container-sc-eq25ji-0 fOYchU"
+              className="TabNav__Container-sc-eq25ji-0 khtWGz"
               data-cy="tab-nav-global_feed"
               onClick={[Function]}
             >
@@ -1086,38 +1566,118 @@ exports[`Home Snapshots renders home before login 1`] = `
             </li>
           </ul>
           <div
-            className="TabPane__Container-sc-12cvcpc-0 HPUUN"
+            className="TabPane__Container-sc-12cvcpc-0 IWqVW"
             data-cy="tab-pane-global_feed"
           >
             <div
-              className="FeedList__Container-sc-m88k4f-0 gTPhkw"
+              className="FeedList__Container-sc-m88k4f-0 cwdJLz"
               data-cy="feed-list"
             >
               <div
-                className="Feed__Container-sc-njujrp-0 bMSZkG"
+                className="Feed__Container-sc-njujrp-0 hCoOyB"
                 data-cy="feed-container"
               >
                 <div
-                  className="Feed__AuthorContainer-sc-njujrp-1 eGhnOd"
+                  className="Feed__AuthorContainer-sc-njujrp-1 kgsVwO"
                 >
                   <div
-                    className="Avatar__Wrapper-sc-m9feoe-0 icAXkY"
+                    className="Avatar__Wrapper-sc-m9feoe-0 ieHczv"
                   >
                     <div
-                      className="Avatar__Container-sc-m9feoe-1 JCubi w-8 h-8"
+                      className="Avatar__Container-sc-m9feoe-1 fQHyzl w-8 h-8"
                     >
-                      <img
-                        alt="avatar"
-                        className="Avatar__Img-sc-m9feoe-2 iQvAVN rounded-full"
-                        src="https://i.stack.imgur.com/xHWG8.jpg"
-                      />
+                      <span
+                        style={
+                          Object {
+                            "background": "none",
+                            "border": 0,
+                            "bottom": 0,
+                            "boxSizing": "border-box",
+                            "display": "block",
+                            "height": "initial",
+                            "left": 0,
+                            "margin": 0,
+                            "opacity": 1,
+                            "overflow": "hidden",
+                            "padding": 0,
+                            "position": "absolute",
+                            "right": 0,
+                            "top": 0,
+                            "width": "initial",
+                          }
+                        }
+                      >
+                        <img
+                          alt="avatar"
+                          className="Avatar__Img-sc-m9feoe-2 kuaPdK rounded-full"
+                          data-nimg="fill"
+                          decoding="async"
+                          src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                          style={
+                            Object {
+                              "border": "none",
+                              "bottom": 0,
+                              "boxSizing": "border-box",
+                              "display": "block",
+                              "height": 0,
+                              "left": 0,
+                              "margin": "auto",
+                              "maxHeight": "100%",
+                              "maxWidth": "100%",
+                              "minHeight": "100%",
+                              "minWidth": "100%",
+                              "objectFit": undefined,
+                              "objectPosition": undefined,
+                              "padding": 0,
+                              "position": "absolute",
+                              "right": 0,
+                              "top": 0,
+                              "width": 0,
+                            }
+                          }
+                        />
+                        <noscript>
+                          <img
+                            alt="avatar"
+                            className="Avatar__Img-sc-m9feoe-2 kuaPdK rounded-full"
+                            data-nimg="fill"
+                            decoding="async"
+                            loading="lazy"
+                            sizes="100vw"
+                            src="/_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=3840&q=75"
+                            srcSet="/_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=640&q=75 640w, /_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=750&q=75 750w, /_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=828&q=75 828w, /_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=1080&q=75 1080w, /_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=1200&q=75 1200w, /_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=1920&q=75 1920w, /_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=2048&q=75 2048w, /_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=3840&q=75 3840w"
+                            style={
+                              Object {
+                                "border": "none",
+                                "bottom": 0,
+                                "boxSizing": "border-box",
+                                "display": "block",
+                                "height": 0,
+                                "left": 0,
+                                "margin": "auto",
+                                "maxHeight": "100%",
+                                "maxWidth": "100%",
+                                "minHeight": "100%",
+                                "minWidth": "100%",
+                                "objectFit": undefined,
+                                "objectPosition": undefined,
+                                "padding": 0,
+                                "position": "absolute",
+                                "right": 0,
+                                "top": 0,
+                                "width": 0,
+                              }
+                            }
+                          />
+                        </noscript>
+                      </span>
                     </div>
                   </div>
                   <div
-                    className="Feed__AuthorInfo-sc-njujrp-2 jfXWuY"
+                    className="Feed__AuthorInfo-sc-njujrp-2 bwLqOH"
                   >
                     <div
-                      className="Feed__AuthorName-sc-njujrp-3 gdUFEX"
+                      className="Feed__AuthorName-sc-njujrp-3 fbCOoc"
                       data-cy="feed-profile"
                     >
                       <a
@@ -1129,13 +1689,13 @@ exports[`Home Snapshots renders home before login 1`] = `
                       </a>
                     </div>
                     <div
-                      className="Feed__AuthorDate-sc-njujrp-4 fvTnzi"
+                      className="Feed__AuthorDate-sc-njujrp-4 cqYxgN"
                     >
                       Thu Feb 18 2016
                     </div>
                   </div>
                   <div
-                    className="Feed__Favorite-sc-njujrp-5 jCrpzO"
+                    className="Feed__Favorite-sc-njujrp-5 gjwhNt"
                     data-cy="feed-favorite"
                     onClick={[Function]}
                   >
@@ -1167,40 +1727,40 @@ exports[`Home Snapshots renders home before login 1`] = `
                   </div>
                 </div>
                 <div
-                  className="Feed__Content-sc-njujrp-6 lavqJS"
+                  className="Feed__Content-sc-njujrp-6 bMJyvN"
                   data-cy="feed-content"
                   onClick={[Function]}
                 >
                   <h1
-                    className="Feed__Title-sc-njujrp-7 gWAxxU"
+                    className="Feed__Title-sc-njujrp-7 VSHlD"
                   >
                     How to train your dragon
                   </h1>
                   <div
-                    className="Feed__Body-sc-njujrp-8 eHXBuj"
+                    className="Feed__Body-sc-njujrp-8 ksVMoY"
                   >
                     <p>
                       Ever wonder how?
                     </p>
                   </div>
                   <div
-                    className="Feed__Footer-sc-njujrp-9 guhWFl"
+                    className="Feed__Footer-sc-njujrp-9 fPWzJO"
                   >
                     <div
-                      className="Feed__ReadMore-sc-njujrp-10 cVwpIN"
+                      className="Feed__ReadMore-sc-njujrp-10 dZzWHi"
                     >
                       Read more...
                     </div>
                     <div
-                      className="Feed__Tags-sc-njujrp-11 kHqpDe"
+                      className="Feed__Tags-sc-njujrp-11 guXOMJ"
                     >
                       <div
-                        className="Feed__Tag-sc-njujrp-12 djCIeG"
+                        className="Feed__Tag-sc-njujrp-12 bgLIUB"
                       >
                         dragons
                       </div>
                       <div
-                        className="Feed__Tag-sc-njujrp-12 djCIeG"
+                        className="Feed__Tag-sc-njujrp-12 bgLIUB"
                       >
                         training
                       </div>
@@ -1209,30 +1769,110 @@ exports[`Home Snapshots renders home before login 1`] = `
                 </div>
               </div>
               <div
-                className="Feed__Container-sc-njujrp-0 bMSZkG"
+                className="Feed__Container-sc-njujrp-0 hCoOyB"
                 data-cy="feed-container"
               >
                 <div
-                  className="Feed__AuthorContainer-sc-njujrp-1 eGhnOd"
+                  className="Feed__AuthorContainer-sc-njujrp-1 kgsVwO"
                 >
                   <div
-                    className="Avatar__Wrapper-sc-m9feoe-0 icAXkY"
+                    className="Avatar__Wrapper-sc-m9feoe-0 ieHczv"
                   >
                     <div
-                      className="Avatar__Container-sc-m9feoe-1 JCubi w-8 h-8"
+                      className="Avatar__Container-sc-m9feoe-1 fQHyzl w-8 h-8"
                     >
-                      <img
-                        alt="avatar"
-                        className="Avatar__Img-sc-m9feoe-2 iQvAVN rounded-full"
-                        src="https://i.stack.imgur.com/xHWG8.jpg"
-                      />
+                      <span
+                        style={
+                          Object {
+                            "background": "none",
+                            "border": 0,
+                            "bottom": 0,
+                            "boxSizing": "border-box",
+                            "display": "block",
+                            "height": "initial",
+                            "left": 0,
+                            "margin": 0,
+                            "opacity": 1,
+                            "overflow": "hidden",
+                            "padding": 0,
+                            "position": "absolute",
+                            "right": 0,
+                            "top": 0,
+                            "width": "initial",
+                          }
+                        }
+                      >
+                        <img
+                          alt="avatar"
+                          className="Avatar__Img-sc-m9feoe-2 kuaPdK rounded-full"
+                          data-nimg="fill"
+                          decoding="async"
+                          src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                          style={
+                            Object {
+                              "border": "none",
+                              "bottom": 0,
+                              "boxSizing": "border-box",
+                              "display": "block",
+                              "height": 0,
+                              "left": 0,
+                              "margin": "auto",
+                              "maxHeight": "100%",
+                              "maxWidth": "100%",
+                              "minHeight": "100%",
+                              "minWidth": "100%",
+                              "objectFit": undefined,
+                              "objectPosition": undefined,
+                              "padding": 0,
+                              "position": "absolute",
+                              "right": 0,
+                              "top": 0,
+                              "width": 0,
+                            }
+                          }
+                        />
+                        <noscript>
+                          <img
+                            alt="avatar"
+                            className="Avatar__Img-sc-m9feoe-2 kuaPdK rounded-full"
+                            data-nimg="fill"
+                            decoding="async"
+                            loading="lazy"
+                            sizes="100vw"
+                            src="/_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=3840&q=75"
+                            srcSet="/_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=640&q=75 640w, /_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=750&q=75 750w, /_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=828&q=75 828w, /_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=1080&q=75 1080w, /_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=1200&q=75 1200w, /_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=1920&q=75 1920w, /_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=2048&q=75 2048w, /_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=3840&q=75 3840w"
+                            style={
+                              Object {
+                                "border": "none",
+                                "bottom": 0,
+                                "boxSizing": "border-box",
+                                "display": "block",
+                                "height": 0,
+                                "left": 0,
+                                "margin": "auto",
+                                "maxHeight": "100%",
+                                "maxWidth": "100%",
+                                "minHeight": "100%",
+                                "minWidth": "100%",
+                                "objectFit": undefined,
+                                "objectPosition": undefined,
+                                "padding": 0,
+                                "position": "absolute",
+                                "right": 0,
+                                "top": 0,
+                                "width": 0,
+                              }
+                            }
+                          />
+                        </noscript>
+                      </span>
                     </div>
                   </div>
                   <div
-                    className="Feed__AuthorInfo-sc-njujrp-2 jfXWuY"
+                    className="Feed__AuthorInfo-sc-njujrp-2 bwLqOH"
                   >
                     <div
-                      className="Feed__AuthorName-sc-njujrp-3 gdUFEX"
+                      className="Feed__AuthorName-sc-njujrp-3 fbCOoc"
                       data-cy="feed-profile"
                     >
                       <a
@@ -1244,13 +1884,13 @@ exports[`Home Snapshots renders home before login 1`] = `
                       </a>
                     </div>
                     <div
-                      className="Feed__AuthorDate-sc-njujrp-4 fvTnzi"
+                      className="Feed__AuthorDate-sc-njujrp-4 cqYxgN"
                     >
                       Thu Feb 18 2016
                     </div>
                   </div>
                   <div
-                    className="Feed__Favorite-sc-njujrp-5 gCgReo"
+                    className="Feed__Favorite-sc-njujrp-5 cbgHkv"
                     data-cy="feed-favorite"
                     onClick={[Function]}
                   >
@@ -1282,35 +1922,35 @@ exports[`Home Snapshots renders home before login 1`] = `
                   </div>
                 </div>
                 <div
-                  className="Feed__Content-sc-njujrp-6 lavqJS"
+                  className="Feed__Content-sc-njujrp-6 bMJyvN"
                   data-cy="feed-content"
                   onClick={[Function]}
                 >
                   <h1
-                    className="Feed__Title-sc-njujrp-7 gWAxxU"
+                    className="Feed__Title-sc-njujrp-7 VSHlD"
                   >
                     How to train your dragon 2
                   </h1>
                   <div
-                    className="Feed__Body-sc-njujrp-8 eHXBuj"
+                    className="Feed__Body-sc-njujrp-8 ksVMoY"
                   >
                     <p>
                       So toothless
                     </p>
                   </div>
                   <div
-                    className="Feed__Footer-sc-njujrp-9 guhWFl"
+                    className="Feed__Footer-sc-njujrp-9 fPWzJO"
                   >
                     <div
-                      className="Feed__ReadMore-sc-njujrp-10 cVwpIN"
+                      className="Feed__ReadMore-sc-njujrp-10 dZzWHi"
                     >
                       Read more...
                     </div>
                     <div
-                      className="Feed__Tags-sc-njujrp-11 kHqpDe"
+                      className="Feed__Tags-sc-njujrp-11 guXOMJ"
                     >
                       <div
-                        className="Feed__Tag-sc-njujrp-12 djCIeG"
+                        className="Feed__Tag-sc-njujrp-12 bgLIUB"
                       >
                         dragons
                       </div>
@@ -1319,30 +1959,110 @@ exports[`Home Snapshots renders home before login 1`] = `
                 </div>
               </div>
               <div
-                className="Feed__Container-sc-njujrp-0 bMSZkG"
+                className="Feed__Container-sc-njujrp-0 hCoOyB"
                 data-cy="feed-container"
               >
                 <div
-                  className="Feed__AuthorContainer-sc-njujrp-1 eGhnOd"
+                  className="Feed__AuthorContainer-sc-njujrp-1 kgsVwO"
                 >
                   <div
-                    className="Avatar__Wrapper-sc-m9feoe-0 icAXkY"
+                    className="Avatar__Wrapper-sc-m9feoe-0 ieHczv"
                   >
                     <div
-                      className="Avatar__Container-sc-m9feoe-1 JCubi w-8 h-8"
+                      className="Avatar__Container-sc-m9feoe-1 fQHyzl w-8 h-8"
                     >
-                      <img
-                        alt="avatar"
-                        className="Avatar__Img-sc-m9feoe-2 iQvAVN rounded-full"
-                        src="https://i.stack.imgur.com/xHWG8.jpg"
-                      />
+                      <span
+                        style={
+                          Object {
+                            "background": "none",
+                            "border": 0,
+                            "bottom": 0,
+                            "boxSizing": "border-box",
+                            "display": "block",
+                            "height": "initial",
+                            "left": 0,
+                            "margin": 0,
+                            "opacity": 1,
+                            "overflow": "hidden",
+                            "padding": 0,
+                            "position": "absolute",
+                            "right": 0,
+                            "top": 0,
+                            "width": "initial",
+                          }
+                        }
+                      >
+                        <img
+                          alt="avatar"
+                          className="Avatar__Img-sc-m9feoe-2 kuaPdK rounded-full"
+                          data-nimg="fill"
+                          decoding="async"
+                          src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                          style={
+                            Object {
+                              "border": "none",
+                              "bottom": 0,
+                              "boxSizing": "border-box",
+                              "display": "block",
+                              "height": 0,
+                              "left": 0,
+                              "margin": "auto",
+                              "maxHeight": "100%",
+                              "maxWidth": "100%",
+                              "minHeight": "100%",
+                              "minWidth": "100%",
+                              "objectFit": undefined,
+                              "objectPosition": undefined,
+                              "padding": 0,
+                              "position": "absolute",
+                              "right": 0,
+                              "top": 0,
+                              "width": 0,
+                            }
+                          }
+                        />
+                        <noscript>
+                          <img
+                            alt="avatar"
+                            className="Avatar__Img-sc-m9feoe-2 kuaPdK rounded-full"
+                            data-nimg="fill"
+                            decoding="async"
+                            loading="lazy"
+                            sizes="100vw"
+                            src="/_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=3840&q=75"
+                            srcSet="/_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=640&q=75 640w, /_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=750&q=75 750w, /_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=828&q=75 828w, /_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=1080&q=75 1080w, /_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=1200&q=75 1200w, /_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=1920&q=75 1920w, /_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=2048&q=75 2048w, /_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=3840&q=75 3840w"
+                            style={
+                              Object {
+                                "border": "none",
+                                "bottom": 0,
+                                "boxSizing": "border-box",
+                                "display": "block",
+                                "height": 0,
+                                "left": 0,
+                                "margin": "auto",
+                                "maxHeight": "100%",
+                                "maxWidth": "100%",
+                                "minHeight": "100%",
+                                "minWidth": "100%",
+                                "objectFit": undefined,
+                                "objectPosition": undefined,
+                                "padding": 0,
+                                "position": "absolute",
+                                "right": 0,
+                                "top": 0,
+                                "width": 0,
+                              }
+                            }
+                          />
+                        </noscript>
+                      </span>
                     </div>
                   </div>
                   <div
-                    className="Feed__AuthorInfo-sc-njujrp-2 jfXWuY"
+                    className="Feed__AuthorInfo-sc-njujrp-2 bwLqOH"
                   >
                     <div
-                      className="Feed__AuthorName-sc-njujrp-3 gdUFEX"
+                      className="Feed__AuthorName-sc-njujrp-3 fbCOoc"
                       data-cy="feed-profile"
                     >
                       <a
@@ -1354,13 +2074,13 @@ exports[`Home Snapshots renders home before login 1`] = `
                       </a>
                     </div>
                     <div
-                      className="Feed__AuthorDate-sc-njujrp-4 fvTnzi"
+                      className="Feed__AuthorDate-sc-njujrp-4 cqYxgN"
                     >
                       Thu Feb 18 2016
                     </div>
                   </div>
                   <div
-                    className="Feed__Favorite-sc-njujrp-5 jCrpzO"
+                    className="Feed__Favorite-sc-njujrp-5 gjwhNt"
                     data-cy="feed-favorite"
                     onClick={[Function]}
                   >
@@ -1392,35 +2112,35 @@ exports[`Home Snapshots renders home before login 1`] = `
                   </div>
                 </div>
                 <div
-                  className="Feed__Content-sc-njujrp-6 lavqJS"
+                  className="Feed__Content-sc-njujrp-6 bMJyvN"
                   data-cy="feed-content"
                   onClick={[Function]}
                 >
                   <h1
-                    className="Feed__Title-sc-njujrp-7 gWAxxU"
+                    className="Feed__Title-sc-njujrp-7 VSHlD"
                   >
                     How to train your dragon 3
                   </h1>
                   <div
-                    className="Feed__Body-sc-njujrp-8 eHXBuj"
+                    className="Feed__Body-sc-njujrp-8 ksVMoY"
                   >
                     <p>
                       So toothless
                     </p>
                   </div>
                   <div
-                    className="Feed__Footer-sc-njujrp-9 guhWFl"
+                    className="Feed__Footer-sc-njujrp-9 fPWzJO"
                   >
                     <div
-                      className="Feed__ReadMore-sc-njujrp-10 cVwpIN"
+                      className="Feed__ReadMore-sc-njujrp-10 dZzWHi"
                     >
                       Read more...
                     </div>
                     <div
-                      className="Feed__Tags-sc-njujrp-11 kHqpDe"
+                      className="Feed__Tags-sc-njujrp-11 guXOMJ"
                     >
                       <div
-                        className="Feed__Tag-sc-njujrp-12 djCIeG"
+                        className="Feed__Tag-sc-njujrp-12 bgLIUB"
                       >
                         dragons
                       </div>
@@ -1429,30 +2149,110 @@ exports[`Home Snapshots renders home before login 1`] = `
                 </div>
               </div>
               <div
-                className="Feed__Container-sc-njujrp-0 bMSZkG"
+                className="Feed__Container-sc-njujrp-0 hCoOyB"
                 data-cy="feed-container"
               >
                 <div
-                  className="Feed__AuthorContainer-sc-njujrp-1 eGhnOd"
+                  className="Feed__AuthorContainer-sc-njujrp-1 kgsVwO"
                 >
                   <div
-                    className="Avatar__Wrapper-sc-m9feoe-0 icAXkY"
+                    className="Avatar__Wrapper-sc-m9feoe-0 ieHczv"
                   >
                     <div
-                      className="Avatar__Container-sc-m9feoe-1 JCubi w-8 h-8"
+                      className="Avatar__Container-sc-m9feoe-1 fQHyzl w-8 h-8"
                     >
-                      <img
-                        alt="avatar"
-                        className="Avatar__Img-sc-m9feoe-2 iQvAVN rounded-full"
-                        src="https://i.stack.imgur.com/xHWG8.jpg"
-                      />
+                      <span
+                        style={
+                          Object {
+                            "background": "none",
+                            "border": 0,
+                            "bottom": 0,
+                            "boxSizing": "border-box",
+                            "display": "block",
+                            "height": "initial",
+                            "left": 0,
+                            "margin": 0,
+                            "opacity": 1,
+                            "overflow": "hidden",
+                            "padding": 0,
+                            "position": "absolute",
+                            "right": 0,
+                            "top": 0,
+                            "width": "initial",
+                          }
+                        }
+                      >
+                        <img
+                          alt="avatar"
+                          className="Avatar__Img-sc-m9feoe-2 kuaPdK rounded-full"
+                          data-nimg="fill"
+                          decoding="async"
+                          src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                          style={
+                            Object {
+                              "border": "none",
+                              "bottom": 0,
+                              "boxSizing": "border-box",
+                              "display": "block",
+                              "height": 0,
+                              "left": 0,
+                              "margin": "auto",
+                              "maxHeight": "100%",
+                              "maxWidth": "100%",
+                              "minHeight": "100%",
+                              "minWidth": "100%",
+                              "objectFit": undefined,
+                              "objectPosition": undefined,
+                              "padding": 0,
+                              "position": "absolute",
+                              "right": 0,
+                              "top": 0,
+                              "width": 0,
+                            }
+                          }
+                        />
+                        <noscript>
+                          <img
+                            alt="avatar"
+                            className="Avatar__Img-sc-m9feoe-2 kuaPdK rounded-full"
+                            data-nimg="fill"
+                            decoding="async"
+                            loading="lazy"
+                            sizes="100vw"
+                            src="/_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=3840&q=75"
+                            srcSet="/_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=640&q=75 640w, /_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=750&q=75 750w, /_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=828&q=75 828w, /_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=1080&q=75 1080w, /_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=1200&q=75 1200w, /_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=1920&q=75 1920w, /_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=2048&q=75 2048w, /_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=3840&q=75 3840w"
+                            style={
+                              Object {
+                                "border": "none",
+                                "bottom": 0,
+                                "boxSizing": "border-box",
+                                "display": "block",
+                                "height": 0,
+                                "left": 0,
+                                "margin": "auto",
+                                "maxHeight": "100%",
+                                "maxWidth": "100%",
+                                "minHeight": "100%",
+                                "minWidth": "100%",
+                                "objectFit": undefined,
+                                "objectPosition": undefined,
+                                "padding": 0,
+                                "position": "absolute",
+                                "right": 0,
+                                "top": 0,
+                                "width": 0,
+                              }
+                            }
+                          />
+                        </noscript>
+                      </span>
                     </div>
                   </div>
                   <div
-                    className="Feed__AuthorInfo-sc-njujrp-2 jfXWuY"
+                    className="Feed__AuthorInfo-sc-njujrp-2 bwLqOH"
                   >
                     <div
-                      className="Feed__AuthorName-sc-njujrp-3 gdUFEX"
+                      className="Feed__AuthorName-sc-njujrp-3 fbCOoc"
                       data-cy="feed-profile"
                     >
                       <a
@@ -1464,13 +2264,13 @@ exports[`Home Snapshots renders home before login 1`] = `
                       </a>
                     </div>
                     <div
-                      className="Feed__AuthorDate-sc-njujrp-4 fvTnzi"
+                      className="Feed__AuthorDate-sc-njujrp-4 cqYxgN"
                     >
                       Thu Feb 18 2016
                     </div>
                   </div>
                   <div
-                    className="Feed__Favorite-sc-njujrp-5 jCrpzO"
+                    className="Feed__Favorite-sc-njujrp-5 gjwhNt"
                     data-cy="feed-favorite"
                     onClick={[Function]}
                   >
@@ -1502,35 +2302,35 @@ exports[`Home Snapshots renders home before login 1`] = `
                   </div>
                 </div>
                 <div
-                  className="Feed__Content-sc-njujrp-6 lavqJS"
+                  className="Feed__Content-sc-njujrp-6 bMJyvN"
                   data-cy="feed-content"
                   onClick={[Function]}
                 >
                   <h1
-                    className="Feed__Title-sc-njujrp-7 gWAxxU"
+                    className="Feed__Title-sc-njujrp-7 VSHlD"
                   >
                     How to train your dragon 4
                   </h1>
                   <div
-                    className="Feed__Body-sc-njujrp-8 eHXBuj"
+                    className="Feed__Body-sc-njujrp-8 ksVMoY"
                   >
                     <p>
                       So toothless
                     </p>
                   </div>
                   <div
-                    className="Feed__Footer-sc-njujrp-9 guhWFl"
+                    className="Feed__Footer-sc-njujrp-9 fPWzJO"
                   >
                     <div
-                      className="Feed__ReadMore-sc-njujrp-10 cVwpIN"
+                      className="Feed__ReadMore-sc-njujrp-10 dZzWHi"
                     >
                       Read more...
                     </div>
                     <div
-                      className="Feed__Tags-sc-njujrp-11 kHqpDe"
+                      className="Feed__Tags-sc-njujrp-11 guXOMJ"
                     >
                       <div
-                        className="Feed__Tag-sc-njujrp-12 djCIeG"
+                        className="Feed__Tag-sc-njujrp-12 bgLIUB"
                       >
                         dragons
                       </div>
@@ -1539,30 +2339,110 @@ exports[`Home Snapshots renders home before login 1`] = `
                 </div>
               </div>
               <div
-                className="Feed__Container-sc-njujrp-0 bMSZkG"
+                className="Feed__Container-sc-njujrp-0 hCoOyB"
                 data-cy="feed-container"
               >
                 <div
-                  className="Feed__AuthorContainer-sc-njujrp-1 eGhnOd"
+                  className="Feed__AuthorContainer-sc-njujrp-1 kgsVwO"
                 >
                   <div
-                    className="Avatar__Wrapper-sc-m9feoe-0 icAXkY"
+                    className="Avatar__Wrapper-sc-m9feoe-0 ieHczv"
                   >
                     <div
-                      className="Avatar__Container-sc-m9feoe-1 JCubi w-8 h-8"
+                      className="Avatar__Container-sc-m9feoe-1 fQHyzl w-8 h-8"
                     >
-                      <img
-                        alt="avatar"
-                        className="Avatar__Img-sc-m9feoe-2 iQvAVN rounded-full"
-                        src="https://i.stack.imgur.com/xHWG8.jpg"
-                      />
+                      <span
+                        style={
+                          Object {
+                            "background": "none",
+                            "border": 0,
+                            "bottom": 0,
+                            "boxSizing": "border-box",
+                            "display": "block",
+                            "height": "initial",
+                            "left": 0,
+                            "margin": 0,
+                            "opacity": 1,
+                            "overflow": "hidden",
+                            "padding": 0,
+                            "position": "absolute",
+                            "right": 0,
+                            "top": 0,
+                            "width": "initial",
+                          }
+                        }
+                      >
+                        <img
+                          alt="avatar"
+                          className="Avatar__Img-sc-m9feoe-2 kuaPdK rounded-full"
+                          data-nimg="fill"
+                          decoding="async"
+                          src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                          style={
+                            Object {
+                              "border": "none",
+                              "bottom": 0,
+                              "boxSizing": "border-box",
+                              "display": "block",
+                              "height": 0,
+                              "left": 0,
+                              "margin": "auto",
+                              "maxHeight": "100%",
+                              "maxWidth": "100%",
+                              "minHeight": "100%",
+                              "minWidth": "100%",
+                              "objectFit": undefined,
+                              "objectPosition": undefined,
+                              "padding": 0,
+                              "position": "absolute",
+                              "right": 0,
+                              "top": 0,
+                              "width": 0,
+                            }
+                          }
+                        />
+                        <noscript>
+                          <img
+                            alt="avatar"
+                            className="Avatar__Img-sc-m9feoe-2 kuaPdK rounded-full"
+                            data-nimg="fill"
+                            decoding="async"
+                            loading="lazy"
+                            sizes="100vw"
+                            src="/_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=3840&q=75"
+                            srcSet="/_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=640&q=75 640w, /_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=750&q=75 750w, /_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=828&q=75 828w, /_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=1080&q=75 1080w, /_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=1200&q=75 1200w, /_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=1920&q=75 1920w, /_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=2048&q=75 2048w, /_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=3840&q=75 3840w"
+                            style={
+                              Object {
+                                "border": "none",
+                                "bottom": 0,
+                                "boxSizing": "border-box",
+                                "display": "block",
+                                "height": 0,
+                                "left": 0,
+                                "margin": "auto",
+                                "maxHeight": "100%",
+                                "maxWidth": "100%",
+                                "minHeight": "100%",
+                                "minWidth": "100%",
+                                "objectFit": undefined,
+                                "objectPosition": undefined,
+                                "padding": 0,
+                                "position": "absolute",
+                                "right": 0,
+                                "top": 0,
+                                "width": 0,
+                              }
+                            }
+                          />
+                        </noscript>
+                      </span>
                     </div>
                   </div>
                   <div
-                    className="Feed__AuthorInfo-sc-njujrp-2 jfXWuY"
+                    className="Feed__AuthorInfo-sc-njujrp-2 bwLqOH"
                   >
                     <div
-                      className="Feed__AuthorName-sc-njujrp-3 gdUFEX"
+                      className="Feed__AuthorName-sc-njujrp-3 fbCOoc"
                       data-cy="feed-profile"
                     >
                       <a
@@ -1574,13 +2454,13 @@ exports[`Home Snapshots renders home before login 1`] = `
                       </a>
                     </div>
                     <div
-                      className="Feed__AuthorDate-sc-njujrp-4 fvTnzi"
+                      className="Feed__AuthorDate-sc-njujrp-4 cqYxgN"
                     >
                       Thu Feb 18 2016
                     </div>
                   </div>
                   <div
-                    className="Feed__Favorite-sc-njujrp-5 jCrpzO"
+                    className="Feed__Favorite-sc-njujrp-5 gjwhNt"
                     data-cy="feed-favorite"
                     onClick={[Function]}
                   >
@@ -1612,35 +2492,35 @@ exports[`Home Snapshots renders home before login 1`] = `
                   </div>
                 </div>
                 <div
-                  className="Feed__Content-sc-njujrp-6 lavqJS"
+                  className="Feed__Content-sc-njujrp-6 bMJyvN"
                   data-cy="feed-content"
                   onClick={[Function]}
                 >
                   <h1
-                    className="Feed__Title-sc-njujrp-7 gWAxxU"
+                    className="Feed__Title-sc-njujrp-7 VSHlD"
                   >
                     How to train your dragon 5
                   </h1>
                   <div
-                    className="Feed__Body-sc-njujrp-8 eHXBuj"
+                    className="Feed__Body-sc-njujrp-8 ksVMoY"
                   >
                     <p>
                       So toothless
                     </p>
                   </div>
                   <div
-                    className="Feed__Footer-sc-njujrp-9 guhWFl"
+                    className="Feed__Footer-sc-njujrp-9 fPWzJO"
                   >
                     <div
-                      className="Feed__ReadMore-sc-njujrp-10 cVwpIN"
+                      className="Feed__ReadMore-sc-njujrp-10 dZzWHi"
                     >
                       Read more...
                     </div>
                     <div
-                      className="Feed__Tags-sc-njujrp-11 kHqpDe"
+                      className="Feed__Tags-sc-njujrp-11 guXOMJ"
                     >
                       <div
-                        className="Feed__Tag-sc-njujrp-12 djCIeG"
+                        className="Feed__Tag-sc-njujrp-12 bgLIUB"
                       >
                         dragons
                       </div>
@@ -1649,7 +2529,7 @@ exports[`Home Snapshots renders home before login 1`] = `
                 </div>
               </div>
               <div
-                className="Pagination__Container-sc-z81ile-0 iuSHvy"
+                className="Pagination__Container-sc-z81ile-0 dGdshJ"
               >
                 <div
                   className="bg-white px-4 py-3 flex items-center justify-between border-t border-gray-200 sm:px-6"
@@ -1658,7 +2538,7 @@ exports[`Home Snapshots renders home before login 1`] = `
                     className="flex-1 flex justify-between sm:hidden"
                   >
                     <a
-                      className="Pagination__PrevNextButton-sc-z81ile-1 hOSAln"
+                      className="Pagination__PrevNextButton-sc-z81ile-1 fBtVrM"
                       disabled={true}
                       href="#"
                       onClick={[Function]}
@@ -1666,7 +2546,7 @@ exports[`Home Snapshots renders home before login 1`] = `
                       Previous
                     </a>
                     <a
-                      className="Pagination__PrevNextButton-sc-z81ile-1 lnJlne ml-3"
+                      className="Pagination__PrevNextButton-sc-z81ile-1 iTKNyl ml-3"
                       disabled={false}
                       href="#"
                       onClick={[Function]}
@@ -1785,10 +2665,10 @@ exports[`Home Snapshots renders home before login 1`] = `
         </div>
       </div>
       <div
-        className="HomeTagsContentTemplate__Container-sc-y9g3tk-0 iCwBlJ"
+        className="HomeTagsContentTemplate__Container-sc-y9g3tk-0 jkQEJq"
       >
         <div
-          className="HomeTagsContentTemplate__Content-sc-y9g3tk-1 evbsOZ"
+          className="HomeTagsContentTemplate__Content-sc-y9g3tk-1 dkgAJu"
           data-cy="content-tags-container"
         >
           <div
@@ -1801,7 +2681,7 @@ exports[`Home Snapshots renders home before login 1`] = `
             className="HomeTagsContentTemplate__Tags-sc-y9g3tk-2"
           >
             <div
-              className="HomeTagsContentTemplate__Tag-sc-y9g3tk-3 hvbxGV"
+              className="HomeTagsContentTemplate__Tag-sc-y9g3tk-3 iXCENq"
               data-cy="content-tag"
               onClick={[Function]}
               selected={false}
@@ -1809,7 +2689,7 @@ exports[`Home Snapshots renders home before login 1`] = `
               dragons
             </div>
             <div
-              className="HomeTagsContentTemplate__Tag-sc-y9g3tk-3 hvbxGV"
+              className="HomeTagsContentTemplate__Tag-sc-y9g3tk-3 iXCENq"
               data-cy="content-tag"
               onClick={[Function]}
               selected={false}
@@ -1822,10 +2702,10 @@ exports[`Home Snapshots renders home before login 1`] = `
     </div>
   </div>
   <div
-    className="FooterTemplate__Container-sc-96wla6-0 dxhwgY"
+    className="FooterTemplate__Container-sc-96wla6-0 cOGJUH"
   >
     <span
-      className="FooterTemplate__SiteLink-sc-96wla6-1 iJSbEN text-base mr-1 font-bold"
+      className="FooterTemplate__SiteLink-sc-96wla6-1 ENejy text-base mr-1 font-bold"
       data-cy="footer-logo-link"
       href="/"
       onClick={[Function]}
@@ -1835,7 +2715,7 @@ exports[`Home Snapshots renders home before login 1`] = `
     </span>
     © 2020. An interactive learning project from
     <span
-      className="FooterTemplate__SiteLink-sc-96wla6-1 iJSbEN ml-1"
+      className="FooterTemplate__SiteLink-sc-96wla6-1 ENejy ml-1"
       data-cy="footer-site-link"
       href="https://thinkster.io/"
       onClick={[Function]}

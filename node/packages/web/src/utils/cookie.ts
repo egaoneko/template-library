@@ -9,10 +9,9 @@ export function getToken(): [string | undefined, string | undefined] {
 export function setToken(accessToken: string, refreshToken?: string): void {
   axios.defaults.headers.Authorization = 'Bearer ' + accessToken;
 
-  const expires = new Date(new Date().getTime() + 7 * 24 * 60 * 60 * 1000);
   const options: CookieAttributes = {
     path: '/',
-    expires: expires,
+    expires: 1,
     httpOnly: Boolean(process.env.NEXT_PUBLIC_HTTP_ONLY),
   };
 

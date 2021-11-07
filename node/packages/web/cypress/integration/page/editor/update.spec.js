@@ -14,7 +14,7 @@ describe('Edit Article', () => {
     cy.mockServerStart(8080);
     cy.login();
     cy.prepareEdit();
-    cy.visit(`http://localhost:3000/editor/${article.slug}`);
+    cy.visit(`http://localhost:3000/editor/edit/${article.slug}`);
     cy.get('[data-cy=head-title]').contains('EDIT ARTICLE');
     cy.get('[data-cy=content-form-input-title]').should('have.attr', 'placeholder', 'Article Title');
     cy.get('[data-cy=content-form-input-description]').should('have.attr', 'placeholder', `What's this article about?`);
@@ -30,7 +30,7 @@ describe('Edit Article', () => {
     cy.mockServerStart(8080);
     cy.login();
     cy.prepareEdit();
-    cy.visit(`http://localhost:3000/editor/${article.slug}`);
+    cy.visit(`http://localhost:3000/editor/edit/${article.slug}`);
     cy.intercept('PUT', `http://localhost:8080/api/articles/${article.slug}`, {
       fixture: 'article/article.json',
     }).as('publishArticle');
