@@ -75,6 +75,16 @@ export class UserService {
     return this.ofUserDto(model);
   }
 
+  async getUserByRefreshToken(email: string, refreshToken: string): Promise<UserDto | null> {
+    const model = await this.userRepository.findOneByEmailAndRefreshToken(email, refreshToken);
+
+    if (!model) {
+      return null;
+    }
+
+    return this.ofUserDto(model);
+  }
+
   async getAuthUser(email: string, options?: SequelizeOptionDto): Promise<AuthUserDto | null> {
     const model = await this.userRepository.findOneByEmail(email, options);
 
@@ -111,6 +121,37 @@ export class UserService {
     }
 
     return updatedUser;
+  }
+
+  @Transactional()
+  async setRefreshToken(email: string, refreshToken: string, options?: SequelizeOptionDto): Promise<void> {
+    const user = await this.getUserByEmail(email, options);
+
+    if (!user) {
+      throw new BadRequestException('Not found user');
+    }
+
+    const dto = new UpdateUserDto();
+    dto.id = user.id;
+    dto.refreshToken = refreshToken;
+
+    const [rows] = await this.userRepository.update(dto, options);
+
+    if (rows !== 1) {
+      throw new InternalServerErrorException('Do not set refresh token');
+    }
+  }
+
+  async clearRefreshToken(id: number): Promise<void> {
+    const dto = new UpdateUserDto();
+    dto.id = id;
+    dto.refreshToken = null;
+
+    const [rows] = await this.userRepository.update(dto);
+
+    if (rows !== 1) {
+      throw new InternalServerErrorException('Do not clear refresh token');
+    }
   }
 
   async ofUserDto(entity: User): Promise<UserDto> {

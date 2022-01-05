@@ -80,6 +80,21 @@ describe('UserRepository', () => {
     expect(mockUser.findOne).toBeCalledWith({ where: { username: 'test' }, transaction: undefined });
   });
 
+  it('should be return user by id and refresh token', async () => {
+    const actual = await repository.findOneByEmailAndRefreshToken('test@test.com', 'token');
+
+    if (!actual) {
+      throw 'Not found user';
+    }
+
+    expect(actual).toBeDefined();
+    expect(mockUser.findOne).toBeCalledTimes(1);
+    expect(mockUser.findOne).toBeCalledWith({
+      where: { email: 'test@test.com', refreshToken: 'token' },
+      transaction: undefined,
+    });
+  });
+
   it('should be update', async () => {
     const dto = new UpdateUserDto();
     dto.id = 1;

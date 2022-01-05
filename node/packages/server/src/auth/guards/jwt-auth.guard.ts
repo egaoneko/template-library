@@ -4,10 +4,11 @@ import { AuthGuard } from '@nestjs/passport';
 import { ExecutionContext, Injectable, UnauthorizedException } from '@nestjs/common';
 import { Observable } from 'rxjs';
 import { Reflector } from '@nestjs/core';
+import { JWT_NAME } from '@auth/constants/auth.constant';
 import { NO_AUTH_META_DATA_KEY } from '@shared/decorators/auth/no-auth';
 
 @Injectable()
-export class JwtAuthGuard extends AuthGuard('jwt') {
+export class JwtAuthGuard extends AuthGuard(JWT_NAME) {
   constructor(private readonly reflector: Reflector) {
     super();
   }

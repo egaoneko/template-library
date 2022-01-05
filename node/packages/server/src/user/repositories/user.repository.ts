@@ -48,6 +48,17 @@ export class UserRepository {
     });
   }
 
+  async findOneByEmailAndRefreshToken(
+    email: string,
+    refreshToken: string,
+    options?: SequelizeOptionDto,
+  ): Promise<User | null> {
+    return this.userModel.findOne({
+      where: { email, refreshToken },
+      transaction: options?.transaction,
+    });
+  }
+
   async update(updateUserDto: UpdateUserDto, options?: SequelizeOptionDto): Promise<[number, User[]]> {
     return this.userModel.update(updateUserDto, {
       where: {

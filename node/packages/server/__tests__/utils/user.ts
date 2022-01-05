@@ -28,5 +28,6 @@ export async function getTestUserDto(app: INestApplication, user: User): Promise
   });
 
   dto.token = res.body.token;
+  dto.refreshToken = res.body.refreshToken;
   return dto;
 }

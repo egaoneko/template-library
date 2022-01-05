@@ -1,38 +1,27 @@
-import {
-  Body,
-  Controller,
-  Get,
-  Post,
-  Res,
-  UseGuards,
-  UsePipes,
-  ValidationPipe
-} from '@nestjs/common';
+import { RefreshDto } from '@auth/dto/request/refresh.dto';
+import { AuthService } from '@auth/auth.service';
+import { Body, Controller, Get, Post, UseGuards, UsePipes, ValidationPipe } from '@nestjs/common';
 import { LocalAuthGuard } from '@auth/guards/local-auth.guard';
+import { JwtRefreshGuard } from '@auth/guards/jwt-refresh.guard';
 import { CreateUserDto } from '@user/dto/request/create-user.dto';
 import { RegisterDto } from './dto/request/register.dto';
 import { UserService } from '@user/user.service';
 import { NoAuth } from '@root/shared/decorators/auth/no-auth';
-import {
-  ApiBody,
-  ApiOperation,
-  ApiResponse,
-  ApiTags
-} from '@nestjs/swagger';
+import { ApiBody, ApiOperation, ApiResponse, ApiTags } from '@nestjs/swagger';
 import { UserDto } from '@user/dto/response/user.dto';
 import { LoginDto } from '@auth/dto/request/login.dto';
 import { Crypto } from '@shared/crypto/crypto';
 import { CurrentUser } from '@user/decorators/current-user.decorator';
-import { Response } from 'express';
-import { ACCESS_TOKEN_NAME } from './constants/auth.constant';
 import { ConfigService } from '@nestjs/config';
-import addMilliseconds from 'date-fns/addMilliseconds';
 
 @ApiTags('auth')
 @Controller('/api/auth/')
 export class AuthController {
-  constructor(private readonly usersService: UserService, private readonly configService: ConfigService) {
-  }
+  constructor(
+    private readonly usersService: UserService,
+    private readonly configService: ConfigService,
+    private readonly authService: AuthService,
+  ) {}
 
   @NoAuth()
   @Post('/register')
@@ -61,11 +50,7 @@ export class AuthController {
   @ApiBody({ description: 'login body', type: LoginDto })
   @ApiResponse({ status: 201, description: 'User', type: UserDto })
   @ApiResponse({ status: 400, description: 'Unauthorized' })
-  async login(@CurrentUser() currentUser: UserDto, @Res({ passthrough: true }) response: Response): Promise<UserDto> {
-    response.cookie(ACCESS_TOKEN_NAME, currentUser.token, {
-      maxAge: this.configService.get<number>('jwt.access-token.expiration-time'),
-      httpOnly: true,
-    });
+  async login(@CurrentUser() currentUser: UserDto): Promise<UserDto> {
     return currentUser;
   }
 
@@ -74,7 +59,22 @@ export class AuthController {
   @ApiOperation({ summary: 'logout' })
   @ApiResponse({ status: 200 })
   @ApiResponse({ status: 400, description: 'Unauthorized' })
-  async logout(@Res({ passthrough: true }) response: Response): Promise<void> {
-    response.clearCookie(ACCESS_TOKEN_NAME);
+  async logout(@CurrentUser('id') currentUserId: number | null = null): Promise<void> {
+    if (!currentUserId) {
+      return;
+    }
+
+    this.usersService.clearRefreshToken(currentUserId);
+  }
+
+  @NoAuth()
+  @UseGuards(JwtRefreshGuard)
+  @Post('/refresh')
+  @ApiOperation({ summary: 'refresh' })
+  @ApiBody({ description: 'refresh body', type: RefreshDto })
+  @ApiResponse({ status: 200 })
+  @ApiResponse({ status: 400, description: 'Unauthorized' })
+  async refresh(@CurrentUser() currentUser: UserDto): Promise<UserDto> {
+    return this.authService.refresh(currentUser);
   }
 }

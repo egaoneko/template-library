@@ -33,9 +33,32 @@ export class AuthService {
       email: user.email,
       username: user.username,
     } as IJwtPayload;
+
     user.token = this.jwtService.sign(payload, {
+      secret: this.configService.get<string>('jwt.access-token.secret'),
       expiresIn: `${this.configService.get('jwt.access-token.expiration-time')}s`,
     });
+
+    user.refreshToken = this.jwtService.sign(payload, {
+      secret: this.configService.get<string>('jwt.refresh-token.secret'),
+      expiresIn: `${this.configService.get('jwt.refresh-token.expiration-time')}s`,
+    });
+    await this.userService.setRefreshToken(user.email, user.refreshToken);
+
+    return user;
+  }
+
+  async refresh(user: UserDto): Promise<UserDto> {
+    const payload = {
+      email: user.email,
+      username: user.username,
+    } as IJwtPayload;
+
+    user.token = this.jwtService.sign(payload, {
+      secret: this.configService.get<string>('jwt.access-token.secret'),
+      expiresIn: `${this.configService.get('jwt.access-token.expiration-time')}s`,
+    });
+
     return user;
   }
 }

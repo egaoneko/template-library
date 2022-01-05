@@ -19,7 +19,15 @@ describe('AuthService', () => {
     mockConfigService = createMock<ConfigService>();
 
     /* eslint-disable @typescript-eslint/no-explicit-any */
-    mockConfigService.get = jest.fn().mockReturnValue(900) as any;
+    mockJwtService.sign = jest.fn().mockReturnValueOnce('access token').mockReturnValue('refresh token') as any;
+
+    /* eslint-disable @typescript-eslint/no-explicit-any */
+    mockConfigService.get = jest
+      .fn()
+      .mockReturnValueOnce('ACCESS_TOKEN_SECRET_TEST')
+      .mockReturnValueOnce(900)
+      .mockReturnValueOnce('REFRESH_TOKEN_SECRET_TEST')
+      .mockReturnValue(3600) as any;
 
     const module: TestingModule = await Test.createTestingModule({
       providers: [
@@ -63,7 +71,7 @@ describe('AuthService', () => {
     const actual = await service.validateUser('test@test.com', '1234');
     expect(actual).toBeDefined();
     expect(mockUserService.getAuthUser).toBeCalledTimes(1);
-    expect(mockJwtService.sign).toBeCalledTimes(1);
+    expect(mockJwtService.sign).toBeCalledTimes(2);
     expect(toUserDto).toBeCalledTimes(1);
   });
 
@@ -95,7 +103,33 @@ describe('AuthService', () => {
     } as IUser;
     const actual = await service.login(user);
     expect(actual).toBeDefined();
+    expect(mockJwtService.sign).toBeCalledTimes(2);
+    expect((mockJwtService.sign as jest.Mock).mock.calls[0][0]).toEqual({ email: user.email, username: user.username });
+    expect((mockJwtService.sign as jest.Mock).mock.calls[0][1]).toEqual({
+      secret: 'ACCESS_TOKEN_SECRET_TEST',
+      expiresIn: '900s',
+    });
+    expect((mockJwtService.sign as jest.Mock).mock.calls[1][0]).toEqual({ email: user.email, username: user.username });
+    expect((mockJwtService.sign as jest.Mock).mock.calls[1][1]).toEqual({
+      secret: 'REFRESH_TOKEN_SECRET_TEST',
+      expiresIn: '3600s',
+    });
+    expect(mockUserService.setRefreshToken).toBeCalledTimes(1);
+    expect(mockUserService.setRefreshToken).toBeCalledWith('test@test.com', 'refresh token');
+  });
+
+  it('refresh with valid user', async () => {
+    const user = {
+      email: 'test@test.com',
+      username: 'test',
+    } as IUser;
+    const actual = await service.refresh(user);
+    expect(actual).toBeDefined();
     expect(mockJwtService.sign).toBeCalledTimes(1);
-    expect(mockJwtService.sign).toBeCalledWith({ email: user.email, username: user.username }, { expiresIn: '900s' });
+    expect((mockJwtService.sign as jest.Mock).mock.calls[0][0]).toEqual({ email: user.email, username: user.username });
+    expect((mockJwtService.sign as jest.Mock).mock.calls[0][1]).toEqual({
+      secret: 'ACCESS_TOKEN_SECRET_TEST',
+      expiresIn: '900s',
+    });
   });
 });

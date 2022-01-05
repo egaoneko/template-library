@@ -1,2 +1,2 @@
-export const ACCESS_TOKEN_NAME = 'RW_AT';
-export const REFRESH_TOKEN_NAME = 'RW_RT';
+export const JWT_NAME = 'jwt';
+export const JWT_REFRESH_NAME = 'jwt-refresh-token';

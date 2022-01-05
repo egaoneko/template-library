@@ -1,3 +1,4 @@
+import { AuthService } from './auth.service';
 import { Test, TestingModule } from '@nestjs/testing';
 import { AuthController } from './auth.controller';
 import { UserService } from '../user/user.service';
@@ -7,16 +8,17 @@ import { createMock } from '@golevelup/ts-jest';
 import { Crypto } from '../shared/crypto/crypto';
 import { UserDto } from '../user/dto/response/user.dto';
 import { ConfigService } from '@nestjs/config';
-import { Response } from 'express';
-import { ACCESS_TOKEN_NAME } from './constants/auth.constant';
+
 describe('AuthController', () => {
   let controller: AuthController;
   let mockUserService: UserService;
   let mockConfigService: ConfigService;
+  let mockAuthService: AuthService;
 
   beforeEach(async () => {
     mockUserService = createMock<UserService>();
     mockConfigService = createMock<ConfigService>();
+    mockAuthService = createMock<AuthService>();
 
     /* eslint-disable @typescript-eslint/no-explicit-any */
     mockConfigService.get = jest.fn().mockReturnValue(3000) as any;
@@ -29,6 +31,14 @@ describe('AuthController', () => {
         {
           provide: ConfigService,
           useValue: mockConfigService,
+        },
+        {
+          provide: ConfigService,
+          useValue: mockConfigService,
+        },
+        {
+          provide: AuthService,
+          useValue: mockAuthService,
         },
       ],
       controllers: [AuthController],
@@ -60,19 +70,25 @@ describe('AuthController', () => {
     const mockUserDto = createMock<UserDto>({
       token: '1234',
     });
-    const mockResponse = createMock<Response>();
-    const actual = await controller.login(mockUserDto, mockResponse);
+    const actual = await controller.login(mockUserDto);
     expect(actual).toBe(mockUserDto);
-    expect(mockResponse.cookie).toBeCalledTimes(1);
-    expect((mockResponse.cookie as jest.Mock).mock.calls[0][0]).toEqual(ACCESS_TOKEN_NAME);
-    expect((mockResponse.cookie as jest.Mock).mock.calls[0][1]).toEqual(mockUserDto.token);
   });
 
   it('should be logout', async () => {
-    const mockResponse = createMock<Response>();
-    const actual = await controller.logout(mockResponse);
+    const actual = await controller.logout(1);
     expect(actual).toBeUndefined();
-    expect(mockResponse.clearCookie).toBeCalledTimes(1);
-    expect((mockResponse.clearCookie as jest.Mock).mock.calls[0][0]).toEqual(ACCESS_TOKEN_NAME);
+    expect(mockUserService.clearRefreshToken).toBeCalledTimes(1);
+    expect(mockUserService.clearRefreshToken).toBeCalledWith(1);
+  });
+
+  it('should be refresh', async () => {
+    const mockUserDto = createMock<UserDto>({});
+    /* eslint-disable @typescript-eslint/no-explicit-any */
+    mockAuthService.refresh = jest.fn().mockReturnValue(mockUserDto) as any;
+
+    const actual = await controller.refresh(mockUserDto);
+    expect(actual).toBe(mockUserDto);
+    expect(mockAuthService.refresh).toBeCalledTimes(1);
+    expect(mockAuthService.refresh).toBeCalledWith(mockUserDto);
   });
 });

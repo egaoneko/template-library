@@ -187,6 +187,33 @@ describe('UserService', () => {
     expect(mockUserRepository.findOneByUsername).toBeCalledWith('test', undefined);
   });
 
+  it('should be return user by refresh token', async () => {
+    /* eslint-disable @typescript-eslint/no-explicit-any */
+    service.ofUserDto = jest.fn().mockReturnValue({}) as any;
+    mockUserRepository.findOneByEmailAndRefreshToken = jest.fn().mockReturnValue({}) as any;
+
+    const actual = await service.getUserByRefreshToken('test@test.com', 'token');
+
+    if (!actual) {
+      throw 'Not found user';
+    }
+
+    expect(actual).toBeDefined();
+    expect(mockUserRepository.findOneByEmailAndRefreshToken).toBeCalledTimes(1);
+    expect(mockUserRepository.findOneByEmailAndRefreshToken).toBeCalledWith('test@test.com', 'token');
+    expect(service.ofUserDto).toBeCalledTimes(1);
+  });
+
+  it('should be return null user by refresh token', async () => {
+    /* eslint-disable @typescript-eslint/no-explicit-any */
+    mockUserRepository.findOneByEmailAndRefreshToken = jest.fn().mockReturnValue(null) as any;
+
+    const actual = await service.getUserByRefreshToken('test@test.com', 'token');
+    expect(actual).toBeNull();
+    expect(mockUserRepository.findOneByEmailAndRefreshToken).toBeCalledTimes(1);
+    expect(mockUserRepository.findOneByEmailAndRefreshToken).toBeCalledWith('test@test.com', 'token');
+  });
+
   it('should be return auth user', async () => {
     /* eslint-disable @typescript-eslint/no-explicit-any */
     service.ofAuthUserDto = jest.fn().mockReturnValue({}) as any;
@@ -302,6 +329,80 @@ describe('UserService', () => {
     expect((service.getUserById as jest.Mock).mock.calls[1]).toEqual([1, { transaction: {} }]);
     expect(mockUserRepository.update).toBeCalledTimes(1);
     expect(mockUserRepository.update).toBeCalledWith(dto, { transaction: {} });
+  });
+
+  it('should be set refresh token', async () => {
+    const dto = new UpdateUserDto();
+    dto.id = 1;
+    dto.refreshToken = 'token';
+
+    /* eslint-disable @typescript-eslint/no-explicit-any */
+    service.getUserByEmail = jest.fn().mockReturnValueOnce({ id: dto.id }).mockReturnValue(null) as any;
+    mockUserRepository.update = jest.fn().mockReturnValue([1]) as any;
+
+    const actual = await service.setRefreshToken('test1@test.com', dto.refreshToken);
+
+    expect(actual).toBeUndefined();
+    expect(service.getUserByEmail).toBeCalledTimes(1);
+    expect((service.getUserByEmail as jest.Mock).mock.calls[0]).toEqual(['test1@test.com', { transaction: {} }]);
+    expect(mockUserRepository.update).toBeCalledTimes(1);
+    expect(mockUserRepository.update).toBeCalledWith(dto, { transaction: {} });
+  });
+
+  it('should not be set refresh token with empty user', async () => {
+    /* eslint-disable @typescript-eslint/no-explicit-any */
+    service.getUserByEmail = jest.fn().mockReturnValueOnce(null).mockReturnValue(null) as any;
+
+    await expect(service.setRefreshToken('test1@test.com', 'token')).rejects.toThrowError('Not found user');
+    expect(mockSequelize.transaction).toBeCalledTimes(1);
+    expect(service.getUserByEmail).toBeCalledTimes(1);
+    expect((service.getUserByEmail as jest.Mock).mock.calls[0]).toEqual(['test1@test.com', { transaction: {} }]);
+  });
+
+  it('should not be set refresh token with empty row', async () => {
+    const dto = new UpdateUserDto();
+    dto.id = 1;
+    dto.refreshToken = 'token';
+
+    /* eslint-disable @typescript-eslint/no-explicit-any */
+    service.getUserByEmail = jest.fn().mockReturnValueOnce({ id: dto.id }).mockReturnValue(null) as any;
+    mockUserRepository.update = jest.fn().mockReturnValue([0]) as any;
+
+    await expect(service.setRefreshToken('test1@test.com', dto.refreshToken)).rejects.toThrowError(
+      'Do not set refresh token',
+    );
+    expect(service.getUserByEmail).toBeCalledTimes(1);
+    expect((service.getUserByEmail as jest.Mock).mock.calls[0]).toEqual(['test1@test.com', { transaction: {} }]);
+    expect(mockUserRepository.update).toBeCalledTimes(1);
+    expect(mockUserRepository.update).toBeCalledWith(dto, { transaction: {} });
+  });
+
+  it('should be clear refresh token', async () => {
+    /* eslint-disable @typescript-eslint/no-explicit-any */
+    mockUserRepository.update = jest.fn().mockReturnValue([1]) as any;
+
+    const dto = new UpdateUserDto();
+    dto.id = 1;
+    dto.refreshToken = null;
+
+    const actual = await service.clearRefreshToken(dto.id);
+
+    expect(actual).toBeUndefined();
+    expect(mockUserRepository.update).toBeCalledTimes(1);
+    expect(mockUserRepository.update).toBeCalledWith(dto);
+  });
+
+  it('should not be clear refresh token with empty row', async () => {
+    /* eslint-disable @typescript-eslint/no-explicit-any */
+    mockUserRepository.update = jest.fn().mockReturnValue([0]) as any;
+
+    const dto = new UpdateUserDto();
+    dto.id = 1;
+    dto.refreshToken = null;
+
+    await expect(service.clearRefreshToken(dto.id)).rejects.toThrowError('Do not clear refresh token');
+    expect(mockUserRepository.update).toBeCalledTimes(1);
+    expect(mockUserRepository.update).toBeCalledWith(dto);
   });
 
   it('should be return user dto', async () => {

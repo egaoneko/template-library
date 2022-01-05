@@ -90,4 +90,8 @@ export class UpdateUserDto {
   @IsNumber()
   @IsOptional()
   image!: number;
+
+  @IsString()
+  @IsOptional()
+  refreshToken?: string | null;
 }

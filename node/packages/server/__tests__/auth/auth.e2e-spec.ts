@@ -4,6 +4,7 @@ import { AppModule } from '@root/app.module';
 import { INestApplication } from '@nestjs/common';
 import { createTestUser, getTestUserDto } from '../utils/user';
 import { cleanDb } from '../utils/db';
+import { delay } from '../utils/common';
 
 describe('AuthController (e2e)', () => {
   let app: INestApplication;
@@ -46,6 +47,23 @@ describe('AuthController (e2e)', () => {
       .expect(200)
       .expect(({ body }) => {
         expect(body).toEqual({});
+      });
+  });
+
+  it('/api/auth/refresh (Post)', async () => {
+    const user = await createTestUser(app, 'test1');
+    const dto = await getTestUserDto(app, user);
+
+    await delay(50);
+
+    return request(app.getHttpServer())
+      .post('/api/auth/refresh')
+      .send({
+        refreshToken: dto.refreshToken,
+      })
+      .expect(201)
+      .expect(({ body }) => {
+        expect(body.token).not.toEqual(dto.token);
       });
   });
 
