@@ -37,14 +37,14 @@ describe('AuthController (e2e)', () => {
       });
   });
 
-  it('/api/auth/logout (Get)', async () => {
+  it('/api/auth/logout (Post)', async () => {
     const user = await createTestUser(app, 'test1');
     const dto = await getTestUserDto(app, user);
 
     return request(app.getHttpServer())
-      .get('/api/auth/logout')
+      .post('/api/auth/logout')
       .set('Authorization', `Bearer ${dto.token}`)
-      .expect(200)
+      .expect(201)
       .expect(({ body }) => {
         expect(body).toEqual({});
       });
@@ -54,7 +54,7 @@ describe('AuthController (e2e)', () => {
     const user = await createTestUser(app, 'test1');
     const dto = await getTestUserDto(app, user);
 
-    await delay(50);
+    await delay(200);
 
     return request(app.getHttpServer())
       .post('/api/auth/refresh')
@@ -65,6 +65,10 @@ describe('AuthController (e2e)', () => {
       .expect(({ body }) => {
         expect(body.token).not.toEqual(dto.token);
       });
+  });
+
+  it('/api/auth/refresh (Post)', async () => {
+    return request(app.getHttpServer()).post('/api/auth/refresh').expect(401);
   });
 
   it('/api/auth/register (Post)', async () => {
@@ -88,5 +92,19 @@ describe('AuthController (e2e)', () => {
       .expect(({ body }) => {
         expect(body.message).toBe('Unauthorized');
       });
+  });
+
+  it('/api/auth/validate (Get)', async () => {
+    const user = await createTestUser(app, 'test1');
+    const dto = await getTestUserDto(app, user);
+
+    return request(app.getHttpServer())
+      .get('/api/auth/validate')
+      .set('Authorization', `Bearer ${dto.token}`)
+      .expect(200);
+  });
+
+  it('/api/auth/validate (Get) without authorized', async () => {
+    return request(app.getHttpServer()).get('/api/auth/validate').expect(401);
   });
 });

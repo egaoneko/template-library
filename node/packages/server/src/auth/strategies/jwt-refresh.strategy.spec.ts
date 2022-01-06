@@ -54,6 +54,6 @@ describe('JwtRefreshStrategy', () => {
     const actual = await strategy.validate(mockRequest, payload);
     expect(actual).toBeDefined();
     expect(mockUserService.getUserByRefreshToken).toBeCalledTimes(1);
-    expect(mockUserService.getUserByRefreshToken).toBeCalledWith(refreshToken, payload.email);
+    expect(mockUserService.getUserByRefreshToken).toBeCalledWith(payload.email, refreshToken);
   });
 });

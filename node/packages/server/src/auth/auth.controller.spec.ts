@@ -91,4 +91,9 @@ describe('AuthController', () => {
     expect(mockAuthService.refresh).toBeCalledTimes(1);
     expect(mockAuthService.refresh).toBeCalledWith(mockUserDto);
   });
+
+  it('should be validate', async () => {
+    const actual = await controller.validate();
+    expect(actual).toBeUndefined();
+  });
 });

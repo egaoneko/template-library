@@ -55,7 +55,7 @@ export class AuthController {
   }
 
   @NoAuth()
-  @Get('/logout')
+  @Post('/logout')
   @ApiOperation({ summary: 'logout' })
   @ApiResponse({ status: 200 })
   @ApiResponse({ status: 400, description: 'Unauthorized' })
@@ -77,4 +77,10 @@ export class AuthController {
   async refresh(@CurrentUser() currentUser: UserDto): Promise<UserDto> {
     return this.authService.refresh(currentUser);
   }
+
+  @Get('/validate')
+  @ApiOperation({ summary: 'validate token' })
+  @ApiResponse({ status: 200, description: 'valid' })
+  @ApiResponse({ status: 400, description: 'Unauthorized' })
+  async validate(): Promise<void> {}
 }
