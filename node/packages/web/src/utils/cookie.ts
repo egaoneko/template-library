@@ -1,35 +1,21 @@
-import { ACCESS_TOKEN_NAME, REFRESH_TOKEN_NAME } from '@constants/common';
-import axios from 'axios';
-import Cookies, { CookieAttributes } from 'js-cookie';
+import { CookieName } from '@enums/cookie';
+import { getContext } from './context';
+import { CookieGetOptions, CookieSetOptions } from 'universal-cookie';
 
-export function getToken(): [string | undefined, string | undefined] {
-  return [Cookies.get(ACCESS_TOKEN_NAME), Cookies.get(REFRESH_TOKEN_NAME)];
+export function getCookie(name: CookieName, options?: CookieGetOptions) {
+  return getContext().cookie.get(name, options);
 }
 
-export function setToken(accessToken: string, refreshToken?: string): void {
-  axios.defaults.headers.Authorization = 'Bearer ' + accessToken;
-
-  const options: CookieAttributes = {
-    path: '/',
-    expires: 1,
-    httpOnly: Boolean(process.env.NEXT_PUBLIC_HTTP_ONLY),
-  };
-
-  Cookies.set(ACCESS_TOKEN_NAME, accessToken, options);
-  if (refreshToken) {
-    Cookies.set(REFRESH_TOKEN_NAME, refreshToken, options);
-  }
+export function setCookie(name: CookieName, value: string | Record<string, unknown>, options?: CookieSetOptions): void {
+  getContext().cookie.set(name, value, { sameSite: 'lax', ...options });
 }
 
-export function refreshToken(refreshToken: string): void {}
-
-export function removeToken(): void {
-  axios.defaults.headers.Authorization = null;
-
-  const options: CookieAttributes = {
-    path: '/',
-    httpOnly: Boolean(process.env.NEXT_PUBLIC_HTTP_ONLY),
-  };
-  Cookies.remove(ACCESS_TOKEN_NAME, options);
-  Cookies.remove(REFRESH_TOKEN_NAME, options);
+export function removeCookie(name: CookieName, options?: CookieSetOptions): void {
+  getContext().cookie.remove(name, { path: '/', expires: new Date('1970-01-01'), ...options });
 }
+
+const expireUnit = 60000; // minutes
+// const expireUnit = 864e5; // days
+export const getCookieExpires = (expires: number): Date => {
+  return new Date(Date.now() + expires * expireUnit);
+};

@@ -5,19 +5,20 @@ import { useMemo } from 'react';
 import { IUser, LoginRequest, RegisterRequest, UpdateRequest } from '@my-app/core/lib/interfaces/user';
 import AuthAPI from '@api/auth';
 import { notifyError, notifySuccess } from '@utils/notifiy';
-import { removeToken, setToken } from '@utils/cookie';
+import { getCookieExpires, removeCookie, setCookie } from '@utils/cookie';
+import { CookieName } from '@enums/cookie';
+import { CookieExpires } from '@constants/cookie';
 
 export class UserStore {
   public user: IUser | null = null;
 
   constructor(user: IUser | null) {
     makeAutoObservable(this);
-    void this.clear();
-    void this.hydrate(user);
+    this.hydrate(user);
   }
 
-  public async hydrate(user: IUser | null): Promise<void> {
-    await this.setUser(user);
+  public hydrate(user: IUser | null): void {
+    this.user = user;
   }
 
   public async register(request: RegisterRequest): Promise<boolean> {
@@ -35,7 +36,7 @@ export class UserStore {
   public async login(request: LoginRequest): Promise<IUser | null> {
     try {
       const user = await AuthAPI.login(request);
-      await this.setUser(user);
+      this.setUser(user);
 
       if (this.user) {
         notifySuccess('Successfully login!');
@@ -52,7 +53,7 @@ export class UserStore {
   public async update(request: UpdateRequest): Promise<IUser | null> {
     try {
       const user = await UserAPI.update(request);
-      await this.setUser({
+      this.setUser({
         ...this.user,
         ...user,
       });
@@ -72,25 +73,31 @@ export class UserStore {
   public async logout(): Promise<void> {
     try {
       await AuthAPI.logout();
-      removeToken();
-      await this.clear();
+      this.clear();
     } catch (e) {
       notifyError(e.message);
     }
   }
 
-  private async clear(): Promise<void> {
-    await this.setUser(null);
+  private clear(): void {
+    this.user = null;
+    removeCookie(CookieName.ACCESS_TOKEN);
+    removeCookie(CookieName.REFRESH_TOKEN);
   }
 
-  private async setUser(user: IUser | null): Promise<void> {
+  private setUser(user: IUser | null): void {
     this.user = user;
 
-    if (!this.user || !this.user?.token) {
+    if (!this.user) {
       return;
     }
 
-    setToken(this.user.token, this.user.refreshToken);
+    setCookie(CookieName.ACCESS_TOKEN, this.user.token ?? '', {
+      expires: getCookieExpires(CookieExpires[CookieName.ACCESS_TOKEN]),
+    });
+    setCookie(CookieName.REFRESH_TOKEN, this.user.refreshToken ?? '', {
+      expires: getCookieExpires(CookieExpires[CookieName.REFRESH_TOKEN]),
+    });
   }
 }
 

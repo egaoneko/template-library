@@ -21,3 +21,7 @@ export interface UpdateRequest {
   bio?: string;
   image?: number;
 }
+
+export interface RefreshRequest {
+  refreshToken: string;
+}
