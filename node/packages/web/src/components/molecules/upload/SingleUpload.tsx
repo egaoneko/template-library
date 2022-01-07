@@ -1,5 +1,6 @@
 import FileAPI from '@api/file';
 import Button from '@components/atoms/common/Button';
+import { CONTEXT } from '@constants/common';
 import { IFile } from '@my-app/core/lib/interfaces/file';
 import { notifyError } from '@utils/notifiy';
 import React, { ChangeEvent, FC, ReactNode, useCallback, useRef } from 'react';
@@ -25,7 +26,7 @@ const SingleUpload: FC<PropsType> = props => {
       formData.append(name, (e.target.files as FileList)[0]);
 
       try {
-        const file = await FileAPI.upload(formData);
+        const file = await FileAPI.upload(CONTEXT, formData);
         onFinish?.(file);
       } catch (e) {
         notifyError(e.response?.data?.message ?? e.message);

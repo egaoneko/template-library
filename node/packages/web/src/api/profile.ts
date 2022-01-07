@@ -1,17 +1,18 @@
 import { API_SERVER_URL } from '@constants/common';
 import { IProfile } from '@my-app/core/lib/interfaces/profile';
 import BaseAPI from './base';
+import Context from '@libs/Context';
 
 export default class ProfileAPI {
   private static BASE_URL = `${API_SERVER_URL}/api/profiles`;
 
-  static async get(username: string): Promise<IProfile> {
-    return BaseAPI.get<void, IProfile>(`${ProfileAPI.BASE_URL}/${username}`);
+  static async get(context: Context, username: string): Promise<IProfile> {
+    return BaseAPI.get<void, IProfile>(context, `${ProfileAPI.BASE_URL}/${username}`);
   }
-  static async follow(username: string): Promise<IProfile> {
-    return BaseAPI.post<void, IProfile>(`${ProfileAPI.BASE_URL}/${username}/follow`);
+  static async follow(context: Context, username: string): Promise<IProfile> {
+    return BaseAPI.post<void, IProfile>(context, `${ProfileAPI.BASE_URL}/${username}/follow`);
   }
-  static async unfollow(username: string): Promise<IProfile> {
-    return BaseAPI.delete<void, IProfile>(`${ProfileAPI.BASE_URL}/${username}/follow`);
+  static async unfollow(context: Context, username: string): Promise<IProfile> {
+    return BaseAPI.delete<void, IProfile>(context, `${ProfileAPI.BASE_URL}/${username}/follow`);
   }
 }

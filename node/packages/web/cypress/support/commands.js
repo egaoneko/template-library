@@ -50,13 +50,8 @@ Cypress.Commands.add('login', (fixture = 'user/user.json') => {
     if (user.refreshToken) {
       cy.setCookie('RW_RT', user.refreshToken);
     }
-    cy.intercept('POST', '/api/auth/login', req => {
-      const date = new Date();
-      date.setDate(date.getDate() + 7);
-
+    cy.intercept('POST', 'http://localhost:8080/api/auth/login', req => {
       req.continue(res => {
-        res.headers = {};
-        res.headers['Set-Cookie'] = [`RW_AT=${user.token}; Path=/; Expires=${date.toUTCString()}; HttpOnly`];
         res.send(response);
       });
     }).as('login');
@@ -107,7 +102,7 @@ Cypress.Commands.add('prepareProfile', (delay = 0, fixture = 'profile/user.json'
 
 Cypress.Commands.add('prepareEdit', (delay = 0, fixture = 'article/article.json') => {
   cy.fixture(fixture).then(article => {
-    mockServerBuilder('get', `/api/articles/${article.slug}`, article);
+    mockServerBuilder('get', `http://localhost:8080/api/articles/${article.slug}`, article);
   });
 });
 

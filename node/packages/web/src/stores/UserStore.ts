@@ -1,6 +1,6 @@
 import UserAPI from '@api/user';
 import { makeAutoObservable } from 'mobx';
-import { IS_SSR } from '@constants/common';
+import { CONTEXT, IS_SSR } from '@constants/common';
 import { useMemo } from 'react';
 import { IUser, LoginRequest, RegisterRequest, UpdateRequest } from '@my-app/core/lib/interfaces/user';
 import AuthAPI from '@api/auth';
@@ -23,7 +23,7 @@ export class UserStore {
 
   public async register(request: RegisterRequest): Promise<boolean> {
     try {
-      const user = await AuthAPI.register(request);
+      const user = await AuthAPI.register(CONTEXT, request);
       notifySuccess('Successfully registered!');
       return !!user;
     } catch (e) {
@@ -35,7 +35,7 @@ export class UserStore {
 
   public async login(request: LoginRequest): Promise<IUser | null> {
     try {
-      const user = await AuthAPI.login(request);
+      const user = await AuthAPI.login(CONTEXT, request);
       this.setUser(user);
 
       if (this.user) {
@@ -52,7 +52,7 @@ export class UserStore {
 
   public async update(request: UpdateRequest): Promise<IUser | null> {
     try {
-      const user = await UserAPI.update(request);
+      const user = await UserAPI.update(CONTEXT, request);
       this.setUser({
         ...this.user,
         ...user,
@@ -72,7 +72,7 @@ export class UserStore {
 
   public async logout(): Promise<void> {
     try {
-      await AuthAPI.logout();
+      await AuthAPI.logout(CONTEXT);
       this.clear();
     } catch (e) {
       notifyError(e.message);
@@ -81,8 +81,8 @@ export class UserStore {
 
   private clear(): void {
     this.user = null;
-    removeCookie(CookieName.ACCESS_TOKEN);
-    removeCookie(CookieName.REFRESH_TOKEN);
+    removeCookie(CONTEXT, CookieName.ACCESS_TOKEN);
+    removeCookie(CONTEXT, CookieName.REFRESH_TOKEN);
   }
 
   private setUser(user: IUser | null): void {
@@ -92,10 +92,10 @@ export class UserStore {
       return;
     }
 
-    setCookie(CookieName.ACCESS_TOKEN, this.user.token ?? '', {
+    setCookie(CONTEXT, CookieName.ACCESS_TOKEN, this.user.token ?? '', {
       expires: getCookieExpires(CookieExpires[CookieName.ACCESS_TOKEN]),
     });
-    setCookie(CookieName.REFRESH_TOKEN, this.user.refreshToken ?? '', {
+    setCookie(CONTEXT, CookieName.REFRESH_TOKEN, this.user.refreshToken ?? '', {
       expires: getCookieExpires(CookieExpires[CookieName.REFRESH_TOKEN]),
     });
   }

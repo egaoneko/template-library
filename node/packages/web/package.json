@@ -44,6 +44,7 @@
     "react-notifications-component": "3.1.0",
     "react-paginate": "7.1.5",
     "react-query": "3.31.0",
+    "set-cookie-parser": "2.4.8",
     "styled-components": "5.3.3",
     "universal-cookie": "4.0.4"
   },
@@ -60,6 +61,7 @@
     "@types/react-notifications-component": "3.1.1",
     "@types/react-paginate": "7.1.1",
     "@types/styled-components": "5.1.15",
+    "@types/set-cookie-parser": "2.4.2",
     "autoprefixer": "10.4.0",
     "babel-jest": "27.3.1",
     "babel-plugin-macros": "3.1.0",

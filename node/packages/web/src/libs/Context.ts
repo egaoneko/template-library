@@ -1,4 +1,4 @@
-import { cookies } from 'next-cookies';
+import { parse } from 'set-cookie-parser';
 import universalCookie, { CookieSetOptions } from 'universal-cookie';
 import { GetServerSidePropsContext, NextApiRequest, NextApiResponse, NextPageContext } from 'next';
 import { NextRequest, NextResponse } from 'next/server';
@@ -7,30 +7,21 @@ import Cookie from '@libs/Cookie';
 type NextContext = NextPageContext | GetServerSidePropsContext | { req: NextApiRequest; res: NextApiResponse } | string;
 type NextMiddlewareContext = { req: NextRequest; res: NextResponse };
 
-export interface Context {
-  cookie: Cookie;
-}
-
-const DEFAULT_CONTEXT: Context = {
-  cookie: new Cookie(),
-};
-
-let context: Context = { ...DEFAULT_CONTEXT };
-
-export function getContext(): Context {
-  return context;
-}
-
-export interface SetContextOption {
+export interface ContextOptions {
   nextContext?: NextContext;
   nextMiddlewareContext?: NextMiddlewareContext;
 }
 
-export function setContext(options: SetContextOption) {
-  context = {
-    ...DEFAULT_CONTEXT,
-    cookie: new SuperCookie(options.nextContext, options.nextMiddlewareContext),
-  };
+export default class Context {
+  private _cookie: Cookie;
+
+  public get cookie(): Cookie {
+    return this._cookie;
+  }
+
+  constructor(options: ContextOptions = {}) {
+    this._cookie = new SuperCookie(options.nextContext, options.nextMiddlewareContext);
+  }
 }
 
 class SuperCookie extends Cookie {
@@ -41,6 +32,12 @@ class SuperCookie extends Cookie {
 
     if (this.mCtx) {
       this.cookie = new universalCookie(this.mCtx?.req.cookies);
+    }
+
+    if (this.ctx) {
+      parse(this.ctx.res?.getHeader('set-cookie') ?? '').forEach(({ name, value, ...options }) => {
+        this.set(name, value, options as CookieSetOptions);
+      });
     }
   }
 

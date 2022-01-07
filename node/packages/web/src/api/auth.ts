@@ -1,22 +1,24 @@
 import { API_SERVER_URL } from '@constants/common';
 import { IUser, LoginRequest, RegisterRequest, RefreshRequest } from '@my-app/core/lib/interfaces/user';
 import BaseAPI from './base';
+import Context from '@libs/Context';
+
 export default class AuthAPI {
   private static BASE_URL = `${API_SERVER_URL}/api/auth`;
 
-  static async register(request: RegisterRequest): Promise<IUser> {
-    return BaseAPI.post<RegisterRequest, IUser>(`${AuthAPI.BASE_URL}/register`, request);
+  static async register(context: Context, request: RegisterRequest): Promise<IUser> {
+    return BaseAPI.post<RegisterRequest, IUser>(context, `${AuthAPI.BASE_URL}/register`, request);
   }
-  static async login(request: LoginRequest): Promise<IUser> {
-    return BaseAPI.post<LoginRequest, IUser>(`${AuthAPI.BASE_URL}/login`, request);
+  static async login(context: Context, request: LoginRequest): Promise<IUser> {
+    return BaseAPI.post<LoginRequest, IUser>(context, `${AuthAPI.BASE_URL}/login`, request);
   }
-  static async logout(): Promise<void> {
-    return BaseAPI.post<void, void>(`${AuthAPI.BASE_URL}/logout`);
+  static async logout(context: Context): Promise<void> {
+    return BaseAPI.post<void, void>(context, `${AuthAPI.BASE_URL}/logout`);
   }
-  static async refresh(request: RefreshRequest): Promise<IUser> {
-    return BaseAPI.post<RefreshRequest, IUser>(`${AuthAPI.BASE_URL}/login`, request);
+  static async refresh(context: Context, request: RefreshRequest): Promise<IUser> {
+    return BaseAPI.post<RefreshRequest, IUser>(context, `${AuthAPI.BASE_URL}/refresh`, request);
   }
-  static async validate(): Promise<void> {
-    return BaseAPI.get<void, void>(`${AuthAPI.BASE_URL}/validate`);
+  static async validate(context: Context): Promise<void> {
+    return BaseAPI.get<void, void>(context, `${AuthAPI.BASE_URL}/validate`);
   }
 }

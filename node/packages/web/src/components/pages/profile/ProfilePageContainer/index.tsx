@@ -14,6 +14,7 @@ import { useRouter } from 'next/router';
 import ProfileBannerTemplate from './templates/ProfileBannerTemplate';
 import ProfileAPI from '@api/profile';
 import { IProfile } from '@my-app/core/lib/interfaces/profile';
+import { CONTEXT } from '@constants/common';
 
 const PAGE_LIMIT = 5;
 interface PropsType extends BasePropsType {
@@ -26,12 +27,12 @@ const ProfilePageContainer: FC<PropsType> = props => {
   const router = useRouter();
   const [activeTab, setActiveTab] = useState<PostTab | null>(PostTab.MY_POSTS);
   const [page, setPage] = useState<number>(1);
-  const profileResult = useQuery<IProfile>(['profile', username], () => ProfileAPI.get(username));
+  const profileResult = useQuery<IProfile>(['profile', username], () => ProfileAPI.get(CONTEXT, username));
   const articlesResult = useQuery<ListResult<IArticle>>(['article-list', page, activeTab, username], () => {
     if (activeTab === PostTab.MY_POSTS) {
-      return ArticleAPI.getList({ page, limit: PAGE_LIMIT, author: username });
+      return ArticleAPI.getList(CONTEXT, { page, limit: PAGE_LIMIT, author: username });
     } else {
-      return ArticleAPI.getList({ page, limit: PAGE_LIMIT, favorited: username });
+      return ArticleAPI.getList(CONTEXT, { page, limit: PAGE_LIMIT, favorited: username });
     }
   });
 
@@ -44,9 +45,9 @@ const ProfilePageContainer: FC<PropsType> = props => {
 
     try {
       if (toggle) {
-        await ArticleAPI.favorite(slug);
+        await ArticleAPI.favorite(CONTEXT, slug);
       } else {
-        await ArticleAPI.unfavorite(slug);
+        await ArticleAPI.unfavorite(CONTEXT, slug);
       }
 
       articlesResult.refetch();
@@ -64,9 +65,9 @@ const ProfilePageContainer: FC<PropsType> = props => {
 
     try {
       if (toggle) {
-        await ProfileAPI.follow(username);
+        await ProfileAPI.follow(CONTEXT, username);
       } else {
-        await ProfileAPI.unfollow(username);
+        await ProfileAPI.unfollow(CONTEXT, username);
       }
       profileResult.refetch();
     } catch (e) {

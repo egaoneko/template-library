@@ -38,7 +38,7 @@ describe('Sign in', () => {
   });
 
   it('should sign up by enter', () => {
-    cy.intercept('POST', '/api/auth/login', { fixture: 'user/user.json' }).as('login');
+    cy.intercept('POST', 'http://localhost:8080/api/auth/login', { fixture: 'user/user.json' }).as('login');
     cy.visit('http://localhost:3000/auth/sign-in');
     cy.get('[data-cy=content-form-input-email]').type(form.email);
     cy.get('[data-cy=content-form-input-password]').type(form.password).type('{enter}');

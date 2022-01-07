@@ -13,6 +13,7 @@ import { notifyError, notifySuccess } from '@utils/notifiy';
 import ProfileAPI from '@api/profile';
 import ArticleCommentTemplate from './templates/ArticleCommentTemplate';
 import { CreateCommentRequest, IComment } from '@my-app/core/lib/interfaces/comment';
+import { CONTEXT } from '@constants/common';
 
 interface PropsType extends BasePropsType {
   slug: string;
@@ -22,9 +23,9 @@ const ArticlePageContainer: FC<PropsType> = props => {
   const { userStore } = useStores();
   const router = useRouter();
   const { slug } = props;
-  const articleResult = useQuery<IArticle>(['article', slug], () => ArticleAPI.get(slug));
+  const articleResult = useQuery<IArticle>(['article', slug], () => ArticleAPI.get(CONTEXT, slug));
   const commentsResult = useQuery<ListResult<IComment>>(['comment-list', slug], () =>
-    ArticleAPI.getCommentList(slug, { limit: 999 }),
+    ArticleAPI.getCommentList(CONTEXT, slug, { limit: 999 }),
   );
   const [loading, setLoading] = useState<boolean>(false);
 
@@ -37,9 +38,9 @@ const ArticlePageContainer: FC<PropsType> = props => {
 
     try {
       if (toggle) {
-        await ProfileAPI.follow(username);
+        await ProfileAPI.follow(CONTEXT, username);
       } else {
-        await ProfileAPI.unfollow(username);
+        await ProfileAPI.unfollow(CONTEXT, username);
       }
       articleResult.refetch();
     } catch (e) {
@@ -56,9 +57,9 @@ const ArticlePageContainer: FC<PropsType> = props => {
 
     try {
       if (toggle) {
-        await ArticleAPI.favorite(slug);
+        await ArticleAPI.favorite(CONTEXT, slug);
       } else {
-        await ArticleAPI.unfavorite(slug);
+        await ArticleAPI.unfavorite(CONTEXT, slug);
       }
       articleResult.refetch();
     } catch (e) {
@@ -68,7 +69,7 @@ const ArticlePageContainer: FC<PropsType> = props => {
 
   async function onDeleteArticle(slug: string): Promise<void> {
     setLoading(true);
-    return ArticleAPI.delete(slug)
+    return ArticleAPI.delete(CONTEXT, slug)
       .then(article => {
         if (!article) {
           setLoading(false);
@@ -84,7 +85,7 @@ const ArticlePageContainer: FC<PropsType> = props => {
 
   async function onCreateComment(slug: string, request: CreateCommentRequest): Promise<void> {
     setLoading(true);
-    return ArticleAPI.createComment(slug, request)
+    return ArticleAPI.createComment(CONTEXT, slug, request)
       .then(comment => {
         setLoading(false);
 
@@ -102,7 +103,7 @@ const ArticlePageContainer: FC<PropsType> = props => {
 
   async function onDeleteComment(slug: string, id: number): Promise<void> {
     setLoading(true);
-    return ArticleAPI.deleteComment(slug, id)
+    return ArticleAPI.deleteComment(CONTEXT, slug, id)
       .then(() => {
         setLoading(false);
         notifySuccess('Successfully deleted!');

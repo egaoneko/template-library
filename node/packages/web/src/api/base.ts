@@ -1,36 +1,43 @@
 import AuthAPI from '@api/auth';
 import { stringify } from 'query-string';
-import { getCookie, setCookie, removeCookie } from '@utils/cookie';
+import { getCookie, setCookie, removeCookie, getCookieExpires } from '@utils/cookie';
 import { CookieName } from '@enums/cookie';
+import Context from '@libs/Context';
+import { CookieExpires } from '@constants/cookie';
 
 export default class BaseAPI {
-  static async get<P, R>(url: string, request?: P, requestInit?: RequestInit): Promise<R> {
-    return this.request<P, R>(url, request, {
+  static async get<P, R>(context: Context, url: string, request?: P, requestInit?: RequestInit): Promise<R> {
+    return this.request<P, R>(context, url, request, {
       method: 'GET',
       ...requestInit,
     });
   }
-  static async post<P, R>(url: string, request?: P, requestInit?: RequestInit): Promise<R> {
-    return this.request<P, R>(url, request, {
+  static async post<P, R>(context: Context, url: string, request?: P, requestInit?: RequestInit): Promise<R> {
+    return this.request<P, R>(context, url, request, {
       method: 'POST',
       ...requestInit,
     });
   }
-  static async put<P, R>(url: string, request?: P, requestInit?: RequestInit): Promise<R> {
-    return this.request<P, R>(url, request, {
+  static async put<P, R>(context: Context, url: string, request?: P, requestInit?: RequestInit): Promise<R> {
+    return this.request<P, R>(context, url, request, {
       method: 'PUT',
       ...requestInit,
     });
   }
-  static async delete<P, R>(url: string, request?: P, requestInit?: RequestInit): Promise<R> {
-    return this.request<P, R>(url, request, {
+  static async delete<P, R>(context: Context, url: string, request?: P, requestInit?: RequestInit): Promise<R> {
+    return this.request<P, R>(context, url, request, {
       method: 'DELETE',
       ...requestInit,
     });
   }
-  static async request<P, R>(url: string, request?: P, { headers, ...requestInit }: RequestInit = {}): Promise<R> {
-    const accessToken = getCookie(CookieName.ACCESS_TOKEN);
-    const refreshToken = getCookie(CookieName.REFRESH_TOKEN);
+  static async request<P, R>(
+    context: Context,
+    url: string,
+    request?: P,
+    { headers, ...requestInit }: RequestInit = {},
+  ): Promise<R> {
+    const accessToken = getCookie(context, CookieName.ACCESS_TOKEN);
+    const refreshToken = getCookie(context, CookieName.REFRESH_TOKEN);
     const init: RequestInit = {
       headers: {
         'Cache-Control': 'no-cache, no-store, must-revalidate',
@@ -66,13 +73,16 @@ export default class BaseAPI {
     if (response.status === 401 && refreshToken) {
       let newAccessToken = '';
       try {
-        const user = await AuthAPI.refresh({ refreshToken });
+        const user = await AuthAPI.refresh(context, { refreshToken });
         newAccessToken = user.token ?? '';
       } catch (e) {}
 
       if (newAccessToken) {
-        setCookie(CookieName.ACCESS_TOKEN, newAccessToken);
+        setCookie(context, CookieName.ACCESS_TOKEN, newAccessToken, {
+          expires: getCookieExpires(CookieExpires[CookieName.ACCESS_TOKEN]),
+        });
 
+        (init.headers as Record<string, string>)['Authorization'] = 'Bearer ' + newAccessToken;
         response = await fetch(url, init);
         data = await BaseAPI.refineResponse<R>(response);
 
@@ -80,8 +90,8 @@ export default class BaseAPI {
           return data;
         }
       } else {
-        removeCookie(CookieName.ACCESS_TOKEN);
-        removeCookie(CookieName.REFRESH_TOKEN);
+        removeCookie(context, CookieName.ACCESS_TOKEN);
+        removeCookie(context, CookieName.REFRESH_TOKEN);
       }
     }
 

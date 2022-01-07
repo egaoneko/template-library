@@ -12,6 +12,7 @@ import ArticleAPI from '@api/article';
 import { notifyError } from '@utils/notifiy';
 import { useRouter } from 'next/router';
 import HomeBannerTemplate from './templates/HomeBannerTemplate';
+import { CONTEXT } from '@constants/common';
 
 const PAGE_LIMIT = 5;
 interface PropsType extends BasePropsType {}
@@ -24,12 +25,12 @@ const HomePageContainer: FC<PropsType> = props => {
   const [selectedTag, setSelectedTag] = useState<string | null>(null);
   const articlesResult = useQuery<ListResult<IArticle>>(['article-list', page, activeTab, selectedTag], () => {
     if (activeTab === FeedTab.USER_FEED) {
-      return ArticleAPI.getFeedList({ page, limit: PAGE_LIMIT });
+      return ArticleAPI.getFeedList(CONTEXT, { page, limit: PAGE_LIMIT });
     } else {
-      return ArticleAPI.getList({ page, limit: PAGE_LIMIT, ...(selectedTag && { tag: selectedTag }) });
+      return ArticleAPI.getList(CONTEXT, { page, limit: PAGE_LIMIT, ...(selectedTag && { tag: selectedTag }) });
     }
   });
-  const tagsResult = useQuery<string[]>(['tag-list'], () => ArticleAPI.getTags());
+  const tagsResult = useQuery<string[]>(['tag-list'], () => ArticleAPI.getTags(CONTEXT));
 
   async function toggleFavorite(slug: string, toggle: boolean): Promise<void> {
     if (!userStore.user) {
@@ -40,9 +41,9 @@ const HomePageContainer: FC<PropsType> = props => {
 
     try {
       if (toggle) {
-        await ArticleAPI.favorite(slug);
+        await ArticleAPI.favorite(CONTEXT, slug);
       } else {
-        await ArticleAPI.unfavorite(slug);
+        await ArticleAPI.unfavorite(CONTEXT, slug);
       }
 
       articlesResult.refetch();

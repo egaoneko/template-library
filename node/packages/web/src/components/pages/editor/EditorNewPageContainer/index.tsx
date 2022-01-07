@@ -7,6 +7,7 @@ import BaseLayoutTemplate from '@components/templates/layout/BaseLayoutTemplate'
 import { CreateArticleRequest } from '@my-app/core/lib/interfaces/article';
 import ArticleAPI from '@api/article';
 import { notifyError, notifySuccess } from '@utils/notifiy';
+import { CONTEXT } from '@constants/common';
 
 interface PropsType extends BasePropsType {}
 
@@ -16,7 +17,7 @@ const EditorNewPageContainer: FC<PropsType> = props => {
 
   async function onFinish(request: CreateArticleRequest): Promise<void> {
     setLoading(true);
-    return ArticleAPI.create(request)
+    return ArticleAPI.create(CONTEXT, request)
       .then(article => {
         if (!article) {
           setLoading(false);

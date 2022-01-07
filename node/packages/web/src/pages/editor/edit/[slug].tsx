@@ -1,7 +1,7 @@
 import ArticleAPI from '@api/article';
 import EditorEditPageContainer from '@components/pages/editor/EditorEditPageContainer';
 import { IArticle } from '@my-app/core/lib/interfaces/article';
-import { setContext } from '@utils/context';
+import Context from '@libs/Context';
 import { GetServerSidePropsResult, NextPageContext } from 'next';
 import React, { ReactNode } from 'react';
 
@@ -17,11 +17,11 @@ export default Index;
 
 export async function getServerSideProps(ctx: NextPageContext): Promise<GetServerSidePropsResult<PropsType>> {
   const query = ctx.query;
-
-  setContext({
+  const context = new Context({
     nextContext: ctx,
   });
-  const article = await ArticleAPI.get(query.slug as string);
+
+  const article = await ArticleAPI.get(context, query.slug as string);
 
   return {
     props: {

@@ -7,6 +7,7 @@ import BaseLayoutTemplate from '@components/templates/layout/BaseLayoutTemplate'
 import { IArticle, UpdateArticleRequest } from '@my-app/core/lib/interfaces/article';
 import ArticleAPI from '@api/article';
 import { notifyError, notifySuccess } from '@utils/notifiy';
+import { CONTEXT } from '@constants/common';
 
 interface PropsType extends BasePropsType {
   article: IArticle;
@@ -19,7 +20,7 @@ const EditorEditPageContainer: FC<PropsType> = props => {
 
   async function onFinish(request: UpdateArticleRequest): Promise<void> {
     setLoading(true);
-    return ArticleAPI.update(article.slug, request)
+    return ArticleAPI.update(CONTEXT, article.slug, request)
       .then(article => {
         if (!article) {
           setLoading(false);
