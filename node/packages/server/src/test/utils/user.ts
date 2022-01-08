@@ -1,11 +1,11 @@
-import { User } from '@user/entities/user.entity';
+import { User } from 'src/user/entities/user.entity';
 import request from 'supertest';
 import { INestApplication } from '@nestjs/common';
-import { UserDto } from '@user/dto/response/user.dto';
-import { DEFAULT_DATABASE_NAME } from '@config/constants/database';
+import { UserDto } from 'src/user/dto/response/user.dto';
+import { DEFAULT_DATABASE_NAME } from 'src/config/constants/database';
 import { getModelToken } from '@nestjs/sequelize';
-import { Crypto } from '@shared/crypto/crypto';
-import { UserService } from '@user/user.service';
+import { Crypto } from 'src/shared/crypto/crypto';
+import { UserService } from 'src/user/user.service';
 
 export async function createTestUser(app: INestApplication, username = 'test'): Promise<User> {
   const model = app.get<typeof User>(getModelToken(User, DEFAULT_DATABASE_NAME));

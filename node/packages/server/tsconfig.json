@@ -16,19 +16,12 @@
     "outDir": "./dist",
     "baseUrl": "./",
     "incremental": true,
-    "paths": {
-      "@root/*": ["./src/*"],
-      "@shared/*": ["./src/shared/*"],
-      "@config/*": ["./src/config/*"],
-      "@auth/*": ["./src/auth/*"],
-      "@user/*": ["./src/user/*"],
-      "@profile/*": ["./src/profile/*"],
-      "@article/*": ["./src/article/*"]
-    }
+    "paths": {}
   },
   "exclude": [
     "node_modules",
     "dist",
-    "**/*.spec.ts"
+    "test",
+    "**/*spec.ts"
   ]
 }

@@ -1,16 +1,16 @@
 import { BadRequestException, Injectable, InternalServerErrorException } from '@nestjs/common';
 import { InjectConnection } from '@nestjs/sequelize';
-import { CreateUserDto } from '@user/dto/request/create-user.dto';
-import { DEFAULT_DATABASE_NAME } from '@config/constants/database';
+import { CreateUserDto } from 'src/user/dto/request/create-user.dto';
+import { DEFAULT_DATABASE_NAME } from 'src/config/constants/database';
 import { validate } from 'class-validator';
-import { UpdateUserDto } from '@user/dto/request/update-user.dto';
+import { UpdateUserDto } from 'src/user/dto/request/update-user.dto';
 import { Sequelize } from 'sequelize';
-import { UserDto } from '@user/dto/response/user.dto';
-import { FileService } from '@shared/file/file.service';
-import { AuthUserDto } from '@user/dto/response/auth-user.dto';
-import { SequelizeOptionDto, Transactional } from '@shared/decorators/transaction/transactional.decorator';
-import { UserRepository } from '@user/repositories/user.repository';
-import { User } from '@user/entities/user.entity';
+import { UserDto } from 'src/user/dto/response/user.dto';
+import { FileService } from 'src/shared/file/file.service';
+import { AuthUserDto } from 'src/user/dto/response/auth-user.dto';
+import { SequelizeOptionDto, Transactional } from 'src/shared/decorators/transaction/transactional.decorator';
+import { UserRepository } from 'src/user/repositories/user.repository';
+import { User } from 'src/user/entities/user.entity';
 
 @Injectable()
 export class UserService {

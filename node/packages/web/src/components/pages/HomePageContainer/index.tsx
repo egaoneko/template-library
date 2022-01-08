@@ -1,18 +1,18 @@
-import Head from '@components/atoms/layout/Head';
+import Head from 'src/components/atoms/layout/Head';
 import React, { FC } from 'react';
 import HomeContentTemplate from './templates/HomeContentTemplate';
 import { BasePropsType, ListResult } from '@my-app/core/lib/interfaces/common';
-import BaseLayoutTemplate from '@components/templates/layout/BaseLayoutTemplate';
-import { useStores } from '@stores/stores';
+import BaseLayoutTemplate from 'src/components/templates/layout/BaseLayoutTemplate';
+import { useStores } from 'src/stores/stores';
 import { useState } from 'react';
 import { FeedTab } from './enum';
 import { IArticle } from '@my-app/core/lib/interfaces/article';
 import { useQuery } from 'react-query';
-import ArticleAPI from '@api/article';
-import { notifyError } from '@utils/notifiy';
+import ArticleAPI from 'src/api/article';
+import { notifyError } from 'src/utils/notifiy';
 import { useRouter } from 'next/router';
 import HomeBannerTemplate from './templates/HomeBannerTemplate';
-import { CONTEXT } from '@constants/common';
+import { CONTEXT } from 'src/constants/common';
 
 const PAGE_LIMIT = 5;
 interface PropsType extends BasePropsType {}

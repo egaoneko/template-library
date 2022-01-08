@@ -1,10 +1,10 @@
 import { Body, Controller, Get, Put, UsePipes, ValidationPipe } from '@nestjs/common';
 import { UserService } from './user.service';
-import { UserDto } from '@user/dto/response/user.dto';
+import { UserDto } from 'src/user/dto/response/user.dto';
 import { ApiBearerAuth, ApiBody, ApiOperation, ApiResponse, ApiTags } from '@nestjs/swagger';
-import { UpdateUserDto, UpdateUserRequestDto } from '@user/dto/request/update-user.dto';
-import { Crypto } from '@shared/crypto/crypto';
-import { CurrentUser } from '@user/decorators/current-user.decorator';
+import { UpdateUserDto, UpdateUserRequestDto } from 'src/user/dto/request/update-user.dto';
+import { Crypto } from 'src/shared/crypto/crypto';
+import { CurrentUser } from 'src/user/decorators/current-user.decorator';
 
 @ApiTags('user')
 @Controller('/api/users')

@@ -1,4 +1,4 @@
-import ArticlePageContainer from '@components/pages/article/ArticlePageContainer';
+import ArticlePageContainer from 'src/components/pages/article/ArticlePageContainer';
 import {
   GetServerSidePropsResult,
   NextPageContext

@@ -1,18 +1,18 @@
 import { Body, Controller, Delete, Get, Param, Post, Put, Query, UsePipes, ValidationPipe } from '@nestjs/common';
-import { ArticleService } from '@article/article.service';
+import { ArticleService } from 'src/article/article.service';
 import { ApiBearerAuth, ApiOperation, ApiResponse, ApiTags } from '@nestjs/swagger';
-import { ArticlesDto } from '@article/dto/response/articles.dto';
-import { GetArticlesDto } from '@article/dto/request/get-articles.dto';
-import { CurrentUser } from '@user/decorators/current-user.decorator';
-import { GetFeedArticlesDto } from '@article/dto/request/get-feed-articles.dto';
-import { ArticleDto } from '@article/dto/response/article.dto';
-import { CreateArticleDto } from '@article/dto/request/create-article.dto';
-import { UpdateArticleDto } from '@article/dto/request/update-article.dto';
-import { CreateCommentDto } from '@article/dto/request/create-comment.dto';
-import { CommentsDto } from '@article/dto/response/comments.dto';
-import { GetCommentsDto } from '@article/dto/request/get-comments.dto';
-import { CommentDto } from '@article/dto/response/comment.dto';
-import { NoAuth } from '@root/shared/decorators/auth/no-auth';
+import { ArticlesDto } from 'src/article/dto/response/articles.dto';
+import { GetArticlesDto } from 'src/article/dto/request/get-articles.dto';
+import { CurrentUser } from 'src/user/decorators/current-user.decorator';
+import { GetFeedArticlesDto } from 'src/article/dto/request/get-feed-articles.dto';
+import { ArticleDto } from 'src/article/dto/response/article.dto';
+import { CreateArticleDto } from 'src/article/dto/request/create-article.dto';
+import { UpdateArticleDto } from 'src/article/dto/request/update-article.dto';
+import { CreateCommentDto } from 'src/article/dto/request/create-comment.dto';
+import { CommentsDto } from 'src/article/dto/response/comments.dto';
+import { GetCommentsDto } from 'src/article/dto/request/get-comments.dto';
+import { CommentDto } from 'src/article/dto/response/comment.dto';
+import { NoAuth } from 'src/shared/decorators/auth/no-auth';
 
 @ApiTags('article')
 @Controller('/api/articles')

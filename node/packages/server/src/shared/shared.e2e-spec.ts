@@ -1,14 +1,14 @@
 import request from 'supertest';
 import { Test } from '@nestjs/testing';
-import { AppModule } from '@root/app.module';
+import { AppModule } from '../app.module';
 import { INestApplication } from '@nestjs/common';
-import { createTestUser, getTestUserDto } from '../utils/user';
-import { cleanDb } from '../utils/db';
+import { createTestUser, getTestUserDto } from '../test/utils/user';
+import { cleanDb } from '../test/utils/db';
 import path from 'path';
 import fs from 'fs';
 import { getModelToken } from '@nestjs/sequelize';
-import { DEFAULT_DATABASE_NAME } from '@config/constants/database';
-import { File } from '@shared/file/entities/file.entity';
+import { DEFAULT_DATABASE_NAME } from '../config/constants/database';
+import { File } from '../shared/file/entities/file.entity';
 
 describe('FileController (e2e)', () => {
   let app: INestApplication;
@@ -32,7 +32,7 @@ describe('FileController (e2e)', () => {
     return request(app.getHttpServer())
       .post('/api/file/upload')
       .set('Authorization', `Bearer ${dto.token}`)
-      .attach('file', path.join(__dirname, './data/sample.png'))
+      .attach('file', path.join(__dirname, '../test/data/sample.png'))
       .expect(201)
       .expect(({ body }) => {
         expect(body.id).toBeDefined();
@@ -59,7 +59,7 @@ describe('FileController (e2e)', () => {
     const file = await request(app.getHttpServer())
       .post('/api/file/upload')
       .set('Authorization', `Bearer ${dto.token}`)
-      .attach('file', path.join(__dirname, './data/sample.png'));
+      .attach('file', path.join(__dirname, '../test/data/sample.png'));
 
     return request(app.getHttpServer())
       .get(`/api/file/${file.body.id}`)
@@ -67,8 +67,8 @@ describe('FileController (e2e)', () => {
       .expect(200)
       .expect(({ body }) => {
         expect(body).toBeDefined();
-        fs.writeFileSync('./test.jpg', body, 'binary');
-        const file = fs.readFileSync(path.join(__dirname, './data/sample.png')) as Buffer;
+        fs.writeFileSync(path.join(__dirname, '../test/temp/sample.png'), body, 'binary');
+        const file = fs.readFileSync(path.join(__dirname, '../test/data/sample.png')) as Buffer;
         expect(body).toEqual(file);
       });
   });
@@ -94,7 +94,7 @@ describe('FileController (e2e)', () => {
     const file = await request(app.getHttpServer())
       .post('/api/file/upload')
       .set('Authorization', `Bearer ${dto.token}`)
-      .attach('file', path.join(__dirname, './data/sample.png'));
+      .attach('file', path.join(__dirname, '../test/data/sample.png'));
 
     const fileModel = app.get<typeof File>(getModelToken(File, DEFAULT_DATABASE_NAME));
     const uploadedFile = await fileModel.findOne({ where: { id: file.body.id } });

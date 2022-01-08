@@ -1,7 +1,7 @@
 import { Test, TestingModule } from '@nestjs/testing';
 import { AuthService } from '../auth.service';
 import { LocalStrategy } from './local.strategy';
-import { IUser } from '@user/interfaces/user.interface';
+import { IUser } from 'src/user/interfaces/user.interface';
 
 describe('LocalStrategy', () => {
   let strategy: LocalStrategy;

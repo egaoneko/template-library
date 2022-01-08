@@ -1,6 +1,6 @@
 import { Table, Column, Model, PrimaryKey, DataType, AutoIncrement, BelongsTo, AllowNull } from 'sequelize-typescript';
-import { User } from '@user/entities/user.entity';
-import { Article } from '@article/entities/article.entity';
+import { User } from 'src/user/entities/user.entity';
+import { Article } from 'src/article/entities/article.entity';
 
 @Table
 export class Comment extends Model {

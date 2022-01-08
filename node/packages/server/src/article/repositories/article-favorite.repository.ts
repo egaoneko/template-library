@@ -1,8 +1,8 @@
 import { Injectable } from '@nestjs/common';
 import { InjectModel } from '@nestjs/sequelize';
-import { DEFAULT_DATABASE_NAME } from '@config/constants/database';
-import { ArticleFavorite } from '@article/entities/article-favorite.entity';
-import { SequelizeOptionDto } from '@shared/decorators/transaction/transactional.decorator';
+import { DEFAULT_DATABASE_NAME } from 'src/config/constants/database';
+import { ArticleFavorite } from 'src/article/entities/article-favorite.entity';
+import { SequelizeOptionDto } from 'src/shared/decorators/transaction/transactional.decorator';
 
 @Injectable()
 export class ArticleFavoriteRepository {

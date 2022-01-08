@@ -1,17 +1,17 @@
-import { RefreshDto } from '@auth/dto/request/refresh.dto';
-import { AuthService } from '@auth/auth.service';
+import { RefreshDto } from 'src/auth/dto/request/refresh.dto';
+import { AuthService } from 'src/auth/auth.service';
 import { Body, Controller, Get, Post, UseGuards, UsePipes, ValidationPipe } from '@nestjs/common';
-import { LocalAuthGuard } from '@auth/guards/local-auth.guard';
-import { JwtRefreshGuard } from '@auth/guards/jwt-refresh.guard';
-import { CreateUserDto } from '@user/dto/request/create-user.dto';
+import { LocalAuthGuard } from 'src/auth/guards/local-auth.guard';
+import { JwtRefreshGuard } from 'src/auth/guards/jwt-refresh.guard';
+import { CreateUserDto } from 'src/user/dto/request/create-user.dto';
 import { RegisterDto } from './dto/request/register.dto';
-import { UserService } from '@user/user.service';
-import { NoAuth } from '@root/shared/decorators/auth/no-auth';
+import { UserService } from 'src/user/user.service';
+import { NoAuth } from 'src/shared/decorators/auth/no-auth';
 import { ApiBody, ApiOperation, ApiResponse, ApiTags } from '@nestjs/swagger';
-import { UserDto } from '@user/dto/response/user.dto';
-import { LoginDto } from '@auth/dto/request/login.dto';
-import { Crypto } from '@shared/crypto/crypto';
-import { CurrentUser } from '@user/decorators/current-user.decorator';
+import { UserDto } from 'src/user/dto/response/user.dto';
+import { LoginDto } from 'src/auth/dto/request/login.dto';
+import { Crypto } from 'src/shared/crypto/crypto';
+import { CurrentUser } from 'src/user/decorators/current-user.decorator';
 import { ConfigService } from '@nestjs/config';
 
 @ApiTags('auth')

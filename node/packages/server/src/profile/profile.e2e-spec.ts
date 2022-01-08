@@ -1,10 +1,10 @@
 import request from 'supertest';
 import { Test } from '@nestjs/testing';
-import { AppModule } from '@root/app.module';
+import { AppModule } from '../app.module';
 import { INestApplication } from '@nestjs/common';
-import { createTestUser, getTestUserDto } from '../utils/user';
-import { createTestFollowing } from '../utils/profile';
-import { cleanDb } from '../utils/db';
+import { createTestUser, getTestUserDto } from '../test/utils/user';
+import { createTestFollowing } from '../test/utils/profile';
+import { cleanDb } from '../test/utils/db';
 
 describe('ProfileController (e2e)', () => {
   let app: INestApplication;

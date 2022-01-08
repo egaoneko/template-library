@@ -1,10 +1,10 @@
 import React, { FC, ReactNode } from 'react';
-import Form from '@components/molecules/form/Form';
-import Input from '@components/molecules/form/Input';
-import Submit from '@components/molecules/form/Submit';
+import Form from 'src/components/molecules/form/Form';
+import Input from 'src/components/molecules/form/Input';
+import Submit from 'src/components/molecules/form/Submit';
 import Link from 'next/link';
 import { LoginRequest } from '@my-app/core/lib/interfaces/user';
-import PageTitle from '@components/atoms/page/PageTitle';
+import PageTitle from 'src/components/atoms/page/PageTitle';
 
 interface PropsType {
   loading?: boolean;

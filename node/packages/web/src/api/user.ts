@@ -1,7 +1,7 @@
 import { IUser, UpdateRequest } from '@my-app/core/lib/interfaces/user';
-import { API_SERVER_URL } from '@constants/common';
+import { API_SERVER_URL } from 'src/constants/common';
 import BaseAPI from './base';
-import Context from '@libs/Context';
+import Context from 'src/libs/Context';
 
 export default class UserAPI {
   private static BASE_URL = `${API_SERVER_URL}/api/users`;

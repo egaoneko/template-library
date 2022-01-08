@@ -1,19 +1,19 @@
-import Head from '@components/atoms/layout/Head';
+import Head from 'src/components/atoms/layout/Head';
 import React, { FC, useState } from 'react';
 import { BasePropsType, ListResult } from '@my-app/core/lib/interfaces/common';
-import BaseLayoutTemplate from '@components/templates/layout/BaseLayoutTemplate';
-import { useStores } from '@stores/stores';
+import BaseLayoutTemplate from 'src/components/templates/layout/BaseLayoutTemplate';
+import { useStores } from 'src/stores/stores';
 import { IArticle } from '@my-app/core/lib/interfaces/article';
 import { useQuery } from 'react-query';
-import ArticleAPI from '@api/article';
+import ArticleAPI from 'src/api/article';
 import ArticleBannerTemplate from './templates/ArticleBannerTemplate';
 import ArticleContentTemplate from './templates/ArticleContentTemplate';
 import { useRouter } from 'next/router';
-import { notifyError, notifySuccess } from '@utils/notifiy';
-import ProfileAPI from '@api/profile';
+import { notifyError, notifySuccess } from 'src/utils/notifiy';
+import ProfileAPI from 'src/api/profile';
 import ArticleCommentTemplate from './templates/ArticleCommentTemplate';
 import { CreateCommentRequest, IComment } from '@my-app/core/lib/interfaces/comment';
-import { CONTEXT } from '@constants/common';
+import { CONTEXT } from 'src/constants/common';
 
 interface PropsType extends BasePropsType {
   slug: string;

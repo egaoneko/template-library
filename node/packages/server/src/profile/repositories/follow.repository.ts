@@ -1,8 +1,8 @@
 import { Injectable } from '@nestjs/common';
 import { InjectModel } from '@nestjs/sequelize';
-import { DEFAULT_DATABASE_NAME } from '@config/constants/database';
-import { Follow } from '@profile/entities/follow.entity';
-import { SequelizeOptionDto } from '@shared/decorators/transaction/transactional.decorator';
+import { DEFAULT_DATABASE_NAME } from 'src/config/constants/database';
+import { Follow } from 'src/profile/entities/follow.entity';
+import { SequelizeOptionDto } from 'src/shared/decorators/transaction/transactional.decorator';
 
 @Injectable()
 export class FollowRepository {

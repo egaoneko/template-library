@@ -4,8 +4,8 @@ import { AuthGuard } from '@nestjs/passport';
 import { ExecutionContext, Injectable, UnauthorizedException } from '@nestjs/common';
 import { Observable } from 'rxjs';
 import { Reflector } from '@nestjs/core';
-import { JWT_NAME } from '@auth/constants/auth.constant';
-import { NO_AUTH_META_DATA_KEY } from '@shared/decorators/auth/no-auth';
+import { JWT_NAME } from 'src/auth/constants/auth.constant';
+import { NO_AUTH_META_DATA_KEY } from 'src/shared/decorators/auth/no-auth';
 
 @Injectable()
 export class JwtAuthGuard extends AuthGuard(JWT_NAME) {

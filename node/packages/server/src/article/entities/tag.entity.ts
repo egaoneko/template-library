@@ -9,8 +9,8 @@ import {
   BelongsToMany,
   AllowNull,
 } from 'sequelize-typescript';
-import { Article } from '@article/entities/article.entity';
-import { ArticleTag } from '@article/entities/article-tag.entity';
+import { Article } from 'src/article/entities/article.entity';
+import { ArticleTag } from 'src/article/entities/article-tag.entity';
 
 @Table
 export class Tag extends Model {

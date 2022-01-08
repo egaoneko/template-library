@@ -1,17 +1,17 @@
-import Menu from '@components/atoms/menu/Menu';
-import Menus from '@components/atoms/menu/Menus';
+import Menu from 'src/components/atoms/menu/Menu';
+import Menus from 'src/components/atoms/menu/Menus';
 import React, {
   FC,
 } from 'react';
 import styled from 'styled-components';
 import tw from 'twin.macro';
 import Link from 'next/link';
-import { useStores } from '@stores/stores';
+import { useStores } from 'src/stores/stores';
 import {
   AiOutlineEdit,
   AiOutlineSetting
 } from 'react-icons/ai';
-import Avatar from '@components/atoms/avatar/Avatar';
+import Avatar from 'src/components/atoms/avatar/Avatar';
 
 interface PropsType {
   pathname?: string | null;

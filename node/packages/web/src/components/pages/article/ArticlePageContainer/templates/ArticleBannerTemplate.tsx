@@ -1,4 +1,4 @@
-import Avatar from '@components/atoms/avatar/Avatar';
+import Avatar from 'src/components/atoms/avatar/Avatar';
 import { IArticle } from '@my-app/core/lib/interfaces/article';
 import { IUser } from '@my-app/core/lib/interfaces/user';
 import format from 'date-fns/format';

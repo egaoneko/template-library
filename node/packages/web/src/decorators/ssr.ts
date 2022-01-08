@@ -1,4 +1,4 @@
-import { IS_SSR } from '@constants/common';
+import { IS_SSR } from 'src/constants/common';
 
 export function avoid(target: any, propertyKey: string, descriptor: PropertyDescriptor) {
   const method: Function = descriptor.value;

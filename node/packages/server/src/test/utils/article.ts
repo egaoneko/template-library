@@ -1,14 +1,14 @@
 import { INestApplication } from '@nestjs/common';
-import { User } from '@user/entities/user.entity';
+import { User } from 'src/user/entities/user.entity';
 import { getModelToken } from '@nestjs/sequelize';
-import { DEFAULT_DATABASE_NAME } from '@config/constants/database';
-import { createTestUser } from './user';
-import { Article } from '@article/entities/article.entity';
-import { ArticleFavorite } from '@article/entities/article-favorite.entity';
-import { createTestFollowing } from './profile';
-import { Tag } from '@article/entities/tag.entity';
-import { ArticleTag } from '@article/entities/article-tag.entity';
-import { Comment } from '@article/entities/comment.entity';
+import { DEFAULT_DATABASE_NAME } from 'src/config/constants/database';
+import { createTestUser } from 'src/test/utils/user';
+import { Article } from 'src/article/entities/article.entity';
+import { ArticleFavorite } from 'src/article/entities/article-favorite.entity';
+import { createTestFollowing } from 'src/test/utils/profile';
+import { Tag } from 'src/article/entities/tag.entity';
+import { ArticleTag } from 'src/article/entities/article-tag.entity';
+import { Comment } from 'src/article/entities/comment.entity';
 
 export async function createTestArticle(app: INestApplication, user: User): Promise<Article[]> {
   const user2 = await createTestUser(app, 'test2');

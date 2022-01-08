@@ -1,8 +1,8 @@
 import { Injectable } from '@nestjs/common';
 import { InjectModel } from '@nestjs/sequelize';
-import { DEFAULT_DATABASE_NAME } from '@config/constants/database';
-import { SequelizeOptionDto } from '@shared/decorators/transaction/transactional.decorator';
-import { ArticleTag } from '@article/entities/article-tag.entity';
+import { DEFAULT_DATABASE_NAME } from 'src/config/constants/database';
+import { SequelizeOptionDto } from 'src/shared/decorators/transaction/transactional.decorator';
+import { ArticleTag } from 'src/article/entities/article-tag.entity';
 
 @Injectable()
 export class ArticleTagRepository {

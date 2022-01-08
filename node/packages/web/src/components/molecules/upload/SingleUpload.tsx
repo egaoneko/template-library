@@ -1,8 +1,8 @@
-import FileAPI from '@api/file';
-import Button from '@components/atoms/common/Button';
-import { CONTEXT } from '@constants/common';
+import FileAPI from 'src/api/file';
+import Button from 'src/components/atoms/common/Button';
+import { CONTEXT } from 'src/constants/common';
 import { IFile } from '@my-app/core/lib/interfaces/file';
-import { notifyError } from '@utils/notifiy';
+import { notifyError } from 'src/utils/notifiy';
 import React, { ChangeEvent, FC, ReactNode, useCallback, useRef } from 'react';
 import { CSSProperties } from 'styled-components';
 

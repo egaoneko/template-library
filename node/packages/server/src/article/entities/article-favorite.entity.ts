@@ -9,7 +9,7 @@ import {
   BelongsTo,
   AllowNull,
 } from 'sequelize-typescript';
-import { User } from '@user/entities/user.entity';
+import { User } from 'src/user/entities/user.entity';
 import { Article } from './article.entity';
 
 @Table

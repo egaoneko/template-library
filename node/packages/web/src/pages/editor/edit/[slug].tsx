@@ -1,7 +1,7 @@
-import ArticleAPI from '@api/article';
-import EditorEditPageContainer from '@components/pages/editor/EditorEditPageContainer';
+import ArticleAPI from 'src/api/article';
+import EditorEditPageContainer from 'src/components/pages/editor/EditorEditPageContainer';
 import { IArticle } from '@my-app/core/lib/interfaces/article';
-import Context from '@libs/Context';
+import Context from 'src/libs/Context';
 import { GetServerSidePropsResult, NextPageContext } from 'next';
 import React, { ReactNode } from 'react';
 

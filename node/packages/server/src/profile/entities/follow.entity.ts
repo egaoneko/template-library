@@ -1,5 +1,5 @@
 import { Table, Column, Model, PrimaryKey, DataType, AutoIncrement, BelongsTo, AllowNull } from 'sequelize-typescript';
-import { User } from '@user/entities/user.entity';
+import { User } from 'src/user/entities/user.entity';
 
 @Table
 export class Follow extends Model {

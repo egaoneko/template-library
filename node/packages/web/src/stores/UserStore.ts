@@ -1,13 +1,13 @@
-import UserAPI from '@api/user';
+import UserAPI from 'src/api/user';
 import { makeAutoObservable } from 'mobx';
-import { CONTEXT, IS_SSR } from '@constants/common';
+import { CONTEXT, IS_SSR } from 'src/constants/common';
 import { useMemo } from 'react';
 import { IUser, LoginRequest, RegisterRequest, UpdateRequest } from '@my-app/core/lib/interfaces/user';
-import AuthAPI from '@api/auth';
-import { notifyError, notifySuccess } from '@utils/notifiy';
-import { getCookieExpires, removeCookie, setCookie } from '@utils/cookie';
-import { CookieName } from '@enums/cookie';
-import { CookieExpires } from '@constants/cookie';
+import AuthAPI from 'src/api/auth';
+import { notifyError, notifySuccess } from 'src/utils/notifiy';
+import { getCookieExpires, removeCookie, setCookie } from 'src/utils/cookie';
+import { CookieName } from 'src/enums/cookie';
+import { CookieExpires } from 'src/constants/cookie';
 
 export class UserStore {
   public user: IUser | null = null;

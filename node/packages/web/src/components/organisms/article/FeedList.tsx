@@ -1,4 +1,4 @@
-import Pagination from '@components/molecules/pagination/Pagination';
+import Pagination from 'src/components/molecules/pagination/Pagination';
 import { IArticle } from '@my-app/core/lib/interfaces/article';
 import { ListResult } from '@my-app/core/lib/interfaces/common';
 import React, { FC } from 'react';

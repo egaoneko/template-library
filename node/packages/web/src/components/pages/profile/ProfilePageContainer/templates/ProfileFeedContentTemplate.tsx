@@ -1,6 +1,6 @@
-import TabPane from '@components/molecules/tab/TabPane';
-import Tabs from '@components/molecules/tab/Tabs';
-import FeedList from '@components/organisms/article/FeedList';
+import TabPane from 'src/components/molecules/tab/TabPane';
+import Tabs from 'src/components/molecules/tab/Tabs';
+import FeedList from 'src/components/organisms/article/FeedList';
 import { IArticle } from '@my-app/core/lib/interfaces/article';
 import { ListResult } from '@my-app/core/lib/interfaces/common';
 import React, { FC, ReactNode } from 'react';

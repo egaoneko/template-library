@@ -1,40 +1,58 @@
-import AuthAPI from '@api/auth';
+import AuthAPI from 'src/api/auth';
 import { stringify } from 'query-string';
-import { getCookie, setCookie, removeCookie, getCookieExpires } from '@utils/cookie';
-import { CookieName } from '@enums/cookie';
-import Context from '@libs/Context';
-import { CookieExpires } from '@constants/cookie';
+import {
+  getCookie,
+  setCookie,
+  removeCookie,
+  getCookieExpires
+} from 'src/utils/cookie';
+import { CookieName } from 'src/enums/cookie';
+import Context from 'src/libs/Context';
+import { CookieExpires } from 'src/constants/cookie';
+
+const DEFAULT_OPTION: ApiOption = {
+  refresh: true,
+};
+
+export interface ApiOption {
+  refresh: boolean;
+}
 
 export default class BaseAPI {
-  static async get<P, R>(context: Context, url: string, request?: P, requestInit?: RequestInit): Promise<R> {
+  static async get<P, R>(context: Context, url: string, request?: P, requestInit?: RequestInit, apiOption?: ApiOption): Promise<R> {
     return this.request<P, R>(context, url, request, {
       method: 'GET',
       ...requestInit,
-    });
+    }, apiOption);
   }
-  static async post<P, R>(context: Context, url: string, request?: P, requestInit?: RequestInit): Promise<R> {
+
+  static async post<P, R>(context: Context, url: string, request?: P, requestInit?: RequestInit, apiOption?: ApiOption): Promise<R> {
     return this.request<P, R>(context, url, request, {
       method: 'POST',
       ...requestInit,
-    });
+    }, apiOption);
   }
-  static async put<P, R>(context: Context, url: string, request?: P, requestInit?: RequestInit): Promise<R> {
+
+  static async put<P, R>(context: Context, url: string, request?: P, requestInit?: RequestInit, apiOption?: ApiOption): Promise<R> {
     return this.request<P, R>(context, url, request, {
       method: 'PUT',
       ...requestInit,
-    });
+    }, apiOption);
   }
-  static async delete<P, R>(context: Context, url: string, request?: P, requestInit?: RequestInit): Promise<R> {
+
+  static async delete<P, R>(context: Context, url: string, request?: P, requestInit?: RequestInit, apiOption?: ApiOption): Promise<R> {
     return this.request<P, R>(context, url, request, {
       method: 'DELETE',
       ...requestInit,
-    });
+    }, apiOption);
   }
+
   static async request<P, R>(
     context: Context,
     url: string,
     request?: P,
     { headers, ...requestInit }: RequestInit = {},
+    apiOption: ApiOption = DEFAULT_OPTION,
   ): Promise<R> {
     const accessToken = getCookie(context, CookieName.ACCESS_TOKEN);
     const refreshToken = getCookie(context, CookieName.REFRESH_TOKEN);
@@ -46,7 +64,7 @@ export default class BaseAPI {
         ...headers,
       },
       ...requestInit,
-    };
+    } as RequestInit;
 
     let queryParams = '';
     if (init.method === 'GET') {
@@ -59,7 +77,7 @@ export default class BaseAPI {
       init.headers = {
         'Content-Type': 'application/json',
         ...init.headers,
-      };
+      } as HeadersInit;
       init.body = JSON.stringify(request);
     }
 
@@ -70,12 +88,13 @@ export default class BaseAPI {
       return data;
     }
 
-    if (response.status === 401 && refreshToken) {
+    if (response.status === 401 && apiOption.refresh && refreshToken) {
       let newAccessToken = '';
       try {
         const user = await AuthAPI.refresh(context, { refreshToken });
         newAccessToken = user.token ?? '';
-      } catch (e) {}
+      } catch (e) {
+      }
 
       if (newAccessToken) {
         setCookie(context, CookieName.ACCESS_TOKEN, newAccessToken, {

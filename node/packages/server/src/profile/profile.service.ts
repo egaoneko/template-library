@@ -1,12 +1,12 @@
 import { BadRequestException, Injectable, InternalServerErrorException } from '@nestjs/common';
-import { ProfileDto } from '@profile/dto/response/profile.dto';
-import { UserService } from '@user/user.service';
+import { ProfileDto } from 'src/profile/dto/response/profile.dto';
+import { UserService } from 'src/user/user.service';
 import { InjectConnection } from '@nestjs/sequelize';
-import { DEFAULT_DATABASE_NAME } from '@config/constants/database';
+import { DEFAULT_DATABASE_NAME } from 'src/config/constants/database';
 import { Sequelize } from 'sequelize';
-import { UserDto } from '@user/dto/response/user.dto';
-import { SequelizeOptionDto, Transactional } from '@shared/decorators/transaction/transactional.decorator';
-import { FollowRepository } from '@profile/repositories/follow.repository';
+import { UserDto } from 'src/user/dto/response/user.dto';
+import { SequelizeOptionDto, Transactional } from 'src/shared/decorators/transaction/transactional.decorator';
+import { FollowRepository } from 'src/profile/repositories/follow.repository';
 
 @Injectable()
 export class ProfileService {

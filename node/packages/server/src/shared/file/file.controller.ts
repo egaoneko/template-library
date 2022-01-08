@@ -10,13 +10,13 @@ import {
   UseInterceptors,
 } from '@nestjs/common';
 import { FileInterceptor } from '@nestjs/platform-express';
-import { FileService } from '@shared/file/file.service';
+import { FileService } from 'src/shared/file/file.service';
 import { ApiBearerAuth, ApiBody, ApiConsumes, ApiOperation, ApiResponse, ApiTags } from '@nestjs/swagger';
 import { Response } from 'express';
-import { FileDto } from '@shared/file/dto/response/file.dto';
+import { FileDto } from 'src/shared/file/dto/response/file.dto';
 import fs from 'fs';
-import { CurrentUser } from '@user/decorators/current-user.decorator';
-import { NoAuth } from '@root/shared/decorators/auth/no-auth';
+import { CurrentUser } from 'src/user/decorators/current-user.decorator';
+import { NoAuth } from 'src/shared/decorators/auth/no-auth';
 
 @ApiTags('shared')
 @Controller('/api/file')
@@ -69,6 +69,7 @@ export class FileController {
     @UploadedFile() file: Express.Multer.File,
     @CurrentUser('id') currentUserId: number,
   ): Promise<FileDto> {
+    console.log(file);
     if (!file) {
       throw new BadRequestException('Not found file');
     }

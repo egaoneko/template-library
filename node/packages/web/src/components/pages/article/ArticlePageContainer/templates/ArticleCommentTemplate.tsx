@@ -1,8 +1,8 @@
 import format from 'date-fns/format';
-import Avatar from '@components/atoms/avatar/Avatar';
-import Form from '@components/molecules/form/Form';
-import Submit from '@components/molecules/form/Submit';
-import Textarea from '@components/molecules/form/Textarea';
+import Avatar from 'src/components/atoms/avatar/Avatar';
+import Form from 'src/components/molecules/form/Form';
+import Submit from 'src/components/molecules/form/Submit';
+import Textarea from 'src/components/molecules/form/Textarea';
 import { IArticle } from '@my-app/core/lib/interfaces/article';
 import { CreateCommentRequest, IComment } from '@my-app/core/lib/interfaces/comment';
 import { ListResult } from '@my-app/core/lib/interfaces/common';

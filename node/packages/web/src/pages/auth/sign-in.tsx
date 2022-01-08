@@ -1,4 +1,4 @@
-import SignInPageContainer from '@components/pages/auth/SignInPageContainer';
+import SignInPageContainer from 'src/components/pages/auth/SignInPageContainer';
 import {
   GetServerSidePropsResult,
   NextPageContext

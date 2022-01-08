@@ -1,4 +1,4 @@
-import HomePageContainer from '@components/pages/HomePageContainer';
+import HomePageContainer from 'src/components/pages/HomePageContainer';
 import { ReactNode } from 'react';
 
 interface PropsType {}

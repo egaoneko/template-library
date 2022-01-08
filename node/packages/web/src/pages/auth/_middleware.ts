@@ -1,8 +1,8 @@
-import AuthAPI from '@api/auth';
-import { getCookie } from '@utils/cookie';
+import AuthAPI from 'src/api/auth';
+import { getCookie } from 'src/utils/cookie';
 import { NextRequest, NextResponse } from 'next/server';
-import { CookieName } from '@enums/cookie';
-import Context from '@libs/Context';
+import { CookieName } from 'src/enums/cookie';
+import Context from 'src/libs/Context';
 
 export async function middleware(request: NextRequest) {
   const response = NextResponse.next();

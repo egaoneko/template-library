@@ -1,10 +1,10 @@
 import { Injectable } from '@nestjs/common';
 import { InjectModel } from '@nestjs/sequelize';
-import { User } from '@user/entities/user.entity';
-import { CreateUserDto } from '@user/dto/request/create-user.dto';
-import { DEFAULT_DATABASE_NAME } from '@config/constants/database';
-import { UpdateUserDto } from '@user/dto/request/update-user.dto';
-import { SequelizeOptionDto } from '@shared/decorators/transaction/transactional.decorator';
+import { User } from 'src/user/entities/user.entity';
+import { CreateUserDto } from 'src/user/dto/request/create-user.dto';
+import { DEFAULT_DATABASE_NAME } from 'src/config/constants/database';
+import { UpdateUserDto } from 'src/user/dto/request/update-user.dto';
+import { SequelizeOptionDto } from 'src/shared/decorators/transaction/transactional.decorator';
 
 @Injectable()
 export class UserRepository {

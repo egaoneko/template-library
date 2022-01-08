@@ -1,6 +1,6 @@
-import Context from '@libs/Context';
+import Context from 'src/libs/Context';
 import { NextPageContext } from 'next';
-import UserAPI from '@api/user';
+import UserAPI from 'src/api/user';
 import { IUser } from '@my-app/core/lib/interfaces/user';
 
 export async function hydrateUser(nextContext: NextPageContext): Promise<IUser | null> {

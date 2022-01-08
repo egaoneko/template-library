@@ -5,6 +5,15 @@ const { pathsToModuleNameMapper } = require('ts-jest/utils');
 const { compilerOptions } = require('./tsconfig');
 
 overwrittenConfig.rootDir = '';
+overwrittenConfig.roots = [
+  '<rootDir>',
+];
+overwrittenConfig.modulePaths = [
+  '<rootDir>',
+];
+overwrittenConfig.moduleDirectories = [
+  'node_modules',
+];
 overwrittenConfig.moduleNameMapper = {
   ...pathsToModuleNameMapper(compilerOptions.paths, { prefix: '<rootDir>/' }),
 };

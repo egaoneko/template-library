@@ -1,9 +1,9 @@
 import { Injectable, UnauthorizedException } from '@nestjs/common';
 import { JwtService } from '@nestjs/jwt';
-import { UserService } from '@user/user.service';
-import { IJwtPayload } from '@auth/interfaces/jwt.interface';
-import { UserDto } from '@user/dto/response/user.dto';
-import { Crypto } from '@shared/crypto/crypto';
+import { UserService } from 'src/user/user.service';
+import { IJwtPayload } from 'src/auth/interfaces/jwt.interface';
+import { UserDto } from 'src/user/dto/response/user.dto';
+import { Crypto } from 'src/shared/crypto/crypto';
 import { ConfigService } from '@nestjs/config';
 
 @Injectable()

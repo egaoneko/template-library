@@ -1,7 +1,7 @@
-import { API_SERVER_URL } from '@constants/common';
+import { API_SERVER_URL } from 'src/constants/common';
 import { IProfile } from '@my-app/core/lib/interfaces/profile';
 import BaseAPI from './base';
-import Context from '@libs/Context';
+import Context from 'src/libs/Context';
 
 export default class ProfileAPI {
   private static BASE_URL = `${API_SERVER_URL}/api/profiles`;

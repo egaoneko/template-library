@@ -1,6 +1,6 @@
 import { IsEmail, IsNotEmpty, IsNumber, IsOptional, IsString } from 'class-validator';
 import { ApiProperty, ApiPropertyOptional } from '@nestjs/swagger';
-import { IUser } from '@user/interfaces/user.interface';
+import { IUser } from 'src/user/interfaces/user.interface';
 
 export class UserDto implements IUser {
   @IsNotEmpty()

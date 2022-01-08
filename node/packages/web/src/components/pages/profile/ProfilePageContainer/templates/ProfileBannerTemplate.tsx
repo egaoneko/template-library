@@ -1,4 +1,4 @@
-import Avatar from '@components/atoms/avatar/Avatar';
+import Avatar from 'src/components/atoms/avatar/Avatar';
 import { IProfile } from '@my-app/core/lib/interfaces/profile';
 import { IUser } from '@my-app/core/lib/interfaces/user';
 import React, { FC } from 'react';

@@ -1,4 +1,4 @@
-import toArray from '@utils/children/to-array';
+import toArray from 'src/utils/children/to-array';
 import React, { cloneElement, FC, ReactNode, useState } from 'react';
 import { useEffect } from 'react';
 import { ReactElement } from 'react';

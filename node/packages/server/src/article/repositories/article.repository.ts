@@ -1,14 +1,14 @@
 import { Injectable } from '@nestjs/common';
-import { GetArticlesDto } from '@article/dto/request/get-articles.dto';
+import { GetArticlesDto } from 'src/article/dto/request/get-articles.dto';
 import { InjectModel } from '@nestjs/sequelize';
-import { DEFAULT_DATABASE_NAME } from '@config/constants/database';
-import { Article } from '@article/entities/article.entity';
-import { ArticleFavorite } from '@article/entities/article-favorite.entity';
-import { Tag } from '@article/entities/tag.entity';
-import { SequelizeOptionDto } from '@shared/decorators/transaction/transactional.decorator';
-import { GetFeedArticlesDto } from '@article/dto/request/get-feed-articles.dto';
-import { CreateArticleDto } from '@article/dto/request/create-article.dto';
-import { UpdateArticleDto } from '@article/dto/request/update-article.dto';
+import { DEFAULT_DATABASE_NAME } from 'src/config/constants/database';
+import { Article } from 'src/article/entities/article.entity';
+import { ArticleFavorite } from 'src/article/entities/article-favorite.entity';
+import { Tag } from 'src/article/entities/tag.entity';
+import { SequelizeOptionDto } from 'src/shared/decorators/transaction/transactional.decorator';
+import { GetFeedArticlesDto } from 'src/article/dto/request/get-feed-articles.dto';
+import { CreateArticleDto } from 'src/article/dto/request/create-article.dto';
+import { UpdateArticleDto } from 'src/article/dto/request/update-article.dto';
 
 @Injectable()
 export class ArticleRepository {

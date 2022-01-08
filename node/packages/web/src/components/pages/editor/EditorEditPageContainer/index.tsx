@@ -1,13 +1,13 @@
-import Head from '@components/atoms/layout/Head';
+import Head from 'src/components/atoms/layout/Head';
 import React, { FC, useState } from 'react';
 import EditorUpdateContentTemplate from './templates/EditorUpdateContentTemplate';
 import { useRouter } from 'next/router';
 import { BasePropsType } from '@my-app/core/lib/interfaces/common';
-import BaseLayoutTemplate from '@components/templates/layout/BaseLayoutTemplate';
+import BaseLayoutTemplate from 'src/components/templates/layout/BaseLayoutTemplate';
 import { IArticle, UpdateArticleRequest } from '@my-app/core/lib/interfaces/article';
-import ArticleAPI from '@api/article';
-import { notifyError, notifySuccess } from '@utils/notifiy';
-import { CONTEXT } from '@constants/common';
+import ArticleAPI from 'src/api/article';
+import { notifyError, notifySuccess } from 'src/utils/notifiy';
+import { CONTEXT } from 'src/constants/common';
 
 interface PropsType extends BasePropsType {
   article: IArticle;

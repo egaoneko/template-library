@@ -20,38 +20,7 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "jsx": "preserve",
-    "paths": {
-      "@components/*": [
-        "src/components/*"
-      ],
-      "@constants/*": [
-        "src/constants/*"
-      ],
-      "@enums/*": [
-        "src/enums/*"
-      ],
-      "@interfaces/*": [
-        "src/interfaces/*"
-      ],
-      "@decorators/*": [
-        "src/decorators/*"
-      ],
-      "@stores/*": [
-        "src/stores/*"
-      ],
-      "@utils/*": [
-        "src/utils/*"
-      ],
-      "@libs/*": [
-        "src/libs/*"
-      ],
-      "@api/*": [
-        "src/api/*"
-      ],
-      "@assets/*": [
-        "public/assets/*"
-      ]
-    },
+    "paths": {},
     "incremental": true
   },
   "include": [

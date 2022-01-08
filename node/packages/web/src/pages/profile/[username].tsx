@@ -1,4 +1,4 @@
-import ProfilePageContainer from '@components/pages/profile/ProfilePageContainer';
+import ProfilePageContainer from 'src/components/pages/profile/ProfilePageContainer';
 import {
   GetServerSidePropsResult,
   NextPageContext

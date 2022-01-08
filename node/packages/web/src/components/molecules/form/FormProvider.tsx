@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 
-import { NOOP } from '@utils/common';
+import { NOOP } from 'src/utils/common';
 import React, { FC, ReactNode, useCallback } from 'react';
 import { useForm } from 'react-hook-form';
 import FormContext from './FormContext';

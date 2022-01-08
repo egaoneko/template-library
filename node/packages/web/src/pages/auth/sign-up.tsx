@@ -1,4 +1,4 @@
-import SignUpPageContainer from '@components/pages/auth/SignUpPageContainer';
+import SignUpPageContainer from 'src/components/pages/auth/SignUpPageContainer';
 import React, { ReactNode } from 'react';
 
 interface PropsType {}

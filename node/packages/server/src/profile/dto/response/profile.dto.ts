@@ -1,4 +1,4 @@
-import { IProfile } from '@profile/interfaces/profile.interface';
+import { IProfile } from 'src/profile/interfaces/profile.interface';
 import { IsBoolean, IsNotEmpty, IsOptional, IsString } from 'class-validator';
 import { ApiProperty, ApiPropertyOptional } from '@nestjs/swagger';
 

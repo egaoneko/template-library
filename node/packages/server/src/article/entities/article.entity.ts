@@ -10,11 +10,11 @@ import {
   HasMany,
   BelongsToMany,
 } from 'sequelize-typescript';
-import { User } from '@user/entities/user.entity';
-import { ArticleFavorite } from '@article/entities/article-favorite.entity';
-import { ArticleTag } from '@article/entities/article-tag.entity';
-import { Tag } from '@article/entities/tag.entity';
-import { Comment } from '@article/entities/comment.entity';
+import { User } from 'src/user/entities/user.entity';
+import { ArticleFavorite } from 'src/article/entities/article-favorite.entity';
+import { ArticleTag } from 'src/article/entities/article-tag.entity';
+import { Tag } from 'src/article/entities/tag.entity';
+import { Comment } from 'src/article/entities/comment.entity';
 
 @Table
 export class Article extends Model {
