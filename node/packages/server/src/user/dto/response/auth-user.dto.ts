@@ -1,4 +1,5 @@
 import { IsEmail, IsNotEmpty, IsNumber, IsOptional, IsString } from 'class-validator';
+
 import { UserDto } from 'src/user/dto/response/user.dto';
 
 export class AuthUserDto {

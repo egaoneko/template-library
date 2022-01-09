@@ -1,4 +1,5 @@
 import styled from 'styled-components/native';
+
 import BaseText from '../text/BaseText';
 
 export const Heading1 = styled(BaseText)`

@@ -1,10 +1,11 @@
 import { BadRequestException, Injectable, InternalServerErrorException } from '@nestjs/common';
 import { InjectConnection } from '@nestjs/sequelize';
+import { validate } from 'class-validator';
+import { Sequelize } from 'sequelize';
+
 import { CreateUserDto } from 'src/user/dto/request/create-user.dto';
 import { DEFAULT_DATABASE_NAME } from 'src/config/constants/database';
-import { validate } from 'class-validator';
 import { UpdateUserDto } from 'src/user/dto/request/update-user.dto';
-import { Sequelize } from 'sequelize';
 import { UserDto } from 'src/user/dto/response/user.dto';
 import { FileService } from 'src/shared/file/file.service';
 import { AuthUserDto } from 'src/user/dto/response/auth-user.dto';

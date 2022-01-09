@@ -1,9 +1,11 @@
 import { Test, TestingModule } from '@nestjs/testing';
-import { JwtStrategy } from './jwt.strategy';
-import { UserService } from 'src/user/user.service';
-import { IJwtPayload } from 'src/auth/interfaces/jwt.interface';
 import { createMock } from '@golevelup/ts-jest';
 import { ConfigService } from '@nestjs/config';
+
+import { UserService } from 'src/user/user.service';
+import { IJwtPayload } from 'src/auth/interfaces/jwt.interface';
+
+import { JwtStrategy } from './jwt.strategy';
 
 describe('JwtStrategy', () => {
   let strategy: JwtStrategy;

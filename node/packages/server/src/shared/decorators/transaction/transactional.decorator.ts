@@ -1,6 +1,4 @@
-import { Sequelize, TransactionOptions } from 'sequelize';
-import { Transaction } from 'sequelize/types/lib/transaction';
-import { WhereOptions } from 'sequelize/types/lib/model';
+import { Sequelize, TransactionOptions, Transaction, WhereOptions } from 'sequelize';
 
 /* eslint-disable @typescript-eslint/no-explicit-any */
 /* eslint-disable @typescript-eslint/explicit-module-boundary-types */

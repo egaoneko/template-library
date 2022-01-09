@@ -4,7 +4,9 @@ import React, { FC } from 'react';
 import { UseQueryResult } from 'react-query';
 import styled from 'styled-components';
 import tw from 'twin.macro';
+
 import { PostTab } from '../enum';
+
 import FeedContentTemplate from './ProfileFeedContentTemplate';
 
 interface PropsType {

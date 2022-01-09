@@ -1,8 +1,10 @@
 import { Test, TestingModule } from '@nestjs/testing';
 import { createMock } from '@golevelup/ts-jest';
 import { getModelToken } from '@nestjs/sequelize';
+
 import { DEFAULT_DATABASE_NAME } from '../../../config/constants/database';
 import { File } from '../entities/file.entity';
+
 import { FileRepository } from './file.repository';
 
 describe('FileRepository', () => {

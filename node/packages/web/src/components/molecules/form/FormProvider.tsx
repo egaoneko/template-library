@@ -1,8 +1,10 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 
-import { NOOP } from 'src/utils/common';
 import React, { FC, ReactNode, useCallback } from 'react';
 import { useForm } from 'react-hook-form';
+
+import { NOOP } from 'src/utils/common';
+
 import FormContext from './FormContext';
 
 interface PropsType {

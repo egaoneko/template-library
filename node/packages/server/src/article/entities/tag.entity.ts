@@ -9,6 +9,7 @@ import {
   BelongsToMany,
   AllowNull,
 } from 'sequelize-typescript';
+
 import { Article } from 'src/article/entities/article.entity';
 import { ArticleTag } from 'src/article/entities/article-tag.entity';
 

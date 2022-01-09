@@ -1,7 +1,8 @@
 import { Test, TestingModule } from '@nestjs/testing';
-import { FileService } from './file.service';
 import { createMock } from '@golevelup/ts-jest';
 import { ConfigService } from '@nestjs/config';
+
+import { FileService } from './file.service';
 import { FileRepository } from './repositories/file.repository';
 
 describe('FileService', () => {

@@ -1,9 +1,12 @@
-import { Injectable, NotFoundException } from '@nestjs/common';
-import { File } from './entities/file.entity';
 import path from 'path';
+
+import { Injectable, NotFoundException } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
+
 import { SequelizeOptionDto } from 'src/shared/decorators/transaction/transactional.decorator';
 import { FileRepository } from 'src/shared/file/repositories/file.repository';
+
+import { File } from './entities/file.entity';
 
 @Injectable()
 export class FileService {

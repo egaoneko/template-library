@@ -1,9 +1,10 @@
 import pg from 'pg';
-pg.defaults.parseInt8 = true;
-
 import { SequelizeModuleOptions } from '@nestjs/sequelize/dist/interfaces/sequelize-options.interface';
-import { DEFAULT_DATABASE_NAME } from 'src/config/constants/database';
 import { format } from 'sql-formatter';
+
+import { DEFAULT_DATABASE_NAME } from 'src/config/constants/database';
+
+pg.defaults.parseInt8 = true;
 
 const defaultOptions: SequelizeModuleOptions = {
   name: DEFAULT_DATABASE_NAME,

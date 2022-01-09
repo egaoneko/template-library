@@ -1,12 +1,14 @@
-import React from 'react';
+import React, {FC} from 'react';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import Icon from 'react-native-vector-icons/AntDesign';
-import {mainRoutes} from './routes';
+import {NavigationState} from '@react-navigation/core';
+
 import {COLOR_SET} from '../enums/color';
 import useDarkMode from '../hooks/useDarkMode';
-import {NavigationState} from '@react-navigation/core';
-import { COMMON_NAVIGATION_TYPE } from '../enums/common-navigation';
-import { MAIN_NAVIGATION_TYPE } from '../enums/main-navigation';
+import {COMMON_NAVIGATION_TYPE} from '../enums/common-navigation';
+import {MAIN_NAVIGATION_TYPE} from '../enums/main-navigation';
+
+import {mainRoutes} from './routes';
 
 const Tab = createBottomTabNavigator();
 
@@ -14,7 +16,7 @@ const DEFAULT_OPTIONS = {
   headerShown: false,
 };
 
-const MainNavigator = () => {
+const MainNavigator: FC = () => {
   const isDarkMode = useDarkMode();
 
   return (
@@ -55,14 +57,15 @@ const MainNavigator = () => {
             : COLOR_SET.LIGHT_MODE_BACKGROUND,
         },
       })}
-      screenListeners={({navigation}) => ({
+      screenListeners={() => ({
         state: ({data}) => {
           // Do something with the state
           const state = (data as {state: NavigationState}).state;
           const {index, routes} = state;
           console.log('state changed', routes[index]);
         },
-      })}>
+      })}
+    >
       {mainRoutes.map(route => {
         const {name, options, ...other} = route;
         return (

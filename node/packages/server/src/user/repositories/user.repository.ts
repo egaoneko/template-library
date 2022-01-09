@@ -1,5 +1,6 @@
 import { Injectable } from '@nestjs/common';
 import { InjectModel } from '@nestjs/sequelize';
+
 import { User } from 'src/user/entities/user.entity';
 import { CreateUserDto } from 'src/user/dto/request/create-user.dto';
 import { DEFAULT_DATABASE_NAME } from 'src/config/constants/database';

@@ -1,9 +1,10 @@
 import { HttpAdapterHost, NestFactory } from '@nestjs/core';
 import Graceful from 'node-graceful';
-import { AppModule } from './app.module';
-import { AllExceptionsFilter } from './all-exceptions.filter';
 import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
 import { ConfigService } from '@nestjs/config';
+
+import { AppModule } from './app.module';
+import { AllExceptionsFilter } from './all-exceptions.filter';
 
 Graceful.captureExceptions = true;
 

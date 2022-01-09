@@ -1,9 +1,10 @@
 import { BadRequestException, Injectable, InternalServerErrorException } from '@nestjs/common';
+import { InjectConnection } from '@nestjs/sequelize';
+import { Sequelize } from 'sequelize';
+
 import { ProfileDto } from 'src/profile/dto/response/profile.dto';
 import { UserService } from 'src/user/user.service';
-import { InjectConnection } from '@nestjs/sequelize';
 import { DEFAULT_DATABASE_NAME } from 'src/config/constants/database';
-import { Sequelize } from 'sequelize';
 import { UserDto } from 'src/user/dto/response/user.dto';
 import { SequelizeOptionDto, Transactional } from 'src/shared/decorators/transaction/transactional.decorator';
 import { FollowRepository } from 'src/profile/repositories/follow.repository';

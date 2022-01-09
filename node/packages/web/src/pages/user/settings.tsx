@@ -1,5 +1,6 @@
-import SettingsPageContainer from 'src/components/pages/user/SettingsPageContainer';
 import React, { ReactNode } from 'react';
+
+import SettingsPageContainer from 'src/components/pages/user/SettingsPageContainer';
 
 interface PropsType {}
 

@@ -1,4 +1,3 @@
-import Avatar from 'src/components/atoms/avatar/Avatar';
 import { IProfile } from '@my-app/core/lib/interfaces/profile';
 import { IUser } from '@my-app/core/lib/interfaces/user';
 import React, { FC } from 'react';
@@ -6,6 +5,8 @@ import { AiOutlineMinus, AiOutlinePlus } from 'react-icons/ai';
 import { UseQueryResult } from 'react-query';
 import styled from 'styled-components';
 import tw from 'twin.macro';
+
+import Avatar from 'src/components/atoms/avatar/Avatar';
 
 interface PropsType {
   user: IUser | null;

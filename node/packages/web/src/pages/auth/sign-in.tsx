@@ -1,9 +1,7 @@
-import SignInPageContainer from 'src/components/pages/auth/SignInPageContainer';
-import {
-  GetServerSidePropsResult,
-  NextPageContext
-} from 'next';
+import { GetServerSidePropsResult, NextPageContext } from 'next';
 import React, { ReactNode } from 'react';
+
+import SignInPageContainer from 'src/components/pages/auth/SignInPageContainer';
 
 interface PropsType {
   successUrl?: string;

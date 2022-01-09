@@ -1,9 +1,7 @@
-import ArticlePageContainer from 'src/components/pages/article/ArticlePageContainer';
-import {
-  GetServerSidePropsResult,
-  NextPageContext
-} from 'next';
+import { GetServerSidePropsResult, NextPageContext } from 'next';
 import React, { ReactNode } from 'react';
+
+import ArticlePageContainer from 'src/components/pages/article/ArticlePageContainer';
 
 interface PropsType {
   slug: string;

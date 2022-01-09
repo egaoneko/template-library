@@ -1,6 +1,7 @@
 import { INestApplication } from '@nestjs/common';
-import { User } from 'src/user/entities/user.entity';
 import { getModelToken } from '@nestjs/sequelize';
+
+import { User } from 'src/user/entities/user.entity';
 import { DEFAULT_DATABASE_NAME } from 'src/config/constants/database';
 import { createTestUser } from 'src/test/utils/user';
 import { Article } from 'src/article/entities/article.entity';

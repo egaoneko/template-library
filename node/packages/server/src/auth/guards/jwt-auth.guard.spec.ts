@@ -1,13 +1,15 @@
-import { JwtAuthGuard } from './jwt-auth.guard';
 import { Reflector } from '@nestjs/core';
 import { createMock } from '@golevelup/ts-jest';
 import { ExecutionContext } from '@nestjs/common';
 import { Test } from '@nestjs/testing';
 import { PassportModule } from '@nestjs/passport';
+import { ConfigModule, ConfigService } from '@nestjs/config';
+
 import { JwtStrategy } from '../strategies/jwt.strategy';
 import { UserService } from '../../user/user.service';
-import { ConfigModule, ConfigService } from '@nestjs/config';
 import { NoAuth } from '../../shared/decorators/auth/no-auth';
+
+import { JwtAuthGuard } from './jwt-auth.guard';
 
 describe('JwtAuthGuard', () => {
   let guard: JwtAuthGuard;

@@ -1,8 +1,10 @@
 import { Test, TestingModule } from '@nestjs/testing';
 import { getModelToken } from '@nestjs/sequelize';
+import { createMock } from '@golevelup/ts-jest';
+
 import { DEFAULT_DATABASE_NAME } from '../../config/constants/database';
 import { Follow } from '../entities/follow.entity';
-import { createMock } from '@golevelup/ts-jest';
+
 import { FollowRepository } from './follow.repository';
 
 describe('FollowRepository', () => {

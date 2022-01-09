@@ -1,7 +1,8 @@
 import { Test, TestingModule } from '@nestjs/testing';
+import { createMock } from '@golevelup/ts-jest';
+
 import { ProfileController } from './profile.controller';
 import { ProfileService } from './profile.service';
-import { createMock } from '@golevelup/ts-jest';
 
 describe('ProfileController', () => {
   let controller: ProfileController;

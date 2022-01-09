@@ -1,10 +1,11 @@
+import { IFile } from '@my-app/core/lib/interfaces/file';
+import React, { ChangeEvent, FC, ReactNode, useCallback, useRef } from 'react';
+import { CSSProperties } from 'styled-components';
+
 import FileAPI from 'src/api/file';
 import Button from 'src/components/atoms/common/Button';
 import { CONTEXT } from 'src/constants/common';
-import { IFile } from '@my-app/core/lib/interfaces/file';
 import { notifyError } from 'src/utils/notifiy';
-import React, { ChangeEvent, FC, ReactNode, useCallback, useRef } from 'react';
-import { CSSProperties } from 'styled-components';
 
 interface PropsType {
   name: string;
@@ -29,7 +30,7 @@ const SingleUpload: FC<PropsType> = props => {
         const file = await FileAPI.upload(CONTEXT, formData);
         onFinish?.(file);
       } catch (e) {
-        notifyError(e.response?.data?.message ?? e.message);
+        notifyError((e as Error).message);
       }
       e.target.value = '';
     },

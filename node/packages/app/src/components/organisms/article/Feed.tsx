@@ -2,6 +2,7 @@ import {IArticle} from '@my-app/core/lib/interfaces/article';
 import React, {FC} from 'react';
 import styled from 'styled-components/native';
 import format from 'date-fns/format';
+
 import BaseText from '../../atoms/text/BaseText';
 import TouchableView from '../../atoms/view/TouchableView';
 import BaseIcon from '../../atoms/icon/BaseIcon';

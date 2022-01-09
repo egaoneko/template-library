@@ -1,8 +1,5 @@
 import Cookie from 'src/libs/Cookie';
-import SuperCookie, {
-  NextContext,
-  NextMiddlewareContext
-} from 'src/libs/SuperCookie';
+import SuperCookie, { NextContext, NextMiddlewareContext } from 'src/libs/SuperCookie';
 
 export interface ContextOptions {
   nextContext?: NextContext;
@@ -20,4 +17,3 @@ export default class Context {
     this._cookie = new SuperCookie(options.nextContext, options.nextMiddlewareContext);
   }
 }
-

@@ -1,10 +1,9 @@
 describe('Header', () => {
   let user = null;
   beforeEach(() => {
-    cy.fixture('user/user.json').then(u => {
+    cy.fixture('user.json').then(u => {
       user = u;
     });
-    cy.prepareHome();
   });
 
   it('should navigate to the main page by logo', () => {
@@ -32,38 +31,30 @@ describe('Header', () => {
   });
 
   it('should navigate to the sign in page by home after login', () => {
-    cy.mockServerStart(8080);
     cy.login();
     cy.visit('http://localhost:3000/');
     cy.get('[data-cy=header-home-link]').contains('Home').click();
     cy.location('pathname').should('eq', '/');
-    cy.mockServerStop();
   });
 
   it('should navigate to the new post page after login', () => {
-    cy.mockServerStart(8080);
     cy.login();
     cy.visit('http://localhost:3000/');
     cy.get('[data-cy=header-new-post-link]').contains('New Post').click();
     cy.location('pathname').should('eq', '/editor/new');
-    cy.mockServerStop();
   });
 
   it('should navigate to the settings page after login', () => {
-    cy.mockServerStart(8080);
     cy.login();
     cy.visit('http://localhost:3000/');
     cy.get('[data-cy=header-settings-link]').contains('Settings').click();
     cy.location('pathname').should('eq', '/user/settings');
-    cy.mockServerStop();
   });
 
   it('should navigate to the profile page after login', () => {
-    cy.mockServerStart(8080);
     cy.login();
     cy.visit('http://localhost:3000/');
     cy.get('[data-cy=header-profile-link]').contains(user.username).click();
     cy.location('pathname').should('eq', `/profile/${user.username}`);
-    cy.mockServerStop();
   });
 });

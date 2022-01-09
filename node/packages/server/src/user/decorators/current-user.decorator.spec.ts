@@ -1,8 +1,10 @@
 import { createMock } from '@golevelup/ts-jest';
-import { CurrentUser } from './current-user.decorator';
-import { UserDto } from '../dto/response/user.dto';
 import { ROUTE_ARGS_METADATA } from '@nestjs/common/constants';
 import { ExecutionContext } from '@nestjs/common';
+
+import { UserDto } from '../dto/response/user.dto';
+
+import { CurrentUser } from './current-user.decorator';
 
 describe('Current User Decorator', () => {
   it('should be return user', async () => {

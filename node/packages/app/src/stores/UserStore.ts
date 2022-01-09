@@ -39,5 +39,5 @@ function initializeStore(user: IUser | null) {
 }
 
 export function useUserStore(user: IUser | null): UserStore {
-  return useMemo(() => initializeStore(user), [user?.id]);
+  return useMemo(() => initializeStore(user), [user]);
 }

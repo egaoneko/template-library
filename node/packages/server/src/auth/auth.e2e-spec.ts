@@ -1,7 +1,8 @@
 import request from 'supertest';
 import { Test } from '@nestjs/testing';
-import { AppModule } from '../app.module';
 import { INestApplication } from '@nestjs/common';
+
+import { AppModule } from '../app.module';
 import { createTestUser, getTestUserDto } from '../test/utils/user';
 import { cleanDb } from '../test/utils/db';
 import { delay } from '../test/utils/common';

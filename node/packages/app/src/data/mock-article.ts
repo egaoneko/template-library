@@ -1,8 +1,9 @@
 import faker from 'faker';
 import {IArticle} from '@my-app/core/lib/interfaces/article';
-import {createMocProfile} from './mock-profile';
 import {ListResult} from '@my-app/core/lib/interfaces/common';
 import {makeArray} from '@my-app/core/lib/utils/generate';
+
+import {createMocProfile} from './mock-profile';
 
 export function createMockArticle(): IArticle {
   return {

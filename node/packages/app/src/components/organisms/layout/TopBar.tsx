@@ -1,6 +1,7 @@
 import React, {FC, ReactNode} from 'react';
 import styled from 'styled-components/native';
 import {Colors} from 'react-native-paper';
+
 import BaseView from '../../atoms/view/BaseView';
 import {Heading2} from '../../atoms/common/typography';
 import useDarkMode from '../../../hooks/useDarkMode';

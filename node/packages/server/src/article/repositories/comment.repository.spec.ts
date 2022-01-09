@@ -1,10 +1,12 @@
 import { Test, TestingModule } from '@nestjs/testing';
 import { getModelToken } from '@nestjs/sequelize';
-import { DEFAULT_DATABASE_NAME } from '../../config/constants/database';
 import { createMock } from '@golevelup/ts-jest';
+
+import { DEFAULT_DATABASE_NAME } from '../../config/constants/database';
 import { Comment } from '../entities/comment.entity';
 import { CreateCommentDto } from '../dto/request/create-comment.dto';
 import { GetCommentsDto } from '../dto/request/get-comments.dto';
+
 import { CommentRepository } from './comment.repository';
 
 describe('CommentRepository', () => {

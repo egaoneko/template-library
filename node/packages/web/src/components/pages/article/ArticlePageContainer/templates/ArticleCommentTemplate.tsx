@@ -1,31 +1,31 @@
 import format from 'date-fns/format';
-import Avatar from 'src/components/atoms/avatar/Avatar';
-import Form from 'src/components/molecules/form/Form';
-import Submit from 'src/components/molecules/form/Submit';
-import Textarea from 'src/components/molecules/form/Textarea';
 import { IArticle } from '@my-app/core/lib/interfaces/article';
 import { CreateCommentRequest, IComment } from '@my-app/core/lib/interfaces/comment';
 import { ListResult } from '@my-app/core/lib/interfaces/common';
 import { IUser } from '@my-app/core/lib/interfaces/user';
 import Link from 'next/link';
 import React, { FC } from 'react';
-import { UseQueryResult } from 'react-query';
 import styled from 'styled-components';
 import tw from 'twin.macro';
 import { AiFillDelete } from 'react-icons/ai';
 
+import Textarea from 'src/components/molecules/form/Textarea';
+import Submit from 'src/components/molecules/form/Submit';
+import Form from 'src/components/molecules/form/Form';
+import Avatar from 'src/components/atoms/avatar/Avatar';
+
 interface PropsType {
   loading?: boolean;
   user: IUser | null;
-  articleResult: UseQueryResult<IArticle>;
-  commentsResult: UseQueryResult<ListResult<IComment>>;
+  article: IArticle;
+  comments: ListResult<IComment>;
   onCreate: (slug: string, request: CreateCommentRequest) => Promise<unknown>;
   onDelete: (slug: string, id: number) => Promise<unknown>;
 }
 
 const ArticleCommentTemplate: FC<PropsType> = props => {
-  const article = props.articleResult.data;
-  const comments = props.commentsResult.data;
+  const article = props.article;
+  const comments = props.comments;
   const user = props.user;
 
   if (!article || !comments) {

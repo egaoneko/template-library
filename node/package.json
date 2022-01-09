@@ -11,6 +11,7 @@
     ]
   },
   "scripts": {
+    "dev:docker": "docker-compose -f ../docker-compose.yml up",
     "dev:web": "lerna run dev --stream --scope @my-app/web",
     "dev:server": "lerna run start:dev --stream --scope @my-app/server",
     "start:web": "lerna run start --stream --scope @my-app/web",
@@ -18,6 +19,7 @@
     "start:app": "lerna run start --stream --scope @my-app/app",
     "start:app:ios": "lerna run ios --stream --scope @my-app/app",
     "start:app:android": "lerna run android --stream --scope @my-app/app",
+    "clean": "lerna run --parallel clean",
     "clean:app": "lerna run clean --stream --scope @my-app/app",
     "test": "lerna run test --stream",
     "test:core": "lerna run test --stream --scope @my-app/core",
@@ -38,8 +40,7 @@
     "lint": "lerna run lint",
     "format": "lerna run format",
     "publish": "lerna publish --yes",
-    "publish:canary": "lerna publish --canary --yes",
-    "docker": "docker-compose -f ../docker-compose.yml up"
+    "publish:canary": "lerna publish --canary --yes"
   },
   "dependencies": {
     "axios": "0.24.0",
@@ -56,9 +57,12 @@
     "@types/uuid": "8.3.1",
     "@typescript-eslint/eslint-plugin": "5.2.0",
     "@typescript-eslint/parser": "5.2.0",
-    "eslint": "8.1.0",
+    "eslint": "7.23.0",
     "eslint-config-prettier": "8.3.0",
-    "eslint-plugin-prettier": "4.0.0",
+    "eslint-plugin-import": "2.22.1",
+    "eslint-plugin-prettier": "3.4.1",
+    "eslint-plugin-react": "7.23.1",
+    "eslint-plugin-react-hooks": "4.2.0",
     "jest": "27.3.1",
     "jest-config": "27.3.1",
     "lerna": "~4.0.0",

@@ -1,5 +1,6 @@
 import { IsNotEmpty, IsNumber, ValidateNested } from 'class-validator';
 import { ApiProperty } from '@nestjs/swagger';
+
 import { CommentDto } from 'src/article/dto/response/comment.dto';
 
 export class CommentsDto {

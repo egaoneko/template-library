@@ -1,6 +1,3 @@
-import TabPane from 'src/components/molecules/tab/TabPane';
-import Tabs from 'src/components/molecules/tab/Tabs';
-import FeedList from 'src/components/organisms/article/FeedList';
 import { IArticle } from '@my-app/core/lib/interfaces/article';
 import { ListResult } from '@my-app/core/lib/interfaces/common';
 import { IUser } from '@my-app/core/lib/interfaces/user';
@@ -8,6 +5,11 @@ import React, { FC, ReactNode } from 'react';
 import { UseQueryResult } from 'react-query';
 import styled from 'styled-components';
 import tw from 'twin.macro';
+
+import FeedList from 'src/components/organisms/article/FeedList';
+import Tabs from 'src/components/molecules/tab/Tabs';
+import TabPane from 'src/components/molecules/tab/TabPane';
+
 import { FeedTab } from '../enum';
 
 interface PropsType {

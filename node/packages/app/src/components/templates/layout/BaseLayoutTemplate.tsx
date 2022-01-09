@@ -1,5 +1,6 @@
 import React, {FC, ReactNode} from 'react';
 import styled from 'styled-components/native';
+
 import TopBar from '../../organisms/layout/TopBar';
 import BaseSafeAreaView from '../../atoms/view/BaseSafeAreaView';
 

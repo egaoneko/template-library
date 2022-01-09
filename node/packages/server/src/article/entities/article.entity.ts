@@ -10,6 +10,7 @@ import {
   HasMany,
   BelongsToMany,
 } from 'sequelize-typescript';
+
 import { User } from 'src/user/entities/user.entity';
 import { ArticleFavorite } from 'src/article/entities/article-favorite.entity';
 import { ArticleTag } from 'src/article/entities/article-tag.entity';

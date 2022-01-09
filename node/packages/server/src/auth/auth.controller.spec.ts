@@ -1,13 +1,15 @@
-import { AuthService } from './auth.service';
 import { Test, TestingModule } from '@nestjs/testing';
-import { AuthController } from './auth.controller';
-import { UserService } from '../user/user.service';
-import { RegisterDto } from './dto/request/register.dto';
-import { CreateUserDto } from '../user/dto/request/create-user.dto';
 import { createMock } from '@golevelup/ts-jest';
+import { ConfigService } from '@nestjs/config';
+
+import { UserService } from '../user/user.service';
+import { CreateUserDto } from '../user/dto/request/create-user.dto';
 import { Crypto } from '../shared/crypto/crypto';
 import { UserDto } from '../user/dto/response/user.dto';
-import { ConfigService } from '@nestjs/config';
+
+import { AuthService } from './auth.service';
+import { AuthController } from './auth.controller';
+import { RegisterDto } from './dto/request/register.dto';
 
 describe('AuthController', () => {
   let controller: AuthController;

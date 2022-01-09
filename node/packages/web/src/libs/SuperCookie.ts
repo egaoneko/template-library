@@ -1,26 +1,19 @@
-import Cookie from 'src/libs/Cookie';
 import universalCookie, { CookieSetOptions } from 'universal-cookie';
 import { parse } from 'set-cookie-parser';
-import {
-  GetServerSidePropsContext,
-  NextApiRequest,
-  NextApiResponse,
-  NextPageContext
-} from 'next';
-import {
-  NextRequest,
-  NextResponse
-} from 'next/server';
+import { GetServerSidePropsContext, NextApiRequest, NextApiResponse, NextPageContext } from 'next';
+import { NextRequest, NextResponse } from 'next/server';
+
+import Cookie from 'src/libs/Cookie';
 
 export type NextContext =
-  NextPageContext
+  | NextPageContext
   | GetServerSidePropsContext
   | { req: NextApiRequest; res: NextApiResponse }
   | string;
 export type NextMiddlewareContext = { req: NextRequest; res: NextResponse };
 
 export default class SuperCookie extends Cookie {
-  private mCtx?: NextMiddlewareContext;
+  private readonly mCtx?: NextMiddlewareContext;
 
   constructor(context?: NextContext, nextMiddlewareContext?: NextMiddlewareContext) {
     super(context);
@@ -31,20 +24,26 @@ export default class SuperCookie extends Cookie {
     }
 
     if (this.ctx) {
-      parse(
-        this.ctx.res?.getHeader('set-cookie') as string | string[] ?? '',
-        { map: false }
-      ).forEach(({ name, value, ...options }) => {
-        this.set(name, value, options as CookieSetOptions);
-      });
+      parse((this.ctx.res?.getHeader('set-cookie') as string | string[]) ?? '', { map: false }).forEach(
+        ({ name, value, ...options }) => {
+          this.set(name, value, options as CookieSetOptions);
+        },
+      );
     }
   }
 
-  public set(name: string, value: any, options?: CookieSetOptions): void {
+  public set(
+    name: string,
+    value:
+      | {
+          [key: string]: unknown;
+        }
+      | string,
+    options?: CookieSetOptions,
+  ): void {
     if (this.isServer && this.mCtx) {
       this.cookie.set(name, value, options);
       this.mCtx.res.cookie(name, value, options);
-      console.log(name, value, options, this.cookie.get(name));
     } else {
       super.set(name, value, options);
     }
@@ -63,7 +62,7 @@ export default class SuperCookie extends Cookie {
         },
         options || {},
       );
-      this.mCtx.res.cookie(name, '', options);
+      this.mCtx.res.cookie(name, '', opt);
     } else {
       super.remove(name, options);
     }

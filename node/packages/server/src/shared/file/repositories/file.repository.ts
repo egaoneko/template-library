@@ -1,8 +1,10 @@
 import { Injectable } from '@nestjs/common';
 import { InjectModel } from '@nestjs/sequelize';
+
 import { DEFAULT_DATABASE_NAME } from 'src/config/constants/database';
-import { File } from '../entities/file.entity';
 import { SequelizeOptionDto } from 'src/shared/decorators/transaction/transactional.decorator';
+
+import { File } from '../entities/file.entity';
 
 @Injectable()
 export class FileRepository {

@@ -1,8 +1,9 @@
-import UserAPI from 'src/api/user';
 import { makeAutoObservable } from 'mobx';
-import { CONTEXT, IS_SSR } from 'src/constants/common';
 import { useMemo } from 'react';
 import { IUser, LoginRequest, RegisterRequest, UpdateRequest } from '@my-app/core/lib/interfaces/user';
+
+import { CONTEXT, IS_SSR } from 'src/constants/common';
+import UserAPI from 'src/api/user';
 import AuthAPI from 'src/api/auth';
 import { notifyError, notifySuccess } from 'src/utils/notifiy';
 import { getCookieExpires, removeCookie, setCookie } from 'src/utils/cookie';
@@ -27,7 +28,7 @@ export class UserStore {
       notifySuccess('Successfully registered!');
       return !!user;
     } catch (e) {
-      notifyError(e.response?.data?.message ?? e.message);
+      notifyError((e as Error).message);
     }
 
     return false;
@@ -44,7 +45,7 @@ export class UserStore {
         notifyError('Fail to login');
       }
     } catch (e) {
-      notifyError(e.response?.data?.message ?? e.message);
+      notifyError((e as Error).message);
     }
 
     return this.user;
@@ -64,7 +65,7 @@ export class UserStore {
         notifyError('Fail to update');
       }
     } catch (e) {
-      notifyError(e.response?.data?.message ?? e.message);
+      notifyError((e as Error).message);
     }
 
     return this.user;
@@ -75,7 +76,7 @@ export class UserStore {
       await AuthAPI.logout(CONTEXT);
       this.clear();
     } catch (e) {
-      notifyError(e.message);
+      notifyError((e as Error).message);
     }
   }
 
@@ -118,5 +119,5 @@ function initializeStore(user: IUser | null) {
 }
 
 export function useUserStore(user: IUser | null): UserStore {
-  return useMemo(() => initializeStore(user), [user?.id]);
+  return useMemo(() => initializeStore(user), [user]);
 }

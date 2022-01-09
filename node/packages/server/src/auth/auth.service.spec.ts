@@ -1,11 +1,13 @@
 import { Test, TestingModule } from '@nestjs/testing';
 import { JwtService } from '@nestjs/jwt';
-import { AuthService } from './auth.service';
+import { createMock } from '@golevelup/ts-jest';
+import { ConfigService } from '@nestjs/config';
+
 import { UserService } from '../user/user.service';
 import { IUser } from '../user/interfaces/user.interface';
-import { createMock } from '@golevelup/ts-jest';
 import { Crypto } from '../shared/crypto/crypto';
-import { ConfigService } from '@nestjs/config';
+
+import { AuthService } from './auth.service';
 
 describe('AuthService', () => {
   let service: AuthService;

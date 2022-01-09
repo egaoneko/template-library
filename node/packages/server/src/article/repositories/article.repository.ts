@@ -1,6 +1,7 @@
 import { Injectable } from '@nestjs/common';
-import { GetArticlesDto } from 'src/article/dto/request/get-articles.dto';
 import { InjectModel } from '@nestjs/sequelize';
+
+import { GetArticlesDto } from 'src/article/dto/request/get-articles.dto';
 import { DEFAULT_DATABASE_NAME } from 'src/config/constants/database';
 import { Article } from 'src/article/entities/article.entity';
 import { ArticleFavorite } from 'src/article/entities/article-favorite.entity';

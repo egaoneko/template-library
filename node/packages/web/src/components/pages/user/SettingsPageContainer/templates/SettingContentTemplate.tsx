@@ -1,14 +1,15 @@
 import React, { FC } from 'react';
+import { IUser, UpdateRequest } from '@my-app/core/lib/interfaces/user';
+import { IFile } from '@my-app/core/lib/interfaces/file';
+
 import Form from 'src/components/molecules/form/Form';
 import Input from 'src/components/molecules/form/Input';
 import Submit from 'src/components/molecules/form/Submit';
-import { IUser, UpdateRequest } from '@my-app/core/lib/interfaces/user';
 import PageTitle from 'src/components/atoms/page/PageTitle';
 import Textarea from 'src/components/molecules/form/Textarea';
 import Avatar from 'src/components/atoms/avatar/Avatar';
 import Button from 'src/components/atoms/common/Button';
 import SingleUpload from 'src/components/molecules/upload/SingleUpload';
-import { IFile } from '@my-app/core/lib/interfaces/file';
 
 interface PropsType {
   loading?: boolean;

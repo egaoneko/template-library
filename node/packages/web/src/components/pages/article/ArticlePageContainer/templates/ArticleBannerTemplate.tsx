@@ -1,4 +1,3 @@
-import Avatar from 'src/components/atoms/avatar/Avatar';
 import { IArticle } from '@my-app/core/lib/interfaces/article';
 import { IUser } from '@my-app/core/lib/interfaces/user';
 import format from 'date-fns/format';
@@ -6,13 +5,14 @@ import Link from 'next/link';
 import { useRouter } from 'next/router';
 import React, { FC } from 'react';
 import { AiFillEdit, AiFillDelete, AiOutlinePlus, AiOutlineMinus, AiFillHeart } from 'react-icons/ai';
-import { UseQueryResult } from 'react-query';
 import styled from 'styled-components';
 import tw from 'twin.macro';
 
+import Avatar from 'src/components/atoms/avatar/Avatar';
+
 interface PropsType {
   user: IUser | null;
-  articleResult: UseQueryResult<IArticle>;
+  article: IArticle;
   toggleFollow: (username: string, toggle: boolean) => Promise<unknown>;
   toggleFavorite: (slag: string, toggle: boolean) => Promise<unknown>;
   onDelete: (slag: string) => Promise<unknown>;
@@ -20,66 +20,62 @@ interface PropsType {
 
 const ArticleBannerTemplate: FC<PropsType> = props => {
   const router = useRouter();
-  const article = props.articleResult.data;
-  const self = article?.author.username === props.user?.username;
+  const article = props.article;
+  const self = article.author.username === props.user?.username;
 
   return (
     <Container>
-      {article && (
-        <>
-          <Title data-cy="article-title">{article.title}</Title>
-          <AuthorContainer>
-            <Avatar size="middle" url={article.author.image} data-cy="article-banner-author-image" />
-            <AuthorInfo>
-              <AuthorName data-cy="article-banner-author-username">
-                <Link href={`/profile/${article.author.username}`}>{article.author.username}</Link>
-              </AuthorName>
-              <AuthorDate data-cy="article-banner-author-date">
-                {format(new Date(article.updatedAt), 'EEE MMM d yyyy')}
-              </AuthorDate>
-            </AuthorInfo>
-            {self ? (
-              <>
-                <Edit onClick={() => router.push(`/editor/edit/${article.slug}`)} data-cy="article-banner-edit-article">
-                  <div className="w-4 h-4">
-                    <AiFillEdit />
-                  </div>
-                  <div>Edit article</div>
-                </Edit>
-                <Delete onClick={() => props.onDelete(article.slug)} data-cy="article-banner-delete-article">
-                  <div className="w-4 h-4">
-                    <AiFillDelete />
-                  </div>
-                  <div>Delete Article</div>
-                </Delete>
-              </>
-            ) : (
-              <>
-                <Follow
-                  following={article.author.following}
-                  onClick={() => props.toggleFollow(article.author.username, !article.author.following)}
-                  data-cy="article-banner-follow"
-                >
-                  <div className="w-4 h-4">{article.author.following ? <AiOutlineMinus /> : <AiOutlinePlus />}</div>
-                  <div>{article.author.following ? 'Unfollow' : 'Follow'}</div>
-                </Follow>
-                <Favorite
-                  favorited={article.favorited}
-                  onClick={() => props.toggleFavorite(article.slug, !article.favorited)}
-                  data-cy="article-banner-favorite"
-                >
-                  <div className="w-4 h-4">
-                    <AiFillHeart />
-                  </div>
-                  <div>
-                    {article.favorited ? 'Unfavorite' : 'Favorite'} ({article.favoritesCount})
-                  </div>
-                </Favorite>
-              </>
-            )}
-          </AuthorContainer>
-        </>
-      )}
+      <Title data-cy="article-title">{article.title}</Title>
+      <AuthorContainer>
+        <Avatar size="middle" url={article.author.image} data-cy="article-banner-author-image" />
+        <AuthorInfo>
+          <AuthorName data-cy="article-banner-author-username">
+            <Link href={`/profile/${article.author.username}`}>{article.author.username}</Link>
+          </AuthorName>
+          <AuthorDate data-cy="article-banner-author-date">
+            {format(new Date(article.updatedAt), 'EEE MMM d yyyy')}
+          </AuthorDate>
+        </AuthorInfo>
+        {self ? (
+          <>
+            <Edit onClick={() => router.push(`/editor/edit/${article.slug}`)} data-cy="article-banner-edit-article">
+              <div className="w-4 h-4">
+                <AiFillEdit />
+              </div>
+              <div>Edit article</div>
+            </Edit>
+            <Delete onClick={() => props.onDelete(article.slug)} data-cy="article-banner-delete-article">
+              <div className="w-4 h-4">
+                <AiFillDelete />
+              </div>
+              <div>Delete Article</div>
+            </Delete>
+          </>
+        ) : (
+          <>
+            <Follow
+              following={article.author.following}
+              onClick={() => props.toggleFollow(article.author.username, !article.author.following)}
+              data-cy="article-banner-follow"
+            >
+              <div className="w-4 h-4">{article.author.following ? <AiOutlineMinus /> : <AiOutlinePlus />}</div>
+              <div>{article.author.following ? 'Unfollow' : 'Follow'}</div>
+            </Follow>
+            <Favorite
+              favorited={article.favorited}
+              onClick={() => props.toggleFavorite(article.slug, !article.favorited)}
+              data-cy="article-banner-favorite"
+            >
+              <div className="w-4 h-4">
+                <AiFillHeart />
+              </div>
+              <div>
+                {article.favorited ? 'Unfavorite' : 'Favorite'} ({article.favoritesCount})
+              </div>
+            </Favorite>
+          </>
+        )}
+      </AuthorContainer>
     </Container>
   );
 };

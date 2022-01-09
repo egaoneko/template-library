@@ -1,7 +1,9 @@
-import { API_SERVER_URL } from 'src/constants/common';
 import { IFile } from '@my-app/core/lib/interfaces/file';
-import BaseAPI from './base';
+
+import { API_SERVER_URL } from 'src/constants/common';
 import Context from 'src/libs/Context';
+
+import BaseAPI from './base';
 
 export default class FileAPI {
   private static BASE_URL = `${API_SERVER_URL}/api/file`;

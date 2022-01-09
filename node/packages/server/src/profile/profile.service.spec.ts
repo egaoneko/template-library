@@ -1,11 +1,13 @@
 import { Test, TestingModule } from '@nestjs/testing';
-import { ProfileService } from './profile.service';
-import { DEFAULT_DATABASE_NAME } from '../config/constants/database';
-import { UserService } from '../user/user.service';
 import { getConnectionToken } from '@nestjs/sequelize/dist/common/sequelize.utils';
 import { Sequelize } from 'sequelize-typescript';
 import { createMock } from '@golevelup/ts-jest';
+
+import { UserService } from '../user/user.service';
+import { DEFAULT_DATABASE_NAME } from '../config/constants/database';
 import { UserDto } from '../user/dto/response/user.dto';
+
+import { ProfileService } from './profile.service';
 import { FollowRepository } from './repositories/follow.repository';
 
 describe('ProfileService', () => {

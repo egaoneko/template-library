@@ -1,4 +1,5 @@
 import {ComponentType} from 'react';
+
 import HomePageContainer from '../components/pages/main/HomePageContainer.tsx';
 import SplashPageContainer from '../components/pages/common/SplashPageContainer';
 import FeedPageContainer from '../components/pages/main/article/FeedPageContainer.tsx';
@@ -6,12 +7,12 @@ import PostArticlePageContainer from '../components/pages/main/editor/PostArticl
 import SettingsPageContainer from '../components/pages/main/user/SettingsPageContainer.tsx';
 import MainPageContainer from '../components/pages/common/MainPageContainer';
 import LoginPageContainer from '../components/pages/common/LoginPageContainer';
-import { MAIN_NAVIGATION_TYPE } from '../enums/main-navigation';
-import { COMMON_NAVIGATION_TYPE } from '../enums/common-navigation';
+import {MAIN_NAVIGATION_TYPE} from '../enums/main-navigation';
+import {COMMON_NAVIGATION_TYPE} from '../enums/common-navigation';
 
 interface RoutesInfo {
-  name:  COMMON_NAVIGATION_TYPE | MAIN_NAVIGATION_TYPE;
-  component: ComponentType<any>;
+  name: COMMON_NAVIGATION_TYPE | MAIN_NAVIGATION_TYPE;
+  component: ComponentType<unknown>;
   options?: {headerShown?: boolean};
   initialParams?: {
     auth?: boolean;

@@ -1,14 +1,16 @@
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import { Module } from '@nestjs/common';
 import { PassportModule } from '@nestjs/passport';
-import { AuthService } from './auth.service';
-import { UserModule } from 'src/user/user.module';
-import { LocalStrategy } from './strategies/local.strategy';
-import { AuthController } from './auth.controller';
 import { JwtModule } from '@nestjs/jwt';
+
+import { UserModule } from 'src/user/user.module';
 import { JwtStrategy } from 'src/auth/strategies/jwt.strategy';
 import { JwtRefreshStrategy } from 'src/auth/strategies/jwt-refresh.strategy';
 import { JWT_NAME } from 'src/auth/constants/auth.constant';
+
+import { AuthController } from './auth.controller';
+import { LocalStrategy } from './strategies/local.strategy';
+import { AuthService } from './auth.service';
 
 @Module({
   imports: [

@@ -1,11 +1,13 @@
 import { Test, TestingModule } from '@nestjs/testing';
-import { User } from '../entities/user.entity';
 import { getModelToken } from '@nestjs/sequelize';
+import { createMock } from '@golevelup/ts-jest';
+
+import { User } from '../entities/user.entity';
 import { CreateUserDto } from '../dto/request/create-user.dto';
 import { UpdateUserDto } from '../dto/request/update-user.dto';
-import { createMock } from '@golevelup/ts-jest';
-import { UserRepository } from './user.repository';
 import { DEFAULT_DATABASE_NAME } from '../../config/constants/database';
+
+import { UserRepository } from './user.repository';
 
 describe('UserRepository', () => {
   let repository: UserRepository;

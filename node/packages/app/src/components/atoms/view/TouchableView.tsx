@@ -1,5 +1,6 @@
 import React, {ComponentProps, FC, ReactNode} from 'react';
 import {TouchableOpacity, View} from 'react-native';
+
 import {TouchableProps} from '../../../interfaces/component';
 
 interface PropsType extends ComponentProps<typeof View>, TouchableProps {
@@ -12,7 +13,8 @@ const TouchableView: FC<PropsType> = props => {
     <TouchableOpacity
       onPress={onPress}
       onPressIn={onPressIn}
-      onPressOut={onPressOut}>
+      onPressOut={onPressOut}
+    >
       <View {...viewProps}>{children}</View>
     </TouchableOpacity>
   );

@@ -1,4 +1,5 @@
 import { Table, Column, Model, PrimaryKey, DataType, AutoIncrement, ForeignKey, AllowNull } from 'sequelize-typescript';
+
 import { Article } from 'src/article/entities/article.entity';
 import { Tag } from 'src/article/entities/tag.entity';
 

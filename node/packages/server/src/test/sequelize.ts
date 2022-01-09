@@ -1,6 +1,7 @@
-import { ModelOptions, Op } from 'sequelize';
 import { Sequelize, SequelizeOptions } from 'sequelize-typescript';
 import { format } from 'sql-formatter';
+
+import { ModelOptions, Op } from 'sequelize';
 
 export function createSequelize(partialOptions: Partial<SequelizeOptions>): Sequelize;
 export function createSequelize(useModelsInPath?: boolean, define?: ModelOptions): Sequelize;

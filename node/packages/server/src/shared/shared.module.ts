@@ -1,12 +1,14 @@
 import { Module } from '@nestjs/common';
 import { MulterModule } from '@nestjs/platform-express';
 import { SequelizeModule } from '@nestjs/sequelize';
+
+import { DEFAULT_DATABASE_NAME } from 'src/config/constants/database';
+import { FileRepository } from 'src/shared/file/repositories/file.repository';
+
 import { FileService } from './file/file.service';
 import { Crypto } from './crypto/crypto';
 import { FileController } from './file/file.controller';
 import { File } from './file/entities/file.entity';
-import { DEFAULT_DATABASE_NAME } from 'src/config/constants/database';
-import { FileRepository } from 'src/shared/file/repositories/file.repository';
 
 @Module({
   imports: [

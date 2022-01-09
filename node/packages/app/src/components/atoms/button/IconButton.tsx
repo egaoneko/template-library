@@ -1,5 +1,6 @@
 import React, {FC} from 'react';
 import styled from 'styled-components/native';
+
 import {TouchableProps} from '../../../interfaces/component';
 import BaseIcon, {BaseIconPropsType} from '../icon/BaseIcon';
 

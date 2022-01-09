@@ -1,10 +1,12 @@
 import { Test, TestingModule } from '@nestjs/testing';
+import { createMock } from '@golevelup/ts-jest';
+
+import { Crypto } from '../shared/crypto/crypto';
+
 import { UserController } from './user.controller';
 import { UserService } from './user.service';
-import { createMock } from '@golevelup/ts-jest';
 import { UserDto } from './dto/response/user.dto';
 import { UpdateUserDto, UpdateUserRequestDto } from './dto/request/update-user.dto';
-import { Crypto } from '../shared/crypto/crypto';
 
 describe('UserController', () => {
   let controller: UserController;

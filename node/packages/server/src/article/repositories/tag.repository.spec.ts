@@ -1,8 +1,10 @@
 import { Test, TestingModule } from '@nestjs/testing';
 import { getModelToken } from '@nestjs/sequelize';
-import { DEFAULT_DATABASE_NAME } from '../../config/constants/database';
 import { createMock } from '@golevelup/ts-jest';
+
+import { DEFAULT_DATABASE_NAME } from '../../config/constants/database';
 import { Tag } from '../entities/tag.entity';
+
 import { TagRepository } from './tag.repository';
 
 describe('TagRepository', () => {

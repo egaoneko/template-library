@@ -1,15 +1,17 @@
 import { Test, TestingModule } from '@nestjs/testing';
 import { getModelToken } from '@nestjs/sequelize';
-import { DEFAULT_DATABASE_NAME } from '../../config/constants/database';
 import { createMock } from '@golevelup/ts-jest';
+import { paramCase } from 'change-case';
+
+import { DEFAULT_DATABASE_NAME } from '../../config/constants/database';
 import { Article } from '../entities/article.entity';
 import { ArticleFavorite } from '../entities/article-favorite.entity';
 import { GetArticlesDto } from '../dto/request/get-articles.dto';
 import { Tag } from '../entities/tag.entity';
 import { GetFeedArticlesDto } from '../dto/request/get-feed-articles.dto';
 import { CreateArticleDto } from '../dto/request/create-article.dto';
-import { paramCase } from 'change-case';
 import { UpdateArticleDto } from '../dto/request/update-article.dto';
+
 import { ArticleRepository } from './article.repository';
 
 describe('ArticleRepository', () => {

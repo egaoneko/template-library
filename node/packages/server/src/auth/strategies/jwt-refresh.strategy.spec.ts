@@ -1,10 +1,12 @@
 import { Test, TestingModule } from '@nestjs/testing';
-import { JwtRefreshStrategy } from './jwt-refresh.strategy';
-import { UserService } from 'src/user/user.service';
-import { IJwtPayload } from 'src/auth/interfaces/jwt.interface';
 import { createMock } from '@golevelup/ts-jest';
 import { ConfigService } from '@nestjs/config';
-import { Request } from 'express-serve-static-core';
+import { Request } from 'express';
+
+import { IJwtPayload } from 'src/auth/interfaces/jwt.interface';
+import { UserService } from 'src/user/user.service';
+
+import { JwtRefreshStrategy } from './jwt-refresh.strategy';
 
 describe('JwtRefreshStrategy', () => {
   let strategy: JwtRefreshStrategy;

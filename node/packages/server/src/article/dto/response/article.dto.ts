@@ -1,5 +1,6 @@
 import { IsArray, IsBoolean, IsNotEmpty, IsNumber, IsString, ValidateNested } from 'class-validator';
 import { ApiProperty } from '@nestjs/swagger';
+
 import { ProfileDto } from 'src/profile/dto/response/profile.dto';
 import { IArticle } from 'src/article/interfaces/article.interface';
 

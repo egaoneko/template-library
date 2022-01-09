@@ -1,17 +1,19 @@
 import '../styles/globals.css';
-import type { AppContext, AppInitialProps, AppProps } from 'next/app';
 import React, { ReactElement, ReactNode, useState } from 'react';
 import Head from 'next/head';
-import { useUserStore } from 'src/stores/UserStore';
-import { Stores } from 'src/stores/stores';
 import { Provider } from 'mobx-react';
-import Notification from 'src/components/atoms/notification/Notification';
 import App from 'next/app';
 import { BasePropsType } from '@my-app/core/lib/interfaces/common';
 import { IUser } from '@my-app/core/lib/interfaces/user';
 import { QueryClient, QueryClientProvider } from 'react-query';
-import { hydrateUser } from 'src/utils/hydrate';
 import { NextPage } from 'next';
+
+import { hydrateUser } from 'src/utils/hydrate';
+import Notification from 'src/components/atoms/notification/Notification';
+import { Stores } from 'src/stores/stores';
+import { useUserStore } from 'src/stores/UserStore';
+
+import type { AppContext, AppInitialProps, AppProps } from 'next/app';
 
 type NextPageWithLayout = NextPage & {
   getLayout?: (page: ReactElement) => ReactNode;

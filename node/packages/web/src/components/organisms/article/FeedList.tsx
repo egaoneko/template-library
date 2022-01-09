@@ -1,10 +1,12 @@
-import Pagination from 'src/components/molecules/pagination/Pagination';
 import { IArticle } from '@my-app/core/lib/interfaces/article';
 import { ListResult } from '@my-app/core/lib/interfaces/common';
 import React, { FC } from 'react';
 import { UseQueryResult } from 'react-query';
 import styled from 'styled-components';
 import tw from 'twin.macro';
+
+import Pagination from 'src/components/molecules/pagination/Pagination';
+
 import Feed from './Feed';
 
 interface PropsType {

@@ -1,5 +1,4 @@
 import { Test, TestingModule } from '@nestjs/testing';
-import { HealthController } from './health.controller';
 import {
   HealthCheckService,
   HttpHealthIndicator,
@@ -10,9 +9,12 @@ import { createMock } from '@golevelup/ts-jest';
 import { ConfigService } from '@nestjs/config';
 import { Sequelize } from 'sequelize';
 import { getConnectionToken } from '@nestjs/sequelize/dist/common/sequelize.utils';
-import { DEFAULT_DATABASE_NAME } from '../config/constants/database';
 import { HealthIndicatorFunction } from '@nestjs/terminus/dist/health-indicator';
 import { HealthCheckResult } from '@nestjs/terminus/dist/health-check/health-check-result.interface';
+
+import { DEFAULT_DATABASE_NAME } from '../config/constants/database';
+
+import { HealthController } from './health.controller';
 
 describe('HealthController', () => {
   let controller: HealthController;

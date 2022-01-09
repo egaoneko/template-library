@@ -1,5 +1,6 @@
 import React, { FC } from 'react';
 import { RegisterOptions } from 'react-hook-form';
+
 import { useFormContext } from './FormContext';
 
 interface PropsType
@@ -12,7 +13,7 @@ interface PropsType
 const Textarea: FC<PropsType> = props => {
   const { register, formState } = useFormContext();
   const { name, options, className, ...formProps } = props;
-  const errors = formState?.errors[name];
+  const errors = formState?.errors[name] as { type: string };
 
   return (
     <div>

@@ -1,4 +1,5 @@
-import { API_SERVER_URL } from 'src/constants/common';
+import { ListResult } from '@my-app/core/lib/interfaces/common';
+import { CreateCommentRequest, GetCommentListRequest, IComment } from '@my-app/core/lib/interfaces/comment';
 import {
   IArticle,
   CreateArticleRequest,
@@ -6,10 +7,11 @@ import {
   GetArticleListRequest,
   UpdateArticleRequest,
 } from '@my-app/core/lib/interfaces/article';
-import { ListResult } from '@my-app/core/lib/interfaces/common';
-import { CreateCommentRequest, GetCommentListRequest, IComment } from '@my-app/core/lib/interfaces/comment';
-import BaseAPI from './base';
+
+import { API_SERVER_URL } from 'src/constants/common';
 import Context from 'src/libs/Context';
+
+import BaseAPI from './base';
 
 export default class ArticleAPI {
   private static BASE_URL = `${API_SERVER_URL}/api/articles`;

@@ -1,6 +1,7 @@
-import { IProfile } from 'src/profile/interfaces/profile.interface';
 import { IsBoolean, IsNotEmpty, IsOptional, IsString } from 'class-validator';
 import { ApiProperty, ApiPropertyOptional } from '@nestjs/swagger';
+
+import { IProfile } from 'src/profile/interfaces/profile.interface';
 
 export class ProfileDto implements IProfile {
   @IsNotEmpty()

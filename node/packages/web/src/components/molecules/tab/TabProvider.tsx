@@ -1,10 +1,12 @@
-import toArray from 'src/utils/children/to-array';
-import React, { cloneElement, FC, ReactNode, useState } from 'react';
+import React, { cloneElement, FC, ReactNode, useCallback, useState } from 'react';
 import { useEffect } from 'react';
 import { ReactElement } from 'react';
 import { Key } from 'react';
 import styled from 'styled-components';
 import tw from 'twin.macro';
+
+import toArray from 'src/utils/children/to-array';
+
 import TabContext from './TabContext';
 import TabNav from './TabNav';
 import TabNavs from './TabNavs';
@@ -17,30 +19,29 @@ interface PropsType {
   children?: ReactNode;
 }
 
-const TabProvider: FC<PropsType> = props => {
-  let defaultActiveKey: Key | null = props.defaultActiveKey ?? null;
-  const children = toArray<TapPanePropsType>(props.children);
-
-  if (defaultActiveKey === undefined && children.length > 0) {
-    defaultActiveKey = children[0].key;
-  }
-
-  const [activeKey, setActiveKey] = useState<Key | null>(props.activeKey ?? defaultActiveKey ?? null);
+const TabProvider: FC<PropsType> = ({ activeKey: propActiveKey, defaultActiveKey, onChange, children }) => {
+  const tabChildren = toArray<TapPanePropsType>(children);
+  const [activeKey, setActiveKey] = useState<Key | null>(
+    propActiveKey ?? defaultActiveKey ?? tabChildren[0]?.key ?? null,
+  );
 
   useEffect(() => {
-    setActiveKey(props.activeKey ?? null);
-  }, [props.activeKey]);
+    setActiveKey(propActiveKey ?? null);
+  }, [propActiveKey]);
 
-  function onChange(key: Key | null): void {
-    setActiveKey(key);
-    props.onChange?.(key);
-  }
+  const handleOnChange = useCallback(
+    (key: Key | null): void => {
+      setActiveKey(key);
+      onChange?.(key);
+    },
+    [onChange],
+  );
 
   return (
-    <TabContext.Provider value={{ activeKey, onChange }}>
+    <TabContext.Provider value={{ activeKey, onChange: handleOnChange }}>
       <Container>
-        <TabNavs>{getTabNavList(children)}</TabNavs>
-        {getTabPane(children, activeKey)}
+        <TabNavs>{getTabNavList(tabChildren)}</TabNavs>
+        {getTabPane(tabChildren, activeKey)}
       </Container>
     </TabContext.Provider>
   );
@@ -55,7 +56,7 @@ const Container = styled.div`
 function getTabNavList(children: ReactElement<TapPanePropsType>[]): ReactNode[] {
   return children.map(child => (
     <TabNav key={child.key} activeKey={child.key}>
-      {child.props.tab}
+      {child.props?.tab}
     </TabNav>
   ));
 }

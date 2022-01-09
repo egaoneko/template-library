@@ -1,7 +1,9 @@
-import AuthAPI from 'src/api/auth';
 import { NextRequest, NextResponse } from 'next/server';
+
+import AuthAPI from 'src/api/auth';
 import { CookieName } from 'src/enums/cookie';
 import Context from 'src/libs/Context';
+
 import { getCookie } from './cookie';
 
 export interface AuthOption {

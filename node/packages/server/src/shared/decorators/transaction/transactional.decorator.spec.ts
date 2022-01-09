@@ -1,8 +1,9 @@
 import { Sequelize } from 'sequelize-typescript';
 import { createMock } from '@golevelup/ts-jest';
-import { SequelizeOptionDto, Transactional } from './transactional.decorator';
 import { Transaction } from 'sequelize';
 import { InternalServerErrorException } from '@nestjs/common';
+
+import { SequelizeOptionDto, Transactional } from './transactional.decorator';
 
 describe('Transactional Decorator', () => {
   it('should be set transactional', async () => {

@@ -1,6 +1,7 @@
 import React, { FC, ReactNode } from 'react';
 import styled from 'styled-components';
 import tw from 'twin.macro';
+
 import ContentTemplate from './ContentTemplate';
 import FooterTemplate from './FooterTemplate';
 import HeaderTemplate from './HeaderTemplate';

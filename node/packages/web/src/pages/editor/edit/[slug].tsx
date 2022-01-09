@@ -1,9 +1,10 @@
-import ArticleAPI from 'src/api/article';
-import EditorEditPageContainer from 'src/components/pages/editor/EditorEditPageContainer';
 import { IArticle } from '@my-app/core/lib/interfaces/article';
-import Context from 'src/libs/Context';
 import { GetServerSidePropsResult, NextPageContext } from 'next';
 import React, { ReactNode } from 'react';
+
+import ArticleAPI from 'src/api/article';
+import EditorEditPageContainer from 'src/components/pages/editor/EditorEditPageContainer';
+import Context from 'src/libs/Context';
 
 interface PropsType {
   article: IArticle;

@@ -1,10 +1,10 @@
 describe('Sign in', () => {
   let form = null;
   beforeEach(() => {
-    cy.fixture('auth/sign-in-form.json').then(f => {
-      form = f;
-    });
-    cy.prepareHome();
+    form = {
+      email: 'jake@jake.jake',
+      password: 'jakejake',
+    };
   });
 
   it('should be show content', () => {
@@ -24,7 +24,7 @@ describe('Sign in', () => {
   });
 
   it('should sign up by button', () => {
-    cy.intercept('POST', '/api/auth/login', { fixture: 'user/user.json' }).as('login');
+    cy.intercept('POST', '/api/auth/login').as('login');
     cy.visit('http://localhost:3000/auth/sign-in');
     cy.get('[data-cy=content-form-input-email]').type(form.email);
     cy.get('[data-cy=content-form-input-password]').type(form.password);
@@ -38,7 +38,7 @@ describe('Sign in', () => {
   });
 
   it('should sign up by enter', () => {
-    cy.intercept('POST', 'http://localhost:8080/api/auth/login', { fixture: 'user/user.json' }).as('login');
+    cy.intercept('POST', 'http://localhost:8080/api/auth/login').as('login');
     cy.visit('http://localhost:3000/auth/sign-in');
     cy.get('[data-cy=content-form-input-email]').type(form.email);
     cy.get('[data-cy=content-form-input-password]').type(form.password).type('{enter}');

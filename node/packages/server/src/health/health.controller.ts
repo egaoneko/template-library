@@ -7,12 +7,13 @@ import {
   SequelizeHealthIndicator,
 } from '@nestjs/terminus';
 import { ConfigService } from '@nestjs/config';
-import { NoAuth } from 'src/shared/decorators/auth/no-auth';
 import { ApiOperation, ApiTags } from '@nestjs/swagger';
 import { InjectConnection } from '@nestjs/sequelize';
-import { DEFAULT_DATABASE_NAME } from 'src/config/constants/database';
 import { Sequelize } from 'sequelize';
 import { HealthCheckResult } from '@nestjs/terminus/dist/health-check/health-check-result.interface';
+
+import { DEFAULT_DATABASE_NAME } from 'src/config/constants/database';
+import { NoAuth } from 'src/shared/decorators/auth/no-auth';
 
 @ApiTags('app')
 @Controller('health')

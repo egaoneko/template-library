@@ -1,15 +1,19 @@
 import { Test, TestingModule } from '@nestjs/testing';
-import { ArticleService } from './article.service';
-import { DEFAULT_DATABASE_NAME } from '../config/constants/database';
 import { getConnectionToken } from '@nestjs/sequelize/dist/common/sequelize.utils';
 import { Sequelize } from 'sequelize-typescript';
 import { createMock } from '@golevelup/ts-jest';
-import { Article } from './entities/article.entity';
+import { paramCase } from 'change-case';
+
+import { DEFAULT_DATABASE_NAME } from '../config/constants/database';
 import { ProfileService } from '../profile/profile.service';
+import { SequelizeOptionDto } from '../shared/decorators/transaction/transactional.decorator';
+import { UserService } from '../user/user.service';
+
+import { ArticleService } from './article.service';
+import { Article } from './entities/article.entity';
 import { GetArticlesDto } from './dto/request/get-articles.dto';
 import { GetFeedArticlesDto } from './dto/request/get-feed-articles.dto';
 import { CreateArticleDto } from './dto/request/create-article.dto';
-import { paramCase } from 'change-case';
 import { UpdateArticleDto } from './dto/request/update-article.dto';
 import { Comment } from './entities/comment.entity';
 import { CreateCommentDto } from './dto/request/create-comment.dto';
@@ -19,8 +23,6 @@ import { ArticleFavoriteRepository } from './repositories/article-favorite.repos
 import { TagRepository } from './repositories/tag.repository';
 import { ArticleTagRepository } from './repositories/article-tag.repository';
 import { CommentRepository } from './repositories/comment.repository';
-import { SequelizeOptionDto } from '../shared/decorators/transaction/transactional.decorator';
-import { UserService } from '../user/user.service';
 
 describe('ArticleService', () => {
   let service: ArticleService;

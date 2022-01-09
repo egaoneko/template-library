@@ -1,5 +1,6 @@
-import EditorNewPageContainer from 'src/components/pages/editor/EditorNewPageContainer';
 import React, { ReactNode } from 'react';
+
+import EditorNewPageContainer from 'src/components/pages/editor/EditorNewPageContainer';
 
 interface PropsType {}
 

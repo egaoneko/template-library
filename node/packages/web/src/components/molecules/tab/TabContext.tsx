@@ -1,6 +1,7 @@
-import { NOOP } from 'src/utils/common';
 import { Key } from 'react';
 import { createContext, useContext } from 'react';
+
+import { NOOP } from 'src/utils/common';
 
 export const TAB_INITIAL_VALUE: TabContextType = {
   activeKey: null,

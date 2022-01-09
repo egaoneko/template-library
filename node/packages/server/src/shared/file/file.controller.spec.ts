@@ -1,9 +1,11 @@
+import path from 'path';
+
 import { Test, TestingModule } from '@nestjs/testing';
-import { FileController } from './file.controller';
-import { FileService } from './file.service';
 import { createMock } from '@golevelup/ts-jest';
 import { Response } from 'express';
-import path from 'path';
+
+import { FileController } from './file.controller';
+import { FileService } from './file.service';
 
 describe('FileController', () => {
   let controller: FileController;

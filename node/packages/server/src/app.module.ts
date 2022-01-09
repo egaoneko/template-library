@@ -3,18 +3,20 @@ import { ConfigModule } from '@nestjs/config';
 import { SequelizeModule } from '@nestjs/sequelize';
 import helmet from 'helmet';
 import morgan from 'morgan';
-import { AppController } from './app.controller';
-import { AppService } from './app.service';
+import { APP_GUARD } from '@nestjs/core';
+import { TerminusModule } from '@nestjs/terminus';
+
 import { UserModule } from 'src/user/user.module';
 import { AuthModule } from 'src/auth/auth.module';
 import defaultOptions from 'src/config/database/default';
-import { APP_GUARD } from '@nestjs/core';
 import { JwtAuthGuard } from 'src/auth/guards/jwt-auth.guard';
-import { ProfileModule } from './profile/profile.module';
 import { SharedModule } from 'src/shared/shared.module';
-import { ArticleModule } from './article/article.module';
 import configuration from 'src/config/configuration';
-import { TerminusModule } from '@nestjs/terminus';
+
+import { ProfileModule } from './profile/profile.module';
+import { ArticleModule } from './article/article.module';
+import { AppService } from './app.service';
+import { AppController } from './app.controller';
 import { HealthController } from './health/health.controller';
 
 @Module({

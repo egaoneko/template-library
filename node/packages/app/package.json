@@ -9,7 +9,8 @@
     "ios": "react-native run-ios",
     "start": "react-native start",
     "test": "jest",
-    "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
+    "lint": "eslint \"{src,__tests__}/**/*.{js,jsx,ts,tsx}\" --fix",
+    "format": "prettier --write \"src/**/*.{js,jsx,ts,tsx}\" \"__tests__/**/*.{js,jsx,ts,tsx}\"",
     "clean": "rimraf ios/Podfile.lock && rimraf ios/Pods && npm run pod"
   },
   "dependencies": {
@@ -45,7 +46,12 @@
     "babel-jest": "27.0.6",
     "babel-plugin-inline-import": "3.0.0",
     "babel-plugin-styled-components": "1.13.2",
-    "eslint": "7.14.0",
+    "eslint": "7.23.0",
+    "eslint-config-prettier": "8.3.0",
+    "eslint-plugin-import": "2.22.1",
+    "eslint-plugin-prettier": "3.4.1",
+    "eslint-plugin-react": "7.23.1",
+    "eslint-plugin-react-hooks": "4.2.0",
     "metro-react-native-babel-preset": "0.66.2",
     "prettier": "2.3.2",
     "react-test-renderer": "17.0.2"

@@ -1,4 +1,3 @@
-import Avatar from 'src/components/atoms/avatar/Avatar';
 import format from 'date-fns/format';
 import { IArticle } from '@my-app/core/lib/interfaces/article';
 import { IUser } from '@my-app/core/lib/interfaces/user';
@@ -6,15 +5,16 @@ import { AiFillEdit, AiFillDelete, AiOutlinePlus, AiOutlineMinus, AiFillHeart } 
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import React, { FC } from 'react';
-import { UseQueryResult } from 'react-query';
 import styled from 'styled-components';
 import tw from 'twin.macro';
 import marked from 'marked';
 import DOMPurify from 'isomorphic-dompurify';
 
+import Avatar from 'src/components/atoms/avatar/Avatar';
+
 interface PropsType {
   user: IUser | null;
-  articleResult: UseQueryResult<IArticle>;
+  article: IArticle;
   toggleFollow: (username: string, toggle: boolean) => Promise<unknown>;
   toggleFavorite: (slag: string, toggle: boolean) => Promise<unknown>;
   onDelete: (slag: string) => Promise<unknown>;
@@ -22,7 +22,7 @@ interface PropsType {
 
 const ArticleContentTemplate: FC<PropsType> = props => {
   const router = useRouter();
-  const article = props.articleResult.data;
+  const article = props.article;
   const self = article?.author.username === props.user?.username;
 
   if (!article) {
@@ -32,7 +32,10 @@ const ArticleContentTemplate: FC<PropsType> = props => {
   return (
     <Container>
       <Content>
-        <Body data-cy="article-content-body" dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(marked.parse(article.body)) }}/>
+        <Body
+          data-cy="article-content-body"
+          dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(marked.parse(article.body)) }}
+        />
         {article.tagList.length > 0 && (
           <Tags>
             {article.tagList.map(tag => (
@@ -167,4 +170,3 @@ const Favorite = styled.div<{ favorited: boolean }>`
       ? tw`text-white bg-secondary hover:border-primary hover:bg-primary`
       : tw`text-primary hover:text-white hover:bg-primary`}
 `;
-

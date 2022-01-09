@@ -1,9 +1,7 @@
-import { UserModule } from './../user/user.module';
 import { Module } from '@nestjs/common';
-import { ArticleController } from './article.controller';
-import { ArticleService } from './article.service';
-import { SharedModule } from 'src/shared/shared.module';
 import { SequelizeModule } from '@nestjs/sequelize';
+
+import { SharedModule } from 'src/shared/shared.module';
 import { DEFAULT_DATABASE_NAME } from 'src/config/constants/database';
 import { Article } from 'src/article/entities/article.entity';
 import { ArticleFavorite } from 'src/article/entities/article-favorite.entity';
@@ -16,6 +14,10 @@ import { ArticleFavoriteRepository } from 'src/article/repositories/article-favo
 import { TagRepository } from 'src/article/repositories/tag.repository';
 import { ArticleTagRepository } from 'src/article/repositories/article-tag.repository';
 import { CommentRepository } from 'src/article/repositories/comment.repository';
+
+import { ArticleService } from './article.service';
+import { ArticleController } from './article.controller';
+import { UserModule } from './../user/user.module';
 
 @Module({
   imports: [

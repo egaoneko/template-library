@@ -1,5 +1,6 @@
 import { Injectable } from '@nestjs/common';
 import { InjectModel } from '@nestjs/sequelize';
+
 import { DEFAULT_DATABASE_NAME } from 'src/config/constants/database';
 import { Tag } from 'src/article/entities/tag.entity';
 import { SequelizeOptionDto } from 'src/shared/decorators/transaction/transactional.decorator';

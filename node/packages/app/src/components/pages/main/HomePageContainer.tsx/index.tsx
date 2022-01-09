@@ -1,13 +1,14 @@
 import React, {FC} from 'react';
 import styled from 'styled-components/native';
+import {BottomTabScreenProps} from '@react-navigation/bottom-tabs';
+import {CompositeScreenProps} from '@react-navigation/native';
+import {NativeStackScreenProps} from '@react-navigation/native-stack';
+
 import BaseLayoutTemplate from '../../../templates/layout/BaseLayoutTemplate';
 import IconButton from '../../../atoms/button/IconButton';
 import {CommonParamList, MainParamList} from '../../../../interfaces/common';
 import {createMockArticles} from '../../../../data/mock-article';
 import FeedList from '../../../organisms/article/FeedList';
-import {BottomTabScreenProps} from '@react-navigation/bottom-tabs';
-import {CompositeScreenProps} from '@react-navigation/native';
-import {NativeStackScreenProps} from '@react-navigation/native-stack';
 
 type PropsType = CompositeScreenProps<
   NativeStackScreenProps<CommonParamList, 'MAIN'>,
@@ -19,7 +20,8 @@ const HomePageContainer: FC<PropsType> = () => {
   return (
     <BaseLayoutTemplate
       title="Global feed"
-      topBarButton={<IconButton name="search1" size={20} />}>
+      topBarButton={<IconButton name="search1" size={20} />}
+    >
       <Container>
         <FeedList articles={articles.list} />
       </Container>

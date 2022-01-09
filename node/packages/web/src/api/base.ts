@@ -1,11 +1,7 @@
-import AuthAPI from 'src/api/auth';
 import { stringify } from 'query-string';
-import {
-  getCookie,
-  setCookie,
-  removeCookie,
-  getCookieExpires
-} from 'src/utils/cookie';
+
+import AuthAPI from 'src/api/auth';
+import { getCookie, setCookie, removeCookie, getCookieExpires } from 'src/utils/cookie';
 import { CookieName } from 'src/enums/cookie';
 import Context from 'src/libs/Context';
 import { CookieExpires } from 'src/constants/cookie';
@@ -19,32 +15,80 @@ export interface ApiOption {
 }
 
 export default class BaseAPI {
-  static async get<P, R>(context: Context, url: string, request?: P, requestInit?: RequestInit, apiOption?: ApiOption): Promise<R> {
-    return this.request<P, R>(context, url, request, {
-      method: 'GET',
-      ...requestInit,
-    }, apiOption);
+  static async get<P, R>(
+    context: Context,
+    url: string,
+    request?: P,
+    requestInit?: RequestInit,
+    apiOption?: ApiOption,
+  ): Promise<R> {
+    return this.request<P, R>(
+      context,
+      url,
+      request,
+      {
+        method: 'GET',
+        ...requestInit,
+      },
+      apiOption,
+    );
   }
 
-  static async post<P, R>(context: Context, url: string, request?: P, requestInit?: RequestInit, apiOption?: ApiOption): Promise<R> {
-    return this.request<P, R>(context, url, request, {
-      method: 'POST',
-      ...requestInit,
-    }, apiOption);
+  static async post<P, R>(
+    context: Context,
+    url: string,
+    request?: P,
+    requestInit?: RequestInit,
+    apiOption?: ApiOption,
+  ): Promise<R> {
+    return this.request<P, R>(
+      context,
+      url,
+      request,
+      {
+        method: 'POST',
+        ...requestInit,
+      },
+      apiOption,
+    );
   }
 
-  static async put<P, R>(context: Context, url: string, request?: P, requestInit?: RequestInit, apiOption?: ApiOption): Promise<R> {
-    return this.request<P, R>(context, url, request, {
-      method: 'PUT',
-      ...requestInit,
-    }, apiOption);
+  static async put<P, R>(
+    context: Context,
+    url: string,
+    request?: P,
+    requestInit?: RequestInit,
+    apiOption?: ApiOption,
+  ): Promise<R> {
+    return this.request<P, R>(
+      context,
+      url,
+      request,
+      {
+        method: 'PUT',
+        ...requestInit,
+      },
+      apiOption,
+    );
   }
 
-  static async delete<P, R>(context: Context, url: string, request?: P, requestInit?: RequestInit, apiOption?: ApiOption): Promise<R> {
-    return this.request<P, R>(context, url, request, {
-      method: 'DELETE',
-      ...requestInit,
-    }, apiOption);
+  static async delete<P, R>(
+    context: Context,
+    url: string,
+    request?: P,
+    requestInit?: RequestInit,
+    apiOption?: ApiOption,
+  ): Promise<R> {
+    return this.request<P, R>(
+      context,
+      url,
+      request,
+      {
+        method: 'DELETE',
+        ...requestInit,
+      },
+      apiOption,
+    );
   }
 
   static async request<P, R>(
@@ -66,10 +110,9 @@ export default class BaseAPI {
       ...requestInit,
     } as RequestInit;
 
-    let queryParams = '';
     if (init.method === 'GET') {
       if (request instanceof Object && Object.keys(request).length > 0) {
-        queryParams = (url.includes('?') ? '&' : '?') + stringify(request);
+        url += (url.includes('?') ? '&' : '?') + stringify(request);
       }
     } else if (typeof FormData !== 'undefined' && request instanceof FormData) {
       init.body = request;
@@ -93,8 +136,7 @@ export default class BaseAPI {
       try {
         const user = await AuthAPI.refresh(context, { refreshToken });
         newAccessToken = user.token ?? '';
-      } catch (e) {
-      }
+      } catch (e) {}
 
       if (newAccessToken) {
         setCookie(context, CookieName.ACCESS_TOKEN, newAccessToken, {
@@ -113,7 +155,6 @@ export default class BaseAPI {
         removeCookie(context, CookieName.REFRESH_TOKEN);
       }
     }
-
     throw data;
   }
 

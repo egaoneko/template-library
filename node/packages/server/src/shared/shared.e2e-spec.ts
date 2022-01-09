@@ -1,12 +1,14 @@
-import request from 'supertest';
-import { Test } from '@nestjs/testing';
-import { AppModule } from '../app.module';
-import { INestApplication } from '@nestjs/common';
-import { createTestUser, getTestUserDto } from '../test/utils/user';
-import { cleanDb } from '../test/utils/db';
 import path from 'path';
 import fs from 'fs';
+
+import request from 'supertest';
+import { Test } from '@nestjs/testing';
+import { INestApplication } from '@nestjs/common';
 import { getModelToken } from '@nestjs/sequelize';
+
+import { AppModule } from '../app.module';
+import { createTestUser, getTestUserDto } from '../test/utils/user';
+import { cleanDb } from '../test/utils/db';
 import { DEFAULT_DATABASE_NAME } from '../config/constants/database';
 import { File } from '../shared/file/entities/file.entity';
 

@@ -1,9 +1,7 @@
-import ProfilePageContainer from 'src/components/pages/profile/ProfilePageContainer';
-import {
-  GetServerSidePropsResult,
-  NextPageContext
-} from 'next';
+import { GetServerSidePropsResult, NextPageContext } from 'next';
 import React, { ReactNode } from 'react';
+
+import ProfilePageContainer from 'src/components/pages/profile/ProfilePageContainer';
 
 interface PropsType {
   username: string;

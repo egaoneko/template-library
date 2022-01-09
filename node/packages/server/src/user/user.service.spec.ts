@@ -1,13 +1,15 @@
 import { Test, TestingModule } from '@nestjs/testing';
-import { UserService } from './user.service';
-import { User } from './entities/user.entity';
-import { CreateUserDto } from './dto/request/create-user.dto';
-import { UpdateUserDto } from './dto/request/update-user.dto';
 import { getConnectionToken } from '@nestjs/sequelize/dist/common/sequelize.utils';
 import { createMock } from '@golevelup/ts-jest';
 import { Sequelize } from 'sequelize-typescript';
+
 import { DEFAULT_DATABASE_NAME } from '../config/constants/database';
 import { FileService } from '../shared/file/file.service';
+
+import { UpdateUserDto } from './dto/request/update-user.dto';
+import { CreateUserDto } from './dto/request/create-user.dto';
+import { User } from './entities/user.entity';
+import { UserService } from './user.service';
 import { UserRepository } from './repositories/user.repository';
 
 describe('UserService', () => {

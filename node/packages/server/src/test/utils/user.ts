@@ -1,9 +1,10 @@
-import { User } from 'src/user/entities/user.entity';
 import request from 'supertest';
 import { INestApplication } from '@nestjs/common';
+import { getModelToken } from '@nestjs/sequelize';
+
+import { User } from 'src/user/entities/user.entity';
 import { UserDto } from 'src/user/dto/response/user.dto';
 import { DEFAULT_DATABASE_NAME } from 'src/config/constants/database';
-import { getModelToken } from '@nestjs/sequelize';
 import { Crypto } from 'src/shared/crypto/crypto';
 import { UserService } from 'src/user/user.service';
 

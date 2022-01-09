@@ -1,14 +1,15 @@
-import { UserService } from 'src/user/user.service';
 import { BadRequestException, Injectable, InternalServerErrorException } from '@nestjs/common';
-import { GetArticlesDto } from 'src/article/dto/request/get-articles.dto';
 import { InjectConnection } from '@nestjs/sequelize';
-import { DEFAULT_DATABASE_NAME } from 'src/config/constants/database';
 import { Sequelize } from 'sequelize';
 import { paramCase } from 'change-case';
+import { validate } from 'class-validator';
+
+import { UserService } from 'src/user/user.service';
+import { GetArticlesDto } from 'src/article/dto/request/get-articles.dto';
+import { DEFAULT_DATABASE_NAME } from 'src/config/constants/database';
 import { Article } from 'src/article/entities/article.entity';
 import { Comment } from 'src/article/entities/comment.entity';
 import { ArticlesDto } from 'src/article/dto/response/articles.dto';
-import { validate } from 'class-validator';
 import { ArticleDto } from 'src/article/dto/response/article.dto';
 import { ProfileService } from 'src/profile/profile.service';
 import { SequelizeOptionDto, Transactional } from 'src/shared/decorators/transaction/transactional.decorator';

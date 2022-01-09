@@ -1,16 +1,12 @@
-import Menu from 'src/components/atoms/menu/Menu';
-import Menus from 'src/components/atoms/menu/Menus';
-import React, {
-  FC,
-} from 'react';
+import React, { FC } from 'react';
 import styled from 'styled-components';
 import tw from 'twin.macro';
 import Link from 'next/link';
+import { AiOutlineEdit, AiOutlineSetting } from 'react-icons/ai';
+
 import { useStores } from 'src/stores/stores';
-import {
-  AiOutlineEdit,
-  AiOutlineSetting
-} from 'react-icons/ai';
+import Menus from 'src/components/atoms/menu/Menus';
+import Menu from 'src/components/atoms/menu/Menu';
 import Avatar from 'src/components/atoms/avatar/Avatar';
 
 interface PropsType {
@@ -36,14 +32,16 @@ const HeaderTemplate: FC<PropsType> = props => {
                 key="sign-in"
                 href="/auth/sign-in"
                 active={props.pathname === '/auth/sign-in'}
-                data-cy="header-sign-in-link">
+                data-cy="header-sign-in-link"
+              >
                 Sign in
               </Menu>
               <Menu
                 key="sign-up"
                 href="/auth/sign-up"
                 active={props.pathname === '/auth/sign-up'}
-                data-cy="header-sign-up-link">
+                data-cy="header-sign-up-link"
+              >
                 Sign up
               </Menu>
             </>
@@ -52,26 +50,29 @@ const HeaderTemplate: FC<PropsType> = props => {
               <Menu
                 key="new"
                 href="/editor/new"
-                icon={<AiOutlineEdit/>}
+                icon={<AiOutlineEdit />}
                 active={props.pathname === '/editor/new'}
-                data-cy="header-new-post-link">
+                data-cy="header-new-post-link"
+              >
                 New Post
               </Menu>
               <Menu
                 key="settings"
                 href="/user/settings"
-                icon={<AiOutlineSetting/>}
+                icon={<AiOutlineSetting />}
                 active={props.pathname === '/user/settings'}
                 data-cy="header-settings-link"
               >
                 Settings
               </Menu>
               <Menu
-                key="profile" href={`/profile/${userStore.user.username}`}
+                key="profile"
+                href={`/profile/${userStore.user.username}`}
                 active={props.pathname === `/profile/${userStore.user.username}`}
-                data-cy="header-profile-link">
+                data-cy="header-profile-link"
+              >
                 <div className="flex items-center gap-1">
-                  <Avatar size="small" url={userStore.user.image}/>
+                  <Avatar size="small" url={userStore.user.image} />
                   {userStore.user.username}
                 </div>
               </Menu>

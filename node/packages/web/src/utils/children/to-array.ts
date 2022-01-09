@@ -8,7 +8,7 @@ export interface Option {
 export default function toArray<T>(children: ReactNode, option: Option = {}): ReactElement<T>[] {
   let ret: ReactElement<T>[] = [];
 
-  Children.forEach(children, (child: any) => {
+  Children.forEach(children, (child: unknown) => {
     if ((child === undefined || child === null) && !option.keepEmpty) {
       return;
     }
@@ -18,7 +18,7 @@ export default function toArray<T>(children: ReactNode, option: Option = {}): Re
     } else if (isFragment(child) && child.props) {
       ret = ret.concat(toArray(child.props.children, option));
     } else {
-      ret.push(child);
+      ret.push(child as ReactElement<T>);
     }
   });
 

@@ -1,6 +1,7 @@
 import { readFileSync } from 'fs';
-import yaml from 'js-yaml';
 import path from 'path';
+
+import yaml from 'js-yaml';
 
 let YAML_CONFIG_FILENAME: string;
 
