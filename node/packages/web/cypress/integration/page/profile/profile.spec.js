@@ -25,7 +25,6 @@ describe('Profile', () => {
   it('should be show articles', () => {
     cy.visit(`http://localhost:3000/profile/${profile.username}`);
     cy.get('[data-cy=tab-nav-my_posts]').contains('My Posts');
-    cy.get('[data-cy=tab-pane-my_posts]').contains('Loading articles.');
     cy.get('[data-cy=feed-container]').should('have.length', 5);
     cy.get('.pagination-page-item').should('have.length', 2);
     cy.get('.pagination-page-item').eq(1).click();
@@ -37,7 +36,6 @@ describe('Profile', () => {
     cy.visit(`http://localhost:3000/profile/${other}`);
     cy.get('[data-cy=tab-nav-favorited_posts]').contains('Favorited Posts');
     cy.get('[data-cy=tab-nav-favorited_posts]').click();
-    cy.get('[data-cy=tab-pane-favorited_posts]').contains('Loading articles.');
     cy.get('[data-cy=feed-container]').should('have.length', 2);
   });
 

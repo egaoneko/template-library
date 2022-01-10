@@ -6,11 +6,11 @@ import { IArticle } from '@my-app/core/lib/interfaces/article';
 import HomePageContainer from 'src/components/pages/HomePageContainer';
 import Context from 'src/libs/Context';
 import ArticleAPI from 'src/api/article';
-import { ARTICLE_PAGE_LIMIT } from 'src/constants/page';
+import { ARTICLE_PAGE_LIMIT, EMPTY_LIST } from 'src/constants/page';
 
 interface PropsType {
-  articleList?: ListResult<IArticle>;
-  tags?: string[];
+  articleList: ListResult<IArticle>;
+  tags: string[];
 }
 
 function Index(props: PropsType): ReactNode {
@@ -24,7 +24,11 @@ export async function getServerSideProps(ctx: NextPageContext): Promise<GetServe
     nextContext: ctx,
   });
 
-  const props: PropsType = {};
+  const props: PropsType = {
+    articleList: EMPTY_LIST,
+    tags: [],
+  };
+
   try {
     props.articleList = await ArticleAPI.getList(context, { page: 1, limit: ARTICLE_PAGE_LIMIT });
   } catch (e) {}

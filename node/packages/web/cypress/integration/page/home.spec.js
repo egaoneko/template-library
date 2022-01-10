@@ -7,6 +7,19 @@ describe('Home', () => {
     });
     article2 = 'how-to-train-your-dragon-2';
   });
+
+  it('should navigate article', () => {
+    cy.visit('http://localhost:3000/');
+    cy.get('[data-cy=feed-content]').eq(0).click();
+    cy.location('pathname').should('eq', `/article/${article.slug}`);
+  });
+
+  it('should navigate profile', () => {
+    cy.visit('http://localhost:3000/');
+    cy.get('[data-cy=feed-profile] > a').eq(0).click();
+    cy.location('pathname').should('eq', `/profile/${article.author.username}`);
+  });
+
   it('should be show content', () => {
     cy.visit('http://localhost:3000/');
     cy.get('[data-cy=head-title]').contains('HOME');
@@ -40,18 +53,6 @@ describe('Home', () => {
     cy.visit('http://localhost:3000/');
     cy.get('[data-cy=content-tag]').eq(0).click();
     cy.get('[data-cy=feed-container]').should('have.length', 2);
-  });
-
-  it('should navigate article', () => {
-    cy.visit('http://localhost:3000/');
-    cy.get('[data-cy=feed-content]').eq(0).click();
-    cy.location('pathname').should('eq', `/article/${article.slug}`);
-  });
-
-  it('should navigate profile', () => {
-    cy.visit('http://localhost:3000/');
-    cy.get('[data-cy=feed-profile] > a').eq(0).click();
-    cy.location('pathname').should('eq', `/profile/${article.author.username}`);
   });
 
   it('should toggle favorite', () => {

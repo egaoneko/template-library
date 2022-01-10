@@ -34,4 +34,4 @@ yarn-error.log*
 .vercel
 
 # test
-/cypress/screenshots/
+#/cypress/screenshots/

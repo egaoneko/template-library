@@ -21,6 +21,8 @@ const PAGE_LIMIT = 5;
 
 interface PropsType extends BasePropsType {
   username: string;
+  profile: IProfile;
+  articleList: ListResult<IArticle>;
 }
 
 const ProfilePageContainer: FC<PropsType> = props => {
@@ -29,14 +31,22 @@ const ProfilePageContainer: FC<PropsType> = props => {
   const router = useRouter();
   const [activeTab, setActiveTab] = useState<PostTab | null>(PostTab.MY_POSTS);
   const [page, setPage] = useState<number>(1);
-  const profileResult = useQuery<IProfile>(['profile', username], () => ProfileAPI.get(CONTEXT, username));
-  const articlesResult = useQuery<ListResult<IArticle>>(['article-list', page, activeTab, username], () => {
-    if (activeTab === PostTab.MY_POSTS) {
-      return ArticleAPI.getList(CONTEXT, { page, limit: PAGE_LIMIT, author: username });
-    } else {
-      return ArticleAPI.getList(CONTEXT, { page, limit: PAGE_LIMIT, favorited: username });
-    }
-  });
+  const profileResult = useQuery<IProfile, unknown, IProfile>(
+    ['profile', username],
+    () => ProfileAPI.get(CONTEXT, username),
+    { initialData: props.profile },
+  );
+  const articlesResult = useQuery<ListResult<IArticle>, unknown, ListResult<IArticle>>(
+    ['article-list', page, activeTab, username],
+    () => {
+      if (activeTab === PostTab.MY_POSTS) {
+        return ArticleAPI.getList(CONTEXT, { page, limit: PAGE_LIMIT, author: username });
+      } else {
+        return ArticleAPI.getList(CONTEXT, { page, limit: PAGE_LIMIT, favorited: username });
+      }
+    },
+    { initialData: props.articleList },
+  );
 
   const handleToggleFavorite = useCallback(
     async (slug: string, toggle: boolean): Promise<void> => {

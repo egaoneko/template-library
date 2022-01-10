@@ -12,43 +12,52 @@ import ArticleAPI from 'src/api/article';
 import { notifyError, notifySuccess } from 'src/utils/notifiy';
 import ProfileAPI from 'src/api/profile';
 import { CONTEXT } from 'src/constants/common';
+import { COMMENT_PAGE_LIMIT, EMPTY_LIST } from 'src/constants/page';
 
 import ArticleBannerTemplate from './templates/ArticleBannerTemplate';
 import ArticleContentTemplate from './templates/ArticleContentTemplate';
 import ArticleCommentTemplate from './templates/ArticleCommentTemplate';
 
-const EMPTY_COMMENTS: ListResult<IComment> = {
-  count: 0,
-  list: [],
-};
-
 interface PropsType extends BasePropsType {
   slug: string;
+  article: IArticle;
+  commentList: ListResult<IComment>;
 }
 
 const ArticlePageContainer: FC<PropsType> = props => {
   const { userStore } = useStores();
   const router = useRouter();
   const { slug } = props;
-  const articleResult = useQuery<IArticle | null>(['article', slug], async (): Promise<IArticle | null> => {
-    try {
-      return await ArticleAPI.get(CONTEXT, slug);
-    } catch (e) {
-      notifyError((e as Error).message);
-      await router.push(`/`);
-    }
-    return null;
-  });
-  const commentsResult = useQuery<ListResult<IComment>>(['comment-list', slug], async () => {
-    try {
-      return await ArticleAPI.getCommentList(CONTEXT, slug, { limit: 999 });
-    } catch (e) {
-      notifyError((e as Error).message);
-    }
-    return EMPTY_COMMENTS;
-  });
+  const articleResult = useQuery<IArticle | null, unknown, IArticle>(
+    ['article', slug],
+    async (): Promise<IArticle | null> => {
+      try {
+        return await ArticleAPI.get(CONTEXT, slug);
+      } catch (e) {
+        notifyError((e as Error).message);
+        await router.push(`/500`);
+      }
+      return null;
+    },
+    {
+      initialData: props.article,
+    },
+  );
+  const commentsResult = useQuery<ListResult<IComment>, unknown, ListResult<IComment>>(
+    ['comment-list', slug],
+    async () => {
+      try {
+        return await ArticleAPI.getCommentList(CONTEXT, slug, { limit: COMMENT_PAGE_LIMIT });
+      } catch (e) {
+        notifyError((e as Error).message);
+      }
+      return EMPTY_LIST;
+    },
+    {
+      initialData: props.commentList,
+    },
+  );
   const [loading, setLoading] = useState<boolean>(false);
-  const article = articleResult.data;
 
   const handleToggleFollow = useCallback(
     async (username: string, toggle: boolean): Promise<void> => {
@@ -153,10 +162,10 @@ const ArticlePageContainer: FC<PropsType> = props => {
     <BaseLayoutTemplate
       pathname={props.pathname}
       banner={
-        article && (
+        articleResult.data && (
           <ArticleBannerTemplate
             user={userStore.user}
-            article={article}
+            article={articleResult.data}
             toggleFollow={handleToggleFollow}
             toggleFavorite={handleToggleFavorite}
             onDelete={handleOnDeleteArticle}
@@ -165,11 +174,11 @@ const ArticlePageContainer: FC<PropsType> = props => {
       }
     >
       <Head title={'ARTICLE'} />
-      {article && (
+      {articleResult.data && (
         <>
           <ArticleContentTemplate
             user={userStore.user}
-            article={article}
+            article={articleResult.data}
             toggleFollow={handleToggleFollow}
             toggleFavorite={handleToggleFavorite}
             onDelete={handleOnDeleteArticle}
@@ -177,8 +186,8 @@ const ArticlePageContainer: FC<PropsType> = props => {
           <ArticleCommentTemplate
             loading={loading}
             user={userStore.user}
-            article={article}
-            comments={commentsResult.data ?? EMPTY_COMMENTS}
+            article={articleResult.data}
+            comments={commentsResult.data ?? EMPTY_LIST}
             onCreate={handleOnCreateComment}
             onDelete={handleOnDeleteComment}
           />

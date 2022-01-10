@@ -17,8 +17,8 @@ import HomeBannerTemplate from './templates/HomeBannerTemplate';
 import HomeContentTemplate from './templates/HomeContentTemplate';
 
 interface PropsType extends BasePropsType {
-  articleList?: ListResult<IArticle>;
-  tags?: string[];
+  articleList: ListResult<IArticle>;
+  tags: string[];
 }
 
 const HomePageContainer: FC<PropsType> = props => {
