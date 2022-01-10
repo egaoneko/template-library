@@ -1,5 +1,5 @@
-const {pathsToModuleNameMapper} = require('ts-jest/utils');
-const {compilerOptions} = require('./tsconfig');
+const { pathsToModuleNameMapper } = require('ts-jest/utils');
+const { compilerOptions } = require('./tsconfig');
 const esModules = ['marked', 'isomorphic-dompurify'].join('|');
 
 module.exports = {
@@ -21,6 +21,8 @@ module.exports = {
 
     // path alias
     ...pathsToModuleNameMapper(compilerOptions.paths, { prefix: '<rootDir>/' }),
+
+    '^src/(.*)$': '<rootDir>/src/$1',
   },
   testPathIgnorePatterns: [
     '<rootDir>/.next',
@@ -29,7 +31,7 @@ module.exports = {
     '<rootDir>/public',
     '<rootDir>/babel.config.js',
     '<rootDir>/next.config.js',
-    '<rootDir>/cypress/'
+    '<rootDir>/cypress/',
   ],
   transform: {
     // Use babel-jest to transpile tests with the next/babel preset

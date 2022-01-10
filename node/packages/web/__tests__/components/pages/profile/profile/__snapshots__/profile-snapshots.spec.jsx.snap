@@ -540,7 +540,9 @@ exports[`Profile Snapshots renders profile after login 1`] = `
                 <div
                   className="Feed__Content-sc-njujrp-6 bMJyvN"
                   data-cy="feed-content"
+                  href="/article/how-to-train-your-dragon"
                   onClick={[Function]}
+                  onMouseEnter={[Function]}
                 >
                   <h1
                     className="Feed__Title-sc-njujrp-7 VSHlD"
@@ -735,7 +737,9 @@ exports[`Profile Snapshots renders profile after login 1`] = `
                 <div
                   className="Feed__Content-sc-njujrp-6 bMJyvN"
                   data-cy="feed-content"
+                  href="/article/how-to-train-your-dragon-2"
                   onClick={[Function]}
+                  onMouseEnter={[Function]}
                 >
                   <h1
                     className="Feed__Title-sc-njujrp-7 VSHlD"
@@ -925,7 +929,9 @@ exports[`Profile Snapshots renders profile after login 1`] = `
                 <div
                   className="Feed__Content-sc-njujrp-6 bMJyvN"
                   data-cy="feed-content"
+                  href="/article/how-to-train-your-dragon-3"
                   onClick={[Function]}
+                  onMouseEnter={[Function]}
                 >
                   <h1
                     className="Feed__Title-sc-njujrp-7 VSHlD"
@@ -1115,7 +1121,9 @@ exports[`Profile Snapshots renders profile after login 1`] = `
                 <div
                   className="Feed__Content-sc-njujrp-6 bMJyvN"
                   data-cy="feed-content"
+                  href="/article/how-to-train-your-dragon-4"
                   onClick={[Function]}
+                  onMouseEnter={[Function]}
                 >
                   <h1
                     className="Feed__Title-sc-njujrp-7 VSHlD"
@@ -1305,7 +1313,9 @@ exports[`Profile Snapshots renders profile after login 1`] = `
                 <div
                   className="Feed__Content-sc-njujrp-6 bMJyvN"
                   data-cy="feed-content"
+                  href="/article/how-to-train-your-dragon-5"
                   onClick={[Function]}
+                  onMouseEnter={[Function]}
                 >
                   <h1
                     className="Feed__Title-sc-njujrp-7 VSHlD"
@@ -2081,7 +2091,9 @@ exports[`Profile Snapshots renders profile after login with other user 1`] = `
                 <div
                   className="Feed__Content-sc-njujrp-6 bMJyvN"
                   data-cy="feed-content"
+                  href="/article/how-to-train-your-dragon"
                   onClick={[Function]}
+                  onMouseEnter={[Function]}
                 >
                   <h1
                     className="Feed__Title-sc-njujrp-7 VSHlD"
@@ -2276,7 +2288,9 @@ exports[`Profile Snapshots renders profile after login with other user 1`] = `
                 <div
                   className="Feed__Content-sc-njujrp-6 bMJyvN"
                   data-cy="feed-content"
+                  href="/article/how-to-train-your-dragon-2"
                   onClick={[Function]}
+                  onMouseEnter={[Function]}
                 >
                   <h1
                     className="Feed__Title-sc-njujrp-7 VSHlD"
@@ -2466,7 +2480,9 @@ exports[`Profile Snapshots renders profile after login with other user 1`] = `
                 <div
                   className="Feed__Content-sc-njujrp-6 bMJyvN"
                   data-cy="feed-content"
+                  href="/article/how-to-train-your-dragon-3"
                   onClick={[Function]}
+                  onMouseEnter={[Function]}
                 >
                   <h1
                     className="Feed__Title-sc-njujrp-7 VSHlD"
@@ -2656,7 +2672,9 @@ exports[`Profile Snapshots renders profile after login with other user 1`] = `
                 <div
                   className="Feed__Content-sc-njujrp-6 bMJyvN"
                   data-cy="feed-content"
+                  href="/article/how-to-train-your-dragon-4"
                   onClick={[Function]}
+                  onMouseEnter={[Function]}
                 >
                   <h1
                     className="Feed__Title-sc-njujrp-7 VSHlD"
@@ -2846,7 +2864,9 @@ exports[`Profile Snapshots renders profile after login with other user 1`] = `
                 <div
                   className="Feed__Content-sc-njujrp-6 bMJyvN"
                   data-cy="feed-content"
+                  href="/article/how-to-train-your-dragon-5"
                   onClick={[Function]}
+                  onMouseEnter={[Function]}
                 >
                   <h1
                     className="Feed__Title-sc-njujrp-7 VSHlD"
@@ -3432,7 +3452,9 @@ exports[`Profile Snapshots renders profile before login 1`] = `
                 <div
                   className="Feed__Content-sc-njujrp-6 bMJyvN"
                   data-cy="feed-content"
+                  href="/article/how-to-train-your-dragon"
                   onClick={[Function]}
+                  onMouseEnter={[Function]}
                 >
                   <h1
                     className="Feed__Title-sc-njujrp-7 VSHlD"
@@ -3627,7 +3649,9 @@ exports[`Profile Snapshots renders profile before login 1`] = `
                 <div
                   className="Feed__Content-sc-njujrp-6 bMJyvN"
                   data-cy="feed-content"
+                  href="/article/how-to-train-your-dragon-2"
                   onClick={[Function]}
+                  onMouseEnter={[Function]}
                 >
                   <h1
                     className="Feed__Title-sc-njujrp-7 VSHlD"
@@ -3817,7 +3841,9 @@ exports[`Profile Snapshots renders profile before login 1`] = `
                 <div
                   className="Feed__Content-sc-njujrp-6 bMJyvN"
                   data-cy="feed-content"
+                  href="/article/how-to-train-your-dragon-3"
                   onClick={[Function]}
+                  onMouseEnter={[Function]}
                 >
                   <h1
                     className="Feed__Title-sc-njujrp-7 VSHlD"
@@ -4007,7 +4033,9 @@ exports[`Profile Snapshots renders profile before login 1`] = `
                 <div
                   className="Feed__Content-sc-njujrp-6 bMJyvN"
                   data-cy="feed-content"
+                  href="/article/how-to-train-your-dragon-4"
                   onClick={[Function]}
+                  onMouseEnter={[Function]}
                 >
                   <h1
                     className="Feed__Title-sc-njujrp-7 VSHlD"
@@ -4197,7 +4225,9 @@ exports[`Profile Snapshots renders profile before login 1`] = `
                 <div
                   className="Feed__Content-sc-njujrp-6 bMJyvN"
                   data-cy="feed-content"
+                  href="/article/how-to-train-your-dragon-5"
                   onClick={[Function]}
+                  onMouseEnter={[Function]}
                 >
                   <h1
                     className="Feed__Title-sc-njujrp-7 VSHlD"
