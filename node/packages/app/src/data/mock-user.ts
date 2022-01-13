@@ -1,5 +1,5 @@
 import faker from 'faker';
-import {IUser} from '@my-app/core/lib/interfaces/user';
+import { IUser } from '@my-app/core/lib/interfaces/user';
 
 export function createMockUser(): IUser {
   return {

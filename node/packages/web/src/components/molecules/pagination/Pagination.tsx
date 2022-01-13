@@ -1,6 +1,4 @@
-import React, { FC } from 'react';
-import { useEffect } from 'react';
-import { useState } from 'react';
+import React, { FC, useEffect, useState } from 'react';
 import ReactPaginate from 'react-paginate';
 import styled from 'styled-components';
 import tw from 'twin.macro';

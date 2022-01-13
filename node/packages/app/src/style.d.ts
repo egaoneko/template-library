@@ -1,6 +1,6 @@
-import {CSSProp} from 'styled-components';
+import { CSSProp } from 'styled-components';
 
-import {Theme} from './constants/theme';
+import { Theme } from './constants/theme';
 
 declare module 'react' {
   interface Attributes {

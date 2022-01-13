@@ -1,4 +1,4 @@
-import {Colors} from 'react-native-paper';
+import { Colors } from 'react-native-paper';
 export const COLOR_SET = {
   PRIMARY: '#5cb85c',
   SECONDARY: '#3d8b3d',

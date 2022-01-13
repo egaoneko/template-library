@@ -1,8 +1,7 @@
-import React, {FC} from 'react';
+import React, { FC } from 'react';
 import styled from 'styled-components/native';
 
-const DEFAULT_IMAGE =
-  'https://static.productionready.io/images/smiley-cyrus.jpg';
+const DEFAULT_IMAGE = 'https://static.productionready.io/images/smiley-cyrus.jpg';
 
 interface PropsType {
   uri?: string;
@@ -10,14 +9,14 @@ interface PropsType {
 }
 
 const Avatar: FC<PropsType> = props => {
-  const {uri = DEFAULT_IMAGE, size} = props;
-  return <StyledImage source={{uri}} size={size} />;
+  const { uri = DEFAULT_IMAGE, size } = props;
+  return <StyledImage source={{ uri }} size={size} />;
 };
 
 export default Avatar;
 
-const StyledImage = styled.Image<{size: number}>`
-  width: ${({size}) => size}px;
-  height: ${({size}) => size}px;
-  border-radius: ${({size}) => size / 2}px;
+const StyledImage = styled.Image<{ size: number }>`
+  width: ${({ size }) => size}px;
+  height: ${({ size }) => size}px;
+  border-radius: ${({ size }) => size / 2}px;
 `;

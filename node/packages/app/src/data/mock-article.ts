@@ -1,9 +1,9 @@
 import faker from 'faker';
-import {IArticle} from '@my-app/core/lib/interfaces/article';
-import {ListResult} from '@my-app/core/lib/interfaces/common';
-import {makeArray} from '@my-app/core/lib/utils/generate';
+import { IArticle } from '@my-app/core/lib/interfaces/article';
+import { ListResult } from '@my-app/core/lib/interfaces/common';
+import { makeArray } from '@my-app/core/lib/utils/generate';
 
-import {createMocProfile} from './mock-profile';
+import { createMocProfile } from './mock-profile';
 
 export function createMockArticle(): IArticle {
   return {
@@ -21,9 +21,7 @@ export function createMockArticle(): IArticle {
   };
 }
 
-export function createMockArticles(
-  count: number = faker.datatype.number(),
-): ListResult<IArticle> {
+export function createMockArticles(count: number = faker.datatype.number()): ListResult<IArticle> {
   return {
     count,
     list: makeArray(count).map(() => createMockArticle()),

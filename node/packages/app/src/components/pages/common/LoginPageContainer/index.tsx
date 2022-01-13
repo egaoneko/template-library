@@ -1,9 +1,9 @@
-import React, {FC} from 'react';
-import {Text} from 'react-native';
+import React, { FC } from 'react';
+import { Text } from 'react-native';
 import styled from 'styled-components/native';
-import {NativeStackScreenProps} from '@react-navigation/native-stack';
+import { NativeStackScreenProps } from '@react-navigation/native-stack';
 
-import {CommonParamList} from '../../../../interfaces/common';
+import { CommonParamList } from '../../../../interfaces/common';
 
 type PropsType = NativeStackScreenProps<CommonParamList, 'LOGIN'>;
 

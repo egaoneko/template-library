@@ -1,5 +1,5 @@
-import {IArticle} from '@my-app/core/lib/interfaces/article';
-import React, {FC} from 'react';
+import { IArticle } from '@my-app/core/lib/interfaces/article';
+import React, { FC } from 'react';
 import styled from 'styled-components/native';
 import format from 'date-fns/format';
 
@@ -8,13 +8,13 @@ import TouchableView from '../../atoms/view/TouchableView';
 import BaseIcon from '../../atoms/icon/BaseIcon';
 import Avatar from '../../atoms/avatar/Avatar';
 import IconButton from '../../atoms/button/IconButton';
-import {Description1, Heading2} from '../../atoms/common/typography';
+import { Description1, Heading2 } from '../../atoms/common/typography';
 
 interface PropsType {
   article: IArticle;
 }
 
-const Feed: FC<PropsType> = ({article}) => {
+const Feed: FC<PropsType> = ({ article }) => {
   return (
     <Container>
       <ContentContainer>
@@ -23,18 +23,14 @@ const Feed: FC<PropsType> = ({article}) => {
           <Avatar uri={article.author.image} size={15} />
           <AuthorDescription>{article.author.username}</AuthorDescription>
           <AuthorDescription>{'\u00B7'}</AuthorDescription>
-          <AuthorDescription>
-            {format(new Date(article.updatedAt), 'EEE MMM d yyyy')}
-          </AuthorDescription>
+          <AuthorDescription>{format(new Date(article.updatedAt), 'EEE MMM d yyyy')}</AuthorDescription>
         </AuthorContainer>
         <ContentMoreButton name="ellipsis1" size={15} />
       </ContentContainer>
       <FavoriteWrapper>
         <FavoriteContainer>
           <BaseIcon name="heart" size={15} active={article.favorited} />
-          <FavoriteCount active={article.favorited}>
-            {article.favoritesCount}
-          </FavoriteCount>
+          <FavoriteCount active={article.favorited}>{article.favoritesCount}</FavoriteCount>
         </FavoriteContainer>
       </FavoriteWrapper>
     </Container>
@@ -66,7 +62,7 @@ const AuthorDescription = styled(Description1)`
 
 const ContentMoreButton = styled(IconButton)`
   margin-top: 12px;
-  color: ${({theme}) => theme.description};
+  color: ${({ theme }) => theme.description};
 `;
 
 const FavoriteWrapper = styled.View`

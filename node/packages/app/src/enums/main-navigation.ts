@@ -8,5 +8,4 @@ export const MAIN_NAVIGATION_TYPE = {
   SETTINGS: 'SETTINGS',
 } as const;
 
-export type MAIN_NAVIGATION_TYPE =
-  typeof MAIN_NAVIGATION_TYPE[keyof typeof MAIN_NAVIGATION_TYPE];
+export type MAIN_NAVIGATION_TYPE = typeof MAIN_NAVIGATION_TYPE[keyof typeof MAIN_NAVIGATION_TYPE];

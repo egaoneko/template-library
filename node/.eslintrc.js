@@ -29,7 +29,7 @@ module.exports = {
     'import/order': [
       'error',
       {
-        groups: ['builtin', 'external', 'internal', 'unknown', 'parent', 'index', 'sibling', 'object'],
+        groups: ['builtin', 'external', 'internal', 'unknown', 'parent', 'index', 'sibling', 'object', 'type'],
         'newlines-between': 'always',
       },
     ],

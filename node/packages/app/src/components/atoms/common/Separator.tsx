@@ -1,4 +1,4 @@
-import React, {FC} from 'react';
+import React, { FC } from 'react';
 import styled from 'styled-components/native';
 
 import useDarkMode from '../../../hooks/useDarkMode';
@@ -11,7 +11,7 @@ const Separator: FC<PropsType> = () => {
 
 export default Separator;
 
-const StyledView = styled.View<{darkMode: boolean}>`
+const StyledView = styled.View<{ darkMode: boolean }>`
   border-bottom-width: 1px;
-  border-color: ${({theme}) => theme.border};
+  border-color: ${({ theme }) => theme.border};
 `;

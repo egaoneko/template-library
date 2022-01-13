@@ -1,6 +1,6 @@
-import {IUser} from '@my-app/core/lib/interfaces/user';
-import {makeAutoObservable} from 'mobx';
-import {useMemo} from 'react';
+import { IUser } from '@my-app/core/lib/interfaces/user';
+import { makeAutoObservable } from 'mobx';
+import { useMemo } from 'react';
 
 class UserStore {
   public user: IUser | null = null;

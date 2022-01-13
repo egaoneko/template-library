@@ -1,9 +1,10 @@
 import universalCookie, { CookieSetOptions } from 'universal-cookie';
 import { parse } from 'set-cookie-parser';
 import { GetServerSidePropsContext, NextApiRequest, NextApiResponse, NextPageContext } from 'next';
-import { NextRequest, NextResponse } from 'next/server';
 
 import Cookie from 'src/libs/Cookie';
+
+import type { NextRequest, NextResponse } from 'next/server';
 
 export type NextContext =
   | NextPageContext

@@ -1,5 +1,4 @@
-import { Key } from 'react';
-import { createContext, useContext } from 'react';
+import { Key, createContext, useContext } from 'react';
 
 import { NOOP } from 'src/utils/common';
 

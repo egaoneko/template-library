@@ -1,30 +1,21 @@
+const lintConfig = require('../../.eslintrc.js');
+module.exports = lintConfig;
+
 module.exports = {
-  root: true,
-  parser: '@typescript-eslint/parser',
+  ...lintConfig,
   parserOptions: {
     project: 'tsconfig.json',
     tsconfigRootDir: __dirname,
     sourceType: 'module',
   },
-  extends: ['next', 'plugin:@typescript-eslint/recommended', 'plugin:prettier/recommended', 'prettier'],
+  extends: ['plugin:@next/next/recommended', ...lintConfig.extends],
   ignorePatterns: ['*.js'],
   rules: {
     '@typescript-eslint/no-empty-interface': 'off',
-    '@typescript-eslint/no-unused-vars': ['error'],
-    '@typescript-eslint/interface-name-prefix': 'off',
-    '@typescript-eslint/explicit-function-return-type': 'off',
-    '@typescript-eslint/explicit-module-boundary-types': 'off',
-    '@typescript-eslint/no-empty-function': 'off',
     'react/react-in-jsx-scope': 'off',
     'react/prop-types': 'off',
-    'prettier/prettier': 'error',
-    'import/order': [
-      'error',
-      {
-        groups: ['builtin', 'external', 'internal', 'unknown', 'parent', 'index', 'sibling', 'object', 'type'],
-        'newlines-between': 'always',
-      },
-    ],
+    '@next/next/no-server-import-in-page': 'off',
+    ...lintConfig.rules,
   },
   settings: {
     react: {

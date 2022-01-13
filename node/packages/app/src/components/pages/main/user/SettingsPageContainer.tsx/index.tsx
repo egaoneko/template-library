@@ -1,11 +1,11 @@
-import React, {FC} from 'react';
+import React, { FC } from 'react';
 import styled from 'styled-components/native';
-import {Text} from 'react-native';
-import {CompositeScreenProps} from '@react-navigation/native';
-import {NativeStackScreenProps} from '@react-navigation/native-stack';
-import {BottomTabScreenProps} from '@react-navigation/bottom-tabs';
+import { Text } from 'react-native';
+import { CompositeScreenProps } from '@react-navigation/native';
+import { NativeStackScreenProps } from '@react-navigation/native-stack';
+import { BottomTabScreenProps } from '@react-navigation/bottom-tabs';
 
-import {CommonParamList, MainParamList} from '../../../../../interfaces/common';
+import { CommonParamList, MainParamList } from '../../../../../interfaces/common';
 import BaseLayoutTemplate from '../../../../templates/layout/BaseLayoutTemplate';
 
 type PropsType = CompositeScreenProps<

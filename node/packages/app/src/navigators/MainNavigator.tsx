@@ -1,14 +1,14 @@
-import React, {FC} from 'react';
-import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
+import React, { FC } from 'react';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Icon from 'react-native-vector-icons/AntDesign';
-import {NavigationState} from '@react-navigation/core';
+import { NavigationState } from '@react-navigation/core';
 
-import {COLOR_SET} from '../enums/color';
+import { COLOR_SET } from '../enums/color';
 import useDarkMode from '../hooks/useDarkMode';
-import {COMMON_NAVIGATION_TYPE} from '../enums/common-navigation';
-import {MAIN_NAVIGATION_TYPE} from '../enums/main-navigation';
+import { COMMON_NAVIGATION_TYPE } from '../enums/common-navigation';
+import { MAIN_NAVIGATION_TYPE } from '../enums/main-navigation';
 
-import {mainRoutes} from './routes';
+import { mainRoutes } from './routes';
 
 const Tab = createBottomTabNavigator();
 
@@ -22,9 +22,9 @@ const MainNavigator: FC = () => {
   return (
     <Tab.Navigator
       initialRouteName={COMMON_NAVIGATION_TYPE.SPLASH}
-      screenOptions={({route}) => ({
+      screenOptions={({ route }) => ({
         tabBarShowLabel: false,
-        tabBarIcon: ({color, size}) => {
+        tabBarIcon: ({ color, size }) => {
           let name: string;
 
           switch (route.name) {
@@ -48,34 +48,23 @@ const MainNavigator: FC = () => {
           return <Icon name={name} size={size} color={color} />;
         },
         tabBarActiveTintColor: COLOR_SET.PRIMARY,
-        tabBarInactiveTintColor: isDarkMode
-          ? COLOR_SET.DARK_MODE_TEXT
-          : COLOR_SET.LIGHT_MODE_TEXT,
+        tabBarInactiveTintColor: isDarkMode ? COLOR_SET.DARK_MODE_TEXT : COLOR_SET.LIGHT_MODE_TEXT,
         tabBarStyle: {
-          backgroundColor: isDarkMode
-            ? COLOR_SET.DARK_MODE_BACKGROUND
-            : COLOR_SET.LIGHT_MODE_BACKGROUND,
+          backgroundColor: isDarkMode ? COLOR_SET.DARK_MODE_BACKGROUND : COLOR_SET.LIGHT_MODE_BACKGROUND,
         },
       })}
       screenListeners={() => ({
-        state: ({data}) => {
+        state: ({ data }) => {
           // Do something with the state
-          const state = (data as {state: NavigationState}).state;
-          const {index, routes} = state;
+          const state = (data as { state: NavigationState }).state;
+          const { index, routes } = state;
           console.log('state changed', routes[index]);
         },
       })}
     >
       {mainRoutes.map(route => {
-        const {name, options, ...other} = route;
-        return (
-          <Tab.Screen
-            key={name}
-            name={name}
-            options={{...DEFAULT_OPTIONS, ...options}}
-            {...other}
-          />
-        );
+        const { name, options, ...other } = route;
+        return <Tab.Screen key={name} name={name} options={{ ...DEFAULT_OPTIONS, ...options }} {...other} />;
       })}
     </Tab.Navigator>
   );

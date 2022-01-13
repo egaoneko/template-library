@@ -55,7 +55,7 @@ describe('AuthController (e2e)', () => {
     const user = await createTestUser(app, 'test1');
     const dto = await getTestUserDto(app, user);
 
-    await delay(200);
+    await delay(500);
 
     return request(app.getHttpServer())
       .post('/api/auth/refresh')

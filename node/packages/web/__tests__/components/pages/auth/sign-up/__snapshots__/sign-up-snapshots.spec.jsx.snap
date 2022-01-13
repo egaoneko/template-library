@@ -1,17 +1,121 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Sign up Snapshots renders sign up 1`] = `
+.c4 {
+  width: 100%;
+  position: absolute;
+  bottom: 0px;
+  margin-top: 3rem;
+  --tw-bg-opacity: 1;
+  background-color: rgba(229,231,235,var(--tw-bg-opacity));
+  padding-left: 3.5rem;
+  padding-right: 3.5rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  font-size: 0.75rem;
+  line-height: 1rem;
+  --tw-text-opacity: 1;
+  color: rgba(156,163,175,var(--tw-text-opacity));
+}
+
+.c5 {
+  color: var(--color-primary);
+}
+
+.c5:hover {
+  color: var(--color-secondary);
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+}
+
+.c1 {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.c2 {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.c3 {
+  font-weight: 700;
+  font-size: 1.5rem;
+  line-height: 2rem;
+  color: var(--color-primary);
+  font-family: ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c0 {
+  width: 100%;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+@media (min-width:640px) {
+  .c1 {
+    max-width: 640px;
+  }
+}
+
+@media (min-width:768px) {
+  .c1 {
+    max-width: 768px;
+  }
+}
+
+@media (min-width:1024px) {
+  .c1 {
+    max-width: 1024px;
+  }
+}
+
+@media (min-width:1280px) {
+  .c1 {
+    max-width: 1280px;
+  }
+}
+
+@media (min-width:1536px) {
+  .c1 {
+    max-width: 1536px;
+  }
+}
+
 <div
-  className="BaseLayoutTemplate__Container-sc-1jz5xvr-0 kHMSW"
+  className="c0"
 >
   <div
-    className="HeaderTemplate__Container-sc-kdla34-0 gxnUkb"
+    className="c1"
   >
     <div
-      className="HeaderTemplate__Heading-sc-kdla34-1 lcHwtI"
+      className="c2"
     >
       <div
-        className="HeaderTemplate__HeadingTitle-sc-kdla34-2 ibfQih"
+        className="c3"
         data-cy="header-logo-link"
       >
         <a
@@ -161,10 +265,10 @@ exports[`Sign up Snapshots renders sign up 1`] = `
     </div>
   </div>
   <div
-    className="FooterTemplate__Container-sc-96wla6-0 cOGJUH"
+    className="c4"
   >
     <span
-      className="FooterTemplate__SiteLink-sc-96wla6-1 ENejy text-base mr-1 font-bold"
+      className="c5 text-base mr-1 font-bold"
       data-cy="footer-logo-link"
       href="/"
       onClick={[Function]}
@@ -174,7 +278,7 @@ exports[`Sign up Snapshots renders sign up 1`] = `
     </span>
     © 2020. An interactive learning project from
     <span
-      className="FooterTemplate__SiteLink-sc-96wla6-1 ENejy ml-1"
+      className="c5 ml-1"
       data-cy="footer-site-link"
       href="https://thinkster.io/"
       onClick={[Function]}

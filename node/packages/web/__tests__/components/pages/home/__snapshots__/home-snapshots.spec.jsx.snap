@@ -1,17 +1,797 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Home Snapshots renders home after login 1`] = `
+.c38 {
+  width: 100%;
+  position: absolute;
+  bottom: 0px;
+  margin-top: 3rem;
+  --tw-bg-opacity: 1;
+  background-color: rgba(229,231,235,var(--tw-bg-opacity));
+  padding-left: 3.5rem;
+  padding-right: 3.5rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  font-size: 0.75rem;
+  line-height: 1rem;
+  --tw-text-opacity: 1;
+  color: rgba(156,163,175,var(--tw-text-opacity));
+}
+
+.c39 {
+  color: var(--color-primary);
+}
+
+.c39:hover {
+  color: var(--color-secondary);
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+}
+
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.c5 {
+  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  border-radius: 9999px;
+}
+
+.c6 {
+  border-radius: 9999px;
+}
+
+.c1 {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.c2 {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.c3 {
+  font-weight: 700;
+  font-size: 1.5rem;
+  line-height: 2rem;
+  color: var(--color-primary);
+  font-family: ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c0 {
+  width: 100%;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.c7 {
+  max-width: 100%;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  padding: 2rem;
+  background-color: var(--color-primary);
+  box-shadow: inset 0 8px 8px -8px rgb(0 0 0 / 30%),inset 0 -8px 8px -8px rgb(0 0 0 / 30%);
+}
+
+.c8 {
+  font-weight: 700;
+  font-size: 3.75rem;
+  line-height: 1;
+  --tw-text-opacity: 1;
+  color: rgba(255,255,255,var(--tw-text-opacity));
+  text-align: center;
+  font-family: ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+  padding-bottom: 0.5rem;
+  text-shadow: 0 1px 3px rgb(0 0 0 / 30%);
+}
+
+.c9 {
+  font-size: 1.5rem;
+  line-height: 2rem;
+  --tw-text-opacity: 1;
+  color: rgba(255,255,255,var(--tw-text-opacity));
+  text-align: center;
+  font-family: ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+  margin-bottom: 0px;
+}
+
+.c32 {
+  width: 100%;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.c32 .pagination {
+  position: relative;
+  z-index: 0;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  border-radius: 0.375rem;
+  --tw-shadow: 0 1px 2px 0 rgba(0,0,0,0.05);
+  box-shadow: var(--tw-ring-offset-shadow,0 0 #0000),var(--tw-ring-shadow,0 0 #0000),var(--tw-shadow);
+}
+
+.c32 .pagination > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-x-reverse: 0;
+  margin-right: calc(-1px * var(--tw-space-x-reverse));
+  margin-left: calc(-1px * calc(1 - var(--tw-space-x-reverse)));
+}
+
+.c32 .pagination-page-item {
+  --tw-bg-opacity: 1;
+  background-color: rgba(255,255,255,var(--tw-bg-opacity));
+  --tw-border-opacity: 1;
+  border-color: rgba(209,213,219,var(--tw-border-opacity));
+  border-width: 1px;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.c32 .pagination-page-item:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgba(249,250,251,var(--tw-bg-opacity));
+}
+
+.c32 .pagination-page-item.disabled {
+  cursor: not-allowed;
+  --tw-bg-opacity: 1;
+  background-color: rgba(229,231,235,var(--tw-bg-opacity));
+}
+
+.c32 .pagination-page-item.disabled a {
+  cursor: not-allowed;
+}
+
+.c32 .pagination-page {
+  --tw-text-opacity: 1;
+  color: rgba(107,114,128,var(--tw-text-opacity));
+  position: relative;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  font-weight: 500;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
+.c32 .pagination-ellipsis {
+  position: relative;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  font-weight: 500;
+  --tw-text-opacity: 1;
+  color: rgba(55,65,81,var(--tw-text-opacity));
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
+.c32 .pagination-previous-item {
+  --tw-bg-opacity: 1;
+  background-color: rgba(255,255,255,var(--tw-bg-opacity));
+  --tw-border-opacity: 1;
+  border-color: rgba(209,213,219,var(--tw-border-opacity));
+  border-width: 1px;
+  border-top-left-radius: 0.375rem;
+  border-bottom-left-radius: 0.375rem;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.c32 .pagination-previous-item:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgba(249,250,251,var(--tw-bg-opacity));
+}
+
+.c32 .pagination-previous-item.disabled {
+  cursor: not-allowed;
+  --tw-bg-opacity: 1;
+  background-color: rgba(229,231,235,var(--tw-bg-opacity));
+}
+
+.c32 .pagination-previous-item.disabled a {
+  cursor: not-allowed;
+}
+
+.c32 .pagination-previous {
+  position: relative;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  font-weight: 500;
+  --tw-text-opacity: 1;
+  color: rgba(107,114,128,var(--tw-text-opacity));
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
+.c32 .pagination-next-item {
+  --tw-bg-opacity: 1;
+  background-color: rgba(255,255,255,var(--tw-bg-opacity));
+  --tw-border-opacity: 1;
+  border-color: rgba(209,213,219,var(--tw-border-opacity));
+  border-width: 1px;
+  border-top-right-radius: 0.375rem;
+  border-bottom-right-radius: 0.375rem;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.c32 .pagination-next-item:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgba(249,250,251,var(--tw-bg-opacity));
+}
+
+.c32 .pagination-next-item.disabled {
+  cursor: not-allowed;
+  --tw-bg-opacity: 1;
+  background-color: rgba(229,231,235,var(--tw-bg-opacity));
+}
+
+.c32 .pagination-next-item.disabled a {
+  cursor: not-allowed;
+}
+
+.c32 .pagination-next {
+  position: relative;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  font-weight: 500;
+  --tw-text-opacity: 1;
+  color: rgba(107,114,128,var(--tw-text-opacity));
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
+.c32 .pagination-current-page-item {
+  z-index: 10;
+  background-color: var(--color-primary);
+  border-color: var(--color-primary);
+}
+
+.c32 .pagination-current-page-item:hover {
+  background-color: var(--color-primary);
+  --tw-bg-opacity: 0.5;
+}
+
+.c32 .pagination-current-page {
+  --tw-text-opacity: 1;
+  color: rgba(255,255,255,var(--tw-text-opacity));
+}
+
+.c33 {
+  position: relative;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  border-width: 1px;
+  --tw-border-opacity: 1;
+  border-color: rgba(209,213,219,var(--tw-border-opacity));
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  font-weight: 500;
+  border-radius: 0.375rem;
+  --tw-text-opacity: 1;
+  color: rgba(55,65,81,var(--tw-text-opacity));
+  --tw-bg-opacity: 1;
+  background-color: rgba(255,255,255,var(--tw-bg-opacity));
+  cursor: not-allowed;
+  --tw-bg-opacity: 1;
+  background-color: rgba(229,231,235,var(--tw-bg-opacity));
+}
+
+.c33:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgba(249,250,251,var(--tw-bg-opacity));
+}
+
+.c33:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgba(229,231,235,var(--tw-bg-opacity));
+}
+
+.c34 {
+  position: relative;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  border-width: 1px;
+  --tw-border-opacity: 1;
+  border-color: rgba(209,213,219,var(--tw-border-opacity));
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  font-weight: 500;
+  border-radius: 0.375rem;
+  --tw-text-opacity: 1;
+  color: rgba(55,65,81,var(--tw-text-opacity));
+  --tw-bg-opacity: 1;
+  background-color: rgba(255,255,255,var(--tw-bg-opacity));
+}
+
+.c34:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgba(249,250,251,var(--tw-bg-opacity));
+}
+
+.c18 {
+  width: 100%;
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+}
+
+.c18:not(:last-child) {
+  border-bottom-width: 1px;
+  --tw-border-opacity: 1;
+  border-color: rgba(229,231,235,var(--tw-border-opacity));
+}
+
+.c19 {
+  width: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.c20 {
+  width: auto;
+  margin-left: 0.375rem;
+  margin-right: 1rem;
+}
+
+.c21 {
+  color: var(--color-primary);
+}
+
+.c21:hover {
+  color: var(--color-secondary);
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+}
+
+.c22 {
+  font-size: 0.75rem;
+  line-height: 1rem;
+  --tw-text-opacity: 1;
+  color: rgba(156,163,175,var(--tw-text-opacity));
+}
+
+.c23 {
+  margin-left: auto;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  cursor: pointer;
+  width: 2.5rem;
+  height: 1.75rem;
+  border-width: 1px;
+  border-color: var(--color-primary);
+  border-radius: 0.25rem;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  color: var(--color-primary);
+}
+
+.c23:hover {
+  --tw-text-opacity: 1;
+  color: rgba(255,255,255,var(--tw-text-opacity));
+  background-color: var(--color-primary);
+}
+
+.c31 {
+  margin-left: auto;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  cursor: pointer;
+  width: 2.5rem;
+  height: 1.75rem;
+  border-width: 1px;
+  border-color: var(--color-primary);
+  border-radius: 0.25rem;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  --tw-text-opacity: 1;
+  color: rgba(255,255,255,var(--tw-text-opacity));
+  background-color: var(--color-primary);
+}
+
+.c31:hover {
+  color: var(--color-primary);
+  --tw-bg-opacity: 1;
+  background-color: rgba(255,255,255,var(--tw-bg-opacity));
+}
+
+.c24 {
+  width: 100%;
+  cursor: pointer;
+}
+
+.c25 {
+  font-size: 1.5rem;
+  line-height: 2rem;
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+}
+
+.c26 {
+  font-size: 1rem;
+  line-height: 1.5rem;
+  --tw-text-opacity: 1;
+  color: rgba(107,114,128,var(--tw-text-opacity));
+  margin-bottom: 1rem;
+}
+
+.c27 {
+  width: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.c28 {
+  font-size: 0.75rem;
+  line-height: 1rem;
+  --tw-text-opacity: 1;
+  color: rgba(156,163,175,var(--tw-text-opacity));
+}
+
+.c29 {
+  margin-left: auto;
+  vertical-align: top;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  max-width: 50%;
+}
+
+.c30 {
+  font-size: 0.75rem;
+  line-height: 1;
+  --tw-text-opacity: 1;
+  color: rgba(156,163,175,var(--tw-text-opacity));
+  font-weight: 300;
+  white-space: nowrap;
+  border-width: 1px;
+  --tw-border-opacity: 1;
+  border-color: rgba(156,163,175,var(--tw-border-opacity));
+  border-radius: 9999px;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  cursor: pointer;
+  padding: 4px 10px;
+  margin-right: 3px;
+}
+
+.c17 {
+  width: 100%;
+}
+
+.c14 {
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  cursor: pointer;
+  font-size: 1rem;
+  line-height: 1;
+  --tw-text-opacity: 1;
+  color: rgba(156,163,175,var(--tw-text-opacity));
+}
+
+.c14:hover {
+  --tw-text-opacity: 1;
+  color: rgba(31,41,55,var(--tw-text-opacity));
+}
+
+.c15 {
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  cursor: pointer;
+  font-size: 1rem;
+  line-height: 1;
+  font-weight: 700;
+  color: var(--color-primary);
+  border-bottom-width: 2px;
+  border-color: var(--color-primary);
+}
+
+.c13 {
+  width: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  border-bottom-width: 1px;
+  --tw-border-opacity: 1;
+  border-color: rgba(229,231,235,var(--tw-border-opacity));
+}
+
+.c12 {
+  width: 100%;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.c16 {
+  width: 100%;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.c11 {
+  width: 100%;
+}
+
+.c35 {
+  width: 16rem;
+}
+
+.c36 {
+  --tw-bg-opacity: 1;
+  background-color: rgba(243,244,246,var(--tw-bg-opacity));
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
+.c37 {
+  font-size: 0.75rem;
+  line-height: 1;
+  --tw-text-opacity: 1;
+  color: rgba(255,255,255,var(--tw-text-opacity));
+  font-weight: 600;
+  white-space: nowrap;
+  border-radius: 9999px;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  cursor: pointer;
+  padding: 4px 10px;
+  margin-right: 3px;
+  --tw-bg-opacity: 1;
+  background-color: rgba(156,163,175,var(--tw-bg-opacity));
+}
+
+.c10 {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  gap: 1.5rem;
+}
+
+@media (min-width:640px) {
+  .c1 {
+    max-width: 640px;
+  }
+}
+
+@media (min-width:768px) {
+  .c1 {
+    max-width: 768px;
+  }
+}
+
+@media (min-width:1024px) {
+  .c1 {
+    max-width: 1024px;
+  }
+}
+
+@media (min-width:1280px) {
+  .c1 {
+    max-width: 1280px;
+  }
+}
+
+@media (min-width:1536px) {
+  .c1 {
+    max-width: 1536px;
+  }
+}
+
+@media (min-width:640px) {
+  .c10 {
+    max-width: 640px;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+  }
+}
+
+@media (min-width:768px) {
+  .c10 {
+    max-width: 768px;
+  }
+}
+
+@media (min-width:1024px) {
+  .c10 {
+    max-width: 1024px;
+  }
+}
+
+@media (min-width:1280px) {
+  .c10 {
+    max-width: 1280px;
+  }
+}
+
+@media (min-width:1536px) {
+  .c10 {
+    max-width: 1536px;
+  }
+}
+
 <div
-  className="BaseLayoutTemplate__Container-sc-1jz5xvr-0 kHMSW"
+  className="c0"
 >
   <div
-    className="HeaderTemplate__Container-sc-kdla34-0 gxnUkb"
+    className="c1"
   >
     <div
-      className="HeaderTemplate__Heading-sc-kdla34-1 lcHwtI"
+      className="c2"
     >
       <div
-        className="HeaderTemplate__HeadingTitle-sc-kdla34-2 ibfQih"
+        className="c3"
         data-cy="header-logo-link"
       >
         <a
@@ -135,10 +915,10 @@ exports[`Home Snapshots renders home after login 1`] = `
                 className="flex items-center gap-1"
               >
                 <div
-                  className="Avatar__Wrapper-sc-m9feoe-0 ieHczv"
+                  className="c4"
                 >
                   <div
-                    className="Avatar__Container-sc-m9feoe-1 fQHyzl w-5 h-5"
+                    className="c5 w-5 h-5"
                   >
                     <span
                       style={
@@ -163,7 +943,7 @@ exports[`Home Snapshots renders home after login 1`] = `
                     >
                       <img
                         alt="avatar"
-                        className="Avatar__Img-sc-m9feoe-2 kuaPdK rounded-full"
+                        className="c6 rounded-full"
                         data-nimg="fill"
                         decoding="async"
                         src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
@@ -193,7 +973,7 @@ exports[`Home Snapshots renders home after login 1`] = `
                       <noscript>
                         <img
                           alt="avatar"
-                          className="Avatar__Img-sc-m9feoe-2 kuaPdK rounded-full"
+                          className="c6 rounded-full"
                           data-nimg="fill"
                           decoding="async"
                           loading="lazy"
@@ -236,16 +1016,16 @@ exports[`Home Snapshots renders home after login 1`] = `
     </div>
   </div>
   <div
-    className="HomeBannerTemplate__Container-sc-1qknydn-0 kgQQLJ"
+    className="c7"
   >
     <h1
-      className="HomeBannerTemplate__Title-sc-1qknydn-1 YLgmt"
+      className="c8"
       data-cy="banner-title"
     >
       conduit
     </h1>
     <p
-      className="HomeBannerTemplate__Description-sc-1qknydn-2 jAWRsj"
+      className="c9"
       data-cy="banner-description"
     >
       A place to share your knowledge.
@@ -255,26 +1035,26 @@ exports[`Home Snapshots renders home after login 1`] = `
     className="container mx-auto mt-8"
   >
     <div
-      className="HomeContentTemplate__Container-sc-1wgbk2s-0 glEaaA"
+      className="c10"
     >
       <div
-        className="HomeFeedContentTemplate__Container-sc-1ezgd3k-0 fDQNGi"
+        className="c11"
       >
         <div
-          className="TabProvider__Container-sc-dghi3q-0 hMjFPD"
+          className="c12"
         >
           <ul
-            className="TabNavs__Container-sc-1s6vm0l-0 fNatPj"
+            className="c13"
           >
             <li
-              className="TabNav__Container-sc-eq25ji-0 jLZeXs"
+              className="c14"
               data-cy="tab-nav-user_feed"
               onClick={[Function]}
             >
               Your Feed
             </li>
             <li
-              className="TabNav__Container-sc-eq25ji-0 khtWGz"
+              className="c15"
               data-cy="tab-nav-global_feed"
               onClick={[Function]}
             >
@@ -282,25 +1062,25 @@ exports[`Home Snapshots renders home after login 1`] = `
             </li>
           </ul>
           <div
-            className="TabPane__Container-sc-12cvcpc-0 IWqVW"
+            className="c16"
             data-cy="tab-pane-global_feed"
           >
             <div
-              className="FeedList__Container-sc-m88k4f-0 cwdJLz"
+              className="c17"
               data-cy="feed-list"
             >
               <div
-                className="Feed__Container-sc-njujrp-0 hCoOyB"
+                className="c18"
                 data-cy="feed-container"
               >
                 <div
-                  className="Feed__AuthorContainer-sc-njujrp-1 kgsVwO"
+                  className="c19"
                 >
                   <div
-                    className="Avatar__Wrapper-sc-m9feoe-0 ieHczv"
+                    className="c4"
                   >
                     <div
-                      className="Avatar__Container-sc-m9feoe-1 fQHyzl w-8 h-8"
+                      className="c5 w-8 h-8"
                     >
                       <span
                         style={
@@ -325,7 +1105,7 @@ exports[`Home Snapshots renders home after login 1`] = `
                       >
                         <img
                           alt="avatar"
-                          className="Avatar__Img-sc-m9feoe-2 kuaPdK rounded-full"
+                          className="c6 rounded-full"
                           data-nimg="fill"
                           decoding="async"
                           src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
@@ -355,7 +1135,7 @@ exports[`Home Snapshots renders home after login 1`] = `
                         <noscript>
                           <img
                             alt="avatar"
-                            className="Avatar__Img-sc-m9feoe-2 kuaPdK rounded-full"
+                            className="c6 rounded-full"
                             data-nimg="fill"
                             decoding="async"
                             loading="lazy"
@@ -390,10 +1170,10 @@ exports[`Home Snapshots renders home after login 1`] = `
                     </div>
                   </div>
                   <div
-                    className="Feed__AuthorInfo-sc-njujrp-2 bwLqOH"
+                    className="c20"
                   >
                     <div
-                      className="Feed__AuthorName-sc-njujrp-3 fbCOoc"
+                      className="c21"
                       data-cy="feed-profile"
                     >
                       <a
@@ -405,13 +1185,13 @@ exports[`Home Snapshots renders home after login 1`] = `
                       </a>
                     </div>
                     <div
-                      className="Feed__AuthorDate-sc-njujrp-4 cqYxgN"
+                      className="c22"
                     >
                       Thu Feb 18 2016
                     </div>
                   </div>
                   <div
-                    className="Feed__Favorite-sc-njujrp-5 gjwhNt"
+                    className="c23"
                     data-cy="feed-favorite"
                     onClick={[Function]}
                   >
@@ -443,42 +1223,42 @@ exports[`Home Snapshots renders home after login 1`] = `
                   </div>
                 </div>
                 <div
-                  className="Feed__Content-sc-njujrp-6 bMJyvN"
+                  className="c24"
                   data-cy="feed-content"
                   href="/article/how-to-train-your-dragon"
                   onClick={[Function]}
                   onMouseEnter={[Function]}
                 >
                   <h1
-                    className="Feed__Title-sc-njujrp-7 VSHlD"
+                    className="c25"
                   >
                     How to train your dragon
                   </h1>
                   <div
-                    className="Feed__Body-sc-njujrp-8 ksVMoY"
+                    className="c26"
                   >
                     <p>
                       Ever wonder how?
                     </p>
                   </div>
                   <div
-                    className="Feed__Footer-sc-njujrp-9 fPWzJO"
+                    className="c27"
                   >
                     <div
-                      className="Feed__ReadMore-sc-njujrp-10 dZzWHi"
+                      className="c28"
                     >
                       Read more...
                     </div>
                     <div
-                      className="Feed__Tags-sc-njujrp-11 guXOMJ"
+                      className="c29"
                     >
                       <div
-                        className="Feed__Tag-sc-njujrp-12 bgLIUB"
+                        className="c30"
                       >
                         dragons
                       </div>
                       <div
-                        className="Feed__Tag-sc-njujrp-12 bgLIUB"
+                        className="c30"
                       >
                         training
                       </div>
@@ -487,17 +1267,17 @@ exports[`Home Snapshots renders home after login 1`] = `
                 </div>
               </div>
               <div
-                className="Feed__Container-sc-njujrp-0 hCoOyB"
+                className="c18"
                 data-cy="feed-container"
               >
                 <div
-                  className="Feed__AuthorContainer-sc-njujrp-1 kgsVwO"
+                  className="c19"
                 >
                   <div
-                    className="Avatar__Wrapper-sc-m9feoe-0 ieHczv"
+                    className="c4"
                   >
                     <div
-                      className="Avatar__Container-sc-m9feoe-1 fQHyzl w-8 h-8"
+                      className="c5 w-8 h-8"
                     >
                       <span
                         style={
@@ -522,7 +1302,7 @@ exports[`Home Snapshots renders home after login 1`] = `
                       >
                         <img
                           alt="avatar"
-                          className="Avatar__Img-sc-m9feoe-2 kuaPdK rounded-full"
+                          className="c6 rounded-full"
                           data-nimg="fill"
                           decoding="async"
                           src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
@@ -552,7 +1332,7 @@ exports[`Home Snapshots renders home after login 1`] = `
                         <noscript>
                           <img
                             alt="avatar"
-                            className="Avatar__Img-sc-m9feoe-2 kuaPdK rounded-full"
+                            className="c6 rounded-full"
                             data-nimg="fill"
                             decoding="async"
                             loading="lazy"
@@ -587,10 +1367,10 @@ exports[`Home Snapshots renders home after login 1`] = `
                     </div>
                   </div>
                   <div
-                    className="Feed__AuthorInfo-sc-njujrp-2 bwLqOH"
+                    className="c20"
                   >
                     <div
-                      className="Feed__AuthorName-sc-njujrp-3 fbCOoc"
+                      className="c21"
                       data-cy="feed-profile"
                     >
                       <a
@@ -602,13 +1382,13 @@ exports[`Home Snapshots renders home after login 1`] = `
                       </a>
                     </div>
                     <div
-                      className="Feed__AuthorDate-sc-njujrp-4 cqYxgN"
+                      className="c22"
                     >
                       Thu Feb 18 2016
                     </div>
                   </div>
                   <div
-                    className="Feed__Favorite-sc-njujrp-5 cbgHkv"
+                    className="c31"
                     data-cy="feed-favorite"
                     onClick={[Function]}
                   >
@@ -640,37 +1420,37 @@ exports[`Home Snapshots renders home after login 1`] = `
                   </div>
                 </div>
                 <div
-                  className="Feed__Content-sc-njujrp-6 bMJyvN"
+                  className="c24"
                   data-cy="feed-content"
                   href="/article/how-to-train-your-dragon-2"
                   onClick={[Function]}
                   onMouseEnter={[Function]}
                 >
                   <h1
-                    className="Feed__Title-sc-njujrp-7 VSHlD"
+                    className="c25"
                   >
                     How to train your dragon 2
                   </h1>
                   <div
-                    className="Feed__Body-sc-njujrp-8 ksVMoY"
+                    className="c26"
                   >
                     <p>
                       So toothless
                     </p>
                   </div>
                   <div
-                    className="Feed__Footer-sc-njujrp-9 fPWzJO"
+                    className="c27"
                   >
                     <div
-                      className="Feed__ReadMore-sc-njujrp-10 dZzWHi"
+                      className="c28"
                     >
                       Read more...
                     </div>
                     <div
-                      className="Feed__Tags-sc-njujrp-11 guXOMJ"
+                      className="c29"
                     >
                       <div
-                        className="Feed__Tag-sc-njujrp-12 bgLIUB"
+                        className="c30"
                       >
                         dragons
                       </div>
@@ -679,17 +1459,17 @@ exports[`Home Snapshots renders home after login 1`] = `
                 </div>
               </div>
               <div
-                className="Feed__Container-sc-njujrp-0 hCoOyB"
+                className="c18"
                 data-cy="feed-container"
               >
                 <div
-                  className="Feed__AuthorContainer-sc-njujrp-1 kgsVwO"
+                  className="c19"
                 >
                   <div
-                    className="Avatar__Wrapper-sc-m9feoe-0 ieHczv"
+                    className="c4"
                   >
                     <div
-                      className="Avatar__Container-sc-m9feoe-1 fQHyzl w-8 h-8"
+                      className="c5 w-8 h-8"
                     >
                       <span
                         style={
@@ -714,7 +1494,7 @@ exports[`Home Snapshots renders home after login 1`] = `
                       >
                         <img
                           alt="avatar"
-                          className="Avatar__Img-sc-m9feoe-2 kuaPdK rounded-full"
+                          className="c6 rounded-full"
                           data-nimg="fill"
                           decoding="async"
                           src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
@@ -744,7 +1524,7 @@ exports[`Home Snapshots renders home after login 1`] = `
                         <noscript>
                           <img
                             alt="avatar"
-                            className="Avatar__Img-sc-m9feoe-2 kuaPdK rounded-full"
+                            className="c6 rounded-full"
                             data-nimg="fill"
                             decoding="async"
                             loading="lazy"
@@ -779,10 +1559,10 @@ exports[`Home Snapshots renders home after login 1`] = `
                     </div>
                   </div>
                   <div
-                    className="Feed__AuthorInfo-sc-njujrp-2 bwLqOH"
+                    className="c20"
                   >
                     <div
-                      className="Feed__AuthorName-sc-njujrp-3 fbCOoc"
+                      className="c21"
                       data-cy="feed-profile"
                     >
                       <a
@@ -794,13 +1574,13 @@ exports[`Home Snapshots renders home after login 1`] = `
                       </a>
                     </div>
                     <div
-                      className="Feed__AuthorDate-sc-njujrp-4 cqYxgN"
+                      className="c22"
                     >
                       Thu Feb 18 2016
                     </div>
                   </div>
                   <div
-                    className="Feed__Favorite-sc-njujrp-5 gjwhNt"
+                    className="c23"
                     data-cy="feed-favorite"
                     onClick={[Function]}
                   >
@@ -832,37 +1612,37 @@ exports[`Home Snapshots renders home after login 1`] = `
                   </div>
                 </div>
                 <div
-                  className="Feed__Content-sc-njujrp-6 bMJyvN"
+                  className="c24"
                   data-cy="feed-content"
                   href="/article/how-to-train-your-dragon-3"
                   onClick={[Function]}
                   onMouseEnter={[Function]}
                 >
                   <h1
-                    className="Feed__Title-sc-njujrp-7 VSHlD"
+                    className="c25"
                   >
                     How to train your dragon 3
                   </h1>
                   <div
-                    className="Feed__Body-sc-njujrp-8 ksVMoY"
+                    className="c26"
                   >
                     <p>
                       So toothless
                     </p>
                   </div>
                   <div
-                    className="Feed__Footer-sc-njujrp-9 fPWzJO"
+                    className="c27"
                   >
                     <div
-                      className="Feed__ReadMore-sc-njujrp-10 dZzWHi"
+                      className="c28"
                     >
                       Read more...
                     </div>
                     <div
-                      className="Feed__Tags-sc-njujrp-11 guXOMJ"
+                      className="c29"
                     >
                       <div
-                        className="Feed__Tag-sc-njujrp-12 bgLIUB"
+                        className="c30"
                       >
                         dragons
                       </div>
@@ -871,17 +1651,17 @@ exports[`Home Snapshots renders home after login 1`] = `
                 </div>
               </div>
               <div
-                className="Feed__Container-sc-njujrp-0 hCoOyB"
+                className="c18"
                 data-cy="feed-container"
               >
                 <div
-                  className="Feed__AuthorContainer-sc-njujrp-1 kgsVwO"
+                  className="c19"
                 >
                   <div
-                    className="Avatar__Wrapper-sc-m9feoe-0 ieHczv"
+                    className="c4"
                   >
                     <div
-                      className="Avatar__Container-sc-m9feoe-1 fQHyzl w-8 h-8"
+                      className="c5 w-8 h-8"
                     >
                       <span
                         style={
@@ -906,7 +1686,7 @@ exports[`Home Snapshots renders home after login 1`] = `
                       >
                         <img
                           alt="avatar"
-                          className="Avatar__Img-sc-m9feoe-2 kuaPdK rounded-full"
+                          className="c6 rounded-full"
                           data-nimg="fill"
                           decoding="async"
                           src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
@@ -936,7 +1716,7 @@ exports[`Home Snapshots renders home after login 1`] = `
                         <noscript>
                           <img
                             alt="avatar"
-                            className="Avatar__Img-sc-m9feoe-2 kuaPdK rounded-full"
+                            className="c6 rounded-full"
                             data-nimg="fill"
                             decoding="async"
                             loading="lazy"
@@ -971,10 +1751,10 @@ exports[`Home Snapshots renders home after login 1`] = `
                     </div>
                   </div>
                   <div
-                    className="Feed__AuthorInfo-sc-njujrp-2 bwLqOH"
+                    className="c20"
                   >
                     <div
-                      className="Feed__AuthorName-sc-njujrp-3 fbCOoc"
+                      className="c21"
                       data-cy="feed-profile"
                     >
                       <a
@@ -986,13 +1766,13 @@ exports[`Home Snapshots renders home after login 1`] = `
                       </a>
                     </div>
                     <div
-                      className="Feed__AuthorDate-sc-njujrp-4 cqYxgN"
+                      className="c22"
                     >
                       Thu Feb 18 2016
                     </div>
                   </div>
                   <div
-                    className="Feed__Favorite-sc-njujrp-5 gjwhNt"
+                    className="c23"
                     data-cy="feed-favorite"
                     onClick={[Function]}
                   >
@@ -1024,37 +1804,37 @@ exports[`Home Snapshots renders home after login 1`] = `
                   </div>
                 </div>
                 <div
-                  className="Feed__Content-sc-njujrp-6 bMJyvN"
+                  className="c24"
                   data-cy="feed-content"
                   href="/article/how-to-train-your-dragon-4"
                   onClick={[Function]}
                   onMouseEnter={[Function]}
                 >
                   <h1
-                    className="Feed__Title-sc-njujrp-7 VSHlD"
+                    className="c25"
                   >
                     How to train your dragon 4
                   </h1>
                   <div
-                    className="Feed__Body-sc-njujrp-8 ksVMoY"
+                    className="c26"
                   >
                     <p>
                       So toothless
                     </p>
                   </div>
                   <div
-                    className="Feed__Footer-sc-njujrp-9 fPWzJO"
+                    className="c27"
                   >
                     <div
-                      className="Feed__ReadMore-sc-njujrp-10 dZzWHi"
+                      className="c28"
                     >
                       Read more...
                     </div>
                     <div
-                      className="Feed__Tags-sc-njujrp-11 guXOMJ"
+                      className="c29"
                     >
                       <div
-                        className="Feed__Tag-sc-njujrp-12 bgLIUB"
+                        className="c30"
                       >
                         dragons
                       </div>
@@ -1063,17 +1843,17 @@ exports[`Home Snapshots renders home after login 1`] = `
                 </div>
               </div>
               <div
-                className="Feed__Container-sc-njujrp-0 hCoOyB"
+                className="c18"
                 data-cy="feed-container"
               >
                 <div
-                  className="Feed__AuthorContainer-sc-njujrp-1 kgsVwO"
+                  className="c19"
                 >
                   <div
-                    className="Avatar__Wrapper-sc-m9feoe-0 ieHczv"
+                    className="c4"
                   >
                     <div
-                      className="Avatar__Container-sc-m9feoe-1 fQHyzl w-8 h-8"
+                      className="c5 w-8 h-8"
                     >
                       <span
                         style={
@@ -1098,7 +1878,7 @@ exports[`Home Snapshots renders home after login 1`] = `
                       >
                         <img
                           alt="avatar"
-                          className="Avatar__Img-sc-m9feoe-2 kuaPdK rounded-full"
+                          className="c6 rounded-full"
                           data-nimg="fill"
                           decoding="async"
                           src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
@@ -1128,7 +1908,7 @@ exports[`Home Snapshots renders home after login 1`] = `
                         <noscript>
                           <img
                             alt="avatar"
-                            className="Avatar__Img-sc-m9feoe-2 kuaPdK rounded-full"
+                            className="c6 rounded-full"
                             data-nimg="fill"
                             decoding="async"
                             loading="lazy"
@@ -1163,10 +1943,10 @@ exports[`Home Snapshots renders home after login 1`] = `
                     </div>
                   </div>
                   <div
-                    className="Feed__AuthorInfo-sc-njujrp-2 bwLqOH"
+                    className="c20"
                   >
                     <div
-                      className="Feed__AuthorName-sc-njujrp-3 fbCOoc"
+                      className="c21"
                       data-cy="feed-profile"
                     >
                       <a
@@ -1178,13 +1958,13 @@ exports[`Home Snapshots renders home after login 1`] = `
                       </a>
                     </div>
                     <div
-                      className="Feed__AuthorDate-sc-njujrp-4 cqYxgN"
+                      className="c22"
                     >
                       Thu Feb 18 2016
                     </div>
                   </div>
                   <div
-                    className="Feed__Favorite-sc-njujrp-5 gjwhNt"
+                    className="c23"
                     data-cy="feed-favorite"
                     onClick={[Function]}
                   >
@@ -1216,37 +1996,37 @@ exports[`Home Snapshots renders home after login 1`] = `
                   </div>
                 </div>
                 <div
-                  className="Feed__Content-sc-njujrp-6 bMJyvN"
+                  className="c24"
                   data-cy="feed-content"
                   href="/article/how-to-train-your-dragon-5"
                   onClick={[Function]}
                   onMouseEnter={[Function]}
                 >
                   <h1
-                    className="Feed__Title-sc-njujrp-7 VSHlD"
+                    className="c25"
                   >
                     How to train your dragon 5
                   </h1>
                   <div
-                    className="Feed__Body-sc-njujrp-8 ksVMoY"
+                    className="c26"
                   >
                     <p>
                       So toothless
                     </p>
                   </div>
                   <div
-                    className="Feed__Footer-sc-njujrp-9 fPWzJO"
+                    className="c27"
                   >
                     <div
-                      className="Feed__ReadMore-sc-njujrp-10 dZzWHi"
+                      className="c28"
                     >
                       Read more...
                     </div>
                     <div
-                      className="Feed__Tags-sc-njujrp-11 guXOMJ"
+                      className="c29"
                     >
                       <div
-                        className="Feed__Tag-sc-njujrp-12 bgLIUB"
+                        className="c30"
                       >
                         dragons
                       </div>
@@ -1255,7 +2035,7 @@ exports[`Home Snapshots renders home after login 1`] = `
                 </div>
               </div>
               <div
-                className="Pagination__Container-sc-z81ile-0 dGdshJ"
+                className="c32"
               >
                 <div
                   className="bg-white px-4 py-3 flex items-center justify-between border-t border-gray-200 sm:px-6"
@@ -1264,7 +2044,7 @@ exports[`Home Snapshots renders home after login 1`] = `
                     className="flex-1 flex justify-between sm:hidden"
                   >
                     <a
-                      className="Pagination__PrevNextButton-sc-z81ile-1 fBtVrM"
+                      className="c33"
                       disabled={true}
                       href="#"
                       onClick={[Function]}
@@ -1272,7 +2052,7 @@ exports[`Home Snapshots renders home after login 1`] = `
                       Previous
                     </a>
                     <a
-                      className="Pagination__PrevNextButton-sc-z81ile-1 iTKNyl ml-3"
+                      className="c34 ml-3"
                       disabled={false}
                       href="#"
                       onClick={[Function]}
@@ -1292,12 +2072,12 @@ exports[`Home Snapshots renders home after login 1`] = `
                         <a
                           aria-disabled="true"
                           aria-label="Previous page"
-                          className="pagination-previous"
+                          className="pagination-previous "
                           onClick={[Function]}
                           onKeyPress={[Function]}
                           rel="prev"
                           role="button"
-                          tabIndex="0"
+                          tabIndex="-1"
                         >
                           <span
                             className="sr-only"
@@ -1328,8 +2108,9 @@ exports[`Home Snapshots renders home after login 1`] = `
                           className="pagination-page pagination-current-page"
                           onClick={[Function]}
                           onKeyPress={[Function]}
+                          rel="canonical"
                           role="button"
-                          tabIndex="0"
+                          tabIndex="-1"
                         >
                           1
                         </a>
@@ -1343,6 +2124,7 @@ exports[`Home Snapshots renders home after login 1`] = `
                           className="pagination-page"
                           onClick={[Function]}
                           onKeyPress={[Function]}
+                          rel="next"
                           role="button"
                           tabIndex="0"
                         >
@@ -1391,10 +2173,10 @@ exports[`Home Snapshots renders home after login 1`] = `
         </div>
       </div>
       <div
-        className="HomeTagsContentTemplate__Container-sc-y9g3tk-0 jkQEJq"
+        className="c35"
       >
         <div
-          className="HomeTagsContentTemplate__Content-sc-y9g3tk-1 dkgAJu"
+          className="c36"
           data-cy="content-tags-container"
         >
           <div
@@ -1404,10 +2186,10 @@ exports[`Home Snapshots renders home after login 1`] = `
             Popular Tags
           </div>
           <div
-            className="HomeTagsContentTemplate__Tags-sc-y9g3tk-2"
+            className=""
           >
             <div
-              className="HomeTagsContentTemplate__Tag-sc-y9g3tk-3 iXCENq"
+              className="c37"
               data-cy="content-tag"
               onClick={[Function]}
               selected={false}
@@ -1415,7 +2197,7 @@ exports[`Home Snapshots renders home after login 1`] = `
               dragons
             </div>
             <div
-              className="HomeTagsContentTemplate__Tag-sc-y9g3tk-3 iXCENq"
+              className="c37"
               data-cy="content-tag"
               onClick={[Function]}
               selected={false}
@@ -1428,10 +2210,10 @@ exports[`Home Snapshots renders home after login 1`] = `
     </div>
   </div>
   <div
-    className="FooterTemplate__Container-sc-96wla6-0 cOGJUH"
+    className="c38"
   >
     <span
-      className="FooterTemplate__SiteLink-sc-96wla6-1 ENejy text-base mr-1 font-bold"
+      className="c39 text-base mr-1 font-bold"
       data-cy="footer-logo-link"
       href="/"
       onClick={[Function]}
@@ -1441,7 +2223,7 @@ exports[`Home Snapshots renders home after login 1`] = `
     </span>
     © 2020. An interactive learning project from
     <span
-      className="FooterTemplate__SiteLink-sc-96wla6-1 ENejy ml-1"
+      className="c39 ml-1"
       data-cy="footer-site-link"
       href="https://thinkster.io/"
       onClick={[Function]}
@@ -1455,17 +2237,780 @@ exports[`Home Snapshots renders home after login 1`] = `
 `;
 
 exports[`Home Snapshots renders home before login 1`] = `
+.c37 {
+  width: 100%;
+  position: absolute;
+  bottom: 0px;
+  margin-top: 3rem;
+  --tw-bg-opacity: 1;
+  background-color: rgba(229,231,235,var(--tw-bg-opacity));
+  padding-left: 3.5rem;
+  padding-right: 3.5rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  font-size: 0.75rem;
+  line-height: 1rem;
+  --tw-text-opacity: 1;
+  color: rgba(156,163,175,var(--tw-text-opacity));
+}
+
+.c38 {
+  color: var(--color-primary);
+}
+
+.c38:hover {
+  color: var(--color-secondary);
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+}
+
+.c16 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.c17 {
+  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  border-radius: 9999px;
+}
+
+.c18 {
+  border-radius: 9999px;
+}
+
+.c1 {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.c2 {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.c3 {
+  font-weight: 700;
+  font-size: 1.5rem;
+  line-height: 2rem;
+  color: var(--color-primary);
+  font-family: ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c0 {
+  width: 100%;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.c4 {
+  max-width: 100%;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  padding: 2rem;
+  background-color: var(--color-primary);
+  box-shadow: inset 0 8px 8px -8px rgb(0 0 0 / 30%),inset 0 -8px 8px -8px rgb(0 0 0 / 30%);
+}
+
+.c5 {
+  font-weight: 700;
+  font-size: 3.75rem;
+  line-height: 1;
+  --tw-text-opacity: 1;
+  color: rgba(255,255,255,var(--tw-text-opacity));
+  text-align: center;
+  font-family: ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+  padding-bottom: 0.5rem;
+  text-shadow: 0 1px 3px rgb(0 0 0 / 30%);
+}
+
+.c6 {
+  font-size: 1.5rem;
+  line-height: 2rem;
+  --tw-text-opacity: 1;
+  color: rgba(255,255,255,var(--tw-text-opacity));
+  text-align: center;
+  font-family: ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+  margin-bottom: 0px;
+}
+
+.c31 {
+  width: 100%;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.c31 .pagination {
+  position: relative;
+  z-index: 0;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  border-radius: 0.375rem;
+  --tw-shadow: 0 1px 2px 0 rgba(0,0,0,0.05);
+  box-shadow: var(--tw-ring-offset-shadow,0 0 #0000),var(--tw-ring-shadow,0 0 #0000),var(--tw-shadow);
+}
+
+.c31 .pagination > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-x-reverse: 0;
+  margin-right: calc(-1px * var(--tw-space-x-reverse));
+  margin-left: calc(-1px * calc(1 - var(--tw-space-x-reverse)));
+}
+
+.c31 .pagination-page-item {
+  --tw-bg-opacity: 1;
+  background-color: rgba(255,255,255,var(--tw-bg-opacity));
+  --tw-border-opacity: 1;
+  border-color: rgba(209,213,219,var(--tw-border-opacity));
+  border-width: 1px;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.c31 .pagination-page-item:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgba(249,250,251,var(--tw-bg-opacity));
+}
+
+.c31 .pagination-page-item.disabled {
+  cursor: not-allowed;
+  --tw-bg-opacity: 1;
+  background-color: rgba(229,231,235,var(--tw-bg-opacity));
+}
+
+.c31 .pagination-page-item.disabled a {
+  cursor: not-allowed;
+}
+
+.c31 .pagination-page {
+  --tw-text-opacity: 1;
+  color: rgba(107,114,128,var(--tw-text-opacity));
+  position: relative;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  font-weight: 500;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
+.c31 .pagination-ellipsis {
+  position: relative;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  font-weight: 500;
+  --tw-text-opacity: 1;
+  color: rgba(55,65,81,var(--tw-text-opacity));
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
+.c31 .pagination-previous-item {
+  --tw-bg-opacity: 1;
+  background-color: rgba(255,255,255,var(--tw-bg-opacity));
+  --tw-border-opacity: 1;
+  border-color: rgba(209,213,219,var(--tw-border-opacity));
+  border-width: 1px;
+  border-top-left-radius: 0.375rem;
+  border-bottom-left-radius: 0.375rem;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.c31 .pagination-previous-item:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgba(249,250,251,var(--tw-bg-opacity));
+}
+
+.c31 .pagination-previous-item.disabled {
+  cursor: not-allowed;
+  --tw-bg-opacity: 1;
+  background-color: rgba(229,231,235,var(--tw-bg-opacity));
+}
+
+.c31 .pagination-previous-item.disabled a {
+  cursor: not-allowed;
+}
+
+.c31 .pagination-previous {
+  position: relative;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  font-weight: 500;
+  --tw-text-opacity: 1;
+  color: rgba(107,114,128,var(--tw-text-opacity));
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
+.c31 .pagination-next-item {
+  --tw-bg-opacity: 1;
+  background-color: rgba(255,255,255,var(--tw-bg-opacity));
+  --tw-border-opacity: 1;
+  border-color: rgba(209,213,219,var(--tw-border-opacity));
+  border-width: 1px;
+  border-top-right-radius: 0.375rem;
+  border-bottom-right-radius: 0.375rem;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.c31 .pagination-next-item:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgba(249,250,251,var(--tw-bg-opacity));
+}
+
+.c31 .pagination-next-item.disabled {
+  cursor: not-allowed;
+  --tw-bg-opacity: 1;
+  background-color: rgba(229,231,235,var(--tw-bg-opacity));
+}
+
+.c31 .pagination-next-item.disabled a {
+  cursor: not-allowed;
+}
+
+.c31 .pagination-next {
+  position: relative;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  font-weight: 500;
+  --tw-text-opacity: 1;
+  color: rgba(107,114,128,var(--tw-text-opacity));
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
+.c31 .pagination-current-page-item {
+  z-index: 10;
+  background-color: var(--color-primary);
+  border-color: var(--color-primary);
+}
+
+.c31 .pagination-current-page-item:hover {
+  background-color: var(--color-primary);
+  --tw-bg-opacity: 0.5;
+}
+
+.c31 .pagination-current-page {
+  --tw-text-opacity: 1;
+  color: rgba(255,255,255,var(--tw-text-opacity));
+}
+
+.c32 {
+  position: relative;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  border-width: 1px;
+  --tw-border-opacity: 1;
+  border-color: rgba(209,213,219,var(--tw-border-opacity));
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  font-weight: 500;
+  border-radius: 0.375rem;
+  --tw-text-opacity: 1;
+  color: rgba(55,65,81,var(--tw-text-opacity));
+  --tw-bg-opacity: 1;
+  background-color: rgba(255,255,255,var(--tw-bg-opacity));
+  cursor: not-allowed;
+  --tw-bg-opacity: 1;
+  background-color: rgba(229,231,235,var(--tw-bg-opacity));
+}
+
+.c32:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgba(249,250,251,var(--tw-bg-opacity));
+}
+
+.c32:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgba(229,231,235,var(--tw-bg-opacity));
+}
+
+.c33 {
+  position: relative;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  border-width: 1px;
+  --tw-border-opacity: 1;
+  border-color: rgba(209,213,219,var(--tw-border-opacity));
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  font-weight: 500;
+  border-radius: 0.375rem;
+  --tw-text-opacity: 1;
+  color: rgba(55,65,81,var(--tw-text-opacity));
+  --tw-bg-opacity: 1;
+  background-color: rgba(255,255,255,var(--tw-bg-opacity));
+}
+
+.c33:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgba(249,250,251,var(--tw-bg-opacity));
+}
+
+.c14 {
+  width: 100%;
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+}
+
+.c14:not(:last-child) {
+  border-bottom-width: 1px;
+  --tw-border-opacity: 1;
+  border-color: rgba(229,231,235,var(--tw-border-opacity));
+}
+
+.c15 {
+  width: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.c19 {
+  width: auto;
+  margin-left: 0.375rem;
+  margin-right: 1rem;
+}
+
+.c20 {
+  color: var(--color-primary);
+}
+
+.c20:hover {
+  color: var(--color-secondary);
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+}
+
+.c21 {
+  font-size: 0.75rem;
+  line-height: 1rem;
+  --tw-text-opacity: 1;
+  color: rgba(156,163,175,var(--tw-text-opacity));
+}
+
+.c22 {
+  margin-left: auto;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  cursor: pointer;
+  width: 2.5rem;
+  height: 1.75rem;
+  border-width: 1px;
+  border-color: var(--color-primary);
+  border-radius: 0.25rem;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  color: var(--color-primary);
+}
+
+.c22:hover {
+  --tw-text-opacity: 1;
+  color: rgba(255,255,255,var(--tw-text-opacity));
+  background-color: var(--color-primary);
+}
+
+.c30 {
+  margin-left: auto;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  cursor: pointer;
+  width: 2.5rem;
+  height: 1.75rem;
+  border-width: 1px;
+  border-color: var(--color-primary);
+  border-radius: 0.25rem;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  --tw-text-opacity: 1;
+  color: rgba(255,255,255,var(--tw-text-opacity));
+  background-color: var(--color-primary);
+}
+
+.c30:hover {
+  color: var(--color-primary);
+  --tw-bg-opacity: 1;
+  background-color: rgba(255,255,255,var(--tw-bg-opacity));
+}
+
+.c23 {
+  width: 100%;
+  cursor: pointer;
+}
+
+.c24 {
+  font-size: 1.5rem;
+  line-height: 2rem;
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+}
+
+.c25 {
+  font-size: 1rem;
+  line-height: 1.5rem;
+  --tw-text-opacity: 1;
+  color: rgba(107,114,128,var(--tw-text-opacity));
+  margin-bottom: 1rem;
+}
+
+.c26 {
+  width: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.c27 {
+  font-size: 0.75rem;
+  line-height: 1rem;
+  --tw-text-opacity: 1;
+  color: rgba(156,163,175,var(--tw-text-opacity));
+}
+
+.c28 {
+  margin-left: auto;
+  vertical-align: top;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  max-width: 50%;
+}
+
+.c29 {
+  font-size: 0.75rem;
+  line-height: 1;
+  --tw-text-opacity: 1;
+  color: rgba(156,163,175,var(--tw-text-opacity));
+  font-weight: 300;
+  white-space: nowrap;
+  border-width: 1px;
+  --tw-border-opacity: 1;
+  border-color: rgba(156,163,175,var(--tw-border-opacity));
+  border-radius: 9999px;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  cursor: pointer;
+  padding: 4px 10px;
+  margin-right: 3px;
+}
+
+.c13 {
+  width: 100%;
+}
+
+.c11 {
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  cursor: pointer;
+  font-size: 1rem;
+  line-height: 1;
+  font-weight: 700;
+  color: var(--color-primary);
+  border-bottom-width: 2px;
+  border-color: var(--color-primary);
+}
+
+.c10 {
+  width: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  border-bottom-width: 1px;
+  --tw-border-opacity: 1;
+  border-color: rgba(229,231,235,var(--tw-border-opacity));
+}
+
+.c9 {
+  width: 100%;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.c12 {
+  width: 100%;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.c8 {
+  width: 100%;
+}
+
+.c34 {
+  width: 16rem;
+}
+
+.c35 {
+  --tw-bg-opacity: 1;
+  background-color: rgba(243,244,246,var(--tw-bg-opacity));
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
+.c36 {
+  font-size: 0.75rem;
+  line-height: 1;
+  --tw-text-opacity: 1;
+  color: rgba(255,255,255,var(--tw-text-opacity));
+  font-weight: 600;
+  white-space: nowrap;
+  border-radius: 9999px;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  cursor: pointer;
+  padding: 4px 10px;
+  margin-right: 3px;
+  --tw-bg-opacity: 1;
+  background-color: rgba(156,163,175,var(--tw-bg-opacity));
+}
+
+.c7 {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  gap: 1.5rem;
+}
+
+@media (min-width:640px) {
+  .c1 {
+    max-width: 640px;
+  }
+}
+
+@media (min-width:768px) {
+  .c1 {
+    max-width: 768px;
+  }
+}
+
+@media (min-width:1024px) {
+  .c1 {
+    max-width: 1024px;
+  }
+}
+
+@media (min-width:1280px) {
+  .c1 {
+    max-width: 1280px;
+  }
+}
+
+@media (min-width:1536px) {
+  .c1 {
+    max-width: 1536px;
+  }
+}
+
+@media (min-width:640px) {
+  .c7 {
+    max-width: 640px;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+  }
+}
+
+@media (min-width:768px) {
+  .c7 {
+    max-width: 768px;
+  }
+}
+
+@media (min-width:1024px) {
+  .c7 {
+    max-width: 1024px;
+  }
+}
+
+@media (min-width:1280px) {
+  .c7 {
+    max-width: 1280px;
+  }
+}
+
+@media (min-width:1536px) {
+  .c7 {
+    max-width: 1536px;
+  }
+}
+
 <div
-  className="BaseLayoutTemplate__Container-sc-1jz5xvr-0 kHMSW"
+  className="c0"
 >
   <div
-    className="HeaderTemplate__Container-sc-kdla34-0 gxnUkb"
+    className="c1"
   >
     <div
-      className="HeaderTemplate__Heading-sc-kdla34-1 lcHwtI"
+      className="c2"
     >
       <div
-        className="HeaderTemplate__HeadingTitle-sc-kdla34-2 ibfQih"
+        className="c3"
         data-cy="header-logo-link"
       >
         <a
@@ -1537,16 +3082,16 @@ exports[`Home Snapshots renders home before login 1`] = `
     </div>
   </div>
   <div
-    className="HomeBannerTemplate__Container-sc-1qknydn-0 kgQQLJ"
+    className="c4"
   >
     <h1
-      className="HomeBannerTemplate__Title-sc-1qknydn-1 YLgmt"
+      className="c5"
       data-cy="banner-title"
     >
       conduit
     </h1>
     <p
-      className="HomeBannerTemplate__Description-sc-1qknydn-2 jAWRsj"
+      className="c6"
       data-cy="banner-description"
     >
       A place to share your knowledge.
@@ -1556,19 +3101,19 @@ exports[`Home Snapshots renders home before login 1`] = `
     className="container mx-auto mt-8"
   >
     <div
-      className="HomeContentTemplate__Container-sc-1wgbk2s-0 glEaaA"
+      className="c7"
     >
       <div
-        className="HomeFeedContentTemplate__Container-sc-1ezgd3k-0 fDQNGi"
+        className="c8"
       >
         <div
-          className="TabProvider__Container-sc-dghi3q-0 hMjFPD"
+          className="c9"
         >
           <ul
-            className="TabNavs__Container-sc-1s6vm0l-0 fNatPj"
+            className="c10"
           >
             <li
-              className="TabNav__Container-sc-eq25ji-0 khtWGz"
+              className="c11"
               data-cy="tab-nav-global_feed"
               onClick={[Function]}
             >
@@ -1576,25 +3121,25 @@ exports[`Home Snapshots renders home before login 1`] = `
             </li>
           </ul>
           <div
-            className="TabPane__Container-sc-12cvcpc-0 IWqVW"
+            className="c12"
             data-cy="tab-pane-global_feed"
           >
             <div
-              className="FeedList__Container-sc-m88k4f-0 cwdJLz"
+              className="c13"
               data-cy="feed-list"
             >
               <div
-                className="Feed__Container-sc-njujrp-0 hCoOyB"
+                className="c14"
                 data-cy="feed-container"
               >
                 <div
-                  className="Feed__AuthorContainer-sc-njujrp-1 kgsVwO"
+                  className="c15"
                 >
                   <div
-                    className="Avatar__Wrapper-sc-m9feoe-0 ieHczv"
+                    className="c16"
                   >
                     <div
-                      className="Avatar__Container-sc-m9feoe-1 fQHyzl w-8 h-8"
+                      className="c17 w-8 h-8"
                     >
                       <span
                         style={
@@ -1619,7 +3164,7 @@ exports[`Home Snapshots renders home before login 1`] = `
                       >
                         <img
                           alt="avatar"
-                          className="Avatar__Img-sc-m9feoe-2 kuaPdK rounded-full"
+                          className="c18 rounded-full"
                           data-nimg="fill"
                           decoding="async"
                           src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
@@ -1649,7 +3194,7 @@ exports[`Home Snapshots renders home before login 1`] = `
                         <noscript>
                           <img
                             alt="avatar"
-                            className="Avatar__Img-sc-m9feoe-2 kuaPdK rounded-full"
+                            className="c18 rounded-full"
                             data-nimg="fill"
                             decoding="async"
                             loading="lazy"
@@ -1684,10 +3229,10 @@ exports[`Home Snapshots renders home before login 1`] = `
                     </div>
                   </div>
                   <div
-                    className="Feed__AuthorInfo-sc-njujrp-2 bwLqOH"
+                    className="c19"
                   >
                     <div
-                      className="Feed__AuthorName-sc-njujrp-3 fbCOoc"
+                      className="c20"
                       data-cy="feed-profile"
                     >
                       <a
@@ -1699,13 +3244,13 @@ exports[`Home Snapshots renders home before login 1`] = `
                       </a>
                     </div>
                     <div
-                      className="Feed__AuthorDate-sc-njujrp-4 cqYxgN"
+                      className="c21"
                     >
                       Thu Feb 18 2016
                     </div>
                   </div>
                   <div
-                    className="Feed__Favorite-sc-njujrp-5 gjwhNt"
+                    className="c22"
                     data-cy="feed-favorite"
                     onClick={[Function]}
                   >
@@ -1737,42 +3282,42 @@ exports[`Home Snapshots renders home before login 1`] = `
                   </div>
                 </div>
                 <div
-                  className="Feed__Content-sc-njujrp-6 bMJyvN"
+                  className="c23"
                   data-cy="feed-content"
                   href="/article/how-to-train-your-dragon"
                   onClick={[Function]}
                   onMouseEnter={[Function]}
                 >
                   <h1
-                    className="Feed__Title-sc-njujrp-7 VSHlD"
+                    className="c24"
                   >
                     How to train your dragon
                   </h1>
                   <div
-                    className="Feed__Body-sc-njujrp-8 ksVMoY"
+                    className="c25"
                   >
                     <p>
                       Ever wonder how?
                     </p>
                   </div>
                   <div
-                    className="Feed__Footer-sc-njujrp-9 fPWzJO"
+                    className="c26"
                   >
                     <div
-                      className="Feed__ReadMore-sc-njujrp-10 dZzWHi"
+                      className="c27"
                     >
                       Read more...
                     </div>
                     <div
-                      className="Feed__Tags-sc-njujrp-11 guXOMJ"
+                      className="c28"
                     >
                       <div
-                        className="Feed__Tag-sc-njujrp-12 bgLIUB"
+                        className="c29"
                       >
                         dragons
                       </div>
                       <div
-                        className="Feed__Tag-sc-njujrp-12 bgLIUB"
+                        className="c29"
                       >
                         training
                       </div>
@@ -1781,17 +3326,17 @@ exports[`Home Snapshots renders home before login 1`] = `
                 </div>
               </div>
               <div
-                className="Feed__Container-sc-njujrp-0 hCoOyB"
+                className="c14"
                 data-cy="feed-container"
               >
                 <div
-                  className="Feed__AuthorContainer-sc-njujrp-1 kgsVwO"
+                  className="c15"
                 >
                   <div
-                    className="Avatar__Wrapper-sc-m9feoe-0 ieHczv"
+                    className="c16"
                   >
                     <div
-                      className="Avatar__Container-sc-m9feoe-1 fQHyzl w-8 h-8"
+                      className="c17 w-8 h-8"
                     >
                       <span
                         style={
@@ -1816,7 +3361,7 @@ exports[`Home Snapshots renders home before login 1`] = `
                       >
                         <img
                           alt="avatar"
-                          className="Avatar__Img-sc-m9feoe-2 kuaPdK rounded-full"
+                          className="c18 rounded-full"
                           data-nimg="fill"
                           decoding="async"
                           src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
@@ -1846,7 +3391,7 @@ exports[`Home Snapshots renders home before login 1`] = `
                         <noscript>
                           <img
                             alt="avatar"
-                            className="Avatar__Img-sc-m9feoe-2 kuaPdK rounded-full"
+                            className="c18 rounded-full"
                             data-nimg="fill"
                             decoding="async"
                             loading="lazy"
@@ -1881,10 +3426,10 @@ exports[`Home Snapshots renders home before login 1`] = `
                     </div>
                   </div>
                   <div
-                    className="Feed__AuthorInfo-sc-njujrp-2 bwLqOH"
+                    className="c19"
                   >
                     <div
-                      className="Feed__AuthorName-sc-njujrp-3 fbCOoc"
+                      className="c20"
                       data-cy="feed-profile"
                     >
                       <a
@@ -1896,13 +3441,13 @@ exports[`Home Snapshots renders home before login 1`] = `
                       </a>
                     </div>
                     <div
-                      className="Feed__AuthorDate-sc-njujrp-4 cqYxgN"
+                      className="c21"
                     >
                       Thu Feb 18 2016
                     </div>
                   </div>
                   <div
-                    className="Feed__Favorite-sc-njujrp-5 cbgHkv"
+                    className="c30"
                     data-cy="feed-favorite"
                     onClick={[Function]}
                   >
@@ -1934,37 +3479,37 @@ exports[`Home Snapshots renders home before login 1`] = `
                   </div>
                 </div>
                 <div
-                  className="Feed__Content-sc-njujrp-6 bMJyvN"
+                  className="c23"
                   data-cy="feed-content"
                   href="/article/how-to-train-your-dragon-2"
                   onClick={[Function]}
                   onMouseEnter={[Function]}
                 >
                   <h1
-                    className="Feed__Title-sc-njujrp-7 VSHlD"
+                    className="c24"
                   >
                     How to train your dragon 2
                   </h1>
                   <div
-                    className="Feed__Body-sc-njujrp-8 ksVMoY"
+                    className="c25"
                   >
                     <p>
                       So toothless
                     </p>
                   </div>
                   <div
-                    className="Feed__Footer-sc-njujrp-9 fPWzJO"
+                    className="c26"
                   >
                     <div
-                      className="Feed__ReadMore-sc-njujrp-10 dZzWHi"
+                      className="c27"
                     >
                       Read more...
                     </div>
                     <div
-                      className="Feed__Tags-sc-njujrp-11 guXOMJ"
+                      className="c28"
                     >
                       <div
-                        className="Feed__Tag-sc-njujrp-12 bgLIUB"
+                        className="c29"
                       >
                         dragons
                       </div>
@@ -1973,17 +3518,17 @@ exports[`Home Snapshots renders home before login 1`] = `
                 </div>
               </div>
               <div
-                className="Feed__Container-sc-njujrp-0 hCoOyB"
+                className="c14"
                 data-cy="feed-container"
               >
                 <div
-                  className="Feed__AuthorContainer-sc-njujrp-1 kgsVwO"
+                  className="c15"
                 >
                   <div
-                    className="Avatar__Wrapper-sc-m9feoe-0 ieHczv"
+                    className="c16"
                   >
                     <div
-                      className="Avatar__Container-sc-m9feoe-1 fQHyzl w-8 h-8"
+                      className="c17 w-8 h-8"
                     >
                       <span
                         style={
@@ -2008,7 +3553,7 @@ exports[`Home Snapshots renders home before login 1`] = `
                       >
                         <img
                           alt="avatar"
-                          className="Avatar__Img-sc-m9feoe-2 kuaPdK rounded-full"
+                          className="c18 rounded-full"
                           data-nimg="fill"
                           decoding="async"
                           src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
@@ -2038,7 +3583,7 @@ exports[`Home Snapshots renders home before login 1`] = `
                         <noscript>
                           <img
                             alt="avatar"
-                            className="Avatar__Img-sc-m9feoe-2 kuaPdK rounded-full"
+                            className="c18 rounded-full"
                             data-nimg="fill"
                             decoding="async"
                             loading="lazy"
@@ -2073,10 +3618,10 @@ exports[`Home Snapshots renders home before login 1`] = `
                     </div>
                   </div>
                   <div
-                    className="Feed__AuthorInfo-sc-njujrp-2 bwLqOH"
+                    className="c19"
                   >
                     <div
-                      className="Feed__AuthorName-sc-njujrp-3 fbCOoc"
+                      className="c20"
                       data-cy="feed-profile"
                     >
                       <a
@@ -2088,13 +3633,13 @@ exports[`Home Snapshots renders home before login 1`] = `
                       </a>
                     </div>
                     <div
-                      className="Feed__AuthorDate-sc-njujrp-4 cqYxgN"
+                      className="c21"
                     >
                       Thu Feb 18 2016
                     </div>
                   </div>
                   <div
-                    className="Feed__Favorite-sc-njujrp-5 gjwhNt"
+                    className="c22"
                     data-cy="feed-favorite"
                     onClick={[Function]}
                   >
@@ -2126,37 +3671,37 @@ exports[`Home Snapshots renders home before login 1`] = `
                   </div>
                 </div>
                 <div
-                  className="Feed__Content-sc-njujrp-6 bMJyvN"
+                  className="c23"
                   data-cy="feed-content"
                   href="/article/how-to-train-your-dragon-3"
                   onClick={[Function]}
                   onMouseEnter={[Function]}
                 >
                   <h1
-                    className="Feed__Title-sc-njujrp-7 VSHlD"
+                    className="c24"
                   >
                     How to train your dragon 3
                   </h1>
                   <div
-                    className="Feed__Body-sc-njujrp-8 ksVMoY"
+                    className="c25"
                   >
                     <p>
                       So toothless
                     </p>
                   </div>
                   <div
-                    className="Feed__Footer-sc-njujrp-9 fPWzJO"
+                    className="c26"
                   >
                     <div
-                      className="Feed__ReadMore-sc-njujrp-10 dZzWHi"
+                      className="c27"
                     >
                       Read more...
                     </div>
                     <div
-                      className="Feed__Tags-sc-njujrp-11 guXOMJ"
+                      className="c28"
                     >
                       <div
-                        className="Feed__Tag-sc-njujrp-12 bgLIUB"
+                        className="c29"
                       >
                         dragons
                       </div>
@@ -2165,17 +3710,17 @@ exports[`Home Snapshots renders home before login 1`] = `
                 </div>
               </div>
               <div
-                className="Feed__Container-sc-njujrp-0 hCoOyB"
+                className="c14"
                 data-cy="feed-container"
               >
                 <div
-                  className="Feed__AuthorContainer-sc-njujrp-1 kgsVwO"
+                  className="c15"
                 >
                   <div
-                    className="Avatar__Wrapper-sc-m9feoe-0 ieHczv"
+                    className="c16"
                   >
                     <div
-                      className="Avatar__Container-sc-m9feoe-1 fQHyzl w-8 h-8"
+                      className="c17 w-8 h-8"
                     >
                       <span
                         style={
@@ -2200,7 +3745,7 @@ exports[`Home Snapshots renders home before login 1`] = `
                       >
                         <img
                           alt="avatar"
-                          className="Avatar__Img-sc-m9feoe-2 kuaPdK rounded-full"
+                          className="c18 rounded-full"
                           data-nimg="fill"
                           decoding="async"
                           src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
@@ -2230,7 +3775,7 @@ exports[`Home Snapshots renders home before login 1`] = `
                         <noscript>
                           <img
                             alt="avatar"
-                            className="Avatar__Img-sc-m9feoe-2 kuaPdK rounded-full"
+                            className="c18 rounded-full"
                             data-nimg="fill"
                             decoding="async"
                             loading="lazy"
@@ -2265,10 +3810,10 @@ exports[`Home Snapshots renders home before login 1`] = `
                     </div>
                   </div>
                   <div
-                    className="Feed__AuthorInfo-sc-njujrp-2 bwLqOH"
+                    className="c19"
                   >
                     <div
-                      className="Feed__AuthorName-sc-njujrp-3 fbCOoc"
+                      className="c20"
                       data-cy="feed-profile"
                     >
                       <a
@@ -2280,13 +3825,13 @@ exports[`Home Snapshots renders home before login 1`] = `
                       </a>
                     </div>
                     <div
-                      className="Feed__AuthorDate-sc-njujrp-4 cqYxgN"
+                      className="c21"
                     >
                       Thu Feb 18 2016
                     </div>
                   </div>
                   <div
-                    className="Feed__Favorite-sc-njujrp-5 gjwhNt"
+                    className="c22"
                     data-cy="feed-favorite"
                     onClick={[Function]}
                   >
@@ -2318,37 +3863,37 @@ exports[`Home Snapshots renders home before login 1`] = `
                   </div>
                 </div>
                 <div
-                  className="Feed__Content-sc-njujrp-6 bMJyvN"
+                  className="c23"
                   data-cy="feed-content"
                   href="/article/how-to-train-your-dragon-4"
                   onClick={[Function]}
                   onMouseEnter={[Function]}
                 >
                   <h1
-                    className="Feed__Title-sc-njujrp-7 VSHlD"
+                    className="c24"
                   >
                     How to train your dragon 4
                   </h1>
                   <div
-                    className="Feed__Body-sc-njujrp-8 ksVMoY"
+                    className="c25"
                   >
                     <p>
                       So toothless
                     </p>
                   </div>
                   <div
-                    className="Feed__Footer-sc-njujrp-9 fPWzJO"
+                    className="c26"
                   >
                     <div
-                      className="Feed__ReadMore-sc-njujrp-10 dZzWHi"
+                      className="c27"
                     >
                       Read more...
                     </div>
                     <div
-                      className="Feed__Tags-sc-njujrp-11 guXOMJ"
+                      className="c28"
                     >
                       <div
-                        className="Feed__Tag-sc-njujrp-12 bgLIUB"
+                        className="c29"
                       >
                         dragons
                       </div>
@@ -2357,17 +3902,17 @@ exports[`Home Snapshots renders home before login 1`] = `
                 </div>
               </div>
               <div
-                className="Feed__Container-sc-njujrp-0 hCoOyB"
+                className="c14"
                 data-cy="feed-container"
               >
                 <div
-                  className="Feed__AuthorContainer-sc-njujrp-1 kgsVwO"
+                  className="c15"
                 >
                   <div
-                    className="Avatar__Wrapper-sc-m9feoe-0 ieHczv"
+                    className="c16"
                   >
                     <div
-                      className="Avatar__Container-sc-m9feoe-1 fQHyzl w-8 h-8"
+                      className="c17 w-8 h-8"
                     >
                       <span
                         style={
@@ -2392,7 +3937,7 @@ exports[`Home Snapshots renders home before login 1`] = `
                       >
                         <img
                           alt="avatar"
-                          className="Avatar__Img-sc-m9feoe-2 kuaPdK rounded-full"
+                          className="c18 rounded-full"
                           data-nimg="fill"
                           decoding="async"
                           src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
@@ -2422,7 +3967,7 @@ exports[`Home Snapshots renders home before login 1`] = `
                         <noscript>
                           <img
                             alt="avatar"
-                            className="Avatar__Img-sc-m9feoe-2 kuaPdK rounded-full"
+                            className="c18 rounded-full"
                             data-nimg="fill"
                             decoding="async"
                             loading="lazy"
@@ -2457,10 +4002,10 @@ exports[`Home Snapshots renders home before login 1`] = `
                     </div>
                   </div>
                   <div
-                    className="Feed__AuthorInfo-sc-njujrp-2 bwLqOH"
+                    className="c19"
                   >
                     <div
-                      className="Feed__AuthorName-sc-njujrp-3 fbCOoc"
+                      className="c20"
                       data-cy="feed-profile"
                     >
                       <a
@@ -2472,13 +4017,13 @@ exports[`Home Snapshots renders home before login 1`] = `
                       </a>
                     </div>
                     <div
-                      className="Feed__AuthorDate-sc-njujrp-4 cqYxgN"
+                      className="c21"
                     >
                       Thu Feb 18 2016
                     </div>
                   </div>
                   <div
-                    className="Feed__Favorite-sc-njujrp-5 gjwhNt"
+                    className="c22"
                     data-cy="feed-favorite"
                     onClick={[Function]}
                   >
@@ -2510,37 +4055,37 @@ exports[`Home Snapshots renders home before login 1`] = `
                   </div>
                 </div>
                 <div
-                  className="Feed__Content-sc-njujrp-6 bMJyvN"
+                  className="c23"
                   data-cy="feed-content"
                   href="/article/how-to-train-your-dragon-5"
                   onClick={[Function]}
                   onMouseEnter={[Function]}
                 >
                   <h1
-                    className="Feed__Title-sc-njujrp-7 VSHlD"
+                    className="c24"
                   >
                     How to train your dragon 5
                   </h1>
                   <div
-                    className="Feed__Body-sc-njujrp-8 ksVMoY"
+                    className="c25"
                   >
                     <p>
                       So toothless
                     </p>
                   </div>
                   <div
-                    className="Feed__Footer-sc-njujrp-9 fPWzJO"
+                    className="c26"
                   >
                     <div
-                      className="Feed__ReadMore-sc-njujrp-10 dZzWHi"
+                      className="c27"
                     >
                       Read more...
                     </div>
                     <div
-                      className="Feed__Tags-sc-njujrp-11 guXOMJ"
+                      className="c28"
                     >
                       <div
-                        className="Feed__Tag-sc-njujrp-12 bgLIUB"
+                        className="c29"
                       >
                         dragons
                       </div>
@@ -2549,7 +4094,7 @@ exports[`Home Snapshots renders home before login 1`] = `
                 </div>
               </div>
               <div
-                className="Pagination__Container-sc-z81ile-0 dGdshJ"
+                className="c31"
               >
                 <div
                   className="bg-white px-4 py-3 flex items-center justify-between border-t border-gray-200 sm:px-6"
@@ -2558,7 +4103,7 @@ exports[`Home Snapshots renders home before login 1`] = `
                     className="flex-1 flex justify-between sm:hidden"
                   >
                     <a
-                      className="Pagination__PrevNextButton-sc-z81ile-1 fBtVrM"
+                      className="c32"
                       disabled={true}
                       href="#"
                       onClick={[Function]}
@@ -2566,7 +4111,7 @@ exports[`Home Snapshots renders home before login 1`] = `
                       Previous
                     </a>
                     <a
-                      className="Pagination__PrevNextButton-sc-z81ile-1 iTKNyl ml-3"
+                      className="c33 ml-3"
                       disabled={false}
                       href="#"
                       onClick={[Function]}
@@ -2586,12 +4131,12 @@ exports[`Home Snapshots renders home before login 1`] = `
                         <a
                           aria-disabled="true"
                           aria-label="Previous page"
-                          className="pagination-previous"
+                          className="pagination-previous "
                           onClick={[Function]}
                           onKeyPress={[Function]}
                           rel="prev"
                           role="button"
-                          tabIndex="0"
+                          tabIndex="-1"
                         >
                           <span
                             className="sr-only"
@@ -2622,8 +4167,9 @@ exports[`Home Snapshots renders home before login 1`] = `
                           className="pagination-page pagination-current-page"
                           onClick={[Function]}
                           onKeyPress={[Function]}
+                          rel="canonical"
                           role="button"
-                          tabIndex="0"
+                          tabIndex="-1"
                         >
                           1
                         </a>
@@ -2637,6 +4183,7 @@ exports[`Home Snapshots renders home before login 1`] = `
                           className="pagination-page"
                           onClick={[Function]}
                           onKeyPress={[Function]}
+                          rel="next"
                           role="button"
                           tabIndex="0"
                         >
@@ -2685,10 +4232,10 @@ exports[`Home Snapshots renders home before login 1`] = `
         </div>
       </div>
       <div
-        className="HomeTagsContentTemplate__Container-sc-y9g3tk-0 jkQEJq"
+        className="c34"
       >
         <div
-          className="HomeTagsContentTemplate__Content-sc-y9g3tk-1 dkgAJu"
+          className="c35"
           data-cy="content-tags-container"
         >
           <div
@@ -2698,10 +4245,10 @@ exports[`Home Snapshots renders home before login 1`] = `
             Popular Tags
           </div>
           <div
-            className="HomeTagsContentTemplate__Tags-sc-y9g3tk-2"
+            className=""
           >
             <div
-              className="HomeTagsContentTemplate__Tag-sc-y9g3tk-3 iXCENq"
+              className="c36"
               data-cy="content-tag"
               onClick={[Function]}
               selected={false}
@@ -2709,7 +4256,7 @@ exports[`Home Snapshots renders home before login 1`] = `
               dragons
             </div>
             <div
-              className="HomeTagsContentTemplate__Tag-sc-y9g3tk-3 iXCENq"
+              className="c36"
               data-cy="content-tag"
               onClick={[Function]}
               selected={false}
@@ -2722,10 +4269,10 @@ exports[`Home Snapshots renders home before login 1`] = `
     </div>
   </div>
   <div
-    className="FooterTemplate__Container-sc-96wla6-0 cOGJUH"
+    className="c37"
   >
     <span
-      className="FooterTemplate__SiteLink-sc-96wla6-1 ENejy text-base mr-1 font-bold"
+      className="c38 text-base mr-1 font-bold"
       data-cy="footer-logo-link"
       href="/"
       onClick={[Function]}
@@ -2735,7 +4282,7 @@ exports[`Home Snapshots renders home before login 1`] = `
     </span>
     © 2020. An interactive learning project from
     <span
-      className="FooterTemplate__SiteLink-sc-96wla6-1 ENejy ml-1"
+      className="c38 ml-1"
       data-cy="footer-site-link"
       href="https://thinkster.io/"
       onClick={[Function]}

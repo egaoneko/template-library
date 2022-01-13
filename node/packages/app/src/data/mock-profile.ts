@@ -1,5 +1,5 @@
 import faker from 'faker';
-import {IProfile} from '@my-app/core/lib/interfaces/profile';
+import { IProfile } from '@my-app/core/lib/interfaces/profile';
 
 export function createMocProfile(): IProfile {
   return {

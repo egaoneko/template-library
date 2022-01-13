@@ -1,5 +1,4 @@
-import React, { FC } from 'react';
-import { useState } from 'react';
+import React, { FC, useState } from 'react';
 import { AiOutlineClose } from 'react-icons/ai';
 
 import Input from 'src/components/molecules/form/Input';

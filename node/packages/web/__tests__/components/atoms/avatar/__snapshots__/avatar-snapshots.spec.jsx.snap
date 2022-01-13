@@ -1,11 +1,46 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Avatar Snapshots renders avatar with default options 1`] = `
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.c1 {
+  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  border-radius: 9999px;
+}
+
+.c2 {
+  border-radius: 9999px;
+}
+
 <div
-  className="Avatar__Wrapper-sc-m9feoe-0 ieHczv"
+  className="c0"
 >
   <div
-    className="Avatar__Container-sc-m9feoe-1 fQHyzl w-8 h-8"
+    className="c1 w-8 h-8"
   >
     <span
       style={
@@ -30,7 +65,7 @@ exports[`Avatar Snapshots renders avatar with default options 1`] = `
     >
       <img
         alt="avatar"
-        className="Avatar__Img-sc-m9feoe-2 kuaPdK rounded-full"
+        className="c2 rounded-full"
         data-nimg="fill"
         decoding="async"
         src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
@@ -60,7 +95,7 @@ exports[`Avatar Snapshots renders avatar with default options 1`] = `
       <noscript>
         <img
           alt="avatar"
-          className="Avatar__Img-sc-m9feoe-2 kuaPdK rounded-full"
+          className="c2 rounded-full"
           data-nimg="fill"
           decoding="async"
           loading="lazy"
@@ -97,11 +132,46 @@ exports[`Avatar Snapshots renders avatar with default options 1`] = `
 `;
 
 exports[`Avatar Snapshots renders avatar with large size 1`] = `
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.c1 {
+  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  border-radius: 9999px;
+}
+
+.c2 {
+  border-radius: 9999px;
+}
+
 <div
-  className="Avatar__Wrapper-sc-m9feoe-0 ieHczv"
+  className="c0"
 >
   <div
-    className="Avatar__Container-sc-m9feoe-1 fQHyzl w-32 h-32"
+    className="c1 w-32 h-32"
   >
     <span
       style={
@@ -126,7 +196,7 @@ exports[`Avatar Snapshots renders avatar with large size 1`] = `
     >
       <img
         alt="avatar"
-        className="Avatar__Img-sc-m9feoe-2 kuaPdK rounded-full"
+        className="c2 rounded-full"
         data-nimg="fill"
         decoding="async"
         src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
@@ -156,7 +226,7 @@ exports[`Avatar Snapshots renders avatar with large size 1`] = `
       <noscript>
         <img
           alt="avatar"
-          className="Avatar__Img-sc-m9feoe-2 kuaPdK rounded-full"
+          className="c2 rounded-full"
           data-nimg="fill"
           decoding="async"
           loading="lazy"
@@ -193,11 +263,46 @@ exports[`Avatar Snapshots renders avatar with large size 1`] = `
 `;
 
 exports[`Avatar Snapshots renders avatar with large size 2`] = `
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.c1 {
+  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  border-radius: 9999px;
+}
+
+.c2 {
+  border-radius: 9999px;
+}
+
 <div
-  className="Avatar__Wrapper-sc-m9feoe-0 ieHczv"
+  className="c0"
 >
   <div
-    className="Avatar__Container-sc-m9feoe-1 fQHyzl w-32 h-32"
+    className="c1 w-32 h-32"
   >
     <span
       style={
@@ -222,7 +327,7 @@ exports[`Avatar Snapshots renders avatar with large size 2`] = `
     >
       <img
         alt="avatar"
-        className="Avatar__Img-sc-m9feoe-2 kuaPdK rounded-full"
+        className="c2 rounded-full"
         data-nimg="fill"
         decoding="async"
         src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
@@ -252,7 +357,7 @@ exports[`Avatar Snapshots renders avatar with large size 2`] = `
       <noscript>
         <img
           alt="avatar"
-          className="Avatar__Img-sc-m9feoe-2 kuaPdK rounded-full"
+          className="c2 rounded-full"
           data-nimg="fill"
           decoding="async"
           loading="lazy"
@@ -289,11 +394,46 @@ exports[`Avatar Snapshots renders avatar with large size 2`] = `
 `;
 
 exports[`Avatar Snapshots renders avatar with middle size 1`] = `
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.c1 {
+  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  border-radius: 9999px;
+}
+
+.c2 {
+  border-radius: 9999px;
+}
+
 <div
-  className="Avatar__Wrapper-sc-m9feoe-0 ieHczv"
+  className="c0"
 >
   <div
-    className="Avatar__Container-sc-m9feoe-1 fQHyzl w-8 h-8"
+    className="c1 w-8 h-8"
   >
     <span
       style={
@@ -318,7 +458,7 @@ exports[`Avatar Snapshots renders avatar with middle size 1`] = `
     >
       <img
         alt="avatar"
-        className="Avatar__Img-sc-m9feoe-2 kuaPdK rounded-full"
+        className="c2 rounded-full"
         data-nimg="fill"
         decoding="async"
         src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
@@ -348,7 +488,7 @@ exports[`Avatar Snapshots renders avatar with middle size 1`] = `
       <noscript>
         <img
           alt="avatar"
-          className="Avatar__Img-sc-m9feoe-2 kuaPdK rounded-full"
+          className="c2 rounded-full"
           data-nimg="fill"
           decoding="async"
           loading="lazy"
@@ -385,11 +525,46 @@ exports[`Avatar Snapshots renders avatar with middle size 1`] = `
 `;
 
 exports[`Avatar Snapshots renders avatar with small size 1`] = `
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.c1 {
+  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  border-radius: 9999px;
+}
+
+.c2 {
+  border-radius: 9999px;
+}
+
 <div
-  className="Avatar__Wrapper-sc-m9feoe-0 ieHczv"
+  className="c0"
 >
   <div
-    className="Avatar__Container-sc-m9feoe-1 fQHyzl w-5 h-5"
+    className="c1 w-5 h-5"
   >
     <span
       style={
@@ -414,7 +589,7 @@ exports[`Avatar Snapshots renders avatar with small size 1`] = `
     >
       <img
         alt="avatar"
-        className="Avatar__Img-sc-m9feoe-2 kuaPdK rounded-full"
+        className="c2 rounded-full"
         data-nimg="fill"
         decoding="async"
         src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
@@ -444,7 +619,7 @@ exports[`Avatar Snapshots renders avatar with small size 1`] = `
       <noscript>
         <img
           alt="avatar"
-          className="Avatar__Img-sc-m9feoe-2 kuaPdK rounded-full"
+          className="c2 rounded-full"
           data-nimg="fill"
           decoding="async"
           loading="lazy"
@@ -481,11 +656,46 @@ exports[`Avatar Snapshots renders avatar with small size 1`] = `
 `;
 
 exports[`Avatar Snapshots renders avatar with url 1`] = `
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.c1 {
+  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  border-radius: 9999px;
+}
+
+.c2 {
+  border-radius: 9999px;
+}
+
 <div
-  className="Avatar__Wrapper-sc-m9feoe-0 ieHczv"
+  className="c0"
 >
   <div
-    className="Avatar__Container-sc-m9feoe-1 fQHyzl w-8 h-8"
+    className="c1 w-8 h-8"
   >
     <span
       style={
@@ -510,7 +720,7 @@ exports[`Avatar Snapshots renders avatar with url 1`] = `
     >
       <img
         alt="avatar"
-        className="Avatar__Img-sc-m9feoe-2 kuaPdK rounded-full"
+        className="c2 rounded-full"
         data-nimg="fill"
         decoding="async"
         src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
@@ -540,7 +750,7 @@ exports[`Avatar Snapshots renders avatar with url 1`] = `
       <noscript>
         <img
           alt="avatar"
-          className="Avatar__Img-sc-m9feoe-2 kuaPdK rounded-full"
+          className="c2 rounded-full"
           data-nimg="fill"
           decoding="async"
           loading="lazy"
@@ -577,11 +787,46 @@ exports[`Avatar Snapshots renders avatar with url 1`] = `
 `;
 
 exports[`Avatar Snapshots renders avatar with url and size 1`] = `
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.c1 {
+  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  border-radius: 9999px;
+}
+
+.c2 {
+  border-radius: 9999px;
+}
+
 <div
-  className="Avatar__Wrapper-sc-m9feoe-0 ieHczv"
+  className="c0"
 >
   <div
-    className="Avatar__Container-sc-m9feoe-1 fQHyzl w-5 h-5"
+    className="c1 w-5 h-5"
   >
     <span
       style={
@@ -606,7 +851,7 @@ exports[`Avatar Snapshots renders avatar with url and size 1`] = `
     >
       <img
         alt="avatar"
-        className="Avatar__Img-sc-m9feoe-2 kuaPdK rounded-full"
+        className="c2 rounded-full"
         data-nimg="fill"
         decoding="async"
         src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
@@ -636,7 +881,7 @@ exports[`Avatar Snapshots renders avatar with url and size 1`] = `
       <noscript>
         <img
           alt="avatar"
-          className="Avatar__Img-sc-m9feoe-2 kuaPdK rounded-full"
+          className="c2 rounded-full"
           data-nimg="fill"
           decoding="async"
           loading="lazy"

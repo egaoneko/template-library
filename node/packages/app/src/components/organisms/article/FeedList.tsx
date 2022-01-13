@@ -1,6 +1,6 @@
-import {IArticle} from '@my-app/core/lib/interfaces/article';
-import React, {FC} from 'react';
-import {FlatList} from 'react-native';
+import { IArticle } from '@my-app/core/lib/interfaces/article';
+import React, { FC } from 'react';
+import { FlatList } from 'react-native';
 
 import Separator from '../../atoms/common/Separator';
 
@@ -14,7 +14,7 @@ const FeedList: FC<PropsType> = props => {
   return (
     <FlatList
       data={props.articles}
-      renderItem={({item}) => <Feed article={item} />}
+      renderItem={({ item }) => <Feed article={item} />}
       keyExtractor={item => item.slug}
       ItemSeparatorComponent={() => <Separator />}
     />

@@ -7,7 +7,7 @@ import { useRouter } from 'next/router';
 import React, { FC } from 'react';
 import styled from 'styled-components';
 import tw from 'twin.macro';
-import marked from 'marked';
+import { marked } from 'marked';
 import DOMPurify from 'isomorphic-dompurify';
 
 import Avatar from 'src/components/atoms/avatar/Avatar';

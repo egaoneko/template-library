@@ -1,17 +1,589 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Article Snapshots renders article after login 1`] = `
+.c37 {
+  width: 100%;
+  position: absolute;
+  bottom: 0px;
+  margin-top: 3rem;
+  --tw-bg-opacity: 1;
+  background-color: rgba(229,231,235,var(--tw-bg-opacity));
+  padding-left: 3.5rem;
+  padding-right: 3.5rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  font-size: 0.75rem;
+  line-height: 1rem;
+  --tw-text-opacity: 1;
+  color: rgba(156,163,175,var(--tw-text-opacity));
+}
+
+.c38 {
+  color: var(--color-primary);
+}
+
+.c38:hover {
+  color: var(--color-secondary);
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+}
+
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.c5 {
+  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  border-radius: 9999px;
+}
+
+.c6 {
+  border-radius: 9999px;
+}
+
+.c1 {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.c2 {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.c3 {
+  font-weight: 700;
+  font-size: 1.5rem;
+  line-height: 2rem;
+  color: var(--color-primary);
+  font-family: ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c0 {
+  width: 100%;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.c7 {
+  max-width: 100%;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  padding-left: 4rem;
+  padding-right: 4rem;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  background-color: #333;
+}
+
+.c8 {
+  font-weight: 600;
+  font-size: 3rem;
+  line-height: 1;
+  --tw-text-opacity: 1;
+  color: rgba(255,255,255,var(--tw-text-opacity));
+  font-family: ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+  padding-bottom: 0.5rem;
+}
+
+.c9 {
+  width: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  margin-top: 1.5rem;
+}
+
+.c10 {
+  width: auto;
+  margin-left: 0.375rem;
+  margin-right: 1.5rem;
+}
+
+.c11 {
+  --tw-text-opacity: 1;
+  color: rgba(255,255,255,var(--tw-text-opacity));
+}
+
+.c11:hover {
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+}
+
+.c12 {
+  font-size: 0.75rem;
+  line-height: 1rem;
+  --tw-text-opacity: 1;
+  color: rgba(156,163,175,var(--tw-text-opacity));
+}
+
+.c13 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  cursor: pointer;
+  width: 6rem;
+  height: 1.75rem;
+  border-width: 1px;
+  --tw-border-opacity: 1;
+  border-color: rgba(156,163,175,var(--tw-border-opacity));
+  border-radius: 0.25rem;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  --tw-text-opacity: 1;
+  color: rgba(156,163,175,var(--tw-text-opacity));
+}
+
+.c13:hover {
+  --tw-text-opacity: 1;
+  color: rgba(255,255,255,var(--tw-text-opacity));
+  --tw-bg-opacity: 1;
+  background-color: rgba(156,163,175,var(--tw-bg-opacity));
+}
+
+.c14 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  cursor: pointer;
+  width: 7rem;
+  height: 1.75rem;
+  border-width: 1px;
+  --tw-border-opacity: 1;
+  border-color: rgba(185,28,28,var(--tw-border-opacity));
+  border-radius: 0.25rem;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  margin-left: 0.25rem;
+  --tw-text-opacity: 1;
+  color: rgba(185,28,28,var(--tw-text-opacity));
+}
+
+.c14:hover {
+  --tw-text-opacity: 1;
+  color: rgba(255,255,255,var(--tw-text-opacity));
+  --tw-bg-opacity: 1;
+  background-color: rgba(185,28,28,var(--tw-bg-opacity));
+}
+
+.c15 {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.c16 {
+  width: 100%;
+}
+
+.c17 {
+  width: 100%;
+  margin-bottom: 2rem;
+}
+
+.c18 {
+  margin-bottom: 1rem;
+  vertical-align: top;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  max-width: 50%;
+}
+
+.c19 {
+  font-size: 0.75rem;
+  line-height: 1;
+  --tw-text-opacity: 1;
+  color: rgba(156,163,175,var(--tw-text-opacity));
+  font-weight: 300;
+  white-space: nowrap;
+  border-width: 1px;
+  --tw-border-opacity: 1;
+  border-color: rgba(156,163,175,var(--tw-border-opacity));
+  border-radius: 9999px;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding: 4px 10px;
+  margin-right: 3px;
+}
+
+.c20 {
+  width: 100%;
+  margin-top: 1.5rem;
+  margin-bottom: 3rem;
+  text-align: center;
+}
+
+.c21 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c22 {
+  width: auto;
+  margin-left: 0.375rem;
+  margin-right: 1.5rem;
+}
+
+.c23 {
+  color: var(--color-primary);
+}
+
+.c23:hover {
+  color: var(--color-secondary);
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+}
+
+.c24 {
+  font-size: 0.75rem;
+  line-height: 1rem;
+  --tw-text-opacity: 1;
+  color: rgba(156,163,175,var(--tw-text-opacity));
+}
+
+.c25 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  cursor: pointer;
+  width: 6rem;
+  height: 1.75rem;
+  border-width: 1px;
+  --tw-border-opacity: 1;
+  border-color: rgba(156,163,175,var(--tw-border-opacity));
+  border-radius: 0.25rem;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  --tw-text-opacity: 1;
+  color: rgba(156,163,175,var(--tw-text-opacity));
+}
+
+.c25:hover {
+  --tw-text-opacity: 1;
+  color: rgba(255,255,255,var(--tw-text-opacity));
+  --tw-bg-opacity: 1;
+  background-color: rgba(156,163,175,var(--tw-bg-opacity));
+}
+
+.c26 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  cursor: pointer;
+  width: 7rem;
+  height: 1.75rem;
+  border-width: 1px;
+  --tw-border-opacity: 1;
+  border-color: rgba(185,28,28,var(--tw-border-opacity));
+  border-radius: 0.25rem;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  margin-left: 0.25rem;
+  --tw-text-opacity: 1;
+  color: rgba(185,28,28,var(--tw-text-opacity));
+}
+
+.c26:hover {
+  --tw-text-opacity: 1;
+  color: rgba(255,255,255,var(--tw-text-opacity));
+  --tw-bg-opacity: 1;
+  background-color: rgba(185,28,28,var(--tw-bg-opacity));
+}
+
+.c27 {
+  width: 83.333333%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.c28 {
+  width: 100%;
+}
+
+.c29 {
+  width: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+  --tw-bg-opacity: 1;
+  background-color: rgba(243,244,246,var(--tw-bg-opacity));
+  border-width: 1px;
+  border-top-width: 0px;
+  --tw-border-opacity: 1;
+  border-color: rgba(209,213,219,var(--tw-border-opacity));
+  border-bottom-left-radius: 0.375rem;
+  border-bottom-right-radius: 0.375rem;
+}
+
+.c30 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.c31 {
+  font-size: 0.75rem;
+  line-height: 1rem;
+  color: var(--color-primary);
+}
+
+.c31:hover {
+  color: var(--color-secondary);
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+}
+
+.c35 {
+  font-size: 0.75rem;
+  line-height: 1rem;
+  --tw-text-opacity: 1;
+  color: rgba(156,163,175,var(--tw-text-opacity));
+}
+
+.c32 {
+  width: 100%;
+  border-width: 1px;
+  --tw-border-opacity: 1;
+  border-color: rgba(209,213,219,var(--tw-border-opacity));
+  border-radius: 0.375rem;
+  margin-top: 0.75rem;
+}
+
+.c33 {
+  width: 100%;
+  padding: 1.25rem;
+}
+
+.c34 {
+  width: 100%;
+  --tw-bg-opacity: 1;
+  background-color: rgba(243,244,246,var(--tw-bg-opacity));
+  border-top-width: 1px;
+  --tw-border-opacity: 1;
+  border-color: rgba(209,213,219,var(--tw-border-opacity));
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+}
+
+.c36 {
+  width: 1rem;
+  height: 1rem;
+  font-size: 0.75rem;
+  line-height: 1rem;
+  --tw-text-opacity: 1;
+  color: rgba(156,163,175,var(--tw-text-opacity));
+  margin-left: auto;
+  cursor: pointer;
+}
+
+@media (min-width:640px) {
+  .c1 {
+    max-width: 640px;
+  }
+}
+
+@media (min-width:768px) {
+  .c1 {
+    max-width: 768px;
+  }
+}
+
+@media (min-width:1024px) {
+  .c1 {
+    max-width: 1024px;
+  }
+}
+
+@media (min-width:1280px) {
+  .c1 {
+    max-width: 1280px;
+  }
+}
+
+@media (min-width:1536px) {
+  .c1 {
+    max-width: 1536px;
+  }
+}
+
+@media (min-width:640px) {
+  .c15 {
+    max-width: 640px;
+  }
+}
+
+@media (min-width:768px) {
+  .c15 {
+    max-width: 768px;
+  }
+}
+
+@media (min-width:1024px) {
+  .c15 {
+    max-width: 1024px;
+  }
+}
+
+@media (min-width:1280px) {
+  .c15 {
+    max-width: 1280px;
+  }
+}
+
+@media (min-width:1536px) {
+  .c15 {
+    max-width: 1536px;
+  }
+}
+
+@media (min-width:640px) {
+  .c27 {
+    width: 91.666667%;
+  }
+}
+
 <div
-  className="BaseLayoutTemplate__Container-sc-1jz5xvr-0 kHMSW"
+  className="c0"
 >
   <div
-    className="HeaderTemplate__Container-sc-kdla34-0 gxnUkb"
+    className="c1"
   >
     <div
-      className="HeaderTemplate__Heading-sc-kdla34-1 lcHwtI"
+      className="c2"
     >
       <div
-        className="HeaderTemplate__HeadingTitle-sc-kdla34-2 ibfQih"
+        className="c3"
         data-cy="header-logo-link"
       >
         <a
@@ -135,10 +707,10 @@ exports[`Article Snapshots renders article after login 1`] = `
                 className="flex items-center gap-1"
               >
                 <div
-                  className="Avatar__Wrapper-sc-m9feoe-0 ieHczv"
+                  className="c4"
                 >
                   <div
-                    className="Avatar__Container-sc-m9feoe-1 fQHyzl w-5 h-5"
+                    className="c5 w-5 h-5"
                   >
                     <span
                       style={
@@ -163,7 +735,7 @@ exports[`Article Snapshots renders article after login 1`] = `
                     >
                       <img
                         alt="avatar"
-                        className="Avatar__Img-sc-m9feoe-2 kuaPdK rounded-full"
+                        className="c6 rounded-full"
                         data-nimg="fill"
                         decoding="async"
                         src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
@@ -193,7 +765,7 @@ exports[`Article Snapshots renders article after login 1`] = `
                       <noscript>
                         <img
                           alt="avatar"
-                          className="Avatar__Img-sc-m9feoe-2 kuaPdK rounded-full"
+                          className="c6 rounded-full"
                           data-nimg="fill"
                           decoding="async"
                           loading="lazy"
@@ -236,23 +808,23 @@ exports[`Article Snapshots renders article after login 1`] = `
     </div>
   </div>
   <div
-    className="ArticleBannerTemplate__Container-sc-1dyvdkl-0 mMMhf"
+    className="c7"
   >
     <h1
-      className="ArticleBannerTemplate__Title-sc-1dyvdkl-1 gPlBoW"
+      className="c8"
       data-cy="article-title"
     >
       How to train your dragon
     </h1>
     <div
-      className="ArticleBannerTemplate__AuthorContainer-sc-1dyvdkl-2 grnMls"
+      className="c9"
     >
       <div
-        className="Avatar__Wrapper-sc-m9feoe-0 ieHczv"
+        className="c4"
         data-cy="article-banner-author-image"
       >
         <div
-          className="Avatar__Container-sc-m9feoe-1 fQHyzl w-8 h-8"
+          className="c5 w-8 h-8"
         >
           <span
             style={
@@ -277,7 +849,7 @@ exports[`Article Snapshots renders article after login 1`] = `
           >
             <img
               alt="avatar"
-              className="Avatar__Img-sc-m9feoe-2 kuaPdK rounded-full"
+              className="c6 rounded-full"
               data-nimg="fill"
               decoding="async"
               src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
@@ -307,7 +879,7 @@ exports[`Article Snapshots renders article after login 1`] = `
             <noscript>
               <img
                 alt="avatar"
-                className="Avatar__Img-sc-m9feoe-2 kuaPdK rounded-full"
+                className="c6 rounded-full"
                 data-nimg="fill"
                 decoding="async"
                 loading="lazy"
@@ -342,10 +914,10 @@ exports[`Article Snapshots renders article after login 1`] = `
         </div>
       </div>
       <div
-        className="ArticleBannerTemplate__AuthorInfo-sc-1dyvdkl-3 vJafv"
+        className="c10"
       >
         <div
-          className="ArticleBannerTemplate__AuthorName-sc-1dyvdkl-4 hRfpXK"
+          className="c11"
           data-cy="article-banner-author-username"
         >
           <a
@@ -357,14 +929,14 @@ exports[`Article Snapshots renders article after login 1`] = `
           </a>
         </div>
         <div
-          className="ArticleBannerTemplate__AuthorDate-sc-1dyvdkl-5 hgaxyC"
+          className="c12"
           data-cy="article-banner-author-date"
         >
           Thu Feb 18 2016
         </div>
       </div>
       <div
-        className="ArticleBannerTemplate__Edit-sc-1dyvdkl-6 gphpPy"
+        className="c13"
         data-cy="article-banner-edit-article"
         onClick={[Function]}
       >
@@ -395,7 +967,7 @@ exports[`Article Snapshots renders article after login 1`] = `
         </div>
       </div>
       <div
-        className="ArticleBannerTemplate__Delete-sc-1dyvdkl-7 gdRmYW"
+        className="c14"
         data-cy="article-banner-delete-article"
         onClick={[Function]}
       >
@@ -431,13 +1003,13 @@ exports[`Article Snapshots renders article after login 1`] = `
     className="container mx-auto mt-8"
   >
     <div
-      className="ArticleContentTemplate__Container-sc-1w2hr4z-0 dVYMDK"
+      className="c15"
     >
       <div
-        className="ArticleContentTemplate__Content-sc-1w2hr4z-1 YRUEt"
+        className="c16"
       >
         <div
-          className="ArticleContentTemplate__Body-sc-1w2hr4z-2 fhrHRP"
+          className="c17"
           dangerouslySetInnerHTML={
             Object {
               "__html": "<p>It takes a <strong>Jacobian</strong></p>
@@ -447,16 +1019,16 @@ exports[`Article Snapshots renders article after login 1`] = `
           data-cy="article-content-body"
         />
         <div
-          className="ArticleContentTemplate__Tags-sc-1w2hr4z-3 fldydI"
+          className="c18"
         >
           <div
-            className="ArticleContentTemplate__Tag-sc-1w2hr4z-4 kXzBAF"
+            className="c19"
             data-cy="article-content-tags"
           >
             dragons
           </div>
           <div
-            className="ArticleContentTemplate__Tag-sc-1w2hr4z-4 kXzBAF"
+            className="c19"
             data-cy="article-content-tags"
           >
             training
@@ -465,17 +1037,17 @@ exports[`Article Snapshots renders article after login 1`] = `
         <hr />
       </div>
       <div
-        className="ArticleContentTemplate__AuthorWrapper-sc-1w2hr4z-5 iwOlyQ"
+        className="c20"
       >
         <div
-          className="ArticleContentTemplate__AuthorContainer-sc-1w2hr4z-6 bbHJrT"
+          className="c21"
         >
           <div
-            className="Avatar__Wrapper-sc-m9feoe-0 ieHczv"
+            className="c4"
             data-cy="article-content-author-image"
           >
             <div
-              className="Avatar__Container-sc-m9feoe-1 fQHyzl w-8 h-8"
+              className="c5 w-8 h-8"
             >
               <span
                 style={
@@ -500,7 +1072,7 @@ exports[`Article Snapshots renders article after login 1`] = `
               >
                 <img
                   alt="avatar"
-                  className="Avatar__Img-sc-m9feoe-2 kuaPdK rounded-full"
+                  className="c6 rounded-full"
                   data-nimg="fill"
                   decoding="async"
                   src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
@@ -530,7 +1102,7 @@ exports[`Article Snapshots renders article after login 1`] = `
                 <noscript>
                   <img
                     alt="avatar"
-                    className="Avatar__Img-sc-m9feoe-2 kuaPdK rounded-full"
+                    className="c6 rounded-full"
                     data-nimg="fill"
                     decoding="async"
                     loading="lazy"
@@ -565,10 +1137,10 @@ exports[`Article Snapshots renders article after login 1`] = `
             </div>
           </div>
           <div
-            className="ArticleContentTemplate__AuthorInfo-sc-1w2hr4z-7 bLLNsb"
+            className="c22"
           >
             <div
-              className="ArticleContentTemplate__AuthorName-sc-1w2hr4z-8 jGILIF"
+              className="c23"
               data-cy="article-content-author-username"
             >
               <a
@@ -580,14 +1152,14 @@ exports[`Article Snapshots renders article after login 1`] = `
               </a>
             </div>
             <div
-              className="ArticleContentTemplate__AuthorDate-sc-1w2hr4z-9 jWCDpi"
+              className="c24"
               data-cy="article-content-author-date"
             >
               Thu Feb 18 2016
             </div>
           </div>
           <div
-            className="ArticleContentTemplate__Edit-sc-1w2hr4z-10 jOxZjl"
+            className="c25"
             data-cy="article-content-edit-article"
             onClick={[Function]}
           >
@@ -618,7 +1190,7 @@ exports[`Article Snapshots renders article after login 1`] = `
             </div>
           </div>
           <div
-            className="ArticleContentTemplate__Delete-sc-1w2hr4z-11 gQRCxF"
+            className="c26"
             data-cy="article-content-delete-article"
             onClick={[Function]}
           >
@@ -652,10 +1224,10 @@ exports[`Article Snapshots renders article after login 1`] = `
       </div>
     </div>
     <div
-      className="ArticleCommentTemplate__Container-sc-13m5pqz-0 jICGMo"
+      className="c27"
     >
       <div
-        className="ArticleCommentTemplate__FormContainer-sc-13m5pqz-1 eZsDPK"
+        className="c28"
         data-cy="comment-form-container"
       >
         <form
@@ -677,17 +1249,17 @@ exports[`Article Snapshots renders article after login 1`] = `
               />
             </div>
             <div
-              className="ArticleCommentTemplate__FormInfo-sc-13m5pqz-2 epaAxf"
+              className="c29"
             >
               <div
-                className="ArticleCommentTemplate__AuthorContainer-sc-13m5pqz-3 fKSqan"
+                className="c30"
               >
                 <div
-                  className="Avatar__Wrapper-sc-m9feoe-0 ieHczv"
+                  className="c4"
                   data-cy="comment-form-user-image"
                 >
                   <div
-                    className="Avatar__Container-sc-m9feoe-1 fQHyzl w-5 h-5"
+                    className="c5 w-5 h-5"
                   >
                     <span
                       style={
@@ -712,7 +1284,7 @@ exports[`Article Snapshots renders article after login 1`] = `
                     >
                       <img
                         alt="avatar"
-                        className="Avatar__Img-sc-m9feoe-2 kuaPdK rounded-full"
+                        className="c6 rounded-full"
                         data-nimg="fill"
                         decoding="async"
                         src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
@@ -742,7 +1314,7 @@ exports[`Article Snapshots renders article after login 1`] = `
                       <noscript>
                         <img
                           alt="avatar"
-                          className="Avatar__Img-sc-m9feoe-2 kuaPdK rounded-full"
+                          className="c6 rounded-full"
                           data-nimg="fill"
                           decoding="async"
                           loading="lazy"
@@ -777,7 +1349,7 @@ exports[`Article Snapshots renders article after login 1`] = `
                   </div>
                 </div>
                 <div
-                  className="ArticleCommentTemplate__AuthorName-sc-13m5pqz-4 btcmKz"
+                  className="c31"
                   data-cy="comment-form-user-username"
                 >
                   <a
@@ -802,27 +1374,27 @@ exports[`Article Snapshots renders article after login 1`] = `
         </form>
       </div>
       <div
-        className="ArticleCommentTemplate__CommentContainer-sc-13m5pqz-6 bjvmNj"
+        className="c32"
         data-cy="comment-container"
       >
         <div
-          className="ArticleCommentTemplate__CommentBody-sc-13m5pqz-7 dxnfTl"
+          className="c33"
           data-cy="comment-body"
         >
           It takes a Jacobian
         </div>
         <div
-          className="ArticleCommentTemplate__CommentInfo-sc-13m5pqz-8 cSYSkx"
+          className="c34"
         >
           <div
-            className="ArticleCommentTemplate__AuthorContainer-sc-13m5pqz-3 fKSqan"
+            className="c30"
           >
             <div
-              className="Avatar__Wrapper-sc-m9feoe-0 ieHczv"
+              className="c4"
               data-cy="comment-author-image"
             >
               <div
-                className="Avatar__Container-sc-m9feoe-1 fQHyzl w-5 h-5"
+                className="c5 w-5 h-5"
               >
                 <span
                   style={
@@ -847,7 +1419,7 @@ exports[`Article Snapshots renders article after login 1`] = `
                 >
                   <img
                     alt="avatar"
-                    className="Avatar__Img-sc-m9feoe-2 kuaPdK rounded-full"
+                    className="c6 rounded-full"
                     data-nimg="fill"
                     decoding="async"
                     src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
@@ -877,7 +1449,7 @@ exports[`Article Snapshots renders article after login 1`] = `
                   <noscript>
                     <img
                       alt="avatar"
-                      className="Avatar__Img-sc-m9feoe-2 kuaPdK rounded-full"
+                      className="c6 rounded-full"
                       data-nimg="fill"
                       decoding="async"
                       loading="lazy"
@@ -912,7 +1484,7 @@ exports[`Article Snapshots renders article after login 1`] = `
               </div>
             </div>
             <div
-              className="ArticleCommentTemplate__AuthorName-sc-13m5pqz-4 btcmKz"
+              className="c31"
               data-cy="comment-author-username"
             >
               <a
@@ -924,14 +1496,14 @@ exports[`Article Snapshots renders article after login 1`] = `
               </a>
             </div>
             <div
-              className="ArticleCommentTemplate__AuthorDate-sc-13m5pqz-5 djbjWJ"
+              className="c35"
               data-cy="comment-author-date"
             >
               Thu Feb 18 2016
             </div>
           </div>
           <div
-            className="ArticleCommentTemplate__CommentDeleteButton-sc-13m5pqz-9 fEmsMv"
+            className="c36"
             data-cy="comment-delete-button"
             onClick={[Function]}
           >
@@ -957,27 +1529,27 @@ exports[`Article Snapshots renders article after login 1`] = `
         </div>
       </div>
       <div
-        className="ArticleCommentTemplate__CommentContainer-sc-13m5pqz-6 bjvmNj"
+        className="c32"
         data-cy="comment-container"
       >
         <div
-          className="ArticleCommentTemplate__CommentBody-sc-13m5pqz-7 dxnfTl"
+          className="c33"
           data-cy="comment-body"
         >
           It takes a Jacobian 2
         </div>
         <div
-          className="ArticleCommentTemplate__CommentInfo-sc-13m5pqz-8 cSYSkx"
+          className="c34"
         >
           <div
-            className="ArticleCommentTemplate__AuthorContainer-sc-13m5pqz-3 fKSqan"
+            className="c30"
           >
             <div
-              className="Avatar__Wrapper-sc-m9feoe-0 ieHczv"
+              className="c4"
               data-cy="comment-author-image"
             >
               <div
-                className="Avatar__Container-sc-m9feoe-1 fQHyzl w-5 h-5"
+                className="c5 w-5 h-5"
               >
                 <span
                   style={
@@ -1002,7 +1574,7 @@ exports[`Article Snapshots renders article after login 1`] = `
                 >
                   <img
                     alt="avatar"
-                    className="Avatar__Img-sc-m9feoe-2 kuaPdK rounded-full"
+                    className="c6 rounded-full"
                     data-nimg="fill"
                     decoding="async"
                     src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
@@ -1032,7 +1604,7 @@ exports[`Article Snapshots renders article after login 1`] = `
                   <noscript>
                     <img
                       alt="avatar"
-                      className="Avatar__Img-sc-m9feoe-2 kuaPdK rounded-full"
+                      className="c6 rounded-full"
                       data-nimg="fill"
                       decoding="async"
                       loading="lazy"
@@ -1067,7 +1639,7 @@ exports[`Article Snapshots renders article after login 1`] = `
               </div>
             </div>
             <div
-              className="ArticleCommentTemplate__AuthorName-sc-13m5pqz-4 btcmKz"
+              className="c31"
               data-cy="comment-author-username"
             >
               <a
@@ -1079,7 +1651,7 @@ exports[`Article Snapshots renders article after login 1`] = `
               </a>
             </div>
             <div
-              className="ArticleCommentTemplate__AuthorDate-sc-13m5pqz-5 djbjWJ"
+              className="c35"
               data-cy="comment-author-date"
             >
               Thu Feb 18 2016
@@ -1090,10 +1662,10 @@ exports[`Article Snapshots renders article after login 1`] = `
     </div>
   </div>
   <div
-    className="FooterTemplate__Container-sc-96wla6-0 cOGJUH"
+    className="c37"
   >
     <span
-      className="FooterTemplate__SiteLink-sc-96wla6-1 ENejy text-base mr-1 font-bold"
+      className="c38 text-base mr-1 font-bold"
       data-cy="footer-logo-link"
       href="/"
       onClick={[Function]}
@@ -1103,7 +1675,7 @@ exports[`Article Snapshots renders article after login 1`] = `
     </span>
     © 2020. An interactive learning project from
     <span
-      className="FooterTemplate__SiteLink-sc-96wla6-1 ENejy ml-1"
+      className="c38 ml-1"
       data-cy="footer-site-link"
       href="https://thinkster.io/"
       onClick={[Function]}
@@ -1117,17 +1689,589 @@ exports[`Article Snapshots renders article after login 1`] = `
 `;
 
 exports[`Article Snapshots renders article after login with other article 1`] = `
+.c37 {
+  width: 100%;
+  position: absolute;
+  bottom: 0px;
+  margin-top: 3rem;
+  --tw-bg-opacity: 1;
+  background-color: rgba(229,231,235,var(--tw-bg-opacity));
+  padding-left: 3.5rem;
+  padding-right: 3.5rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  font-size: 0.75rem;
+  line-height: 1rem;
+  --tw-text-opacity: 1;
+  color: rgba(156,163,175,var(--tw-text-opacity));
+}
+
+.c38 {
+  color: var(--color-primary);
+}
+
+.c38:hover {
+  color: var(--color-secondary);
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+}
+
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.c5 {
+  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  border-radius: 9999px;
+}
+
+.c6 {
+  border-radius: 9999px;
+}
+
+.c1 {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.c2 {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.c3 {
+  font-weight: 700;
+  font-size: 1.5rem;
+  line-height: 2rem;
+  color: var(--color-primary);
+  font-family: ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c0 {
+  width: 100%;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.c7 {
+  max-width: 100%;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  padding-left: 4rem;
+  padding-right: 4rem;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  background-color: #333;
+}
+
+.c8 {
+  font-weight: 600;
+  font-size: 3rem;
+  line-height: 1;
+  --tw-text-opacity: 1;
+  color: rgba(255,255,255,var(--tw-text-opacity));
+  font-family: ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+  padding-bottom: 0.5rem;
+}
+
+.c9 {
+  width: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  margin-top: 1.5rem;
+}
+
+.c10 {
+  width: auto;
+  margin-left: 0.375rem;
+  margin-right: 1.5rem;
+}
+
+.c11 {
+  --tw-text-opacity: 1;
+  color: rgba(255,255,255,var(--tw-text-opacity));
+}
+
+.c11:hover {
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+}
+
+.c12 {
+  font-size: 0.75rem;
+  line-height: 1rem;
+  --tw-text-opacity: 1;
+  color: rgba(156,163,175,var(--tw-text-opacity));
+}
+
+.c13 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  cursor: pointer;
+  width: 6rem;
+  height: 1.75rem;
+  border-width: 1px;
+  --tw-border-opacity: 1;
+  border-color: rgba(156,163,175,var(--tw-border-opacity));
+  border-radius: 0.25rem;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  --tw-text-opacity: 1;
+  color: rgba(156,163,175,var(--tw-text-opacity));
+}
+
+.c13:hover {
+  --tw-text-opacity: 1;
+  color: rgba(255,255,255,var(--tw-text-opacity));
+  --tw-bg-opacity: 1;
+  background-color: rgba(156,163,175,var(--tw-bg-opacity));
+}
+
+.c14 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  cursor: pointer;
+  width: 7rem;
+  height: 1.75rem;
+  border-width: 1px;
+  --tw-border-opacity: 1;
+  border-color: rgba(185,28,28,var(--tw-border-opacity));
+  border-radius: 0.25rem;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  margin-left: 0.25rem;
+  --tw-text-opacity: 1;
+  color: rgba(185,28,28,var(--tw-text-opacity));
+}
+
+.c14:hover {
+  --tw-text-opacity: 1;
+  color: rgba(255,255,255,var(--tw-text-opacity));
+  --tw-bg-opacity: 1;
+  background-color: rgba(185,28,28,var(--tw-bg-opacity));
+}
+
+.c15 {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.c16 {
+  width: 100%;
+}
+
+.c17 {
+  width: 100%;
+  margin-bottom: 2rem;
+}
+
+.c18 {
+  margin-bottom: 1rem;
+  vertical-align: top;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  max-width: 50%;
+}
+
+.c19 {
+  font-size: 0.75rem;
+  line-height: 1;
+  --tw-text-opacity: 1;
+  color: rgba(156,163,175,var(--tw-text-opacity));
+  font-weight: 300;
+  white-space: nowrap;
+  border-width: 1px;
+  --tw-border-opacity: 1;
+  border-color: rgba(156,163,175,var(--tw-border-opacity));
+  border-radius: 9999px;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding: 4px 10px;
+  margin-right: 3px;
+}
+
+.c20 {
+  width: 100%;
+  margin-top: 1.5rem;
+  margin-bottom: 3rem;
+  text-align: center;
+}
+
+.c21 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c22 {
+  width: auto;
+  margin-left: 0.375rem;
+  margin-right: 1.5rem;
+}
+
+.c23 {
+  color: var(--color-primary);
+}
+
+.c23:hover {
+  color: var(--color-secondary);
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+}
+
+.c24 {
+  font-size: 0.75rem;
+  line-height: 1rem;
+  --tw-text-opacity: 1;
+  color: rgba(156,163,175,var(--tw-text-opacity));
+}
+
+.c25 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  cursor: pointer;
+  width: 6rem;
+  height: 1.75rem;
+  border-width: 1px;
+  --tw-border-opacity: 1;
+  border-color: rgba(156,163,175,var(--tw-border-opacity));
+  border-radius: 0.25rem;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  --tw-text-opacity: 1;
+  color: rgba(156,163,175,var(--tw-text-opacity));
+}
+
+.c25:hover {
+  --tw-text-opacity: 1;
+  color: rgba(255,255,255,var(--tw-text-opacity));
+  --tw-bg-opacity: 1;
+  background-color: rgba(156,163,175,var(--tw-bg-opacity));
+}
+
+.c26 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  cursor: pointer;
+  width: 7rem;
+  height: 1.75rem;
+  border-width: 1px;
+  --tw-border-opacity: 1;
+  border-color: rgba(185,28,28,var(--tw-border-opacity));
+  border-radius: 0.25rem;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  margin-left: 0.25rem;
+  --tw-text-opacity: 1;
+  color: rgba(185,28,28,var(--tw-text-opacity));
+}
+
+.c26:hover {
+  --tw-text-opacity: 1;
+  color: rgba(255,255,255,var(--tw-text-opacity));
+  --tw-bg-opacity: 1;
+  background-color: rgba(185,28,28,var(--tw-bg-opacity));
+}
+
+.c27 {
+  width: 83.333333%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.c28 {
+  width: 100%;
+}
+
+.c29 {
+  width: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+  --tw-bg-opacity: 1;
+  background-color: rgba(243,244,246,var(--tw-bg-opacity));
+  border-width: 1px;
+  border-top-width: 0px;
+  --tw-border-opacity: 1;
+  border-color: rgba(209,213,219,var(--tw-border-opacity));
+  border-bottom-left-radius: 0.375rem;
+  border-bottom-right-radius: 0.375rem;
+}
+
+.c30 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.c31 {
+  font-size: 0.75rem;
+  line-height: 1rem;
+  color: var(--color-primary);
+}
+
+.c31:hover {
+  color: var(--color-secondary);
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+}
+
+.c35 {
+  font-size: 0.75rem;
+  line-height: 1rem;
+  --tw-text-opacity: 1;
+  color: rgba(156,163,175,var(--tw-text-opacity));
+}
+
+.c32 {
+  width: 100%;
+  border-width: 1px;
+  --tw-border-opacity: 1;
+  border-color: rgba(209,213,219,var(--tw-border-opacity));
+  border-radius: 0.375rem;
+  margin-top: 0.75rem;
+}
+
+.c33 {
+  width: 100%;
+  padding: 1.25rem;
+}
+
+.c34 {
+  width: 100%;
+  --tw-bg-opacity: 1;
+  background-color: rgba(243,244,246,var(--tw-bg-opacity));
+  border-top-width: 1px;
+  --tw-border-opacity: 1;
+  border-color: rgba(209,213,219,var(--tw-border-opacity));
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+}
+
+.c36 {
+  width: 1rem;
+  height: 1rem;
+  font-size: 0.75rem;
+  line-height: 1rem;
+  --tw-text-opacity: 1;
+  color: rgba(156,163,175,var(--tw-text-opacity));
+  margin-left: auto;
+  cursor: pointer;
+}
+
+@media (min-width:640px) {
+  .c1 {
+    max-width: 640px;
+  }
+}
+
+@media (min-width:768px) {
+  .c1 {
+    max-width: 768px;
+  }
+}
+
+@media (min-width:1024px) {
+  .c1 {
+    max-width: 1024px;
+  }
+}
+
+@media (min-width:1280px) {
+  .c1 {
+    max-width: 1280px;
+  }
+}
+
+@media (min-width:1536px) {
+  .c1 {
+    max-width: 1536px;
+  }
+}
+
+@media (min-width:640px) {
+  .c15 {
+    max-width: 640px;
+  }
+}
+
+@media (min-width:768px) {
+  .c15 {
+    max-width: 768px;
+  }
+}
+
+@media (min-width:1024px) {
+  .c15 {
+    max-width: 1024px;
+  }
+}
+
+@media (min-width:1280px) {
+  .c15 {
+    max-width: 1280px;
+  }
+}
+
+@media (min-width:1536px) {
+  .c15 {
+    max-width: 1536px;
+  }
+}
+
+@media (min-width:640px) {
+  .c27 {
+    width: 91.666667%;
+  }
+}
+
 <div
-  className="BaseLayoutTemplate__Container-sc-1jz5xvr-0 kHMSW"
+  className="c0"
 >
   <div
-    className="HeaderTemplate__Container-sc-kdla34-0 gxnUkb"
+    className="c1"
   >
     <div
-      className="HeaderTemplate__Heading-sc-kdla34-1 lcHwtI"
+      className="c2"
     >
       <div
-        className="HeaderTemplate__HeadingTitle-sc-kdla34-2 ibfQih"
+        className="c3"
         data-cy="header-logo-link"
       >
         <a
@@ -1251,10 +2395,10 @@ exports[`Article Snapshots renders article after login with other article 1`] = 
                 className="flex items-center gap-1"
               >
                 <div
-                  className="Avatar__Wrapper-sc-m9feoe-0 ieHczv"
+                  className="c4"
                 >
                   <div
-                    className="Avatar__Container-sc-m9feoe-1 fQHyzl w-5 h-5"
+                    className="c5 w-5 h-5"
                   >
                     <span
                       style={
@@ -1279,7 +2423,7 @@ exports[`Article Snapshots renders article after login with other article 1`] = 
                     >
                       <img
                         alt="avatar"
-                        className="Avatar__Img-sc-m9feoe-2 kuaPdK rounded-full"
+                        className="c6 rounded-full"
                         data-nimg="fill"
                         decoding="async"
                         src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
@@ -1309,7 +2453,7 @@ exports[`Article Snapshots renders article after login with other article 1`] = 
                       <noscript>
                         <img
                           alt="avatar"
-                          className="Avatar__Img-sc-m9feoe-2 kuaPdK rounded-full"
+                          className="c6 rounded-full"
                           data-nimg="fill"
                           decoding="async"
                           loading="lazy"
@@ -1352,23 +2496,23 @@ exports[`Article Snapshots renders article after login with other article 1`] = 
     </div>
   </div>
   <div
-    className="ArticleBannerTemplate__Container-sc-1dyvdkl-0 mMMhf"
+    className="c7"
   >
     <h1
-      className="ArticleBannerTemplate__Title-sc-1dyvdkl-1 gPlBoW"
+      className="c8"
       data-cy="article-title"
     >
       How to train your dragon
     </h1>
     <div
-      className="ArticleBannerTemplate__AuthorContainer-sc-1dyvdkl-2 grnMls"
+      className="c9"
     >
       <div
-        className="Avatar__Wrapper-sc-m9feoe-0 ieHczv"
+        className="c4"
         data-cy="article-banner-author-image"
       >
         <div
-          className="Avatar__Container-sc-m9feoe-1 fQHyzl w-8 h-8"
+          className="c5 w-8 h-8"
         >
           <span
             style={
@@ -1393,7 +2537,7 @@ exports[`Article Snapshots renders article after login with other article 1`] = 
           >
             <img
               alt="avatar"
-              className="Avatar__Img-sc-m9feoe-2 kuaPdK rounded-full"
+              className="c6 rounded-full"
               data-nimg="fill"
               decoding="async"
               src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
@@ -1423,7 +2567,7 @@ exports[`Article Snapshots renders article after login with other article 1`] = 
             <noscript>
               <img
                 alt="avatar"
-                className="Avatar__Img-sc-m9feoe-2 kuaPdK rounded-full"
+                className="c6 rounded-full"
                 data-nimg="fill"
                 decoding="async"
                 loading="lazy"
@@ -1458,10 +2602,10 @@ exports[`Article Snapshots renders article after login with other article 1`] = 
         </div>
       </div>
       <div
-        className="ArticleBannerTemplate__AuthorInfo-sc-1dyvdkl-3 vJafv"
+        className="c10"
       >
         <div
-          className="ArticleBannerTemplate__AuthorName-sc-1dyvdkl-4 hRfpXK"
+          className="c11"
           data-cy="article-banner-author-username"
         >
           <a
@@ -1473,14 +2617,14 @@ exports[`Article Snapshots renders article after login with other article 1`] = 
           </a>
         </div>
         <div
-          className="ArticleBannerTemplate__AuthorDate-sc-1dyvdkl-5 hgaxyC"
+          className="c12"
           data-cy="article-banner-author-date"
         >
           Thu Feb 18 2016
         </div>
       </div>
       <div
-        className="ArticleBannerTemplate__Edit-sc-1dyvdkl-6 gphpPy"
+        className="c13"
         data-cy="article-banner-edit-article"
         onClick={[Function]}
       >
@@ -1511,7 +2655,7 @@ exports[`Article Snapshots renders article after login with other article 1`] = 
         </div>
       </div>
       <div
-        className="ArticleBannerTemplate__Delete-sc-1dyvdkl-7 gdRmYW"
+        className="c14"
         data-cy="article-banner-delete-article"
         onClick={[Function]}
       >
@@ -1547,13 +2691,13 @@ exports[`Article Snapshots renders article after login with other article 1`] = 
     className="container mx-auto mt-8"
   >
     <div
-      className="ArticleContentTemplate__Container-sc-1w2hr4z-0 dVYMDK"
+      className="c15"
     >
       <div
-        className="ArticleContentTemplate__Content-sc-1w2hr4z-1 YRUEt"
+        className="c16"
       >
         <div
-          className="ArticleContentTemplate__Body-sc-1w2hr4z-2 fhrHRP"
+          className="c17"
           dangerouslySetInnerHTML={
             Object {
               "__html": "<p>It takes a <strong>Jacobian</strong></p>
@@ -1563,16 +2707,16 @@ exports[`Article Snapshots renders article after login with other article 1`] = 
           data-cy="article-content-body"
         />
         <div
-          className="ArticleContentTemplate__Tags-sc-1w2hr4z-3 fldydI"
+          className="c18"
         >
           <div
-            className="ArticleContentTemplate__Tag-sc-1w2hr4z-4 kXzBAF"
+            className="c19"
             data-cy="article-content-tags"
           >
             dragons
           </div>
           <div
-            className="ArticleContentTemplate__Tag-sc-1w2hr4z-4 kXzBAF"
+            className="c19"
             data-cy="article-content-tags"
           >
             training
@@ -1581,17 +2725,17 @@ exports[`Article Snapshots renders article after login with other article 1`] = 
         <hr />
       </div>
       <div
-        className="ArticleContentTemplate__AuthorWrapper-sc-1w2hr4z-5 iwOlyQ"
+        className="c20"
       >
         <div
-          className="ArticleContentTemplate__AuthorContainer-sc-1w2hr4z-6 bbHJrT"
+          className="c21"
         >
           <div
-            className="Avatar__Wrapper-sc-m9feoe-0 ieHczv"
+            className="c4"
             data-cy="article-content-author-image"
           >
             <div
-              className="Avatar__Container-sc-m9feoe-1 fQHyzl w-8 h-8"
+              className="c5 w-8 h-8"
             >
               <span
                 style={
@@ -1616,7 +2760,7 @@ exports[`Article Snapshots renders article after login with other article 1`] = 
               >
                 <img
                   alt="avatar"
-                  className="Avatar__Img-sc-m9feoe-2 kuaPdK rounded-full"
+                  className="c6 rounded-full"
                   data-nimg="fill"
                   decoding="async"
                   src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
@@ -1646,7 +2790,7 @@ exports[`Article Snapshots renders article after login with other article 1`] = 
                 <noscript>
                   <img
                     alt="avatar"
-                    className="Avatar__Img-sc-m9feoe-2 kuaPdK rounded-full"
+                    className="c6 rounded-full"
                     data-nimg="fill"
                     decoding="async"
                     loading="lazy"
@@ -1681,10 +2825,10 @@ exports[`Article Snapshots renders article after login with other article 1`] = 
             </div>
           </div>
           <div
-            className="ArticleContentTemplate__AuthorInfo-sc-1w2hr4z-7 bLLNsb"
+            className="c22"
           >
             <div
-              className="ArticleContentTemplate__AuthorName-sc-1w2hr4z-8 jGILIF"
+              className="c23"
               data-cy="article-content-author-username"
             >
               <a
@@ -1696,14 +2840,14 @@ exports[`Article Snapshots renders article after login with other article 1`] = 
               </a>
             </div>
             <div
-              className="ArticleContentTemplate__AuthorDate-sc-1w2hr4z-9 jWCDpi"
+              className="c24"
               data-cy="article-content-author-date"
             >
               Thu Feb 18 2016
             </div>
           </div>
           <div
-            className="ArticleContentTemplate__Edit-sc-1w2hr4z-10 jOxZjl"
+            className="c25"
             data-cy="article-content-edit-article"
             onClick={[Function]}
           >
@@ -1734,7 +2878,7 @@ exports[`Article Snapshots renders article after login with other article 1`] = 
             </div>
           </div>
           <div
-            className="ArticleContentTemplate__Delete-sc-1w2hr4z-11 gQRCxF"
+            className="c26"
             data-cy="article-content-delete-article"
             onClick={[Function]}
           >
@@ -1768,10 +2912,10 @@ exports[`Article Snapshots renders article after login with other article 1`] = 
       </div>
     </div>
     <div
-      className="ArticleCommentTemplate__Container-sc-13m5pqz-0 jICGMo"
+      className="c27"
     >
       <div
-        className="ArticleCommentTemplate__FormContainer-sc-13m5pqz-1 eZsDPK"
+        className="c28"
         data-cy="comment-form-container"
       >
         <form
@@ -1793,17 +2937,17 @@ exports[`Article Snapshots renders article after login with other article 1`] = 
               />
             </div>
             <div
-              className="ArticleCommentTemplate__FormInfo-sc-13m5pqz-2 epaAxf"
+              className="c29"
             >
               <div
-                className="ArticleCommentTemplate__AuthorContainer-sc-13m5pqz-3 fKSqan"
+                className="c30"
               >
                 <div
-                  className="Avatar__Wrapper-sc-m9feoe-0 ieHczv"
+                  className="c4"
                   data-cy="comment-form-user-image"
                 >
                   <div
-                    className="Avatar__Container-sc-m9feoe-1 fQHyzl w-5 h-5"
+                    className="c5 w-5 h-5"
                   >
                     <span
                       style={
@@ -1828,7 +2972,7 @@ exports[`Article Snapshots renders article after login with other article 1`] = 
                     >
                       <img
                         alt="avatar"
-                        className="Avatar__Img-sc-m9feoe-2 kuaPdK rounded-full"
+                        className="c6 rounded-full"
                         data-nimg="fill"
                         decoding="async"
                         src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
@@ -1858,7 +3002,7 @@ exports[`Article Snapshots renders article after login with other article 1`] = 
                       <noscript>
                         <img
                           alt="avatar"
-                          className="Avatar__Img-sc-m9feoe-2 kuaPdK rounded-full"
+                          className="c6 rounded-full"
                           data-nimg="fill"
                           decoding="async"
                           loading="lazy"
@@ -1893,7 +3037,7 @@ exports[`Article Snapshots renders article after login with other article 1`] = 
                   </div>
                 </div>
                 <div
-                  className="ArticleCommentTemplate__AuthorName-sc-13m5pqz-4 btcmKz"
+                  className="c31"
                   data-cy="comment-form-user-username"
                 >
                   <a
@@ -1918,27 +3062,27 @@ exports[`Article Snapshots renders article after login with other article 1`] = 
         </form>
       </div>
       <div
-        className="ArticleCommentTemplate__CommentContainer-sc-13m5pqz-6 bjvmNj"
+        className="c32"
         data-cy="comment-container"
       >
         <div
-          className="ArticleCommentTemplate__CommentBody-sc-13m5pqz-7 dxnfTl"
+          className="c33"
           data-cy="comment-body"
         >
           It takes a Jacobian
         </div>
         <div
-          className="ArticleCommentTemplate__CommentInfo-sc-13m5pqz-8 cSYSkx"
+          className="c34"
         >
           <div
-            className="ArticleCommentTemplate__AuthorContainer-sc-13m5pqz-3 fKSqan"
+            className="c30"
           >
             <div
-              className="Avatar__Wrapper-sc-m9feoe-0 ieHczv"
+              className="c4"
               data-cy="comment-author-image"
             >
               <div
-                className="Avatar__Container-sc-m9feoe-1 fQHyzl w-5 h-5"
+                className="c5 w-5 h-5"
               >
                 <span
                   style={
@@ -1963,7 +3107,7 @@ exports[`Article Snapshots renders article after login with other article 1`] = 
                 >
                   <img
                     alt="avatar"
-                    className="Avatar__Img-sc-m9feoe-2 kuaPdK rounded-full"
+                    className="c6 rounded-full"
                     data-nimg="fill"
                     decoding="async"
                     src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
@@ -1993,7 +3137,7 @@ exports[`Article Snapshots renders article after login with other article 1`] = 
                   <noscript>
                     <img
                       alt="avatar"
-                      className="Avatar__Img-sc-m9feoe-2 kuaPdK rounded-full"
+                      className="c6 rounded-full"
                       data-nimg="fill"
                       decoding="async"
                       loading="lazy"
@@ -2028,7 +3172,7 @@ exports[`Article Snapshots renders article after login with other article 1`] = 
               </div>
             </div>
             <div
-              className="ArticleCommentTemplate__AuthorName-sc-13m5pqz-4 btcmKz"
+              className="c31"
               data-cy="comment-author-username"
             >
               <a
@@ -2040,14 +3184,14 @@ exports[`Article Snapshots renders article after login with other article 1`] = 
               </a>
             </div>
             <div
-              className="ArticleCommentTemplate__AuthorDate-sc-13m5pqz-5 djbjWJ"
+              className="c35"
               data-cy="comment-author-date"
             >
               Thu Feb 18 2016
             </div>
           </div>
           <div
-            className="ArticleCommentTemplate__CommentDeleteButton-sc-13m5pqz-9 fEmsMv"
+            className="c36"
             data-cy="comment-delete-button"
             onClick={[Function]}
           >
@@ -2073,27 +3217,27 @@ exports[`Article Snapshots renders article after login with other article 1`] = 
         </div>
       </div>
       <div
-        className="ArticleCommentTemplate__CommentContainer-sc-13m5pqz-6 bjvmNj"
+        className="c32"
         data-cy="comment-container"
       >
         <div
-          className="ArticleCommentTemplate__CommentBody-sc-13m5pqz-7 dxnfTl"
+          className="c33"
           data-cy="comment-body"
         >
           It takes a Jacobian 2
         </div>
         <div
-          className="ArticleCommentTemplate__CommentInfo-sc-13m5pqz-8 cSYSkx"
+          className="c34"
         >
           <div
-            className="ArticleCommentTemplate__AuthorContainer-sc-13m5pqz-3 fKSqan"
+            className="c30"
           >
             <div
-              className="Avatar__Wrapper-sc-m9feoe-0 ieHczv"
+              className="c4"
               data-cy="comment-author-image"
             >
               <div
-                className="Avatar__Container-sc-m9feoe-1 fQHyzl w-5 h-5"
+                className="c5 w-5 h-5"
               >
                 <span
                   style={
@@ -2118,7 +3262,7 @@ exports[`Article Snapshots renders article after login with other article 1`] = 
                 >
                   <img
                     alt="avatar"
-                    className="Avatar__Img-sc-m9feoe-2 kuaPdK rounded-full"
+                    className="c6 rounded-full"
                     data-nimg="fill"
                     decoding="async"
                     src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
@@ -2148,7 +3292,7 @@ exports[`Article Snapshots renders article after login with other article 1`] = 
                   <noscript>
                     <img
                       alt="avatar"
-                      className="Avatar__Img-sc-m9feoe-2 kuaPdK rounded-full"
+                      className="c6 rounded-full"
                       data-nimg="fill"
                       decoding="async"
                       loading="lazy"
@@ -2183,7 +3327,7 @@ exports[`Article Snapshots renders article after login with other article 1`] = 
               </div>
             </div>
             <div
-              className="ArticleCommentTemplate__AuthorName-sc-13m5pqz-4 btcmKz"
+              className="c31"
               data-cy="comment-author-username"
             >
               <a
@@ -2195,7 +3339,7 @@ exports[`Article Snapshots renders article after login with other article 1`] = 
               </a>
             </div>
             <div
-              className="ArticleCommentTemplate__AuthorDate-sc-13m5pqz-5 djbjWJ"
+              className="c35"
               data-cy="comment-author-date"
             >
               Thu Feb 18 2016
@@ -2206,10 +3350,10 @@ exports[`Article Snapshots renders article after login with other article 1`] = 
     </div>
   </div>
   <div
-    className="FooterTemplate__Container-sc-96wla6-0 cOGJUH"
+    className="c37"
   >
     <span
-      className="FooterTemplate__SiteLink-sc-96wla6-1 ENejy text-base mr-1 font-bold"
+      className="c38 text-base mr-1 font-bold"
       data-cy="footer-logo-link"
       href="/"
       onClick={[Function]}
@@ -2219,7 +3363,7 @@ exports[`Article Snapshots renders article after login with other article 1`] = 
     </span>
     © 2020. An interactive learning project from
     <span
-      className="FooterTemplate__SiteLink-sc-96wla6-1 ENejy ml-1"
+      className="c38 ml-1"
       data-cy="footer-site-link"
       href="https://thinkster.io/"
       onClick={[Function]}
@@ -2233,17 +3377,583 @@ exports[`Article Snapshots renders article after login with other article 1`] = 
 `;
 
 exports[`Article Snapshots renders article after login with other user 1`] = `
+.c37 {
+  width: 100%;
+  position: absolute;
+  bottom: 0px;
+  margin-top: 3rem;
+  --tw-bg-opacity: 1;
+  background-color: rgba(229,231,235,var(--tw-bg-opacity));
+  padding-left: 3.5rem;
+  padding-right: 3.5rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  font-size: 0.75rem;
+  line-height: 1rem;
+  --tw-text-opacity: 1;
+  color: rgba(156,163,175,var(--tw-text-opacity));
+}
+
+.c38 {
+  color: var(--color-primary);
+}
+
+.c38:hover {
+  color: var(--color-secondary);
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+}
+
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.c5 {
+  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  border-radius: 9999px;
+}
+
+.c6 {
+  border-radius: 9999px;
+}
+
+.c1 {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.c2 {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.c3 {
+  font-weight: 700;
+  font-size: 1.5rem;
+  line-height: 2rem;
+  color: var(--color-primary);
+  font-family: ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c0 {
+  width: 100%;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.c7 {
+  max-width: 100%;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  padding-left: 4rem;
+  padding-right: 4rem;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  background-color: #333;
+}
+
+.c8 {
+  font-weight: 600;
+  font-size: 3rem;
+  line-height: 1;
+  --tw-text-opacity: 1;
+  color: rgba(255,255,255,var(--tw-text-opacity));
+  font-family: ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+  padding-bottom: 0.5rem;
+}
+
+.c9 {
+  width: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  margin-top: 1.5rem;
+}
+
+.c10 {
+  width: auto;
+  margin-left: 0.375rem;
+  margin-right: 1.5rem;
+}
+
+.c11 {
+  --tw-text-opacity: 1;
+  color: rgba(255,255,255,var(--tw-text-opacity));
+}
+
+.c11:hover {
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+}
+
+.c12 {
+  font-size: 0.75rem;
+  line-height: 1rem;
+  --tw-text-opacity: 1;
+  color: rgba(156,163,175,var(--tw-text-opacity));
+}
+
+.c13 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  cursor: pointer;
+  width: 5rem;
+  height: 1.75rem;
+  border-width: 1px;
+  --tw-border-opacity: 1;
+  border-color: rgba(156,163,175,var(--tw-border-opacity));
+  border-radius: 0.25rem;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  --tw-text-opacity: 1;
+  color: rgba(156,163,175,var(--tw-text-opacity));
+}
+
+.c13:hover {
+  --tw-text-opacity: 1;
+  color: rgba(255,255,255,var(--tw-text-opacity));
+  --tw-bg-opacity: 1;
+  background-color: rgba(156,163,175,var(--tw-bg-opacity));
+}
+
+.c14 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  cursor: pointer;
+  width: 7rem;
+  height: 1.75rem;
+  border-width: 1px;
+  border-color: var(--color-primary);
+  border-radius: 0.25rem;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  margin-left: 0.25rem;
+  color: var(--color-primary);
+}
+
+.c14:hover {
+  --tw-text-opacity: 1;
+  color: rgba(255,255,255,var(--tw-text-opacity));
+  background-color: var(--color-primary);
+}
+
+.c15 {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.c16 {
+  width: 100%;
+}
+
+.c17 {
+  width: 100%;
+  margin-bottom: 2rem;
+}
+
+.c18 {
+  margin-bottom: 1rem;
+  vertical-align: top;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  max-width: 50%;
+}
+
+.c19 {
+  font-size: 0.75rem;
+  line-height: 1;
+  --tw-text-opacity: 1;
+  color: rgba(156,163,175,var(--tw-text-opacity));
+  font-weight: 300;
+  white-space: nowrap;
+  border-width: 1px;
+  --tw-border-opacity: 1;
+  border-color: rgba(156,163,175,var(--tw-border-opacity));
+  border-radius: 9999px;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding: 4px 10px;
+  margin-right: 3px;
+}
+
+.c20 {
+  width: 100%;
+  margin-top: 1.5rem;
+  margin-bottom: 3rem;
+  text-align: center;
+}
+
+.c21 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c22 {
+  width: auto;
+  margin-left: 0.375rem;
+  margin-right: 1.5rem;
+}
+
+.c23 {
+  color: var(--color-primary);
+}
+
+.c23:hover {
+  color: var(--color-secondary);
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+}
+
+.c24 {
+  font-size: 0.75rem;
+  line-height: 1rem;
+  --tw-text-opacity: 1;
+  color: rgba(156,163,175,var(--tw-text-opacity));
+}
+
+.c25 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  cursor: pointer;
+  width: 5rem;
+  height: 1.75rem;
+  border-width: 1px;
+  --tw-border-opacity: 1;
+  border-color: rgba(156,163,175,var(--tw-border-opacity));
+  border-radius: 0.25rem;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  --tw-text-opacity: 1;
+  color: rgba(156,163,175,var(--tw-text-opacity));
+}
+
+.c25:hover {
+  --tw-text-opacity: 1;
+  color: rgba(255,255,255,var(--tw-text-opacity));
+  --tw-bg-opacity: 1;
+  background-color: rgba(156,163,175,var(--tw-bg-opacity));
+}
+
+.c26 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  cursor: pointer;
+  width: 7rem;
+  height: 1.75rem;
+  border-width: 1px;
+  border-color: var(--color-primary);
+  border-radius: 0.25rem;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  margin-left: 0.25rem;
+  color: var(--color-primary);
+}
+
+.c26:hover {
+  --tw-text-opacity: 1;
+  color: rgba(255,255,255,var(--tw-text-opacity));
+  background-color: var(--color-primary);
+}
+
+.c27 {
+  width: 83.333333%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.c28 {
+  width: 100%;
+}
+
+.c29 {
+  width: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+  --tw-bg-opacity: 1;
+  background-color: rgba(243,244,246,var(--tw-bg-opacity));
+  border-width: 1px;
+  border-top-width: 0px;
+  --tw-border-opacity: 1;
+  border-color: rgba(209,213,219,var(--tw-border-opacity));
+  border-bottom-left-radius: 0.375rem;
+  border-bottom-right-radius: 0.375rem;
+}
+
+.c30 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.c31 {
+  font-size: 0.75rem;
+  line-height: 1rem;
+  color: var(--color-primary);
+}
+
+.c31:hover {
+  color: var(--color-secondary);
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+}
+
+.c35 {
+  font-size: 0.75rem;
+  line-height: 1rem;
+  --tw-text-opacity: 1;
+  color: rgba(156,163,175,var(--tw-text-opacity));
+}
+
+.c32 {
+  width: 100%;
+  border-width: 1px;
+  --tw-border-opacity: 1;
+  border-color: rgba(209,213,219,var(--tw-border-opacity));
+  border-radius: 0.375rem;
+  margin-top: 0.75rem;
+}
+
+.c33 {
+  width: 100%;
+  padding: 1.25rem;
+}
+
+.c34 {
+  width: 100%;
+  --tw-bg-opacity: 1;
+  background-color: rgba(243,244,246,var(--tw-bg-opacity));
+  border-top-width: 1px;
+  --tw-border-opacity: 1;
+  border-color: rgba(209,213,219,var(--tw-border-opacity));
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+}
+
+.c36 {
+  width: 1rem;
+  height: 1rem;
+  font-size: 0.75rem;
+  line-height: 1rem;
+  --tw-text-opacity: 1;
+  color: rgba(156,163,175,var(--tw-text-opacity));
+  margin-left: auto;
+  cursor: pointer;
+}
+
+@media (min-width:640px) {
+  .c1 {
+    max-width: 640px;
+  }
+}
+
+@media (min-width:768px) {
+  .c1 {
+    max-width: 768px;
+  }
+}
+
+@media (min-width:1024px) {
+  .c1 {
+    max-width: 1024px;
+  }
+}
+
+@media (min-width:1280px) {
+  .c1 {
+    max-width: 1280px;
+  }
+}
+
+@media (min-width:1536px) {
+  .c1 {
+    max-width: 1536px;
+  }
+}
+
+@media (min-width:640px) {
+  .c15 {
+    max-width: 640px;
+  }
+}
+
+@media (min-width:768px) {
+  .c15 {
+    max-width: 768px;
+  }
+}
+
+@media (min-width:1024px) {
+  .c15 {
+    max-width: 1024px;
+  }
+}
+
+@media (min-width:1280px) {
+  .c15 {
+    max-width: 1280px;
+  }
+}
+
+@media (min-width:1536px) {
+  .c15 {
+    max-width: 1536px;
+  }
+}
+
+@media (min-width:640px) {
+  .c27 {
+    width: 91.666667%;
+  }
+}
+
 <div
-  className="BaseLayoutTemplate__Container-sc-1jz5xvr-0 kHMSW"
+  className="c0"
 >
   <div
-    className="HeaderTemplate__Container-sc-kdla34-0 gxnUkb"
+    className="c1"
   >
     <div
-      className="HeaderTemplate__Heading-sc-kdla34-1 lcHwtI"
+      className="c2"
     >
       <div
-        className="HeaderTemplate__HeadingTitle-sc-kdla34-2 ibfQih"
+        className="c3"
         data-cy="header-logo-link"
       >
         <a
@@ -2367,10 +4077,10 @@ exports[`Article Snapshots renders article after login with other user 1`] = `
                 className="flex items-center gap-1"
               >
                 <div
-                  className="Avatar__Wrapper-sc-m9feoe-0 ieHczv"
+                  className="c4"
                 >
                   <div
-                    className="Avatar__Container-sc-m9feoe-1 fQHyzl w-5 h-5"
+                    className="c5 w-5 h-5"
                   >
                     <span
                       style={
@@ -2395,7 +4105,7 @@ exports[`Article Snapshots renders article after login with other user 1`] = `
                     >
                       <img
                         alt="avatar"
-                        className="Avatar__Img-sc-m9feoe-2 kuaPdK rounded-full"
+                        className="c6 rounded-full"
                         data-nimg="fill"
                         decoding="async"
                         src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
@@ -2425,7 +4135,7 @@ exports[`Article Snapshots renders article after login with other user 1`] = `
                       <noscript>
                         <img
                           alt="avatar"
-                          className="Avatar__Img-sc-m9feoe-2 kuaPdK rounded-full"
+                          className="c6 rounded-full"
                           data-nimg="fill"
                           decoding="async"
                           loading="lazy"
@@ -2468,23 +4178,23 @@ exports[`Article Snapshots renders article after login with other user 1`] = `
     </div>
   </div>
   <div
-    className="ArticleBannerTemplate__Container-sc-1dyvdkl-0 mMMhf"
+    className="c7"
   >
     <h1
-      className="ArticleBannerTemplate__Title-sc-1dyvdkl-1 gPlBoW"
+      className="c8"
       data-cy="article-title"
     >
       How to train your dragon
     </h1>
     <div
-      className="ArticleBannerTemplate__AuthorContainer-sc-1dyvdkl-2 grnMls"
+      className="c9"
     >
       <div
-        className="Avatar__Wrapper-sc-m9feoe-0 ieHczv"
+        className="c4"
         data-cy="article-banner-author-image"
       >
         <div
-          className="Avatar__Container-sc-m9feoe-1 fQHyzl w-8 h-8"
+          className="c5 w-8 h-8"
         >
           <span
             style={
@@ -2509,7 +4219,7 @@ exports[`Article Snapshots renders article after login with other user 1`] = `
           >
             <img
               alt="avatar"
-              className="Avatar__Img-sc-m9feoe-2 kuaPdK rounded-full"
+              className="c6 rounded-full"
               data-nimg="fill"
               decoding="async"
               src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
@@ -2539,7 +4249,7 @@ exports[`Article Snapshots renders article after login with other user 1`] = `
             <noscript>
               <img
                 alt="avatar"
-                className="Avatar__Img-sc-m9feoe-2 kuaPdK rounded-full"
+                className="c6 rounded-full"
                 data-nimg="fill"
                 decoding="async"
                 loading="lazy"
@@ -2574,10 +4284,10 @@ exports[`Article Snapshots renders article after login with other user 1`] = `
         </div>
       </div>
       <div
-        className="ArticleBannerTemplate__AuthorInfo-sc-1dyvdkl-3 vJafv"
+        className="c10"
       >
         <div
-          className="ArticleBannerTemplate__AuthorName-sc-1dyvdkl-4 hRfpXK"
+          className="c11"
           data-cy="article-banner-author-username"
         >
           <a
@@ -2589,14 +4299,14 @@ exports[`Article Snapshots renders article after login with other user 1`] = `
           </a>
         </div>
         <div
-          className="ArticleBannerTemplate__AuthorDate-sc-1dyvdkl-5 hgaxyC"
+          className="c12"
           data-cy="article-banner-author-date"
         >
           Thu Feb 18 2016
         </div>
       </div>
       <div
-        className="ArticleBannerTemplate__Follow-sc-1dyvdkl-8 gOudLj"
+        className="c13"
         data-cy="article-banner-follow"
         onClick={[Function]}
       >
@@ -2633,7 +4343,7 @@ exports[`Article Snapshots renders article after login with other user 1`] = `
         </div>
       </div>
       <div
-        className="ArticleBannerTemplate__Favorite-sc-1dyvdkl-9 efPENh"
+        className="c14"
         data-cy="article-banner-favorite"
         onClick={[Function]}
       >
@@ -2672,13 +4382,13 @@ exports[`Article Snapshots renders article after login with other user 1`] = `
     className="container mx-auto mt-8"
   >
     <div
-      className="ArticleContentTemplate__Container-sc-1w2hr4z-0 dVYMDK"
+      className="c15"
     >
       <div
-        className="ArticleContentTemplate__Content-sc-1w2hr4z-1 YRUEt"
+        className="c16"
       >
         <div
-          className="ArticleContentTemplate__Body-sc-1w2hr4z-2 fhrHRP"
+          className="c17"
           dangerouslySetInnerHTML={
             Object {
               "__html": "<p>It takes a <strong>Jacobian</strong></p>
@@ -2688,16 +4398,16 @@ exports[`Article Snapshots renders article after login with other user 1`] = `
           data-cy="article-content-body"
         />
         <div
-          className="ArticleContentTemplate__Tags-sc-1w2hr4z-3 fldydI"
+          className="c18"
         >
           <div
-            className="ArticleContentTemplate__Tag-sc-1w2hr4z-4 kXzBAF"
+            className="c19"
             data-cy="article-content-tags"
           >
             dragons
           </div>
           <div
-            className="ArticleContentTemplate__Tag-sc-1w2hr4z-4 kXzBAF"
+            className="c19"
             data-cy="article-content-tags"
           >
             training
@@ -2706,17 +4416,17 @@ exports[`Article Snapshots renders article after login with other user 1`] = `
         <hr />
       </div>
       <div
-        className="ArticleContentTemplate__AuthorWrapper-sc-1w2hr4z-5 iwOlyQ"
+        className="c20"
       >
         <div
-          className="ArticleContentTemplate__AuthorContainer-sc-1w2hr4z-6 bbHJrT"
+          className="c21"
         >
           <div
-            className="Avatar__Wrapper-sc-m9feoe-0 ieHczv"
+            className="c4"
             data-cy="article-content-author-image"
           >
             <div
-              className="Avatar__Container-sc-m9feoe-1 fQHyzl w-8 h-8"
+              className="c5 w-8 h-8"
             >
               <span
                 style={
@@ -2741,7 +4451,7 @@ exports[`Article Snapshots renders article after login with other user 1`] = `
               >
                 <img
                   alt="avatar"
-                  className="Avatar__Img-sc-m9feoe-2 kuaPdK rounded-full"
+                  className="c6 rounded-full"
                   data-nimg="fill"
                   decoding="async"
                   src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
@@ -2771,7 +4481,7 @@ exports[`Article Snapshots renders article after login with other user 1`] = `
                 <noscript>
                   <img
                     alt="avatar"
-                    className="Avatar__Img-sc-m9feoe-2 kuaPdK rounded-full"
+                    className="c6 rounded-full"
                     data-nimg="fill"
                     decoding="async"
                     loading="lazy"
@@ -2806,10 +4516,10 @@ exports[`Article Snapshots renders article after login with other user 1`] = `
             </div>
           </div>
           <div
-            className="ArticleContentTemplate__AuthorInfo-sc-1w2hr4z-7 bLLNsb"
+            className="c22"
           >
             <div
-              className="ArticleContentTemplate__AuthorName-sc-1w2hr4z-8 jGILIF"
+              className="c23"
               data-cy="article-content-author-username"
             >
               <a
@@ -2821,14 +4531,14 @@ exports[`Article Snapshots renders article after login with other user 1`] = `
               </a>
             </div>
             <div
-              className="ArticleContentTemplate__AuthorDate-sc-1w2hr4z-9 jWCDpi"
+              className="c24"
               data-cy="article-content-author-date"
             >
               Thu Feb 18 2016
             </div>
           </div>
           <div
-            className="ArticleContentTemplate__Follow-sc-1w2hr4z-12 kuOobo"
+            className="c25"
             data-cy="article-content-follow"
             onClick={[Function]}
           >
@@ -2865,7 +4575,7 @@ exports[`Article Snapshots renders article after login with other user 1`] = `
             </div>
           </div>
           <div
-            className="ArticleContentTemplate__Favorite-sc-1w2hr4z-13 dBYwym"
+            className="c26"
             data-cy="article-content-favorite"
             onClick={[Function]}
           >
@@ -2902,10 +4612,10 @@ exports[`Article Snapshots renders article after login with other user 1`] = `
       </div>
     </div>
     <div
-      className="ArticleCommentTemplate__Container-sc-13m5pqz-0 jICGMo"
+      className="c27"
     >
       <div
-        className="ArticleCommentTemplate__FormContainer-sc-13m5pqz-1 eZsDPK"
+        className="c28"
         data-cy="comment-form-container"
       >
         <form
@@ -2927,17 +4637,17 @@ exports[`Article Snapshots renders article after login with other user 1`] = `
               />
             </div>
             <div
-              className="ArticleCommentTemplate__FormInfo-sc-13m5pqz-2 epaAxf"
+              className="c29"
             >
               <div
-                className="ArticleCommentTemplate__AuthorContainer-sc-13m5pqz-3 fKSqan"
+                className="c30"
               >
                 <div
-                  className="Avatar__Wrapper-sc-m9feoe-0 ieHczv"
+                  className="c4"
                   data-cy="comment-form-user-image"
                 >
                   <div
-                    className="Avatar__Container-sc-m9feoe-1 fQHyzl w-5 h-5"
+                    className="c5 w-5 h-5"
                   >
                     <span
                       style={
@@ -2962,7 +4672,7 @@ exports[`Article Snapshots renders article after login with other user 1`] = `
                     >
                       <img
                         alt="avatar"
-                        className="Avatar__Img-sc-m9feoe-2 kuaPdK rounded-full"
+                        className="c6 rounded-full"
                         data-nimg="fill"
                         decoding="async"
                         src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
@@ -2992,7 +4702,7 @@ exports[`Article Snapshots renders article after login with other user 1`] = `
                       <noscript>
                         <img
                           alt="avatar"
-                          className="Avatar__Img-sc-m9feoe-2 kuaPdK rounded-full"
+                          className="c6 rounded-full"
                           data-nimg="fill"
                           decoding="async"
                           loading="lazy"
@@ -3027,7 +4737,7 @@ exports[`Article Snapshots renders article after login with other user 1`] = `
                   </div>
                 </div>
                 <div
-                  className="ArticleCommentTemplate__AuthorName-sc-13m5pqz-4 btcmKz"
+                  className="c31"
                   data-cy="comment-form-user-username"
                 >
                   <a
@@ -3052,27 +4762,27 @@ exports[`Article Snapshots renders article after login with other user 1`] = `
         </form>
       </div>
       <div
-        className="ArticleCommentTemplate__CommentContainer-sc-13m5pqz-6 bjvmNj"
+        className="c32"
         data-cy="comment-container"
       >
         <div
-          className="ArticleCommentTemplate__CommentBody-sc-13m5pqz-7 dxnfTl"
+          className="c33"
           data-cy="comment-body"
         >
           It takes a Jacobian
         </div>
         <div
-          className="ArticleCommentTemplate__CommentInfo-sc-13m5pqz-8 cSYSkx"
+          className="c34"
         >
           <div
-            className="ArticleCommentTemplate__AuthorContainer-sc-13m5pqz-3 fKSqan"
+            className="c30"
           >
             <div
-              className="Avatar__Wrapper-sc-m9feoe-0 ieHczv"
+              className="c4"
               data-cy="comment-author-image"
             >
               <div
-                className="Avatar__Container-sc-m9feoe-1 fQHyzl w-5 h-5"
+                className="c5 w-5 h-5"
               >
                 <span
                   style={
@@ -3097,7 +4807,7 @@ exports[`Article Snapshots renders article after login with other user 1`] = `
                 >
                   <img
                     alt="avatar"
-                    className="Avatar__Img-sc-m9feoe-2 kuaPdK rounded-full"
+                    className="c6 rounded-full"
                     data-nimg="fill"
                     decoding="async"
                     src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
@@ -3127,7 +4837,7 @@ exports[`Article Snapshots renders article after login with other user 1`] = `
                   <noscript>
                     <img
                       alt="avatar"
-                      className="Avatar__Img-sc-m9feoe-2 kuaPdK rounded-full"
+                      className="c6 rounded-full"
                       data-nimg="fill"
                       decoding="async"
                       loading="lazy"
@@ -3162,7 +4872,7 @@ exports[`Article Snapshots renders article after login with other user 1`] = `
               </div>
             </div>
             <div
-              className="ArticleCommentTemplate__AuthorName-sc-13m5pqz-4 btcmKz"
+              className="c31"
               data-cy="comment-author-username"
             >
               <a
@@ -3174,7 +4884,7 @@ exports[`Article Snapshots renders article after login with other user 1`] = `
               </a>
             </div>
             <div
-              className="ArticleCommentTemplate__AuthorDate-sc-13m5pqz-5 djbjWJ"
+              className="c35"
               data-cy="comment-author-date"
             >
               Thu Feb 18 2016
@@ -3183,27 +4893,27 @@ exports[`Article Snapshots renders article after login with other user 1`] = `
         </div>
       </div>
       <div
-        className="ArticleCommentTemplate__CommentContainer-sc-13m5pqz-6 bjvmNj"
+        className="c32"
         data-cy="comment-container"
       >
         <div
-          className="ArticleCommentTemplate__CommentBody-sc-13m5pqz-7 dxnfTl"
+          className="c33"
           data-cy="comment-body"
         >
           It takes a Jacobian 2
         </div>
         <div
-          className="ArticleCommentTemplate__CommentInfo-sc-13m5pqz-8 cSYSkx"
+          className="c34"
         >
           <div
-            className="ArticleCommentTemplate__AuthorContainer-sc-13m5pqz-3 fKSqan"
+            className="c30"
           >
             <div
-              className="Avatar__Wrapper-sc-m9feoe-0 ieHczv"
+              className="c4"
               data-cy="comment-author-image"
             >
               <div
-                className="Avatar__Container-sc-m9feoe-1 fQHyzl w-5 h-5"
+                className="c5 w-5 h-5"
               >
                 <span
                   style={
@@ -3228,7 +4938,7 @@ exports[`Article Snapshots renders article after login with other user 1`] = `
                 >
                   <img
                     alt="avatar"
-                    className="Avatar__Img-sc-m9feoe-2 kuaPdK rounded-full"
+                    className="c6 rounded-full"
                     data-nimg="fill"
                     decoding="async"
                     src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
@@ -3258,7 +4968,7 @@ exports[`Article Snapshots renders article after login with other user 1`] = `
                   <noscript>
                     <img
                       alt="avatar"
-                      className="Avatar__Img-sc-m9feoe-2 kuaPdK rounded-full"
+                      className="c6 rounded-full"
                       data-nimg="fill"
                       decoding="async"
                       loading="lazy"
@@ -3293,7 +5003,7 @@ exports[`Article Snapshots renders article after login with other user 1`] = `
               </div>
             </div>
             <div
-              className="ArticleCommentTemplate__AuthorName-sc-13m5pqz-4 btcmKz"
+              className="c31"
               data-cy="comment-author-username"
             >
               <a
@@ -3305,14 +5015,14 @@ exports[`Article Snapshots renders article after login with other user 1`] = `
               </a>
             </div>
             <div
-              className="ArticleCommentTemplate__AuthorDate-sc-13m5pqz-5 djbjWJ"
+              className="c35"
               data-cy="comment-author-date"
             >
               Thu Feb 18 2016
             </div>
           </div>
           <div
-            className="ArticleCommentTemplate__CommentDeleteButton-sc-13m5pqz-9 fEmsMv"
+            className="c36"
             data-cy="comment-delete-button"
             onClick={[Function]}
           >
@@ -3340,10 +5050,10 @@ exports[`Article Snapshots renders article after login with other user 1`] = `
     </div>
   </div>
   <div
-    className="FooterTemplate__Container-sc-96wla6-0 cOGJUH"
+    className="c37"
   >
     <span
-      className="FooterTemplate__SiteLink-sc-96wla6-1 ENejy text-base mr-1 font-bold"
+      className="c38 text-base mr-1 font-bold"
       data-cy="footer-logo-link"
       href="/"
       onClick={[Function]}
@@ -3353,7 +5063,7 @@ exports[`Article Snapshots renders article after login with other user 1`] = `
     </span>
     © 2020. An interactive learning project from
     <span
-      className="FooterTemplate__SiteLink-sc-96wla6-1 ENejy ml-1"
+      className="c38 ml-1"
       data-cy="footer-site-link"
       href="https://thinkster.io/"
       onClick={[Function]}
@@ -3367,17 +5077,544 @@ exports[`Article Snapshots renders article after login with other user 1`] = `
 `;
 
 exports[`Article Snapshots renders article before login 1`] = `
+.c34 {
+  width: 100%;
+  position: absolute;
+  bottom: 0px;
+  margin-top: 3rem;
+  --tw-bg-opacity: 1;
+  background-color: rgba(229,231,235,var(--tw-bg-opacity));
+  padding-left: 3.5rem;
+  padding-right: 3.5rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  font-size: 0.75rem;
+  line-height: 1rem;
+  --tw-text-opacity: 1;
+  color: rgba(156,163,175,var(--tw-text-opacity));
+}
+
+.c35 {
+  color: var(--color-primary);
+}
+
+.c35:hover {
+  color: var(--color-secondary);
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+}
+
+.c7 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.c8 {
+  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  border-radius: 9999px;
+}
+
+.c9 {
+  border-radius: 9999px;
+}
+
+.c1 {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.c2 {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.c3 {
+  font-weight: 700;
+  font-size: 1.5rem;
+  line-height: 2rem;
+  color: var(--color-primary);
+  font-family: ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c0 {
+  width: 100%;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.c4 {
+  max-width: 100%;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  padding-left: 4rem;
+  padding-right: 4rem;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  background-color: #333;
+}
+
+.c5 {
+  font-weight: 600;
+  font-size: 3rem;
+  line-height: 1;
+  --tw-text-opacity: 1;
+  color: rgba(255,255,255,var(--tw-text-opacity));
+  font-family: ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+  padding-bottom: 0.5rem;
+}
+
+.c6 {
+  width: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  margin-top: 1.5rem;
+}
+
+.c10 {
+  width: auto;
+  margin-left: 0.375rem;
+  margin-right: 1.5rem;
+}
+
+.c11 {
+  --tw-text-opacity: 1;
+  color: rgba(255,255,255,var(--tw-text-opacity));
+}
+
+.c11:hover {
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+}
+
+.c12 {
+  font-size: 0.75rem;
+  line-height: 1rem;
+  --tw-text-opacity: 1;
+  color: rgba(156,163,175,var(--tw-text-opacity));
+}
+
+.c13 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  cursor: pointer;
+  width: 5rem;
+  height: 1.75rem;
+  border-width: 1px;
+  --tw-border-opacity: 1;
+  border-color: rgba(156,163,175,var(--tw-border-opacity));
+  border-radius: 0.25rem;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  --tw-text-opacity: 1;
+  color: rgba(156,163,175,var(--tw-text-opacity));
+}
+
+.c13:hover {
+  --tw-text-opacity: 1;
+  color: rgba(255,255,255,var(--tw-text-opacity));
+  --tw-bg-opacity: 1;
+  background-color: rgba(156,163,175,var(--tw-bg-opacity));
+}
+
+.c14 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  cursor: pointer;
+  width: 7rem;
+  height: 1.75rem;
+  border-width: 1px;
+  border-color: var(--color-primary);
+  border-radius: 0.25rem;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  margin-left: 0.25rem;
+  color: var(--color-primary);
+}
+
+.c14:hover {
+  --tw-text-opacity: 1;
+  color: rgba(255,255,255,var(--tw-text-opacity));
+  background-color: var(--color-primary);
+}
+
+.c15 {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.c16 {
+  width: 100%;
+}
+
+.c17 {
+  width: 100%;
+  margin-bottom: 2rem;
+}
+
+.c18 {
+  margin-bottom: 1rem;
+  vertical-align: top;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  max-width: 50%;
+}
+
+.c19 {
+  font-size: 0.75rem;
+  line-height: 1;
+  --tw-text-opacity: 1;
+  color: rgba(156,163,175,var(--tw-text-opacity));
+  font-weight: 300;
+  white-space: nowrap;
+  border-width: 1px;
+  --tw-border-opacity: 1;
+  border-color: rgba(156,163,175,var(--tw-border-opacity));
+  border-radius: 9999px;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding: 4px 10px;
+  margin-right: 3px;
+}
+
+.c20 {
+  width: 100%;
+  margin-top: 1.5rem;
+  margin-bottom: 3rem;
+  text-align: center;
+}
+
+.c21 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c22 {
+  width: auto;
+  margin-left: 0.375rem;
+  margin-right: 1.5rem;
+}
+
+.c23 {
+  color: var(--color-primary);
+}
+
+.c23:hover {
+  color: var(--color-secondary);
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+}
+
+.c24 {
+  font-size: 0.75rem;
+  line-height: 1rem;
+  --tw-text-opacity: 1;
+  color: rgba(156,163,175,var(--tw-text-opacity));
+}
+
+.c25 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  cursor: pointer;
+  width: 5rem;
+  height: 1.75rem;
+  border-width: 1px;
+  --tw-border-opacity: 1;
+  border-color: rgba(156,163,175,var(--tw-border-opacity));
+  border-radius: 0.25rem;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  --tw-text-opacity: 1;
+  color: rgba(156,163,175,var(--tw-text-opacity));
+}
+
+.c25:hover {
+  --tw-text-opacity: 1;
+  color: rgba(255,255,255,var(--tw-text-opacity));
+  --tw-bg-opacity: 1;
+  background-color: rgba(156,163,175,var(--tw-bg-opacity));
+}
+
+.c26 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  cursor: pointer;
+  width: 7rem;
+  height: 1.75rem;
+  border-width: 1px;
+  border-color: var(--color-primary);
+  border-radius: 0.25rem;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  margin-left: 0.25rem;
+  color: var(--color-primary);
+}
+
+.c26:hover {
+  --tw-text-opacity: 1;
+  color: rgba(255,255,255,var(--tw-text-opacity));
+  background-color: var(--color-primary);
+}
+
+.c27 {
+  width: 83.333333%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.c31 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.c32 {
+  font-size: 0.75rem;
+  line-height: 1rem;
+  color: var(--color-primary);
+}
+
+.c32:hover {
+  color: var(--color-secondary);
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+}
+
+.c33 {
+  font-size: 0.75rem;
+  line-height: 1rem;
+  --tw-text-opacity: 1;
+  color: rgba(156,163,175,var(--tw-text-opacity));
+}
+
+.c28 {
+  width: 100%;
+  border-width: 1px;
+  --tw-border-opacity: 1;
+  border-color: rgba(209,213,219,var(--tw-border-opacity));
+  border-radius: 0.375rem;
+  margin-top: 0.75rem;
+}
+
+.c29 {
+  width: 100%;
+  padding: 1.25rem;
+}
+
+.c30 {
+  width: 100%;
+  --tw-bg-opacity: 1;
+  background-color: rgba(243,244,246,var(--tw-bg-opacity));
+  border-top-width: 1px;
+  --tw-border-opacity: 1;
+  border-color: rgba(209,213,219,var(--tw-border-opacity));
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+}
+
+@media (min-width:640px) {
+  .c1 {
+    max-width: 640px;
+  }
+}
+
+@media (min-width:768px) {
+  .c1 {
+    max-width: 768px;
+  }
+}
+
+@media (min-width:1024px) {
+  .c1 {
+    max-width: 1024px;
+  }
+}
+
+@media (min-width:1280px) {
+  .c1 {
+    max-width: 1280px;
+  }
+}
+
+@media (min-width:1536px) {
+  .c1 {
+    max-width: 1536px;
+  }
+}
+
+@media (min-width:640px) {
+  .c15 {
+    max-width: 640px;
+  }
+}
+
+@media (min-width:768px) {
+  .c15 {
+    max-width: 768px;
+  }
+}
+
+@media (min-width:1024px) {
+  .c15 {
+    max-width: 1024px;
+  }
+}
+
+@media (min-width:1280px) {
+  .c15 {
+    max-width: 1280px;
+  }
+}
+
+@media (min-width:1536px) {
+  .c15 {
+    max-width: 1536px;
+  }
+}
+
+@media (min-width:640px) {
+  .c27 {
+    width: 91.666667%;
+  }
+}
+
 <div
-  className="BaseLayoutTemplate__Container-sc-1jz5xvr-0 kHMSW"
+  className="c0"
 >
   <div
-    className="HeaderTemplate__Container-sc-kdla34-0 gxnUkb"
+    className="c1"
   >
     <div
-      className="HeaderTemplate__Heading-sc-kdla34-1 lcHwtI"
+      className="c2"
     >
       <div
-        className="HeaderTemplate__HeadingTitle-sc-kdla34-2 ibfQih"
+        className="c3"
         data-cy="header-logo-link"
       >
         <a
@@ -3449,23 +5686,23 @@ exports[`Article Snapshots renders article before login 1`] = `
     </div>
   </div>
   <div
-    className="ArticleBannerTemplate__Container-sc-1dyvdkl-0 mMMhf"
+    className="c4"
   >
     <h1
-      className="ArticleBannerTemplate__Title-sc-1dyvdkl-1 gPlBoW"
+      className="c5"
       data-cy="article-title"
     >
       How to train your dragon
     </h1>
     <div
-      className="ArticleBannerTemplate__AuthorContainer-sc-1dyvdkl-2 grnMls"
+      className="c6"
     >
       <div
-        className="Avatar__Wrapper-sc-m9feoe-0 ieHczv"
+        className="c7"
         data-cy="article-banner-author-image"
       >
         <div
-          className="Avatar__Container-sc-m9feoe-1 fQHyzl w-8 h-8"
+          className="c8 w-8 h-8"
         >
           <span
             style={
@@ -3490,7 +5727,7 @@ exports[`Article Snapshots renders article before login 1`] = `
           >
             <img
               alt="avatar"
-              className="Avatar__Img-sc-m9feoe-2 kuaPdK rounded-full"
+              className="c9 rounded-full"
               data-nimg="fill"
               decoding="async"
               src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
@@ -3520,7 +5757,7 @@ exports[`Article Snapshots renders article before login 1`] = `
             <noscript>
               <img
                 alt="avatar"
-                className="Avatar__Img-sc-m9feoe-2 kuaPdK rounded-full"
+                className="c9 rounded-full"
                 data-nimg="fill"
                 decoding="async"
                 loading="lazy"
@@ -3555,10 +5792,10 @@ exports[`Article Snapshots renders article before login 1`] = `
         </div>
       </div>
       <div
-        className="ArticleBannerTemplate__AuthorInfo-sc-1dyvdkl-3 vJafv"
+        className="c10"
       >
         <div
-          className="ArticleBannerTemplate__AuthorName-sc-1dyvdkl-4 hRfpXK"
+          className="c11"
           data-cy="article-banner-author-username"
         >
           <a
@@ -3570,14 +5807,14 @@ exports[`Article Snapshots renders article before login 1`] = `
           </a>
         </div>
         <div
-          className="ArticleBannerTemplate__AuthorDate-sc-1dyvdkl-5 hgaxyC"
+          className="c12"
           data-cy="article-banner-author-date"
         >
           Thu Feb 18 2016
         </div>
       </div>
       <div
-        className="ArticleBannerTemplate__Follow-sc-1dyvdkl-8 gOudLj"
+        className="c13"
         data-cy="article-banner-follow"
         onClick={[Function]}
       >
@@ -3614,7 +5851,7 @@ exports[`Article Snapshots renders article before login 1`] = `
         </div>
       </div>
       <div
-        className="ArticleBannerTemplate__Favorite-sc-1dyvdkl-9 efPENh"
+        className="c14"
         data-cy="article-banner-favorite"
         onClick={[Function]}
       >
@@ -3653,13 +5890,13 @@ exports[`Article Snapshots renders article before login 1`] = `
     className="container mx-auto mt-8"
   >
     <div
-      className="ArticleContentTemplate__Container-sc-1w2hr4z-0 dVYMDK"
+      className="c15"
     >
       <div
-        className="ArticleContentTemplate__Content-sc-1w2hr4z-1 YRUEt"
+        className="c16"
       >
         <div
-          className="ArticleContentTemplate__Body-sc-1w2hr4z-2 fhrHRP"
+          className="c17"
           dangerouslySetInnerHTML={
             Object {
               "__html": "<p>It takes a <strong>Jacobian</strong></p>
@@ -3669,16 +5906,16 @@ exports[`Article Snapshots renders article before login 1`] = `
           data-cy="article-content-body"
         />
         <div
-          className="ArticleContentTemplate__Tags-sc-1w2hr4z-3 fldydI"
+          className="c18"
         >
           <div
-            className="ArticleContentTemplate__Tag-sc-1w2hr4z-4 kXzBAF"
+            className="c19"
             data-cy="article-content-tags"
           >
             dragons
           </div>
           <div
-            className="ArticleContentTemplate__Tag-sc-1w2hr4z-4 kXzBAF"
+            className="c19"
             data-cy="article-content-tags"
           >
             training
@@ -3687,17 +5924,17 @@ exports[`Article Snapshots renders article before login 1`] = `
         <hr />
       </div>
       <div
-        className="ArticleContentTemplate__AuthorWrapper-sc-1w2hr4z-5 iwOlyQ"
+        className="c20"
       >
         <div
-          className="ArticleContentTemplate__AuthorContainer-sc-1w2hr4z-6 bbHJrT"
+          className="c21"
         >
           <div
-            className="Avatar__Wrapper-sc-m9feoe-0 ieHczv"
+            className="c7"
             data-cy="article-content-author-image"
           >
             <div
-              className="Avatar__Container-sc-m9feoe-1 fQHyzl w-8 h-8"
+              className="c8 w-8 h-8"
             >
               <span
                 style={
@@ -3722,7 +5959,7 @@ exports[`Article Snapshots renders article before login 1`] = `
               >
                 <img
                   alt="avatar"
-                  className="Avatar__Img-sc-m9feoe-2 kuaPdK rounded-full"
+                  className="c9 rounded-full"
                   data-nimg="fill"
                   decoding="async"
                   src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
@@ -3752,7 +5989,7 @@ exports[`Article Snapshots renders article before login 1`] = `
                 <noscript>
                   <img
                     alt="avatar"
-                    className="Avatar__Img-sc-m9feoe-2 kuaPdK rounded-full"
+                    className="c9 rounded-full"
                     data-nimg="fill"
                     decoding="async"
                     loading="lazy"
@@ -3787,10 +6024,10 @@ exports[`Article Snapshots renders article before login 1`] = `
             </div>
           </div>
           <div
-            className="ArticleContentTemplate__AuthorInfo-sc-1w2hr4z-7 bLLNsb"
+            className="c22"
           >
             <div
-              className="ArticleContentTemplate__AuthorName-sc-1w2hr4z-8 jGILIF"
+              className="c23"
               data-cy="article-content-author-username"
             >
               <a
@@ -3802,14 +6039,14 @@ exports[`Article Snapshots renders article before login 1`] = `
               </a>
             </div>
             <div
-              className="ArticleContentTemplate__AuthorDate-sc-1w2hr4z-9 jWCDpi"
+              className="c24"
               data-cy="article-content-author-date"
             >
               Thu Feb 18 2016
             </div>
           </div>
           <div
-            className="ArticleContentTemplate__Follow-sc-1w2hr4z-12 kuOobo"
+            className="c25"
             data-cy="article-content-follow"
             onClick={[Function]}
           >
@@ -3846,7 +6083,7 @@ exports[`Article Snapshots renders article before login 1`] = `
             </div>
           </div>
           <div
-            className="ArticleContentTemplate__Favorite-sc-1w2hr4z-13 dBYwym"
+            className="c26"
             data-cy="article-content-favorite"
             onClick={[Function]}
           >
@@ -3883,30 +6120,30 @@ exports[`Article Snapshots renders article before login 1`] = `
       </div>
     </div>
     <div
-      className="ArticleCommentTemplate__Container-sc-13m5pqz-0 jICGMo"
+      className="c27"
     >
       <div
-        className="ArticleCommentTemplate__CommentContainer-sc-13m5pqz-6 bjvmNj"
+        className="c28"
         data-cy="comment-container"
       >
         <div
-          className="ArticleCommentTemplate__CommentBody-sc-13m5pqz-7 dxnfTl"
+          className="c29"
           data-cy="comment-body"
         >
           It takes a Jacobian
         </div>
         <div
-          className="ArticleCommentTemplate__CommentInfo-sc-13m5pqz-8 cSYSkx"
+          className="c30"
         >
           <div
-            className="ArticleCommentTemplate__AuthorContainer-sc-13m5pqz-3 fKSqan"
+            className="c31"
           >
             <div
-              className="Avatar__Wrapper-sc-m9feoe-0 ieHczv"
+              className="c7"
               data-cy="comment-author-image"
             >
               <div
-                className="Avatar__Container-sc-m9feoe-1 fQHyzl w-5 h-5"
+                className="c8 w-5 h-5"
               >
                 <span
                   style={
@@ -3931,7 +6168,7 @@ exports[`Article Snapshots renders article before login 1`] = `
                 >
                   <img
                     alt="avatar"
-                    className="Avatar__Img-sc-m9feoe-2 kuaPdK rounded-full"
+                    className="c9 rounded-full"
                     data-nimg="fill"
                     decoding="async"
                     src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
@@ -3961,7 +6198,7 @@ exports[`Article Snapshots renders article before login 1`] = `
                   <noscript>
                     <img
                       alt="avatar"
-                      className="Avatar__Img-sc-m9feoe-2 kuaPdK rounded-full"
+                      className="c9 rounded-full"
                       data-nimg="fill"
                       decoding="async"
                       loading="lazy"
@@ -3996,7 +6233,7 @@ exports[`Article Snapshots renders article before login 1`] = `
               </div>
             </div>
             <div
-              className="ArticleCommentTemplate__AuthorName-sc-13m5pqz-4 btcmKz"
+              className="c32"
               data-cy="comment-author-username"
             >
               <a
@@ -4008,7 +6245,7 @@ exports[`Article Snapshots renders article before login 1`] = `
               </a>
             </div>
             <div
-              className="ArticleCommentTemplate__AuthorDate-sc-13m5pqz-5 djbjWJ"
+              className="c33"
               data-cy="comment-author-date"
             >
               Thu Feb 18 2016
@@ -4017,27 +6254,27 @@ exports[`Article Snapshots renders article before login 1`] = `
         </div>
       </div>
       <div
-        className="ArticleCommentTemplate__CommentContainer-sc-13m5pqz-6 bjvmNj"
+        className="c28"
         data-cy="comment-container"
       >
         <div
-          className="ArticleCommentTemplate__CommentBody-sc-13m5pqz-7 dxnfTl"
+          className="c29"
           data-cy="comment-body"
         >
           It takes a Jacobian 2
         </div>
         <div
-          className="ArticleCommentTemplate__CommentInfo-sc-13m5pqz-8 cSYSkx"
+          className="c30"
         >
           <div
-            className="ArticleCommentTemplate__AuthorContainer-sc-13m5pqz-3 fKSqan"
+            className="c31"
           >
             <div
-              className="Avatar__Wrapper-sc-m9feoe-0 ieHczv"
+              className="c7"
               data-cy="comment-author-image"
             >
               <div
-                className="Avatar__Container-sc-m9feoe-1 fQHyzl w-5 h-5"
+                className="c8 w-5 h-5"
               >
                 <span
                   style={
@@ -4062,7 +6299,7 @@ exports[`Article Snapshots renders article before login 1`] = `
                 >
                   <img
                     alt="avatar"
-                    className="Avatar__Img-sc-m9feoe-2 kuaPdK rounded-full"
+                    className="c9 rounded-full"
                     data-nimg="fill"
                     decoding="async"
                     src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
@@ -4092,7 +6329,7 @@ exports[`Article Snapshots renders article before login 1`] = `
                   <noscript>
                     <img
                       alt="avatar"
-                      className="Avatar__Img-sc-m9feoe-2 kuaPdK rounded-full"
+                      className="c9 rounded-full"
                       data-nimg="fill"
                       decoding="async"
                       loading="lazy"
@@ -4127,7 +6364,7 @@ exports[`Article Snapshots renders article before login 1`] = `
               </div>
             </div>
             <div
-              className="ArticleCommentTemplate__AuthorName-sc-13m5pqz-4 btcmKz"
+              className="c32"
               data-cy="comment-author-username"
             >
               <a
@@ -4139,7 +6376,7 @@ exports[`Article Snapshots renders article before login 1`] = `
               </a>
             </div>
             <div
-              className="ArticleCommentTemplate__AuthorDate-sc-13m5pqz-5 djbjWJ"
+              className="c33"
               data-cy="comment-author-date"
             >
               Thu Feb 18 2016
@@ -4150,10 +6387,10 @@ exports[`Article Snapshots renders article before login 1`] = `
     </div>
   </div>
   <div
-    className="FooterTemplate__Container-sc-96wla6-0 cOGJUH"
+    className="c34"
   >
     <span
-      className="FooterTemplate__SiteLink-sc-96wla6-1 ENejy text-base mr-1 font-bold"
+      className="c35 text-base mr-1 font-bold"
       data-cy="footer-logo-link"
       href="/"
       onClick={[Function]}
@@ -4163,7 +6400,7 @@ exports[`Article Snapshots renders article before login 1`] = `
     </span>
     © 2020. An interactive learning project from
     <span
-      className="FooterTemplate__SiteLink-sc-96wla6-1 ENejy ml-1"
+      className="c35 ml-1"
       data-cy="footer-site-link"
       href="https://thinkster.io/"
       onClick={[Function]}

@@ -1,5 +1,4 @@
-import React, { FC, ReactNode } from 'react';
-import { Key } from 'react';
+import React, { FC, ReactNode, Key } from 'react';
 
 import TabProvider from './TabProvider';
 

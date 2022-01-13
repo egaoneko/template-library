@@ -1,5 +1,5 @@
-import {COMMON_NAVIGATION_TYPE} from '../enums/common-navigation';
-import {MAIN_NAVIGATION_TYPE} from '../enums/main-navigation';
+import { COMMON_NAVIGATION_TYPE } from '../enums/common-navigation';
+import { MAIN_NAVIGATION_TYPE } from '../enums/main-navigation';
 
 export type CommonParamList = {
   [COMMON_NAVIGATION_TYPE.SPLASH]: undefined;

@@ -71,7 +71,6 @@ export class FileController {
     @UploadedFile() file: Express.Multer.File,
     @CurrentUser('id') currentUserId: number,
   ): Promise<FileDto> {
-    console.log(file);
     if (!file) {
       throw new BadRequestException('Not found file');
     }

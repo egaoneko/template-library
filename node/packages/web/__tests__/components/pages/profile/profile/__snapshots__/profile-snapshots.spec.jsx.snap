@@ -1,17 +1,756 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Profile Snapshots renders profile after login 1`] = `
+.c35 {
+  width: 100%;
+  position: absolute;
+  bottom: 0px;
+  margin-top: 3rem;
+  --tw-bg-opacity: 1;
+  background-color: rgba(229,231,235,var(--tw-bg-opacity));
+  padding-left: 3.5rem;
+  padding-right: 3.5rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  font-size: 0.75rem;
+  line-height: 1rem;
+  --tw-text-opacity: 1;
+  color: rgba(156,163,175,var(--tw-text-opacity));
+}
+
+.c36 {
+  color: var(--color-primary);
+}
+
+.c36:hover {
+  color: var(--color-secondary);
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+}
+
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.c5 {
+  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  border-radius: 9999px;
+}
+
+.c6 {
+  border-radius: 9999px;
+}
+
+.c1 {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.c2 {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.c3 {
+  font-weight: 700;
+  font-size: 1.5rem;
+  line-height: 2rem;
+  color: var(--color-primary);
+  font-family: ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c0 {
+  width: 100%;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.c7 {
+  max-width: 100%;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  padding-top: 2rem;
+  padding-bottom: 1rem;
+  --tw-bg-opacity: 1;
+  background-color: rgba(229,231,235,var(--tw-bg-opacity));
+  text-align: center;
+}
+
+.c8 {
+  font-weight: 700;
+  font-size: 1.5rem;
+  line-height: 2rem;
+  margin-top: 1rem;
+}
+
+.c9 {
+  font-weight: 300;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  --tw-text-opacity: 1;
+  color: rgba(156,163,175,var(--tw-text-opacity));
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  padding-left: 3rem;
+  padding-right: 3rem;
+}
+
+.c32 {
+  width: 100%;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.c32 .pagination {
+  position: relative;
+  z-index: 0;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  border-radius: 0.375rem;
+  --tw-shadow: 0 1px 2px 0 rgba(0,0,0,0.05);
+  box-shadow: var(--tw-ring-offset-shadow,0 0 #0000),var(--tw-ring-shadow,0 0 #0000),var(--tw-shadow);
+}
+
+.c32 .pagination > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-x-reverse: 0;
+  margin-right: calc(-1px * var(--tw-space-x-reverse));
+  margin-left: calc(-1px * calc(1 - var(--tw-space-x-reverse)));
+}
+
+.c32 .pagination-page-item {
+  --tw-bg-opacity: 1;
+  background-color: rgba(255,255,255,var(--tw-bg-opacity));
+  --tw-border-opacity: 1;
+  border-color: rgba(209,213,219,var(--tw-border-opacity));
+  border-width: 1px;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.c32 .pagination-page-item:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgba(249,250,251,var(--tw-bg-opacity));
+}
+
+.c32 .pagination-page-item.disabled {
+  cursor: not-allowed;
+  --tw-bg-opacity: 1;
+  background-color: rgba(229,231,235,var(--tw-bg-opacity));
+}
+
+.c32 .pagination-page-item.disabled a {
+  cursor: not-allowed;
+}
+
+.c32 .pagination-page {
+  --tw-text-opacity: 1;
+  color: rgba(107,114,128,var(--tw-text-opacity));
+  position: relative;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  font-weight: 500;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
+.c32 .pagination-ellipsis {
+  position: relative;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  font-weight: 500;
+  --tw-text-opacity: 1;
+  color: rgba(55,65,81,var(--tw-text-opacity));
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
+.c32 .pagination-previous-item {
+  --tw-bg-opacity: 1;
+  background-color: rgba(255,255,255,var(--tw-bg-opacity));
+  --tw-border-opacity: 1;
+  border-color: rgba(209,213,219,var(--tw-border-opacity));
+  border-width: 1px;
+  border-top-left-radius: 0.375rem;
+  border-bottom-left-radius: 0.375rem;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.c32 .pagination-previous-item:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgba(249,250,251,var(--tw-bg-opacity));
+}
+
+.c32 .pagination-previous-item.disabled {
+  cursor: not-allowed;
+  --tw-bg-opacity: 1;
+  background-color: rgba(229,231,235,var(--tw-bg-opacity));
+}
+
+.c32 .pagination-previous-item.disabled a {
+  cursor: not-allowed;
+}
+
+.c32 .pagination-previous {
+  position: relative;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  font-weight: 500;
+  --tw-text-opacity: 1;
+  color: rgba(107,114,128,var(--tw-text-opacity));
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
+.c32 .pagination-next-item {
+  --tw-bg-opacity: 1;
+  background-color: rgba(255,255,255,var(--tw-bg-opacity));
+  --tw-border-opacity: 1;
+  border-color: rgba(209,213,219,var(--tw-border-opacity));
+  border-width: 1px;
+  border-top-right-radius: 0.375rem;
+  border-bottom-right-radius: 0.375rem;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.c32 .pagination-next-item:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgba(249,250,251,var(--tw-bg-opacity));
+}
+
+.c32 .pagination-next-item.disabled {
+  cursor: not-allowed;
+  --tw-bg-opacity: 1;
+  background-color: rgba(229,231,235,var(--tw-bg-opacity));
+}
+
+.c32 .pagination-next-item.disabled a {
+  cursor: not-allowed;
+}
+
+.c32 .pagination-next {
+  position: relative;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  font-weight: 500;
+  --tw-text-opacity: 1;
+  color: rgba(107,114,128,var(--tw-text-opacity));
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
+.c32 .pagination-current-page-item {
+  z-index: 10;
+  background-color: var(--color-primary);
+  border-color: var(--color-primary);
+}
+
+.c32 .pagination-current-page-item:hover {
+  background-color: var(--color-primary);
+  --tw-bg-opacity: 0.5;
+}
+
+.c32 .pagination-current-page {
+  --tw-text-opacity: 1;
+  color: rgba(255,255,255,var(--tw-text-opacity));
+}
+
+.c33 {
+  position: relative;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  border-width: 1px;
+  --tw-border-opacity: 1;
+  border-color: rgba(209,213,219,var(--tw-border-opacity));
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  font-weight: 500;
+  border-radius: 0.375rem;
+  --tw-text-opacity: 1;
+  color: rgba(55,65,81,var(--tw-text-opacity));
+  --tw-bg-opacity: 1;
+  background-color: rgba(255,255,255,var(--tw-bg-opacity));
+  cursor: not-allowed;
+  --tw-bg-opacity: 1;
+  background-color: rgba(229,231,235,var(--tw-bg-opacity));
+}
+
+.c33:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgba(249,250,251,var(--tw-bg-opacity));
+}
+
+.c33:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgba(229,231,235,var(--tw-bg-opacity));
+}
+
+.c34 {
+  position: relative;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  border-width: 1px;
+  --tw-border-opacity: 1;
+  border-color: rgba(209,213,219,var(--tw-border-opacity));
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  font-weight: 500;
+  border-radius: 0.375rem;
+  --tw-text-opacity: 1;
+  color: rgba(55,65,81,var(--tw-text-opacity));
+  --tw-bg-opacity: 1;
+  background-color: rgba(255,255,255,var(--tw-bg-opacity));
+}
+
+.c34:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgba(249,250,251,var(--tw-bg-opacity));
+}
+
+.c18 {
+  width: 100%;
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+}
+
+.c18:not(:last-child) {
+  border-bottom-width: 1px;
+  --tw-border-opacity: 1;
+  border-color: rgba(229,231,235,var(--tw-border-opacity));
+}
+
+.c19 {
+  width: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.c20 {
+  width: auto;
+  margin-left: 0.375rem;
+  margin-right: 1rem;
+}
+
+.c21 {
+  color: var(--color-primary);
+}
+
+.c21:hover {
+  color: var(--color-secondary);
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+}
+
+.c22 {
+  font-size: 0.75rem;
+  line-height: 1rem;
+  --tw-text-opacity: 1;
+  color: rgba(156,163,175,var(--tw-text-opacity));
+}
+
+.c23 {
+  margin-left: auto;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  cursor: pointer;
+  width: 2.5rem;
+  height: 1.75rem;
+  border-width: 1px;
+  border-color: var(--color-primary);
+  border-radius: 0.25rem;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  color: var(--color-primary);
+}
+
+.c23:hover {
+  --tw-text-opacity: 1;
+  color: rgba(255,255,255,var(--tw-text-opacity));
+  background-color: var(--color-primary);
+}
+
+.c31 {
+  margin-left: auto;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  cursor: pointer;
+  width: 2.5rem;
+  height: 1.75rem;
+  border-width: 1px;
+  border-color: var(--color-primary);
+  border-radius: 0.25rem;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  --tw-text-opacity: 1;
+  color: rgba(255,255,255,var(--tw-text-opacity));
+  background-color: var(--color-primary);
+}
+
+.c31:hover {
+  color: var(--color-primary);
+  --tw-bg-opacity: 1;
+  background-color: rgba(255,255,255,var(--tw-bg-opacity));
+}
+
+.c24 {
+  width: 100%;
+  cursor: pointer;
+}
+
+.c25 {
+  font-size: 1.5rem;
+  line-height: 2rem;
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+}
+
+.c26 {
+  font-size: 1rem;
+  line-height: 1.5rem;
+  --tw-text-opacity: 1;
+  color: rgba(107,114,128,var(--tw-text-opacity));
+  margin-bottom: 1rem;
+}
+
+.c27 {
+  width: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.c28 {
+  font-size: 0.75rem;
+  line-height: 1rem;
+  --tw-text-opacity: 1;
+  color: rgba(156,163,175,var(--tw-text-opacity));
+}
+
+.c29 {
+  margin-left: auto;
+  vertical-align: top;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  max-width: 50%;
+}
+
+.c30 {
+  font-size: 0.75rem;
+  line-height: 1;
+  --tw-text-opacity: 1;
+  color: rgba(156,163,175,var(--tw-text-opacity));
+  font-weight: 300;
+  white-space: nowrap;
+  border-width: 1px;
+  --tw-border-opacity: 1;
+  border-color: rgba(156,163,175,var(--tw-border-opacity));
+  border-radius: 9999px;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  cursor: pointer;
+  padding: 4px 10px;
+  margin-right: 3px;
+}
+
+.c17 {
+  width: 100%;
+}
+
+.c14 {
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  cursor: pointer;
+  font-size: 1rem;
+  line-height: 1;
+  font-weight: 700;
+  color: var(--color-primary);
+  border-bottom-width: 2px;
+  border-color: var(--color-primary);
+}
+
+.c15 {
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  cursor: pointer;
+  font-size: 1rem;
+  line-height: 1;
+  --tw-text-opacity: 1;
+  color: rgba(156,163,175,var(--tw-text-opacity));
+}
+
+.c15:hover {
+  --tw-text-opacity: 1;
+  color: rgba(31,41,55,var(--tw-text-opacity));
+}
+
+.c13 {
+  width: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  border-bottom-width: 1px;
+  --tw-border-opacity: 1;
+  border-color: rgba(229,231,235,var(--tw-border-opacity));
+}
+
+.c12 {
+  width: 100%;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.c16 {
+  width: 100%;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.c11 {
+  width: 100%;
+}
+
+.c10 {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  gap: 1.5rem;
+}
+
+@media (min-width:640px) {
+  .c1 {
+    max-width: 640px;
+  }
+}
+
+@media (min-width:768px) {
+  .c1 {
+    max-width: 768px;
+  }
+}
+
+@media (min-width:1024px) {
+  .c1 {
+    max-width: 1024px;
+  }
+}
+
+@media (min-width:1280px) {
+  .c1 {
+    max-width: 1280px;
+  }
+}
+
+@media (min-width:1536px) {
+  .c1 {
+    max-width: 1536px;
+  }
+}
+
+@media (min-width:640px) {
+  .c10 {
+    max-width: 640px;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+  }
+}
+
+@media (min-width:768px) {
+  .c10 {
+    max-width: 768px;
+  }
+}
+
+@media (min-width:1024px) {
+  .c10 {
+    max-width: 1024px;
+  }
+}
+
+@media (min-width:1280px) {
+  .c10 {
+    max-width: 1280px;
+  }
+}
+
+@media (min-width:1536px) {
+  .c10 {
+    max-width: 1536px;
+  }
+}
+
 <div
-  className="BaseLayoutTemplate__Container-sc-1jz5xvr-0 kHMSW"
+  className="c0"
 >
   <div
-    className="HeaderTemplate__Container-sc-kdla34-0 gxnUkb"
+    className="c1"
   >
     <div
-      className="HeaderTemplate__Heading-sc-kdla34-1 lcHwtI"
+      className="c2"
     >
       <div
-        className="HeaderTemplate__HeadingTitle-sc-kdla34-2 ibfQih"
+        className="c3"
         data-cy="header-logo-link"
       >
         <a
@@ -135,10 +874,10 @@ exports[`Profile Snapshots renders profile after login 1`] = `
                 className="flex items-center gap-1"
               >
                 <div
-                  className="Avatar__Wrapper-sc-m9feoe-0 ieHczv"
+                  className="c4"
                 >
                   <div
-                    className="Avatar__Container-sc-m9feoe-1 fQHyzl w-5 h-5"
+                    className="c5 w-5 h-5"
                   >
                     <span
                       style={
@@ -163,7 +902,7 @@ exports[`Profile Snapshots renders profile after login 1`] = `
                     >
                       <img
                         alt="avatar"
-                        className="Avatar__Img-sc-m9feoe-2 kuaPdK rounded-full"
+                        className="c6 rounded-full"
                         data-nimg="fill"
                         decoding="async"
                         src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
@@ -193,7 +932,7 @@ exports[`Profile Snapshots renders profile after login 1`] = `
                       <noscript>
                         <img
                           alt="avatar"
-                          className="Avatar__Img-sc-m9feoe-2 kuaPdK rounded-full"
+                          className="c6 rounded-full"
                           data-nimg="fill"
                           decoding="async"
                           loading="lazy"
@@ -236,14 +975,14 @@ exports[`Profile Snapshots renders profile after login 1`] = `
     </div>
   </div>
   <div
-    className="ProfileBannerTemplate__Container-sc-5p6x8t-0 flworz"
+    className="c7"
   >
     <div
-      className="Avatar__Wrapper-sc-m9feoe-0 ieHczv"
+      className="c4"
       data-cy="profile-image"
     >
       <div
-        className="Avatar__Container-sc-m9feoe-1 fQHyzl w-32 h-32"
+        className="c5 w-32 h-32"
       >
         <span
           style={
@@ -268,7 +1007,7 @@ exports[`Profile Snapshots renders profile after login 1`] = `
         >
           <img
             alt="avatar"
-            className="Avatar__Img-sc-m9feoe-2 kuaPdK rounded-full"
+            className="c6 rounded-full"
             data-nimg="fill"
             decoding="async"
             src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
@@ -298,7 +1037,7 @@ exports[`Profile Snapshots renders profile after login 1`] = `
           <noscript>
             <img
               alt="avatar"
-              className="Avatar__Img-sc-m9feoe-2 kuaPdK rounded-full"
+              className="c6 rounded-full"
               data-nimg="fill"
               decoding="async"
               loading="lazy"
@@ -333,13 +1072,13 @@ exports[`Profile Snapshots renders profile after login 1`] = `
       </div>
     </div>
     <h4
-      className="ProfileBannerTemplate__Title-sc-5p6x8t-1 ccIZKX"
+      className="c8"
       data-cy="profile-username"
     >
       Jacob
     </h4>
     <div
-      className="ProfileBannerTemplate__Description-sc-5p6x8t-2 gDczTm"
+      className="c9"
       data-cy="profile-bio"
     >
       I like to skateboard
@@ -350,26 +1089,26 @@ exports[`Profile Snapshots renders profile after login 1`] = `
     className="container mx-auto mt-8"
   >
     <div
-      className="ProfileContentTemplate__Container-sc-7fywoj-0 hsdtkv"
+      className="c10"
     >
       <div
-        className="ProfileFeedContentTemplate__Container-sc-12vsxb3-0 dfPylk"
+        className="c11"
       >
         <div
-          className="TabProvider__Container-sc-dghi3q-0 hMjFPD"
+          className="c12"
         >
           <ul
-            className="TabNavs__Container-sc-1s6vm0l-0 fNatPj"
+            className="c13"
           >
             <li
-              className="TabNav__Container-sc-eq25ji-0 khtWGz"
+              className="c14"
               data-cy="tab-nav-my_posts"
               onClick={[Function]}
             >
               My Posts
             </li>
             <li
-              className="TabNav__Container-sc-eq25ji-0 jLZeXs"
+              className="c15"
               data-cy="tab-nav-favorited_posts"
               onClick={[Function]}
             >
@@ -377,25 +1116,25 @@ exports[`Profile Snapshots renders profile after login 1`] = `
             </li>
           </ul>
           <div
-            className="TabPane__Container-sc-12cvcpc-0 IWqVW"
+            className="c16"
             data-cy="tab-pane-my_posts"
           >
             <div
-              className="FeedList__Container-sc-m88k4f-0 cwdJLz"
+              className="c17"
               data-cy="feed-list"
             >
               <div
-                className="Feed__Container-sc-njujrp-0 hCoOyB"
+                className="c18"
                 data-cy="feed-container"
               >
                 <div
-                  className="Feed__AuthorContainer-sc-njujrp-1 kgsVwO"
+                  className="c19"
                 >
                   <div
-                    className="Avatar__Wrapper-sc-m9feoe-0 ieHczv"
+                    className="c4"
                   >
                     <div
-                      className="Avatar__Container-sc-m9feoe-1 fQHyzl w-8 h-8"
+                      className="c5 w-8 h-8"
                     >
                       <span
                         style={
@@ -420,7 +1159,7 @@ exports[`Profile Snapshots renders profile after login 1`] = `
                       >
                         <img
                           alt="avatar"
-                          className="Avatar__Img-sc-m9feoe-2 kuaPdK rounded-full"
+                          className="c6 rounded-full"
                           data-nimg="fill"
                           decoding="async"
                           src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
@@ -450,7 +1189,7 @@ exports[`Profile Snapshots renders profile after login 1`] = `
                         <noscript>
                           <img
                             alt="avatar"
-                            className="Avatar__Img-sc-m9feoe-2 kuaPdK rounded-full"
+                            className="c6 rounded-full"
                             data-nimg="fill"
                             decoding="async"
                             loading="lazy"
@@ -485,10 +1224,10 @@ exports[`Profile Snapshots renders profile after login 1`] = `
                     </div>
                   </div>
                   <div
-                    className="Feed__AuthorInfo-sc-njujrp-2 bwLqOH"
+                    className="c20"
                   >
                     <div
-                      className="Feed__AuthorName-sc-njujrp-3 fbCOoc"
+                      className="c21"
                       data-cy="feed-profile"
                     >
                       <a
@@ -500,13 +1239,13 @@ exports[`Profile Snapshots renders profile after login 1`] = `
                       </a>
                     </div>
                     <div
-                      className="Feed__AuthorDate-sc-njujrp-4 cqYxgN"
+                      className="c22"
                     >
                       Thu Feb 18 2016
                     </div>
                   </div>
                   <div
-                    className="Feed__Favorite-sc-njujrp-5 gjwhNt"
+                    className="c23"
                     data-cy="feed-favorite"
                     onClick={[Function]}
                   >
@@ -538,42 +1277,42 @@ exports[`Profile Snapshots renders profile after login 1`] = `
                   </div>
                 </div>
                 <div
-                  className="Feed__Content-sc-njujrp-6 bMJyvN"
+                  className="c24"
                   data-cy="feed-content"
                   href="/article/how-to-train-your-dragon"
                   onClick={[Function]}
                   onMouseEnter={[Function]}
                 >
                   <h1
-                    className="Feed__Title-sc-njujrp-7 VSHlD"
+                    className="c25"
                   >
                     How to train your dragon
                   </h1>
                   <div
-                    className="Feed__Body-sc-njujrp-8 ksVMoY"
+                    className="c26"
                   >
                     <p>
                       Ever wonder how?
                     </p>
                   </div>
                   <div
-                    className="Feed__Footer-sc-njujrp-9 fPWzJO"
+                    className="c27"
                   >
                     <div
-                      className="Feed__ReadMore-sc-njujrp-10 dZzWHi"
+                      className="c28"
                     >
                       Read more...
                     </div>
                     <div
-                      className="Feed__Tags-sc-njujrp-11 guXOMJ"
+                      className="c29"
                     >
                       <div
-                        className="Feed__Tag-sc-njujrp-12 bgLIUB"
+                        className="c30"
                       >
                         dragons
                       </div>
                       <div
-                        className="Feed__Tag-sc-njujrp-12 bgLIUB"
+                        className="c30"
                       >
                         training
                       </div>
@@ -582,17 +1321,17 @@ exports[`Profile Snapshots renders profile after login 1`] = `
                 </div>
               </div>
               <div
-                className="Feed__Container-sc-njujrp-0 hCoOyB"
+                className="c18"
                 data-cy="feed-container"
               >
                 <div
-                  className="Feed__AuthorContainer-sc-njujrp-1 kgsVwO"
+                  className="c19"
                 >
                   <div
-                    className="Avatar__Wrapper-sc-m9feoe-0 ieHczv"
+                    className="c4"
                   >
                     <div
-                      className="Avatar__Container-sc-m9feoe-1 fQHyzl w-8 h-8"
+                      className="c5 w-8 h-8"
                     >
                       <span
                         style={
@@ -617,7 +1356,7 @@ exports[`Profile Snapshots renders profile after login 1`] = `
                       >
                         <img
                           alt="avatar"
-                          className="Avatar__Img-sc-m9feoe-2 kuaPdK rounded-full"
+                          className="c6 rounded-full"
                           data-nimg="fill"
                           decoding="async"
                           src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
@@ -647,7 +1386,7 @@ exports[`Profile Snapshots renders profile after login 1`] = `
                         <noscript>
                           <img
                             alt="avatar"
-                            className="Avatar__Img-sc-m9feoe-2 kuaPdK rounded-full"
+                            className="c6 rounded-full"
                             data-nimg="fill"
                             decoding="async"
                             loading="lazy"
@@ -682,10 +1421,10 @@ exports[`Profile Snapshots renders profile after login 1`] = `
                     </div>
                   </div>
                   <div
-                    className="Feed__AuthorInfo-sc-njujrp-2 bwLqOH"
+                    className="c20"
                   >
                     <div
-                      className="Feed__AuthorName-sc-njujrp-3 fbCOoc"
+                      className="c21"
                       data-cy="feed-profile"
                     >
                       <a
@@ -697,13 +1436,13 @@ exports[`Profile Snapshots renders profile after login 1`] = `
                       </a>
                     </div>
                     <div
-                      className="Feed__AuthorDate-sc-njujrp-4 cqYxgN"
+                      className="c22"
                     >
                       Thu Feb 18 2016
                     </div>
                   </div>
                   <div
-                    className="Feed__Favorite-sc-njujrp-5 cbgHkv"
+                    className="c31"
                     data-cy="feed-favorite"
                     onClick={[Function]}
                   >
@@ -735,37 +1474,37 @@ exports[`Profile Snapshots renders profile after login 1`] = `
                   </div>
                 </div>
                 <div
-                  className="Feed__Content-sc-njujrp-6 bMJyvN"
+                  className="c24"
                   data-cy="feed-content"
                   href="/article/how-to-train-your-dragon-2"
                   onClick={[Function]}
                   onMouseEnter={[Function]}
                 >
                   <h1
-                    className="Feed__Title-sc-njujrp-7 VSHlD"
+                    className="c25"
                   >
                     How to train your dragon 2
                   </h1>
                   <div
-                    className="Feed__Body-sc-njujrp-8 ksVMoY"
+                    className="c26"
                   >
                     <p>
                       So toothless
                     </p>
                   </div>
                   <div
-                    className="Feed__Footer-sc-njujrp-9 fPWzJO"
+                    className="c27"
                   >
                     <div
-                      className="Feed__ReadMore-sc-njujrp-10 dZzWHi"
+                      className="c28"
                     >
                       Read more...
                     </div>
                     <div
-                      className="Feed__Tags-sc-njujrp-11 guXOMJ"
+                      className="c29"
                     >
                       <div
-                        className="Feed__Tag-sc-njujrp-12 bgLIUB"
+                        className="c30"
                       >
                         dragons
                       </div>
@@ -774,17 +1513,17 @@ exports[`Profile Snapshots renders profile after login 1`] = `
                 </div>
               </div>
               <div
-                className="Feed__Container-sc-njujrp-0 hCoOyB"
+                className="c18"
                 data-cy="feed-container"
               >
                 <div
-                  className="Feed__AuthorContainer-sc-njujrp-1 kgsVwO"
+                  className="c19"
                 >
                   <div
-                    className="Avatar__Wrapper-sc-m9feoe-0 ieHczv"
+                    className="c4"
                   >
                     <div
-                      className="Avatar__Container-sc-m9feoe-1 fQHyzl w-8 h-8"
+                      className="c5 w-8 h-8"
                     >
                       <span
                         style={
@@ -809,7 +1548,7 @@ exports[`Profile Snapshots renders profile after login 1`] = `
                       >
                         <img
                           alt="avatar"
-                          className="Avatar__Img-sc-m9feoe-2 kuaPdK rounded-full"
+                          className="c6 rounded-full"
                           data-nimg="fill"
                           decoding="async"
                           src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
@@ -839,7 +1578,7 @@ exports[`Profile Snapshots renders profile after login 1`] = `
                         <noscript>
                           <img
                             alt="avatar"
-                            className="Avatar__Img-sc-m9feoe-2 kuaPdK rounded-full"
+                            className="c6 rounded-full"
                             data-nimg="fill"
                             decoding="async"
                             loading="lazy"
@@ -874,10 +1613,10 @@ exports[`Profile Snapshots renders profile after login 1`] = `
                     </div>
                   </div>
                   <div
-                    className="Feed__AuthorInfo-sc-njujrp-2 bwLqOH"
+                    className="c20"
                   >
                     <div
-                      className="Feed__AuthorName-sc-njujrp-3 fbCOoc"
+                      className="c21"
                       data-cy="feed-profile"
                     >
                       <a
@@ -889,13 +1628,13 @@ exports[`Profile Snapshots renders profile after login 1`] = `
                       </a>
                     </div>
                     <div
-                      className="Feed__AuthorDate-sc-njujrp-4 cqYxgN"
+                      className="c22"
                     >
                       Thu Feb 18 2016
                     </div>
                   </div>
                   <div
-                    className="Feed__Favorite-sc-njujrp-5 gjwhNt"
+                    className="c23"
                     data-cy="feed-favorite"
                     onClick={[Function]}
                   >
@@ -927,37 +1666,37 @@ exports[`Profile Snapshots renders profile after login 1`] = `
                   </div>
                 </div>
                 <div
-                  className="Feed__Content-sc-njujrp-6 bMJyvN"
+                  className="c24"
                   data-cy="feed-content"
                   href="/article/how-to-train-your-dragon-3"
                   onClick={[Function]}
                   onMouseEnter={[Function]}
                 >
                   <h1
-                    className="Feed__Title-sc-njujrp-7 VSHlD"
+                    className="c25"
                   >
                     How to train your dragon 3
                   </h1>
                   <div
-                    className="Feed__Body-sc-njujrp-8 ksVMoY"
+                    className="c26"
                   >
                     <p>
                       So toothless
                     </p>
                   </div>
                   <div
-                    className="Feed__Footer-sc-njujrp-9 fPWzJO"
+                    className="c27"
                   >
                     <div
-                      className="Feed__ReadMore-sc-njujrp-10 dZzWHi"
+                      className="c28"
                     >
                       Read more...
                     </div>
                     <div
-                      className="Feed__Tags-sc-njujrp-11 guXOMJ"
+                      className="c29"
                     >
                       <div
-                        className="Feed__Tag-sc-njujrp-12 bgLIUB"
+                        className="c30"
                       >
                         dragons
                       </div>
@@ -966,17 +1705,17 @@ exports[`Profile Snapshots renders profile after login 1`] = `
                 </div>
               </div>
               <div
-                className="Feed__Container-sc-njujrp-0 hCoOyB"
+                className="c18"
                 data-cy="feed-container"
               >
                 <div
-                  className="Feed__AuthorContainer-sc-njujrp-1 kgsVwO"
+                  className="c19"
                 >
                   <div
-                    className="Avatar__Wrapper-sc-m9feoe-0 ieHczv"
+                    className="c4"
                   >
                     <div
-                      className="Avatar__Container-sc-m9feoe-1 fQHyzl w-8 h-8"
+                      className="c5 w-8 h-8"
                     >
                       <span
                         style={
@@ -1001,7 +1740,7 @@ exports[`Profile Snapshots renders profile after login 1`] = `
                       >
                         <img
                           alt="avatar"
-                          className="Avatar__Img-sc-m9feoe-2 kuaPdK rounded-full"
+                          className="c6 rounded-full"
                           data-nimg="fill"
                           decoding="async"
                           src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
@@ -1031,7 +1770,7 @@ exports[`Profile Snapshots renders profile after login 1`] = `
                         <noscript>
                           <img
                             alt="avatar"
-                            className="Avatar__Img-sc-m9feoe-2 kuaPdK rounded-full"
+                            className="c6 rounded-full"
                             data-nimg="fill"
                             decoding="async"
                             loading="lazy"
@@ -1066,10 +1805,10 @@ exports[`Profile Snapshots renders profile after login 1`] = `
                     </div>
                   </div>
                   <div
-                    className="Feed__AuthorInfo-sc-njujrp-2 bwLqOH"
+                    className="c20"
                   >
                     <div
-                      className="Feed__AuthorName-sc-njujrp-3 fbCOoc"
+                      className="c21"
                       data-cy="feed-profile"
                     >
                       <a
@@ -1081,13 +1820,13 @@ exports[`Profile Snapshots renders profile after login 1`] = `
                       </a>
                     </div>
                     <div
-                      className="Feed__AuthorDate-sc-njujrp-4 cqYxgN"
+                      className="c22"
                     >
                       Thu Feb 18 2016
                     </div>
                   </div>
                   <div
-                    className="Feed__Favorite-sc-njujrp-5 gjwhNt"
+                    className="c23"
                     data-cy="feed-favorite"
                     onClick={[Function]}
                   >
@@ -1119,37 +1858,37 @@ exports[`Profile Snapshots renders profile after login 1`] = `
                   </div>
                 </div>
                 <div
-                  className="Feed__Content-sc-njujrp-6 bMJyvN"
+                  className="c24"
                   data-cy="feed-content"
                   href="/article/how-to-train-your-dragon-4"
                   onClick={[Function]}
                   onMouseEnter={[Function]}
                 >
                   <h1
-                    className="Feed__Title-sc-njujrp-7 VSHlD"
+                    className="c25"
                   >
                     How to train your dragon 4
                   </h1>
                   <div
-                    className="Feed__Body-sc-njujrp-8 ksVMoY"
+                    className="c26"
                   >
                     <p>
                       So toothless
                     </p>
                   </div>
                   <div
-                    className="Feed__Footer-sc-njujrp-9 fPWzJO"
+                    className="c27"
                   >
                     <div
-                      className="Feed__ReadMore-sc-njujrp-10 dZzWHi"
+                      className="c28"
                     >
                       Read more...
                     </div>
                     <div
-                      className="Feed__Tags-sc-njujrp-11 guXOMJ"
+                      className="c29"
                     >
                       <div
-                        className="Feed__Tag-sc-njujrp-12 bgLIUB"
+                        className="c30"
                       >
                         dragons
                       </div>
@@ -1158,17 +1897,17 @@ exports[`Profile Snapshots renders profile after login 1`] = `
                 </div>
               </div>
               <div
-                className="Feed__Container-sc-njujrp-0 hCoOyB"
+                className="c18"
                 data-cy="feed-container"
               >
                 <div
-                  className="Feed__AuthorContainer-sc-njujrp-1 kgsVwO"
+                  className="c19"
                 >
                   <div
-                    className="Avatar__Wrapper-sc-m9feoe-0 ieHczv"
+                    className="c4"
                   >
                     <div
-                      className="Avatar__Container-sc-m9feoe-1 fQHyzl w-8 h-8"
+                      className="c5 w-8 h-8"
                     >
                       <span
                         style={
@@ -1193,7 +1932,7 @@ exports[`Profile Snapshots renders profile after login 1`] = `
                       >
                         <img
                           alt="avatar"
-                          className="Avatar__Img-sc-m9feoe-2 kuaPdK rounded-full"
+                          className="c6 rounded-full"
                           data-nimg="fill"
                           decoding="async"
                           src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
@@ -1223,7 +1962,7 @@ exports[`Profile Snapshots renders profile after login 1`] = `
                         <noscript>
                           <img
                             alt="avatar"
-                            className="Avatar__Img-sc-m9feoe-2 kuaPdK rounded-full"
+                            className="c6 rounded-full"
                             data-nimg="fill"
                             decoding="async"
                             loading="lazy"
@@ -1258,10 +1997,10 @@ exports[`Profile Snapshots renders profile after login 1`] = `
                     </div>
                   </div>
                   <div
-                    className="Feed__AuthorInfo-sc-njujrp-2 bwLqOH"
+                    className="c20"
                   >
                     <div
-                      className="Feed__AuthorName-sc-njujrp-3 fbCOoc"
+                      className="c21"
                       data-cy="feed-profile"
                     >
                       <a
@@ -1273,13 +2012,13 @@ exports[`Profile Snapshots renders profile after login 1`] = `
                       </a>
                     </div>
                     <div
-                      className="Feed__AuthorDate-sc-njujrp-4 cqYxgN"
+                      className="c22"
                     >
                       Thu Feb 18 2016
                     </div>
                   </div>
                   <div
-                    className="Feed__Favorite-sc-njujrp-5 gjwhNt"
+                    className="c23"
                     data-cy="feed-favorite"
                     onClick={[Function]}
                   >
@@ -1311,37 +2050,37 @@ exports[`Profile Snapshots renders profile after login 1`] = `
                   </div>
                 </div>
                 <div
-                  className="Feed__Content-sc-njujrp-6 bMJyvN"
+                  className="c24"
                   data-cy="feed-content"
                   href="/article/how-to-train-your-dragon-5"
                   onClick={[Function]}
                   onMouseEnter={[Function]}
                 >
                   <h1
-                    className="Feed__Title-sc-njujrp-7 VSHlD"
+                    className="c25"
                   >
                     How to train your dragon 5
                   </h1>
                   <div
-                    className="Feed__Body-sc-njujrp-8 ksVMoY"
+                    className="c26"
                   >
                     <p>
                       So toothless
                     </p>
                   </div>
                   <div
-                    className="Feed__Footer-sc-njujrp-9 fPWzJO"
+                    className="c27"
                   >
                     <div
-                      className="Feed__ReadMore-sc-njujrp-10 dZzWHi"
+                      className="c28"
                     >
                       Read more...
                     </div>
                     <div
-                      className="Feed__Tags-sc-njujrp-11 guXOMJ"
+                      className="c29"
                     >
                       <div
-                        className="Feed__Tag-sc-njujrp-12 bgLIUB"
+                        className="c30"
                       >
                         dragons
                       </div>
@@ -1350,7 +2089,7 @@ exports[`Profile Snapshots renders profile after login 1`] = `
                 </div>
               </div>
               <div
-                className="Pagination__Container-sc-z81ile-0 dGdshJ"
+                className="c32"
               >
                 <div
                   className="bg-white px-4 py-3 flex items-center justify-between border-t border-gray-200 sm:px-6"
@@ -1359,7 +2098,7 @@ exports[`Profile Snapshots renders profile after login 1`] = `
                     className="flex-1 flex justify-between sm:hidden"
                   >
                     <a
-                      className="Pagination__PrevNextButton-sc-z81ile-1 fBtVrM"
+                      className="c33"
                       disabled={true}
                       href="#"
                       onClick={[Function]}
@@ -1367,7 +2106,7 @@ exports[`Profile Snapshots renders profile after login 1`] = `
                       Previous
                     </a>
                     <a
-                      className="Pagination__PrevNextButton-sc-z81ile-1 iTKNyl ml-3"
+                      className="c34 ml-3"
                       disabled={false}
                       href="#"
                       onClick={[Function]}
@@ -1387,12 +2126,12 @@ exports[`Profile Snapshots renders profile after login 1`] = `
                         <a
                           aria-disabled="true"
                           aria-label="Previous page"
-                          className="pagination-previous"
+                          className="pagination-previous "
                           onClick={[Function]}
                           onKeyPress={[Function]}
                           rel="prev"
                           role="button"
-                          tabIndex="0"
+                          tabIndex="-1"
                         >
                           <span
                             className="sr-only"
@@ -1423,8 +2162,9 @@ exports[`Profile Snapshots renders profile after login 1`] = `
                           className="pagination-page pagination-current-page"
                           onClick={[Function]}
                           onKeyPress={[Function]}
+                          rel="canonical"
                           role="button"
-                          tabIndex="0"
+                          tabIndex="-1"
                         >
                           1
                         </a>
@@ -1438,6 +2178,7 @@ exports[`Profile Snapshots renders profile after login 1`] = `
                           className="pagination-page"
                           onClick={[Function]}
                           onKeyPress={[Function]}
+                          rel="next"
                           role="button"
                           tabIndex="0"
                         >
@@ -1488,10 +2229,10 @@ exports[`Profile Snapshots renders profile after login 1`] = `
     </div>
   </div>
   <div
-    className="FooterTemplate__Container-sc-96wla6-0 cOGJUH"
+    className="c35"
   >
     <span
-      className="FooterTemplate__SiteLink-sc-96wla6-1 ENejy text-base mr-1 font-bold"
+      className="c36 text-base mr-1 font-bold"
       data-cy="footer-logo-link"
       href="/"
       onClick={[Function]}
@@ -1501,7 +2242,7 @@ exports[`Profile Snapshots renders profile after login 1`] = `
     </span>
     © 2020. An interactive learning project from
     <span
-      className="FooterTemplate__SiteLink-sc-96wla6-1 ENejy ml-1"
+      className="c36 ml-1"
       data-cy="footer-site-link"
       href="https://thinkster.io/"
       onClick={[Function]}
@@ -1515,17 +2256,790 @@ exports[`Profile Snapshots renders profile after login 1`] = `
 `;
 
 exports[`Profile Snapshots renders profile after login with other user 1`] = `
+.c36 {
+  width: 100%;
+  position: absolute;
+  bottom: 0px;
+  margin-top: 3rem;
+  --tw-bg-opacity: 1;
+  background-color: rgba(229,231,235,var(--tw-bg-opacity));
+  padding-left: 3.5rem;
+  padding-right: 3.5rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  font-size: 0.75rem;
+  line-height: 1rem;
+  --tw-text-opacity: 1;
+  color: rgba(156,163,175,var(--tw-text-opacity));
+}
+
+.c37 {
+  color: var(--color-primary);
+}
+
+.c37:hover {
+  color: var(--color-secondary);
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+}
+
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.c5 {
+  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  border-radius: 9999px;
+}
+
+.c6 {
+  border-radius: 9999px;
+}
+
+.c1 {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.c2 {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.c3 {
+  font-weight: 700;
+  font-size: 1.5rem;
+  line-height: 2rem;
+  color: var(--color-primary);
+  font-family: ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c0 {
+  width: 100%;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.c7 {
+  max-width: 100%;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  padding-top: 2rem;
+  padding-bottom: 1rem;
+  --tw-bg-opacity: 1;
+  background-color: rgba(229,231,235,var(--tw-bg-opacity));
+  text-align: center;
+}
+
+.c8 {
+  font-weight: 700;
+  font-size: 1.5rem;
+  line-height: 2rem;
+  margin-top: 1rem;
+}
+
+.c10 {
+  font-weight: 300;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  --tw-text-opacity: 1;
+  color: rgba(156,163,175,var(--tw-text-opacity));
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  padding-left: 3rem;
+  padding-right: 3rem;
+}
+
+.c9 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  cursor: pointer;
+  width: 5rem;
+  height: 1.75rem;
+  border-width: 1px;
+  --tw-border-opacity: 1;
+  border-color: rgba(156,163,175,var(--tw-border-opacity));
+  border-radius: 0.25rem;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  margin-top: 0.5rem;
+  --tw-text-opacity: 1;
+  color: rgba(156,163,175,var(--tw-text-opacity));
+}
+
+.c9:hover {
+  --tw-text-opacity: 1;
+  color: rgba(255,255,255,var(--tw-text-opacity));
+  --tw-bg-opacity: 1;
+  background-color: rgba(156,163,175,var(--tw-bg-opacity));
+}
+
+.c33 {
+  width: 100%;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.c33 .pagination {
+  position: relative;
+  z-index: 0;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  border-radius: 0.375rem;
+  --tw-shadow: 0 1px 2px 0 rgba(0,0,0,0.05);
+  box-shadow: var(--tw-ring-offset-shadow,0 0 #0000),var(--tw-ring-shadow,0 0 #0000),var(--tw-shadow);
+}
+
+.c33 .pagination > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-x-reverse: 0;
+  margin-right: calc(-1px * var(--tw-space-x-reverse));
+  margin-left: calc(-1px * calc(1 - var(--tw-space-x-reverse)));
+}
+
+.c33 .pagination-page-item {
+  --tw-bg-opacity: 1;
+  background-color: rgba(255,255,255,var(--tw-bg-opacity));
+  --tw-border-opacity: 1;
+  border-color: rgba(209,213,219,var(--tw-border-opacity));
+  border-width: 1px;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.c33 .pagination-page-item:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgba(249,250,251,var(--tw-bg-opacity));
+}
+
+.c33 .pagination-page-item.disabled {
+  cursor: not-allowed;
+  --tw-bg-opacity: 1;
+  background-color: rgba(229,231,235,var(--tw-bg-opacity));
+}
+
+.c33 .pagination-page-item.disabled a {
+  cursor: not-allowed;
+}
+
+.c33 .pagination-page {
+  --tw-text-opacity: 1;
+  color: rgba(107,114,128,var(--tw-text-opacity));
+  position: relative;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  font-weight: 500;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
+.c33 .pagination-ellipsis {
+  position: relative;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  font-weight: 500;
+  --tw-text-opacity: 1;
+  color: rgba(55,65,81,var(--tw-text-opacity));
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
+.c33 .pagination-previous-item {
+  --tw-bg-opacity: 1;
+  background-color: rgba(255,255,255,var(--tw-bg-opacity));
+  --tw-border-opacity: 1;
+  border-color: rgba(209,213,219,var(--tw-border-opacity));
+  border-width: 1px;
+  border-top-left-radius: 0.375rem;
+  border-bottom-left-radius: 0.375rem;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.c33 .pagination-previous-item:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgba(249,250,251,var(--tw-bg-opacity));
+}
+
+.c33 .pagination-previous-item.disabled {
+  cursor: not-allowed;
+  --tw-bg-opacity: 1;
+  background-color: rgba(229,231,235,var(--tw-bg-opacity));
+}
+
+.c33 .pagination-previous-item.disabled a {
+  cursor: not-allowed;
+}
+
+.c33 .pagination-previous {
+  position: relative;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  font-weight: 500;
+  --tw-text-opacity: 1;
+  color: rgba(107,114,128,var(--tw-text-opacity));
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
+.c33 .pagination-next-item {
+  --tw-bg-opacity: 1;
+  background-color: rgba(255,255,255,var(--tw-bg-opacity));
+  --tw-border-opacity: 1;
+  border-color: rgba(209,213,219,var(--tw-border-opacity));
+  border-width: 1px;
+  border-top-right-radius: 0.375rem;
+  border-bottom-right-radius: 0.375rem;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.c33 .pagination-next-item:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgba(249,250,251,var(--tw-bg-opacity));
+}
+
+.c33 .pagination-next-item.disabled {
+  cursor: not-allowed;
+  --tw-bg-opacity: 1;
+  background-color: rgba(229,231,235,var(--tw-bg-opacity));
+}
+
+.c33 .pagination-next-item.disabled a {
+  cursor: not-allowed;
+}
+
+.c33 .pagination-next {
+  position: relative;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  font-weight: 500;
+  --tw-text-opacity: 1;
+  color: rgba(107,114,128,var(--tw-text-opacity));
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
+.c33 .pagination-current-page-item {
+  z-index: 10;
+  background-color: var(--color-primary);
+  border-color: var(--color-primary);
+}
+
+.c33 .pagination-current-page-item:hover {
+  background-color: var(--color-primary);
+  --tw-bg-opacity: 0.5;
+}
+
+.c33 .pagination-current-page {
+  --tw-text-opacity: 1;
+  color: rgba(255,255,255,var(--tw-text-opacity));
+}
+
+.c34 {
+  position: relative;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  border-width: 1px;
+  --tw-border-opacity: 1;
+  border-color: rgba(209,213,219,var(--tw-border-opacity));
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  font-weight: 500;
+  border-radius: 0.375rem;
+  --tw-text-opacity: 1;
+  color: rgba(55,65,81,var(--tw-text-opacity));
+  --tw-bg-opacity: 1;
+  background-color: rgba(255,255,255,var(--tw-bg-opacity));
+  cursor: not-allowed;
+  --tw-bg-opacity: 1;
+  background-color: rgba(229,231,235,var(--tw-bg-opacity));
+}
+
+.c34:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgba(249,250,251,var(--tw-bg-opacity));
+}
+
+.c34:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgba(229,231,235,var(--tw-bg-opacity));
+}
+
+.c35 {
+  position: relative;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  border-width: 1px;
+  --tw-border-opacity: 1;
+  border-color: rgba(209,213,219,var(--tw-border-opacity));
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  font-weight: 500;
+  border-radius: 0.375rem;
+  --tw-text-opacity: 1;
+  color: rgba(55,65,81,var(--tw-text-opacity));
+  --tw-bg-opacity: 1;
+  background-color: rgba(255,255,255,var(--tw-bg-opacity));
+}
+
+.c35:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgba(249,250,251,var(--tw-bg-opacity));
+}
+
+.c19 {
+  width: 100%;
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+}
+
+.c19:not(:last-child) {
+  border-bottom-width: 1px;
+  --tw-border-opacity: 1;
+  border-color: rgba(229,231,235,var(--tw-border-opacity));
+}
+
+.c20 {
+  width: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.c21 {
+  width: auto;
+  margin-left: 0.375rem;
+  margin-right: 1rem;
+}
+
+.c22 {
+  color: var(--color-primary);
+}
+
+.c22:hover {
+  color: var(--color-secondary);
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+}
+
+.c23 {
+  font-size: 0.75rem;
+  line-height: 1rem;
+  --tw-text-opacity: 1;
+  color: rgba(156,163,175,var(--tw-text-opacity));
+}
+
+.c24 {
+  margin-left: auto;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  cursor: pointer;
+  width: 2.5rem;
+  height: 1.75rem;
+  border-width: 1px;
+  border-color: var(--color-primary);
+  border-radius: 0.25rem;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  color: var(--color-primary);
+}
+
+.c24:hover {
+  --tw-text-opacity: 1;
+  color: rgba(255,255,255,var(--tw-text-opacity));
+  background-color: var(--color-primary);
+}
+
+.c32 {
+  margin-left: auto;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  cursor: pointer;
+  width: 2.5rem;
+  height: 1.75rem;
+  border-width: 1px;
+  border-color: var(--color-primary);
+  border-radius: 0.25rem;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  --tw-text-opacity: 1;
+  color: rgba(255,255,255,var(--tw-text-opacity));
+  background-color: var(--color-primary);
+}
+
+.c32:hover {
+  color: var(--color-primary);
+  --tw-bg-opacity: 1;
+  background-color: rgba(255,255,255,var(--tw-bg-opacity));
+}
+
+.c25 {
+  width: 100%;
+  cursor: pointer;
+}
+
+.c26 {
+  font-size: 1.5rem;
+  line-height: 2rem;
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+}
+
+.c27 {
+  font-size: 1rem;
+  line-height: 1.5rem;
+  --tw-text-opacity: 1;
+  color: rgba(107,114,128,var(--tw-text-opacity));
+  margin-bottom: 1rem;
+}
+
+.c28 {
+  width: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.c29 {
+  font-size: 0.75rem;
+  line-height: 1rem;
+  --tw-text-opacity: 1;
+  color: rgba(156,163,175,var(--tw-text-opacity));
+}
+
+.c30 {
+  margin-left: auto;
+  vertical-align: top;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  max-width: 50%;
+}
+
+.c31 {
+  font-size: 0.75rem;
+  line-height: 1;
+  --tw-text-opacity: 1;
+  color: rgba(156,163,175,var(--tw-text-opacity));
+  font-weight: 300;
+  white-space: nowrap;
+  border-width: 1px;
+  --tw-border-opacity: 1;
+  border-color: rgba(156,163,175,var(--tw-border-opacity));
+  border-radius: 9999px;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  cursor: pointer;
+  padding: 4px 10px;
+  margin-right: 3px;
+}
+
+.c18 {
+  width: 100%;
+}
+
+.c15 {
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  cursor: pointer;
+  font-size: 1rem;
+  line-height: 1;
+  font-weight: 700;
+  color: var(--color-primary);
+  border-bottom-width: 2px;
+  border-color: var(--color-primary);
+}
+
+.c16 {
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  cursor: pointer;
+  font-size: 1rem;
+  line-height: 1;
+  --tw-text-opacity: 1;
+  color: rgba(156,163,175,var(--tw-text-opacity));
+}
+
+.c16:hover {
+  --tw-text-opacity: 1;
+  color: rgba(31,41,55,var(--tw-text-opacity));
+}
+
+.c14 {
+  width: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  border-bottom-width: 1px;
+  --tw-border-opacity: 1;
+  border-color: rgba(229,231,235,var(--tw-border-opacity));
+}
+
+.c13 {
+  width: 100%;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.c17 {
+  width: 100%;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.c12 {
+  width: 100%;
+}
+
+.c11 {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  gap: 1.5rem;
+}
+
+@media (min-width:640px) {
+  .c1 {
+    max-width: 640px;
+  }
+}
+
+@media (min-width:768px) {
+  .c1 {
+    max-width: 768px;
+  }
+}
+
+@media (min-width:1024px) {
+  .c1 {
+    max-width: 1024px;
+  }
+}
+
+@media (min-width:1280px) {
+  .c1 {
+    max-width: 1280px;
+  }
+}
+
+@media (min-width:1536px) {
+  .c1 {
+    max-width: 1536px;
+  }
+}
+
+@media (min-width:640px) {
+  .c11 {
+    max-width: 640px;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+  }
+}
+
+@media (min-width:768px) {
+  .c11 {
+    max-width: 768px;
+  }
+}
+
+@media (min-width:1024px) {
+  .c11 {
+    max-width: 1024px;
+  }
+}
+
+@media (min-width:1280px) {
+  .c11 {
+    max-width: 1280px;
+  }
+}
+
+@media (min-width:1536px) {
+  .c11 {
+    max-width: 1536px;
+  }
+}
+
 <div
-  className="BaseLayoutTemplate__Container-sc-1jz5xvr-0 kHMSW"
+  className="c0"
 >
   <div
-    className="HeaderTemplate__Container-sc-kdla34-0 gxnUkb"
+    className="c1"
   >
     <div
-      className="HeaderTemplate__Heading-sc-kdla34-1 lcHwtI"
+      className="c2"
     >
       <div
-        className="HeaderTemplate__HeadingTitle-sc-kdla34-2 ibfQih"
+        className="c3"
         data-cy="header-logo-link"
       >
         <a
@@ -1649,10 +3163,10 @@ exports[`Profile Snapshots renders profile after login with other user 1`] = `
                 className="flex items-center gap-1"
               >
                 <div
-                  className="Avatar__Wrapper-sc-m9feoe-0 ieHczv"
+                  className="c4"
                 >
                   <div
-                    className="Avatar__Container-sc-m9feoe-1 fQHyzl w-5 h-5"
+                    className="c5 w-5 h-5"
                   >
                     <span
                       style={
@@ -1677,7 +3191,7 @@ exports[`Profile Snapshots renders profile after login with other user 1`] = `
                     >
                       <img
                         alt="avatar"
-                        className="Avatar__Img-sc-m9feoe-2 kuaPdK rounded-full"
+                        className="c6 rounded-full"
                         data-nimg="fill"
                         decoding="async"
                         src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
@@ -1707,7 +3221,7 @@ exports[`Profile Snapshots renders profile after login with other user 1`] = `
                       <noscript>
                         <img
                           alt="avatar"
-                          className="Avatar__Img-sc-m9feoe-2 kuaPdK rounded-full"
+                          className="c6 rounded-full"
                           data-nimg="fill"
                           decoding="async"
                           loading="lazy"
@@ -1750,14 +3264,14 @@ exports[`Profile Snapshots renders profile after login with other user 1`] = `
     </div>
   </div>
   <div
-    className="ProfileBannerTemplate__Container-sc-5p6x8t-0 flworz"
+    className="c7"
   >
     <div
-      className="Avatar__Wrapper-sc-m9feoe-0 ieHczv"
+      className="c4"
       data-cy="profile-image"
     >
       <div
-        className="Avatar__Container-sc-m9feoe-1 fQHyzl w-32 h-32"
+        className="c5 w-32 h-32"
       >
         <span
           style={
@@ -1782,7 +3296,7 @@ exports[`Profile Snapshots renders profile after login with other user 1`] = `
         >
           <img
             alt="avatar"
-            className="Avatar__Img-sc-m9feoe-2 kuaPdK rounded-full"
+            className="c6 rounded-full"
             data-nimg="fill"
             decoding="async"
             src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
@@ -1812,7 +3326,7 @@ exports[`Profile Snapshots renders profile after login with other user 1`] = `
           <noscript>
             <img
               alt="avatar"
-              className="Avatar__Img-sc-m9feoe-2 kuaPdK rounded-full"
+              className="c6 rounded-full"
               data-nimg="fill"
               decoding="async"
               loading="lazy"
@@ -1847,13 +3361,13 @@ exports[`Profile Snapshots renders profile after login with other user 1`] = `
       </div>
     </div>
     <h4
-      className="ProfileBannerTemplate__Title-sc-5p6x8t-1 ccIZKX"
+      className="c8"
       data-cy="profile-username"
     >
       Jacob
     </h4>
     <div
-      className="ProfileBannerTemplate__Follow-sc-5p6x8t-3 bbjssg"
+      className="c9"
       data-cy="profile-follow"
       onClick={[Function]}
     >
@@ -1890,7 +3404,7 @@ exports[`Profile Snapshots renders profile after login with other user 1`] = `
       </div>
     </div>
     <div
-      className="ProfileBannerTemplate__Description-sc-5p6x8t-2 gDczTm"
+      className="c10"
       data-cy="profile-bio"
     >
       I like to skateboard
@@ -1901,26 +3415,26 @@ exports[`Profile Snapshots renders profile after login with other user 1`] = `
     className="container mx-auto mt-8"
   >
     <div
-      className="ProfileContentTemplate__Container-sc-7fywoj-0 hsdtkv"
+      className="c11"
     >
       <div
-        className="ProfileFeedContentTemplate__Container-sc-12vsxb3-0 dfPylk"
+        className="c12"
       >
         <div
-          className="TabProvider__Container-sc-dghi3q-0 hMjFPD"
+          className="c13"
         >
           <ul
-            className="TabNavs__Container-sc-1s6vm0l-0 fNatPj"
+            className="c14"
           >
             <li
-              className="TabNav__Container-sc-eq25ji-0 khtWGz"
+              className="c15"
               data-cy="tab-nav-my_posts"
               onClick={[Function]}
             >
               My Posts
             </li>
             <li
-              className="TabNav__Container-sc-eq25ji-0 jLZeXs"
+              className="c16"
               data-cy="tab-nav-favorited_posts"
               onClick={[Function]}
             >
@@ -1928,25 +3442,25 @@ exports[`Profile Snapshots renders profile after login with other user 1`] = `
             </li>
           </ul>
           <div
-            className="TabPane__Container-sc-12cvcpc-0 IWqVW"
+            className="c17"
             data-cy="tab-pane-my_posts"
           >
             <div
-              className="FeedList__Container-sc-m88k4f-0 cwdJLz"
+              className="c18"
               data-cy="feed-list"
             >
               <div
-                className="Feed__Container-sc-njujrp-0 hCoOyB"
+                className="c19"
                 data-cy="feed-container"
               >
                 <div
-                  className="Feed__AuthorContainer-sc-njujrp-1 kgsVwO"
+                  className="c20"
                 >
                   <div
-                    className="Avatar__Wrapper-sc-m9feoe-0 ieHczv"
+                    className="c4"
                   >
                     <div
-                      className="Avatar__Container-sc-m9feoe-1 fQHyzl w-8 h-8"
+                      className="c5 w-8 h-8"
                     >
                       <span
                         style={
@@ -1971,7 +3485,7 @@ exports[`Profile Snapshots renders profile after login with other user 1`] = `
                       >
                         <img
                           alt="avatar"
-                          className="Avatar__Img-sc-m9feoe-2 kuaPdK rounded-full"
+                          className="c6 rounded-full"
                           data-nimg="fill"
                           decoding="async"
                           src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
@@ -2001,7 +3515,7 @@ exports[`Profile Snapshots renders profile after login with other user 1`] = `
                         <noscript>
                           <img
                             alt="avatar"
-                            className="Avatar__Img-sc-m9feoe-2 kuaPdK rounded-full"
+                            className="c6 rounded-full"
                             data-nimg="fill"
                             decoding="async"
                             loading="lazy"
@@ -2036,10 +3550,10 @@ exports[`Profile Snapshots renders profile after login with other user 1`] = `
                     </div>
                   </div>
                   <div
-                    className="Feed__AuthorInfo-sc-njujrp-2 bwLqOH"
+                    className="c21"
                   >
                     <div
-                      className="Feed__AuthorName-sc-njujrp-3 fbCOoc"
+                      className="c22"
                       data-cy="feed-profile"
                     >
                       <a
@@ -2051,13 +3565,13 @@ exports[`Profile Snapshots renders profile after login with other user 1`] = `
                       </a>
                     </div>
                     <div
-                      className="Feed__AuthorDate-sc-njujrp-4 cqYxgN"
+                      className="c23"
                     >
                       Thu Feb 18 2016
                     </div>
                   </div>
                   <div
-                    className="Feed__Favorite-sc-njujrp-5 gjwhNt"
+                    className="c24"
                     data-cy="feed-favorite"
                     onClick={[Function]}
                   >
@@ -2089,42 +3603,42 @@ exports[`Profile Snapshots renders profile after login with other user 1`] = `
                   </div>
                 </div>
                 <div
-                  className="Feed__Content-sc-njujrp-6 bMJyvN"
+                  className="c25"
                   data-cy="feed-content"
                   href="/article/how-to-train-your-dragon"
                   onClick={[Function]}
                   onMouseEnter={[Function]}
                 >
                   <h1
-                    className="Feed__Title-sc-njujrp-7 VSHlD"
+                    className="c26"
                   >
                     How to train your dragon
                   </h1>
                   <div
-                    className="Feed__Body-sc-njujrp-8 ksVMoY"
+                    className="c27"
                   >
                     <p>
                       Ever wonder how?
                     </p>
                   </div>
                   <div
-                    className="Feed__Footer-sc-njujrp-9 fPWzJO"
+                    className="c28"
                   >
                     <div
-                      className="Feed__ReadMore-sc-njujrp-10 dZzWHi"
+                      className="c29"
                     >
                       Read more...
                     </div>
                     <div
-                      className="Feed__Tags-sc-njujrp-11 guXOMJ"
+                      className="c30"
                     >
                       <div
-                        className="Feed__Tag-sc-njujrp-12 bgLIUB"
+                        className="c31"
                       >
                         dragons
                       </div>
                       <div
-                        className="Feed__Tag-sc-njujrp-12 bgLIUB"
+                        className="c31"
                       >
                         training
                       </div>
@@ -2133,17 +3647,17 @@ exports[`Profile Snapshots renders profile after login with other user 1`] = `
                 </div>
               </div>
               <div
-                className="Feed__Container-sc-njujrp-0 hCoOyB"
+                className="c19"
                 data-cy="feed-container"
               >
                 <div
-                  className="Feed__AuthorContainer-sc-njujrp-1 kgsVwO"
+                  className="c20"
                 >
                   <div
-                    className="Avatar__Wrapper-sc-m9feoe-0 ieHczv"
+                    className="c4"
                   >
                     <div
-                      className="Avatar__Container-sc-m9feoe-1 fQHyzl w-8 h-8"
+                      className="c5 w-8 h-8"
                     >
                       <span
                         style={
@@ -2168,7 +3682,7 @@ exports[`Profile Snapshots renders profile after login with other user 1`] = `
                       >
                         <img
                           alt="avatar"
-                          className="Avatar__Img-sc-m9feoe-2 kuaPdK rounded-full"
+                          className="c6 rounded-full"
                           data-nimg="fill"
                           decoding="async"
                           src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
@@ -2198,7 +3712,7 @@ exports[`Profile Snapshots renders profile after login with other user 1`] = `
                         <noscript>
                           <img
                             alt="avatar"
-                            className="Avatar__Img-sc-m9feoe-2 kuaPdK rounded-full"
+                            className="c6 rounded-full"
                             data-nimg="fill"
                             decoding="async"
                             loading="lazy"
@@ -2233,10 +3747,10 @@ exports[`Profile Snapshots renders profile after login with other user 1`] = `
                     </div>
                   </div>
                   <div
-                    className="Feed__AuthorInfo-sc-njujrp-2 bwLqOH"
+                    className="c21"
                   >
                     <div
-                      className="Feed__AuthorName-sc-njujrp-3 fbCOoc"
+                      className="c22"
                       data-cy="feed-profile"
                     >
                       <a
@@ -2248,13 +3762,13 @@ exports[`Profile Snapshots renders profile after login with other user 1`] = `
                       </a>
                     </div>
                     <div
-                      className="Feed__AuthorDate-sc-njujrp-4 cqYxgN"
+                      className="c23"
                     >
                       Thu Feb 18 2016
                     </div>
                   </div>
                   <div
-                    className="Feed__Favorite-sc-njujrp-5 cbgHkv"
+                    className="c32"
                     data-cy="feed-favorite"
                     onClick={[Function]}
                   >
@@ -2286,37 +3800,37 @@ exports[`Profile Snapshots renders profile after login with other user 1`] = `
                   </div>
                 </div>
                 <div
-                  className="Feed__Content-sc-njujrp-6 bMJyvN"
+                  className="c25"
                   data-cy="feed-content"
                   href="/article/how-to-train-your-dragon-2"
                   onClick={[Function]}
                   onMouseEnter={[Function]}
                 >
                   <h1
-                    className="Feed__Title-sc-njujrp-7 VSHlD"
+                    className="c26"
                   >
                     How to train your dragon 2
                   </h1>
                   <div
-                    className="Feed__Body-sc-njujrp-8 ksVMoY"
+                    className="c27"
                   >
                     <p>
                       So toothless
                     </p>
                   </div>
                   <div
-                    className="Feed__Footer-sc-njujrp-9 fPWzJO"
+                    className="c28"
                   >
                     <div
-                      className="Feed__ReadMore-sc-njujrp-10 dZzWHi"
+                      className="c29"
                     >
                       Read more...
                     </div>
                     <div
-                      className="Feed__Tags-sc-njujrp-11 guXOMJ"
+                      className="c30"
                     >
                       <div
-                        className="Feed__Tag-sc-njujrp-12 bgLIUB"
+                        className="c31"
                       >
                         dragons
                       </div>
@@ -2325,17 +3839,17 @@ exports[`Profile Snapshots renders profile after login with other user 1`] = `
                 </div>
               </div>
               <div
-                className="Feed__Container-sc-njujrp-0 hCoOyB"
+                className="c19"
                 data-cy="feed-container"
               >
                 <div
-                  className="Feed__AuthorContainer-sc-njujrp-1 kgsVwO"
+                  className="c20"
                 >
                   <div
-                    className="Avatar__Wrapper-sc-m9feoe-0 ieHczv"
+                    className="c4"
                   >
                     <div
-                      className="Avatar__Container-sc-m9feoe-1 fQHyzl w-8 h-8"
+                      className="c5 w-8 h-8"
                     >
                       <span
                         style={
@@ -2360,7 +3874,7 @@ exports[`Profile Snapshots renders profile after login with other user 1`] = `
                       >
                         <img
                           alt="avatar"
-                          className="Avatar__Img-sc-m9feoe-2 kuaPdK rounded-full"
+                          className="c6 rounded-full"
                           data-nimg="fill"
                           decoding="async"
                           src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
@@ -2390,7 +3904,7 @@ exports[`Profile Snapshots renders profile after login with other user 1`] = `
                         <noscript>
                           <img
                             alt="avatar"
-                            className="Avatar__Img-sc-m9feoe-2 kuaPdK rounded-full"
+                            className="c6 rounded-full"
                             data-nimg="fill"
                             decoding="async"
                             loading="lazy"
@@ -2425,10 +3939,10 @@ exports[`Profile Snapshots renders profile after login with other user 1`] = `
                     </div>
                   </div>
                   <div
-                    className="Feed__AuthorInfo-sc-njujrp-2 bwLqOH"
+                    className="c21"
                   >
                     <div
-                      className="Feed__AuthorName-sc-njujrp-3 fbCOoc"
+                      className="c22"
                       data-cy="feed-profile"
                     >
                       <a
@@ -2440,13 +3954,13 @@ exports[`Profile Snapshots renders profile after login with other user 1`] = `
                       </a>
                     </div>
                     <div
-                      className="Feed__AuthorDate-sc-njujrp-4 cqYxgN"
+                      className="c23"
                     >
                       Thu Feb 18 2016
                     </div>
                   </div>
                   <div
-                    className="Feed__Favorite-sc-njujrp-5 gjwhNt"
+                    className="c24"
                     data-cy="feed-favorite"
                     onClick={[Function]}
                   >
@@ -2478,37 +3992,37 @@ exports[`Profile Snapshots renders profile after login with other user 1`] = `
                   </div>
                 </div>
                 <div
-                  className="Feed__Content-sc-njujrp-6 bMJyvN"
+                  className="c25"
                   data-cy="feed-content"
                   href="/article/how-to-train-your-dragon-3"
                   onClick={[Function]}
                   onMouseEnter={[Function]}
                 >
                   <h1
-                    className="Feed__Title-sc-njujrp-7 VSHlD"
+                    className="c26"
                   >
                     How to train your dragon 3
                   </h1>
                   <div
-                    className="Feed__Body-sc-njujrp-8 ksVMoY"
+                    className="c27"
                   >
                     <p>
                       So toothless
                     </p>
                   </div>
                   <div
-                    className="Feed__Footer-sc-njujrp-9 fPWzJO"
+                    className="c28"
                   >
                     <div
-                      className="Feed__ReadMore-sc-njujrp-10 dZzWHi"
+                      className="c29"
                     >
                       Read more...
                     </div>
                     <div
-                      className="Feed__Tags-sc-njujrp-11 guXOMJ"
+                      className="c30"
                     >
                       <div
-                        className="Feed__Tag-sc-njujrp-12 bgLIUB"
+                        className="c31"
                       >
                         dragons
                       </div>
@@ -2517,17 +4031,17 @@ exports[`Profile Snapshots renders profile after login with other user 1`] = `
                 </div>
               </div>
               <div
-                className="Feed__Container-sc-njujrp-0 hCoOyB"
+                className="c19"
                 data-cy="feed-container"
               >
                 <div
-                  className="Feed__AuthorContainer-sc-njujrp-1 kgsVwO"
+                  className="c20"
                 >
                   <div
-                    className="Avatar__Wrapper-sc-m9feoe-0 ieHczv"
+                    className="c4"
                   >
                     <div
-                      className="Avatar__Container-sc-m9feoe-1 fQHyzl w-8 h-8"
+                      className="c5 w-8 h-8"
                     >
                       <span
                         style={
@@ -2552,7 +4066,7 @@ exports[`Profile Snapshots renders profile after login with other user 1`] = `
                       >
                         <img
                           alt="avatar"
-                          className="Avatar__Img-sc-m9feoe-2 kuaPdK rounded-full"
+                          className="c6 rounded-full"
                           data-nimg="fill"
                           decoding="async"
                           src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
@@ -2582,7 +4096,7 @@ exports[`Profile Snapshots renders profile after login with other user 1`] = `
                         <noscript>
                           <img
                             alt="avatar"
-                            className="Avatar__Img-sc-m9feoe-2 kuaPdK rounded-full"
+                            className="c6 rounded-full"
                             data-nimg="fill"
                             decoding="async"
                             loading="lazy"
@@ -2617,10 +4131,10 @@ exports[`Profile Snapshots renders profile after login with other user 1`] = `
                     </div>
                   </div>
                   <div
-                    className="Feed__AuthorInfo-sc-njujrp-2 bwLqOH"
+                    className="c21"
                   >
                     <div
-                      className="Feed__AuthorName-sc-njujrp-3 fbCOoc"
+                      className="c22"
                       data-cy="feed-profile"
                     >
                       <a
@@ -2632,13 +4146,13 @@ exports[`Profile Snapshots renders profile after login with other user 1`] = `
                       </a>
                     </div>
                     <div
-                      className="Feed__AuthorDate-sc-njujrp-4 cqYxgN"
+                      className="c23"
                     >
                       Thu Feb 18 2016
                     </div>
                   </div>
                   <div
-                    className="Feed__Favorite-sc-njujrp-5 gjwhNt"
+                    className="c24"
                     data-cy="feed-favorite"
                     onClick={[Function]}
                   >
@@ -2670,37 +4184,37 @@ exports[`Profile Snapshots renders profile after login with other user 1`] = `
                   </div>
                 </div>
                 <div
-                  className="Feed__Content-sc-njujrp-6 bMJyvN"
+                  className="c25"
                   data-cy="feed-content"
                   href="/article/how-to-train-your-dragon-4"
                   onClick={[Function]}
                   onMouseEnter={[Function]}
                 >
                   <h1
-                    className="Feed__Title-sc-njujrp-7 VSHlD"
+                    className="c26"
                   >
                     How to train your dragon 4
                   </h1>
                   <div
-                    className="Feed__Body-sc-njujrp-8 ksVMoY"
+                    className="c27"
                   >
                     <p>
                       So toothless
                     </p>
                   </div>
                   <div
-                    className="Feed__Footer-sc-njujrp-9 fPWzJO"
+                    className="c28"
                   >
                     <div
-                      className="Feed__ReadMore-sc-njujrp-10 dZzWHi"
+                      className="c29"
                     >
                       Read more...
                     </div>
                     <div
-                      className="Feed__Tags-sc-njujrp-11 guXOMJ"
+                      className="c30"
                     >
                       <div
-                        className="Feed__Tag-sc-njujrp-12 bgLIUB"
+                        className="c31"
                       >
                         dragons
                       </div>
@@ -2709,17 +4223,17 @@ exports[`Profile Snapshots renders profile after login with other user 1`] = `
                 </div>
               </div>
               <div
-                className="Feed__Container-sc-njujrp-0 hCoOyB"
+                className="c19"
                 data-cy="feed-container"
               >
                 <div
-                  className="Feed__AuthorContainer-sc-njujrp-1 kgsVwO"
+                  className="c20"
                 >
                   <div
-                    className="Avatar__Wrapper-sc-m9feoe-0 ieHczv"
+                    className="c4"
                   >
                     <div
-                      className="Avatar__Container-sc-m9feoe-1 fQHyzl w-8 h-8"
+                      className="c5 w-8 h-8"
                     >
                       <span
                         style={
@@ -2744,7 +4258,7 @@ exports[`Profile Snapshots renders profile after login with other user 1`] = `
                       >
                         <img
                           alt="avatar"
-                          className="Avatar__Img-sc-m9feoe-2 kuaPdK rounded-full"
+                          className="c6 rounded-full"
                           data-nimg="fill"
                           decoding="async"
                           src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
@@ -2774,7 +4288,7 @@ exports[`Profile Snapshots renders profile after login with other user 1`] = `
                         <noscript>
                           <img
                             alt="avatar"
-                            className="Avatar__Img-sc-m9feoe-2 kuaPdK rounded-full"
+                            className="c6 rounded-full"
                             data-nimg="fill"
                             decoding="async"
                             loading="lazy"
@@ -2809,10 +4323,10 @@ exports[`Profile Snapshots renders profile after login with other user 1`] = `
                     </div>
                   </div>
                   <div
-                    className="Feed__AuthorInfo-sc-njujrp-2 bwLqOH"
+                    className="c21"
                   >
                     <div
-                      className="Feed__AuthorName-sc-njujrp-3 fbCOoc"
+                      className="c22"
                       data-cy="feed-profile"
                     >
                       <a
@@ -2824,13 +4338,13 @@ exports[`Profile Snapshots renders profile after login with other user 1`] = `
                       </a>
                     </div>
                     <div
-                      className="Feed__AuthorDate-sc-njujrp-4 cqYxgN"
+                      className="c23"
                     >
                       Thu Feb 18 2016
                     </div>
                   </div>
                   <div
-                    className="Feed__Favorite-sc-njujrp-5 gjwhNt"
+                    className="c24"
                     data-cy="feed-favorite"
                     onClick={[Function]}
                   >
@@ -2862,37 +4376,37 @@ exports[`Profile Snapshots renders profile after login with other user 1`] = `
                   </div>
                 </div>
                 <div
-                  className="Feed__Content-sc-njujrp-6 bMJyvN"
+                  className="c25"
                   data-cy="feed-content"
                   href="/article/how-to-train-your-dragon-5"
                   onClick={[Function]}
                   onMouseEnter={[Function]}
                 >
                   <h1
-                    className="Feed__Title-sc-njujrp-7 VSHlD"
+                    className="c26"
                   >
                     How to train your dragon 5
                   </h1>
                   <div
-                    className="Feed__Body-sc-njujrp-8 ksVMoY"
+                    className="c27"
                   >
                     <p>
                       So toothless
                     </p>
                   </div>
                   <div
-                    className="Feed__Footer-sc-njujrp-9 fPWzJO"
+                    className="c28"
                   >
                     <div
-                      className="Feed__ReadMore-sc-njujrp-10 dZzWHi"
+                      className="c29"
                     >
                       Read more...
                     </div>
                     <div
-                      className="Feed__Tags-sc-njujrp-11 guXOMJ"
+                      className="c30"
                     >
                       <div
-                        className="Feed__Tag-sc-njujrp-12 bgLIUB"
+                        className="c31"
                       >
                         dragons
                       </div>
@@ -2901,7 +4415,7 @@ exports[`Profile Snapshots renders profile after login with other user 1`] = `
                 </div>
               </div>
               <div
-                className="Pagination__Container-sc-z81ile-0 dGdshJ"
+                className="c33"
               >
                 <div
                   className="bg-white px-4 py-3 flex items-center justify-between border-t border-gray-200 sm:px-6"
@@ -2910,7 +4424,7 @@ exports[`Profile Snapshots renders profile after login with other user 1`] = `
                     className="flex-1 flex justify-between sm:hidden"
                   >
                     <a
-                      className="Pagination__PrevNextButton-sc-z81ile-1 fBtVrM"
+                      className="c34"
                       disabled={true}
                       href="#"
                       onClick={[Function]}
@@ -2918,7 +4432,7 @@ exports[`Profile Snapshots renders profile after login with other user 1`] = `
                       Previous
                     </a>
                     <a
-                      className="Pagination__PrevNextButton-sc-z81ile-1 iTKNyl ml-3"
+                      className="c35 ml-3"
                       disabled={false}
                       href="#"
                       onClick={[Function]}
@@ -2938,12 +4452,12 @@ exports[`Profile Snapshots renders profile after login with other user 1`] = `
                         <a
                           aria-disabled="true"
                           aria-label="Previous page"
-                          className="pagination-previous"
+                          className="pagination-previous "
                           onClick={[Function]}
                           onKeyPress={[Function]}
                           rel="prev"
                           role="button"
-                          tabIndex="0"
+                          tabIndex="-1"
                         >
                           <span
                             className="sr-only"
@@ -2974,8 +4488,9 @@ exports[`Profile Snapshots renders profile after login with other user 1`] = `
                           className="pagination-page pagination-current-page"
                           onClick={[Function]}
                           onKeyPress={[Function]}
+                          rel="canonical"
                           role="button"
-                          tabIndex="0"
+                          tabIndex="-1"
                         >
                           1
                         </a>
@@ -2989,6 +4504,7 @@ exports[`Profile Snapshots renders profile after login with other user 1`] = `
                           className="pagination-page"
                           onClick={[Function]}
                           onKeyPress={[Function]}
+                          rel="next"
                           role="button"
                           tabIndex="0"
                         >
@@ -3039,10 +4555,10 @@ exports[`Profile Snapshots renders profile after login with other user 1`] = `
     </div>
   </div>
   <div
-    className="FooterTemplate__Container-sc-96wla6-0 cOGJUH"
+    className="c36"
   >
     <span
-      className="FooterTemplate__SiteLink-sc-96wla6-1 ENejy text-base mr-1 font-bold"
+      className="c37 text-base mr-1 font-bold"
       data-cy="footer-logo-link"
       href="/"
       onClick={[Function]}
@@ -3052,7 +4568,7 @@ exports[`Profile Snapshots renders profile after login with other user 1`] = `
     </span>
     © 2020. An interactive learning project from
     <span
-      className="FooterTemplate__SiteLink-sc-96wla6-1 ENejy ml-1"
+      className="c37 ml-1"
       data-cy="footer-site-link"
       href="https://thinkster.io/"
       onClick={[Function]}
@@ -3066,17 +4582,756 @@ exports[`Profile Snapshots renders profile after login with other user 1`] = `
 `;
 
 exports[`Profile Snapshots renders profile before login 1`] = `
+.c35 {
+  width: 100%;
+  position: absolute;
+  bottom: 0px;
+  margin-top: 3rem;
+  --tw-bg-opacity: 1;
+  background-color: rgba(229,231,235,var(--tw-bg-opacity));
+  padding-left: 3.5rem;
+  padding-right: 3.5rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  font-size: 0.75rem;
+  line-height: 1rem;
+  --tw-text-opacity: 1;
+  color: rgba(156,163,175,var(--tw-text-opacity));
+}
+
+.c36 {
+  color: var(--color-primary);
+}
+
+.c36:hover {
+  color: var(--color-secondary);
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+}
+
+.c5 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.c6 {
+  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  border-radius: 9999px;
+}
+
+.c7 {
+  border-radius: 9999px;
+}
+
+.c1 {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.c2 {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.c3 {
+  font-weight: 700;
+  font-size: 1.5rem;
+  line-height: 2rem;
+  color: var(--color-primary);
+  font-family: ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c0 {
+  width: 100%;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.c4 {
+  max-width: 100%;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  padding-top: 2rem;
+  padding-bottom: 1rem;
+  --tw-bg-opacity: 1;
+  background-color: rgba(229,231,235,var(--tw-bg-opacity));
+  text-align: center;
+}
+
+.c8 {
+  font-weight: 700;
+  font-size: 1.5rem;
+  line-height: 2rem;
+  margin-top: 1rem;
+}
+
+.c9 {
+  font-weight: 300;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  --tw-text-opacity: 1;
+  color: rgba(156,163,175,var(--tw-text-opacity));
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  padding-left: 3rem;
+  padding-right: 3rem;
+}
+
+.c32 {
+  width: 100%;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.c32 .pagination {
+  position: relative;
+  z-index: 0;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  border-radius: 0.375rem;
+  --tw-shadow: 0 1px 2px 0 rgba(0,0,0,0.05);
+  box-shadow: var(--tw-ring-offset-shadow,0 0 #0000),var(--tw-ring-shadow,0 0 #0000),var(--tw-shadow);
+}
+
+.c32 .pagination > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-x-reverse: 0;
+  margin-right: calc(-1px * var(--tw-space-x-reverse));
+  margin-left: calc(-1px * calc(1 - var(--tw-space-x-reverse)));
+}
+
+.c32 .pagination-page-item {
+  --tw-bg-opacity: 1;
+  background-color: rgba(255,255,255,var(--tw-bg-opacity));
+  --tw-border-opacity: 1;
+  border-color: rgba(209,213,219,var(--tw-border-opacity));
+  border-width: 1px;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.c32 .pagination-page-item:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgba(249,250,251,var(--tw-bg-opacity));
+}
+
+.c32 .pagination-page-item.disabled {
+  cursor: not-allowed;
+  --tw-bg-opacity: 1;
+  background-color: rgba(229,231,235,var(--tw-bg-opacity));
+}
+
+.c32 .pagination-page-item.disabled a {
+  cursor: not-allowed;
+}
+
+.c32 .pagination-page {
+  --tw-text-opacity: 1;
+  color: rgba(107,114,128,var(--tw-text-opacity));
+  position: relative;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  font-weight: 500;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
+.c32 .pagination-ellipsis {
+  position: relative;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  font-weight: 500;
+  --tw-text-opacity: 1;
+  color: rgba(55,65,81,var(--tw-text-opacity));
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
+.c32 .pagination-previous-item {
+  --tw-bg-opacity: 1;
+  background-color: rgba(255,255,255,var(--tw-bg-opacity));
+  --tw-border-opacity: 1;
+  border-color: rgba(209,213,219,var(--tw-border-opacity));
+  border-width: 1px;
+  border-top-left-radius: 0.375rem;
+  border-bottom-left-radius: 0.375rem;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.c32 .pagination-previous-item:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgba(249,250,251,var(--tw-bg-opacity));
+}
+
+.c32 .pagination-previous-item.disabled {
+  cursor: not-allowed;
+  --tw-bg-opacity: 1;
+  background-color: rgba(229,231,235,var(--tw-bg-opacity));
+}
+
+.c32 .pagination-previous-item.disabled a {
+  cursor: not-allowed;
+}
+
+.c32 .pagination-previous {
+  position: relative;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  font-weight: 500;
+  --tw-text-opacity: 1;
+  color: rgba(107,114,128,var(--tw-text-opacity));
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
+.c32 .pagination-next-item {
+  --tw-bg-opacity: 1;
+  background-color: rgba(255,255,255,var(--tw-bg-opacity));
+  --tw-border-opacity: 1;
+  border-color: rgba(209,213,219,var(--tw-border-opacity));
+  border-width: 1px;
+  border-top-right-radius: 0.375rem;
+  border-bottom-right-radius: 0.375rem;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.c32 .pagination-next-item:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgba(249,250,251,var(--tw-bg-opacity));
+}
+
+.c32 .pagination-next-item.disabled {
+  cursor: not-allowed;
+  --tw-bg-opacity: 1;
+  background-color: rgba(229,231,235,var(--tw-bg-opacity));
+}
+
+.c32 .pagination-next-item.disabled a {
+  cursor: not-allowed;
+}
+
+.c32 .pagination-next {
+  position: relative;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  font-weight: 500;
+  --tw-text-opacity: 1;
+  color: rgba(107,114,128,var(--tw-text-opacity));
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
+.c32 .pagination-current-page-item {
+  z-index: 10;
+  background-color: var(--color-primary);
+  border-color: var(--color-primary);
+}
+
+.c32 .pagination-current-page-item:hover {
+  background-color: var(--color-primary);
+  --tw-bg-opacity: 0.5;
+}
+
+.c32 .pagination-current-page {
+  --tw-text-opacity: 1;
+  color: rgba(255,255,255,var(--tw-text-opacity));
+}
+
+.c33 {
+  position: relative;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  border-width: 1px;
+  --tw-border-opacity: 1;
+  border-color: rgba(209,213,219,var(--tw-border-opacity));
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  font-weight: 500;
+  border-radius: 0.375rem;
+  --tw-text-opacity: 1;
+  color: rgba(55,65,81,var(--tw-text-opacity));
+  --tw-bg-opacity: 1;
+  background-color: rgba(255,255,255,var(--tw-bg-opacity));
+  cursor: not-allowed;
+  --tw-bg-opacity: 1;
+  background-color: rgba(229,231,235,var(--tw-bg-opacity));
+}
+
+.c33:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgba(249,250,251,var(--tw-bg-opacity));
+}
+
+.c33:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgba(229,231,235,var(--tw-bg-opacity));
+}
+
+.c34 {
+  position: relative;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  border-width: 1px;
+  --tw-border-opacity: 1;
+  border-color: rgba(209,213,219,var(--tw-border-opacity));
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  font-weight: 500;
+  border-radius: 0.375rem;
+  --tw-text-opacity: 1;
+  color: rgba(55,65,81,var(--tw-text-opacity));
+  --tw-bg-opacity: 1;
+  background-color: rgba(255,255,255,var(--tw-bg-opacity));
+}
+
+.c34:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgba(249,250,251,var(--tw-bg-opacity));
+}
+
+.c18 {
+  width: 100%;
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+}
+
+.c18:not(:last-child) {
+  border-bottom-width: 1px;
+  --tw-border-opacity: 1;
+  border-color: rgba(229,231,235,var(--tw-border-opacity));
+}
+
+.c19 {
+  width: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.c20 {
+  width: auto;
+  margin-left: 0.375rem;
+  margin-right: 1rem;
+}
+
+.c21 {
+  color: var(--color-primary);
+}
+
+.c21:hover {
+  color: var(--color-secondary);
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+}
+
+.c22 {
+  font-size: 0.75rem;
+  line-height: 1rem;
+  --tw-text-opacity: 1;
+  color: rgba(156,163,175,var(--tw-text-opacity));
+}
+
+.c23 {
+  margin-left: auto;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  cursor: pointer;
+  width: 2.5rem;
+  height: 1.75rem;
+  border-width: 1px;
+  border-color: var(--color-primary);
+  border-radius: 0.25rem;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  color: var(--color-primary);
+}
+
+.c23:hover {
+  --tw-text-opacity: 1;
+  color: rgba(255,255,255,var(--tw-text-opacity));
+  background-color: var(--color-primary);
+}
+
+.c31 {
+  margin-left: auto;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  cursor: pointer;
+  width: 2.5rem;
+  height: 1.75rem;
+  border-width: 1px;
+  border-color: var(--color-primary);
+  border-radius: 0.25rem;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  --tw-text-opacity: 1;
+  color: rgba(255,255,255,var(--tw-text-opacity));
+  background-color: var(--color-primary);
+}
+
+.c31:hover {
+  color: var(--color-primary);
+  --tw-bg-opacity: 1;
+  background-color: rgba(255,255,255,var(--tw-bg-opacity));
+}
+
+.c24 {
+  width: 100%;
+  cursor: pointer;
+}
+
+.c25 {
+  font-size: 1.5rem;
+  line-height: 2rem;
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+}
+
+.c26 {
+  font-size: 1rem;
+  line-height: 1.5rem;
+  --tw-text-opacity: 1;
+  color: rgba(107,114,128,var(--tw-text-opacity));
+  margin-bottom: 1rem;
+}
+
+.c27 {
+  width: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.c28 {
+  font-size: 0.75rem;
+  line-height: 1rem;
+  --tw-text-opacity: 1;
+  color: rgba(156,163,175,var(--tw-text-opacity));
+}
+
+.c29 {
+  margin-left: auto;
+  vertical-align: top;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  max-width: 50%;
+}
+
+.c30 {
+  font-size: 0.75rem;
+  line-height: 1;
+  --tw-text-opacity: 1;
+  color: rgba(156,163,175,var(--tw-text-opacity));
+  font-weight: 300;
+  white-space: nowrap;
+  border-width: 1px;
+  --tw-border-opacity: 1;
+  border-color: rgba(156,163,175,var(--tw-border-opacity));
+  border-radius: 9999px;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  cursor: pointer;
+  padding: 4px 10px;
+  margin-right: 3px;
+}
+
+.c17 {
+  width: 100%;
+}
+
+.c14 {
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  cursor: pointer;
+  font-size: 1rem;
+  line-height: 1;
+  font-weight: 700;
+  color: var(--color-primary);
+  border-bottom-width: 2px;
+  border-color: var(--color-primary);
+}
+
+.c15 {
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  cursor: pointer;
+  font-size: 1rem;
+  line-height: 1;
+  --tw-text-opacity: 1;
+  color: rgba(156,163,175,var(--tw-text-opacity));
+}
+
+.c15:hover {
+  --tw-text-opacity: 1;
+  color: rgba(31,41,55,var(--tw-text-opacity));
+}
+
+.c13 {
+  width: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  border-bottom-width: 1px;
+  --tw-border-opacity: 1;
+  border-color: rgba(229,231,235,var(--tw-border-opacity));
+}
+
+.c12 {
+  width: 100%;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.c16 {
+  width: 100%;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.c11 {
+  width: 100%;
+}
+
+.c10 {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  gap: 1.5rem;
+}
+
+@media (min-width:640px) {
+  .c1 {
+    max-width: 640px;
+  }
+}
+
+@media (min-width:768px) {
+  .c1 {
+    max-width: 768px;
+  }
+}
+
+@media (min-width:1024px) {
+  .c1 {
+    max-width: 1024px;
+  }
+}
+
+@media (min-width:1280px) {
+  .c1 {
+    max-width: 1280px;
+  }
+}
+
+@media (min-width:1536px) {
+  .c1 {
+    max-width: 1536px;
+  }
+}
+
+@media (min-width:640px) {
+  .c10 {
+    max-width: 640px;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+  }
+}
+
+@media (min-width:768px) {
+  .c10 {
+    max-width: 768px;
+  }
+}
+
+@media (min-width:1024px) {
+  .c10 {
+    max-width: 1024px;
+  }
+}
+
+@media (min-width:1280px) {
+  .c10 {
+    max-width: 1280px;
+  }
+}
+
+@media (min-width:1536px) {
+  .c10 {
+    max-width: 1536px;
+  }
+}
+
 <div
-  className="BaseLayoutTemplate__Container-sc-1jz5xvr-0 kHMSW"
+  className="c0"
 >
   <div
-    className="HeaderTemplate__Container-sc-kdla34-0 gxnUkb"
+    className="c1"
   >
     <div
-      className="HeaderTemplate__Heading-sc-kdla34-1 lcHwtI"
+      className="c2"
     >
       <div
-        className="HeaderTemplate__HeadingTitle-sc-kdla34-2 ibfQih"
+        className="c3"
         data-cy="header-logo-link"
       >
         <a
@@ -3148,14 +5403,14 @@ exports[`Profile Snapshots renders profile before login 1`] = `
     </div>
   </div>
   <div
-    className="ProfileBannerTemplate__Container-sc-5p6x8t-0 flworz"
+    className="c4"
   >
     <div
-      className="Avatar__Wrapper-sc-m9feoe-0 ieHczv"
+      className="c5"
       data-cy="profile-image"
     >
       <div
-        className="Avatar__Container-sc-m9feoe-1 fQHyzl w-32 h-32"
+        className="c6 w-32 h-32"
       >
         <span
           style={
@@ -3180,7 +5435,7 @@ exports[`Profile Snapshots renders profile before login 1`] = `
         >
           <img
             alt="avatar"
-            className="Avatar__Img-sc-m9feoe-2 kuaPdK rounded-full"
+            className="c7 rounded-full"
             data-nimg="fill"
             decoding="async"
             src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
@@ -3210,7 +5465,7 @@ exports[`Profile Snapshots renders profile before login 1`] = `
           <noscript>
             <img
               alt="avatar"
-              className="Avatar__Img-sc-m9feoe-2 kuaPdK rounded-full"
+              className="c7 rounded-full"
               data-nimg="fill"
               decoding="async"
               loading="lazy"
@@ -3245,13 +5500,13 @@ exports[`Profile Snapshots renders profile before login 1`] = `
       </div>
     </div>
     <h4
-      className="ProfileBannerTemplate__Title-sc-5p6x8t-1 ccIZKX"
+      className="c8"
       data-cy="profile-username"
     >
       Jacob
     </h4>
     <div
-      className="ProfileBannerTemplate__Description-sc-5p6x8t-2 gDczTm"
+      className="c9"
       data-cy="profile-bio"
     >
       I like to skateboard
@@ -3262,26 +5517,26 @@ exports[`Profile Snapshots renders profile before login 1`] = `
     className="container mx-auto mt-8"
   >
     <div
-      className="ProfileContentTemplate__Container-sc-7fywoj-0 hsdtkv"
+      className="c10"
     >
       <div
-        className="ProfileFeedContentTemplate__Container-sc-12vsxb3-0 dfPylk"
+        className="c11"
       >
         <div
-          className="TabProvider__Container-sc-dghi3q-0 hMjFPD"
+          className="c12"
         >
           <ul
-            className="TabNavs__Container-sc-1s6vm0l-0 fNatPj"
+            className="c13"
           >
             <li
-              className="TabNav__Container-sc-eq25ji-0 khtWGz"
+              className="c14"
               data-cy="tab-nav-my_posts"
               onClick={[Function]}
             >
               My Posts
             </li>
             <li
-              className="TabNav__Container-sc-eq25ji-0 jLZeXs"
+              className="c15"
               data-cy="tab-nav-favorited_posts"
               onClick={[Function]}
             >
@@ -3289,25 +5544,25 @@ exports[`Profile Snapshots renders profile before login 1`] = `
             </li>
           </ul>
           <div
-            className="TabPane__Container-sc-12cvcpc-0 IWqVW"
+            className="c16"
             data-cy="tab-pane-my_posts"
           >
             <div
-              className="FeedList__Container-sc-m88k4f-0 cwdJLz"
+              className="c17"
               data-cy="feed-list"
             >
               <div
-                className="Feed__Container-sc-njujrp-0 hCoOyB"
+                className="c18"
                 data-cy="feed-container"
               >
                 <div
-                  className="Feed__AuthorContainer-sc-njujrp-1 kgsVwO"
+                  className="c19"
                 >
                   <div
-                    className="Avatar__Wrapper-sc-m9feoe-0 ieHczv"
+                    className="c5"
                   >
                     <div
-                      className="Avatar__Container-sc-m9feoe-1 fQHyzl w-8 h-8"
+                      className="c6 w-8 h-8"
                     >
                       <span
                         style={
@@ -3332,7 +5587,7 @@ exports[`Profile Snapshots renders profile before login 1`] = `
                       >
                         <img
                           alt="avatar"
-                          className="Avatar__Img-sc-m9feoe-2 kuaPdK rounded-full"
+                          className="c7 rounded-full"
                           data-nimg="fill"
                           decoding="async"
                           src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
@@ -3362,7 +5617,7 @@ exports[`Profile Snapshots renders profile before login 1`] = `
                         <noscript>
                           <img
                             alt="avatar"
-                            className="Avatar__Img-sc-m9feoe-2 kuaPdK rounded-full"
+                            className="c7 rounded-full"
                             data-nimg="fill"
                             decoding="async"
                             loading="lazy"
@@ -3397,10 +5652,10 @@ exports[`Profile Snapshots renders profile before login 1`] = `
                     </div>
                   </div>
                   <div
-                    className="Feed__AuthorInfo-sc-njujrp-2 bwLqOH"
+                    className="c20"
                   >
                     <div
-                      className="Feed__AuthorName-sc-njujrp-3 fbCOoc"
+                      className="c21"
                       data-cy="feed-profile"
                     >
                       <a
@@ -3412,13 +5667,13 @@ exports[`Profile Snapshots renders profile before login 1`] = `
                       </a>
                     </div>
                     <div
-                      className="Feed__AuthorDate-sc-njujrp-4 cqYxgN"
+                      className="c22"
                     >
                       Thu Feb 18 2016
                     </div>
                   </div>
                   <div
-                    className="Feed__Favorite-sc-njujrp-5 gjwhNt"
+                    className="c23"
                     data-cy="feed-favorite"
                     onClick={[Function]}
                   >
@@ -3450,42 +5705,42 @@ exports[`Profile Snapshots renders profile before login 1`] = `
                   </div>
                 </div>
                 <div
-                  className="Feed__Content-sc-njujrp-6 bMJyvN"
+                  className="c24"
                   data-cy="feed-content"
                   href="/article/how-to-train-your-dragon"
                   onClick={[Function]}
                   onMouseEnter={[Function]}
                 >
                   <h1
-                    className="Feed__Title-sc-njujrp-7 VSHlD"
+                    className="c25"
                   >
                     How to train your dragon
                   </h1>
                   <div
-                    className="Feed__Body-sc-njujrp-8 ksVMoY"
+                    className="c26"
                   >
                     <p>
                       Ever wonder how?
                     </p>
                   </div>
                   <div
-                    className="Feed__Footer-sc-njujrp-9 fPWzJO"
+                    className="c27"
                   >
                     <div
-                      className="Feed__ReadMore-sc-njujrp-10 dZzWHi"
+                      className="c28"
                     >
                       Read more...
                     </div>
                     <div
-                      className="Feed__Tags-sc-njujrp-11 guXOMJ"
+                      className="c29"
                     >
                       <div
-                        className="Feed__Tag-sc-njujrp-12 bgLIUB"
+                        className="c30"
                       >
                         dragons
                       </div>
                       <div
-                        className="Feed__Tag-sc-njujrp-12 bgLIUB"
+                        className="c30"
                       >
                         training
                       </div>
@@ -3494,17 +5749,17 @@ exports[`Profile Snapshots renders profile before login 1`] = `
                 </div>
               </div>
               <div
-                className="Feed__Container-sc-njujrp-0 hCoOyB"
+                className="c18"
                 data-cy="feed-container"
               >
                 <div
-                  className="Feed__AuthorContainer-sc-njujrp-1 kgsVwO"
+                  className="c19"
                 >
                   <div
-                    className="Avatar__Wrapper-sc-m9feoe-0 ieHczv"
+                    className="c5"
                   >
                     <div
-                      className="Avatar__Container-sc-m9feoe-1 fQHyzl w-8 h-8"
+                      className="c6 w-8 h-8"
                     >
                       <span
                         style={
@@ -3529,7 +5784,7 @@ exports[`Profile Snapshots renders profile before login 1`] = `
                       >
                         <img
                           alt="avatar"
-                          className="Avatar__Img-sc-m9feoe-2 kuaPdK rounded-full"
+                          className="c7 rounded-full"
                           data-nimg="fill"
                           decoding="async"
                           src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
@@ -3559,7 +5814,7 @@ exports[`Profile Snapshots renders profile before login 1`] = `
                         <noscript>
                           <img
                             alt="avatar"
-                            className="Avatar__Img-sc-m9feoe-2 kuaPdK rounded-full"
+                            className="c7 rounded-full"
                             data-nimg="fill"
                             decoding="async"
                             loading="lazy"
@@ -3594,10 +5849,10 @@ exports[`Profile Snapshots renders profile before login 1`] = `
                     </div>
                   </div>
                   <div
-                    className="Feed__AuthorInfo-sc-njujrp-2 bwLqOH"
+                    className="c20"
                   >
                     <div
-                      className="Feed__AuthorName-sc-njujrp-3 fbCOoc"
+                      className="c21"
                       data-cy="feed-profile"
                     >
                       <a
@@ -3609,13 +5864,13 @@ exports[`Profile Snapshots renders profile before login 1`] = `
                       </a>
                     </div>
                     <div
-                      className="Feed__AuthorDate-sc-njujrp-4 cqYxgN"
+                      className="c22"
                     >
                       Thu Feb 18 2016
                     </div>
                   </div>
                   <div
-                    className="Feed__Favorite-sc-njujrp-5 cbgHkv"
+                    className="c31"
                     data-cy="feed-favorite"
                     onClick={[Function]}
                   >
@@ -3647,37 +5902,37 @@ exports[`Profile Snapshots renders profile before login 1`] = `
                   </div>
                 </div>
                 <div
-                  className="Feed__Content-sc-njujrp-6 bMJyvN"
+                  className="c24"
                   data-cy="feed-content"
                   href="/article/how-to-train-your-dragon-2"
                   onClick={[Function]}
                   onMouseEnter={[Function]}
                 >
                   <h1
-                    className="Feed__Title-sc-njujrp-7 VSHlD"
+                    className="c25"
                   >
                     How to train your dragon 2
                   </h1>
                   <div
-                    className="Feed__Body-sc-njujrp-8 ksVMoY"
+                    className="c26"
                   >
                     <p>
                       So toothless
                     </p>
                   </div>
                   <div
-                    className="Feed__Footer-sc-njujrp-9 fPWzJO"
+                    className="c27"
                   >
                     <div
-                      className="Feed__ReadMore-sc-njujrp-10 dZzWHi"
+                      className="c28"
                     >
                       Read more...
                     </div>
                     <div
-                      className="Feed__Tags-sc-njujrp-11 guXOMJ"
+                      className="c29"
                     >
                       <div
-                        className="Feed__Tag-sc-njujrp-12 bgLIUB"
+                        className="c30"
                       >
                         dragons
                       </div>
@@ -3686,17 +5941,17 @@ exports[`Profile Snapshots renders profile before login 1`] = `
                 </div>
               </div>
               <div
-                className="Feed__Container-sc-njujrp-0 hCoOyB"
+                className="c18"
                 data-cy="feed-container"
               >
                 <div
-                  className="Feed__AuthorContainer-sc-njujrp-1 kgsVwO"
+                  className="c19"
                 >
                   <div
-                    className="Avatar__Wrapper-sc-m9feoe-0 ieHczv"
+                    className="c5"
                   >
                     <div
-                      className="Avatar__Container-sc-m9feoe-1 fQHyzl w-8 h-8"
+                      className="c6 w-8 h-8"
                     >
                       <span
                         style={
@@ -3721,7 +5976,7 @@ exports[`Profile Snapshots renders profile before login 1`] = `
                       >
                         <img
                           alt="avatar"
-                          className="Avatar__Img-sc-m9feoe-2 kuaPdK rounded-full"
+                          className="c7 rounded-full"
                           data-nimg="fill"
                           decoding="async"
                           src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
@@ -3751,7 +6006,7 @@ exports[`Profile Snapshots renders profile before login 1`] = `
                         <noscript>
                           <img
                             alt="avatar"
-                            className="Avatar__Img-sc-m9feoe-2 kuaPdK rounded-full"
+                            className="c7 rounded-full"
                             data-nimg="fill"
                             decoding="async"
                             loading="lazy"
@@ -3786,10 +6041,10 @@ exports[`Profile Snapshots renders profile before login 1`] = `
                     </div>
                   </div>
                   <div
-                    className="Feed__AuthorInfo-sc-njujrp-2 bwLqOH"
+                    className="c20"
                   >
                     <div
-                      className="Feed__AuthorName-sc-njujrp-3 fbCOoc"
+                      className="c21"
                       data-cy="feed-profile"
                     >
                       <a
@@ -3801,13 +6056,13 @@ exports[`Profile Snapshots renders profile before login 1`] = `
                       </a>
                     </div>
                     <div
-                      className="Feed__AuthorDate-sc-njujrp-4 cqYxgN"
+                      className="c22"
                     >
                       Thu Feb 18 2016
                     </div>
                   </div>
                   <div
-                    className="Feed__Favorite-sc-njujrp-5 gjwhNt"
+                    className="c23"
                     data-cy="feed-favorite"
                     onClick={[Function]}
                   >
@@ -3839,37 +6094,37 @@ exports[`Profile Snapshots renders profile before login 1`] = `
                   </div>
                 </div>
                 <div
-                  className="Feed__Content-sc-njujrp-6 bMJyvN"
+                  className="c24"
                   data-cy="feed-content"
                   href="/article/how-to-train-your-dragon-3"
                   onClick={[Function]}
                   onMouseEnter={[Function]}
                 >
                   <h1
-                    className="Feed__Title-sc-njujrp-7 VSHlD"
+                    className="c25"
                   >
                     How to train your dragon 3
                   </h1>
                   <div
-                    className="Feed__Body-sc-njujrp-8 ksVMoY"
+                    className="c26"
                   >
                     <p>
                       So toothless
                     </p>
                   </div>
                   <div
-                    className="Feed__Footer-sc-njujrp-9 fPWzJO"
+                    className="c27"
                   >
                     <div
-                      className="Feed__ReadMore-sc-njujrp-10 dZzWHi"
+                      className="c28"
                     >
                       Read more...
                     </div>
                     <div
-                      className="Feed__Tags-sc-njujrp-11 guXOMJ"
+                      className="c29"
                     >
                       <div
-                        className="Feed__Tag-sc-njujrp-12 bgLIUB"
+                        className="c30"
                       >
                         dragons
                       </div>
@@ -3878,17 +6133,17 @@ exports[`Profile Snapshots renders profile before login 1`] = `
                 </div>
               </div>
               <div
-                className="Feed__Container-sc-njujrp-0 hCoOyB"
+                className="c18"
                 data-cy="feed-container"
               >
                 <div
-                  className="Feed__AuthorContainer-sc-njujrp-1 kgsVwO"
+                  className="c19"
                 >
                   <div
-                    className="Avatar__Wrapper-sc-m9feoe-0 ieHczv"
+                    className="c5"
                   >
                     <div
-                      className="Avatar__Container-sc-m9feoe-1 fQHyzl w-8 h-8"
+                      className="c6 w-8 h-8"
                     >
                       <span
                         style={
@@ -3913,7 +6168,7 @@ exports[`Profile Snapshots renders profile before login 1`] = `
                       >
                         <img
                           alt="avatar"
-                          className="Avatar__Img-sc-m9feoe-2 kuaPdK rounded-full"
+                          className="c7 rounded-full"
                           data-nimg="fill"
                           decoding="async"
                           src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
@@ -3943,7 +6198,7 @@ exports[`Profile Snapshots renders profile before login 1`] = `
                         <noscript>
                           <img
                             alt="avatar"
-                            className="Avatar__Img-sc-m9feoe-2 kuaPdK rounded-full"
+                            className="c7 rounded-full"
                             data-nimg="fill"
                             decoding="async"
                             loading="lazy"
@@ -3978,10 +6233,10 @@ exports[`Profile Snapshots renders profile before login 1`] = `
                     </div>
                   </div>
                   <div
-                    className="Feed__AuthorInfo-sc-njujrp-2 bwLqOH"
+                    className="c20"
                   >
                     <div
-                      className="Feed__AuthorName-sc-njujrp-3 fbCOoc"
+                      className="c21"
                       data-cy="feed-profile"
                     >
                       <a
@@ -3993,13 +6248,13 @@ exports[`Profile Snapshots renders profile before login 1`] = `
                       </a>
                     </div>
                     <div
-                      className="Feed__AuthorDate-sc-njujrp-4 cqYxgN"
+                      className="c22"
                     >
                       Thu Feb 18 2016
                     </div>
                   </div>
                   <div
-                    className="Feed__Favorite-sc-njujrp-5 gjwhNt"
+                    className="c23"
                     data-cy="feed-favorite"
                     onClick={[Function]}
                   >
@@ -4031,37 +6286,37 @@ exports[`Profile Snapshots renders profile before login 1`] = `
                   </div>
                 </div>
                 <div
-                  className="Feed__Content-sc-njujrp-6 bMJyvN"
+                  className="c24"
                   data-cy="feed-content"
                   href="/article/how-to-train-your-dragon-4"
                   onClick={[Function]}
                   onMouseEnter={[Function]}
                 >
                   <h1
-                    className="Feed__Title-sc-njujrp-7 VSHlD"
+                    className="c25"
                   >
                     How to train your dragon 4
                   </h1>
                   <div
-                    className="Feed__Body-sc-njujrp-8 ksVMoY"
+                    className="c26"
                   >
                     <p>
                       So toothless
                     </p>
                   </div>
                   <div
-                    className="Feed__Footer-sc-njujrp-9 fPWzJO"
+                    className="c27"
                   >
                     <div
-                      className="Feed__ReadMore-sc-njujrp-10 dZzWHi"
+                      className="c28"
                     >
                       Read more...
                     </div>
                     <div
-                      className="Feed__Tags-sc-njujrp-11 guXOMJ"
+                      className="c29"
                     >
                       <div
-                        className="Feed__Tag-sc-njujrp-12 bgLIUB"
+                        className="c30"
                       >
                         dragons
                       </div>
@@ -4070,17 +6325,17 @@ exports[`Profile Snapshots renders profile before login 1`] = `
                 </div>
               </div>
               <div
-                className="Feed__Container-sc-njujrp-0 hCoOyB"
+                className="c18"
                 data-cy="feed-container"
               >
                 <div
-                  className="Feed__AuthorContainer-sc-njujrp-1 kgsVwO"
+                  className="c19"
                 >
                   <div
-                    className="Avatar__Wrapper-sc-m9feoe-0 ieHczv"
+                    className="c5"
                   >
                     <div
-                      className="Avatar__Container-sc-m9feoe-1 fQHyzl w-8 h-8"
+                      className="c6 w-8 h-8"
                     >
                       <span
                         style={
@@ -4105,7 +6360,7 @@ exports[`Profile Snapshots renders profile before login 1`] = `
                       >
                         <img
                           alt="avatar"
-                          className="Avatar__Img-sc-m9feoe-2 kuaPdK rounded-full"
+                          className="c7 rounded-full"
                           data-nimg="fill"
                           decoding="async"
                           src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
@@ -4135,7 +6390,7 @@ exports[`Profile Snapshots renders profile before login 1`] = `
                         <noscript>
                           <img
                             alt="avatar"
-                            className="Avatar__Img-sc-m9feoe-2 kuaPdK rounded-full"
+                            className="c7 rounded-full"
                             data-nimg="fill"
                             decoding="async"
                             loading="lazy"
@@ -4170,10 +6425,10 @@ exports[`Profile Snapshots renders profile before login 1`] = `
                     </div>
                   </div>
                   <div
-                    className="Feed__AuthorInfo-sc-njujrp-2 bwLqOH"
+                    className="c20"
                   >
                     <div
-                      className="Feed__AuthorName-sc-njujrp-3 fbCOoc"
+                      className="c21"
                       data-cy="feed-profile"
                     >
                       <a
@@ -4185,13 +6440,13 @@ exports[`Profile Snapshots renders profile before login 1`] = `
                       </a>
                     </div>
                     <div
-                      className="Feed__AuthorDate-sc-njujrp-4 cqYxgN"
+                      className="c22"
                     >
                       Thu Feb 18 2016
                     </div>
                   </div>
                   <div
-                    className="Feed__Favorite-sc-njujrp-5 gjwhNt"
+                    className="c23"
                     data-cy="feed-favorite"
                     onClick={[Function]}
                   >
@@ -4223,37 +6478,37 @@ exports[`Profile Snapshots renders profile before login 1`] = `
                   </div>
                 </div>
                 <div
-                  className="Feed__Content-sc-njujrp-6 bMJyvN"
+                  className="c24"
                   data-cy="feed-content"
                   href="/article/how-to-train-your-dragon-5"
                   onClick={[Function]}
                   onMouseEnter={[Function]}
                 >
                   <h1
-                    className="Feed__Title-sc-njujrp-7 VSHlD"
+                    className="c25"
                   >
                     How to train your dragon 5
                   </h1>
                   <div
-                    className="Feed__Body-sc-njujrp-8 ksVMoY"
+                    className="c26"
                   >
                     <p>
                       So toothless
                     </p>
                   </div>
                   <div
-                    className="Feed__Footer-sc-njujrp-9 fPWzJO"
+                    className="c27"
                   >
                     <div
-                      className="Feed__ReadMore-sc-njujrp-10 dZzWHi"
+                      className="c28"
                     >
                       Read more...
                     </div>
                     <div
-                      className="Feed__Tags-sc-njujrp-11 guXOMJ"
+                      className="c29"
                     >
                       <div
-                        className="Feed__Tag-sc-njujrp-12 bgLIUB"
+                        className="c30"
                       >
                         dragons
                       </div>
@@ -4262,7 +6517,7 @@ exports[`Profile Snapshots renders profile before login 1`] = `
                 </div>
               </div>
               <div
-                className="Pagination__Container-sc-z81ile-0 dGdshJ"
+                className="c32"
               >
                 <div
                   className="bg-white px-4 py-3 flex items-center justify-between border-t border-gray-200 sm:px-6"
@@ -4271,7 +6526,7 @@ exports[`Profile Snapshots renders profile before login 1`] = `
                     className="flex-1 flex justify-between sm:hidden"
                   >
                     <a
-                      className="Pagination__PrevNextButton-sc-z81ile-1 fBtVrM"
+                      className="c33"
                       disabled={true}
                       href="#"
                       onClick={[Function]}
@@ -4279,7 +6534,7 @@ exports[`Profile Snapshots renders profile before login 1`] = `
                       Previous
                     </a>
                     <a
-                      className="Pagination__PrevNextButton-sc-z81ile-1 iTKNyl ml-3"
+                      className="c34 ml-3"
                       disabled={false}
                       href="#"
                       onClick={[Function]}
@@ -4299,12 +6554,12 @@ exports[`Profile Snapshots renders profile before login 1`] = `
                         <a
                           aria-disabled="true"
                           aria-label="Previous page"
-                          className="pagination-previous"
+                          className="pagination-previous "
                           onClick={[Function]}
                           onKeyPress={[Function]}
                           rel="prev"
                           role="button"
-                          tabIndex="0"
+                          tabIndex="-1"
                         >
                           <span
                             className="sr-only"
@@ -4335,8 +6590,9 @@ exports[`Profile Snapshots renders profile before login 1`] = `
                           className="pagination-page pagination-current-page"
                           onClick={[Function]}
                           onKeyPress={[Function]}
+                          rel="canonical"
                           role="button"
-                          tabIndex="0"
+                          tabIndex="-1"
                         >
                           1
                         </a>
@@ -4350,6 +6606,7 @@ exports[`Profile Snapshots renders profile before login 1`] = `
                           className="pagination-page"
                           onClick={[Function]}
                           onKeyPress={[Function]}
+                          rel="next"
                           role="button"
                           tabIndex="0"
                         >
@@ -4400,10 +6657,10 @@ exports[`Profile Snapshots renders profile before login 1`] = `
     </div>
   </div>
   <div
-    className="FooterTemplate__Container-sc-96wla6-0 cOGJUH"
+    className="c35"
   >
     <span
-      className="FooterTemplate__SiteLink-sc-96wla6-1 ENejy text-base mr-1 font-bold"
+      className="c36 text-base mr-1 font-bold"
       data-cy="footer-logo-link"
       href="/"
       onClick={[Function]}
@@ -4413,7 +6670,7 @@ exports[`Profile Snapshots renders profile before login 1`] = `
     </span>
     © 2020. An interactive learning project from
     <span
-      className="FooterTemplate__SiteLink-sc-96wla6-1 ENejy ml-1"
+      className="c36 ml-1"
       data-cy="footer-site-link"
       href="https://thinkster.io/"
       onClick={[Function]}

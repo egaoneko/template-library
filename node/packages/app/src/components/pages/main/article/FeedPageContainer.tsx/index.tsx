@@ -1,13 +1,13 @@
-import React, {FC} from 'react';
+import React, { FC } from 'react';
 import styled from 'styled-components/native';
-import {Text} from 'react-native';
-import {BottomTabScreenProps} from '@react-navigation/bottom-tabs';
-import {CompositeScreenProps} from '@react-navigation/native';
-import {NativeStackScreenProps} from '@react-navigation/native-stack';
+import { Text } from 'react-native';
+import { BottomTabScreenProps } from '@react-navigation/bottom-tabs';
+import { CompositeScreenProps } from '@react-navigation/native';
+import { NativeStackScreenProps } from '@react-navigation/native-stack';
 
 import BaseLayoutTemplate from '../../../../templates/layout/BaseLayoutTemplate';
 import IconButton from '../../../../atoms/button/IconButton';
-import {CommonParamList, MainParamList} from '../../../../../interfaces/common';
+import { CommonParamList, MainParamList } from '../../../../../interfaces/common';
 
 type PropsType = CompositeScreenProps<
   NativeStackScreenProps<CommonParamList, 'MAIN'>,
@@ -16,10 +16,7 @@ type PropsType = CompositeScreenProps<
 
 const FeedPageContainer: FC<PropsType> = () => {
   return (
-    <BaseLayoutTemplate
-      title="Your feed"
-      topBarButton={<IconButton name="search1" size={20} />}
-    >
+    <BaseLayoutTemplate title="Your feed" topBarButton={<IconButton name="search1" size={20} />}>
       <Container>
         <Text>Your feed</Text>
       </Container>

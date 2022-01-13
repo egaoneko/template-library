@@ -1,7 +1,2 @@
-module.exports = {
-  bracketSpacing: false,
-  bracketSameLine: true,
-  singleQuote: true,
-  trailingComma: 'all',
-  arrowParens: 'avoid',
-};
+const prettierConfig = require('../../.prettierrc.js');
+module.exports = prettierConfig;

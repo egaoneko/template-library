@@ -1,16 +1,16 @@
-import React, {FC} from 'react';
-import {ViewStyle} from 'react-native';
+import React, { FC } from 'react';
+import { ViewStyle } from 'react-native';
 import styled from 'styled-components/native';
-import {StyledProps} from 'styled-components';
+import { StyledProps } from 'styled-components';
 
 interface PropsType extends StyledProps<ViewStyle> {}
 
-const BaseSafeAreaView: FC<PropsType> = ({children, ...props}) => {
+const BaseSafeAreaView: FC<PropsType> = ({ children, ...props }) => {
   return <StyledSafeAreaView {...props}>{children}</StyledSafeAreaView>;
 };
 
 export default BaseSafeAreaView;
 
 const StyledSafeAreaView = styled.SafeAreaView`
-  background-color: ${({theme}) => theme.background};
+  background-color: ${({ theme }) => theme.background};
 `;
