@@ -32,7 +32,7 @@ const Avatar: FC<PropsType> = props => {
   return (
     <Wrapper {...wrapperProps}>
       <Container className={`w-${width} h-${width}`}>
-        <Img className="rounded-full" src={url ?? DEFAULT_IMAGE} alt="avatar" layout="fill" />
+        <Img className="rounded-full" src={url ?? DEFAULT_IMAGE} alt="avatar" width={width * 4} height={width * 4} />
       </Container>
     </Wrapper>
   );

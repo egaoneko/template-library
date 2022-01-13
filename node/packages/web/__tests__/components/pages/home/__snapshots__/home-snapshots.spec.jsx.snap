@@ -925,26 +925,58 @@ exports[`Home Snapshots renders home after login 1`] = `
                         Object {
                           "background": "none",
                           "border": 0,
-                          "bottom": 0,
                           "boxSizing": "border-box",
-                          "display": "block",
+                          "display": "inline-block",
                           "height": "initial",
-                          "left": 0,
                           "margin": 0,
+                          "maxWidth": "100%",
                           "opacity": 1,
                           "overflow": "hidden",
                           "padding": 0,
-                          "position": "absolute",
-                          "right": 0,
-                          "top": 0,
+                          "position": "relative",
                           "width": "initial",
                         }
                       }
                     >
+                      <span
+                        style={
+                          Object {
+                            "background": "none",
+                            "border": 0,
+                            "boxSizing": "border-box",
+                            "display": "block",
+                            "height": "initial",
+                            "margin": 0,
+                            "maxWidth": "100%",
+                            "opacity": 1,
+                            "padding": 0,
+                            "width": "initial",
+                          }
+                        }
+                      >
+                        <img
+                          alt=""
+                          aria-hidden={true}
+                          src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgdmVyc2lvbj0iMS4xIi8+"
+                          style={
+                            Object {
+                              "background": "none",
+                              "border": 0,
+                              "display": "block",
+                              "height": "initial",
+                              "margin": 0,
+                              "maxWidth": "100%",
+                              "opacity": 1,
+                              "padding": 0,
+                              "width": "initial",
+                            }
+                          }
+                        />
+                      </span>
                       <img
                         alt="avatar"
                         className="c6 rounded-full"
-                        data-nimg="fill"
+                        data-nimg="intrinsic"
                         decoding="async"
                         src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
                         style={
@@ -974,12 +1006,11 @@ exports[`Home Snapshots renders home after login 1`] = `
                         <img
                           alt="avatar"
                           className="c6 rounded-full"
-                          data-nimg="fill"
+                          data-nimg="intrinsic"
                           decoding="async"
                           loading="lazy"
-                          sizes="100vw"
-                          src="/_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=3840&q=75"
-                          srcSet="/_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=640&q=75 640w, /_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=750&q=75 750w, /_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=828&q=75 828w, /_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=1080&q=75 1080w, /_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=1200&q=75 1200w, /_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=1920&q=75 1920w, /_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=2048&q=75 2048w, /_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=3840&q=75 3840w"
+                          src="/_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=48&q=75"
+                          srcSet="/_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=32&q=75 1x, /_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=48&q=75 2x"
                           style={
                             Object {
                               "border": "none",
@@ -1087,26 +1118,58 @@ exports[`Home Snapshots renders home after login 1`] = `
                           Object {
                             "background": "none",
                             "border": 0,
-                            "bottom": 0,
                             "boxSizing": "border-box",
-                            "display": "block",
+                            "display": "inline-block",
                             "height": "initial",
-                            "left": 0,
                             "margin": 0,
+                            "maxWidth": "100%",
                             "opacity": 1,
                             "overflow": "hidden",
                             "padding": 0,
-                            "position": "absolute",
-                            "right": 0,
-                            "top": 0,
+                            "position": "relative",
                             "width": "initial",
                           }
                         }
                       >
+                        <span
+                          style={
+                            Object {
+                              "background": "none",
+                              "border": 0,
+                              "boxSizing": "border-box",
+                              "display": "block",
+                              "height": "initial",
+                              "margin": 0,
+                              "maxWidth": "100%",
+                              "opacity": 1,
+                              "padding": 0,
+                              "width": "initial",
+                            }
+                          }
+                        >
+                          <img
+                            alt=""
+                            aria-hidden={true}
+                            src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzIiIGhlaWdodD0iMzIiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgdmVyc2lvbj0iMS4xIi8+"
+                            style={
+                              Object {
+                                "background": "none",
+                                "border": 0,
+                                "display": "block",
+                                "height": "initial",
+                                "margin": 0,
+                                "maxWidth": "100%",
+                                "opacity": 1,
+                                "padding": 0,
+                                "width": "initial",
+                              }
+                            }
+                          />
+                        </span>
                         <img
                           alt="avatar"
                           className="c6 rounded-full"
-                          data-nimg="fill"
+                          data-nimg="intrinsic"
                           decoding="async"
                           src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
                           style={
@@ -1136,12 +1199,11 @@ exports[`Home Snapshots renders home after login 1`] = `
                           <img
                             alt="avatar"
                             className="c6 rounded-full"
-                            data-nimg="fill"
+                            data-nimg="intrinsic"
                             decoding="async"
                             loading="lazy"
-                            sizes="100vw"
-                            src="/_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=3840&q=75"
-                            srcSet="/_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=640&q=75 640w, /_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=750&q=75 750w, /_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=828&q=75 828w, /_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=1080&q=75 1080w, /_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=1200&q=75 1200w, /_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=1920&q=75 1920w, /_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=2048&q=75 2048w, /_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=3840&q=75 3840w"
+                            src="/_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=64&q=75"
+                            srcSet="/_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=32&q=75 1x, /_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=64&q=75 2x"
                             style={
                               Object {
                                 "border": "none",
@@ -1284,26 +1346,58 @@ exports[`Home Snapshots renders home after login 1`] = `
                           Object {
                             "background": "none",
                             "border": 0,
-                            "bottom": 0,
                             "boxSizing": "border-box",
-                            "display": "block",
+                            "display": "inline-block",
                             "height": "initial",
-                            "left": 0,
                             "margin": 0,
+                            "maxWidth": "100%",
                             "opacity": 1,
                             "overflow": "hidden",
                             "padding": 0,
-                            "position": "absolute",
-                            "right": 0,
-                            "top": 0,
+                            "position": "relative",
                             "width": "initial",
                           }
                         }
                       >
+                        <span
+                          style={
+                            Object {
+                              "background": "none",
+                              "border": 0,
+                              "boxSizing": "border-box",
+                              "display": "block",
+                              "height": "initial",
+                              "margin": 0,
+                              "maxWidth": "100%",
+                              "opacity": 1,
+                              "padding": 0,
+                              "width": "initial",
+                            }
+                          }
+                        >
+                          <img
+                            alt=""
+                            aria-hidden={true}
+                            src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzIiIGhlaWdodD0iMzIiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgdmVyc2lvbj0iMS4xIi8+"
+                            style={
+                              Object {
+                                "background": "none",
+                                "border": 0,
+                                "display": "block",
+                                "height": "initial",
+                                "margin": 0,
+                                "maxWidth": "100%",
+                                "opacity": 1,
+                                "padding": 0,
+                                "width": "initial",
+                              }
+                            }
+                          />
+                        </span>
                         <img
                           alt="avatar"
                           className="c6 rounded-full"
-                          data-nimg="fill"
+                          data-nimg="intrinsic"
                           decoding="async"
                           src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
                           style={
@@ -1333,12 +1427,11 @@ exports[`Home Snapshots renders home after login 1`] = `
                           <img
                             alt="avatar"
                             className="c6 rounded-full"
-                            data-nimg="fill"
+                            data-nimg="intrinsic"
                             decoding="async"
                             loading="lazy"
-                            sizes="100vw"
-                            src="/_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=3840&q=75"
-                            srcSet="/_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=640&q=75 640w, /_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=750&q=75 750w, /_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=828&q=75 828w, /_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=1080&q=75 1080w, /_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=1200&q=75 1200w, /_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=1920&q=75 1920w, /_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=2048&q=75 2048w, /_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=3840&q=75 3840w"
+                            src="/_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=64&q=75"
+                            srcSet="/_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=32&q=75 1x, /_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=64&q=75 2x"
                             style={
                               Object {
                                 "border": "none",
@@ -1476,26 +1569,58 @@ exports[`Home Snapshots renders home after login 1`] = `
                           Object {
                             "background": "none",
                             "border": 0,
-                            "bottom": 0,
                             "boxSizing": "border-box",
-                            "display": "block",
+                            "display": "inline-block",
                             "height": "initial",
-                            "left": 0,
                             "margin": 0,
+                            "maxWidth": "100%",
                             "opacity": 1,
                             "overflow": "hidden",
                             "padding": 0,
-                            "position": "absolute",
-                            "right": 0,
-                            "top": 0,
+                            "position": "relative",
                             "width": "initial",
                           }
                         }
                       >
+                        <span
+                          style={
+                            Object {
+                              "background": "none",
+                              "border": 0,
+                              "boxSizing": "border-box",
+                              "display": "block",
+                              "height": "initial",
+                              "margin": 0,
+                              "maxWidth": "100%",
+                              "opacity": 1,
+                              "padding": 0,
+                              "width": "initial",
+                            }
+                          }
+                        >
+                          <img
+                            alt=""
+                            aria-hidden={true}
+                            src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzIiIGhlaWdodD0iMzIiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgdmVyc2lvbj0iMS4xIi8+"
+                            style={
+                              Object {
+                                "background": "none",
+                                "border": 0,
+                                "display": "block",
+                                "height": "initial",
+                                "margin": 0,
+                                "maxWidth": "100%",
+                                "opacity": 1,
+                                "padding": 0,
+                                "width": "initial",
+                              }
+                            }
+                          />
+                        </span>
                         <img
                           alt="avatar"
                           className="c6 rounded-full"
-                          data-nimg="fill"
+                          data-nimg="intrinsic"
                           decoding="async"
                           src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
                           style={
@@ -1525,12 +1650,11 @@ exports[`Home Snapshots renders home after login 1`] = `
                           <img
                             alt="avatar"
                             className="c6 rounded-full"
-                            data-nimg="fill"
+                            data-nimg="intrinsic"
                             decoding="async"
                             loading="lazy"
-                            sizes="100vw"
-                            src="/_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=3840&q=75"
-                            srcSet="/_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=640&q=75 640w, /_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=750&q=75 750w, /_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=828&q=75 828w, /_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=1080&q=75 1080w, /_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=1200&q=75 1200w, /_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=1920&q=75 1920w, /_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=2048&q=75 2048w, /_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=3840&q=75 3840w"
+                            src="/_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=64&q=75"
+                            srcSet="/_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=32&q=75 1x, /_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=64&q=75 2x"
                             style={
                               Object {
                                 "border": "none",
@@ -1668,26 +1792,58 @@ exports[`Home Snapshots renders home after login 1`] = `
                           Object {
                             "background": "none",
                             "border": 0,
-                            "bottom": 0,
                             "boxSizing": "border-box",
-                            "display": "block",
+                            "display": "inline-block",
                             "height": "initial",
-                            "left": 0,
                             "margin": 0,
+                            "maxWidth": "100%",
                             "opacity": 1,
                             "overflow": "hidden",
                             "padding": 0,
-                            "position": "absolute",
-                            "right": 0,
-                            "top": 0,
+                            "position": "relative",
                             "width": "initial",
                           }
                         }
                       >
+                        <span
+                          style={
+                            Object {
+                              "background": "none",
+                              "border": 0,
+                              "boxSizing": "border-box",
+                              "display": "block",
+                              "height": "initial",
+                              "margin": 0,
+                              "maxWidth": "100%",
+                              "opacity": 1,
+                              "padding": 0,
+                              "width": "initial",
+                            }
+                          }
+                        >
+                          <img
+                            alt=""
+                            aria-hidden={true}
+                            src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzIiIGhlaWdodD0iMzIiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgdmVyc2lvbj0iMS4xIi8+"
+                            style={
+                              Object {
+                                "background": "none",
+                                "border": 0,
+                                "display": "block",
+                                "height": "initial",
+                                "margin": 0,
+                                "maxWidth": "100%",
+                                "opacity": 1,
+                                "padding": 0,
+                                "width": "initial",
+                              }
+                            }
+                          />
+                        </span>
                         <img
                           alt="avatar"
                           className="c6 rounded-full"
-                          data-nimg="fill"
+                          data-nimg="intrinsic"
                           decoding="async"
                           src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
                           style={
@@ -1717,12 +1873,11 @@ exports[`Home Snapshots renders home after login 1`] = `
                           <img
                             alt="avatar"
                             className="c6 rounded-full"
-                            data-nimg="fill"
+                            data-nimg="intrinsic"
                             decoding="async"
                             loading="lazy"
-                            sizes="100vw"
-                            src="/_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=3840&q=75"
-                            srcSet="/_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=640&q=75 640w, /_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=750&q=75 750w, /_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=828&q=75 828w, /_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=1080&q=75 1080w, /_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=1200&q=75 1200w, /_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=1920&q=75 1920w, /_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=2048&q=75 2048w, /_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=3840&q=75 3840w"
+                            src="/_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=64&q=75"
+                            srcSet="/_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=32&q=75 1x, /_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=64&q=75 2x"
                             style={
                               Object {
                                 "border": "none",
@@ -1860,26 +2015,58 @@ exports[`Home Snapshots renders home after login 1`] = `
                           Object {
                             "background": "none",
                             "border": 0,
-                            "bottom": 0,
                             "boxSizing": "border-box",
-                            "display": "block",
+                            "display": "inline-block",
                             "height": "initial",
-                            "left": 0,
                             "margin": 0,
+                            "maxWidth": "100%",
                             "opacity": 1,
                             "overflow": "hidden",
                             "padding": 0,
-                            "position": "absolute",
-                            "right": 0,
-                            "top": 0,
+                            "position": "relative",
                             "width": "initial",
                           }
                         }
                       >
+                        <span
+                          style={
+                            Object {
+                              "background": "none",
+                              "border": 0,
+                              "boxSizing": "border-box",
+                              "display": "block",
+                              "height": "initial",
+                              "margin": 0,
+                              "maxWidth": "100%",
+                              "opacity": 1,
+                              "padding": 0,
+                              "width": "initial",
+                            }
+                          }
+                        >
+                          <img
+                            alt=""
+                            aria-hidden={true}
+                            src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzIiIGhlaWdodD0iMzIiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgdmVyc2lvbj0iMS4xIi8+"
+                            style={
+                              Object {
+                                "background": "none",
+                                "border": 0,
+                                "display": "block",
+                                "height": "initial",
+                                "margin": 0,
+                                "maxWidth": "100%",
+                                "opacity": 1,
+                                "padding": 0,
+                                "width": "initial",
+                              }
+                            }
+                          />
+                        </span>
                         <img
                           alt="avatar"
                           className="c6 rounded-full"
-                          data-nimg="fill"
+                          data-nimg="intrinsic"
                           decoding="async"
                           src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
                           style={
@@ -1909,12 +2096,11 @@ exports[`Home Snapshots renders home after login 1`] = `
                           <img
                             alt="avatar"
                             className="c6 rounded-full"
-                            data-nimg="fill"
+                            data-nimg="intrinsic"
                             decoding="async"
                             loading="lazy"
-                            sizes="100vw"
-                            src="/_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=3840&q=75"
-                            srcSet="/_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=640&q=75 640w, /_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=750&q=75 750w, /_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=828&q=75 828w, /_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=1080&q=75 1080w, /_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=1200&q=75 1200w, /_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=1920&q=75 1920w, /_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=2048&q=75 2048w, /_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=3840&q=75 3840w"
+                            src="/_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=64&q=75"
+                            srcSet="/_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=32&q=75 1x, /_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=64&q=75 2x"
                             style={
                               Object {
                                 "border": "none",
@@ -3146,26 +3332,58 @@ exports[`Home Snapshots renders home before login 1`] = `
                           Object {
                             "background": "none",
                             "border": 0,
-                            "bottom": 0,
                             "boxSizing": "border-box",
-                            "display": "block",
+                            "display": "inline-block",
                             "height": "initial",
-                            "left": 0,
                             "margin": 0,
+                            "maxWidth": "100%",
                             "opacity": 1,
                             "overflow": "hidden",
                             "padding": 0,
-                            "position": "absolute",
-                            "right": 0,
-                            "top": 0,
+                            "position": "relative",
                             "width": "initial",
                           }
                         }
                       >
+                        <span
+                          style={
+                            Object {
+                              "background": "none",
+                              "border": 0,
+                              "boxSizing": "border-box",
+                              "display": "block",
+                              "height": "initial",
+                              "margin": 0,
+                              "maxWidth": "100%",
+                              "opacity": 1,
+                              "padding": 0,
+                              "width": "initial",
+                            }
+                          }
+                        >
+                          <img
+                            alt=""
+                            aria-hidden={true}
+                            src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzIiIGhlaWdodD0iMzIiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgdmVyc2lvbj0iMS4xIi8+"
+                            style={
+                              Object {
+                                "background": "none",
+                                "border": 0,
+                                "display": "block",
+                                "height": "initial",
+                                "margin": 0,
+                                "maxWidth": "100%",
+                                "opacity": 1,
+                                "padding": 0,
+                                "width": "initial",
+                              }
+                            }
+                          />
+                        </span>
                         <img
                           alt="avatar"
                           className="c18 rounded-full"
-                          data-nimg="fill"
+                          data-nimg="intrinsic"
                           decoding="async"
                           src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
                           style={
@@ -3195,12 +3413,11 @@ exports[`Home Snapshots renders home before login 1`] = `
                           <img
                             alt="avatar"
                             className="c18 rounded-full"
-                            data-nimg="fill"
+                            data-nimg="intrinsic"
                             decoding="async"
                             loading="lazy"
-                            sizes="100vw"
-                            src="/_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=3840&q=75"
-                            srcSet="/_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=640&q=75 640w, /_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=750&q=75 750w, /_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=828&q=75 828w, /_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=1080&q=75 1080w, /_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=1200&q=75 1200w, /_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=1920&q=75 1920w, /_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=2048&q=75 2048w, /_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=3840&q=75 3840w"
+                            src="/_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=64&q=75"
+                            srcSet="/_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=32&q=75 1x, /_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=64&q=75 2x"
                             style={
                               Object {
                                 "border": "none",
@@ -3343,26 +3560,58 @@ exports[`Home Snapshots renders home before login 1`] = `
                           Object {
                             "background": "none",
                             "border": 0,
-                            "bottom": 0,
                             "boxSizing": "border-box",
-                            "display": "block",
+                            "display": "inline-block",
                             "height": "initial",
-                            "left": 0,
                             "margin": 0,
+                            "maxWidth": "100%",
                             "opacity": 1,
                             "overflow": "hidden",
                             "padding": 0,
-                            "position": "absolute",
-                            "right": 0,
-                            "top": 0,
+                            "position": "relative",
                             "width": "initial",
                           }
                         }
                       >
+                        <span
+                          style={
+                            Object {
+                              "background": "none",
+                              "border": 0,
+                              "boxSizing": "border-box",
+                              "display": "block",
+                              "height": "initial",
+                              "margin": 0,
+                              "maxWidth": "100%",
+                              "opacity": 1,
+                              "padding": 0,
+                              "width": "initial",
+                            }
+                          }
+                        >
+                          <img
+                            alt=""
+                            aria-hidden={true}
+                            src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzIiIGhlaWdodD0iMzIiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgdmVyc2lvbj0iMS4xIi8+"
+                            style={
+                              Object {
+                                "background": "none",
+                                "border": 0,
+                                "display": "block",
+                                "height": "initial",
+                                "margin": 0,
+                                "maxWidth": "100%",
+                                "opacity": 1,
+                                "padding": 0,
+                                "width": "initial",
+                              }
+                            }
+                          />
+                        </span>
                         <img
                           alt="avatar"
                           className="c18 rounded-full"
-                          data-nimg="fill"
+                          data-nimg="intrinsic"
                           decoding="async"
                           src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
                           style={
@@ -3392,12 +3641,11 @@ exports[`Home Snapshots renders home before login 1`] = `
                           <img
                             alt="avatar"
                             className="c18 rounded-full"
-                            data-nimg="fill"
+                            data-nimg="intrinsic"
                             decoding="async"
                             loading="lazy"
-                            sizes="100vw"
-                            src="/_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=3840&q=75"
-                            srcSet="/_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=640&q=75 640w, /_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=750&q=75 750w, /_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=828&q=75 828w, /_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=1080&q=75 1080w, /_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=1200&q=75 1200w, /_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=1920&q=75 1920w, /_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=2048&q=75 2048w, /_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=3840&q=75 3840w"
+                            src="/_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=64&q=75"
+                            srcSet="/_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=32&q=75 1x, /_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=64&q=75 2x"
                             style={
                               Object {
                                 "border": "none",
@@ -3535,26 +3783,58 @@ exports[`Home Snapshots renders home before login 1`] = `
                           Object {
                             "background": "none",
                             "border": 0,
-                            "bottom": 0,
                             "boxSizing": "border-box",
-                            "display": "block",
+                            "display": "inline-block",
                             "height": "initial",
-                            "left": 0,
                             "margin": 0,
+                            "maxWidth": "100%",
                             "opacity": 1,
                             "overflow": "hidden",
                             "padding": 0,
-                            "position": "absolute",
-                            "right": 0,
-                            "top": 0,
+                            "position": "relative",
                             "width": "initial",
                           }
                         }
                       >
+                        <span
+                          style={
+                            Object {
+                              "background": "none",
+                              "border": 0,
+                              "boxSizing": "border-box",
+                              "display": "block",
+                              "height": "initial",
+                              "margin": 0,
+                              "maxWidth": "100%",
+                              "opacity": 1,
+                              "padding": 0,
+                              "width": "initial",
+                            }
+                          }
+                        >
+                          <img
+                            alt=""
+                            aria-hidden={true}
+                            src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzIiIGhlaWdodD0iMzIiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgdmVyc2lvbj0iMS4xIi8+"
+                            style={
+                              Object {
+                                "background": "none",
+                                "border": 0,
+                                "display": "block",
+                                "height": "initial",
+                                "margin": 0,
+                                "maxWidth": "100%",
+                                "opacity": 1,
+                                "padding": 0,
+                                "width": "initial",
+                              }
+                            }
+                          />
+                        </span>
                         <img
                           alt="avatar"
                           className="c18 rounded-full"
-                          data-nimg="fill"
+                          data-nimg="intrinsic"
                           decoding="async"
                           src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
                           style={
@@ -3584,12 +3864,11 @@ exports[`Home Snapshots renders home before login 1`] = `
                           <img
                             alt="avatar"
                             className="c18 rounded-full"
-                            data-nimg="fill"
+                            data-nimg="intrinsic"
                             decoding="async"
                             loading="lazy"
-                            sizes="100vw"
-                            src="/_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=3840&q=75"
-                            srcSet="/_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=640&q=75 640w, /_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=750&q=75 750w, /_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=828&q=75 828w, /_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=1080&q=75 1080w, /_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=1200&q=75 1200w, /_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=1920&q=75 1920w, /_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=2048&q=75 2048w, /_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=3840&q=75 3840w"
+                            src="/_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=64&q=75"
+                            srcSet="/_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=32&q=75 1x, /_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=64&q=75 2x"
                             style={
                               Object {
                                 "border": "none",
@@ -3727,26 +4006,58 @@ exports[`Home Snapshots renders home before login 1`] = `
                           Object {
                             "background": "none",
                             "border": 0,
-                            "bottom": 0,
                             "boxSizing": "border-box",
-                            "display": "block",
+                            "display": "inline-block",
                             "height": "initial",
-                            "left": 0,
                             "margin": 0,
+                            "maxWidth": "100%",
                             "opacity": 1,
                             "overflow": "hidden",
                             "padding": 0,
-                            "position": "absolute",
-                            "right": 0,
-                            "top": 0,
+                            "position": "relative",
                             "width": "initial",
                           }
                         }
                       >
+                        <span
+                          style={
+                            Object {
+                              "background": "none",
+                              "border": 0,
+                              "boxSizing": "border-box",
+                              "display": "block",
+                              "height": "initial",
+                              "margin": 0,
+                              "maxWidth": "100%",
+                              "opacity": 1,
+                              "padding": 0,
+                              "width": "initial",
+                            }
+                          }
+                        >
+                          <img
+                            alt=""
+                            aria-hidden={true}
+                            src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzIiIGhlaWdodD0iMzIiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgdmVyc2lvbj0iMS4xIi8+"
+                            style={
+                              Object {
+                                "background": "none",
+                                "border": 0,
+                                "display": "block",
+                                "height": "initial",
+                                "margin": 0,
+                                "maxWidth": "100%",
+                                "opacity": 1,
+                                "padding": 0,
+                                "width": "initial",
+                              }
+                            }
+                          />
+                        </span>
                         <img
                           alt="avatar"
                           className="c18 rounded-full"
-                          data-nimg="fill"
+                          data-nimg="intrinsic"
                           decoding="async"
                           src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
                           style={
@@ -3776,12 +4087,11 @@ exports[`Home Snapshots renders home before login 1`] = `
                           <img
                             alt="avatar"
                             className="c18 rounded-full"
-                            data-nimg="fill"
+                            data-nimg="intrinsic"
                             decoding="async"
                             loading="lazy"
-                            sizes="100vw"
-                            src="/_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=3840&q=75"
-                            srcSet="/_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=640&q=75 640w, /_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=750&q=75 750w, /_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=828&q=75 828w, /_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=1080&q=75 1080w, /_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=1200&q=75 1200w, /_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=1920&q=75 1920w, /_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=2048&q=75 2048w, /_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=3840&q=75 3840w"
+                            src="/_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=64&q=75"
+                            srcSet="/_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=32&q=75 1x, /_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=64&q=75 2x"
                             style={
                               Object {
                                 "border": "none",
@@ -3919,26 +4229,58 @@ exports[`Home Snapshots renders home before login 1`] = `
                           Object {
                             "background": "none",
                             "border": 0,
-                            "bottom": 0,
                             "boxSizing": "border-box",
-                            "display": "block",
+                            "display": "inline-block",
                             "height": "initial",
-                            "left": 0,
                             "margin": 0,
+                            "maxWidth": "100%",
                             "opacity": 1,
                             "overflow": "hidden",
                             "padding": 0,
-                            "position": "absolute",
-                            "right": 0,
-                            "top": 0,
+                            "position": "relative",
                             "width": "initial",
                           }
                         }
                       >
+                        <span
+                          style={
+                            Object {
+                              "background": "none",
+                              "border": 0,
+                              "boxSizing": "border-box",
+                              "display": "block",
+                              "height": "initial",
+                              "margin": 0,
+                              "maxWidth": "100%",
+                              "opacity": 1,
+                              "padding": 0,
+                              "width": "initial",
+                            }
+                          }
+                        >
+                          <img
+                            alt=""
+                            aria-hidden={true}
+                            src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzIiIGhlaWdodD0iMzIiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgdmVyc2lvbj0iMS4xIi8+"
+                            style={
+                              Object {
+                                "background": "none",
+                                "border": 0,
+                                "display": "block",
+                                "height": "initial",
+                                "margin": 0,
+                                "maxWidth": "100%",
+                                "opacity": 1,
+                                "padding": 0,
+                                "width": "initial",
+                              }
+                            }
+                          />
+                        </span>
                         <img
                           alt="avatar"
                           className="c18 rounded-full"
-                          data-nimg="fill"
+                          data-nimg="intrinsic"
                           decoding="async"
                           src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
                           style={
@@ -3968,12 +4310,11 @@ exports[`Home Snapshots renders home before login 1`] = `
                           <img
                             alt="avatar"
                             className="c18 rounded-full"
-                            data-nimg="fill"
+                            data-nimg="intrinsic"
                             decoding="async"
                             loading="lazy"
-                            sizes="100vw"
-                            src="/_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=3840&q=75"
-                            srcSet="/_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=640&q=75 640w, /_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=750&q=75 750w, /_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=828&q=75 828w, /_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=1080&q=75 1080w, /_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=1200&q=75 1200w, /_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=1920&q=75 1920w, /_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=2048&q=75 2048w, /_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=3840&q=75 3840w"
+                            src="/_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=64&q=75"
+                            srcSet="/_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=32&q=75 1x, /_next/image?url=https%3A%2F%2Fi.stack.imgur.com%2FxHWG8.jpg&w=64&q=75 2x"
                             style={
                               Object {
                                 "border": "none",
