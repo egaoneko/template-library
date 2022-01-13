@@ -1,3 +1,5 @@
+const OpenBrowserPlugin = require('./plugins/open-browser-plugin');
+
 module.exports = {
   eslint: {
     ignoreDuringBuilds: true,
@@ -8,5 +10,16 @@ module.exports = {
   reactStrictMode: true,
   api: {
     externalResolver: true,
+  },
+  webpack(config, { dev }) {
+    if (dev) {
+      config.plugins.push(new OpenBrowserPlugin());
+    }
+
+    if (!dev) {
+      config.devtool = 'hidden-source-map';
+    }
+
+    return config;
   },
 };
