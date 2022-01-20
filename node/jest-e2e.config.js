@@ -1,10 +1,10 @@
 module.exports = {
+  roots: ['<rootDir>/src'],
   moduleFileExtensions: ['js', 'json', 'ts'],
   testEnvironment: 'node',
-  rootDir: '__tests__',
   testRegex: '.*\\.e2e-spec\\.ts$',
   transform: {
-    '^.+\\.(t|j)s$': 'ts-jest'
+    '^.+\\.(t|j)s$': 'ts-jest',
   },
   maxWorkers: 1,
   globals: {

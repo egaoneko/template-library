@@ -1,4 +1,4 @@
-import { makeArray, randInt } from '../../src/utils/generate';
+import { makeArray, randInt } from './generate';
 
 describe('generate', () => {
   test('makeArray', () => {
