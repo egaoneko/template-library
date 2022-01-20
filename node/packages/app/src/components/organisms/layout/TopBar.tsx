@@ -2,9 +2,9 @@ import React, { FC, ReactNode } from 'react';
 import styled from 'styled-components/native';
 import { Colors } from 'react-native-paper';
 
-import BaseView from '../../atoms/view/BaseView';
-import { Heading2 } from '../../atoms/common/typography';
-import useDarkMode from '../../../hooks/useDarkMode';
+import BaseView from 'src/components/atoms/view/BaseView';
+import { Heading2 } from 'src/components/atoms/common/typography';
+import useDarkMode from 'src/hooks/useDarkMode';
 
 interface PropsType {
   title?: string;

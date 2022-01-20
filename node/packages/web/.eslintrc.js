@@ -18,14 +18,9 @@ module.exports = {
     ...lintConfig.rules,
   },
   settings: {
+    ...lintConfig.settings,
     react: {
       version: 'detect',
-    },
-    'import/internal-module-folders': ['@my-app/'],
-    'import/resolver': {
-      node: {
-        moduleDirectory: ['node_modules', './', 'src/'],
-      },
     },
   },
 };

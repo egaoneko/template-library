@@ -1,8 +1,8 @@
 import React, { FC, ReactNode } from 'react';
 import styled from 'styled-components/native';
 
-import TopBar from '../../organisms/layout/TopBar';
-import BaseSafeAreaView from '../../atoms/view/BaseSafeAreaView';
+import BaseSafeAreaView from 'src/components/atoms/view/BaseSafeAreaView';
+import TopBar from 'src/components/organisms/layout/TopBar';
 
 interface PropsType {
   title?: string;

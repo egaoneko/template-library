@@ -4,11 +4,11 @@ import { BottomTabScreenProps } from '@react-navigation/bottom-tabs';
 import { CompositeScreenProps } from '@react-navigation/native';
 import { NativeStackScreenProps } from '@react-navigation/native-stack';
 
-import BaseLayoutTemplate from '../../../templates/layout/BaseLayoutTemplate';
-import IconButton from '../../../atoms/button/IconButton';
-import { CommonParamList, MainParamList } from '../../../../interfaces/common';
-import { createMockArticles } from '../../../../data/mock-article';
-import FeedList from '../../../organisms/article/FeedList';
+import BaseLayoutTemplate from 'src/components/templates/layout/BaseLayoutTemplate';
+import { CommonParamList, MainParamList } from 'src/interfaces/common';
+import IconButton from 'src/components/atoms/button/IconButton';
+import FeedList from 'src/components/organisms/article/FeedList';
+import { createMockArticles } from 'src/data/mock-article';
 
 type PropsType = CompositeScreenProps<
   NativeStackScreenProps<CommonParamList, 'MAIN'>,

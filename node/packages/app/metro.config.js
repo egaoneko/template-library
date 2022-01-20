@@ -9,6 +9,11 @@ const path = require('path');
 
 module.exports = {
   projectRoot: path.resolve(__dirname, '../../'),
+  resolver: {
+    extraNodeModules: {
+      src: path.resolve(__dirname, 'src'),
+    },
+  },
   transformer: {
     getTransformOptions: async () => ({
       transform: {

@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
 import styled from 'styled-components/native';
 
-import useDarkMode from '../../../hooks/useDarkMode';
+import useDarkMode from 'src/hooks/useDarkMode';
 
 interface PropsType {}
 

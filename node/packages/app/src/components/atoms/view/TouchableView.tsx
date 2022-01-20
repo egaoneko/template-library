@@ -1,7 +1,7 @@
 import React, { ComponentProps, FC, ReactNode } from 'react';
 import { TouchableOpacity, View } from 'react-native';
 
-import { TouchableProps } from '../../../interfaces/component';
+import { TouchableProps } from 'src/interfaces/component';
 
 interface PropsType extends ComponentProps<typeof View>, TouchableProps {
   children?: ReactNode;

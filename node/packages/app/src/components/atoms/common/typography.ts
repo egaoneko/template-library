@@ -1,14 +1,15 @@
 import styled from 'styled-components/native';
 
-import BaseText from '../text/BaseText';
+import BaseText from 'src/components/atoms/text/BaseText';
 
 export const Heading1 = styled(BaseText)`
   font-family: ${({ theme }) => theme.font};
   font-size: 25px;
-  font-weight: 500;
+  font-weight: 700;
 `;
 
 export const Heading2 = styled(BaseText)`
+  font-family: ${({ theme }) => theme.font};
   font-size: 20px;
   font-weight: 500;
 `;

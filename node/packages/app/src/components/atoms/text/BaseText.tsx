@@ -4,8 +4,7 @@ import { StyledProps } from 'styled-components';
 import styled from 'styled-components/native';
 
 import { TouchableProps } from 'src/interfaces/component';
-
-import TouchableView from '../view/TouchableView';
+import TouchableView from 'src/components/atoms/view/TouchableView';
 
 interface PropsType extends StyledProps<TextStyle>, TouchableProps {
   touchable?: boolean;

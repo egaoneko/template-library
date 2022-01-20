@@ -3,8 +3,8 @@ import { Colors } from 'react-native-paper';
 import styled from 'styled-components/native';
 import { NativeStackScreenProps } from '@react-navigation/native-stack';
 
-import { CommonParamList } from '../../../../interfaces/common';
-import { COMMON_NAVIGATION_TYPE } from '../../../../enums/common-navigation';
+import { CommonParamList } from 'src/interfaces/common';
+import { COMMON_NAVIGATION_TYPE } from 'src/enums/common-navigation';
 
 type PropsType = NativeStackScreenProps<CommonParamList, 'SPLASH'>;
 

@@ -19,32 +19,21 @@ module.exports = {
     'import/order': [
       'error',
       {
-        groups: [
-          'builtin',
-          'external',
-          'internal',
-          'unknown',
-          'parent',
-          'index',
-          'sibling',
-          'object',
-        ],
+        groups: ['builtin', 'external', 'internal', 'unknown', 'parent', 'index', 'sibling', 'object'],
         'newlines-between': 'always',
       },
     ],
   },
   settings: {
-    react: {
-      version: 'detect',
-    },
-    "import/ignore": [
-      "node_modules/react-native/index\\.js$"
-    ],
     'import/internal-module-folders': ['@my-app/'],
     'import/resolver': {
       node: {
         moduleDirectory: ['node_modules', './', 'src/'],
       },
     },
+    react: {
+      version: 'detect',
+    },
+    'import/ignore': ['node_modules/react-native/index\\.js$'],
   },
 };

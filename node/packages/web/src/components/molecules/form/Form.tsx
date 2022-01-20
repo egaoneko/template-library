@@ -16,7 +16,7 @@ const Form: FC<PropsType> = props => {
 
   return (
     <FormProvider {...formProps}>
-      <div className={['flex flex-col', gap && `gap-${gap}`].join(' ')}>{children}</div>
+      <div className={['flex flex-col', `gap-${gap}`].join(' ')}>{children}</div>
     </FormProvider>
   );
 };

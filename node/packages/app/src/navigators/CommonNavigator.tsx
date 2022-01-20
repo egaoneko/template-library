@@ -2,7 +2,7 @@ import React, { FC } from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
-import { COMMON_NAVIGATION_TYPE } from '../enums/common-navigation';
+import { COMMON_NAVIGATION_TYPE } from 'src/enums/common-navigation';
 
 import { commonRoutes } from './routes';
 

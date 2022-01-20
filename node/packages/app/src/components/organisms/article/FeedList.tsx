@@ -2,7 +2,7 @@ import { IArticle } from '@my-app/core/lib/interfaces/article';
 import React, { FC } from 'react';
 import { FlatList } from 'react-native';
 
-import Separator from '../../atoms/common/Separator';
+import Separator from 'src/components/atoms/common/Separator';
 
 import Feed from './Feed';
 

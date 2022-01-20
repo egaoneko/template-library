@@ -1,14 +1,14 @@
 import { ComponentType } from 'react';
 
-import HomePageContainer from '../components/pages/main/HomePageContainer.tsx';
-import SplashPageContainer from '../components/pages/common/SplashPageContainer';
-import FeedPageContainer from '../components/pages/main/article/FeedPageContainer.tsx';
-import PostArticlePageContainer from '../components/pages/main/editor/PostArticlePageContainer.tsx';
-import SettingsPageContainer from '../components/pages/main/user/SettingsPageContainer.tsx';
-import MainPageContainer from '../components/pages/common/MainPageContainer';
-import LoginPageContainer from '../components/pages/common/LoginPageContainer';
-import { MAIN_NAVIGATION_TYPE } from '../enums/main-navigation';
-import { COMMON_NAVIGATION_TYPE } from '../enums/common-navigation';
+import HomePageContainer from 'src/components/pages/main/HomePageContainer.tsx';
+import SplashPageContainer from 'src/components/pages/common/SplashPageContainer';
+import FeedPageContainer from 'src/components/pages/main/article/FeedPageContainer.tsx';
+import PostArticlePageContainer from 'src/components/pages/main/editor/PostArticlePageContainer.tsx';
+import SettingsPageContainer from 'src/components/pages/main/user/SettingsPageContainer.tsx';
+import MainPageContainer from 'src/components/pages/common/MainPageContainer';
+import LoginPageContainer from 'src/components/pages/common/LoginPageContainer';
+import { MAIN_NAVIGATION_TYPE } from 'src/enums/main-navigation';
+import { COMMON_NAVIGATION_TYPE } from 'src/enums/common-navigation';
 
 interface RoutesInfo {
   name: COMMON_NAVIGATION_TYPE | MAIN_NAVIGATION_TYPE;

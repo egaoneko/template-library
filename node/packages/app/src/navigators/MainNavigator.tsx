@@ -3,10 +3,10 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Icon from 'react-native-vector-icons/AntDesign';
 import { NavigationState } from '@react-navigation/core';
 
-import { COLOR_SET } from '../enums/color';
-import useDarkMode from '../hooks/useDarkMode';
-import { COMMON_NAVIGATION_TYPE } from '../enums/common-navigation';
-import { MAIN_NAVIGATION_TYPE } from '../enums/main-navigation';
+import { COLOR_SET } from 'src/enums/color';
+import useDarkMode from 'src/hooks/useDarkMode';
+import { COMMON_NAVIGATION_TYPE } from 'src/enums/common-navigation';
+import { MAIN_NAVIGATION_TYPE } from 'src/enums/main-navigation';
 
 import { mainRoutes } from './routes';
 

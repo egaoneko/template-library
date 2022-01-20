@@ -3,12 +3,12 @@ import React, { FC } from 'react';
 import styled from 'styled-components/native';
 import format from 'date-fns/format';
 
-import BaseText from '../../atoms/text/BaseText';
-import TouchableView from '../../atoms/view/TouchableView';
-import BaseIcon from '../../atoms/icon/BaseIcon';
-import Avatar from '../../atoms/avatar/Avatar';
-import IconButton from '../../atoms/button/IconButton';
-import { Description1, Heading2 } from '../../atoms/common/typography';
+import BaseText from 'src/components/atoms/text/BaseText';
+import TouchableView from 'src/components/atoms/view/TouchableView';
+import BaseIcon from 'src/components/atoms/icon/BaseIcon';
+import Avatar from 'src/components/atoms/avatar/Avatar';
+import IconButton from 'src/components/atoms/button/IconButton';
+import { Description1, Heading2 } from 'src/components/atoms/common/typography';
 
 interface PropsType {
   article: IArticle;

@@ -1,8 +1,8 @@
 import React, { FC } from 'react';
 import styled from 'styled-components/native';
 
-import { TouchableProps } from '../../../interfaces/component';
-import BaseIcon, { BaseIconPropsType } from '../icon/BaseIcon';
+import { TouchableProps } from 'src/interfaces/component';
+import BaseIcon, { BaseIconPropsType } from 'src/components/atoms/icon/BaseIcon';
 
 interface PropsType extends BaseIconPropsType, TouchableProps {}
 

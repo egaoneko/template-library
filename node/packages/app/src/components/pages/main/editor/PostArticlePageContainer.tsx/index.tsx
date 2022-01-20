@@ -5,8 +5,8 @@ import { BottomTabScreenProps } from '@react-navigation/bottom-tabs';
 import { CompositeScreenProps } from '@react-navigation/native';
 import { NativeStackScreenProps } from '@react-navigation/native-stack';
 
-import { CommonParamList, MainParamList } from '../../../../../interfaces/common';
-import BaseLayoutTemplate from '../../../../templates/layout/BaseLayoutTemplate';
+import BaseLayoutTemplate from 'src/components/templates/layout/BaseLayoutTemplate';
+import { CommonParamList, MainParamList } from 'src/interfaces/common';
 
 type PropsType = CompositeScreenProps<
   NativeStackScreenProps<CommonParamList, 'MAIN'>,

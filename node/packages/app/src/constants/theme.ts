@@ -1,6 +1,6 @@
-import { FONT_SET } from '../enums/font';
-import { COLOR_SET } from '../enums/color';
-import { THEME } from '../enums/theme';
+import { FONT_SET } from 'src/enums/font';
+import { COLOR_SET } from 'src/enums/color';
+import { THEME } from 'src/enums/theme';
 
 export interface Theme {
   font: string;

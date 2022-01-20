@@ -2,8 +2,8 @@ import React, { FC } from 'react';
 import styled from 'styled-components/native';
 import { NativeStackScreenProps } from '@react-navigation/native-stack';
 
-import { CommonParamList } from '../../../../interfaces/common';
-import MainNavigator from '../../../../navigators/MainNavigator';
+import { CommonParamList } from 'src/interfaces/common';
+import MainNavigator from 'src/navigators/MainNavigator';
 
 type PropsType = NativeStackScreenProps<CommonParamList, 'MAIN'>;
 
