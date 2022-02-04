@@ -2,11 +2,14 @@ import React, { FC } from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Icon from 'react-native-vector-icons/AntDesign';
 import { NavigationState } from '@react-navigation/core';
+import { observer } from 'mobx-react';
 
 import { COLOR_SET } from 'src/enums/color';
 import useDarkMode from 'src/hooks/useDarkMode';
 import { COMMON_NAVIGATION_TYPE } from 'src/enums/common-navigation';
 import { MAIN_NAVIGATION_TYPE } from 'src/enums/main-navigation';
+import { useStores } from 'src/stores/stores';
+import Avatar from 'src/components/atoms/avatar/Avatar';
 
 import { mainRoutes } from './routes';
 
@@ -16,8 +19,9 @@ const DEFAULT_OPTIONS = {
   headerShown: false,
 };
 
-const MainNavigator: FC = () => {
+const MainNavigator: FC = observer(() => {
   const isDarkMode = useDarkMode();
+  const { userStore } = useStores();
 
   return (
     <Tab.Navigator
@@ -39,6 +43,10 @@ const MainNavigator: FC = () => {
               break;
             case MAIN_NAVIGATION_TYPE.SETTINGS:
               name = 'user';
+
+              if (userStore.user?.image) {
+                return <Avatar size={size} uri={userStore.user.image} />;
+              }
               break;
             default:
               name = 'question';
@@ -68,6 +76,6 @@ const MainNavigator: FC = () => {
       })}
     </Tab.Navigator>
   );
-};
+});
 
 export default MainNavigator;

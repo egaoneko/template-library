@@ -19,3 +19,11 @@ export const Description1 = styled(BaseText)`
   font-weight: 400;
   color: ${({ theme }) => theme.description};
 `;
+
+export const InputError = styled(BaseText)`
+  font-family: ${({ theme }) => theme.font};
+  font-size: 16px;
+  font-weight: 700;
+  color: ${({ theme }) => theme.error};
+  width: 100%;
+`;

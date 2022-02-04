@@ -11,7 +11,7 @@ type PropsType = NativeStackScreenProps<CommonParamList, 'SPLASH'>;
 const SplashPageContainer: FC<PropsType> = ({ navigation }) => {
   useEffect(() => {
     setTimeout(() => {
-      navigation.replace(COMMON_NAVIGATION_TYPE.LOGIN);
+      navigation.replace(COMMON_NAVIGATION_TYPE.SIGN_IN);
     }, 1000);
   }, [navigation]);
 

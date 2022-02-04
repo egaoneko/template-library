@@ -1,5 +1,3 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
-
 import React, { FC, ReactNode } from 'react';
 
 import FormProvider from './FormProvider';
@@ -7,7 +5,7 @@ import FormProvider from './FormProvider';
 interface PropsType {
   gap?: number;
   resetAfterFinish?: boolean;
-  onFinish?: (data: any) => unknown;
+  onFinish?: (data: unknown) => unknown;
   children?: ReactNode;
 }
 

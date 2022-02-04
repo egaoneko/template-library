@@ -1,4 +1,4 @@
-import React, { FC, useCallback, useState } from 'react';
+import React, { FC, useState } from 'react';
 import { useRouter } from 'next/router';
 import { BasePropsType } from '@my-app/core/lib/interfaces/common';
 import { IArticle, UpdateArticleRequest } from '@my-app/core/lib/interfaces/article';
@@ -20,25 +20,22 @@ const EditorEditPageContainer: FC<PropsType> = props => {
   const router = useRouter();
   const [loading, setLoading] = useState<boolean>(false);
 
-  const handleOnFinish = useCallback(
-    async (request: UpdateArticleRequest): Promise<void> => {
-      setLoading(true);
-      return ArticleAPI.update(CONTEXT, article.slug, request)
-        .then(async article => {
-          if (!article) {
-            setLoading(false);
-            return;
-          }
-          notifySuccess('Successfully updated!');
-          await router.push(`/article/${article.slug}`);
-        })
-        .catch(e => {
+  const handleOnFinish = async (request: UpdateArticleRequest): Promise<void> => {
+    setLoading(true);
+    return ArticleAPI.update(CONTEXT, article.slug, request)
+      .then(async article => {
+        if (!article) {
           setLoading(false);
-          notifyError((e as Error).message);
-        });
-    },
-    [router, article],
-  );
+          return;
+        }
+        notifySuccess('Successfully updated!');
+        await router.push(`/article/${article.slug}`);
+      })
+      .catch(e => {
+        setLoading(false);
+        notifyError((e as Error).message);
+      });
+  };
 
   return (
     <BaseLayoutTemplate pathname={props.pathname}>

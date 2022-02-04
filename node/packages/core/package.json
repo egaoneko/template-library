@@ -22,7 +22,7 @@
     "test:cov": "jest --coverage",
     "test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand",
     "lint": "eslint \"{src,__tests__}/**/*.{js,jsx,ts,tsx}\" --fix",
-    "format": "prettier --write \"src/**/*.ts\" \"__tests__/**/*.ts\"",
+    "format": "prettier --write \"src/**/*.ts\"",
     "preschema": "rimraf ./lib/schema",
     "schema": "node scripts/schema.js"
   },

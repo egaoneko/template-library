@@ -12,6 +12,8 @@ import { Provider } from 'mobx-react';
 import React, { FC, useState } from 'react';
 import { StatusBar } from 'react-native';
 import { ThemeProvider } from 'styled-components';
+import Toast from 'react-native-toast-message';
+import { QueryClient, QueryClientProvider } from 'react-query';
 
 import { theme } from './constants/theme';
 import { THEME } from './enums/theme';
@@ -24,14 +26,20 @@ const App: FC = () => {
   const [stores] = useState<Stores>({
     userStore: useUserStore(null),
   });
+  const queryClient = new QueryClient();
 
   return (
-    <ThemeProvider theme={useDarkMode() ? theme[THEME.DARK] : theme[THEME.LIGHT]}>
-      <StatusBar barStyle={useDarkMode() ? 'light-content' : 'dark-content'} />
-      <Provider {...stores}>
-        <CommonNavigator />
-      </Provider>
-    </ThemeProvider>
+    <>
+      <ThemeProvider theme={useDarkMode() ? theme[THEME.DARK] : theme[THEME.LIGHT]}>
+        <StatusBar barStyle={useDarkMode() ? 'light-content' : 'dark-content'} />
+        <Provider {...stores}>
+          <QueryClientProvider client={queryClient}>
+            <CommonNavigator />
+          </QueryClientProvider>
+        </Provider>
+      </ThemeProvider>
+      <Toast />
+    </>
   );
 };
 

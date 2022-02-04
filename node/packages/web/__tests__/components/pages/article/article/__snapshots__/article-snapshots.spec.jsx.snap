@@ -1327,7 +1327,7 @@ exports[`Article Snapshots renders article after login 1`] = `
           onSubmit={[Function]}
         >
           <div
-            className="flex flex-col 0"
+            className="flex flex-col gap-0"
           >
             <div>
               <textarea
@@ -3201,7 +3201,7 @@ exports[`Article Snapshots renders article after login with other article 1`] = 
           onSubmit={[Function]}
         >
           <div
-            className="flex flex-col 0"
+            className="flex flex-col gap-0"
           >
             <div>
               <textarea
@@ -5087,7 +5087,7 @@ exports[`Article Snapshots renders article after login with other user 1`] = `
           onSubmit={[Function]}
         >
           <div
-            className="flex flex-col 0"
+            className="flex flex-col gap-0"
           >
             <div>
               <textarea

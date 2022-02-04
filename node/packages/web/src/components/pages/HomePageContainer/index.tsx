@@ -1,4 +1,4 @@
-import React, { FC, useCallback, useState } from 'react';
+import React, { FC, useState } from 'react';
 import { BasePropsType, ListResult } from '@my-app/core/lib/interfaces/common';
 import { IArticle } from '@my-app/core/lib/interfaces/article';
 import { useQuery } from 'react-query';
@@ -46,33 +46,30 @@ const HomePageContainer: FC<PropsType> = props => {
     initialData: props.tags,
   });
 
-  const handleToggleFavorite = useCallback(
-    async (slug: string, toggle: boolean): Promise<void> => {
-      if (!userStore.user) {
-        notifyError('Need login to toggle favorite');
-        await router.push('/auth/sign-in?successUrl=/');
-        return;
+  const handleToggleFavorite = async (slug: string, toggle: boolean): Promise<void> => {
+    if (!userStore.user) {
+      notifyError('Need login to toggle favorite');
+      await router.push('/auth/sign-in?successUrl=/');
+      return;
+    }
+
+    try {
+      if (toggle) {
+        await ArticleAPI.favorite(CONTEXT, slug);
+      } else {
+        await ArticleAPI.unfavorite(CONTEXT, slug);
       }
 
-      try {
-        if (toggle) {
-          await ArticleAPI.favorite(CONTEXT, slug);
-        } else {
-          await ArticleAPI.unfavorite(CONTEXT, slug);
-        }
+      await articlesResult.refetch();
+    } catch (e) {
+      notifyError((e as Error).message);
+    }
+  };
 
-        await articlesResult.refetch();
-      } catch (e) {
-        notifyError((e as Error).message);
-      }
-    },
-    [router, userStore.user, articlesResult],
-  );
-
-  const handleOnSelectTag = useCallback((tag: string | null) => {
+  const handleOnSelectTag = (tag: string | null) => {
     setPage(1);
     setSelectedTag(tag);
-  }, []);
+  };
 
   return (
     <BaseLayoutTemplate pathname={props.pathname} banner={<HomeBannerTemplate />}>

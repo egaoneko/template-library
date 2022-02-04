@@ -4,7 +4,8 @@ import { MAIN_NAVIGATION_TYPE } from 'src/enums/main-navigation';
 export type CommonParamList = {
   [COMMON_NAVIGATION_TYPE.SPLASH]: undefined;
   [COMMON_NAVIGATION_TYPE.MAIN]: undefined;
-  [COMMON_NAVIGATION_TYPE.LOGIN]: undefined;
+  [COMMON_NAVIGATION_TYPE.SIGN_IN]: undefined;
+  [COMMON_NAVIGATION_TYPE.SIGN_UP]: undefined;
 };
 
 export type MainParamList = {

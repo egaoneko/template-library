@@ -2,7 +2,8 @@ import { Test, TestingModule } from '@nestjs/testing';
 import { JwtService } from '@nestjs/jwt';
 import { createMock } from '@golevelup/ts-jest';
 import { ConfigService } from '@nestjs/config';
-import { IUser } from 'src/interfaces/user.interface';
+
+import { IUser } from 'src/user/interfaces/user.interface';
 
 import { UserService } from '../user/user.service';
 import { Crypto } from '../shared/crypto/crypto';

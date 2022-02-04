@@ -1,4 +1,4 @@
-import React, { FC, useCallback, useState } from 'react';
+import React, { FC, useState } from 'react';
 import { UpdateRequest } from '@my-app/core/lib/interfaces/user';
 import { useRouter } from 'next/router';
 import { BasePropsType } from '@my-app/core/lib/interfaces/common';
@@ -17,41 +17,35 @@ const SettingsPageContainer: FC<PropsType> = props => {
   const router = useRouter();
   const [loading, setLoading] = useState<boolean>(false);
 
-  const handleOnFinish = useCallback(
-    (request: UpdateRequest): Promise<void> => {
-      setLoading(true);
-      return userStore.update(request).then(() => {
-        setLoading(false);
-      });
-    },
-    [userStore],
-  );
+  const handleOnFinish = (request: UpdateRequest): Promise<void> => {
+    setLoading(true);
+    return userStore.update(request).then(() => {
+      setLoading(false);
+    });
+  };
 
-  const handleOnFinishUpload = useCallback(
-    async (file: IFile): Promise<void> => {
-      if (!userStore.user) {
-        return;
-      }
-      setLoading(true);
-      const request: UpdateRequest = {
-        id: userStore.user.id,
-        image: file.id,
-      };
+  const handleOnFinishUpload = async (file: IFile): Promise<void> => {
+    if (!userStore.user) {
+      return;
+    }
+    setLoading(true);
+    const request: UpdateRequest = {
+      id: userStore.user.id,
+      image: file.id,
+    };
 
-      return userStore.update(request).then(() => {
-        setLoading(false);
-      });
-    },
-    [userStore],
-  );
+    return userStore.update(request).then(() => {
+      setLoading(false);
+    });
+  };
 
-  const handleOnClickLogout = useCallback(async (): Promise<void> => {
+  const handleOnClickLogout = async (): Promise<void> => {
     setLoading(true);
     return userStore.logout().then(async () => {
       setLoading(false);
       await router.push('/', '/');
     });
-  }, [router, userStore]);
+  };
 
   return (
     <BaseLayoutTemplate pathname={props.pathname}>

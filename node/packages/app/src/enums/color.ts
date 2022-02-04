@@ -8,12 +8,14 @@ export const COLOR_SET = {
   LIGHT_MODE_BACKGROUND: Colors.white,
   LIGHT_MODE_FOREGROUND: Colors.grey100,
   LIGHT_MODE_BORDER: Colors.grey300,
+  LIGHT_MODE_ERROR: Colors.red600,
 
   DARK_MODE_TEXT: Colors.white,
   DARK_MODE_DESCRIPTION: Colors.grey300,
   DARK_MODE_BACKGROUND: Colors.black,
   DARK_MODE_FOREGROUND: Colors.grey800,
   DARK_MODE_BORDER: Colors.grey700,
+  DARK_MODE_ERROR: Colors.red400,
 } as const;
 
 export type COLOR_SET = typeof COLOR_SET[keyof typeof COLOR_SET];

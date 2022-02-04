@@ -1,4 +1,4 @@
-import React, { FC, useCallback, useState } from 'react';
+import React, { FC, useState } from 'react';
 import { BasePropsType, ListResult } from '@my-app/core/lib/interfaces/common';
 import { IArticle } from '@my-app/core/lib/interfaces/article';
 import { useQuery } from 'react-query';
@@ -48,50 +48,44 @@ const ProfilePageContainer: FC<PropsType> = props => {
     { initialData: props.articleList },
   );
 
-  const handleToggleFavorite = useCallback(
-    async (slug: string, toggle: boolean): Promise<void> => {
-      if (!userStore.user) {
-        notifyError('Need login to toggle favorite');
-        await router.push('/auth/sign-in?successUrl=/');
-        return;
+  const handleToggleFavorite = async (slug: string, toggle: boolean): Promise<void> => {
+    if (!userStore.user) {
+      notifyError('Need login to toggle favorite');
+      await router.push('/auth/sign-in?successUrl=/');
+      return;
+    }
+
+    try {
+      if (toggle) {
+        await ArticleAPI.favorite(CONTEXT, slug);
+      } else {
+        await ArticleAPI.unfavorite(CONTEXT, slug);
       }
 
-      try {
-        if (toggle) {
-          await ArticleAPI.favorite(CONTEXT, slug);
-        } else {
-          await ArticleAPI.unfavorite(CONTEXT, slug);
-        }
+      await articlesResult.refetch();
+    } catch (e) {
+      notifyError((e as Error).message);
+    }
+  };
 
-        await articlesResult.refetch();
-      } catch (e) {
-        notifyError((e as Error).message);
-      }
-    },
-    [router, userStore.user, articlesResult],
-  );
+  const handleToggleFollow = async (username: string, toggle: boolean): Promise<void> => {
+    if (!userStore.user) {
+      notifyError('Need login to toggle follow');
+      await router.push(`/auth/sign-in?successUrl=/profile/${username}`);
+      return;
+    }
 
-  const handleToggleFollow = useCallback(
-    async (username: string, toggle: boolean): Promise<void> => {
-      if (!userStore.user) {
-        notifyError('Need login to toggle follow');
-        await router.push(`/auth/sign-in?successUrl=/profile/${username}`);
-        return;
+    try {
+      if (toggle) {
+        await ProfileAPI.follow(CONTEXT, username);
+      } else {
+        await ProfileAPI.unfollow(CONTEXT, username);
       }
-
-      try {
-        if (toggle) {
-          await ProfileAPI.follow(CONTEXT, username);
-        } else {
-          await ProfileAPI.unfollow(CONTEXT, username);
-        }
-        await profileResult.refetch();
-      } catch (e) {
-        notifyError((e as Error).message);
-      }
-    },
-    [router, userStore.user, profileResult],
-  );
+      await profileResult.refetch();
+    } catch (e) {
+      notifyError((e as Error).message);
+    }
+  };
 
   return (
     <BaseLayoutTemplate

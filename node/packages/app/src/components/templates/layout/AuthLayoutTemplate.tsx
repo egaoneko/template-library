@@ -11,11 +11,13 @@ interface PropsType {
   title: string;
   help: string;
   button: string;
+  onPressHelp: () => void;
+  onSubmit: () => void;
   children?: ReactNode;
 }
 
 const AuthLayoutTemplate: FC<PropsType> = props => {
-  const { title, help, button, children } = props;
+  const { title, help, button, onPressHelp, onSubmit, children } = props;
   return (
     <Container>
       <HeaderContainer>
@@ -23,9 +25,11 @@ const AuthLayoutTemplate: FC<PropsType> = props => {
       </HeaderContainer>
       <ContentContainer>
         <Title>{title}</Title>
-        <Help touchable>{help}</Help>
+        <Help touchable onPress={onPressHelp}>
+          {help}
+        </Help>
         <InputContainer>{children}</InputContainer>
-        <BaseButton title={button} />
+        <BaseButton title={button} onPress={onSubmit} />
       </ContentContainer>
     </Container>
   );

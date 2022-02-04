@@ -1,4 +1,4 @@
-import React, { FC, useCallback, useState } from 'react';
+import React, { FC, useState } from 'react';
 import { BasePropsType, ListResult } from '@my-app/core/lib/interfaces/common';
 import { IArticle } from '@my-app/core/lib/interfaces/article';
 import { useQuery } from 'react-query';
@@ -59,104 +59,89 @@ const ArticlePageContainer: FC<PropsType> = props => {
   );
   const [loading, setLoading] = useState<boolean>(false);
 
-  const handleToggleFollow = useCallback(
-    async (username: string, toggle: boolean): Promise<void> => {
-      if (!userStore.user) {
-        notifyError('Need login to toggle follow');
-        await router.push(`/auth/sign-in?successUrl=/article/${slug}`);
-        return;
-      }
+  const handleToggleFollow = async (username: string, toggle: boolean): Promise<void> => {
+    if (!userStore.user) {
+      notifyError('Need login to toggle follow');
+      await router.push(`/auth/sign-in?successUrl=/article/${slug}`);
+      return;
+    }
 
-      try {
-        if (toggle) {
-          await ProfileAPI.follow(CONTEXT, username);
-        } else {
-          await ProfileAPI.unfollow(CONTEXT, username);
-        }
-        await articleResult.refetch();
-      } catch (e) {
+    try {
+      if (toggle) {
+        await ProfileAPI.follow(CONTEXT, username);
+      } else {
+        await ProfileAPI.unfollow(CONTEXT, username);
+      }
+      await articleResult.refetch();
+    } catch (e) {
+      notifyError((e as Error).message);
+    }
+  };
+
+  const handleToggleFavorite = async (slug: string, toggle: boolean): Promise<void> => {
+    if (!userStore.user) {
+      notifyError('Need login to toggle favorite');
+      await router.push(`/auth/sign-in?successUrl=/article/${slug}`);
+      return;
+    }
+
+    try {
+      if (toggle) {
+        await ArticleAPI.favorite(CONTEXT, slug);
+      } else {
+        await ArticleAPI.unfavorite(CONTEXT, slug);
+      }
+      await articleResult.refetch();
+    } catch (e) {
+      notifyError((e as Error).message);
+    }
+  };
+
+  const handleOnDeleteArticle = (slug: string): Promise<void> => {
+    setLoading(true);
+    return ArticleAPI.delete(CONTEXT, slug)
+      .then(async () => {
+        setLoading(false);
+        notifySuccess('Successfully deleted!');
+        await router.push('/');
+      })
+      .catch(e => {
+        setLoading(false);
         notifyError((e as Error).message);
-      }
-    },
-    [router, userStore.user, articleResult, slug],
-  );
+      });
+  };
 
-  const handleToggleFavorite = useCallback(
-    async (slug: string, toggle: boolean): Promise<void> => {
-      if (!userStore.user) {
-        notifyError('Need login to toggle favorite');
-        await router.push(`/auth/sign-in?successUrl=/article/${slug}`);
-        return;
-      }
+  const handleOnCreateComment = (slug: string, request: CreateCommentRequest): Promise<void> => {
+    setLoading(true);
+    return ArticleAPI.createComment(CONTEXT, slug, request)
+      .then(async comment => {
+        setLoading(false);
 
-      try {
-        if (toggle) {
-          await ArticleAPI.favorite(CONTEXT, slug);
-        } else {
-          await ArticleAPI.unfavorite(CONTEXT, slug);
+        if (!comment) {
+          return;
         }
-        await articleResult.refetch();
-      } catch (e) {
+        notifySuccess('Successfully posted!');
+        await commentsResult.refetch();
+      })
+      .catch(e => {
+        setLoading(false);
         notifyError((e as Error).message);
-      }
-    },
-    [router, userStore.user, articleResult],
-  );
+      });
+  };
 
-  const handleOnDeleteArticle = useCallback(
-    (slug: string): Promise<void> => {
-      setLoading(true);
-      return ArticleAPI.delete(CONTEXT, slug)
-        .then(async () => {
-          setLoading(false);
-          notifySuccess('Successfully deleted!');
-          await router.push('/');
-        })
-        .catch(e => {
-          setLoading(false);
-          notifyError((e as Error).message);
-        });
-    },
-    [router],
-  );
-
-  const handleOnCreateComment = useCallback(
-    (slug: string, request: CreateCommentRequest): Promise<void> => {
-      setLoading(true);
-      return ArticleAPI.createComment(CONTEXT, slug, request)
-        .then(async comment => {
-          setLoading(false);
-
-          if (!comment) {
-            return;
-          }
-          notifySuccess('Successfully posted!');
-          await commentsResult.refetch();
-        })
-        .catch(e => {
-          setLoading(false);
-          notifyError((e as Error).message);
-        });
-    },
-    [commentsResult],
-  );
-
-  const handleOnDeleteComment = useCallback(
-    (slug: string, id: number): Promise<void> => {
-      setLoading(true);
-      return ArticleAPI.deleteComment(CONTEXT, slug, id)
-        .then(async () => {
-          setLoading(false);
-          notifySuccess('Successfully deleted!');
-          await commentsResult.refetch();
-        })
-        .catch(e => {
-          setLoading(false);
-          notifyError((e as Error).message);
-        });
-    },
-    [commentsResult],
-  );
+  const handleOnDeleteComment = (slug: string, id: number): Promise<void> => {
+    setLoading(true);
+    return ArticleAPI.deleteComment(CONTEXT, slug, id)
+      .then(async () => {
+        setLoading(false);
+        notifySuccess('Successfully deleted!');
+        await commentsResult.refetch();
+      })
+      .catch(e => {
+        setLoading(false);
+        notifyError((e as Error).message);
+      });
+  };
 
   return (
     <BaseLayoutTemplate

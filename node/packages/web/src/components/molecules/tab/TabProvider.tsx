@@ -1,4 +1,4 @@
-import React, { cloneElement, FC, ReactNode, useCallback, useState, useEffect, ReactElement, Key } from 'react';
+import React, { cloneElement, FC, ReactNode, useState, useEffect, ReactElement, Key } from 'react';
 import styled from 'styled-components';
 import tw from 'twin.macro';
 
@@ -26,13 +26,10 @@ const TabProvider: FC<PropsType> = ({ activeKey: propActiveKey, defaultActiveKey
     setActiveKey(propActiveKey ?? null);
   }, [propActiveKey]);
 
-  const handleOnChange = useCallback(
-    (key: Key | null): void => {
-      setActiveKey(key);
-      onChange?.(key);
-    },
-    [onChange],
-  );
+  const handleOnChange = (key: Key | null): void => {
+    setActiveKey(key);
+    onChange?.(key);
+  };
 
   return (
     <TabContext.Provider value={{ activeKey, onChange: handleOnChange }}>

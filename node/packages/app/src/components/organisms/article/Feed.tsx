@@ -42,7 +42,7 @@ export default Feed;
 const Container = styled(TouchableView)`
   flex: 1;
   flex-direction: row;
-  padding: 20px 10px;
+  padding: 20px 16px;
 `;
 
 const ContentContainer = styled.View`

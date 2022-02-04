@@ -11,6 +11,7 @@ export interface Theme {
   background: string;
   foreground: string;
   border: string;
+  error: string;
 }
 
 const common = {
@@ -25,6 +26,7 @@ export const light: Theme = {
   background: COLOR_SET.LIGHT_MODE_BACKGROUND,
   foreground: COLOR_SET.LIGHT_MODE_FOREGROUND,
   border: COLOR_SET.LIGHT_MODE_BORDER,
+  error: COLOR_SET.LIGHT_MODE_ERROR,
   ...common,
 };
 
@@ -34,6 +36,7 @@ export const dark: Theme = {
   background: COLOR_SET.DARK_MODE_BACKGROUND,
   foreground: COLOR_SET.DARK_MODE_FOREGROUND,
   border: COLOR_SET.DARK_MODE_BORDER,
+  error: COLOR_SET.DARK_MODE_ERROR,
   ...common,
 };
 

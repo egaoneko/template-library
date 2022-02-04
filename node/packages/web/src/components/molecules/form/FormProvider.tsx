@@ -1,35 +1,28 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
-
-import React, { FC, ReactNode, useCallback } from 'react';
+import React, { FC, ReactNode } from 'react';
 import { useForm } from 'react-hook-form';
-
-import { NOOP } from 'src/utils/common';
 
 import FormContext from './FormContext';
 
 interface PropsType {
-  onFinish?: (data: any) => unknown;
+  onFinish?: (data: unknown) => unknown;
   resetAfterFinish?: boolean;
   children?: ReactNode;
 }
 
 const FormProvider: FC<PropsType> = props => {
-  const { onFinish = NOOP, resetAfterFinish } = props;
+  const { onFinish, resetAfterFinish } = props;
   const { children } = props;
   const { register, handleSubmit, formState, reset } = useForm();
 
-  const finish = useCallback(
-    async (data): Promise<unknown> => {
-      const result = await onFinish(data);
+  const handleFinish = async (data): Promise<unknown> => {
+    const result = await onFinish?.(data);
 
-      if (resetAfterFinish) {
-        reset();
-      }
+    if (resetAfterFinish) {
+      reset();
+    }
 
-      return result;
-    },
-    [onFinish, resetAfterFinish, reset],
-  );
+    return result;
+  };
 
   return (
     <FormContext.Provider
@@ -38,7 +31,7 @@ const FormProvider: FC<PropsType> = props => {
         formState,
       }}
     >
-      <form onSubmit={handleSubmit(finish)}>{children}</form>
+      <form onSubmit={handleSubmit(handleFinish)}>{children}</form>
     </FormContext.Provider>
   );
 };

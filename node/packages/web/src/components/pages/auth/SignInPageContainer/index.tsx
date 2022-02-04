@@ -1,4 +1,4 @@
-import React, { FC, useCallback, useState } from 'react';
+import React, { FC, useState } from 'react';
 import { LoginRequest } from '@my-app/core/lib/interfaces/user';
 import { useRouter } from 'next/router';
 import { BasePropsType } from '@my-app/core/lib/interfaces/common';
@@ -18,24 +18,21 @@ const SignInPageContainer: FC<PropsType> = props => {
   const router = useRouter();
   const [loading, setLoading] = useState<boolean>(false);
 
-  const handleOnFinish = useCallback(
-    async (request: LoginRequest): Promise<void> => {
-      setLoading(true);
-      return userStore.login(request).then(async user => {
-        if (!user) {
-          setLoading(false);
-          return;
-        }
+  const handleOnFinish = async (request: LoginRequest): Promise<void> => {
+    setLoading(true);
+    return userStore.login(request).then(async user => {
+      if (!user) {
+        setLoading(false);
+        return;
+      }
 
-        if (props.successUrl) {
-          await router.push(props.successUrl);
-        } else {
-          await router.push('/');
-        }
-      });
-    },
-    [router, userStore, props.successUrl],
-  );
+      if (props.successUrl) {
+        await router.push(props.successUrl);
+      } else {
+        await router.push('/');
+      }
+    });
+  };
 
   return (
     <BaseLayoutTemplate pathname={props.pathname}>
