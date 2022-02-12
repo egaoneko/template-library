@@ -10,6 +10,8 @@ import { SequelizeOptionDto } from 'src/shared/decorators/transaction/transactio
 import { GetFeedArticlesDto } from 'src/article/dto/request/get-feed-articles.dto';
 import { CreateArticleDto } from 'src/article/dto/request/create-article.dto';
 import { UpdateArticleDto } from 'src/article/dto/request/update-article.dto';
+import { getListOptionOfListDto } from 'src/shared/util/repository';
+import { FindAndCountOptions, FindOptions } from 'sequelize/dist/lib/model';
 
 @Injectable()
 export class ArticleRepository {
@@ -22,38 +24,11 @@ export class ArticleRepository {
     getArticlesDto: GetArticlesDto,
     options?: SequelizeOptionDto,
   ): Promise<{ count: number; rows: Article[] }> {
-    return this.articleModel.findAndCountAll({
-      where: {
-        ...(getArticlesDto.authorId !== undefined && {
-          authorId: getArticlesDto.authorId,
-        }),
-      },
-      order: [['updatedAt', 'DESC']],
-      offset: (getArticlesDto.page - 1) * getArticlesDto.limit,
-      limit: getArticlesDto.limit,
-      include: [
-        {
-          model: ArticleFavorite,
-          where: {
-            ...(getArticlesDto.favoritedId !== undefined && {
-              userId: getArticlesDto.favoritedId,
-            }),
-          },
-          required: !!getArticlesDto.favoritedId,
-        },
-        {
-          model: Tag,
-          where: {
-            ...(getArticlesDto.tag && {
-              title: getArticlesDto.tag,
-            }),
-          },
-          required: !!getArticlesDto.tag,
-        },
-      ],
-      distinct: true,
-      transaction: options?.transaction,
-    });
+    return this.articleModel.findAndCountAll(this.getListOption(getArticlesDto, options));
+  }
+
+  async findAll(getArticlesDto: GetArticlesDto, options?: SequelizeOptionDto): Promise<Article[]> {
+    return this.articleModel.findAll(this.getListOption(getArticlesDto, options));
   }
 
   async findAndCountAllByAuthorIds(
@@ -61,24 +36,17 @@ export class ArticleRepository {
     authorIds: number[],
     options?: SequelizeOptionDto,
   ): Promise<{ count: number; rows: Article[] }> {
-    return await this.articleModel.findAndCountAll({
-      where: {
-        authorId: authorIds,
-      },
-      order: [['updatedAt', 'DESC']],
-      offset: (getFeedArticlesDto.page - 1) * getFeedArticlesDto.limit,
-      limit: getFeedArticlesDto.limit,
-      include: [
-        {
-          model: ArticleFavorite,
-        },
-        {
-          model: Tag,
-        },
-      ],
-      distinct: true,
-      transaction: options?.transaction,
-    });
+    return await this.articleModel.findAndCountAll(
+      this.getListByAuthorIdsOption(getFeedArticlesDto, authorIds, options),
+    );
+  }
+
+  async findAllByAuthorIds(
+    getFeedArticlesDto: GetFeedArticlesDto,
+    authorIds: number[],
+    options?: SequelizeOptionDto,
+  ): Promise<Article[]> {
+    return await this.articleModel.findAll(this.getListByAuthorIdsOption(getFeedArticlesDto, authorIds, options));
   }
 
   async findOneBySlug(slug: string, options?: SequelizeOptionDto): Promise<Article | null> {
@@ -165,5 +133,69 @@ export class ArticleRepository {
       },
       transaction: options?.transaction,
     });
+  }
+
+  getListOption(getArticlesDto: GetArticlesDto, options?: SequelizeOptionDto): FindOptions | FindAndCountOptions {
+    const { where, limit, offset } = getListOptionOfListDto(getArticlesDto);
+    return {
+      limit,
+      offset,
+      where: {
+        ...where,
+        ...(getArticlesDto.authorId !== undefined && {
+          authorId: getArticlesDto.authorId,
+        }),
+      },
+      order: [['updatedAt', 'DESC']],
+      include: [
+        {
+          model: ArticleFavorite,
+          where: {
+            ...(getArticlesDto.favoritedId !== undefined && {
+              userId: getArticlesDto.favoritedId,
+            }),
+          },
+          required: !!getArticlesDto.favoritedId,
+        },
+        {
+          model: Tag,
+          where: {
+            ...(getArticlesDto.tag && {
+              title: getArticlesDto.tag,
+            }),
+          },
+          required: !!getArticlesDto.tag,
+        },
+      ],
+      distinct: true,
+      transaction: options?.transaction,
+    };
+  }
+
+  getListByAuthorIdsOption(
+    getFeedArticlesDto: GetFeedArticlesDto,
+    authorIds: number[],
+    options?: SequelizeOptionDto,
+  ): FindOptions | FindAndCountOptions {
+    const { where, limit, offset } = getListOptionOfListDto(getFeedArticlesDto);
+    return {
+      limit,
+      offset,
+      where: {
+        ...where,
+        authorId: authorIds,
+      },
+      order: [['updatedAt', 'DESC']],
+      include: [
+        {
+          model: ArticleFavorite,
+        },
+        {
+          model: Tag,
+        },
+      ],
+      distinct: true,
+      transaction: options?.transaction,
+    };
   }
 }

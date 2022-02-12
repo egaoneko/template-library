@@ -6,6 +6,8 @@ import { Comment } from 'src/article/entities/comment.entity';
 import { SequelizeOptionDto } from 'src/shared/decorators/transaction/transactional.decorator';
 import { GetCommentsDto } from 'src/article/dto/request/get-comments.dto';
 import { CreateCommentDto } from 'src/article/dto/request/create-comment.dto';
+import { getListOptionOfListDto } from 'src/shared/util/repository';
+import { FindAndCountOptions, FindOptions } from 'sequelize/dist/lib/model';
 
 @Injectable()
 export class CommentRepository {
@@ -19,16 +21,11 @@ export class CommentRepository {
     getCommentsDto: GetCommentsDto,
     options?: SequelizeOptionDto,
   ): Promise<{ count: number; rows: Comment[] }> {
-    return this.commentModel.findAndCountAll({
-      where: {
-        articleId,
-      },
-      order: [['updatedAt', 'DESC']],
-      offset: (getCommentsDto.page - 1) * getCommentsDto.limit,
-      limit: getCommentsDto.limit,
-      distinct: true,
-      transaction: options?.transaction,
-    });
+    return this.commentModel.findAndCountAll(this.getListOption(articleId, getCommentsDto, options));
+  }
+
+  async findAll(articleId: number, getCommentsDto: GetCommentsDto, options?: SequelizeOptionDto): Promise<Comment[]> {
+    return this.commentModel.findAll(this.getListOption(articleId, getCommentsDto, options));
   }
 
   async create(
@@ -65,5 +62,24 @@ export class CommentRepository {
       },
       transaction: options?.transaction,
     });
+  }
+
+  getListOption(
+    articleId: number,
+    getCommentsDto: GetCommentsDto,
+    options?: SequelizeOptionDto,
+  ): FindOptions | FindAndCountOptions {
+    const { where, limit, offset } = getListOptionOfListDto(getCommentsDto);
+    return {
+      limit,
+      offset,
+      where: {
+        ...where,
+        articleId,
+      },
+      order: [['updatedAt', 'DESC']],
+      distinct: true,
+      transaction: options?.transaction,
+    };
   }
 }

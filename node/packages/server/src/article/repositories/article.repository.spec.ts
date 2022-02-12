@@ -38,7 +38,7 @@ describe('ArticleRepository', () => {
     expect(repository).toBeDefined();
   });
 
-  it('should be return article list', async () => {
+  it('should be return article list with count', async () => {
     const dto = new GetArticlesDto();
     dto.authorId = 3;
     dto.tag = 'test';
@@ -49,32 +49,32 @@ describe('ArticleRepository', () => {
     const actual = await repository.findAndCountAll(dto);
     expect(actual).toBeDefined();
     expect(mockArticle.findAndCountAll).toBeCalledTimes(1);
-    expect(mockArticle.findAndCountAll).toBeCalledWith({
-      where: {
-        authorId: dto.authorId,
-      },
-      order: [['updatedAt', 'DESC']],
-      offset: (dto.page - 1) * dto.limit,
-      limit: dto.limit,
-      include: [
-        {
-          model: ArticleFavorite,
-          where: {
-            userId: dto.favoritedId,
-          },
-          required: true,
-        },
-        {
-          model: Tag,
-          where: {
-            title: dto.tag,
-          },
-          required: true,
-        },
-      ],
-      distinct: true,
-      transaction: undefined,
-    });
+    expect(mockArticle.findAndCountAll).toBeCalledWith(repository.getListOption(dto));
+  });
+
+  it('should be return article list', async () => {
+    const dto = new GetArticlesDto();
+    dto.authorId = 3;
+    dto.tag = 'test';
+    dto.favoritedId = 1;
+    dto.page = 2;
+    dto.limit = 20;
+
+    const actual = await repository.findAll(dto);
+    expect(actual).toBeDefined();
+    expect(mockArticle.findAll).toBeCalledTimes(1);
+    expect(mockArticle.findAll).toBeCalledWith(repository.getListOption(dto));
+  });
+
+  it('should be return article feed list with count', async () => {
+    const dto = new GetFeedArticlesDto();
+    dto.page = 2;
+    dto.limit = 20;
+
+    const actual = await repository.findAndCountAllByAuthorIds(dto, [1, 2], 1);
+    expect(actual).toBeDefined();
+    expect(mockArticle.findAndCountAll).toBeCalledTimes(1);
+    expect(mockArticle.findAndCountAll).toBeCalledWith(repository.getListByAuthorIdsOption(dto, [1, 2], 1));
   });
 
   it('should be return article feed list', async () => {
@@ -85,24 +85,7 @@ describe('ArticleRepository', () => {
     const actual = await repository.findAndCountAllByAuthorIds(dto, [1, 2], 1);
     expect(actual).toBeDefined();
     expect(mockArticle.findAndCountAll).toBeCalledTimes(1);
-    expect(mockArticle.findAndCountAll).toBeCalledWith({
-      where: {
-        authorId: [1, 2],
-      },
-      order: [['updatedAt', 'DESC']],
-      offset: (dto.page - 1) * dto.limit,
-      limit: dto.limit,
-      include: [
-        {
-          model: ArticleFavorite,
-        },
-        {
-          model: Tag,
-        },
-      ],
-      distinct: true,
-      transaction: undefined,
-    });
+    expect(mockArticle.findAndCountAll).toBeCalledWith(repository.getListByAuthorIdsOption(dto, [1, 2], 1));
   });
 
   it('should be return article by slug', async () => {
@@ -206,6 +189,71 @@ describe('ArticleRepository', () => {
       where: {
         slug: 'slug',
       },
+      transaction: undefined,
+    });
+  });
+
+  it('should be return article list option', async () => {
+    const dto = new GetArticlesDto();
+    dto.authorId = 3;
+    dto.tag = 'test';
+    dto.favoritedId = 1;
+    dto.page = 2;
+    dto.limit = 20;
+
+    const actual = await repository.getListOption(dto);
+    expect(actual).toBeDefined();
+    expect(actual).toEqual({
+      where: {
+        authorId: dto.authorId,
+      },
+      order: [['updatedAt', 'DESC']],
+      offset: (dto.page - 1) * dto.limit,
+      limit: dto.limit,
+      include: [
+        {
+          model: ArticleFavorite,
+          where: {
+            userId: dto.favoritedId,
+          },
+          required: true,
+        },
+        {
+          model: Tag,
+          where: {
+            title: dto.tag,
+          },
+          required: true,
+        },
+      ],
+      distinct: true,
+      transaction: undefined,
+    });
+  });
+
+  it('should be return article feed list option', async () => {
+    const dto = new GetFeedArticlesDto();
+    dto.page = 2;
+    dto.limit = 20;
+
+    const actual = await repository.getListByAuthorIdsOption(dto, [1, 2], 1);
+    expect(actual).toBeDefined();
+    expect(actual).toEqual({
+      where: {
+        authorId: [1, 2],
+      },
+      order: [['updatedAt', 'DESC']],
+      offset: (dto.page - 1) * dto.limit,
+      limit: dto.limit,
+      include: [
+        {
+          model: ArticleFavorite,
+        },
+        {
+          model: Tag,
+        },
+      ],
+      distinct: true,
       transaction: undefined,
     });
   });

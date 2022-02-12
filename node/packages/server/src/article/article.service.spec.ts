@@ -23,6 +23,7 @@ import { ArticleFavoriteRepository } from './repositories/article-favorite.repos
 import { TagRepository } from './repositories/tag.repository';
 import { ArticleTagRepository } from './repositories/article-tag.repository';
 import { CommentRepository } from './repositories/comment.repository';
+import { ListType } from 'src/shared/enums/list.enum';
 
 describe('ArticleService', () => {
   let service: ArticleService;
@@ -108,6 +109,26 @@ describe('ArticleService', () => {
     expect(service.ofArticleDto).toBeCalledTimes(2);
   });
 
+  it('should be return article list with cursor', async () => {
+    /* eslint-disable @typescript-eslint/no-explicit-any */
+    mockArticleRepository.findAll = jest.fn().mockReturnValue([{}, { id: 2 }]) as any;
+    service.ofArticleDto = jest.fn().mockReturnValue({}) as any;
+
+    const dto = new GetArticlesDto();
+    dto.type = ListType.CURSOR;
+    dto.cursor = 2;
+    dto.limit = 20;
+
+    const actual = await service.getArticles(dto, 1);
+    expect(actual).toBeDefined();
+    expect(actual.nextCursor).toBe(2);
+    expect(mockSequelize.transaction).toBeCalledTimes(1);
+    expect(mockArticleRepository.findAll).toBeCalledTimes(1);
+    expect(mockArticleRepository.findAll).toBeCalledWith(dto, { transaction: {} });
+    expect(mockUserService.getUserById).toBeCalledTimes(0);
+    expect(service.ofArticleDto).toBeCalledTimes(2);
+  });
+
   it('should be return article list with options', async () => {
     /* eslint-disable @typescript-eslint/no-explicit-any */
     mockUserService.getUserByUsername = jest.fn().mockReturnValueOnce({ id: 3 }).mockReturnValue({ id: 2 }) as any;
@@ -132,14 +153,6 @@ describe('ArticleService', () => {
     expect(service.ofArticleDto).toBeCalledTimes(2);
   });
 
-  it('should not be return article list with invalid list params', async () => {
-    /* eslint-disable @typescript-eslint/no-explicit-any */
-    const dto = new GetArticlesDto();
-    (dto as any).page = undefined;
-
-    await expect(service.getArticles(dto, 1)).rejects.toThrowError('Invalid article list params');
-  });
-
   it('should be return article feed list', async () => {
     /* eslint-disable @typescript-eslint/no-explicit-any */
     mockProfileService.getFollowingsByUserId = jest.fn().mockReturnValue([1, 2]) as any;
@@ -160,12 +173,26 @@ describe('ArticleService', () => {
     expect(service.ofArticleDto).toBeCalledTimes(2);
   });
 
-  it('should not be return article feed list with invalid feed list params', async () => {
+  it('should be return article feed list with cursor', async () => {
     /* eslint-disable @typescript-eslint/no-explicit-any */
-    const dto = new GetFeedArticlesDto();
-    (dto as any).page = undefined;
+    mockProfileService.getFollowingsByUserId = jest.fn().mockReturnValue([1, 2]) as any;
+    mockArticleRepository.findAllByAuthorIds = jest.fn().mockReturnValue([{}, { id: 2 }]) as any;
+    service.ofArticleDto = jest.fn().mockReturnValue({}) as any;
 
-    await expect(service.getFeedArticles(dto, 1)).rejects.toThrowError('Invalid article feed list params');
+    const dto = new GetFeedArticlesDto();
+    dto.type = ListType.CURSOR;
+    dto.cursor = 2;
+    dto.limit = 20;
+
+    const actual = await service.getFeedArticles(dto, 1);
+    expect(actual).toBeDefined();
+    expect(actual.nextCursor).toBe(2);
+    expect(mockSequelize.transaction).toBeCalledTimes(1);
+    expect(mockProfileService.getFollowingsByUserId).toBeCalledTimes(1);
+    expect(mockProfileService.getFollowingsByUserId).toBeCalledWith(1, { transaction: {} });
+    expect(mockArticleRepository.findAllByAuthorIds).toBeCalledTimes(1);
+    expect(mockArticleRepository.findAllByAuthorIds).toBeCalledWith(dto, [1, 2], { transaction: {} });
+    expect(service.ofArticleDto).toBeCalledTimes(2);
   });
 
   it('should be return article', async () => {
@@ -362,12 +389,26 @@ describe('ArticleService', () => {
     expect(service.ofCommentDto).toBeCalledTimes(2);
   });
 
-  it('should not be return comment list with invalid list params', async () => {
+  it('should be return comment list with cursor', async () => {
     /* eslint-disable @typescript-eslint/no-explicit-any */
-    const dto = new GetCommentsDto();
-    (dto as any).page = undefined;
+    mockArticleRepository.findOneBySlug = jest.fn().mockReturnValue({ id: 1 }) as any;
+    mockCommentRepository.findAll = jest.fn().mockReturnValue([{}, { id: 2 }]) as any;
+    service.ofCommentDto = jest.fn().mockReturnValue({}) as any;
 
-    await expect(service.getComments('slug', dto, 1)).rejects.toThrowError('Invalid comment list params');
+    const dto = new GetCommentsDto();
+    dto.type = ListType.CURSOR;
+    dto.cursor = 2;
+    dto.limit = 20;
+
+    const actual = await service.getComments('slug', dto, 1);
+    expect(actual).toBeDefined();
+    expect(actual.nextCursor).toBe(2);
+    expect(mockSequelize.transaction).toBeCalledTimes(1);
+    expect(mockArticleRepository.findOneBySlug).toBeCalledTimes(1);
+    expect(mockArticleRepository.findOneBySlug).toBeCalledWith('slug', { transaction: {} });
+    expect(mockCommentRepository.findAll).toBeCalledTimes(1);
+    expect(mockCommentRepository.findAll).toBeCalledWith(1, dto, { transaction: {} });
+    expect(service.ofCommentDto).toBeCalledTimes(2);
   });
 
   it('should not be create comment with not found', async () => {

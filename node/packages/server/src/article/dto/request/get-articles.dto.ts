@@ -1,8 +1,8 @@
-import { IsNotEmpty, IsNumber, IsOptional, IsString } from 'class-validator';
+import { IsOptional, IsString } from 'class-validator';
 import { ApiPropertyOptional } from '@nestjs/swagger';
-import { Type } from 'class-transformer';
+import { ListDto } from 'src/shared/dto/request/list.dto';
 
-export class GetArticlesDto {
+export class GetArticlesDto extends ListDto {
   @IsOptional()
   @IsString()
   @ApiPropertyOptional({
@@ -31,26 +31,4 @@ export class GetArticlesDto {
   })
   favorited!: string;
   favoritedId?: number;
-
-  @Type(() => Number)
-  @IsNotEmpty()
-  @IsNumber()
-  @ApiPropertyOptional({
-    example: 30,
-    description: 'limit',
-    type: 'number',
-    default: 20,
-  })
-  limit = 20;
-
-  @Type(() => Number)
-  @IsNotEmpty()
-  @IsNumber()
-  @ApiPropertyOptional({
-    example: 2,
-    description: 'page',
-    type: 'number',
-    default: 1,
-  })
-  page = 1;
 }

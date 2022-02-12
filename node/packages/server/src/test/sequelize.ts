@@ -1,7 +1,7 @@
 import { Sequelize, SequelizeOptions } from 'sequelize-typescript';
 import { format } from 'sql-formatter';
 
-import { ModelOptions, Op } from 'sequelize';
+import { ModelOptions } from 'sequelize';
 
 export function createSequelize(partialOptions: Partial<SequelizeOptions>): Sequelize;
 export function createSequelize(useModelsInPath?: boolean, define?: ModelOptions): Sequelize;
@@ -18,7 +18,6 @@ export function createSequelize(
   }
 
   return new Sequelize({
-    operatorsAliases: Op,
     database: '__',
     dialect: 'sqlite' as const,
     username: 'root',
@@ -30,5 +29,5 @@ export function createSequelize(
     },
     modelPaths: useModelsInPath ? [__dirname + '/../models'] : [],
     ...partialOptions,
-  });
+  } as SequelizeOptions);
 }

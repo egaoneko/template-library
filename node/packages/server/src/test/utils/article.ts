@@ -74,16 +74,17 @@ export async function createTestArticle(app: INestApplication, user: User): Prom
   });
 
   const commentModel = app.get<typeof Comment>(getModelToken(Comment, DEFAULT_DATABASE_NAME));
-  await commentModel.create({
+  const comment1 = await commentModel.create({
     body: 'It takes a Jacobian',
     articleId: article1.id,
     authorId: user2.id,
   });
-  await commentModel.create({
+  const comment2 = await commentModel.create({
     body: 'It takes a Jake',
     articleId: article1.id,
     authorId: user3.id,
   });
+  article1.comments = [comment1, comment2];
 
   return [article1, article2];
 }

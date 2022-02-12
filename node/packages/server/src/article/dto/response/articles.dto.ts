@@ -1,18 +1,10 @@
-import { IsNotEmpty, IsNumber, ValidateNested } from 'class-validator';
+import { ValidateNested } from 'class-validator';
 import { ApiProperty } from '@nestjs/swagger';
 
 import { ArticleDto } from 'src/article/dto/response/article.dto';
+import { ListDto } from 'src/shared/dto/response/list.dto';
 
-export class ArticlesDto {
-  @IsNotEmpty()
-  @IsNumber()
-  @ApiProperty({
-    example: 0,
-    description: 'list count',
-    type: 'number',
-  })
-  count = 0;
-
+export class ArticlesDto extends ListDto<ArticleDto> {
   @ValidateNested({ each: true })
   @ApiProperty({
     example: [

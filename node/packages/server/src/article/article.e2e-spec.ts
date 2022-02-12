@@ -38,6 +38,21 @@ describe('ArticleController (e2e)', () => {
       });
   });
 
+  it('/api/articles with cursor (Get)', async () => {
+    const user = await createTestUser(app, 'test1');
+    const dto = await getTestUserDto(app, user);
+    const articles = await createTestArticle(app, user);
+
+    return request(app.getHttpServer())
+      .get(`/api/articles?type=CURSOR&limit=1`)
+      .set('Authorization', `Bearer ${dto.token}`)
+      .expect(200)
+      .expect(({ body }) => {
+        expect(body.nextCursor).toBe(articles[1].id);
+        expect(body.list.length).toBe(1);
+      });
+  });
+
   it('/api/articles (Get) with author', async () => {
     const user = await createTestUser(app, 'test1');
     const dto = await getTestUserDto(app, user);
@@ -103,6 +118,21 @@ describe('ArticleController (e2e)', () => {
       .expect(200)
       .expect(({ body }) => {
         expect(body.count).toBe(1);
+        expect(body.list.length).toBe(1);
+      });
+  });
+
+  it('/api/articles/feed with cursor (Get)', async () => {
+    const user = await createTestUser(app, 'test1');
+    const dto = await getTestUserDto(app, user);
+    const articles = await createTestArticle(app, user);
+
+    return request(app.getHttpServer())
+      .get(`/api/articles/feed?type=CURSOR&limit=1`)
+      .set('Authorization', `Bearer ${dto.token}`)
+      .expect(200)
+      .expect(({ body }) => {
+        expect(body.nextCursor).toBe(articles[0].id);
         expect(body.list.length).toBe(1);
       });
   });
@@ -285,6 +315,21 @@ describe('ArticleController (e2e)', () => {
       .expect(({ body }) => {
         expect(body.count).toBe(2);
         expect(body.list.length).toBe(2);
+      });
+  });
+
+  it('/api/articles/:slug/comments with cursor (Get)', async () => {
+    const user = await createTestUser(app, 'test1');
+    const dto = await getTestUserDto(app, user);
+    const articles = await createTestArticle(app, user);
+
+    return request(app.getHttpServer())
+      .get(`/api/articles/${articles[0].slug}/comments?type=CURSOR&limit=1`)
+      .set('Authorization', `Bearer ${dto.token}`)
+      .expect(200)
+      .expect(({ body }) => {
+        expect(body.nextCursor).toBe(articles[0].comments[1].id);
+        expect(body.list.length).toBe(1);
       });
   });
 

@@ -1,18 +1,10 @@
-import { IsNotEmpty, IsNumber, ValidateNested } from 'class-validator';
+import { ValidateNested } from 'class-validator';
 import { ApiProperty } from '@nestjs/swagger';
 
 import { CommentDto } from 'src/article/dto/response/comment.dto';
+import { ListDto } from 'src/shared/dto/response/list.dto';
 
-export class CommentsDto {
-  @IsNotEmpty()
-  @IsNumber()
-  @ApiProperty({
-    example: 0,
-    description: 'list count',
-    type: 'number',
-  })
-  count = 0;
-
+export class CommentsDto extends ListDto<CommentDto> {
   @ValidateNested({ each: true })
   @ApiProperty({
     example: [

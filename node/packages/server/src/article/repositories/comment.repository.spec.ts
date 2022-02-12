@@ -33,24 +33,26 @@ describe('CommentRepository', () => {
     expect(repository).toBeDefined();
   });
 
+  it('should be return comment list with count', async () => {
+    const dto = new GetCommentsDto();
+    dto.page = 2;
+    dto.limit = 20;
+
+    const actual = await repository.findAndCountAll(1, dto);
+    expect(actual).toBeDefined();
+    expect(mockComment.findAndCountAll).toBeCalledTimes(1);
+    expect(mockComment.findAndCountAll).toBeCalledWith(repository.getListOption(1, dto));
+  });
+
   it('should be return comment list', async () => {
     const dto = new GetCommentsDto();
     dto.page = 2;
     dto.limit = 20;
 
-    const actual = await repository.findAndCountAll(1, dto, 1);
+    const actual = await repository.findAndCountAll(1, dto);
     expect(actual).toBeDefined();
     expect(mockComment.findAndCountAll).toBeCalledTimes(1);
-    expect(mockComment.findAndCountAll).toBeCalledWith({
-      where: {
-        articleId: 1,
-      },
-      order: [['updatedAt', 'DESC']],
-      offset: (dto.page - 1) * dto.limit,
-      limit: dto.limit,
-      distinct: true,
-      transaction: undefined,
-    });
+    expect(mockComment.findAndCountAll).toBeCalledWith(repository.getListOption(1, dto));
   });
 
   it('should be create', async () => {
@@ -92,6 +94,25 @@ describe('CommentRepository', () => {
       where: {
         id: 1,
       },
+      transaction: undefined,
+    });
+  });
+
+  it('should be return comment list option', async () => {
+    const dto = new GetCommentsDto();
+    dto.page = 2;
+    dto.limit = 20;
+
+    const actual = await repository.getListOption(1, dto);
+    expect(actual).toBeDefined();
+    expect(actual).toEqual({
+      where: {
+        articleId: 1,
+      },
+      order: [['updatedAt', 'DESC']],
+      offset: (dto.page - 1) * dto.limit,
+      limit: dto.limit,
+      distinct: true,
       transaction: undefined,
     });
   });

@@ -25,6 +25,7 @@ import { ArticleFavoriteRepository } from 'src/article/repositories/article-favo
 import { TagRepository } from 'src/article/repositories/tag.repository';
 import { ArticleTagRepository } from 'src/article/repositories/article-tag.repository';
 import { CommentRepository } from 'src/article/repositories/comment.repository';
+import { ListType } from 'src/shared/enums/list.enum';
 
 @Injectable()
 export class ArticleService {
@@ -60,11 +61,19 @@ export class ArticleService {
       getArticlesDto.favoritedId = (await this.userService.getUserByUsername(getArticlesDto.favorited, options))?.id;
     }
 
-    const { count, rows } = await this.articleRepository.findAndCountAll(getArticlesDto, options);
-
     const listDto = new ArticlesDto();
-    listDto.count = count;
+    let rows: Article[];
+
     listDto.list = [];
+
+    if (getArticlesDto.type === ListType.PAGE) {
+      const result = await this.articleRepository.findAndCountAll(getArticlesDto, options);
+      listDto.count = result.count;
+      rows = result.rows;
+    } else {
+      rows = await this.articleRepository.findAll(getArticlesDto, options);
+      listDto.nextCursor = rows[rows.length - 1]?.id;
+    }
 
     for (const row of rows) {
       const dto = await this.ofArticleDto(row, currentUserId, options);
@@ -87,15 +96,19 @@ export class ArticleService {
     }
 
     const authorIds = await this.profileService.getFollowingsByUserId(currentUserId, options);
-    const { count, rows } = await this.articleRepository.findAndCountAllByAuthorIds(
-      getFeedArticlesDto,
-      authorIds,
-      options,
-    );
-
     const listDto = new ArticlesDto();
-    listDto.count = count;
+    let rows: Article[];
+
     listDto.list = [];
+
+    if (getFeedArticlesDto.type === ListType.PAGE) {
+      const result = await this.articleRepository.findAndCountAllByAuthorIds(getFeedArticlesDto, authorIds, options);
+      listDto.count = result.count;
+      rows = result.rows;
+    } else {
+      rows = await this.articleRepository.findAllByAuthorIds(getFeedArticlesDto, authorIds, options);
+      listDto.nextCursor = rows[rows.length - 1]?.id;
+    }
 
     for (const row of rows) {
       const dto = await this.ofArticleDto(row, currentUserId, options);
@@ -214,11 +227,19 @@ export class ArticleService {
       throw new BadRequestException('Not found article by slug');
     }
 
-    const { count, rows } = await this.commentRepository.findAndCountAll(article.id, getCommentsDto, options);
-
     const listDto = new CommentsDto();
-    listDto.count = count;
+    let rows: Comment[];
+
     listDto.list = [];
+
+    if (getCommentsDto.type === ListType.PAGE) {
+      const result = await this.commentRepository.findAndCountAll(article.id, getCommentsDto, options);
+      listDto.count = result.count;
+      rows = result.rows;
+    } else {
+      rows = await this.commentRepository.findAll(article.id, getCommentsDto, options);
+      listDto.nextCursor = rows[rows.length - 1]?.id;
+    }
 
     for (const row of rows) {
       const dto = await this.ofCommentDto(row, currentUserId, options);
