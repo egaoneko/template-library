@@ -12,23 +12,26 @@ import { Description1, Heading2 } from 'src/components/atoms/common/typography';
 
 interface PropsType {
   article: IArticle;
+  toggleFavorite: (slag: string, toggle: boolean) => Promise<unknown>;
+  moveToArticle: (slag: string) => void;
+  moveToAuthor: (username: string) => void;
 }
 
-const Feed: FC<PropsType> = ({ article }) => {
+const Feed: FC<PropsType> = ({ article, toggleFavorite, moveToArticle, moveToAuthor }) => {
   return (
-    <Container>
+    <Container onPress={() => moveToArticle(article.slug)}>
       <ContentContainer>
         <Heading2>{article.title}</Heading2>
-        <AuthorContainer>
+        <AuthorContainer onPress={() => moveToAuthor(article.author.username)}>
           <Avatar uri={article.author.image} size={15} />
           <AuthorDescription>{article.author.username}</AuthorDescription>
           <AuthorDescription>{'\u00B7'}</AuthorDescription>
           <AuthorDescription>{format(new Date(article.updatedAt), 'EEE MMM d yyyy')}</AuthorDescription>
         </AuthorContainer>
-        <ContentMoreButton name="ellipsis1" size={15} />
+        <ContentMoreButton name="ellipsis1" size={15} onPress={() => moveToArticle(article.slug)} />
       </ContentContainer>
       <FavoriteWrapper>
-        <FavoriteContainer>
+        <FavoriteContainer onPress={() => toggleFavorite(article.slug, !article.favorited)}>
           <BaseIcon name="heart" size={15} active={article.favorited} />
           <FavoriteCount active={article.favorited}>{article.favoritesCount}</FavoriteCount>
         </FavoriteContainer>

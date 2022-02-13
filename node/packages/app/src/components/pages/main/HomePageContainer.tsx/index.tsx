@@ -13,13 +13,18 @@ import FeedList from 'src/components/organisms/article/FeedList';
 import { CONTEXT } from 'src/constants/common';
 import { ARTICLE_PAGE_LIMIT } from 'src/constants/page';
 import ArticleAPI from 'src/api/article';
+import { notifyError } from 'src/utils/notifiy';
+import { useStores } from 'src/stores/stores';
+import { COMMON_NAVIGATION_TYPE } from 'src/enums/common-navigation';
+import { MAIN_NAVIGATION_TYPE } from 'src/enums/main-navigation';
 
 type PropsType = CompositeScreenProps<
   NativeStackScreenProps<CommonParamList, 'MAIN'>,
   BottomTabScreenProps<MainParamList, 'HOME'>
 >;
 
-const HomePageContainer: FC<PropsType> = () => {
+const HomePageContainer: FC<PropsType> = ({ navigation }) => {
+  const { userStore } = useStores();
   const fetchArticles = ({ pageParam }) =>
     ArticleAPI.getList(CONTEXT, {
       type: 'CURSOR',
@@ -34,9 +39,43 @@ const HomePageContainer: FC<PropsType> = () => {
       staleTime: 1000 * 60 * 60,
     },
   );
+
+  const handleToggleFavorite = async (slug: string, toggle: boolean): Promise<void> => {
+    if (!userStore.user) {
+      notifyError('Need login to toggle favorite');
+      navigation.replace(COMMON_NAVIGATION_TYPE.SIGN_IN);
+      return;
+    }
+
+    try {
+      if (toggle) {
+        await ArticleAPI.favorite(CONTEXT, slug);
+      } else {
+        await ArticleAPI.unfavorite(CONTEXT, slug);
+      }
+
+      await articlesResult.refetch();
+    } catch (e) {
+      notifyError((e as Error).message);
+    }
+  };
+
+  const handleMoveToArticle = (slug: string): void => {
+    console.log('move to article', slug);
+  };
+
+  const handleMoveToAuthor = (username: string): void => {
+    console.log('move to user', username);
+  };
+
   return (
     <BaseLayoutTemplate title="Global feed" topBarButton={<IconButton name="search1" size={20} />}>
-      <FeedList articleListResult={articlesResult} />
+      <FeedList
+        articleListResult={articlesResult}
+        toggleFavorite={handleToggleFavorite}
+        moveToArticle={handleMoveToArticle}
+        moveToAuthor={handleMoveToAuthor}
+      />
     </BaseLayoutTemplate>
   );
 };

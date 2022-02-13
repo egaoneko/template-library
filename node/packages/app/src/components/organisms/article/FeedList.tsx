@@ -11,9 +11,12 @@ import Feed from './Feed';
 
 interface PropsType {
   articleListResult: UseInfiniteQueryResult<ListResult<IArticle>>;
+  toggleFavorite: (slag: string, toggle: boolean) => Promise<unknown>;
+  moveToArticle: (slag: string) => void;
+  moveToAuthor: (username: string) => void;
 }
 
-const FeedList: FC<PropsType> = ({ articleListResult }) => {
+const FeedList: FC<PropsType> = ({ articleListResult, toggleFavorite, moveToArticle, moveToAuthor }) => {
   const articles: IArticle[] =
     articleListResult.data?.pages.reduce(
       (acc: IArticle[], page: ListResult<IArticle>) => [...acc, ...page.list],
@@ -28,7 +31,14 @@ const FeedList: FC<PropsType> = ({ articleListResult }) => {
       ) : (
         <FlatList
           data={articles}
-          renderItem={({ item }) => <Feed article={item} />}
+          renderItem={({ item }) => (
+            <Feed
+              article={item}
+              toggleFavorite={toggleFavorite}
+              moveToArticle={moveToArticle}
+              moveToAuthor={moveToAuthor}
+            />
+          )}
           keyExtractor={item => item.id}
           ItemSeparatorComponent={() => <Separator />}
           onEndReached={() => {
