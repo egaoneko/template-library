@@ -40,7 +40,8 @@ const Feed: FC<PropsType> = ({ article }) => {
 export default Feed;
 
 const Container = styled(TouchableView)`
-  flex: 1;
+  height: 120px;
+  flex-grow: 0;
   flex-direction: row;
   padding: 20px 16px;
 `;

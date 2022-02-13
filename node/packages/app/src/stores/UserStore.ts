@@ -5,20 +5,22 @@ import { useMemo } from 'react';
 import UserAPI from 'src/api/user';
 import { CONTEXT } from 'src/constants/common';
 import AuthAPI from 'src/api/auth';
-import { deleteStorage, getStorageTtl, setStorage } from 'src/utils/storage';
-import { StorageName, StorageNameExpires } from 'src/enums/storage';
+import { deleteStorage, getStorage, getStorageTtl, setStorage } from 'src/utils/storage';
+import { StorageName } from 'src/enums/storage';
 import { notifyError, notifySuccess } from 'src/utils/notifiy';
+import { StorageNameExpires } from 'src/constants/storage';
 
 class UserStore {
   public user: IUser | null = null;
 
-  constructor(user: IUser | null) {
+  constructor() {
     makeAutoObservable(this);
     void this.clear();
-    void this.hydrate(user);
   }
 
-  public async hydrate(user: IUser | null): Promise<void> {
+  public async hydrate(): Promise<void> {
+    const user = await getStorage<IUser>(CONTEXT, StorageName.USER_INFO);
+    console.log(user);
     await this.setUser(user);
   }
 
@@ -41,6 +43,12 @@ class UserStore {
 
       if (this.user) {
         notifySuccess('Successfully login!');
+        await setStorage(
+          CONTEXT,
+          StorageName.USER_INFO,
+          user,
+          getStorageTtl(StorageNameExpires[StorageName.USER_INFO]),
+        );
       } else {
         notifyError('Fail to login');
       }
@@ -61,6 +69,12 @@ class UserStore {
 
       if (this.user) {
         notifySuccess('Successfully updated!');
+        await setStorage(
+          CONTEXT,
+          StorageName.USER_INFO,
+          user,
+          getStorageTtl(StorageNameExpires[StorageName.USER_INFO]),
+        );
       } else {
         notifyError('Fail to update');
       }
@@ -84,6 +98,7 @@ class UserStore {
     this.user = null;
     await deleteStorage(CONTEXT, StorageName.ACCESS_TOKEN);
     await deleteStorage(CONTEXT, StorageName.REFRESH_TOKEN);
+    await deleteStorage(CONTEXT, StorageName.USER_INFO);
   }
 
   private async setUser(user: IUser | null): Promise<void> {
@@ -110,18 +125,6 @@ class UserStore {
 
 export default UserStore;
 
-let store: UserStore;
-
-function initializeStore(user: IUser | null) {
-  const _store = store ?? new UserStore(user);
-
-  if (store?.user?.id !== _store.user?.id) {
-    store = _store;
-  }
-
-  return _store;
-}
-
-export function useUserStore(user: IUser | null): UserStore {
-  return useMemo(() => initializeStore(user), [user]);
+export function useUserStore(): UserStore {
+  return useMemo(() => new UserStore(), []);
 }

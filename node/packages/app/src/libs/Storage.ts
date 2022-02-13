@@ -31,12 +31,19 @@ export default class Storage<T = unknown> {
           created: new Date().getTime(),
         }),
       );
-    } catch (e) {}
+    } catch (e) {
+      console.error(`[set][${key}]`, e);
+    }
   }
 
   async get(key: string): Promise<T | null> {
     try {
-      const data = JSON.parse((await AsyncStorage.getItem(this.getKey(key))) || '') as StorageItem<T>;
+      const strData = await AsyncStorage.getItem(this.getKey(key));
+      if (!strData) {
+        return null;
+      }
+
+      const data = JSON.parse(strData) as StorageItem<T>;
       const { ttl, created, val } = data;
       if (ttl && Storage.isExpired(created, ttl)) {
         await this.delete(key);
@@ -45,6 +52,7 @@ export default class Storage<T = unknown> {
 
       return val;
     } catch (e) {
+      console.error(`[get][${key}]`, e);
       return null;
     }
   }
@@ -53,7 +61,7 @@ export default class Storage<T = unknown> {
     try {
       await AsyncStorage.removeItem(this.getKey(key));
     } catch (e) {
-      console.error(e);
+      console.error(`[delete][${key}]`, e);
     }
   }
 

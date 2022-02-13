@@ -24,7 +24,7 @@ import { useUserStore } from './stores/UserStore';
 
 const App: FC = () => {
   const [stores] = useState<Stores>({
-    userStore: useUserStore(null),
+    userStore: useUserStore(),
   });
   const queryClient = new QueryClient();
 

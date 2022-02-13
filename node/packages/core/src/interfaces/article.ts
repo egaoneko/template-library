@@ -18,6 +18,8 @@ export interface UpdateArticleRequest {
 export interface GetArticleFeedListRequest {
   limit?: number;
   page?: number;
+  cursor?: number;
+  type?: 'PAGE' | 'CURSOR';
 }
 
 export interface GetArticleListRequest {
@@ -26,4 +28,6 @@ export interface GetArticleListRequest {
   favorited?: string;
   limit?: number;
   page?: number;
+  cursor?: number;
+  type?: 'PAGE' | 'CURSOR';
 }

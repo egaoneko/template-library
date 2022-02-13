@@ -9,4 +9,5 @@ export interface CreateCommentRequest {
 export interface GetCommentListRequest {
   limit?: number;
   page?: number;
+  type?: 'PAGE' | 'CURSOR';
 }

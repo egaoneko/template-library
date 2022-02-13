@@ -2,8 +2,9 @@ import { stringify } from 'query-string';
 
 import Context from 'src/libs/Context';
 import AuthAPI from 'src/api/auth';
-import { StorageName, StorageNameExpires } from 'src/enums/storage';
+import { StorageName } from 'src/enums/storage';
 import { deleteStorage, getStorage, getStorageTtl, setStorage } from 'src/utils/storage';
+import { StorageNameExpires } from 'src/constants/storage';
 
 const DEFAULT_OPTION: ApiOption = {
   refresh: true,

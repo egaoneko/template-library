@@ -3,6 +3,7 @@ export interface BasePropsType {
 }
 
 export interface ListResult<T> {
-  count: number;
+  nextCursor?: number;
+  count?: number;
   list: T[];
 }
