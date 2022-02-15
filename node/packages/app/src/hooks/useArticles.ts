@@ -9,6 +9,7 @@ import { notifyError } from 'src/utils/notifiy';
 import { ARTICLE_PAGE_LIMIT } from 'src/constants/page';
 import { CONTEXT } from 'src/constants/common';
 import ArticleAPI from 'src/api/article';
+import { ARTICLE_NAVIGATION_TYPE } from 'src/enums/article-navigation';
 
 export enum ArticleType {
   ARTICLE = 'ARTICLE',
@@ -71,11 +72,15 @@ export default function useArticles({
   };
 
   const moveToArticle = (slug: string): void => {
-    console.log('move to article', slug);
+    navigation.navigate(ARTICLE_NAVIGATION_TYPE.ARTICLE, {
+      slug,
+    });
   };
 
   const moveToAuthor = (username: string): void => {
-    console.log('move to user', username);
+    navigation.navigate(ARTICLE_NAVIGATION_TYPE.AUTHOR, {
+      username,
+    });
   };
 
   return {

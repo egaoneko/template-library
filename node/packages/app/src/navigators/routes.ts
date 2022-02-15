@@ -14,9 +14,13 @@ import MyPageContainer from 'src/components/pages/main/MyPageContainer';
 import MySettingsPageContainer from 'src/components/pages/my/MySettingsPageContainer.tsx';
 import MyArticlesPageContainer from 'src/components/pages/my/MyArticlesPageContainer.tsx';
 import MyFavoritedArticlesPageContainer from 'src/components/pages/my/MyFavoritedArticlesPageContainer.tsx';
+import { ARTICLE_NAVIGATION_TYPE } from 'src/enums/article-navigation';
+import ArticlePageContainer from 'src/components/pages/article/ArticlePageContainer';
+import AuthorPageContainer from 'src/components/pages/article/AuthorPageContainer';
+import TagsPageContainer from 'src/components/pages/article/TagsPageContainer';
 
 interface RoutesInfo {
-  name: COMMON_NAVIGATION_TYPE | MAIN_NAVIGATION_TYPE | MY_NAVIGATION_TYPE;
+  name: COMMON_NAVIGATION_TYPE | MAIN_NAVIGATION_TYPE | MY_NAVIGATION_TYPE | ARTICLE_NAVIGATION_TYPE;
   component: ComponentType<unknown>;
   options?: { headerShown?: boolean };
   initialParams?: {
@@ -92,4 +96,19 @@ const myRoutes: RoutesInfo[] = [
   },
 ];
 
-export { commonRoutes, mainRoutes, myRoutes };
+const articleRoutes: RoutesInfo[] = [
+  {
+    name: ARTICLE_NAVIGATION_TYPE.ARTICLE,
+    component: ArticlePageContainer,
+  },
+  {
+    name: ARTICLE_NAVIGATION_TYPE.AUTHOR,
+    component: AuthorPageContainer,
+  },
+  {
+    name: ARTICLE_NAVIGATION_TYPE.TAGS,
+    component: TagsPageContainer,
+  },
+];
+
+export { commonRoutes, mainRoutes, myRoutes, articleRoutes };
