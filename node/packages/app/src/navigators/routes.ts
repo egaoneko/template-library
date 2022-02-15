@@ -9,9 +9,8 @@ import SignInPageContainer from 'src/components/pages/common/SignInPageContainer
 import SignUpPageContainer from 'src/components/pages/common/SignUpPageContainer';
 import { MAIN_NAVIGATION_TYPE } from 'src/enums/main-navigation';
 import { COMMON_NAVIGATION_TYPE } from 'src/enums/common-navigation';
-import MyPageContainer from 'src/components/pages/my/MyPageContainer.tsx';
 import { MY_NAVIGATION_TYPE } from 'src/enums/my-navigation';
-import MyMainPageContainer from 'src/components/pages/my/MyMainPageContainer.tsx';
+import MyPageContainer from 'src/components/pages/main/MyPageContainer';
 import MySettingsPageContainer from 'src/components/pages/my/MySettingsPageContainer.tsx';
 import MyArticlesPageContainer from 'src/components/pages/my/MyArticlesPageContainer.tsx';
 import MyFavoritedArticlesPageContainer from 'src/components/pages/my/MyFavoritedArticlesPageContainer.tsx';
@@ -70,13 +69,6 @@ const mainRoutes: RoutesInfo[] = [
 ];
 
 const myRoutes: RoutesInfo[] = [
-  {
-    name: MY_NAVIGATION_TYPE.MY_MAIN,
-    component: MyMainPageContainer,
-    initialParams: {
-      auth: true,
-    },
-  },
   {
     name: MY_NAVIGATION_TYPE.MY_SETTINGS,
     component: MySettingsPageContainer,

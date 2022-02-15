@@ -6,7 +6,7 @@ import { BottomTabScreenProps } from '@react-navigation/bottom-tabs';
 import { observer } from 'mobx-react';
 
 import BaseLayoutTemplate from 'src/components/templates/layout/BaseLayoutTemplate';
-import { CommonParamList, MainParamList, MyParamList } from 'src/interfaces/common';
+import { CommonParamList, MainParamList } from 'src/interfaces/common';
 import TouchableView from 'src/components/atoms/view/TouchableView';
 import { Body18, ButtonText18 } from 'src/components/atoms/common/typography';
 import Avatar from 'src/components/atoms/avatar/Avatar';
@@ -15,10 +15,9 @@ import { MY_NAVIGATION_TYPE } from 'src/enums/my-navigation';
 
 type PropsType = CompositeScreenProps<
   NativeStackScreenProps<CommonParamList, 'MAIN'>,
-  CompositeScreenProps<NativeStackScreenProps<MainParamList, 'MY'>, BottomTabScreenProps<MyParamList, 'MY_MAIN'>>
+  BottomTabScreenProps<MainParamList, 'MY'>
 >;
-
-const MyMainPageContainer: FC<PropsType> = observer(({ navigation }) => {
+const MyPageContainer: FC<PropsType> = observer(({ navigation }) => {
   const { userStore } = useStores();
 
   const handleMoveToEdit = async () => navigation.navigate(MY_NAVIGATION_TYPE.MY_SETTINGS);
@@ -54,7 +53,7 @@ const MyMainPageContainer: FC<PropsType> = observer(({ navigation }) => {
   );
 });
 
-export default MyMainPageContainer;
+export default MyPageContainer;
 
 const Container = styled.View`
   flex: 1;

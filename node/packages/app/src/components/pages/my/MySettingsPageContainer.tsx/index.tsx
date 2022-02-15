@@ -1,14 +1,12 @@
 import React, { FC, useRef } from 'react';
 import styled from 'styled-components/native';
 import { TextInput } from 'react-native';
-import { CompositeScreenProps } from '@react-navigation/native';
 import { NativeStackScreenProps } from '@react-navigation/native-stack';
-import { BottomTabScreenProps } from '@react-navigation/bottom-tabs';
 import { useForm } from 'react-hook-form';
 import { observer } from 'mobx-react';
 
 import BaseLayoutTemplate from 'src/components/templates/layout/BaseLayoutTemplate';
-import { CommonParamList, MainParamList, MyParamList } from 'src/interfaces/common';
+import { MyParamList } from 'src/interfaces/common';
 import { useStores } from 'src/stores/stores';
 import Input from 'src/components/molecules/form/Input';
 import { emailValidator, validate } from 'src/utils/validate';
@@ -16,10 +14,7 @@ import { handleFocusNext } from 'src/utils/input';
 import useDarkMode from 'src/hooks/useDarkMode';
 import BaseButton, { ButtonSize, ButtonVariant } from 'src/components/atoms/button/BaseButton';
 
-type PropsType = CompositeScreenProps<
-  NativeStackScreenProps<CommonParamList, 'MAIN'>,
-  CompositeScreenProps<NativeStackScreenProps<MainParamList, 'MY'>, BottomTabScreenProps<MyParamList, 'MY_SETTINGS'>>
->;
+type PropsType = NativeStackScreenProps<MyParamList, 'MY_SETTINGS'>;
 
 const MySettingsPageContainer: FC<PropsType> = observer(({ navigation }) => {
   const { userStore } = useStores();

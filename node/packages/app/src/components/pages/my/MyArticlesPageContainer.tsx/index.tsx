@@ -1,19 +1,14 @@
-import React, { FC, useRef } from 'react';
-import { CompositeScreenProps } from '@react-navigation/native';
+import React, { FC } from 'react';
 import { NativeStackScreenProps } from '@react-navigation/native-stack';
-import { BottomTabScreenProps } from '@react-navigation/bottom-tabs';
 import { observer } from 'mobx-react';
 
 import BaseLayoutTemplate from 'src/components/templates/layout/BaseLayoutTemplate';
-import { CommonParamList, MainParamList, MyParamList } from 'src/interfaces/common';
+import { MyParamList } from 'src/interfaces/common';
 import { useStores } from 'src/stores/stores';
 import FeedList from 'src/components/organisms/article/FeedList';
 import useArticles from 'src/hooks/useArticles';
 
-type PropsType = CompositeScreenProps<
-  NativeStackScreenProps<CommonParamList, 'MAIN'>,
-  CompositeScreenProps<NativeStackScreenProps<MainParamList, 'MY'>, BottomTabScreenProps<MyParamList, 'MY_ARTICLES'>>
->;
+type PropsType = NativeStackScreenProps<MyParamList, 'MY_ARTICLES'>;
 
 const MyArticlesPageContainer: FC<PropsType> = observer(({ navigation }) => {
   const { userStore } = useStores();

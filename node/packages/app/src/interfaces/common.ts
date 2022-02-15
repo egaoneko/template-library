@@ -17,7 +17,6 @@ export type MainParamList = {
 };
 
 export type MyParamList = {
-  [MY_NAVIGATION_TYPE.MY_MAIN]: undefined;
   [MY_NAVIGATION_TYPE.MY_SETTINGS]: undefined;
   [MY_NAVIGATION_TYPE.MY_ARTICLES]: undefined;
   [MY_NAVIGATION_TYPE.MY_FAVORITED_ARTICLES]: undefined;

@@ -5,18 +5,12 @@ import { BottomTabScreenProps } from '@react-navigation/bottom-tabs';
 import { observer } from 'mobx-react';
 
 import BaseLayoutTemplate from 'src/components/templates/layout/BaseLayoutTemplate';
-import { CommonParamList, MainParamList, MyParamList } from 'src/interfaces/common';
+import { MyParamList } from 'src/interfaces/common';
 import { useStores } from 'src/stores/stores';
 import FeedList from 'src/components/organisms/article/FeedList';
 import useArticles from 'src/hooks/useArticles';
 
-type PropsType = CompositeScreenProps<
-  NativeStackScreenProps<CommonParamList, 'MAIN'>,
-  CompositeScreenProps<
-    NativeStackScreenProps<MainParamList, 'MY'>,
-    BottomTabScreenProps<MyParamList, 'MY_FAVORITED_ARTICLES'>
-  >
->;
+type PropsType = NativeStackScreenProps<MyParamList, 'MY_FAVORITED_ARTICLES'>;
 
 const MyFavoritedArticlesPageContainer: FC<PropsType> = observer(({ navigation }) => {
   const { userStore } = useStores();
