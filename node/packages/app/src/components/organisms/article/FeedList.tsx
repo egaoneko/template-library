@@ -41,6 +41,8 @@ const FeedList: FC<PropsType> = ({ articleListResult, toggleFavorite, moveToArti
           )}
           keyExtractor={item => item.id}
           ItemSeparatorComponent={() => <Separator />}
+          refreshing={articleListResult.isFetchingPreviousPage}
+          onRefresh={() => articleListResult.refetch()}
           onEndReached={() => {
             if (!articleListResult.hasNextPage) {
               return;

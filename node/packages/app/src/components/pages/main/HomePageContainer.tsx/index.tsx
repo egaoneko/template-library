@@ -15,7 +15,10 @@ type PropsType = CompositeScreenProps<
 >;
 
 const HomePageContainer: FC<PropsType> = ({ navigation }) => {
-  const { articleListResult, toggleFavorite, moveToArticle, moveToAuthor } = useArticles(['article-list'], navigation);
+  const { articleListResult, toggleFavorite, moveToArticle, moveToAuthor } = useArticles({
+    navigation,
+    queryKey: ['article-list'],
+  });
 
   return (
     <BaseLayoutTemplate title="Global feed" topBarButton={<IconButton name="search1" size={20} />}>

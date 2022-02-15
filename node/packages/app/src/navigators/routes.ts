@@ -9,12 +9,12 @@ import SignInPageContainer from 'src/components/pages/common/SignInPageContainer
 import SignUpPageContainer from 'src/components/pages/common/SignUpPageContainer';
 import { MAIN_NAVIGATION_TYPE } from 'src/enums/main-navigation';
 import { COMMON_NAVIGATION_TYPE } from 'src/enums/common-navigation';
-import MyPageContainer from 'src/components/pages/main/user/MyPageContainer.tsx';
+import MyPageContainer from 'src/components/pages/my/MyPageContainer.tsx';
 import { MY_NAVIGATION_TYPE } from 'src/enums/my-navigation';
-import MyMainPageContainer from 'src/components/pages/main/user/MyMainPageContainer.tsx';
-import MySettingsPageContainer from 'src/components/pages/main/user/MySettingsPageContainer.tsx';
-import MyArticlesPageContainer from 'src/components/pages/main/user/MyArticlesPageContainer.tsx';
-import MyFavoritedArticlesPageContainer from 'src/components/pages/main/user/MyFavoritedArticlesPageContainer.tsx';
+import MyMainPageContainer from 'src/components/pages/my/MyMainPageContainer.tsx';
+import MySettingsPageContainer from 'src/components/pages/my/MySettingsPageContainer.tsx';
+import MyArticlesPageContainer from 'src/components/pages/my/MyArticlesPageContainer.tsx';
+import MyFavoritedArticlesPageContainer from 'src/components/pages/my/MyFavoritedArticlesPageContainer.tsx';
 
 interface RoutesInfo {
   name: COMMON_NAVIGATION_TYPE | MAIN_NAVIGATION_TYPE | MY_NAVIGATION_TYPE;

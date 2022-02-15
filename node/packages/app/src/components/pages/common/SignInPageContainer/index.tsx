@@ -74,7 +74,7 @@ const SignInPageContainer: FC<PropsType> = ({ navigation }) => {
         rules={{ required: 'Password is required' }}
         name={'password'}
         secureTextEntry
-        error={errors.password}
+        error={isSubmitted && errors.password}
         errorMessage={errors.password?.message}
         ref={inputRefs[1]}
         placeholder="Password"

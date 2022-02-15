@@ -14,6 +14,7 @@ export type BaseInputPropsType = Pick<
   | 'numberOfLines'
   | 'returnKeyType'
   | 'onSubmitEditing'
+  | 'onChange'
   | 'onChangeText'
   | 'onBlur'
   | 'value'

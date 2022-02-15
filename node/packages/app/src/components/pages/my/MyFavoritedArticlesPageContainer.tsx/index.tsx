@@ -20,13 +20,13 @@ type PropsType = CompositeScreenProps<
 
 const MyFavoritedArticlesPageContainer: FC<PropsType> = observer(({ navigation }) => {
   const { userStore } = useStores();
-  const { articleListResult, toggleFavorite, moveToArticle, moveToAuthor } = useArticles(
-    ['my-favorited-article-list'],
+  const { articleListResult, toggleFavorite, moveToArticle, moveToAuthor } = useArticles({
     navigation,
-    {
+    queryKey: ['my-favorited-article-list'],
+    params: {
       favorited: userStore.user?.username,
     },
-  );
+  });
 
   const handleBack = () => {
     navigation.goBack();

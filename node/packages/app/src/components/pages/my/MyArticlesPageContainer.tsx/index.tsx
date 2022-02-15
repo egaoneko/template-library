@@ -17,13 +17,13 @@ type PropsType = CompositeScreenProps<
 
 const MyArticlesPageContainer: FC<PropsType> = observer(({ navigation }) => {
   const { userStore } = useStores();
-  const { articleListResult, toggleFavorite, moveToArticle, moveToAuthor } = useArticles(
-    ['my-article-list'],
+  const { articleListResult, toggleFavorite, moveToArticle, moveToAuthor } = useArticles({
     navigation,
-    {
+    queryKey: ['my-article-list'],
+    params: {
       author: userStore.user?.username,
     },
-  );
+  });
 
   const handleBack = () => {
     navigation.goBack();

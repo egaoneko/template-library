@@ -13,7 +13,6 @@ import { useStores } from 'src/stores/stores';
 import Input from 'src/components/molecules/form/Input';
 import { emailValidator, validate } from 'src/utils/validate';
 import { handleFocusNext } from 'src/utils/input';
-import BaseView from 'src/components/atoms/view/BaseView';
 import useDarkMode from 'src/hooks/useDarkMode';
 import BaseButton, { ButtonSize, ButtonVariant } from 'src/components/atoms/button/BaseButton';
 
@@ -75,12 +74,12 @@ const MySettingsPageContainer: FC<PropsType> = observer(({ navigation }) => {
     >
       <Container darkMode={useDarkMode()}>
         <Input
+          autoFocus
           control={control}
           rules={{
             required: 'Username is required',
           }}
           name={'username'}
-          autoFocus
           error={isSubmitted && errors.username}
           errorMessage={errors.username?.message}
           ref={inputRefs[0]}
@@ -93,7 +92,7 @@ const MySettingsPageContainer: FC<PropsType> = observer(({ navigation }) => {
           numberOfLines={4}
           control={control}
           name={'bio'}
-          error={errors.bio}
+          error={isSubmitted && errors.bio}
           errorMessage={errors.bio?.message}
           ref={inputRefs[1]}
           placeholder="Short bio about you"
@@ -109,7 +108,6 @@ const MySettingsPageContainer: FC<PropsType> = observer(({ navigation }) => {
             }),
           }}
           name={'email'}
-          autoFocus
           error={isSubmitted && errors.email}
           errorMessage={errors.email?.message}
           ref={inputRefs[2]}
@@ -121,7 +119,7 @@ const MySettingsPageContainer: FC<PropsType> = observer(({ navigation }) => {
           control={control}
           name={'password'}
           secureTextEntry
-          error={errors.password}
+          error={isSubmitted && errors.password}
           errorMessage={errors.password?.message}
           ref={inputRefs[3]}
           placeholder="Password"
@@ -135,7 +133,7 @@ const MySettingsPageContainer: FC<PropsType> = observer(({ navigation }) => {
 
 export default MySettingsPageContainer;
 
-const Container = styled(BaseView)<{ darkMode: boolean }>`
+const Container = styled.View`
   flex: 1;
   align-items: center;
   font-size: 20px;

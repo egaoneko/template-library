@@ -90,7 +90,7 @@ const SignUpPageContainer: FC<PropsType> = ({ navigation }) => {
         rules={{ required: 'Password is required' }}
         name={'password'}
         secureTextEntry
-        error={errors.password}
+        error={isSubmitted && errors.password}
         errorMessage={errors.password?.message}
         ref={inputRefs[2]}
         placeholder="Password"
