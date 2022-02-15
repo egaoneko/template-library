@@ -4,15 +4,20 @@ import HomePageContainer from 'src/components/pages/main/HomePageContainer.tsx';
 import SplashPageContainer from 'src/components/pages/common/SplashPageContainer';
 import FeedPageContainer from 'src/components/pages/main/article/FeedPageContainer.tsx';
 import PostArticlePageContainer from 'src/components/pages/main/editor/PostArticlePageContainer.tsx';
-import SettingsPageContainer from 'src/components/pages/main/user/SettingsPageContainer.tsx';
 import MainPageContainer from 'src/components/pages/common/MainPageContainer';
 import SignInPageContainer from 'src/components/pages/common/SignInPageContainer';
 import SignUpPageContainer from 'src/components/pages/common/SignUpPageContainer';
 import { MAIN_NAVIGATION_TYPE } from 'src/enums/main-navigation';
 import { COMMON_NAVIGATION_TYPE } from 'src/enums/common-navigation';
+import MyPageContainer from 'src/components/pages/main/user/MyPageContainer.tsx';
+import { MY_NAVIGATION_TYPE } from 'src/enums/my-navigation';
+import MyMainPageContainer from 'src/components/pages/main/user/MyMainPageContainer.tsx';
+import MySettingsPageContainer from 'src/components/pages/main/user/MySettingsPageContainer.tsx';
+import MyArticlesPageContainer from 'src/components/pages/main/user/MyArticlesPageContainer.tsx';
+import MyFavoritedArticlesPageContainer from 'src/components/pages/main/user/MyFavoritedArticlesPageContainer.tsx';
 
 interface RoutesInfo {
-  name: COMMON_NAVIGATION_TYPE | MAIN_NAVIGATION_TYPE;
+  name: COMMON_NAVIGATION_TYPE | MAIN_NAVIGATION_TYPE | MY_NAVIGATION_TYPE;
   component: ComponentType<unknown>;
   options?: { headerShown?: boolean };
   initialParams?: {
@@ -56,12 +61,43 @@ const mainRoutes: RoutesInfo[] = [
     },
   },
   {
-    name: MAIN_NAVIGATION_TYPE.SETTINGS,
-    component: SettingsPageContainer,
+    name: MAIN_NAVIGATION_TYPE.MY,
+    component: MyPageContainer,
     initialParams: {
       auth: true,
     },
   },
 ];
 
-export { commonRoutes, mainRoutes };
+const myRoutes: RoutesInfo[] = [
+  {
+    name: MY_NAVIGATION_TYPE.MY_MAIN,
+    component: MyMainPageContainer,
+    initialParams: {
+      auth: true,
+    },
+  },
+  {
+    name: MY_NAVIGATION_TYPE.MY_SETTINGS,
+    component: MySettingsPageContainer,
+    initialParams: {
+      auth: true,
+    },
+  },
+  {
+    name: MY_NAVIGATION_TYPE.MY_ARTICLES,
+    component: MyArticlesPageContainer,
+    initialParams: {
+      auth: true,
+    },
+  },
+  {
+    name: MY_NAVIGATION_TYPE.MY_FAVORITED_ARTICLES,
+    component: MyFavoritedArticlesPageContainer,
+    initialParams: {
+      auth: true,
+    },
+  },
+];
+
+export { commonRoutes, mainRoutes, myRoutes };

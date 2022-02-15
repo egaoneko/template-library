@@ -1,33 +1,27 @@
 import React, { FC } from 'react';
 import styled from 'styled-components/native';
-import { Text } from 'react-native';
 import { CompositeScreenProps } from '@react-navigation/native';
 import { NativeStackScreenProps } from '@react-navigation/native-stack';
 import { BottomTabScreenProps } from '@react-navigation/bottom-tabs';
 
-import BaseLayoutTemplate from 'src/components/templates/layout/BaseLayoutTemplate';
 import { CommonParamList, MainParamList } from 'src/interfaces/common';
+import MyNavigator from 'src/navigators/MyNavigator';
 
 type PropsType = CompositeScreenProps<
   NativeStackScreenProps<CommonParamList, 'MAIN'>,
-  BottomTabScreenProps<MainParamList, 'SETTINGS'>
+  BottomTabScreenProps<MainParamList, 'MY'>
 >;
 
-const SettingsPageContainer: FC<PropsType> = () => {
+const MyPageContainer: FC<PropsType> = () => {
   return (
-    <BaseLayoutTemplate>
-      <Container>
-        <Text>Settings</Text>
-      </Container>
-    </BaseLayoutTemplate>
+    <Container>
+      <MyNavigator />
+    </Container>
   );
 };
 
-export default SettingsPageContainer;
+export default MyPageContainer;
 
 const Container = styled.View`
   flex: 1;
-  align-items: center;
-  justify-content: center;
-  font-size: 20px;
 `;

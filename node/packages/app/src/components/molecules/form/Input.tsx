@@ -7,8 +7,18 @@ import BaseInput, { BaseInputPropsType } from 'src/components/atoms/input/BaseIn
 interface Props extends FieldValues, BaseInputPropsType {}
 
 const Input = forwardRef<TextInput, Props>((props, ref) => {
-  const { autoFocus, secureTextEntry, placeholder, returnKeyType, onSubmitEditing, error, errorMessage, ...rest } =
-    props;
+  const {
+    autoFocus,
+    secureTextEntry,
+    multiline,
+    numberOfLines,
+    placeholder,
+    returnKeyType,
+    onSubmitEditing,
+    error,
+    errorMessage,
+    ...rest
+  } = props;
 
   return (
     <Controller
@@ -18,6 +28,8 @@ const Input = forwardRef<TextInput, Props>((props, ref) => {
           ref={ref}
           autoFocus={autoFocus}
           secureTextEntry={secureTextEntry}
+          multiline={multiline}
+          numberOfLines={numberOfLines}
           placeholder={placeholder}
           returnKeyType={returnKeyType}
           error={error}

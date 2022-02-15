@@ -10,6 +10,8 @@ export type BaseInputPropsType = Pick<
   | 'autoFocus'
   | 'placeholder'
   | 'secureTextEntry'
+  | 'multiline'
+  | 'numberOfLines'
   | 'returnKeyType'
   | 'onSubmitEditing'
   | 'onChangeText'

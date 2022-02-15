@@ -5,7 +5,7 @@ import BaseView from 'src/components/atoms/view/BaseView';
 import BaseSafeAreaView from 'src/components/atoms/view/BaseSafeAreaView';
 import { Heading1 } from 'src/components/atoms/common/typography';
 import BaseText from 'src/components/atoms/text/BaseText';
-import BaseButton from 'src/components/atoms/button/BaseButton';
+import BaseButton, { ButtonSize } from 'src/components/atoms/button/BaseButton';
 
 interface PropsType {
   title: string;

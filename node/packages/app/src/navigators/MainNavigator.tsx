@@ -41,7 +41,7 @@ const MainNavigator: FC = observer(() => {
             case MAIN_NAVIGATION_TYPE.POST_ARTICLE:
               name = 'form';
               break;
-            case MAIN_NAVIGATION_TYPE.SETTINGS:
+            case MAIN_NAVIGATION_TYPE.MY:
               name = 'user';
 
               if (userStore.user?.image) {

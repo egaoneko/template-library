@@ -13,6 +13,10 @@ import { StorageNameExpires } from 'src/constants/storage';
 class UserStore {
   public user: IUser | null = null;
 
+  get isLoggedIn(): boolean {
+    return !!this.user;
+  }
+
   constructor() {
     makeAutoObservable(this);
     void this.clear();
@@ -91,6 +95,15 @@ class UserStore {
       await this.clear();
     } catch (e) {
       notifyError((e as Error).message);
+    }
+  }
+
+  public async isValidToken(): Promise<boolean> {
+    try {
+      await AuthAPI.validate(CONTEXT);
+      return true;
+    } catch (e) {
+      return false;
     }
   }
 

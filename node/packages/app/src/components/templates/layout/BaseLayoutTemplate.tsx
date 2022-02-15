@@ -7,14 +7,22 @@ import TopBar from 'src/components/organisms/layout/TopBar';
 interface PropsType {
   title?: string;
   topBarButton?: ReactNode;
-  children?: ReactNode;
+  showBackButton?: boolean;
+  onBackButtonPress?: () => void;
 }
 
 const BaseLayoutTemplate: FC<PropsType> = props => {
-  const { title, topBarButton, children } = props;
+  const { title, topBarButton, showBackButton, onBackButtonPress, children } = props;
   return (
     <Container>
-      {(title || topBarButton) && <TopBar title={title} topBarButton={topBarButton} />}
+      {(title || topBarButton) && (
+        <TopBar
+          title={title}
+          topBarButton={topBarButton}
+          showBackButton={showBackButton}
+          onBackButtonPress={onBackButtonPress}
+        />
+      )}
       <ContentContainer>{children}</ContentContainer>
     </Container>
   );

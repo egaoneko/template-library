@@ -10,7 +10,6 @@ import Input from 'src/components/molecules/form/Input';
 import { emailValidator, validate } from 'src/utils/validate';
 import { COMMON_NAVIGATION_TYPE } from 'src/enums/common-navigation';
 import { useStores } from 'src/stores/stores';
-import { notifySuccess } from 'src/utils/notifiy';
 
 type PropsType = NativeStackScreenProps<CommonParamList, 'SIGN_IN'>;
 

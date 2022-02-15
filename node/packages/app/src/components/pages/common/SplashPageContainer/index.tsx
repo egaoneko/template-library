@@ -15,7 +15,6 @@ const SplashPageContainer: FC<PropsType> = ({ navigation }) => {
     (async () => {
       await userStore.hydrate();
       if (userStore.user) {
-        console.log(userStore.user);
         navigation.replace(COMMON_NAVIGATION_TYPE.MAIN);
       } else {
         navigation.replace(COMMON_NAVIGATION_TYPE.SIGN_IN);
