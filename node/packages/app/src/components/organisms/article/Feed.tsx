@@ -8,7 +8,7 @@ import TouchableView from 'src/components/atoms/view/TouchableView';
 import BaseIcon from 'src/components/atoms/icon/BaseIcon';
 import Avatar from 'src/components/atoms/avatar/Avatar';
 import IconButton from 'src/components/atoms/button/IconButton';
-import { Description, Heading2 } from 'src/components/atoms/common/typography';
+import { Description13, Heading2 } from 'src/components/atoms/common/typography';
 
 interface PropsType {
   article: IArticle;
@@ -60,7 +60,7 @@ const AuthorContainer = styled(TouchableView)`
   margin-top: 10px;
 `;
 
-const AuthorDescription = styled(Description)`
+const AuthorDescription = styled(Description13)`
   margin: 0 3px;
 `;
 

@@ -53,7 +53,7 @@ export default function useArticles({
     fetchArticles,
     {
       getNextPageParam: lastPage => lastPage.nextCursor,
-      staleTime: 1000 * 60 * 60,
+      staleTime: 1000 * 60 * 5,
     },
   );
 

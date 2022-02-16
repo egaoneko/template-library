@@ -30,7 +30,13 @@ export const Body18 = styled(BaseText)<{ bold?: boolean; color: string }>`
     `}
 `;
 
-export const Description = styled(BaseText)`
+export const Description16 = styled(BaseText)`
+  font-size: 16px;
+  font-weight: 500;
+  color: ${({ theme }) => theme.description};
+`;
+
+export const Description13 = styled(BaseText)`
   font-size: 13px;
   font-weight: 400;
   color: ${({ theme }) => theme.description};

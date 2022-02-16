@@ -9,31 +9,33 @@ import ArticleFormTemplate from 'src/components/templates/form/ArticleFormTempla
 import ArticleAPI from 'src/api/article';
 import { CONTEXT } from 'src/constants/common';
 import { notifyError, notifySuccess } from 'src/utils/notifiy';
+import { ARTICLE_NAVIGATION_TYPE } from 'src/enums/article-navigation';
 
 type PropsType = CompositeScreenProps<
   NativeStackScreenProps<CommonParamList, 'MAIN'>,
   BottomTabScreenProps<MainParamList, 'POST_ARTICLE'>
 >;
 
-const PostArticlePageContainer: FC<PropsType> = () => {
+const PostArticlePageContainer: FC<PropsType> = ({ navigation }) => {
   const [loading, setLoading] = useState<boolean>(false);
 
-  const handleFinish = (request: CreateArticleRequest): Promise<void> => {
-    setLoading(true);
-    return ArticleAPI.create(CONTEXT, request)
-      .then(async article => {
-        if (!article) {
-          setLoading(false);
-          return;
-        }
-        notifySuccess('Successfully posted!');
-        console.log(article);
-        // route `/article/${article.slug}`
-      })
-      .catch(e => {
-        setLoading(false);
-        notifyError((e as Error).message);
+  const handleFinish = async (request: CreateArticleRequest): Promise<void> => {
+    try {
+      const article = await ArticleAPI.create(CONTEXT, request);
+      setLoading(false);
+
+      if (!article) {
+        return;
+      }
+      notifySuccess('Successfully posted!');
+      navigation.navigate(ARTICLE_NAVIGATION_TYPE.ARTICLE, {
+        slug: article.slug,
       });
+    } catch (e) {
+      throw e;
+    } finally {
+      setLoading(false);
+    }
   };
   return <ArticleFormTemplate loading={loading} onFinish={handleFinish} />;
 };

@@ -10,6 +10,7 @@ import useDarkMode from 'src/hooks/useDarkMode';
 import Input from 'src/components/molecules/form/Input';
 import { handleFocusNext } from 'src/utils/input';
 import TagsInput from 'src/components/molecules/form/TagsInput';
+import { notifyError } from 'src/utils/notifiy';
 
 interface PropsType {
   loading?: boolean;
@@ -19,6 +20,7 @@ interface PropsType {
 const ArticleFormTemplate: FC<PropsType> = props => {
   const {
     control,
+    reset,
     handleSubmit,
     formState: { isSubmitted, errors, isDirty },
   } = useForm({
@@ -36,7 +38,17 @@ const ArticleFormTemplate: FC<PropsType> = props => {
   inputRefs[3] = useRef<TextInput>(null);
 
   const onSubmit = async data => {
-    await props.onFinish(data);
+    try {
+      await props.onFinish(data);
+      reset({
+        title: '',
+        description: '',
+        body: '',
+        tags: [],
+      });
+    } catch (e) {
+      notifyError((e as Error).message);
+    }
   };
 
   return (
