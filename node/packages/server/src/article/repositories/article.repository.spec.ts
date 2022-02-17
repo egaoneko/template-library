@@ -2,6 +2,7 @@ import { Test, TestingModule } from '@nestjs/testing';
 import { getModelToken } from '@nestjs/sequelize';
 import { createMock } from '@golevelup/ts-jest';
 import { paramCase } from 'change-case';
+import { Op } from 'sequelize';
 
 import { DEFAULT_DATABASE_NAME } from '../../config/constants/database';
 import { Article } from '../entities/article.entity';
@@ -127,6 +128,21 @@ describe('ArticleRepository', () => {
     expect(mockArticle.count).toBeCalledWith({
       where: {
         slug: 'slug',
+      },
+      transaction: undefined,
+    });
+  });
+
+  it('should be return article count by slug', async () => {
+    const actual = await repository.countBySlugAndExcludeId(1, 'slug');
+    expect(actual).toBeDefined();
+    expect(mockArticle.count).toBeCalledTimes(1);
+    expect(mockArticle.count).toBeCalledWith({
+      where: {
+        slug: 'slug',
+        id: {
+          [Op.ne]: 1,
+        },
       },
       transaction: undefined,
     });

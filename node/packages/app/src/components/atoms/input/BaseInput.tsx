@@ -18,6 +18,7 @@ export type BaseInputPropsType = Pick<
   | 'onChangeText'
   | 'onBlur'
   | 'value'
+  | 'style'
 > & {
   children: React.ReactNode;
   error?: boolean;

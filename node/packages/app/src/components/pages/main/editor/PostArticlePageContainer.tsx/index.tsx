@@ -8,7 +8,7 @@ import { CommonParamList, MainParamList } from 'src/interfaces/common';
 import ArticleFormTemplate from 'src/components/templates/form/ArticleFormTemplate';
 import ArticleAPI from 'src/api/article';
 import { CONTEXT } from 'src/constants/common';
-import { notifyError, notifySuccess } from 'src/utils/notifiy';
+import { notifySuccess } from 'src/utils/notifiy';
 import { ARTICLE_NAVIGATION_TYPE } from 'src/enums/article-navigation';
 
 type PropsType = CompositeScreenProps<

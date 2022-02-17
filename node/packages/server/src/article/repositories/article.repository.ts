@@ -1,5 +1,6 @@
 import { Injectable } from '@nestjs/common';
 import { InjectModel } from '@nestjs/sequelize';
+import { Op } from 'sequelize';
 
 import { GetArticlesDto } from 'src/article/dto/request/get-articles.dto';
 import { DEFAULT_DATABASE_NAME } from 'src/config/constants/database';
@@ -79,6 +80,18 @@ export class ArticleRepository {
     return this.articleModel.count({
       where: {
         slug,
+      },
+      transaction: options?.transaction,
+    });
+  }
+
+  async countBySlugAndExcludeId(id: number, slug: string, options?: SequelizeOptionDto): Promise<number> {
+    return this.articleModel.count({
+      where: {
+        slug,
+        id: {
+          [Op.ne]: id,
+        },
       },
       transaction: options?.transaction,
     });

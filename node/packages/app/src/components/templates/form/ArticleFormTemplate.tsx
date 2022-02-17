@@ -1,4 +1,4 @@
-import React, { FC, useRef } from 'react';
+import React, { FC, useEffect, useRef } from 'react';
 import styled from 'styled-components/native';
 import { TextInput } from 'react-native';
 import { useForm } from 'react-hook-form';
@@ -15,6 +15,9 @@ import { notifyError } from 'src/utils/notifiy';
 interface PropsType {
   loading?: boolean;
   onFinish: (request: CreateArticleRequest | UpdateArticleRequest) => Promise<void>;
+  showBackButton?: boolean;
+  onBackButtonPress?: () => void;
+  defaultValues?: UpdateArticleRequest;
 }
 
 const ArticleFormTemplate: FC<PropsType> = props => {
@@ -24,7 +27,7 @@ const ArticleFormTemplate: FC<PropsType> = props => {
     handleSubmit,
     formState: { isSubmitted, errors, isDirty },
   } = useForm({
-    defaultValues: {
+    defaultValues: props.defaultValues && {
       title: '',
       description: '',
       body: '',
@@ -51,6 +54,10 @@ const ArticleFormTemplate: FC<PropsType> = props => {
     }
   };
 
+  useEffect(() => {
+    reset(props.defaultValues);
+  }, [props.defaultValues]);
+
   return (
     <BaseLayoutTemplate
       title="Post"
@@ -63,6 +70,8 @@ const ArticleFormTemplate: FC<PropsType> = props => {
           onPress={handleSubmit(onSubmit)}
         />
       }
+      showBackButton={props.showBackButton}
+      onBackButtonPress={props.onBackButtonPress}
     >
       <Wrapper>
         <Container darkMode={useDarkMode()}>
@@ -108,16 +117,18 @@ const ArticleFormTemplate: FC<PropsType> = props => {
             returnKeyType="next"
             onSubmitEditing={() => handleFocusNext(inputRefs, 2)}
           />
-          <TagsInput
-            control={control}
-            name={'tags'}
-            error={isSubmitted && errors.tags}
-            errorMessage={errors.tags?.message}
-            ref={inputRefs[3]}
-            placeholder="Enter tags"
-            returnKeyType="done"
-            onSubmitEditing={() => handleFocusNext(inputRefs, 3)}
-          />
+          {!props.defaultValues && (
+            <TagsInput
+              control={control}
+              name={'tags'}
+              error={isSubmitted && errors.tags}
+              errorMessage={errors.tags?.message}
+              ref={inputRefs[3]}
+              placeholder="Enter tags"
+              returnKeyType="done"
+              onSubmitEditing={() => handleFocusNext(inputRefs, 3)}
+            />
+          )}
         </Container>
       </Wrapper>
     </BaseLayoutTemplate>

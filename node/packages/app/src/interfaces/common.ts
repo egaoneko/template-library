@@ -31,4 +31,7 @@ export type ArticleParamList = {
     username: string;
   };
   [ARTICLE_NAVIGATION_TYPE.TAGS]: undefined;
+  [ARTICLE_NAVIGATION_TYPE.EDIT]: {
+    slug: string;
+  };
 };

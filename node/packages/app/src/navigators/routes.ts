@@ -18,6 +18,7 @@ import { ARTICLE_NAVIGATION_TYPE } from 'src/enums/article-navigation';
 import ArticlePageContainer from 'src/components/pages/article/ArticlePageContainer';
 import AuthorPageContainer from 'src/components/pages/article/AuthorPageContainer';
 import TagsPageContainer from 'src/components/pages/article/TagsPageContainer';
+import EditPageContainer from 'src/components/pages/article/EditPageContainer';
 
 interface RoutesInfo {
   name: COMMON_NAVIGATION_TYPE | MAIN_NAVIGATION_TYPE | MY_NAVIGATION_TYPE | ARTICLE_NAVIGATION_TYPE;
@@ -108,6 +109,10 @@ const articleRoutes: RoutesInfo[] = [
   {
     name: ARTICLE_NAVIGATION_TYPE.TAGS,
     component: TagsPageContainer,
+  },
+  {
+    name: ARTICLE_NAVIGATION_TYPE.EDIT,
+    component: EditPageContainer,
   },
 ];
 

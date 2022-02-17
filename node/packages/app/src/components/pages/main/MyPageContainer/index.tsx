@@ -58,7 +58,6 @@ export default MyPageContainer;
 const Container = styled.View`
   flex: 1;
   align-items: center;
-  font-size: 20px;
 `;
 
 const Top = styled.View`

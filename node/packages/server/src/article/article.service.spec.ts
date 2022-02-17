@@ -282,7 +282,7 @@ describe('ArticleService', () => {
   it('should be update article', async () => {
     /* eslint-disable @typescript-eslint/no-explicit-any */
     mockArticleRepository.findOneBySlug = jest.fn().mockReturnValue({ id: 1 }) as any;
-    mockArticleRepository.countBySlug = jest.fn().mockReturnValue(0) as any;
+    mockArticleRepository.countBySlugAndExcludeId = jest.fn().mockReturnValue(0) as any;
     mockArticleRepository.update = jest.fn().mockReturnValue({}) as any;
     service.getArticleBySlug = jest.fn().mockReturnValue({}) as any;
 
@@ -295,8 +295,8 @@ describe('ArticleService', () => {
     expect(mockSequelize.transaction).toBeCalledTimes(1);
     expect(mockArticleRepository.findOneBySlug).toBeCalledTimes(1);
     expect(mockArticleRepository.findOneBySlug).toBeCalledWith('slug', { transaction: {} });
-    expect(mockArticleRepository.countBySlug).toBeCalledTimes(1);
-    expect(mockArticleRepository.countBySlug).toBeCalledWith(newSlug, { transaction: {} });
+    expect(mockArticleRepository.countBySlugAndExcludeId).toBeCalledTimes(1);
+    expect(mockArticleRepository.countBySlugAndExcludeId).toBeCalledWith(1, newSlug, { transaction: {} });
     expect(mockArticleRepository.update).toBeCalledTimes(1);
     expect(mockArticleRepository.update).toBeCalledWith(1, newSlug, dto, { transaction: {} });
     expect(service.getArticleBySlug).toBeCalledTimes(1);
@@ -318,7 +318,7 @@ describe('ArticleService', () => {
   it('should not be update article with already exist', async () => {
     /* eslint-disable @typescript-eslint/no-explicit-any */
     mockArticleRepository.findOneBySlug = jest.fn().mockReturnValue({ id: 1 }) as any;
-    mockArticleRepository.countBySlug = jest.fn().mockReturnValue(1) as any;
+    mockArticleRepository.countBySlugAndExcludeId = jest.fn().mockReturnValue(1) as any;
 
     const dto = new UpdateArticleDto();
     dto.title = 'How to train your dragon';
@@ -328,8 +328,8 @@ describe('ArticleService', () => {
     expect(mockSequelize.transaction).toBeCalledTimes(1);
     expect(mockArticleRepository.findOneBySlug).toBeCalledTimes(1);
     expect(mockArticleRepository.findOneBySlug).toBeCalledWith(slug, { transaction: {} });
-    expect(mockArticleRepository.countBySlug).toBeCalledTimes(1);
-    expect(mockArticleRepository.countBySlug).toBeCalledWith(slug, { transaction: {} });
+    expect(mockArticleRepository.countBySlugAndExcludeId).toBeCalledTimes(1);
+    expect(mockArticleRepository.countBySlugAndExcludeId).toBeCalledWith(1, slug, { transaction: {} });
   });
 
   it('should be delete article', async () => {

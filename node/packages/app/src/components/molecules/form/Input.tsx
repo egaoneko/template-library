@@ -17,6 +17,7 @@ const Input = forwardRef<TextInput, InputProps>((props, ref) => {
     onSubmitEditing,
     error,
     errorMessage,
+    style,
     ...rest
   } = props;
 
@@ -38,6 +39,7 @@ const Input = forwardRef<TextInput, InputProps>((props, ref) => {
           onChangeText={onChange}
           onBlur={onBlur}
           value={value}
+          style={style}
         />
       )}
     />

@@ -182,7 +182,7 @@ export class ArticleService {
 
     const newSlug = paramCase(updateArticleDto.title);
 
-    const count = await this.articleRepository.countBySlug(newSlug, options);
+    const count = await this.articleRepository.countBySlugAndExcludeId(article.id, newSlug, options);
 
     if (count > 0) {
       throw new BadRequestException('Slug is already exist');

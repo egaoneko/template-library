@@ -43,9 +43,8 @@ const Comment: FC<PropsType> = ({ user, comment, moveToAuthor, onDelete }) => {
 export default Comment;
 
 const Wrapper = styled.View`
-  height: 120px;
   flex-grow: 0;
-  padding: 20px 16px;
+  padding: 10px 16px;
 `;
 
 const Container = styled.View`

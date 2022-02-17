@@ -8,7 +8,7 @@ import { ArticleParamList } from 'src/interfaces/common';
 
 type PropsType = NativeStackScreenProps<ArticleParamList, 'TAGS'>;
 
-const TagsPageContainer: FC<PropsType> = ({ route, navigation }) => {
+const TagsPageContainer: FC<PropsType> = ({ navigation }) => {
   const handleBack = () => {
     navigation.goBack();
   };

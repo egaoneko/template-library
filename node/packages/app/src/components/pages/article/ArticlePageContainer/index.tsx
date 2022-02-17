@@ -1,4 +1,4 @@
-import React, { FC, useState } from 'react';
+import React, { FC, useEffect, useState } from 'react';
 import styled from 'styled-components/native';
 import { NativeStackScreenProps } from '@react-navigation/native-stack';
 import { IArticle } from '@my-app/core/lib/interfaces/article';
@@ -19,8 +19,8 @@ import { ARTICLE_NAVIGATION_TYPE } from 'src/enums/article-navigation';
 import { useStores } from 'src/stores/stores';
 import { MAIN_NAVIGATION_TYPE } from 'src/enums/main-navigation';
 import Comment from 'src/components/organisms/comment/Comment';
-import Separator from 'src/components/atoms/common/Separator';
 import CommentFooterTemplate from 'src/components/pages/article/ArticlePageContainer/templates/CommentFooterTemplate';
+import CommentInputTemplate from 'src/components/pages/article/ArticlePageContainer/templates/CommentInputTemplate';
 
 type PropsType = NativeStackScreenProps<ArticleParamList, 'ARTICLE'>;
 
@@ -61,6 +61,7 @@ const ArticlePageContainer: FC<PropsType> = ({ route, navigation }) => {
   const [loading, setLoading] = useState<boolean>(false);
 
   const handleToggleFollow = async (username: string, toggle: boolean): Promise<void> => {
+    setLoading(true);
     try {
       if (toggle) {
         await ProfileAPI.follow(CONTEXT, username);
@@ -70,10 +71,13 @@ const ArticlePageContainer: FC<PropsType> = ({ route, navigation }) => {
       await articleResult.refetch();
     } catch (e) {
       notifyError((e as Error).message);
+    } finally {
+      setLoading(true);
     }
   };
 
   const handleToggleFavorite = async (toggle: boolean): Promise<void> => {
+    setLoading(true);
     try {
       if (toggle) {
         await ArticleAPI.favorite(CONTEXT, slug);
@@ -83,6 +87,8 @@ const ArticlePageContainer: FC<PropsType> = ({ route, navigation }) => {
       await articleResult.refetch();
     } catch (e) {
       notifyError((e as Error).message);
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -143,8 +149,20 @@ const ArticlePageContainer: FC<PropsType> = ({ route, navigation }) => {
   };
 
   const handleMoveToEdit = (): void => {
-    console.log('edit');
+    navigation.navigate(ARTICLE_NAVIGATION_TYPE.EDIT, {
+      slug,
+    });
   };
+
+  useEffect(() => {
+    const handler = () => {
+      articleResult.refetch();
+    };
+    navigation.addListener('focus', handler);
+    return () => {
+      navigation.removeListener('focus', handler);
+    };
+  }, [navigation, articleResult]);
 
   return (
     <BaseLayoutTemplate title="Article" showBackButton onBackButtonPress={handleBack}>
@@ -166,6 +184,7 @@ const ArticlePageContainer: FC<PropsType> = ({ route, navigation }) => {
             ) : (
               <Loading size={'large'} />
             )}
+            <CommentInputTemplate user={userStore.user} onCreate={handleCreateComment} />
           </>
         }
         ListFooterComponent={
