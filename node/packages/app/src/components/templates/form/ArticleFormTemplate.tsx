@@ -31,7 +31,7 @@ const ArticleFormTemplate: FC<PropsType> = props => {
       title: '',
       description: '',
       body: '',
-      tags: [],
+      tagList: [],
     },
   });
   const inputRefs: Array<React.RefObject<TextInput>> = [];
@@ -47,7 +47,7 @@ const ArticleFormTemplate: FC<PropsType> = props => {
         title: '',
         description: '',
         body: '',
-        tags: [],
+        tagList: [],
       });
     } catch (e) {
       notifyError((e as Error).message);
@@ -55,7 +55,10 @@ const ArticleFormTemplate: FC<PropsType> = props => {
   };
 
   useEffect(() => {
-    reset(props.defaultValues);
+    reset({
+      ...props.defaultValues,
+      tagList: [],
+    });
   }, [props.defaultValues]);
 
   return (
@@ -120,9 +123,9 @@ const ArticleFormTemplate: FC<PropsType> = props => {
           {!props.defaultValues && (
             <TagsInput
               control={control}
-              name={'tags'}
-              error={isSubmitted && errors.tags}
-              errorMessage={errors.tags?.message}
+              name={'tagList'}
+              error={isSubmitted && errors.tagList}
+              errorMessage={errors.tagList?.message}
               ref={inputRefs[3]}
               placeholder="Enter tags"
               returnKeyType="done"

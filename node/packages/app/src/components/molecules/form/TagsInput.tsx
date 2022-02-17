@@ -21,9 +21,11 @@ const TagsInput = forwardRef<TextInput, InputProps>((props, ref) => {
           const last = text.charAt(text.length - 1);
 
           if (last === ',') {
-            const tag = currentTag.substring(0, text.length - 1);
-            if (value && (value as string[]).indexOf(tag) === -1) {
-              onChange([...(value ?? []), tag]);
+            let tags = currentTag.substring(0, text.length - 1).split(',');
+            tags = tags.filter((v, i, a) => a.indexOf(v) === i).filter(tag => (value as string[]).indexOf(tag) === -1);
+
+            if (tags.length > 0) {
+              onChange([...(value ?? []), ...tags]);
             }
             setCurrentTag('');
           } else {

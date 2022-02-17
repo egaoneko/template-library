@@ -11,7 +11,9 @@ export type CommonParamList = {
 };
 
 export type MainParamList = {
-  [MAIN_NAVIGATION_TYPE.HOME]: undefined;
+  [MAIN_NAVIGATION_TYPE.HOME]: {
+    tag?: string;
+  };
   [MAIN_NAVIGATION_TYPE.FEED]: undefined;
   [MAIN_NAVIGATION_TYPE.POST_ARTICLE]: undefined;
   [MAIN_NAVIGATION_TYPE.MY]: undefined;

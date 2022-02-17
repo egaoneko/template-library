@@ -49,7 +49,13 @@ const commonRoutes: RoutesInfo[] = [
 ];
 
 const mainRoutes: RoutesInfo[] = [
-  { name: MAIN_NAVIGATION_TYPE.HOME, component: HomePageContainer },
+  {
+    name: MAIN_NAVIGATION_TYPE.HOME,
+    component: HomePageContainer,
+    initialParams: {
+      auth: true,
+    },
+  },
   {
     name: MAIN_NAVIGATION_TYPE.FEED,
     component: FeedPageContainer,
@@ -101,18 +107,30 @@ const articleRoutes: RoutesInfo[] = [
   {
     name: ARTICLE_NAVIGATION_TYPE.ARTICLE,
     component: ArticlePageContainer,
+    initialParams: {
+      auth: true,
+    },
   },
   {
     name: ARTICLE_NAVIGATION_TYPE.AUTHOR,
     component: AuthorPageContainer,
+    initialParams: {
+      auth: true,
+    },
   },
   {
     name: ARTICLE_NAVIGATION_TYPE.TAGS,
     component: TagsPageContainer,
+    initialParams: {
+      auth: true,
+    },
   },
   {
     name: ARTICLE_NAVIGATION_TYPE.EDIT,
     component: EditPageContainer,
+    initialParams: {
+      auth: true,
+    },
   },
 ];
 
