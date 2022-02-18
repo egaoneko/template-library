@@ -4,6 +4,8 @@ import { CompositeScreenProps } from '@react-navigation/native';
 import { NativeStackScreenProps } from '@react-navigation/native-stack';
 import { BottomTabScreenProps } from '@react-navigation/bottom-tabs';
 import { observer } from 'mobx-react';
+import { launchImageLibrary } from 'react-native-image-picker';
+import { Platform } from 'react-native';
 
 import BaseLayoutTemplate from 'src/components/templates/layout/BaseLayoutTemplate';
 import { CommonParamList, MainParamList } from 'src/interfaces/common';
@@ -12,6 +14,10 @@ import { Body18, ButtonText18 } from 'src/components/atoms/common/typography';
 import Avatar from 'src/components/atoms/avatar/Avatar';
 import { useStores } from 'src/stores/stores';
 import { MY_NAVIGATION_TYPE } from 'src/enums/my-navigation';
+import FileAPI from 'src/api/file';
+import { CONTEXT } from 'src/constants/common';
+import { notifyError } from 'src/utils/notifiy';
+import { COMMON_NAVIGATION_TYPE } from 'src/enums/common-navigation';
 
 type PropsType = CompositeScreenProps<
   NativeStackScreenProps<CommonParamList, 'MAIN'>,
@@ -24,6 +30,40 @@ const MyPageContainer: FC<PropsType> = observer(({ navigation }) => {
   const handleMoveToMyArticles = () => navigation.navigate(MY_NAVIGATION_TYPE.MY_ARTICLES);
   const handleMoveToFavoritedArticles = () => navigation.navigate(MY_NAVIGATION_TYPE.MY_FAVORITED_ARTICLES);
   const handleLogout = () => userStore.logout();
+  const handleUploadProfile = async () => {
+    const result = await launchImageLibrary({
+      mediaType: 'photo',
+    });
+
+    if (!result?.assets || result.assets.length === 0) {
+      notifyError('Fail to upload profile image');
+      return;
+    }
+
+    if (!userStore.user) {
+      notifyError('Need to login');
+      navigation.push(COMMON_NAVIGATION_TYPE.SIGN_IN);
+      return;
+    }
+
+    const asset = result.assets[0];
+    const formData = new FormData();
+    formData.append('file', {
+      name: asset.fileName,
+      type: asset.type,
+      uri: Platform.OS === 'android' ? asset.uri : asset.uri?.replace('file://', ''),
+    });
+
+    try {
+      const file = await FileAPI.upload(CONTEXT, formData);
+      await userStore.update({
+        id: userStore.user?.id,
+        image: file.id,
+      });
+    } catch (e) {
+      notifyError((e as Error).message);
+    }
+  };
 
   return (
     <BaseLayoutTemplate>
@@ -34,7 +74,9 @@ const MyPageContainer: FC<PropsType> = observer(({ navigation }) => {
           </Edit>
         </Top>
         <Profile>
-          <Avatar size={180} uri={userStore.user?.image} />
+          <AvatarWrapper onPress={handleUploadProfile}>
+            <Avatar size={180} uri={userStore.user?.image} />
+          </AvatarWrapper>
           <Body18>{userStore.user?.username}</Body18>
         </Profile>
         <Actions>
@@ -66,6 +108,8 @@ const Top = styled.View`
   align-items: flex-end;
   padding: 12px 16px;
 `;
+
+const AvatarWrapper = styled(TouchableView)``;
 
 const Edit = styled(TouchableView)`
   padding: 4px;

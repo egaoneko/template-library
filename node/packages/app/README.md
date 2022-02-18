@@ -9,7 +9,7 @@ App Client를 제공하기 위해 사용합니다. 폴더 구조로는 Atomic De
 * [x] Schema
 * [x] Environment Config
 * [x] CRUD
-* [ ] File Upload
+* [x] File Upload
 * [x] Authentication(JWT)
 * [x] Refresh Token
 * [ ] Unit Test
