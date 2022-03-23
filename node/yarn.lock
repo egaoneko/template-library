@@ -1103,7 +1103,7 @@
     slash "^3.0.0"
     strip-ansi "^6.0.0"
 
-"@jest/create-cache-key-function@^27.0.1":
+"@jest/create-cache-key-function@27.0.2", "@jest/create-cache-key-function@^27.0.1":
   version "27.0.2"
   resolved "https://registry.yarnpkg.com/@jest/create-cache-key-function/-/create-cache-key-function-27.0.2.tgz#7721b631b0c0acb757dc35b182e512277ab2af72"
   integrity sha512-19OIUG1hBm4sNX9cKcozS4Cc1xUGbcF4t9Gt3sLPFV66mOQnENg0PtJ8aTiflQnh63WR40a3n1uRSI9spoEkWQ==

@@ -2,15 +2,11 @@ import universalCookie, { CookieSetOptions } from 'universal-cookie';
 import { parse } from 'set-cookie-parser';
 import { GetServerSidePropsContext, NextApiRequest, NextApiResponse, NextPageContext } from 'next';
 
-import Cookie from 'src/libs/Cookie';
+import Cookie from './Cookie';
 
 import type { NextRequest, NextResponse } from 'next/server';
 
-export type NextContext =
-  | NextPageContext
-  | GetServerSidePropsContext
-  | { req: NextApiRequest; res: NextApiResponse }
-  | string;
+export type NextContext = NextPageContext | GetServerSidePropsContext | { req: NextApiRequest; res: NextApiResponse };
 export type NextMiddlewareContext = { req: NextRequest; res: NextResponse };
 
 export default class SuperCookie extends Cookie {
@@ -63,6 +59,7 @@ export default class SuperCookie extends Cookie {
         },
         options || {},
       );
+      this.cookie.remove(name, opt as CookieSetOptions);
       this.mCtx.res.cookie(name, '', opt);
     } else {
       super.remove(name, options);

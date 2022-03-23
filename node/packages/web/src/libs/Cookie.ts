@@ -1,8 +1,9 @@
+// https://github.com/tokuda109/next-cookie/blob/master/src/Cookie.ts
 /* eslint-disable */
 
-import universalCookie, { CookieSetOptions, CookieGetOptions } from 'universal-cookie';
-import { GetServerSidePropsContext, NextApiRequest, NextApiResponse, NextPageContext } from 'next';
 import * as parser from 'cookie';
+import { NextPageContext, GetServerSidePropsContext, NextApiRequest, NextApiResponse } from 'next';
+import universalCookie, { CookieGetOptions, CookieSetOptions } from 'universal-cookie';
 
 const SET_COOKIE_HEADER = 'Set-Cookie';
 
@@ -70,12 +71,14 @@ class Cookie {
    *
    * @param options `CookieGetOptions` used in `universal-cookie`.
    */
+
   /* eslint-disable @typescript-eslint/no-explicit-any */
   public getAll(options?: CookieGetOptions): {
     [name: string]: any;
   } {
     return this.cookie.getAll(options);
   }
+
   /* eslint-enable @typescript-eslint/no-explicit-any */
 
   /**
@@ -85,6 +88,7 @@ class Cookie {
    * @param value The value of the cookie.
    * @param options `CookieSetOptions` used in `universal-cookie`.
    */
+
   /* eslint-disable @typescript-eslint/no-explicit-any */
   public set(name: string, value: any, options?: CookieSetOptions): void {
     // if the expires is number, then convert to Date.
@@ -92,17 +96,17 @@ class Cookie {
       options.expires = new Date((new Date() as any) * 1 + options.expires * 864e5);
     }
 
-    if (this.isServer && this.ctx) {
-      const cookies: string[] = (this.ctx.res.getHeader(SET_COOKIE_HEADER) as string[]) || [];
+    this.cookie.set(name, value, options as CookieSetOptions);
 
-      this.cookie.set(name, value, options as CookieSetOptions);
+    if (this.isServer && this.ctx) {
+      const header = this.ctx.res.getHeader(SET_COOKIE_HEADER);
+      const cookies: string[] = Array.isArray(header) ? header : header ? [header as string] : [];
       cookies.push(parser.serialize(name, value, options as parser.CookieSerializeOptions));
 
       this.ctx.res.setHeader(SET_COOKIE_HEADER, cookies);
-    } else {
-      this.cookie.set(name, value, options as CookieSetOptions);
     }
   }
+
   /* eslint-enable @typescript-eslint/no-explicit-any */
 
   /**
@@ -119,15 +123,19 @@ class Cookie {
     const opt = Object.assign(
       {
         expires: new Date(),
-        path: '/',
+        path: '/'
       },
-      options || {},
+      options || {}
     );
 
+    this.cookie.remove(name, opt as CookieSetOptions);
+
     if (this.isServer && this.ctx) {
-      this.ctx.res.setHeader(SET_COOKIE_HEADER, parser.serialize(name, '', opt as parser.CookieSerializeOptions));
-    } else {
-      this.cookie.remove(name, opt as CookieSetOptions);
+      const header = this.ctx.res.getHeader(SET_COOKIE_HEADER);
+      const cookies: string[] = Array.isArray(header) ? header : header ? [header as string] : [];
+      cookies.push(parser.serialize(name, '', options as parser.CookieSerializeOptions));
+
+      this.ctx.res.setHeader(SET_COOKIE_HEADER, cookies);
     }
   }
 }

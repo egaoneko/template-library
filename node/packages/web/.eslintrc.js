@@ -1,5 +1,4 @@
 const lintConfig = require('../../.eslintrc.js');
-module.exports = lintConfig;
 
 module.exports = {
   ...lintConfig,
